@@ -1,0 +1,141 @@
+%% research-memo.tex — Tufte-style research memo template
+\documentclass[letterpaper, justified, notitlepage]{tufte-handout}
+
+%% ── Packages ────────────────────────────────────────────────────────────────
+\usepackage[T1]{fontenc}
+\usepackage{palatino}
+\usepackage{microtype}
+\usepackage{booktabs}
+\usepackage[table]{xcolor}
+\usepackage{graphicx}
+\usepackage{amsmath, amssymb}
+\usepackage{amsthm}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage[most]{tcolorbox}
+
+%% ── Theorem environments ────────────────────────────────────────────────────
+\theoremstyle{plain}
+\newtheorem{definition}{Definition}[section]
+
+%% ── Typography ──────────────────────────────────────────────────────────────
+\setlist{noitemsep, topsep=2pt}
+\setcounter{secnumdepth}{2}   % number sections and subsections
+
+%% ── Memo fields (fill these in) ─────────────────────────────────────────────
+\newcommand{\memoto}{%
+  Jennifer, Thomas, Claire
+}
+\newcommand{\memofrom}{%
+  Kyle
+}
+\newcommand{\memodate}{\today}
+\newcommand{\memosubject}{%
+  Notes on the empirical methods used in related work
+}
+\newcommand{\memosummary}{%
+}
+
+%% ── Callout box ─────────────────────────────────────────────────────────────
+\definecolor{calloutblue}{RGB}{219,234,254}
+\newcommand{\callout}[1]{%
+  \begin{tcolorbox}[
+    colback=calloutblue,
+    colframe=black,
+    arc=6pt,
+    boxrule=0.4pt,
+    left=6pt, right=6pt, top=4pt, bottom=4pt
+  ]
+    #1
+  \end{tcolorbox}%
+}
+
+%% ── Printer's mark box ──────────────────────────────────────────────────────
+\definecolor{markgray}{gray}{0.88}
+
+%% ────────────────────────────────────────────────────────────────────────────
+\begin{document}
+
+%% Full-width memo header
+\begin{fullwidth}
+  \noindent
+  \begin{minipage}[t]{0.62\linewidth}
+    \vspace{0pt}
+    \begin{tabular}{@{}lp{0.72\linewidth}}
+      \textbf{To:}      & \memoto      \\[1pt]
+      \textbf{From:}    & \memofrom    \\[1pt]
+      \textbf{Date:}    & \memodate    \\[1pt]
+      \textbf{Subject:} & \memosubject \\
+    \end{tabular}
+  \end{minipage}%
+  \hfill
+  \begin{minipage}[t]{0.22\linewidth}
+    \vspace{0pt}
+    \raggedleft
+    \colorbox{markgray}{%
+      \parbox[c][2.2cm][c]{0.95\linewidth}{%
+        \centering\color{gray}\footnotesize [printer's mark]
+      }%
+    }
+  \end{minipage}
+
+  \vspace{0.6em}
+  \noindent\rule{\linewidth}{0.5pt}
+  \vspace{0.6em}
+
+  \noindent\textbf{Summary:}\quad\memosummary
+
+  \vspace{0.8em}
+  \noindent\rule{\linewidth}{0.4pt}
+  \vspace{1em}
+\end{fullwidth}
+
+%% ────────────────────────────────────────────────────────────────────────────
+%% Body — single column with wide right margin for notes and figures
+%% Use \sidenote{} for numbered margin notes (replaces \footnote)
+%% Use \marginnote{} for unnumbered margin notes
+%% Use \begin{marginfigure}...\end{marginfigure} for margin figures
+%% ────────────────────────────────────────────────────────────────────────────
+
+\section{Bailey and Rottinghaus (2014)}
+Extract the enabling clause from dataset composed of proclamations and executive orders. Then,
+they label each document according to the source of the authority in the enabling clause. They use 
+three labels: President-based, Congress-based, or joint. President-based authorities include an
+invocation of President's powers as president generally, or their powers under the Constitution.
+Congress-based are signaled by citation of a joint resolution of Congress, specific public law,
+specific statute, specific U.S. Code, or declaration of "laws of the United States." Documents
+labelled "joint" include both a President- and Congress-based authority, but are treated as
+Congress-based for the analysis.\sidenote{See footnote 5 of the paper.}
+
+Documents are hand-labelled using a single annotator, then evaluated for consistency by a second
+annotator.\sidenote{See footnote 4 of the paper.}
+
+\section{Kaufman and Rogowski (2024); Prez policymaking}
+\textbf{Questions}: (1) Is a document significant (binary) and (2) What issue area is the document?
+
+Both are document-level, features are bag of words (either unigram vs. bigram).
+
+
+\section{Kaufman and Rogowski (2024); Strategic Substitution}
+\textbf{Question}: Do presidents substitute less visible types of directives for EOs or
+proclamations under divided govt? Goal to avoid Congressional scrutiny.
+
+Dataset composed of 33,921 directives from 1946-2020. Includes memoranda, public land orders,
+executive agreements, agency directives, EOs, and proclamations. 
+
+No classification, just use directives labelled significant from the \textit{Presidential
+policymaking} paper. Then use linear probability model to test whether possible to predict type of
+directive from whether government divided, controlling for stuff. 
+
+\section{Ruhl et al (2018)}
+Uses LDA and BoW to topic model executive orders, presidential memoranda, proclamations, and
+determinations according to the document's content. Examples of labels:
+\begin{itemize}
+  \item Military positions, succession, titles
+  \item Internal emergencies and sanctions.
+\end{itemize}
+
+
+
+
+\end{document}
