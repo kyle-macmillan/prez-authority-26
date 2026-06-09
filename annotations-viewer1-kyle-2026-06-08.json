@@ -1,0 +1,40 @@
+{
+  "annotator": "kyle",
+  "EO16": {
+    "sp": {
+      "status": null
+    }
+  },
+  "EO1": {
+    "classification": {
+      "category": null,
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": null
+    },
+    "annotations": [
+      {
+        "start": 1197,
+        "end": 1420,
+        "label": "order_action",
+        "classification": {
+          "category": "policy",
+          "legal_effect": "legal",
+          "scope": "foreign",
+          "national_security": "no",
+          "emergency": "yes"
+        }
+      }
+    ],
+    "chunks": {
+      "1": {
+        "category": "ceremonial",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": "no"
+      }
+    }
+  }
+}

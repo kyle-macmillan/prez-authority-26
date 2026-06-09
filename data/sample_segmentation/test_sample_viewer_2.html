@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Segment viewer</title>
+<style>
+  body { font-family: system-ui, sans-serif; font-size: 13px; margin: 0; padding: 16px; background: #f9fafb; color: #111; }
+  h1 { font-size: 1.2rem; margin-bottom: 4px; }
+  .legend { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+  .leg-item { padding: 2px 8px; border-radius: 3px; font-size: 11px; font-weight: 600; }
+  .doc-block { background: white; border: 1px solid #e5e7eb; border-radius: 6px; margin-bottom: 12px; }
+  .doc-block > summary { cursor: pointer; padding: 10px 14px; display: flex; gap: 12px; align-items: baseline; list-style: none; }
+  .doc-block > summary::-webkit-details-marker { display: none; }
+  .doc-prez { font-weight: 600; }
+  .doc-date { color: #6b7280; }
+  .doc-type { font-style: italic; color: #6b7280; }
+  .doc-stats { color: #9ca3af; font-size: 11px; margin-left: auto; }
+  .doc-link { font-size: 11px; color: #2563eb; text-decoration: none; }
+  .doc-link:hover { text-decoration: underline; }
+  .trunc { color: #dc2626; font-weight: 600; }
+  .doc-body { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-top: 1px solid #e5e7eb; }
+  .col { padding: 12px 16px; overflow-y: auto; max-height: 600px; }
+  .col + .col { border-left: 1px solid #e5e7eb; }
+  .col h3 { font-size: 11px; text-transform: uppercase; letter-spacing: .05em; color: #9ca3af; margin: 0 0 10px; }
+  .orig-para { margin: 0 0 8px; padding: 6px 8px; background: #f9fafb; border-radius: 3px; line-height: 1.5; }
+  .seg { margin: 0 0 6px; padding: 6px 8px; border-radius: 3px; line-height: 1.5; }
+  .seg-meta { opacity: .7; }
+  .seg-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; margin-right: 6px; }
+  .seg-num { font-size: 10px; font-weight: 700; margin-right: 4px; }
+  .seg-text { }
+</style>
+</head>
+<body>
+<h1>Segment viewer &mdash; 20 documents</h1>
+<div class="legend"><span class="leg-item" style="background:#f3f4f6;border-left:4px solid #6b7280;color:#6b7280">metadata</span><span class="leg-item" style="background:#dbeafe;border-left:4px solid #1d4ed8;color:#1d4ed8">section</span><span class="leg-item" style="background:#d1fae5;border-left:4px solid #065f46;color:#065f46">paragraph</span><span class="leg-item" style="background:#fef3c7;border-left:4px solid #92400e;color:#92400e">boilerplate</span></div>
+
+<details class="doc-block" open>
+  <summary>
+    <span class="doc-prez">Barack Obama</span>
+    <span class="doc-date">February 05, 2012</span>
+    <span class="doc-type">executive_order</span>
+    <span class="doc-stats">18 chunks &rarr; 15 segments</span>
+    <a href="https://www.presidency.ucsb.edu/documents/executive-order-13599-blocking-property-the-government-iran-and-iranian-financial" target="_blank" class="doc-link">original &rarr;</a>
+  </summary>
+  <div class="doc-body">
+    <div class="col">
+      <h3>Original text</h3>
+      <p class="orig-para">By the authority vested in me as President by the Constitution and the laws of the United States of America, including the International Emergency Economic Powers Act (50 U.S.C. 1701 et seq.) (IEEPA), the National Emergencies Act (50 U.S.C. 1601 et seq.), section 1245 of the National Defense Authorization Act for Fiscal Year 2012 (Public Law 112-81) (NDAA), and section 301 of title 3, United States Code,</p>
+<p class="orig-para">I, BARACK OBAMA, President of the United States of America, in order to take additional steps with respect to the national emergency declared in Executive Order 12957 of March 15, 1995, particularly in light of the deceptive practices of the Central Bank of Iran and other Iranian banks to conceal transactions of sanctioned parties, the deficiencies in Iran&#x27;s anti-money laundering regime and the weaknesses in its implementation, and the continuing and unacceptable risk posed to the international financial system by Iran&#x27;s activities, hereby order:</p>
+<p class="orig-para">Section 1. (a) All property and interests in property of the Government of Iran, including the Central Bank of Iran, that are in the United States, that hereafter come within the United States, or that are or hereafter come within the possession or control of any United States person, including any foreign branch, are blocked and may not be transferred, paid, exported, withdrawn, or otherwise dealt in.</p>
+<p class="orig-para">(b) All property and interests in property of any Iranian financial institution, including the Central Bank of Iran, that are in the United States, that hereafter come within the United States, or that are or hereafter come within the possession or control of any United States person, including any foreign branch, are blocked and may not be transferred, paid, exported, withdrawn, or otherwise dealt in.</p>
+<p class="orig-para">(c) All property and interests in property that are in the United States, that hereafter come within the United States, or that are or hereafter come within the possession or control of any United States person, including any foreign branch, of the following persons are blocked and may not be transferred, paid, exported, withdrawn, or otherwise dealt in: any person determined by the Secretary of the Treasury, in consultation with the Secretary of State, to be owned or controlled by, or to have acted or purported to act for or on behalf of, directly or indirectly, any person whose property and interests in property are blocked pursuant to this order.</p>
+<p class="orig-para">Sec. 2. I hereby determine that the making of donations of the type of articles specified in section 203(b)(2) of IEEPA (50 U.S.C. 1702(b)(2)) by, to, or for the benefit of any person whose property and interests in property are blocked pursuant to section 1 of this order would seriously impair my ability to deal with the national emergency declared in Executive Order 12957, and I hereby prohibit such donations as provided by section 1 of this order.</p>
+<p class="orig-para">Sec. 3. The prohibitions in section 1 of this order include but are not limited to: (a) the making of any contribution or provision of funds, goods, or services by, to, or for the benefit of any person whose property and interests in property are blocked pursuant to this order; and</p>
+<p class="orig-para">(b) the receipt of any contribution or provision of funds, goods, or services from any such person.</p>
+<p class="orig-para">Sec. 4. (a) The prohibitions in section 1 of this order apply except to the extent provided by statutes, or in regulations, orders, directives, or licenses that may be issued pursuant to this order, and notwithstanding any contract entered into or any license or permit granted prior to the effective date of this order.</p>
+<p class="orig-para">(b) The prohibitions in section 1 of this order do not apply to property and interests in property of the Government of Iran that were blocked pursuant to Executive Order 12170 of November 14, 1979, and thereafter made subject to the transfer directives set forth in Executive Order 12281 of January 19, 1981, and implementing regulations thereunder.</p>
+<p class="orig-para">Sec. 5. (a) Any transaction by a United States person or within the United States that evades or avoids, has the purpose of evading or avoiding, causes a violation of, or attempts to violate any of the prohibitions set forth in this order is prohibited.</p>
+<p class="orig-para">(b) Any conspiracy formed to violate any of the prohibitions set forth in this order is prohibited.</p>
+<p class="orig-para">Sec. 6. Nothing in section 1 of this order shall prohibit transactions for the conduct of the official business of the Federal Government by employees, grantees, or contractors thereof.</p>
+<p class="orig-para">Sec. 7. For the purposes of this order: (a) the term &quot;person&quot; means an individual or entity;</p>
+<p class="orig-para">(b) the term &quot;entity&quot; means a partnership, association, trust, joint venture, corporation, group, subgroup, or other organization;</p>
+<p class="orig-para">(c) the term &quot;United States person&quot; means any United States citizen, permanent resident alien, entity organized under the laws of the United States or any jurisdiction within the United States (including foreign branches), or any person in the United States;</p>
+<p class="orig-para">(d) the term &quot;Government of Iran&quot; means the Government of Iran, any political subdivision, agency, or instrumentality thereof, including the Central Bank of Iran, and any person owned or controlled by, or acting for or on behalf of, the Government of Iran;</p>
+<p class="orig-para">(e) the term &quot;Iran&quot; means the territory of Iran and any other territory or marine area, including the exclusive economic zone and continental shelf, over which the Government of Iran claims sovereignty, sovereign rights, or jurisdiction, provided that the Government of Iran exercises partial or total de facto control over the area or derives a benefit from economic activity in the area pursuant to international arrangements; and</p>
+<p class="orig-para">(f) the term &quot;Iranian financial institution&quot; means a financial institution organized under the laws of Iran or any jurisdiction within Iran (including foreign branches), any financial institution in Iran, any financial institution, wherever located, owned or controlled by the Government of Iran, and any financial institution, wherever located, owned or controlled by any of the foregoing.</p>
+<p class="orig-para">Sec. 8. For those persons whose property and interests in property are blocked pursuant to this order who might have a constitutional presence in the United States, I find that because of the ability to transfer funds or other assets instantaneously, prior notice to such persons of measures to be taken pursuant to this order would render those measures ineffectual. I therefore determine that for these measures to be effective in addressing the national emergency declared in Executive Order 12957, there need be no prior notice of a listing or determination made pursuant to section 1 of this order.</p>
+<p class="orig-para">Sec. 9. The Secretary of the Treasury, in consultation with the Secretary of State, is hereby authorized to take such actions, including the promulgation of rules and regulations, and to employ all powers granted to the President by IEEPA as may be necessary to carry out the purposes of this order, other than the purposes described in section 11. The Secretary of the Treasury may redelegate any of these functions and authorities to other officers and agencies of the United States Government consistent with applicable law. All agencies of the United States Government are hereby directed to take all appropriate measures within their authority to carry out the provisions of this order.</p>
+<p class="orig-para">Sec. 10. The Secretary of the Treasury, in consultation with the Secretary of State, is hereby authorized to exercise the functions and authorities conferred upon the President by section 1245(d)(1)(A) of the NDAA and to redelegate these functions and authorities consistent with applicable law. The Secretary of the Treasury, in consultation with the Secretary of State, is hereby further authorized to exercise the functions and authorities conferred upon the President by section 1245(g)(1) of the NDAA to the extent necessary to exercise the other functions and authorities delegated in this section and may redelegate these functions and authorities consistent with applicable law.</p>
+<p class="orig-para">Sec. 11. The Secretary of State, in consultation with the Secretary of the Treasury, the Secretary of Energy, and the Director of National Intelligence, is hereby authorized to exercise the functions and authorities conferred upon the President by section 1245(d)(4)(D) of the NDAA and to redelegate these functions and authorities consistent with applicable law. The Secretary of State, in consultation with the Secretary of the Treasury, is hereby further authorized to exercise the functions and authorities conferred upon the President by sections 1245(e)(1) and 1245(e)(2) of the NDAA and to redelegate these functions and authorities consistent with applicable law. The Secretary of State, in consultation with the Secretary of the Treasury, is hereby further authorized to exercise the functions and authorities conferred upon the President by section 1245(g)(1) of the NDAA to the extent necessary to exercise the other functions and authorities delegated in this section and may redelegate these functions and authorities consistent with applicable law.</p>
+<p class="orig-para">Sec. 12. This order is not intended to, and does not, create any right or benefit, substantive or procedural, enforceable at law or in equity by any party against the United States, its departments, agencies, or entities, its officers, employees, or agents, or any other person.</p>
+<p class="orig-para">Sec. 13. The measures taken pursuant to this order are in response to actions of the Government of Iran occurring after the conclusion of the 1981 Algiers Accords, and are intended solely as a response to those later actions.</p>
+<p class="orig-para">Sec. 14. This order is effective at 12:01 a.m. eastern standard time on February 6, 2012.</p>
+<p class="orig-para">BARACK OBAMA</p>
+<p class="orig-para">The White House,</p>
+<p class="orig-para">February 5, 2012.</p>
+    </div>
+    <div class="col">
+      <h3>Segments</h3>
+      <div class="seg" style="border-left:4px solid #065f46;background:#d1fae5"><span class="seg-num" style="color:#065f46">#1</span><span class="seg-label" style="color:#065f46">paragraph</span><span class="seg-text">By the authority vested in me as President by the Constitution and the laws of the United States of America, including the International Emergency Economic Powers Act (50 U.S.C. 1701 et seq.) (IEEPA), the National Emergencies Act (50 U.S.C. 1601 et seq.), section 1245 of the National Defense Authorization Act for Fiscal Year 2012 (Public Law 112-81) (NDAA), and section 301 of title 3, United States Code, I, BARACK OBAMA, President of the United States of America, in order to take additional steps with respect to the national emergency declared in Executive Order 12957 of March 15, 1995, particularly in light of the deceptive practices of the Central Bank of Iran and other Iranian banks to conceal transactions of sanctioned parties, the deficiencies in Iran&#x27;s anti-money laundering regime and the weaknesses in its implementation, and the continuing and unacceptable risk posed to the international financial system by Iran&#x27;s activities, hereby order:</span></div>
+<div class="seg" style="border-left:4px solid #1d4ed8;background:#dbeafe"><span class="seg-num" style="color:#1d4ed8">#2</span><span class="seg-label" style="color:#1d4ed8">section</span><span class="seg-text">Section 1. (a) All property and interests in property of the Government of Iran, including the Central Bank of Iran, that are in the United States, that hereafter come within the United States, or that are or hereafter come within the possession or control of any United States person, including any foreign branch, are blocked and may not be transferred, paid, exported, withdrawn, or otherwise dealt in. (b) All property and interests in property of any Iranian financial institution, including the Central Bank of Iran, that are in the United States, that hereafter come within the United States, or that are or hereafter come within the possession or control of any United States person, including any foreign branch, are blocked and may not be transferred, paid, exported, withdrawn, or otherwise dealt in. (c) All property and interests in property that are in the United States, that hereafter come within the United States, or that are or hereafter come within the possession or control of any United States person, including any foreign branch, of the following persons are blocked and may not be transferred, paid, exported, withdrawn, or otherwise dealt in: any person determined by the Secretary of the Treasury, in consultation with the Secretary of State, to be owned or controlled by, or to have acted or purported to act for or on behalf of, directly or indirectly, any person whose property and interests in property are blocked pursuant to this order.</span></div>
+<div class="seg" style="border-left:4px solid #1d4ed8;background:#dbeafe"><span class="seg-num" style="color:#1d4ed8">#3</span><span class="seg-label" style="color:#1d4ed8">section</span><span class="seg-text">Sec. 2. I hereby determine that the making of donations of the type of articles specified in section 203(b)(2) of IEEPA (50 U.S.C. 1702(b)(2)) by, to, or for the benefit of any person whose property and interests in property are blocked pursuant to section 1 of this order would seriously impair my ability to deal with the national emergency declared in Executive Order 12957, and I hereby prohibit such donations as provided by section 1 of this order.</span></div>
+<div class="seg" style="border-left:4px solid #1d4ed8;background:#dbeafe"><span class="seg-num" style="color:#1d4ed8">#4</span><span class="seg-label" style="color:#1d4ed8">section</span><span class="seg-text">Sec. 3. The prohibitions in section 1 of this order include but are not limited to: (a) the making of any contribution or provision of funds, goods, or services by, to, or for the benefit of any person whose property and interests in property are blocked pursuant to this order; and (b) the receipt of any contribution or provision of funds, goods, or services from any such person.</span></div>
+<div class="seg" style="border-left:4px solid #1d4ed8;background:#dbeafe"><span class="seg-num" style="color:#1d4ed8">#5</span><span class="seg-label" style="color:#1d4ed8">section</span><span class="seg-text">Sec. 4. (a) The prohibitions in section 1 of this order apply except to the extent provided by statutes, or in regulations, orders, directives, or licenses that may be issued pursuant to this order, and notwithstanding any contract entered into or any license or permit granted prior to the effective date of this order. (b) The prohibitions in section 1 of this order do not apply to property and interests in property of the Government of Iran that were blocked pursuant to Executive Order 12170 of November 14, 1979, and thereafter made subject to the transfer directives set forth in Executive Order 12281 of January 19, 1981, and implementing regulations thereunder.</span></div>
+<div class="seg" style="border-left:4px solid #1d4ed8;background:#dbeafe"><span class="seg-num" style="color:#1d4ed8">#6</span><span class="seg-label" style="color:#1d4ed8">section</span><span class="seg-text">Sec. 5. (a) Any transaction by a United States person or within the United States that evades or avoids, has the purpose of evading or avoiding, causes a violation of, or attempts to violate any of the prohibitions set forth in this order is prohibited. (b) Any conspiracy formed to violate any of the prohibitions set forth in this order is prohibited.</span></div>
+<div class="seg" style="border-left:4px solid #1d4ed8;background:#dbeafe"><span class="seg-num" style="color:#1d4ed8">#7</span><span class="seg-label" style="color:#1d4ed8">section</span><span class="seg-text">Sec. 6. Nothing in section 1 of this order shall prohibit transactions for the conduct of the official business of the Federal Government by employees, grantees, or contractors thereof.</span></div>
+<div class="seg" style="border-left:4px solid #1d4ed8;background:#dbeafe"><span class="seg-num" style="color:#1d4ed8">#8</span><span class="seg-label" style="color:#1d4ed8">section</span><span class="seg-text">Sec. 7. For the purposes of this order: (a) the term &quot;person&quot; means an individual or entity; (b) the term &quot;entity&quot; means a partnership, association, trust, joint venture, corporation, group, subgroup, or other organization; (c) the term &quot;United States person&quot; means any United States citizen, permanent resident alien, entity organized under the laws of the United States or any jurisdiction within the United States (including foreign branches), or any person in the United States; (d) the term &quot;Government of Iran&quot; means the Government of Iran, any political subdivision, agency, or instrumentality thereof, including the Central Bank of Iran, and any person owned or controlled by, or acting for or on behalf of, the Government of Iran; (e) the term &quot;Iran&quot; means the territory of Iran and any other territory or marine area, including the exclusive economic zone and continental shelf, over which the Government of Iran claims sovereignty, sovereign rights, or jurisdiction, provided that the Government of Iran exercises partial or total de facto control over the area or derives a benefit from economic activity in the area pursuant to international arrangements; and (f) the term &quot;Iranian financial institution&quot; means a financial institution organized under the laws of Iran or any jurisdiction within Iran (including foreign branches), any financial institution in Iran, any financial institution, wherever located, owned or controlled by the Government of Iran, and any financial institution, wherever located, owned or controlled by any of the foregoing.</span></div>
+<div class="seg" style="border-left:4px solid #1d4ed8;background:#dbeafe"><span class="seg-num" style="color:#1d4ed8">#9</span><span class="seg-label" style="color:#1d4ed8">section</span><span class="seg-text">Sec. 8. For those persons whose property and interests in property are blocked pursuant to this order who might have a constitutional presence in the United States, I find that because of the ability to transfer funds or other assets instantaneously, prior notice to such persons of measures to be taken pursuant to this order would render those measures ineffectual. I therefore determine that for these measures to be effective in addressing the national emergency declared in Executive Order 12957, there need be no prior notice of a listing or determination made pursuant to section 1 of this order.</span></div>
+<div class="seg" style="border-left:4px solid #1d4ed8;background:#dbeafe"><span class="seg-num" style="color:#1d4ed8">#10</span><span class="seg-label" style="color:#1d4ed8">section</span><span class="seg-text">Sec. 9. The Secretary of the Treasury, in consultation with the Secretary of State, is hereby authorized to take such actions, including the promulgation of rules and regulations, and to employ all powers granted to the President by IEEPA as may be necessary to carry out the purposes of this order, other than the purposes described in section 11. The Secretary of the Treasury may redelegate any of these functions and authorities to other officers and agencies of the United States Government consistent with applicable law. All agencies of the United States Government are hereby directed to take all appropriate measures within their authority to carry out the provisions of this order.</span></div>
+<div class="seg" style="border-left:4px solid #1d4ed8;background:#dbeafe"><span class="seg-num" style="color:#1d4ed8">#11</span><span class="seg-label" style="color:#1d4ed8">section</span><span class="seg-text">Sec. 10. The Secretary of the Treasury, in consultation with the Secretary of State, is hereby authorized to exercise the functions and authorities conferred upon the President by section 1245(d)(1)(A) of the NDAA and to redelegate these functions and authorities consistent with applicable law. The Secretary of the Treasury, in consultation with the Secretary of State, is hereby further authorized to exercise the functions and authorities conferred upon the President by section 1245(g)(1) of the NDAA to the extent necessary to exercise the other functions and authorities delegated in this section and may redelegate these functions and authorities consistent with applicable law.</span></div>
+<div class="seg" style="border-left:4px solid #1d4ed8;background:#dbeafe"><span class="seg-num" style="color:#1d4ed8">#12</span><span class="seg-label" style="color:#1d4ed8">section</span><span class="seg-text">Sec. 11. The Secretary of State, in consultation with the Secretary of the Treasury, the Secretary of Energy, and the Director of National Intelligence, is hereby authorized to exercise the functions and authorities conferred upon the President by section 1245(d)(4)(D) of the NDAA and to redelegate these functions and authorities consistent with applicable law. The Secretary of State, in consultation with the Secretary of the Treasury, is hereby further authorized to exercise the functions and authorities conferred upon the President by sections 1245(e)(1) and 1245(e)(2) of the NDAA and to redelegate these functions and authorities consistent with applicable law. The Secretary of State, in consultation with the Secretary of the Treasury, is hereby further authorized to exercise the functions and authorities conferred upon the President by section 1245(g)(1) of the NDAA to the extent necessary to exercise the other functions and authorities delegated in this section and may redelegate these functions and authorities consistent with applicable law.</span></div>
+<div class="seg" style="border-left:4px solid #1d4ed8;background:#dbeafe"><span class="seg-num" style="color:#1d4ed8">#13</span><span class="seg-label" style="color:#1d4ed8">section</span><span class="seg-text">Sec. 12. This order is not intended to, and does not, create any right or benefit, substantive or procedural, enforceable at law or in equity by any party against the United States, its departments, agencies, or entities, its officers, employees, or agents, or any other person.</span></div>
+<div class="seg" style="border-left:4px solid #1d4ed8;background:#dbeafe"><span class="seg-num" style="color:#1d4ed8">#14</span><span class="seg-label" style="color:#1d4ed8">section</span><span class="seg-text">Sec. 13. The measures taken pursuant to this order are in response to actions of the Government of Iran occurring after the conclusion of the 1981 Algiers Accords, and are intended solely as a response to those later actions.</span></div>
+<div class="seg" style="border-left:4px solid #1d4ed8;background:#dbeafe"><span class="seg-num" style="color:#1d4ed8">#15</span><span class="seg-label" style="color:#1d4ed8">section</span><span class="seg-text">Sec. 14. This order is effective at 12:01 a.m. eastern standard time on February 6, 2012.</span></div>
+<div class="seg seg-meta" style="border-left:3px solid #6b7280;background:#f3f4f6"><span class="seg-label" style="color:#6b7280">metadata</span><span class="seg-text">BARACK OBAMA</span></div>
+<div class="seg seg-meta" style="border-left:3px solid #6b7280;background:#f3f4f6"><span class="seg-label" style="color:#6b7280">metadata</span><span class="seg-text">The White House,</span></div>
+<div class="seg seg-meta" style="border-left:3px solid #6b7280;background:#f3f4f6"><span class="seg-label" style="color:#6b7280">metadata</span><span class="seg-text">February 5, 2012.</span></div>
+    </div>
+  </div>
+</details>
+
+
+<details class="doc-block" open>
+  <summary>
+    <span class="doc-prez">Gerald R. Ford</span>
+    <span class="doc-date">June 16, 1976</span>
+    <span class="doc-type">executive_order</span>
+    <span class="doc-stats">4 chunks &rarr; 1 segments</span>
+    <a href="https://www.presidency.ucsb.edu/documents/executive-order-11922-amending-executive-order-no-11077-january-22-1963-entitled" target="_blank" class="doc-link">original &rarr;</a>
+  </summary>
+  <div class="doc-body">
+    <div class="col">
+      <h3>Original text</h3>
+      <p class="orig-para">By virtue of the authority vested in me by the Migration and Refuges Assistance Act of 1962, as amended (Chapter 36 of Title 22 of the United States Code), and section 301 of title 3 of the United States Code, and as President of the United States of America, Section 1 of Executive Order No. 11077 of January 22. 1963, is hereby amended by adding thereto the following:</p>
+<p class="orig-para">&quot;(d) Funds appropriated or otherwise made available to the President for the United States Emergency Refugee and Migration Assistance Fund established by Section 2(c) of the act (22 U.S.C. 2601) shall be deemed to be allocated without further action of the President to the Secretary of State, and the Secretary may allocate or transfer, as appropriate, such funds to any agency, or part thereof, for obligation or expenditure consistent with the provisions of this order, the act, and other applicable law: Provided, That such funds may not be transferred, obligated, or expended until the President shall have made the determinations provided for in Section 2(c) (1) of the act, which determinations are reserved to the President, and the designations and determinations provided for in Section 2(b) (2) of the act.&quot;.</p>
+<p class="orig-para">GERALD R. FORD</p>
+<p class="orig-para">The White House,</p>
+<p class="orig-para">June 16, 1976.</p>
+    </div>
+    <div class="col">
+      <h3>Segments</h3>
+      <div class="seg" style="border-left:4px solid #065f46;background:#d1fae5"><span class="seg-num" style="color:#065f46">#1</span><span class="seg-label" style="color:#065f46">paragraph</span><span class="seg-text">By virtue of the authority vested in me by the Migration and Refuges Assistance Act of 1962, as amended (Chapter 36 of Title 22 of the United States Code), and section 301 of title 3 of the United States Code, and as President of the United States of America, Section 1 of Executive Order No. 11077 of January 22. 1963, is hereby amended by adding thereto the following: &quot;(d) Funds appropriated or otherwise made available to the President for the United States Emergency Refugee and Migration Assistance Fund established by Section 2(c) of the act (22 U.S.C. 2601) shall be deemed to be allocated without further action of the President to the Secretary of State, and the Secretary may allocate or transfer, as appropriate, such funds to any agency, or part thereof, for obligation or expenditure consistent with the provisions of this order, the act, and other applicable law: Provided, That such funds may not be transferred, obligated, or expended until the President shall have made the determinations provided for in Section 2(c) (1) of the act, which determinations are reserved to the President, and the designations and determinations provided for in Section 2(b) (2) of the act.&quot;.</span></div>
+<div class="seg seg-meta" style="border-left:3px solid #6b7280;background:#f3f4f6"><span class="seg-label" style="color:#6b7280">metadata</span><span class="seg-text">GERALD R. FORD</span></div>
+<div class="seg seg-meta" style="border-left:3px solid #6b7280;background:#f3f4f6"><span class="seg-label" style="color:#6b7280">metadata</span><span class="seg-text">The White House,</span></div>
+<div class="seg seg-meta" style="border-left:3px solid #6b7280;background:#f3f4f6"><span class="seg-label" style="color:#6b7280">metadata</span><span class="seg-text">June 16, 1976.</span></div>
+    </div>
+  </div>
+</details>
+
+
+<details class="doc-block" open>
+  <summary>
+    <span class="doc-prez">Lyndon B. Johnson</span>
+    <span class="doc-date">September 18, 1964</span>
+    <span class="doc-type">executive_order</span>
+    <span class="doc-stats">4 chunks &rarr; 1 segments</span>
+    <a href="https://www.presidency.ucsb.edu/documents/executive-order-11178-providing-for-the-transfer-lands-georgia-from-the-chattahoochee" target="_blank" class="doc-link">original &rarr;</a>
+  </summary>
+  <div class="doc-body">
+    <div class="col">
+      <h3>Original text</h3>
+      <p class="orig-para">WHEREAS it is in the public interest to transfer to the Oconee National Forest, Georgia, certain lands which were included within the Chattahoochee National Forest, Georgia, by Proclamation No. 2263 of December 7, 1937 (51 Stat. 404); and</p>
+<p class="orig-para">WHEREAS certain public lands acquired under authority of Title III of the Bankhead-Jones Farm Tenant Act, as amended (7 TJ.S.C. 1010-1012), are suitable for national forest purposes and can be most efficiently administered as part of the Hoosier National Forest, Indiana; and</p>
+<p class="orig-para">WHEREAS certain lands comprising a part of the McCurtain County Land Utilization Project, Oklahoma, were inadvertently omitted from the land description contained in Executive Order No. 10851 of November 27, 1959, which was designed to transfer all lands comprising the project to the Ouachita National Forest, Oklahoma; and</p>
+<p class="orig-para">WHEREAS it is in the public interest that those omitted lands be included in the Ouachita National Forest; and</p>
+<p class="orig-para">WHEREAS certain minor overlaps and voids exist between portions of the boundaries of the Noxubee National Wildlife Refuge, Mississippi, and the Tombigbee National Forest, Mississippi; and</p>
+<p class="orig-para">WHEREAS the lands in those voids are public lands acquired under authority of Title III of the Bankhead-Jones Farm Tenant Act, as amended (7 IT.S.C. 1010-1012), and are suitable for national forest purposes; and</p>
+<p class="orig-para">WHEREAS it is in the public interest that the lands in the voids be added to the Tombigbee National Forest and the lands in the overlaps be excluded therefrom so that the boundary of the Forest coincides with the boundary of the Noxubee National Wildlife Refuge:</p>
+<p class="orig-para">NOW, THEREFORE, by virtue of the authority vested in me by Section 24 of the Act of March 3, 1891 (26 Stat. 1103), as amended (16 U.S.C. 471), and the Act of June 4, 1897 (30 Stat. 34, 36; 16 U.S.C. 473), and upon the recommendation of the Secretary of Agriculture, it is ordered that—</p>
+<p class="orig-para">(1) The lands described in Proclamation No. 2263 of December 7, 1937, and shown by diagram attached thereto, are hereby excluded from the Chattahoochee National Forest, Georgia, and transferred to and made a part of the Oconee National Forest, Georgia.</p>
+<p class="orig-para">(2) Lands comprising the N 1/2 SW 1/4 of Section 31, T. 3 N., R. 1 W., 2nd Principal Meridian, are, subject to valid existing rights, hereby added to and made a part of the Hoosier National Forest, Indiana.</p>
+<p class="orig-para">(3) Lands comprising fractional sections 22, 27, and 34, T. 7 S., R. 27 E., Indian Meridian, are, subject to valid existing rights, hereby added to and made a part of the Ouachita National Forest, Oklahoma.</p>
+<p class="orig-para">(4) (A) The following-described lands are hereby excluded from the Tombigbee National Forest, Mississippi:</p>
+<p class="orig-para">Choctaw Meridian</p>
+<p class="orig-para">T. 16 N., R. 13 E.,</p>
+<p class="orig-para">Sec. 23, that part lying south and east of the Louisville-Starkville Road which is east of the Betheden Road;</p>
+<p class="orig-para">Sec. 26, those parts of the W% lying east of the Betheden Road.</p>
+<p class="orig-para">T. 16 N., R. 14 E.,</p>
+<p class="orig-para">Sec. 8, that part lying south and east of the Louisville-Starkville Road.</p>
+<p class="orig-para">(B) The following-described lands are, subject to valid existing rights, hereby added to and made a part of the Tombigbee National Forest:</p>
+<p class="orig-para">Choctaw Meridian</p>
+<p class="orig-para">T. 16 N., R. 13 E.,</p>
+<p class="orig-para">Sec. 26, that part of the Ey2 lying west of the Betheden Road;</p>
+<p class="orig-para">Sec. 35, that part lying west of the Betheden Road.</p>
+<p class="orig-para">(5) Proclamation No. 2263 of December 7, 1937, is hereby superseded.</p>
+<p class="orig-para">LYNDON B. JOHNSON</p>
+<p class="orig-para">The White House,</p>
+<p class="orig-para">September 18, 1964.</p>
+    </div>
+    <div class="col">
+      <h3>Segments</h3>
+      <div class="seg" style="border-left:4px solid #065f46;background:#d1fae5"><span class="seg-num" style="color:#065f46">#1</span><span class="seg-label" style="color:#065f46">paragraph</span><span class="seg-text">WHEREAS it is in the public interest to transfer to the Oconee National Forest, Georgia, certain lands which were included within the Chattahoochee National Forest, Georgia, by Proclamation No. 2263 of December 7, 1937 (51 Stat. 404); and WHEREAS certain public lands acquired under authority of Title III of the Bankhead-Jones Farm Tenant Act, as amended (7 TJ.S.C. 1010-1012), are suitable for national forest purposes and can be most efficiently administered as part of the Hoosier National Forest, Indiana; and WHEREAS certain lands comprising a part of the McCurtain County Land Utilization Project, Oklahoma, were inadvertently omitted from the land description contained in Executive Order No. 10851 of November 27, 1959, which was designed to transfer all lands comprising the project to the Ouachita National Forest, Oklahoma; and WHEREAS it is in the public interest that those omitted lands be included in the Ouachita National Forest; and WHEREAS certain minor overlaps and voids exist between portions of the boundaries of the Noxubee National Wildlife Refuge, Mississippi, and the Tombigbee National Forest, Mississippi; and WHEREAS the lands in those voids are public lands acquired under authority of Title III of the Bankhead-Jones Farm Tenant Act, as amended (7 IT.S.C. 1010-1012), and are suitable for national forest purposes; and WHEREAS it is in the public interest that the lands in the voids be added to the Tombigbee National Forest and the lands in the overlaps be excluded therefrom so that the boundary of the Forest coincides with the boundary of the Noxubee National Wildlife Refuge: NOW, THEREFORE, by virtue of the authority vested in me by Section 24 of the Act of March 3, 1891 (26 Stat. 1103), as amended (16 U.S.C. 471), and the Act of June 4, 1897 (30 Stat. 34, 36; 16 U.S.C. 473), and upon the recommendation of the Secretary of Agriculture, it is ordered that— (1) The lands described in Proclamation No. 2263 of December 7, 1937, and shown by diagram attached thereto, are hereby excluded from the Chattahoochee National Forest, Georgia, and transferred to and made a part of the Oconee National Forest, Georgia. (2) Lands comprising the N 1/2 SW 1/4 of Section 31, T. 3 N., R. 1 W., 2nd Principal Meridian, are, subject to valid existing rights, hereby added to and made a part of the Hoosier National Forest, Indiana. (3) Lands comprising fractional sections 22, 27, and 34, T. 7 S., R. 27 E., Indian Meridian, are, subject to valid existing rights, hereby added to and made a part of the Ouachita National Forest, Oklahoma. (4) (A) The following-described lands are hereby excluded from the Tombigbee National Forest, Mississippi: Choctaw Meridian T. 16 N., R. 13 E., Sec. 23, that part lying south and east of the Louisville-Starkville Road which is east of the Betheden Road; Sec. 26, those parts of the W% lying east of the Betheden Road. T. 16 N., R. 14 E., Sec. 8, that part lying south and east of the Louisville-Starkville Road. (B) The following-described lands are, subject to valid existing rights, hereby added to and made a part of the Tombigbee National Forest: Choctaw Meridian T. 16 N., R. 13 E., Sec. 26, that part of the Ey2 lying west of the Betheden Road; Sec. 35, that part lying west of the Betheden Road. (5) Proclamation No. 2263 of December 7, 1937, is hereby superseded.</span></div>
+<div class="seg seg-meta" style="border-left:3px solid #6b7280;background:#f3f4f6"><span class="seg-label" style="color:#6b7280">metadata</span><span class="seg-text">LYNDON B. JOHNSON</span></div>
+<div class="seg seg-meta" style="border-left:3px solid #6b7280;background:#f3f4f6"><span class="seg-label" style="color:#6b7280">metadata</span><span class="seg-text">The White House,</span></div>
+<div class="seg seg-meta" style="border-left:3px solid #6b7280;background:#f3f4f6"><span class="seg-label" style="color:#6b7280">metadata</span><span class="seg-text">September 18, 1964.</span></div>
+    </div>
+  </div>
+</details>
+
+
+<details class="doc-block" open>
+  <summary>
+    <span class="doc-prez">Lyndon B. Johnson</span>
+    <span class="doc-date">September 01, 1964</span>
+    <span class="doc-type">executive_order</span>
+    <span class="doc-stats">8 chunks &rarr; 5 segments</span>
+    <a href="https://www.presidency.ucsb.edu/documents/executive-order-11174-establishing-the-presidential-service-certificate-and-the" target="_blank" class="doc-link">original &rarr;</a>
+  </summary>
+  <div class="doc-body">
+    <div class="col">
+      <h3>Original text</h3>
+      <p class="orig-para">By virtue of the authority vested in me as President of the United States, and as Commander in Chief of the Armed Forces of the United States, it is ordered as follows:</p>
+<p class="orig-para">Prior order. The numbered Sections of Executive Order 10879 of June 1, 1960, are hereby amended to read as follows:</p>
+<p class="orig-para">&quot;1. Certificate established. The White House Service Certificate is hereby reestablished as the Presidential Service Certificate, to be awarded in the name of the President of the United States to members of the Army, Navy, Marine Corps, and the Air Force, who have been assigned to the White House for a period of at least one year subsequent to January 20, 1961.</p>
+<p class="orig-para">&quot;2. Award of the Certificate. The Presidential Service Certificate, the design of which accompanies and is hereby made a part of this Order, shall be awarded by the Secretary of the Army, the Secretary of the Navy, or the Secretary of the Air Force, to military personnel of their respective services.</p>
+<p class="orig-para">&quot;3. Badge established. The White House Service Badge is replaced by the Presidential Service Badge, the design of which accompanies and is hereby made a part of this Order. The Presidential Service Badge may be awarded to any member of the Armed Forces assigned to duty in the White House by the Secretary of the Army, the Secretary of the Navy, or the Secretary of the Air Force, upon recommendation of the Presidential Military, Naval, or Air Force Aide, as the case may be, to military personnel of their respective services. The Badge may be worn as a part of the uniform of those individuals upon award of the Presidential Service Certificate under such regulations as the Secretary of the Army, the Secretary of the Navy, and the Secretary of the Air Force, with the approval of the Secretary of Defense may severally prescribe.</p>
+<p class="orig-para">&quot;4. Only one Presidential Service Certificate will be awarded to an individual during an administration. Only one Presidential Service Badge will be awarded.</p>
+<p class="orig-para">&quot;5. The Presidential Service Certificate and the Presidential Service Badge established by this Order may be granted posthumously.&quot;</p>
+<p class="orig-para">LYNDON B. JOHNSON</p>
+<p class="orig-para">The White House,</p>
+<p class="orig-para">September 1, 1964.</p>
+    </div>
+    <div class="col">
+      <h3>Segments</h3>
+      <div class="seg" style="border-left:4px solid #065f46;background:#d1fae5"><span class="seg-num" style="color:#065f46">#1</span><span class="seg-label" style="color:#065f46">paragraph</span><span class="seg-text">By virtue of the authority vested in me as President of the United States, and as Commander in Chief of the Armed Forces of the United States, it is ordered as follows: Prior order. The numbered Sections of Executive Order 10879 of June 1, 1960, are hereby amended to read as follows: &quot;1. Certificate established. The White House Service Certificate is hereby reestablished as the Presidential Service Certificate, to be awarded in the name of the President of the United States to members of the Army, Navy, Marine Corps, and the Air Force, who have been assigned to the White House for a period of at least one year subsequent to January 20, 1961.</span></div>
+<div class="seg" style="border-left:4px solid #065f46;background:#d1fae5"><span class="seg-num" style="color:#065f46">#2</span><span class="seg-label" style="color:#065f46">paragraph</span><span class="seg-text">&quot;2. Award of the Certificate. The Presidential Service Certificate, the design of which accompanies and is hereby made a part of this Order, shall be awarded by the Secretary of the Army, the Secretary of the Navy, or the Secretary of the Air Force, to military personnel of their respective services.</span></div>
+<div class="seg" style="border-left:4px solid #065f46;background:#d1fae5"><span class="seg-num" style="color:#065f46">#3</span><span class="seg-label" style="color:#065f46">paragraph</span><span class="seg-text">&quot;3. Badge established. The White House Service Badge is replaced by the Presidential Service Badge, the design of which accompanies and is hereby made a part of this Order. The Presidential Service Badge may be awarded to any member of the Armed Forces assigned to duty in the White House by the Secretary of the Army, the Secretary of the Navy, or the Secretary of the Air Force, upon recommendation of the Presidential Military, Naval, or Air Force Aide, as the case may be, to military personnel of their respective services. The Badge may be worn as a part of the uniform of those individuals upon award of the Presidential Service Certificate under such regulations as the Secretary of the Army, the Secretary of the Navy, and the Secretary of the Air Force, with the approval of the Secretary of Defense may severally prescribe.</span></div>
+<div class="seg" style="border-left:4px solid #065f46;background:#d1fae5"><span class="seg-num" style="color:#065f46">#4</span><span class="seg-label" style="color:#065f46">paragraph</span><span class="seg-text">&quot;4. Only one Presidential Service Certificate will be awarded to an individual during an administration. Only one Presidential Service Badge will be awarded.</span></div>
+<div class="seg" style="border-left:4px solid #065f46;background:#d1fae5"><span class="seg-num" style="color:#065f46">#5</span><span class="seg-label" style="color:#065f46">paragraph</span><span class="seg-text">&quot;5. The Presidential Service Certificate and the Presidential Service Badge established by this Order may be granted posthumously.&quot;</span></div>
+<div class="seg seg-meta" style="border-left:3px solid #6b7280;background:#f3f4f6"><span class="seg-label" style="color:#6b7280">metadata</span><span class="seg-text">LYNDON B. JOHNSON</span></div>
+<div class="seg seg-meta" style="border-left:3px solid #6b7280;background:#f3f4f6"><span class="seg-label" style="color:#6b7280">metadata</span><span class="seg-text">The White House,</span></div>
+<div class="seg seg-meta" style="border-left:3px solid #6b7280;background:#f3f4f6"><span class="seg-label" style="color:#6b7280">metadata</span><span class="seg-text">September 1, 1964.</span></div>
+    </div>
+  </div>
+</details>
+
+
+<details class="doc-block" open>
+  <summary>
+    <span class="doc-prez">Dwight D. Eisenhower</span>
+    <span class="doc-date">December 02, 1960</span>
+    <span class="doc-type">executive_order</span>
+    <span class="doc-stats">7 chunks &rarr; 4 segments</span>
+    <a href="https://www.presidency.ucsb.edu/documents/executive-order-10897-authorizing-the-secretary-state-prescribe-rules-and-regulations" target="_blank" class="doc-link">original &rarr;</a>
+  </summary>
+  <div class="doc-body">
+    <div class="col">
+      <h3>Original text</h3>
+      <p class="orig-para">By virtue of the authority vested in me by section 303 of the Foreign Service Act of 1946 (60 Stat. 1002; 22 U.S.C. 843) and section 202 of the Revised Statutes (5 U.S.C. 156), it is ordered as follows:</p>
+<p class="orig-para">SECTION 1. The Secretary of State is hereby authorized to exercise the following-described authority of the President:</p>
+<p class="orig-para">(a) The authority vested in the President by section 801 (a) of the Foreign Service Act of 1946 (22 U.S.C. 1061 (a)) to prescribe rules and regulations for the maintenance of the Foreign Service Retirement and Disability System.</p>
+<p class="orig-para">(b) The authority vested in the President by section 803(c) (1) of the Foreign</p>
+<p class="orig-para">Service Act of 1946, as amended (22 U.S.C. 1063(c)(D), to prescribe regulations governing the participation of certain Foreign Service staff officers and employees in the Foreign Service Retirement and Disability System.</p>
+<p class="orig-para">(c) The authority vested in the President by section 881 (a) of the Foreign Service Act of 1946, as amended (22 U.S.C. 1116(a)), to prescribe regulations governing the deposit of voluntary contributions into the Foreign Service Retirement and Disability Fund.</p>
+<p class="orig-para">SEC. 2. Executive Order No. 9941 of March 26, 1948, is hereby superseded.</p>
+<p class="orig-para">SEC. 3. This order shall be effective as of October 16, 1960; and the Secretary of State, in his discretion and consistent with law, may make rules and regulations issued pursuant to section 1 hereof effective on or after that date.</p>
+<p class="orig-para">DWIGHT D. EISENHOWER</p>
+<p class="orig-para">THE WHITE HOUSE,</p>
+<p class="orig-para">December 2, 1960.</p>
+    </div>
+    <div class="col">
+      <h3>Segments</h3>
+      <div class="seg" style="border-left:4px solid #065f46;background:#d1fae5"><span class="seg-num" style="color:#065f46">#1</span><span class="seg-label" style="color:#065f46">paragraph</span><span class="seg-text">By virtue of the authority vested in me by section 303 of the Foreign Service Act of 1946 (60 Stat. 1002; 22 U.S.C. 843) and section 202 of the Revised Statutes (5 U.S.C. 156), it is ordered as follows:</span></div>
+<div class="seg" style="border-left:4px solid #1d4ed8;background:#dbeafe"><span class="seg-num" style="color:#1d4ed8">#2</span><span class="seg-label" style="color:#1d4ed8">section</span><span class="seg-text">SECTION 1. The Secretary of State is hereby authorized to exercise the following-described authority of the President: (a) The authority vested in the President by section 801 (a) of the Foreign Service Act of 1946 (22 U.S.C. 1061 (a)) to prescribe rules and regulations for the maintenance of the Foreign Service Retirement and Disability System. (b) The authority vested in the President by section 803(c) (1) of the Foreign Service Act of 1946, as amended (22 U.S.C. 1063(c)(D), to prescribe regulations governing the participation of certain Foreign Service staff officers and employees in the Foreign Service Retirement and Disability System. (c) The authority vested in the President by section 881 (a) of the Foreign Service Act of 1946, as amended (22 U.S.C. 1116(a)), to prescribe regulations governing the deposit of voluntary contributions into the Foreign Service Retirement and Disability Fund.</span></div>
+<div class="seg" style="border-left:4px solid #1d4ed8;background:#dbeafe"><span class="seg-num" style="color:#1d4ed8">#3</span><span class="seg-label" style="color:#1d4ed8">section</span><span class="seg-text">SEC. 2. Executive Order No. 9941 of March 26, 1948, is hereby superseded.</span></div>
+<div class="seg" style="border-left:4px solid #1d4ed8;background:#dbeafe"><span class="seg-num" style="color:#1d4ed8">#4</span><span class="seg-label" style="color:#1d4ed8">section</span><span class="seg-text">SEC. 3. This order shall be effective as of October 16, 1960; and the Secretary of State, in his discretion and consistent with law, may make rules and regulations issued pursuant to section 1 hereof effective on or after that date.</span></div>
+<div class="seg seg-meta" style="border-left:3px solid #6b7280;background:#f3f4f6"><span class="seg-label" style="color:#6b7280">metadata</span><span class="seg-text">DWIGHT D. EISENHOWER</span></div>
+<div class="seg seg-meta" style="border-left:3px solid #6b7280;background:#f3f4f6"><span class="seg-label" style="color:#6b7280">metadata</span><span class="seg-text">THE WHITE HOUSE,</span></div>
+<div class="seg seg-meta" style="border-left:3px solid #6b7280;background:#f3f4f6"><span class="seg-label" style="color:#6b7280">metadata</span><span class="seg-text">December 2, 1960.</span></div>
+    </div>
+  </div>
+</details>
+
+
+<details class="doc-block" open>
+  <summary>
+    <span class="doc-prez">Joseph R. Biden, Jr.</span>
+    <span class="doc-date">October 12, 2022</span>
+    <span class="doc-type">letter</span>
+    <span class="doc-stats">5 chunks &rarr; 2 segments</span>
+    <a href="https://www.presidency.ucsb.edu/documents/letter-congressional-leaders-continuation-the-national-emergency-with-respect-the-33" target="_blank" class="doc-link">original &rarr;</a>
+  </summary>
+  <div class="doc-body">
+    <div class="col">
+      <h3>Original text</h3>
+      <p class="orig-para">Dear Madam Speaker: (Dear Madam President:)</p>
+<p class="orig-para">Section 202(d) of the National Emergencies Act (50 U.S.C. 1622(d)) provides for the automatic termination of a national emergency unless, within 90 days prior to the anniversary date of its declaration, the President publishes in the Federal Register and transmits to the Congress a notice stating that the emergency is to continue in effect beyond the anniversary date. In accordance with this provision, I have sent to the Federal Register for publication the enclosed notice stating that the national emergency declared in Executive Order 13894 of October 14, 2019, with respect to the situation in and in relation to Syria, is to continue in effect beyond October 14, 2022.</p>
+<p class="orig-para">The situation in and in relation to Syria, and in particular the actions by the Government of Turkey to conduct a military offensive into northeast Syria, undermines the campaign to defeat the Islamic State of Iraq and Syria, or ISIS, endangers civilians, and further threatens to undermine the peace, security, and stability in the region, and continues to pose an unusual and extraordinary threat to the national security and foreign policy of the United States. Therefore, I have determined that it is necessary to continue the national emergency declared in Executive Order 13894 with respect to the situation in and in relation to Syria.</p>
+<p class="orig-para">Sincerely,</p>
+<p class="orig-para">JOSEPH R. BIDEN, JR.</p>
+    </div>
+    <div class="col">
+      <h3>Segments</h3>
+      <div class="seg seg-meta" style="border-left:3px solid #6b7280;background:#f3f4f6"><span class="seg-label" style="color:#6b7280">metadata</span><span class="seg-text">Dear Madam Speaker: (Dear Madam President:)</span></div>
+<div class="seg" style="border-left:4px solid #065f46;background:#d1fae5"><span class="seg-num" style="color:#065f46">#1</span><span class="seg-label" style="color:#065f46">paragraph</span><span class="seg-text">Section 202(d) of the National Emergencies Act (50 U.S.C. 1622(d)) provides for the automatic termination of a national emergency unless, within 90 days prior to the anniversary date of its declaration, the President publishes in the Federal Register and transmits to the Congress a notice stating that the emergency is to continue in effect beyond the anniversary date. In accordance with this provision, I have sent to the Federal Register for publication the enclosed notice stating that the national emergency declared in Executive Order 13894 of October 14, 2019, with respect to the situation in and in relation to Syria, is to continue in effect beyond October 14, 2022.</span></div>
+<div class="seg" style="border-left:4px solid #065f46;background:#d1fae5"><span class="seg-num" style="color:#065f46">#2</span><span class="seg-label" style="color:#065f46">paragraph</span><span class="seg-text">The situation in and in relation to Syria, and in particular the actions by the Government of Turkey to conduct a military offensive into northeast Syria, undermines the campaign to defeat the Islamic State of Iraq and Syria, or ISIS, endangers civilians, and further threatens to undermine the peace, security, and stability in the region, and continues to pose an unusual and extraordinary threat to the national security and foreign policy of the United States. Therefore, I have determined that it is necessary to continue the national emergency declared in Executive Order 13894 with respect to the situation in and in relation to Syria.</span></div>
+<div class="seg seg-meta" style="border-left:3px solid #6b7280;background:#f3f4f6"><span class="seg-label" style="color:#6b7280">metadata</span><span class="seg-text">Sincerely,</span></div>
+<div class="seg seg-meta" style="border-left:3px solid #6b7280;background:#f3f4f6"><span class="seg-label" style="color:#6b7280">metadata</span><span class="seg-text">JOSEPH R. BIDEN, JR.</span></div>
+    </div>
+  </div>
+</details>
+
+
+<details class="doc-block" open>
+  <summary>
+    <span class="doc-prez">Barack Obama</span>
+    <span class="doc-date">March 08, 2015</span>
+    <span class="doc-type">letter</span>
+    <span class="doc-stats">8 chunks &rarr; 5 segments</span>
+    <a href="https://www.presidency.ucsb.edu/documents/letter-congressional-leaders-blocking-property-and-suspending-entry-certain-persons" target="_blank" class="doc-link">original &rarr;</a>
+  </summary>
+  <div class="doc-body">
+    <div class="col">
+      <h3>Original text</h3>
+      <p class="orig-para">Dear Mr. Speaker: (Mr. President:)</p>
+<p class="orig-para">Pursuant to the International Emergency Economic Powers Act (50 U.S.C. 1701 et seq.) (IEEPA), I hereby report that I have issued an Executive Order (the &quot;order&quot;) declaring a national emergency with respect to the unusual and extraordinary threat to the national security and foreign policy of the United States posed by the situation in Venezuela. The order does not target the people of Venezuela, but rather is aimed at persons involved in or responsible for the erosion of human rights guarantees, persecution of political opponents, curtailment of press freedoms, use of violence and human rights violations and abuses in response to antigovernment protests, and arbitrary arrest and detention of antigovernment protestors, as well as the exacerbating presence of significant public corruption in that country. In addition to taking action under IEEPA, the order implements the Venezuela Defense of Human Rights and Civil Society Act of 2014 (Public Law 113-278) (the &quot;Act&quot;), which I signed on December 18, 2014, and delegates certain of its authorities.</p>
+<p class="orig-para">The order blocks the property and interests in property of persons listed in an Annex to the order and would block the property and interests in property of any person determined by the Secretary of the Treasury, in consultation with the Secretary of State:</p>
+<p class="orig-para">• to be responsible for or complicit in, or responsible for ordering, controlling, or otherwise directing, or to have participated in, directly or indirectly, any of the following in or in relation to Venezuela: o actions or policies that undermine democratic processes or institutions; o significant acts of violence or conduct that constitutes a serious abuse or violation of human rights, including against persons involved in antigovernment protests in Venezuela in or since February 2014; o actions that prohibit, limit, or penalize the exercise of freedom of expression or peaceful assembly; or o public corruption by senior officials within the Government of Venezuela; • to be a current or former leader of an entity that has, or whose members have, engaged in any activity described in the order or of an entity whose property and interests in property are blocked pursuant to the order; • to be a current or former official of the Government of Venezuela; • to have materially assisted, sponsored, or provided financial, material, or technological support for, or goods or services to or in support of: o a person whose property and interests in property are blocked pursuant to the order; or o an activity described in the order; or • to be owned or controlled by, or to have acted or purported to act for or on behalf of, directly or indirectly, any person whose property and interests in property are blocked pursuant to the order.</p>
+<p class="orig-para">In addition, the order suspends entry into the United States of any alien listed in the Annex or determined to meet one or more of the above criteria.</p>
+<p class="orig-para">I have delegated to the Secretary of the Treasury the authority, in consultation with the Secretary of State, to take such actions, including the promulgation of rules and regulations, and to employ all powers granted to the President by IEEPA and relevant provisions of the Act as may be necessary to carry out the purposes of the order, other than the provision suspending entry into the United States of certain aliens, and to carry out the related provisions of the Act. I have delegated to the Secretary of State the authority to take such actions, including the promulgation of rules and regulations, and to employ all powers granted to the President by IEEPA and relevant provisions of the Act as may be necessary to carry out the provision of the order and the Act suspending entry into the United States of certain aliens and the authority to issue waivers under the Act. All executive agencies are directed to take all appropriate measures within their authority to carry out the provisions of the order.</p>
+<p class="orig-para">I am enclosing a copy of the Executive Order I have issued.</p>
+<p class="orig-para">Sincerely,</p>
+<p class="orig-para">BARACK OBAMA</p>
+    </div>
+    <div class="col">
+      <h3>Segments</h3>
+      <div class="seg seg-meta" style="border-left:3px solid #6b7280;background:#f3f4f6"><span class="seg-label" style="color:#6b7280">metadata</span><span class="seg-text">Dear Mr. Speaker: (Mr. President:)</span></div>
+<div class="seg" style="border-left:4px solid #065f46;background:#d1fae5"><span class="seg-num" style="color:#065f46">#1</span><span class="seg-label" style="color:#065f46">paragraph</span><span class="seg-text">Pursuant to the International Emergency Economic Powers Act (50 U.S.C. 1701 et seq.) (IEEPA), I hereby report that I have issued an Executive Order (the &quot;order&quot;) declaring a national emergency with respect to the unusual and extraordinary threat to the national security and foreign policy of the United States posed by the situation in Venezuela. The order does not target the people of Venezuela, but rather is aimed at persons involved in or responsible for the erosion of human rights guarantees, persecution of political opponents, curtailment of press freedoms, use of violence and human rights violations and abuses in response to antigovernment protests, and arbitrary arrest and detention of antigovernment protestors, as well as the exacerbating presence of significant public corruption in that country. In addition to taking action under IEEPA, the order implements the Venezuela Defense of Human Rights and Civil Society Act of 2014 (Public Law 113-278) (the &quot;Act&quot;), which I signed on December 18, 2014, and delegates certain of its authorities.</span></div>
+<div class="seg" style="border-left:4px solid #065f46;background:#d1fae5"><span class="seg-num" style="color:#065f46">#2</span><span class="seg-label" style="color:#065f46">paragraph</span><span class="seg-text">The order blocks the property and interests in property of persons listed in an Annex to the order and would block the property and interests in property of any person determined by the Secretary of the Treasury, in consultation with the Secretary of State: • to be responsible for or complicit in, or responsible for ordering, controlling, or otherwise directing, or to have participated in, directly or indirectly, any of the following in or in relation to Venezuela: o actions or policies that undermine democratic processes or institutions; o significant acts of violence or conduct that constitutes a serious abuse or violation of human rights, including against persons involved in antigovernment protests in Venezuela in or since February 2014; o actions that prohibit, limit, or penalize the exercise of freedom of expression or peaceful assembly; or o public corruption by senior officials within the Government of Venezuela; • to be a current or former leader of an entity that has, or whose members have, engaged in any activity described in the order or of an entity whose property and interests in property are blocked pursuant to the order; • to be a current or former official of the Government of Venezuela; • to have materially assisted, sponsored, or provided financial, material, or technological support for, or goods or services to or in support of: o a person whose property and interests in property are blocked pursuant to the order; or o an activity described in the order; or • to be owned or controlled by, or to have acted or purported to act for or on behalf of, directly or indirectly, any person whose property and interests in property are blocked pursuant to the order.</span></div>
+<div class="seg" style="border-left:4px solid #065f46;background:#d1fae5"><span class="seg-num" style="color:#065f46">#3</span><span class="seg-label" style="color:#065f46">paragraph</span><span class="seg-text">In addition, the order suspends entry into the United States of any alien listed in the Annex or determined to meet one or more of the above criteria.</span></div>
+<div class="seg" style="border-left:4px solid #065f46;background:#d1fae5"><span class="seg-num" style="color:#065f46">#4</span><span class="seg-label" style="color:#065f46">paragraph</span><span class="seg-text">I have delegated to the Secretary of the Treasury the authority, in consultation with the Secretary of State, to take such actions, including the promulgation of rules and regulations, and to employ all powers granted to the President by IEEPA and relevant provisions of the Act as may be necessary to carry out the purposes of the order, other than the provision suspending entry into the United States of certain aliens, and to carry out the related provisions of the Act. I have delegated to the Secretary of State the authority to take such actions, including the promulgation of rules and regulations, and to employ all powers granted to the President by IEEPA and relevant provisions of the Act as may be necessary to carry out the provision of the order and the Act suspending entry into the United States of certain aliens and the authority to issue waivers under the Act. All executive agencies are directed to take all appropriate measures within their authority to carry out the provisions of the order.</span></div>
+<div class="seg" style="border-left:4px solid #065f46;background:#d1fae5"><span class="seg-num" style="color:#065f46">#5</span><span class="seg-label" style="color:#065f46">paragraph</span><span class="seg-text">I am enclosing a copy of the Executive Order I have issued.</span></div>
+<div class="seg seg-meta" style="border-left:3px solid #6b7280;background:#f3f4f6"><span class="seg-label" style="color:#6b7280">metadata</span><span class="seg-text">Sincerely,</span></div>
+<div class="seg seg-meta" style="border-left:3px solid #6b7280;background:#f3f4f6"><span class="seg-label" style="color:#6b7280">metadata</span><span class="seg-text">BARACK OBAMA</span></div>
+    </div>
+  </div>
+</details>
+
+
+<details class="doc-block" open>
+  <summary>
+    <span class="doc-prez">George W. Bush</span>
+    <span class="doc-date">April 17, 2001</span>
+    <span class="doc-type">letter</span>
+    <span class="doc-stats">5 chunks &rarr; 2 segments</span>
+    <a href="https://www.presidency.ucsb.edu/documents/letter-congressional-leaders-transmitting-report-cyprus-35" target="_blank" class="doc-link">original &rarr;</a>
+  </summary>
+  <div class="doc-body">
+    <div class="col">
+      <h3>Original text</h3>
+      <p class="orig-para">Dear Mr. Speaker: (Dear Mr. Chairman:)</p>
+<p class="orig-para">In accordance with Public Law 95-384 (22 U.S.C. 2373(c)), I submit to you this report on progress toward a negotiated settlement of the Cyprus question covering the period February 1 through March 31, 2001. The previous submission covered events during December 2000 and January 2001.</p>
+<p class="orig-para">The United Nations continued in its efforts to sustain the proximity talks that started in December 1999. The United States remains committed to the United Nations effort to find a just and lasting settlement to the Cyprus problem.</p>
+<p class="orig-para">Sincerely,</p>
+<p class="orig-para">GEORGE W. BUSH</p>
+    </div>
+    <div class="col">
+      <h3>Segments</h3>
+      <div class="seg seg-meta" style="border-left:3px solid #6b7280;background:#f3f4f6"><span class="seg-label" style="color:#6b7280">metadata</span><span class="seg-text">Dear Mr. Speaker: (Dear Mr. Chairman:)</span></div>
+<div class="seg" style="border-left:4px solid #065f46;background:#d1fae5"><span class="seg-num" style="color:#065f46">#1</span><span class="seg-label" style="color:#065f46">paragraph</span><span class="seg-text">In accordance with Public Law 95-384 (22 U.S.C. 2373(c)), I submit to you this report on progress toward a negotiated settlement of the Cyprus question covering the period February 1 through March 31, 2001. The previous submission covered events during December 2000 and January 2001.</span></div>
+<div class="seg" style="border-left:4px solid #065f46;background:#d1fae5"><span class="seg-num" style="color:#065f46">#2</span><span class="seg-label" style="color:#065f46">paragraph</span><span class="seg-text">The United Nations continued in its efforts to sustain the proximity talks that started in December 1999. The United States remains committed to the United Nations effort to find a just and lasting settlement to the Cyprus problem.</span></div>
+<div class="seg seg-meta" style="border-left:3px solid #6b7280;background:#f3f4f6"><span class="seg-label" style="color:#6b7280">metadata</span><span class="seg-text">Sincerely,</span></div>
+<div class="seg seg-meta" style="border-left:3px solid #6b7280;background:#f3f4f6"><span class="seg-label" style="color:#6b7280">metadata</span><span class="seg-text">GEORGE W. BUSH</span></div>
+    </div>
+  </div>
+</details>
+
+
+<details class="doc-block" open>
+  <summary>
+    <span class="doc-prez">William J. Clinton</span>
+    <span class="doc-date">January 14, 2000</span>
+    <span class="doc-type">letter</span>
+    <span class="doc-stats">4 chunks &rarr; 1 segments</span>
+    <a href="https://www.presidency.ucsb.edu/documents/letter-congressional-leaders-action-title-iii-the-cuban-liberty-and-democratic-1" target="_blank" class="doc-link">original &rarr;</a>
+  </summary>
+  <div class="doc-body">
+    <div class="col">
+      <h3>Original text</h3>
+      <p class="orig-para">Dear __________:</p>
+<p class="orig-para">Pursuant to section 306(c)(2) of the Cuban Liberty and Democratic Solidarity (LIBERTAD) Act of 1996 (Public Law 104-114), (the &quot;Act&quot;), I hereby determine and report to the Congress that suspension for 6 months beyond February 1, 2000, of the right to bring an action under title III of the Act is necessary to the national interests of the United States and will expedite a transition to democracy in Cuba.</p>
+<p class="orig-para">Sincerely,</p>
+<p class="orig-para">WILLIAM J. CLINTON</p>
+    </div>
+    <div class="col">
+      <h3>Segments</h3>
+      <div class="seg seg-meta" style="border-left:3px solid #6b7280;background:#f3f4f6"><span class="seg-label" style="color:#6b7280">metadata</span><span class="seg-text">Dear __________:</span></div>
+<div class="seg" style="border-left:4px solid #065f46;background:#d1fae5"><span class="seg-num" style="color:#065f46">#1</span><span class="seg-label" style="color:#065f46">paragraph</span><span class="seg-text">Pursuant to section 306(c)(2) of the Cuban Liberty and Democratic Solidarity (LIBERTAD) Act of 1996 (Public Law 104-114), (the &quot;Act&quot;), I hereby determine and report to the Congress that suspension for 6 months beyond February 1, 2000, of the right to bring an action under title III of the Act is necessary to the national interests of the United States and will expedite a transition to democracy in Cuba.</span></div>
+<div class="seg seg-meta" style="border-left:3px solid #6b7280;background:#f3f4f6"><span class="seg-label" style="color:#6b7280">metadata</span><span class="seg-text">Sincerely,</span></div>
+<div class="seg seg-meta" style="border-left:3px solid #6b7280;background:#f3f4f6"><span class="seg-label" style="color:#6b7280">metadata</span><span class="seg-text">WILLIAM J. CLINTON</span></div>
+    </div>
+  </div>
+</details>
+
+
+<details class="doc-block" open>
+  <summary>
+    <span class="doc-prez">Lyndon B. Johnson</span>
+    <span class="doc-date">January 15, 1966</span>
+    <span class="doc-type">letter</span>
+    <span class="doc-stats">9 chunks &rarr; 4 segments</span>
+    <a href="https://www.presidency.ucsb.edu/documents/letter-the-postmaster-general-approving-recommendations-for-improving-postal-services" target="_blank" class="doc-link">original &rarr;</a>
+  </summary>
+  <div class="doc-body">
+    <div class="col">
+      <h3>Original text</h3>
+      <p class="orig-para">[Released January 15, 1966. Dated January 14, 1966]</p>
+<p class="orig-para">Dear Mr. Postmaster General:</p>
+<p class="orig-para">I approve your recommendations to improve postal service by increasing post office window hours and by restoring six-day parcel post delivery service.</p>
+<p class="orig-para">I have said in the past, and I repeat now, that I want you to provide this country with the finest mail service it has ever known, while managing the Post Office Department efficiently and prudently. I want you to explore all the techniques available to modernize our postal service and make certain that they are being used to provide the American people with the best postal system in the world at the lowest possible cost to the taxpayer.</p>
+<p class="orig-para">A good, stable, dependable postal system is vital to the well-being of the nation&#x27;s economy.</p>
+<p class="orig-para">I therefore intend to seek the necessary funds from the Congress to restore the postal services that were curtailed in 1964.</p>
+<p class="orig-para">Sincerely,</p>
+<p class="orig-para">LYNDON B. JOHNSON</p>
+<p class="orig-para">[The Honorable, The Postmaster General, Washington, D.C. 20260]</p>
+    </div>
+    <div class="col">
+      <h3>Segments</h3>
+      <div class="seg seg-meta" style="border-left:3px solid #6b7280;background:#f3f4f6"><span class="seg-label" style="color:#6b7280">metadata</span><span class="seg-text">[Released January 15, 1966. Dated January 14, 1966]</span></div>
+<div class="seg seg-meta" style="border-left:3px solid #6b7280;background:#f3f4f6"><span class="seg-label" style="color:#6b7280">metadata</span><span class="seg-text">Dear Mr. Postmaster General:</span></div>
+<div class="seg" style="border-left:4px solid #065f46;background:#d1fae5"><span class="seg-num" style="color:#065f46">#1</span><span class="seg-label" style="color:#065f46">paragraph</span><span class="seg-text">I approve your recommendations to improve postal service by increasing post office window hours and by restoring six-day parcel post delivery service.</span></div>
+<div class="seg" style="border-left:4px solid #065f46;background:#d1fae5"><span class="seg-num" style="color:#065f46">#2</span><span class="seg-label" style="color:#065f46">paragraph</span><span class="seg-text">I have said in the past, and I repeat now, that I want you to provide this country with the finest mail service it has ever known, while managing the Post Office Department efficiently and prudently. I want you to explore all the techniques available to modernize our postal service and make certain that they are being used to provide the American people with the best postal system in the world at the lowest possible cost to the taxpayer.</span></div>
+<div class="seg" style="border-left:4px solid #065f46;background:#d1fae5"><span class="seg-num" style="color:#065f46">#3</span><span class="seg-label" style="color:#065f46">paragraph</span><span class="seg-text">A good, stable, dependable postal system is vital to the well-being of the nation&#x27;s economy.</span></div>
+<div class="seg" style="border-left:4px solid #065f46;background:#d1fae5"><span class="seg-num" style="color:#065f46">#4</span><span class="seg-label" style="color:#065f46">paragraph</span><span class="seg-text">I therefore intend to seek the necessary funds from the Congress to restore the postal services that were curtailed in 1964.</span></div>
+<div class="seg seg-meta" style="border-left:3px solid #6b7280;background:#f3f4f6"><span class="seg-label" style="color:#6b7280">metadata</span><span class="seg-text">Sincerely,</span></div>
+<div class="seg seg-meta" style="border-left:3px solid #6b7280;background:#f3f4f6"><span class="seg-label" style="color:#6b7280">metadata</span><span class="seg-text">LYNDON B. JOHNSON</span></div>
+<div class="seg seg-meta" style="border-left:3px solid #6b7280;background:#f3f4f6"><span class="seg-label" style="color:#6b7280">metadata</span><span class="seg-text">[The Honorable, The Postmaster General, Washington, D.C. 20260]</span></div>
+    </div>
+  </div>
+</details>
+
+
+<details class="doc-block" open>
+  <summary>
+    <span class="doc-prez">George W. Bush</span>
+    <span class="doc-date">December 15, 2004</span>
+    <span class="doc-type">memorandum</span>
+    <span class="doc-stats">7 chunks &rarr; 3 segments</span>
+    <a href="https://www.presidency.ucsb.edu/documents/memorandum-suspension-limitations-under-the-jerusalem-embassy-act-4" target="_blank" class="doc-link">original &rarr;</a>
+  </summary>
+  <div class="doc-body">
+    <div class="col">
+      <h3>Original text</h3>
+      <p class="orig-para">Presidential Determination No. 2005-14</p>
+<p class="orig-para">Memorandum for the Secretary of State</p>
+<p class="orig-para">Subject: Suspension of Limitations Under the Jerusalem Embassy Act</p>
+<p class="orig-para">Pursuant to the authority vested in me as President by the Constitution and the laws of the United States, including section 7(a) of the Jerusalem Embassy Act of 1995 (Public Law 104-45) (the &quot;Act&quot;), I hereby determine that it is necessary to protect the national security interests of the United States to suspend for a period of 6 months the limitations set forth in sections 3(b) and 7(b) of the Act. My Administration remains committed to beginning the process of moving our embassy to Jerusalem.</p>
+<p class="orig-para">You are hereby authorized and directed to transmit this determination to the Congress, accompanied by a report in accordance with section 7(a) of the Act, and to publish the determination in the Federal Register.</p>
+<p class="orig-para">This suspension shall take effect after transmission of this determination and report to the Congress.</p>
+<p class="orig-para">George W. Bush</p>
+    </div>
+    <div class="col">
+      <h3>Segments</h3>
+      <div class="seg seg-meta" style="border-left:3px solid #6b7280;background:#f3f4f6"><span class="seg-label" style="color:#6b7280">metadata</span><span class="seg-text">Presidential Determination No. 2005-14</span></div>
+<div class="seg seg-meta" style="border-left:3px solid #6b7280;background:#f3f4f6"><span class="seg-label" style="color:#6b7280">metadata</span><span class="seg-text">Memorandum for the Secretary of State</span></div>
+<div class="seg seg-meta" style="border-left:3px solid #6b7280;background:#f3f4f6"><span class="seg-label" style="color:#6b7280">metadata</span><span class="seg-text">Subject: Suspension of Limitations Under the Jerusalem Embassy Act</span></div>
+<div class="seg" style="border-left:4px solid #065f46;background:#d1fae5"><span class="seg-num" style="color:#065f46">#1</span><span class="seg-label" style="color:#065f46">paragraph</span><span class="seg-text">Pursuant to the authority vested in me as President by the Constitution and the laws of the United States, including section 7(a) of the Jerusalem Embassy Act of 1995 (Public Law 104-45) (the &quot;Act&quot;), I hereby determine that it is necessary to protect the national security interests of the United States to suspend for a period of 6 months the limitations set forth in sections 3(b) and 7(b) of the Act. My Administration remains committed to beginning the process of moving our embassy to Jerusalem.</span></div>
+<div class="seg" style="border-left:4px solid #92400e;background:#fef3c7"><span class="seg-num" style="color:#92400e">#2</span><span class="seg-label" style="color:#92400e">boilerplate</span><span class="seg-text">You are hereby authorized and directed to transmit this determination to the Congress, accompanied by a report in accordance with section 7(a) of the Act, and to publish the determination in the Federal Register.</span></div>
+<div class="seg" style="border-left:4px solid #92400e;background:#fef3c7"><span class="seg-num" style="color:#92400e">#3</span><span class="seg-label" style="color:#92400e">boilerplate</span><span class="seg-text">This suspension shall take effect after transmission of this determination and report to the Congress.</span></div>
+<div class="seg seg-meta" style="border-left:3px solid #6b7280;background:#f3f4f6"><span class="seg-label" style="color:#6b7280">metadata</span><span class="seg-text">George W. Bush</span></div>
+    </div>
+  </div>
+</details>
+
+
+<details class="doc-block" open>
+  <summary>
+    <span class="doc-prez">George W. Bush</span>
+    <span class="doc-date">April 14, 2004</span>
+    <span class="doc-type">memorandum</span>
+    <span class="doc-stats">6 chunks &rarr; 2 segments</span>
+    <a href="https://www.presidency.ucsb.edu/documents/memorandum-waiver-and-certification-statutory-provisions-regarding-the-palestine-5" target="_blank" class="doc-link">original &rarr;</a>
+  </summary>
+  <div class="doc-body">
+    <div class="col">
+      <h3>Original text</h3>
+      <p class="orig-para">Presidential Determination No. 2004-28</p>
+<p class="orig-para">Memorandum for the Secretary of State</p>
+<p class="orig-para">Subject: Waiver and Certification of Statutory Provisions Regarding the Palestine Liberation Organization</p>
+<p class="orig-para">Pursuant to the authority vested in me under section 534(d) of the Foreign Operations, Export Financing, and Related Programs Appropriations Act, 2004, Public Law 108-199, I hereby determine and certify that it is important to the national security interests of the United States to waive the provisions of section 1003 of the Anti- Terrorism Act of 1987, Public Law 100-204.</p>
+<p class="orig-para">This waiver shall be effective for a period of 6 months from the date hereof. You are hereby authorized and directed to transmit this determination to the Congress and to publish it in the Federal Register.</p>
+<p class="orig-para">George W. Bush</p>
+    </div>
+    <div class="col">
+      <h3>Segments</h3>
+      <div class="seg seg-meta" style="border-left:3px solid #6b7280;background:#f3f4f6"><span class="seg-label" style="color:#6b7280">metadata</span><span class="seg-text">Presidential Determination No. 2004-28</span></div>
+<div class="seg seg-meta" style="border-left:3px solid #6b7280;background:#f3f4f6"><span class="seg-label" style="color:#6b7280">metadata</span><span class="seg-text">Memorandum for the Secretary of State</span></div>
+<div class="seg seg-meta" style="border-left:3px solid #6b7280;background:#f3f4f6"><span class="seg-label" style="color:#6b7280">metadata</span><span class="seg-text">Subject: Waiver and Certification of Statutory Provisions Regarding the Palestine Liberation Organization</span></div>
+<div class="seg" style="border-left:4px solid #065f46;background:#d1fae5"><span class="seg-num" style="color:#065f46">#1</span><span class="seg-label" style="color:#065f46">paragraph</span><span class="seg-text">Pursuant to the authority vested in me under section 534(d) of the Foreign Operations, Export Financing, and Related Programs Appropriations Act, 2004, Public Law 108-199, I hereby determine and certify that it is important to the national security interests of the United States to waive the provisions of section 1003 of the Anti- Terrorism Act of 1987, Public Law 100-204.</span></div>
+<div class="seg" style="border-left:4px solid #92400e;background:#fef3c7"><span class="seg-num" style="color:#92400e">#2</span><span class="seg-label" style="color:#92400e">boilerplate</span><span class="seg-text">This waiver shall be effective for a period of 6 months from the date hereof. You are hereby authorized and directed to transmit this determination to the Congress and to publish it in the Federal Register.</span></div>
+<div class="seg seg-meta" style="border-left:3px solid #6b7280;background:#f3f4f6"><span class="seg-label" style="color:#6b7280">metadata</span><span class="seg-text">George W. Bush</span></div>
+    </div>
+  </div>
+</details>
+
+
+<details class="doc-block" open>
+  <summary>
+    <span class="doc-prez">William J. Clinton</span>
+    <span class="doc-date">March 31, 2000</span>
+    <span class="doc-type">memorandum</span>
+    <span class="doc-stats">7 chunks &rarr; 4 segments</span>
+    <a href="https://www.presidency.ucsb.edu/documents/memorandum-census-2000" target="_blank" class="doc-link">original &rarr;</a>
+  </summary>
+  <div class="doc-body">
+    <div class="col">
+      <h3>Original text</h3>
+      <p class="orig-para">Memorandum for All Federal Government Employees</p>
+<p class="orig-para">Subject: Census 2000</p>
+<p class="orig-para">We as a Nation are participating now in the largest peacetime mobilization in our history. I refer to Census 2000, the twenty-first census we have conducted in this country.</p>
+<p class="orig-para">The decennial census is mandated by the U.S. Constitution, and responding to it is a civic responsibility for everyone living in this country. It is a truly universal activity that we can participate in, and full participation is important to the success and progress of every community.</p>
+<p class="orig-para">The data collected will determine how more than $185 billion annually in public funds are shared fairly among the Nation&#x27;s communities. The data provide the basis for planning and implementing thousands of laws and programs at every level of Government. The census numbers also are used to decide now many seats each State is allocated in the House of Representatives and to equitably draw voting districts at the State and local level.</p>
+<p class="orig-para">Census 2000 is an event that offers us an opportunity to engage the spirit of civic participation that is so important to our representative democracy. The census is important to you and your family. It is important to your community. It is important to our Nation. It is in this spirit that I urge all Federal employees to complete their census forms.</p>
+<p class="orig-para">WILLIAM J. CLINTON</p>
+    </div>
+    <div class="col">
+      <h3>Segments</h3>
+      <div class="seg seg-meta" style="border-left:3px solid #6b7280;background:#f3f4f6"><span class="seg-label" style="color:#6b7280">metadata</span><span class="seg-text">Memorandum for All Federal Government Employees</span></div>
+<div class="seg seg-meta" style="border-left:3px solid #6b7280;background:#f3f4f6"><span class="seg-label" style="color:#6b7280">metadata</span><span class="seg-text">Subject: Census 2000</span></div>
+<div class="seg" style="border-left:4px solid #065f46;background:#d1fae5"><span class="seg-num" style="color:#065f46">#1</span><span class="seg-label" style="color:#065f46">paragraph</span><span class="seg-text">We as a Nation are participating now in the largest peacetime mobilization in our history. I refer to Census 2000, the twenty-first census we have conducted in this country.</span></div>
+<div class="seg" style="border-left:4px solid #065f46;background:#d1fae5"><span class="seg-num" style="color:#065f46">#2</span><span class="seg-label" style="color:#065f46">paragraph</span><span class="seg-text">The decennial census is mandated by the U.S. Constitution, and responding to it is a civic responsibility for everyone living in this country. It is a truly universal activity that we can participate in, and full participation is important to the success and progress of every community.</span></div>
+<div class="seg" style="border-left:4px solid #065f46;background:#d1fae5"><span class="seg-num" style="color:#065f46">#3</span><span class="seg-label" style="color:#065f46">paragraph</span><span class="seg-text">The data collected will determine how more than $185 billion annually in public funds are shared fairly among the Nation&#x27;s communities. The data provide the basis for planning and implementing thousands of laws and programs at every level of Government. The census numbers also are used to decide now many seats each State is allocated in the House of Representatives and to equitably draw voting districts at the State and local level.</span></div>
+<div class="seg" style="border-left:4px solid #065f46;background:#d1fae5"><span class="seg-num" style="color:#065f46">#4</span><span class="seg-label" style="color:#065f46">paragraph</span><span class="seg-text">Census 2000 is an event that offers us an opportunity to engage the spirit of civic participation that is so important to our representative democracy. The census is important to you and your family. It is important to your community. It is important to our Nation. It is in this spirit that I urge all Federal employees to complete their census forms.</span></div>
+<div class="seg seg-meta" style="border-left:3px solid #6b7280;background:#f3f4f6"><span class="seg-label" style="color:#6b7280">metadata</span><span class="seg-text">WILLIAM J. CLINTON</span></div>
+    </div>
+  </div>
+</details>
+
+
+<details class="doc-block" open>
+  <summary>
+    <span class="doc-prez">William J. Clinton</span>
+    <span class="doc-date">August 05, 1997</span>
+    <span class="doc-type">memorandum</span>
+    <span class="doc-stats">7 chunks &rarr; 2 segments</span>
+    <a href="https://www.presidency.ucsb.edu/documents/memorandum-delegation-authority-under-section-803a-the-intelligence-authorization-act-for" target="_blank" class="doc-link">original &rarr;</a>
+  </summary>
+  <div class="doc-body">
+    <div class="col">
+      <h3>Original text</h3>
+      <p class="orig-para">Memorandum for Director of Central Intelligence</p>
+<p class="orig-para">Subject: Delegation of Authority Under Section 803(a) of the Intelligence Authorization Act for Fiscal Year 1997</p>
+<p class="orig-para">By virtue of the authority vested in me by the Constitution and laws of the United States of America, including section 301 of title 3 of the United States Code, I hereby delegate the functions conferred upon the President by section 803(a) of the Intelligence Authorization Act for Fiscal Year 1997, 50 U.S.C. section 404d, to the Director of Central Intelligence.</p>
+<p class="orig-para">You are authorized and directed to publish this memorandum in the Federal Register.</p>
+<p class="orig-para">WILLIAM J. CLINTON</p>
+<p class="orig-para">THE WHITE HOUSE,</p>
+<p class="orig-para">Washington, August 5, 1997.</p>
+    </div>
+    <div class="col">
+      <h3>Segments</h3>
+      <div class="seg seg-meta" style="border-left:3px solid #6b7280;background:#f3f4f6"><span class="seg-label" style="color:#6b7280">metadata</span><span class="seg-text">Memorandum for Director of Central Intelligence</span></div>
+<div class="seg seg-meta" style="border-left:3px solid #6b7280;background:#f3f4f6"><span class="seg-label" style="color:#6b7280">metadata</span><span class="seg-text">Subject: Delegation of Authority Under Section 803(a) of the Intelligence Authorization Act for Fiscal Year 1997</span></div>
+<div class="seg" style="border-left:4px solid #065f46;background:#d1fae5"><span class="seg-num" style="color:#065f46">#1</span><span class="seg-label" style="color:#065f46">paragraph</span><span class="seg-text">By virtue of the authority vested in me by the Constitution and laws of the United States of America, including section 301 of title 3 of the United States Code, I hereby delegate the functions conferred upon the President by section 803(a) of the Intelligence Authorization Act for Fiscal Year 1997, 50 U.S.C. section 404d, to the Director of Central Intelligence.</span></div>
+<div class="seg" style="border-left:4px solid #92400e;background:#fef3c7"><span class="seg-num" style="color:#92400e">#2</span><span class="seg-label" style="color:#92400e">boilerplate</span><span class="seg-text">You are authorized and directed to publish this memorandum in the Federal Register.</span></div>
+<div class="seg seg-meta" style="border-left:3px solid #6b7280;background:#f3f4f6"><span class="seg-label" style="color:#6b7280">metadata</span><span class="seg-text">WILLIAM J. CLINTON</span></div>
+<div class="seg seg-meta" style="border-left:3px solid #6b7280;background:#f3f4f6"><span class="seg-label" style="color:#6b7280">metadata</span><span class="seg-text">THE WHITE HOUSE,</span></div>
+<div class="seg seg-meta" style="border-left:3px solid #6b7280;background:#f3f4f6"><span class="seg-label" style="color:#6b7280">metadata</span><span class="seg-text">Washington, August 5, 1997.</span></div>
+    </div>
+  </div>
+</details>
+
+
+<details class="doc-block" open>
+  <summary>
+    <span class="doc-prez">George Bush</span>
+    <span class="doc-date">December 17, 1991</span>
+    <span class="doc-type">memorandum</span>
+    <span class="doc-stats">6 chunks &rarr; 2 segments</span>
+    <a href="https://www.presidency.ucsb.edu/documents/memorandum-migration-and-refugee-assistance-for-yugoslav-refugees" target="_blank" class="doc-link">original &rarr;</a>
+  </summary>
+  <div class="doc-body">
+    <div class="col">
+      <h3>Original text</h3>
+      <p class="orig-para">Presidential Determination No. 92-9</p>
+<p class="orig-para">Memorandum for the Secretary of State</p>
+<p class="orig-para">Subject: Migration and Refugee Assistance for Yugoslav Refugees</p>
+<p class="orig-para">Pursuant to section 2(c)(1) of the Migration and Refugee Assistance Act of 1962, as amended, 22 U.S.C. 2601(c)(1), I determine that it is important to the national interest that up to $7,000,000 be made available from the U.S. Emergency Refugee and Migration Assistance Fund (the Fund) to meet unexpected urgent needs of refugees and other displaced persons resulting from the civil conflict in Yugoslavia. These funds may be used to provide U.S. contributions to the United Nations High Commissioner for Refugees, the International Committee of the Red Cross, other international organizations, governments and governmental organizations, and private voluntary organizations, as required.</p>
+<p class="orig-para">You are authorized and directed to inform the appropriate committees of the Congress of this determination and the obligation of funds under this authority and to publish this memorandum in the Federal Register.</p>
+<p class="orig-para">George Bush</p>
+    </div>
+    <div class="col">
+      <h3>Segments</h3>
+      <div class="seg seg-meta" style="border-left:3px solid #6b7280;background:#f3f4f6"><span class="seg-label" style="color:#6b7280">metadata</span><span class="seg-text">Presidential Determination No. 92-9</span></div>
+<div class="seg seg-meta" style="border-left:3px solid #6b7280;background:#f3f4f6"><span class="seg-label" style="color:#6b7280">metadata</span><span class="seg-text">Memorandum for the Secretary of State</span></div>
+<div class="seg seg-meta" style="border-left:3px solid #6b7280;background:#f3f4f6"><span class="seg-label" style="color:#6b7280">metadata</span><span class="seg-text">Subject: Migration and Refugee Assistance for Yugoslav Refugees</span></div>
+<div class="seg" style="border-left:4px solid #065f46;background:#d1fae5"><span class="seg-num" style="color:#065f46">#1</span><span class="seg-label" style="color:#065f46">paragraph</span><span class="seg-text">Pursuant to section 2(c)(1) of the Migration and Refugee Assistance Act of 1962, as amended, 22 U.S.C. 2601(c)(1), I determine that it is important to the national interest that up to $7,000,000 be made available from the U.S. Emergency Refugee and Migration Assistance Fund (the Fund) to meet unexpected urgent needs of refugees and other displaced persons resulting from the civil conflict in Yugoslavia. These funds may be used to provide U.S. contributions to the United Nations High Commissioner for Refugees, the International Committee of the Red Cross, other international organizations, governments and governmental organizations, and private voluntary organizations, as required.</span></div>
+<div class="seg" style="border-left:4px solid #92400e;background:#fef3c7"><span class="seg-num" style="color:#92400e">#2</span><span class="seg-label" style="color:#92400e">boilerplate</span><span class="seg-text">You are authorized and directed to inform the appropriate committees of the Congress of this determination and the obligation of funds under this authority and to publish this memorandum in the Federal Register.</span></div>
+<div class="seg seg-meta" style="border-left:3px solid #6b7280;background:#f3f4f6"><span class="seg-label" style="color:#6b7280">metadata</span><span class="seg-text">George Bush</span></div>
+    </div>
+  </div>
+</details>
+
+
+<details class="doc-block" open>
+  <summary>
+    <span class="doc-prez">Lyndon B. Johnson</span>
+    <span class="doc-date">January 21, 1966</span>
+    <span class="doc-type">proclamation</span>
+    <span class="doc-stats">10 chunks &rarr; 7 segments</span>
+    <a href="https://www.presidency.ucsb.edu/documents/proclamation-3699-national-ski-week" target="_blank" class="doc-link">original &rarr;</a>
+  </summary>
+  <div class="doc-body">
+    <div class="col">
+      <h3>Original text</h3>
+      <p class="orig-para">By the President of the United States of America</p>
+<p class="orig-para">A Proclamation</p>
+<p class="orig-para">Skiing in the United States has now become one of our most popular sports. This active and invigorating pastime provides not only recreation, but an unsurpassed opportunity to enjoy the great scenic beauty of our majestic mountains.</p>
+<p class="orig-para">Its growing popularity has caused skiing to become of great economic importance to many areas of the United States, where our Nation has now developed some of the finest skiers, and the finest ski facilities, in the world.</p>
+<p class="orig-para">It was for this reason that the Congress, by a joint resolution approved January 21, 1966, requested the President to issue a proclamation designating the period beginning January 21, 1966, and ending January 30, 1966, as National Ski Week.</p>
+<p class="orig-para">I am most happy to honor that request, and do hereby proclaim the period from January 21 through January 30, 1966, as National Ski Week.</p>
+<p class="orig-para">I call upon individual skiers, sports organizations, community leaders, and other interested citizens to arrange appropriate observances of National Ski Week and to join in the effort to improve our ski facilities and to improve the skill of the skiers representing the United States of America in international competitions.</p>
+<p class="orig-para">In Witness Whereof, I have hereunto set my hand and caused the Seal of the United States of America to be affixed.</p>
+<p class="orig-para">DONE at the City of Washington this twenty-first day of January in the year of our Lord nineteen hundred and sixty-six, and of the Independence of the United States of America the one hundred and ninetieth.</p>
+<p class="orig-para">LYNDON B. JOHNSON</p>
+<p class="orig-para">By the President:</p>
+<p class="orig-para">Secretary of State</p>
+    </div>
+    <div class="col">
+      <h3>Segments</h3>
+      <div class="seg" style="border-left:4px solid #065f46;background:#d1fae5"><span class="seg-num" style="color:#065f46">#1</span><span class="seg-label" style="color:#065f46">paragraph</span><span class="seg-text">By the President of the United States of America A Proclamation Skiing in the United States has now become one of our most popular sports. This active and invigorating pastime provides not only recreation, but an unsurpassed opportunity to enjoy the great scenic beauty of our majestic mountains.</span></div>
+<div class="seg" style="border-left:4px solid #065f46;background:#d1fae5"><span class="seg-num" style="color:#065f46">#2</span><span class="seg-label" style="color:#065f46">paragraph</span><span class="seg-text">Its growing popularity has caused skiing to become of great economic importance to many areas of the United States, where our Nation has now developed some of the finest skiers, and the finest ski facilities, in the world.</span></div>
+<div class="seg" style="border-left:4px solid #065f46;background:#d1fae5"><span class="seg-num" style="color:#065f46">#3</span><span class="seg-label" style="color:#065f46">paragraph</span><span class="seg-text">It was for this reason that the Congress, by a joint resolution approved January 21, 1966, requested the President to issue a proclamation designating the period beginning January 21, 1966, and ending January 30, 1966, as National Ski Week.</span></div>
+<div class="seg" style="border-left:4px solid #065f46;background:#d1fae5"><span class="seg-num" style="color:#065f46">#4</span><span class="seg-label" style="color:#065f46">paragraph</span><span class="seg-text">I am most happy to honor that request, and do hereby proclaim the period from January 21 through January 30, 1966, as National Ski Week.</span></div>
+<div class="seg" style="border-left:4px solid #065f46;background:#d1fae5"><span class="seg-num" style="color:#065f46">#5</span><span class="seg-label" style="color:#065f46">paragraph</span><span class="seg-text">I call upon individual skiers, sports organizations, community leaders, and other interested citizens to arrange appropriate observances of National Ski Week and to join in the effort to improve our ski facilities and to improve the skill of the skiers representing the United States of America in international competitions.</span></div>
+<div class="seg" style="border-left:4px solid #92400e;background:#fef3c7"><span class="seg-num" style="color:#92400e">#6</span><span class="seg-label" style="color:#92400e">boilerplate</span><span class="seg-text">In Witness Whereof, I have hereunto set my hand and caused the Seal of the United States of America to be affixed.</span></div>
+<div class="seg" style="border-left:4px solid #92400e;background:#fef3c7"><span class="seg-num" style="color:#92400e">#7</span><span class="seg-label" style="color:#92400e">boilerplate</span><span class="seg-text">DONE at the City of Washington this twenty-first day of January in the year of our Lord nineteen hundred and sixty-six, and of the Independence of the United States of America the one hundred and ninetieth.</span></div>
+<div class="seg seg-meta" style="border-left:3px solid #6b7280;background:#f3f4f6"><span class="seg-label" style="color:#6b7280">metadata</span><span class="seg-text">LYNDON B. JOHNSON</span></div>
+<div class="seg seg-meta" style="border-left:3px solid #6b7280;background:#f3f4f6"><span class="seg-label" style="color:#6b7280">metadata</span><span class="seg-text">By the President:</span></div>
+<div class="seg seg-meta" style="border-left:3px solid #6b7280;background:#f3f4f6"><span class="seg-label" style="color:#6b7280">metadata</span><span class="seg-text">Secretary of State</span></div>
+    </div>
+  </div>
+</details>
+
+
+<details class="doc-block" open>
+  <summary>
+    <span class="doc-prez">George W. Bush</span>
+    <span class="doc-date">February 02, 2004</span>
+    <span class="doc-type">proclamation</span>
+    <span class="doc-stats">8 chunks &rarr; 7 segments</span>
+    <a href="https://www.presidency.ucsb.edu/documents/proclamation-7754-american-heart-month-2004" target="_blank" class="doc-link">original &rarr;</a>
+  </summary>
+  <div class="doc-body">
+    <div class="col">
+      <h3>Original text</h3>
+      <p class="orig-para">By the President of the United States of America</p>
+<p class="orig-para">A Proclamation</p>
+<p class="orig-para">Heart disease is the leading cause of death in the United States. It affects men and women of every age and race. During American Heart Month, we encourage all Americans to join the fight against heart disease and to learn more about how to prevent it.</p>
+<p class="orig-para">More than 64 million Americans suffer from one or more forms of cardiovascular disease, including high blood pressure, coronary heart disease, congestive heart failure, stroke, and congenital heart defects. Many of the risk factors that can lead to heart disease, such as high blood pressure, high blood cholesterol, and diabetes, can be prevented or controlled. Research has shown that men and women who lead healthy lifestyles, including making healthy food choices, getting regular exercise, maintaining a healthy weight, and choosing not to smoke or drink excessively, can significantly decrease their risk of heart disease.</p>
+<p class="orig-para">Heart disease is responsible for the deaths of one in three women in the United States. To make women more aware of the danger of heart disease, the National Heart, Lung, and Blood Institute of the National Institutes of Health has joined with the Department of Health and Human Services and other national organizations to launch a nationwide campaign called &quot;The Heart Truth.&quot; This important campaign encourages women to learn more about heart health, to lead healthier lives, and to talk with their doctors about their risk for developing heart disease.</p>
+<p class="orig-para">During American Heart Month, I urge all Americans to learn more about heart health and to reduce their risk factors for serious heart conditions. By making healthy choices, we can live longer and better lives.</p>
+<p class="orig-para">In recognition of the important ongoing fight against heart disease, the Congress, by Joint Resolution approved December 30, 1963, as amended (77 Stat. 843; 36 U.S.C. 101), has requested that the President issue an annual proclamation designating February as &quot;American Heart Month.&quot;</p>
+<p class="orig-para">Now, Therefore, I, George W. Bush, President of the United States of America, do hereby proclaim February 2004 as American Heart Month. I invite the Governors of the States, the Commonwealth of Puerto Rico, officials of other areas subject to the jurisdiction of the United States, and the American people to join me in reaffirming our commitment to combating heart disease.</p>
+<p class="orig-para">In Witness Whereof, I have hereunto set my hand this second day of February, in the year of our Lord two thousand four, and of the Independence of the United States of America the two hundred and twenty-eighth.</p>
+<p class="orig-para">GEORGE W. BUSH</p>
+    </div>
+    <div class="col">
+      <h3>Segments</h3>
+      <div class="seg" style="border-left:4px solid #065f46;background:#d1fae5"><span class="seg-num" style="color:#065f46">#1</span><span class="seg-label" style="color:#065f46">paragraph</span><span class="seg-text">By the President of the United States of America A Proclamation Heart disease is the leading cause of death in the United States. It affects men and women of every age and race. During American Heart Month, we encourage all Americans to join the fight against heart disease and to learn more about how to prevent it.</span></div>
+<div class="seg" style="border-left:4px solid #065f46;background:#d1fae5"><span class="seg-num" style="color:#065f46">#2</span><span class="seg-label" style="color:#065f46">paragraph</span><span class="seg-text">More than 64 million Americans suffer from one or more forms of cardiovascular disease, including high blood pressure, coronary heart disease, congestive heart failure, stroke, and congenital heart defects. Many of the risk factors that can lead to heart disease, such as high blood pressure, high blood cholesterol, and diabetes, can be prevented or controlled. Research has shown that men and women who lead healthy lifestyles, including making healthy food choices, getting regular exercise, maintaining a healthy weight, and choosing not to smoke or drink excessively, can significantly decrease their risk of heart disease.</span></div>
+<div class="seg" style="border-left:4px solid #065f46;background:#d1fae5"><span class="seg-num" style="color:#065f46">#3</span><span class="seg-label" style="color:#065f46">paragraph</span><span class="seg-text">Heart disease is responsible for the deaths of one in three women in the United States. To make women more aware of the danger of heart disease, the National Heart, Lung, and Blood Institute of the National Institutes of Health has joined with the Department of Health and Human Services and other national organizations to launch a nationwide campaign called &quot;The Heart Truth.&quot; This important campaign encourages women to learn more about heart health, to lead healthier lives, and to talk with their doctors about their risk for developing heart disease.</span></div>
+<div class="seg" style="border-left:4px solid #065f46;background:#d1fae5"><span class="seg-num" style="color:#065f46">#4</span><span class="seg-label" style="color:#065f46">paragraph</span><span class="seg-text">During American Heart Month, I urge all Americans to learn more about heart health and to reduce their risk factors for serious heart conditions. By making healthy choices, we can live longer and better lives.</span></div>
+<div class="seg" style="border-left:4px solid #065f46;background:#d1fae5"><span class="seg-num" style="color:#065f46">#5</span><span class="seg-label" style="color:#065f46">paragraph</span><span class="seg-text">In recognition of the important ongoing fight against heart disease, the Congress, by Joint Resolution approved December 30, 1963, as amended (77 Stat. 843; 36 U.S.C. 101), has requested that the President issue an annual proclamation designating February as &quot;American Heart Month.&quot;</span></div>
+<div class="seg" style="border-left:4px solid #065f46;background:#d1fae5"><span class="seg-num" style="color:#065f46">#6</span><span class="seg-label" style="color:#065f46">paragraph</span><span class="seg-text">Now, Therefore, I, George W. Bush, President of the United States of America, do hereby proclaim February 2004 as American Heart Month. I invite the Governors of the States, the Commonwealth of Puerto Rico, officials of other areas subject to the jurisdiction of the United States, and the American people to join me in reaffirming our commitment to combating heart disease.</span></div>
+<div class="seg" style="border-left:4px solid #92400e;background:#fef3c7"><span class="seg-num" style="color:#92400e">#7</span><span class="seg-label" style="color:#92400e">boilerplate</span><span class="seg-text">In Witness Whereof, I have hereunto set my hand this second day of February, in the year of our Lord two thousand four, and of the Independence of the United States of America the two hundred and twenty-eighth.</span></div>
+<div class="seg seg-meta" style="border-left:3px solid #6b7280;background:#f3f4f6"><span class="seg-label" style="color:#6b7280">metadata</span><span class="seg-text">GEORGE W. BUSH</span></div>
+    </div>
+  </div>
+</details>
+
+
+<details class="doc-block" open>
+  <summary>
+    <span class="doc-prez">George W. Bush</span>
+    <span class="doc-date">May 18, 2001</span>
+    <span class="doc-type">proclamation</span>
+    <span class="doc-stats">9 chunks &rarr; 8 segments</span>
+    <a href="https://www.presidency.ucsb.edu/documents/proclamation-7442-national-maritime-day-2001" target="_blank" class="doc-link">original &rarr;</a>
+  </summary>
+  <div class="doc-body">
+    <div class="col">
+      <h3>Original text</h3>
+      <p class="orig-para">By the President of the United States of America</p>
+<p class="orig-para">A Proclamation</p>
+<p class="orig-para">Throughout our history, America&#x27;s economic prosperity has been closely tied to its maritime geography. From indigenous peoples navigating our majestic rivers to colonists settling along the New World&#x27;s eastern shores, natives and immigrants alike have relied on the sea and our bountiful inland waterways for commerce and security.</p>
+<p class="orig-para">In colonial days and in the 19th century, America&#x27;s maritime industries facilitated the exchange of goods and the migration of pioneers. During World War II, some 6,000 American seafarers and more than 700 U.S. merchant ships fell to enemy action, many in the infamous Run to Murmansk. No branch of our Armed Forces, save the Marine Corps, suffered a higher casualty rate. Today, our Merchant Marine continues this proud tradition.</p>
+<p class="orig-para">As recently as the Persian Gulf War and during humanitarian and military operations since, a unique partnership of Government, industry, and labor has continued its vital maritime service to our Nation. Many civilian merchant mariners crew the Maritime Administration&#x27;s Ready Reserve Force, which is observing its 25th anniversary.</p>
+<p class="orig-para">Today, the U.S. maritime fleet has decreased in the number of vessels in the international trades, but it transports goods more efficiently and economically than ever before. These U.S. ships deliver a billion tons of imports and exports each year in our foreign trade and another billion tons of waterborne domestic trade. Many merchant seafarers are trained at outstanding institutions such as the U.S. Merchant Marine Academy at Kings Point, New York, the six State maritime academies, and several union and industry training facilities.</p>
+<p class="orig-para">To help ensure continued competitiveness, we must tailor our maritime policy to the challenges of the 21st century. America&#x27;s Marine Transportation System will help determine our long-term economic health and improve our ability to respond quickly and effectively in crisis. Within the next 2 decades, cargo will double. Accordingly, my Administration is working with Government agencies, the maritime industry, shippers, labor unions, and environmental groups to ensure that our waterways continue to serve as a sound transportation option in the face of ever-growing congestion on highways and rail lines.</p>
+<p class="orig-para">In recognition of the importance of the U.S. Merchant Marine, the Congress, by joint resolution approved on May 20, 1933, has designated May 22 of each year as &quot;National Maritime Day&quot; and has authorized and requested that the President issue an annual proclamation calling for its appropriate observance.</p>
+<p class="orig-para">Now, Therefore, I, George W. Bush, President of the United States of America, by virtue of the authority vested in me by the Constitution and laws of the United States, do hereby proclaim May 22, 2001, as National Maritime Day. I call upon the people of the United States to celebrate this observance and to display the flag of the United States at their homes and in their communities. I also request that all ships sailing under the American flag dress ship on that day.</p>
+<p class="orig-para">In Witness Whereof, I have hereunto set my hand this eighteenth day of May, in the year of our Lord two thousand one, and of the Independence of the United States of America the two hundred and twenty-fifth.</p>
+<p class="orig-para">GEORGE W. BUSH</p>
+    </div>
+    <div class="col">
+      <h3>Segments</h3>
+      <div class="seg" style="border-left:4px solid #065f46;background:#d1fae5"><span class="seg-num" style="color:#065f46">#1</span><span class="seg-label" style="color:#065f46">paragraph</span><span class="seg-text">By the President of the United States of America A Proclamation Throughout our history, America&#x27;s economic prosperity has been closely tied to its maritime geography. From indigenous peoples navigating our majestic rivers to colonists settling along the New World&#x27;s eastern shores, natives and immigrants alike have relied on the sea and our bountiful inland waterways for commerce and security.</span></div>
+<div class="seg" style="border-left:4px solid #065f46;background:#d1fae5"><span class="seg-num" style="color:#065f46">#2</span><span class="seg-label" style="color:#065f46">paragraph</span><span class="seg-text">In colonial days and in the 19th century, America&#x27;s maritime industries facilitated the exchange of goods and the migration of pioneers. During World War II, some 6,000 American seafarers and more than 700 U.S. merchant ships fell to enemy action, many in the infamous Run to Murmansk. No branch of our Armed Forces, save the Marine Corps, suffered a higher casualty rate. Today, our Merchant Marine continues this proud tradition.</span></div>
+<div class="seg" style="border-left:4px solid #065f46;background:#d1fae5"><span class="seg-num" style="color:#065f46">#3</span><span class="seg-label" style="color:#065f46">paragraph</span><span class="seg-text">As recently as the Persian Gulf War and during humanitarian and military operations since, a unique partnership of Government, industry, and labor has continued its vital maritime service to our Nation. Many civilian merchant mariners crew the Maritime Administration&#x27;s Ready Reserve Force, which is observing its 25th anniversary.</span></div>
+<div class="seg" style="border-left:4px solid #065f46;background:#d1fae5"><span class="seg-num" style="color:#065f46">#4</span><span class="seg-label" style="color:#065f46">paragraph</span><span class="seg-text">Today, the U.S. maritime fleet has decreased in the number of vessels in the international trades, but it transports goods more efficiently and economically than ever before. These U.S. ships deliver a billion tons of imports and exports each year in our foreign trade and another billion tons of waterborne domestic trade. Many merchant seafarers are trained at outstanding institutions such as the U.S. Merchant Marine Academy at Kings Point, New York, the six State maritime academies, and several union and industry training facilities.</span></div>
+<div class="seg" style="border-left:4px solid #065f46;background:#d1fae5"><span class="seg-num" style="color:#065f46">#5</span><span class="seg-label" style="color:#065f46">paragraph</span><span class="seg-text">To help ensure continued competitiveness, we must tailor our maritime policy to the challenges of the 21st century. America&#x27;s Marine Transportation System will help determine our long-term economic health and improve our ability to respond quickly and effectively in crisis. Within the next 2 decades, cargo will double. Accordingly, my Administration is working with Government agencies, the maritime industry, shippers, labor unions, and environmental groups to ensure that our waterways continue to serve as a sound transportation option in the face of ever-growing congestion on highways and rail lines.</span></div>
+<div class="seg" style="border-left:4px solid #065f46;background:#d1fae5"><span class="seg-num" style="color:#065f46">#6</span><span class="seg-label" style="color:#065f46">paragraph</span><span class="seg-text">In recognition of the importance of the U.S. Merchant Marine, the Congress, by joint resolution approved on May 20, 1933, has designated May 22 of each year as &quot;National Maritime Day&quot; and has authorized and requested that the President issue an annual proclamation calling for its appropriate observance.</span></div>
+<div class="seg" style="border-left:4px solid #065f46;background:#d1fae5"><span class="seg-num" style="color:#065f46">#7</span><span class="seg-label" style="color:#065f46">paragraph</span><span class="seg-text">Now, Therefore, I, George W. Bush, President of the United States of America, by virtue of the authority vested in me by the Constitution and laws of the United States, do hereby proclaim May 22, 2001, as National Maritime Day. I call upon the people of the United States to celebrate this observance and to display the flag of the United States at their homes and in their communities. I also request that all ships sailing under the American flag dress ship on that day.</span></div>
+<div class="seg" style="border-left:4px solid #92400e;background:#fef3c7"><span class="seg-num" style="color:#92400e">#8</span><span class="seg-label" style="color:#92400e">boilerplate</span><span class="seg-text">In Witness Whereof, I have hereunto set my hand this eighteenth day of May, in the year of our Lord two thousand one, and of the Independence of the United States of America the two hundred and twenty-fifth.</span></div>
+<div class="seg seg-meta" style="border-left:3px solid #6b7280;background:#f3f4f6"><span class="seg-label" style="color:#6b7280">metadata</span><span class="seg-text">GEORGE W. BUSH</span></div>
+    </div>
+  </div>
+</details>
+
+
+<details class="doc-block" open>
+  <summary>
+    <span class="doc-prez">Ronald Reagan</span>
+    <span class="doc-date">April 22, 1986</span>
+    <span class="doc-type">proclamation</span>
+    <span class="doc-stats">7 chunks &rarr; 6 segments</span>
+    <a href="https://www.presidency.ucsb.edu/documents/proclamation-5466-mothers-day-1986" target="_blank" class="doc-link">original &rarr;</a>
+  </summary>
+  <div class="doc-body">
+    <div class="col">
+      <h3>Original text</h3>
+      <p class="orig-para">By the President of the United States of America</p>
+<p class="orig-para">A Proclamation</p>
+<p class="orig-para">By tradition, the second Sunday in May is designated as Mother&#x27;s Day, one of America&#x27;s best-loved holidays. It gives us all a special occasion to honor our own, and to praise the unique dignity of motherhood one of life&#x27;s highest callings.</p>
+<p class="orig-para">Thomas Jefferson called motherhood &quot;the keystone of the arch of matrimonial happiness,&quot; and we must always remember that with love, strength, and fortitude, the American mother assisted in the settlement, development, and prosperity of our country. Her contributions to the well-being of the family, the community, and the Nation are beyond all reckoning. A Jewish saying sums it up: &quot;God could not be everywhere—so He created mothers.&quot;</p>
+<p class="orig-para">The role of the mother has changed constantly in our society, but its fundamental meaning abides: love and caring. The modern mother is conquering new worlds. She continues to be the heart of the family and the hearth of the home. Where mothers are honored and loved, the family is strong. And where the family is strong the nation is strong.</p>
+<p class="orig-para">In recognition of the magnificent contributions of mothers to their families and to the Nation, the Congress, by a joint resolution approved May 8, 1914 (38 Stat. 770), has designated the second Sunday in May of each year as Mother&#x27;s Day and requested the President to call for its appropriate observance.</p>
+<p class="orig-para">Now, Therefore, I, Ronald Reagan, President of the United States of America, do hereby request that Sunday, May 11, 1986, be observed as Mother&#x27;s Day. I urge all Americans to express their love and honor to their mothers and to reflect on the importance of motherhood to the well-being of our country. I direct Government officials to display the flag of the United States on all Federal government buildings, and I urge all citizens to display the flag at their homes and other suitable places on that day.</p>
+<p class="orig-para">In Witness Whereof, I have hereunto set my hand this twenty-second day of April, in the year of our Lord nineteen hundred and eighty-six, and of the Independence of the United States of America the two hundred and tenth.</p>
+<p class="orig-para">RONALD REAGAN</p>
+    </div>
+    <div class="col">
+      <h3>Segments</h3>
+      <div class="seg" style="border-left:4px solid #065f46;background:#d1fae5"><span class="seg-num" style="color:#065f46">#1</span><span class="seg-label" style="color:#065f46">paragraph</span><span class="seg-text">By the President of the United States of America A Proclamation By tradition, the second Sunday in May is designated as Mother&#x27;s Day, one of America&#x27;s best-loved holidays. It gives us all a special occasion to honor our own, and to praise the unique dignity of motherhood one of life&#x27;s highest callings.</span></div>
+<div class="seg" style="border-left:4px solid #065f46;background:#d1fae5"><span class="seg-num" style="color:#065f46">#2</span><span class="seg-label" style="color:#065f46">paragraph</span><span class="seg-text">Thomas Jefferson called motherhood &quot;the keystone of the arch of matrimonial happiness,&quot; and we must always remember that with love, strength, and fortitude, the American mother assisted in the settlement, development, and prosperity of our country. Her contributions to the well-being of the family, the community, and the Nation are beyond all reckoning. A Jewish saying sums it up: &quot;God could not be everywhere—so He created mothers.&quot;</span></div>
+<div class="seg" style="border-left:4px solid #065f46;background:#d1fae5"><span class="seg-num" style="color:#065f46">#3</span><span class="seg-label" style="color:#065f46">paragraph</span><span class="seg-text">The role of the mother has changed constantly in our society, but its fundamental meaning abides: love and caring. The modern mother is conquering new worlds. She continues to be the heart of the family and the hearth of the home. Where mothers are honored and loved, the family is strong. And where the family is strong the nation is strong.</span></div>
+<div class="seg" style="border-left:4px solid #065f46;background:#d1fae5"><span class="seg-num" style="color:#065f46">#4</span><span class="seg-label" style="color:#065f46">paragraph</span><span class="seg-text">In recognition of the magnificent contributions of mothers to their families and to the Nation, the Congress, by a joint resolution approved May 8, 1914 (38 Stat. 770), has designated the second Sunday in May of each year as Mother&#x27;s Day and requested the President to call for its appropriate observance.</span></div>
+<div class="seg" style="border-left:4px solid #065f46;background:#d1fae5"><span class="seg-num" style="color:#065f46">#5</span><span class="seg-label" style="color:#065f46">paragraph</span><span class="seg-text">Now, Therefore, I, Ronald Reagan, President of the United States of America, do hereby request that Sunday, May 11, 1986, be observed as Mother&#x27;s Day. I urge all Americans to express their love and honor to their mothers and to reflect on the importance of motherhood to the well-being of our country. I direct Government officials to display the flag of the United States on all Federal government buildings, and I urge all citizens to display the flag at their homes and other suitable places on that day.</span></div>
+<div class="seg" style="border-left:4px solid #92400e;background:#fef3c7"><span class="seg-num" style="color:#92400e">#6</span><span class="seg-label" style="color:#92400e">boilerplate</span><span class="seg-text">In Witness Whereof, I have hereunto set my hand this twenty-second day of April, in the year of our Lord nineteen hundred and eighty-six, and of the Independence of the United States of America the two hundred and tenth.</span></div>
+<div class="seg seg-meta" style="border-left:3px solid #6b7280;background:#f3f4f6"><span class="seg-label" style="color:#6b7280">metadata</span><span class="seg-text">RONALD REAGAN</span></div>
+    </div>
+  </div>
+</details>
+
+
+<details class="doc-block" open>
+  <summary>
+    <span class="doc-prez">Ronald Reagan</span>
+    <span class="doc-date">March 19, 1981</span>
+    <span class="doc-type">proclamation</span>
+    <span class="doc-stats">9 chunks &rarr; 8 segments</span>
+    <a href="https://www.presidency.ucsb.edu/documents/proclamation-4826-national-day-prayer-1981" target="_blank" class="doc-link">original &rarr;</a>
+  </summary>
+  <div class="doc-body">
+    <div class="col">
+      <h3>Original text</h3>
+      <p class="orig-para">By the President of the United States of America A Proclamation</p>
+<p class="orig-para">Our Nation&#x27;s motto &quot;In God We Trust&quot;—was not chosen lightly. It reflects a basic recognition that there is a divine authority in the universe to which this Nation owes homage.</p>
+<p class="orig-para">Throughout our history Americans have put their faith in God and no one can doubt that we have been blessed for it. The earliest settlers of this land came in search of religious freedom. [See APP note.] Landing on a desolate shoreline, they established a spiritual foundation that has served us ever since.</p>
+<p class="orig-para">It was the hard work of our people, the freedom they enjoyed and their faith in God that built this country and made it the envy of the world. In all of our great cities and towns evidence of the faith of our people is found: houses of worship of every denomination are among the oldest structures.</p>
+<p class="orig-para">While never willing to bow to a tyrant, our forefathers were always willing to get to their knees before God. When catastrophe threatened, they turned to God for deliverance. When the harvest was bountiful the first thought was thanksgiving to God.</p>
+<p class="orig-para">Prayer is today as powerful a force in our Nation as it has ever been. We as a Nation should never forget this source of strength. And while recognizing that the freedom to choose a Godly path is the essence of liberty, as a Nation we cannot but hope that more of our citizens would, through prayer, come into a closer relationship with their Maker.</p>
+<p class="orig-para">Recognizing our great heritage, the Congress, by Joint Resolution approved April 17, 1952 ( 36 U.S.C. 169h; 66 Stat. 64), has called upon the President to set aside a suitable day each year as a National Day of. Prayer.</p>
+<p class="orig-para">Now, Therefore, I, Ronald Reagan, President of the United States of America, do hereby proclaim Thursday, May 7, 1981, National Day of Prayer. On that day I ask all who believe to join with me in giving thanks to Almighty God for the blessings He has bestowed on this land and the protection He affords us as a people. Let us as a Nation join together before God, fully aware of the trials that lie ahead and the need, yes, the necessity, for divine guidance. With unshakeable faith in God and the liberty which is heritage, we as a free Nation will surely survive and prosper.</p>
+<p class="orig-para">In Witness Whereof, I have hereunto set my hand this nineteenth day of March, in year of our Lord nineteen hundred and eighty-one, and of the Independence of the United States of America the two hundred and fifth.</p>
+<p class="orig-para">RONALD REAGAN</p>
+    </div>
+    <div class="col">
+      <h3>Segments</h3>
+      <div class="seg" style="border-left:4px solid #065f46;background:#d1fae5"><span class="seg-num" style="color:#065f46">#1</span><span class="seg-label" style="color:#065f46">paragraph</span><span class="seg-text">By the President of the United States of America A Proclamation Our Nation&#x27;s motto &quot;In God We Trust&quot;—was not chosen lightly. It reflects a basic recognition that there is a divine authority in the universe to which this Nation owes homage.</span></div>
+<div class="seg" style="border-left:4px solid #065f46;background:#d1fae5"><span class="seg-num" style="color:#065f46">#2</span><span class="seg-label" style="color:#065f46">paragraph</span><span class="seg-text">Throughout our history Americans have put their faith in God and no one can doubt that we have been blessed for it. The earliest settlers of this land came in search of religious freedom. [See APP note.] Landing on a desolate shoreline, they established a spiritual foundation that has served us ever since.</span></div>
+<div class="seg" style="border-left:4px solid #065f46;background:#d1fae5"><span class="seg-num" style="color:#065f46">#3</span><span class="seg-label" style="color:#065f46">paragraph</span><span class="seg-text">It was the hard work of our people, the freedom they enjoyed and their faith in God that built this country and made it the envy of the world. In all of our great cities and towns evidence of the faith of our people is found: houses of worship of every denomination are among the oldest structures.</span></div>
+<div class="seg" style="border-left:4px solid #065f46;background:#d1fae5"><span class="seg-num" style="color:#065f46">#4</span><span class="seg-label" style="color:#065f46">paragraph</span><span class="seg-text">While never willing to bow to a tyrant, our forefathers were always willing to get to their knees before God. When catastrophe threatened, they turned to God for deliverance. When the harvest was bountiful the first thought was thanksgiving to God.</span></div>
+<div class="seg" style="border-left:4px solid #065f46;background:#d1fae5"><span class="seg-num" style="color:#065f46">#5</span><span class="seg-label" style="color:#065f46">paragraph</span><span class="seg-text">Prayer is today as powerful a force in our Nation as it has ever been. We as a Nation should never forget this source of strength. And while recognizing that the freedom to choose a Godly path is the essence of liberty, as a Nation we cannot but hope that more of our citizens would, through prayer, come into a closer relationship with their Maker.</span></div>
+<div class="seg" style="border-left:4px solid #065f46;background:#d1fae5"><span class="seg-num" style="color:#065f46">#6</span><span class="seg-label" style="color:#065f46">paragraph</span><span class="seg-text">Recognizing our great heritage, the Congress, by Joint Resolution approved April 17, 1952 ( 36 U.S.C. 169h; 66 Stat. 64), has called upon the President to set aside a suitable day each year as a National Day of. Prayer.</span></div>
+<div class="seg" style="border-left:4px solid #065f46;background:#d1fae5"><span class="seg-num" style="color:#065f46">#7</span><span class="seg-label" style="color:#065f46">paragraph</span><span class="seg-text">Now, Therefore, I, Ronald Reagan, President of the United States of America, do hereby proclaim Thursday, May 7, 1981, National Day of Prayer. On that day I ask all who believe to join with me in giving thanks to Almighty God for the blessings He has bestowed on this land and the protection He affords us as a people. Let us as a Nation join together before God, fully aware of the trials that lie ahead and the need, yes, the necessity, for divine guidance. With unshakeable faith in God and the liberty which is heritage, we as a free Nation will surely survive and prosper.</span></div>
+<div class="seg" style="border-left:4px solid #92400e;background:#fef3c7"><span class="seg-num" style="color:#92400e">#8</span><span class="seg-label" style="color:#92400e">boilerplate</span><span class="seg-text">In Witness Whereof, I have hereunto set my hand this nineteenth day of March, in year of our Lord nineteen hundred and eighty-one, and of the Independence of the United States of America the two hundred and fifth.</span></div>
+<div class="seg seg-meta" style="border-left:3px solid #6b7280;background:#f3f4f6"><span class="seg-label" style="color:#6b7280">metadata</span><span class="seg-text">RONALD REAGAN</span></div>
+    </div>
+  </div>
+</details>
+
+</body>
+</html>
