@@ -153,6 +153,7 @@ ORDERING_PHRASES: list[str] = [
     "hereby commemorate",
     "hereby give notice",
     "i am also ordering",
+    "i am authorizing",
     "i am directing you",
     "i am now directing",
     "i am so continuing",

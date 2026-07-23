@@ -38,6 +38,7 @@ VALID_LABELS = {
     "preamble", "order_action", "vesting_clause",
     "metadata", "boilerplate", "section", "paragraph",
 }
+EXPORT_METADATA_KEYS = {"annotator", "document_metadata"}
 
 
 def display_text(doc_text: str) -> str:
@@ -78,7 +79,7 @@ def load_annotations(
 
     records = []
     for doc_id, doc_data in export.items():
-        if doc_id == "annotator":
+        if doc_id in EXPORT_METADATA_KEYS:
             continue
         if not isinstance(doc_data, dict):
             continue
@@ -122,7 +123,7 @@ def validate_export(
     """Validate an annotation export dict.  Returns a list of error strings (empty = OK)."""
     errors = []
     for doc_id, doc_data in export.items():
-        if doc_id == "annotator":
+        if doc_id in EXPORT_METADATA_KEYS:
             continue
         if not isinstance(doc_data, dict):
             errors.append(f"{doc_id}: expected dict, got {type(doc_data).__name__}")

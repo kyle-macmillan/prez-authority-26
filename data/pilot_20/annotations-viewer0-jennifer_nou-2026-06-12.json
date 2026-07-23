@@ -1,0 +1,612 @@
+{
+  "annotator": "Jennifer Nou",
+  "EO1": {
+    "annotations": [
+      {
+        "start": 3246,
+        "end": 3841,
+        "label": "order_action",
+        "classification": {
+          "category": "policy",
+          "legal_effect": "legal",
+          "scope": "foreign",
+          "national_security": "no",
+          "emergency": "yes"
+        }
+      },
+      {
+        "start": 3843,
+        "end": 4348,
+        "label": "order_action",
+        "classification": {
+          "category": "policy",
+          "legal_effect": "legal",
+          "scope": "foreign",
+          "national_security": "no",
+          "emergency": "yes"
+        }
+      },
+      {
+        "start": 4349,
+        "end": 5945,
+        "label": "order_action",
+        "classification": {
+          "category": "policy",
+          "legal_effect": "legal",
+          "scope": "foreign",
+          "national_security": "no",
+          "emergency": "yes"
+        }
+      },
+      {
+        "start": 5947,
+        "end": 6599,
+        "label": "order_action",
+        "classification": {
+          "category": "policy",
+          "legal_effect": "legal",
+          "scope": "foreign",
+          "national_security": "no",
+          "emergency": "yes"
+        }
+      },
+      {
+        "start": 6601,
+        "end": 7230,
+        "label": "order_action",
+        "classification": {
+          "category": "policy",
+          "legal_effect": "nonlegal",
+          "scope": "foreign",
+          "national_security": "no",
+          "emergency": "yes"
+        }
+      },
+      {
+        "start": 7231,
+        "end": 7509,
+        "label": "boilerplate"
+      }
+    ],
+    "chunks": {
+      "1": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "foreign",
+        "national_security": "no",
+        "emergency": "yes"
+      }
+    },
+    "classification": {
+      "category": "policy",
+      "legal_effect": "legal",
+      "scope": "foreign",
+      "national_security": "no",
+      "emergency": "yes"
+    },
+    "wp": {
+      "status": "needs-revision",
+      "comment": "Sections were the better \"chunks\" in this EO. Note that the directive level label felt challenging, though I felt I could identify predominance."
+    }
+  },
+  "EO2": {
+    "annotations": [
+      {
+        "start": 1442,
+        "end": 4327,
+        "label": "order_action",
+        "classification": {
+          "category": "policy",
+          "legal_effect": "nonlegal",
+          "scope": "domestic",
+          "national_security": null,
+          "emergency": "yes"
+        }
+      },
+      {
+        "start": 4329,
+        "end": 5063,
+        "label": "boilerplate"
+      }
+    ],
+    "classification": {
+      "category": "policy",
+      "legal_effect": "nonlegal",
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "yes"
+    },
+    "wp": {
+      "status": "needs-revision",
+      "comment": "Other ways to identify boilerplate (discuss current method?)"
+    }
+  },
+  "EO3": {
+    "annotations": [
+      {
+        "start": 188,
+        "end": 511,
+        "label": "order_action",
+        "classification": {
+          "category": "policy",
+          "legal_effect": "legal",
+          "scope": "domestic",
+          "national_security": null,
+          "emergency": "no"
+        }
+      }
+    ],
+    "chunks": {
+      "3": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": "no"
+      }
+    },
+    "classification": {
+      "category": "policy",
+      "legal_effect": "legal",
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    },
+    "wp": {
+      "status": "needs-revision",
+      "comment": "What is the distinction between ordering phrase and ordering action? Perhaps combine?"
+    }
+  },
+  "EO4": {
+    "annotations": [
+      {
+        "start": 0,
+        "end": 167,
+        "label": "vesting_clause"
+      },
+      {
+        "start": 167,
+        "end": 817,
+        "label": "order_action",
+        "classification": {
+          "category": "policy",
+          "legal_effect": "legal",
+          "scope": "foreign",
+          "national_security": "no",
+          "emergency": "no"
+        }
+      }
+    ],
+    "classification": {
+      "category": "policy",
+      "legal_effect": "legal",
+      "scope": "foreign",
+      "national_security": "no",
+      "emergency": "no"
+    }
+  },
+  "EO5": {
+    "annotations": [
+      {
+        "start": 762,
+        "end": 8888,
+        "label": "order_action",
+        "classification": {
+          "category": "policy",
+          "legal_effect": "nonlegal",
+          "scope": "domestic",
+          "national_security": null,
+          "emergency": "no"
+        }
+      },
+      {
+        "start": 8935,
+        "end": 9325,
+        "label": "vesting_clause"
+      },
+      {
+        "start": 9446,
+        "end": 11259,
+        "label": "order_action",
+        "classification": {
+          "category": "policy",
+          "legal_effect": "nonlegal",
+          "scope": "domestic",
+          "national_security": null,
+          "emergency": "no"
+        }
+      }
+    ],
+    "classification": {
+      "category": "policy",
+      "legal_effect": "nonlegal",
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    },
+    "wp": {
+      "status": "needs-revision",
+      "comment": "Why were some agency actions identified (\"shall ensure\") while others were not? Why were some vesting clauses not identified here whereas they were in other entries?"
+    }
+  },
+  "M1": {
+    "chunks": {
+      "1": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "foreign",
+        "national_security": "yes",
+        "emergency": "no"
+      }
+    },
+    "classification": {
+      "category": "policy",
+      "legal_effect": "legal",
+      "scope": "foreign",
+      "national_security": "yes",
+      "emergency": "no"
+    },
+    "wp": {
+      "status": "correct",
+      "comment": "Need to clarify whether national security is domestic national security. I looked to the statutory citation title for clues."
+    }
+  },
+  "M2": {
+    "annotations": [
+      {
+        "start": 99,
+        "end": 463,
+        "label": "order_action",
+        "classification": {
+          "category": "internal",
+          "legal_effect": null,
+          "scope": "domestic",
+          "national_security": null,
+          "emergency": "no"
+        }
+      }
+    ],
+    "classification": {
+      "category": "internal",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    },
+    "wp": {
+      "status": "correct"
+    }
+  },
+  "M3": {
+    "chunks": {
+      "1": {
+        "category": "other",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": "no"
+      }
+    },
+    "classification": {
+      "category": "other",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    },
+    "wp": {
+      "status": "correct",
+      "comment": "Should consistently categorize these withholdings. Did not seem to fall into other categories."
+    }
+  },
+  "M4": {
+    "chunks": {
+      "1": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": "no"
+      }
+    },
+    "classification": {
+      "category": "policy",
+      "legal_effect": "legal",
+      "scope": "foreign",
+      "national_security": "no",
+      "emergency": "no"
+    },
+    "annotations": [
+      {
+        "start": 77,
+        "end": 446,
+        "label": "vesting_clause"
+      },
+      {
+        "start": 448,
+        "end": 829,
+        "label": "order_action",
+        "classification": {
+          "category": "policy",
+          "legal_effect": "legal",
+          "scope": "domestic",
+          "national_security": null,
+          "emergency": "no"
+        }
+      },
+      {
+        "start": 831,
+        "end": 1028,
+        "label": "boilerplate"
+      },
+      {
+        "start": 1256,
+        "end": 1644,
+        "label": "vesting_clause"
+      },
+      {
+        "start": 1646,
+        "end": 3726,
+        "label": "order_action",
+        "classification": {
+          "category": "policy",
+          "legal_effect": "legal",
+          "scope": "foreign",
+          "national_security": "no",
+          "emergency": "no"
+        }
+      }
+    ],
+    "wp": {
+      "status": "needs-revision",
+      "comment": "Needs to be able to distinguish between aggregated memos"
+    }
+  },
+  "M5": {
+    "chunks": {
+      "1": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "foreign",
+        "national_security": "yes",
+        "emergency": "no"
+      }
+    },
+    "classification": {
+      "category": "policy",
+      "legal_effect": "legal",
+      "scope": "foreign",
+      "national_security": "yes",
+      "emergency": "no"
+    },
+    "wp": {
+      "status": "correct"
+    }
+  },
+  "L1": {
+    "chunks": {
+      "1": {
+        "category": "other",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": "no"
+      }
+    },
+    "classification": {
+      "category": "other",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    },
+    "wp": {
+      "status": "correct",
+      "comment": "Should we categorize communications to Congress always as \"other\" or break out into separate category? Annie Benn categorizes as \"not executive action\" but that doesn't fit out project since we are broadly concerned with how president cites legal authority. Perhaps capture as separate category (\"communications to Congress?\") -- the hypothesis would be that President is specific about statutory authority when communicating to Congress?"
+    }
+  },
+  "L2": {
+    "annotations": [
+      {
+        "start": 60,
+        "end": 117,
+        "label": "vesting_clause"
+      },
+      {
+        "start": 119,
+        "end": 534,
+        "label": "order_action",
+        "classification": {
+          "category": "policy",
+          "legal_effect": "legal",
+          "scope": "foreign",
+          "national_security": "no",
+          "emergency": "no"
+        }
+      }
+    ],
+    "classification": {
+      "category": "policy",
+      "legal_effect": "legal",
+      "scope": "foreign",
+      "national_security": "no",
+      "emergency": null
+    },
+    "wp": {
+      "status": "needs-revision",
+      "comment": "Why didn't method identify vesting clause or the verb \"authorizing\"?"
+    }
+  },
+  "L3": {
+    "chunks": {
+      "1": {
+        "category": "other",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": "no"
+      }
+    },
+    "classification": {
+      "category": "other",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    },
+    "wp": {
+      "status": "correct",
+      "comment": "Perhaps categorize private letters as \"other\"? "
+    }
+  },
+  "L4": {
+    "annotations": [],
+    "classification": {
+      "category": "other",
+      "legal_effect": null,
+      "scope": "foreign",
+      "national_security": "no",
+      "emergency": "no"
+    },
+    "wp": {
+      "status": "needs-revision",
+      "comment": "This example is odd because it is simply a letter to Congress reporting on actions taken elsewhere. Perhaps the W&P approach could be modified to excluded past tense verbs like this?"
+    }
+  },
+  "L5": {
+    "classification": {
+      "category": "other",
+      "legal_effect": null,
+      "scope": "foreign",
+      "national_security": "no",
+      "emergency": "yes"
+    },
+    "wp": {
+      "status": "needs-revision",
+      "comment": "As technical matter, curious why method did not identify vesting clause here. Odd example because this is not an action itself but communication about action"
+    }
+  },
+  "P1": {
+    "chunks": {
+      "1": {
+        "category": "ceremonial",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": "no"
+      },
+      "2": {
+        "category": "ceremonial",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": "no"
+      }
+    },
+    "classification": {
+      "category": "ceremonial",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    },
+    "wp": {
+      "status": "correct"
+    }
+  },
+  "P2": {
+    "annotations": [
+      {
+        "start": 1230,
+        "end": 1442,
+        "label": "vesting_clause"
+      },
+      {
+        "start": 1593,
+        "end": 1970,
+        "label": "order_action",
+        "classification": {
+          "category": "ceremonial",
+          "legal_effect": null,
+          "scope": "domestic",
+          "national_security": null,
+          "emergency": "no"
+        }
+      }
+    ],
+    "classification": {
+      "category": "ceremonial",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    },
+    "wp": {
+      "status": "needs-revision",
+      "comment": "Did not identify vesting clause correctly."
+    }
+  },
+  "P3": {
+    "classification": {
+      "category": "policy",
+      "legal_effect": "legal",
+      "scope": "foreign",
+      "national_security": "no",
+      "emergency": "no"
+    },
+    "chunks": {
+      "1": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "foreign",
+        "national_security": "no",
+        "emergency": "no"
+      }
+    },
+    "wp": {
+      "status": "correct"
+    }
+  },
+  "P4": {
+    "chunks": {
+      "1": {
+        "category": "ceremonial",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": "no"
+      }
+    },
+    "classification": {
+      "category": "ceremonial",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    },
+    "wp": {
+      "status": "correct"
+    }
+  },
+  "P5": {
+    "chunks": {
+      "1": {
+        "category": "ceremonial",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": "no"
+      }
+    },
+    "classification": {
+      "category": "ceremonial",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    },
+    "wp": {
+      "status": "correct"
+    }
+  }
+}

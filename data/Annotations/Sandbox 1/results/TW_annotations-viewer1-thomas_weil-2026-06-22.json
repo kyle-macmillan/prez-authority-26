@@ -1,0 +1,2399 @@
+{
+  "annotator": "Thomas Weil",
+  "EO2": {
+    "classification": {
+      "category": "policy",
+      "legal_effect": "nonlegal",
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    },
+    "chunks": {
+      "1": {
+        "category": "policy",
+        "legal_effect": "nonlegal",
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "2": {
+        "category": "policy",
+        "legal_effect": "nonlegal",
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    }
+  },
+  "EO1": {
+    "chunks": {
+      "1": {
+        "category": "policy",
+        "legal_effect": "nonlegal",
+        "scope": null,
+        "national_security": null,
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "policy",
+      "legal_effect": "nonlegal",
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    }
+  },
+  "EO3": {
+    "classification": {
+      "category": "internal",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    },
+    "chunks": {
+      "1": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "2": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "3": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "4": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "5": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "6": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    }
+  },
+  "EO4": {
+    "classification": {
+      "category": "policy",
+      "legal_effect": "nonlegal",
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    },
+    "chunks": {
+      "1": {
+        "category": "policy",
+        "legal_effect": "nonlegal",
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    }
+  },
+  "EO5": {
+    "classification": {
+      "category": "policy",
+      "legal_effect": "nonlegal",
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    },
+    "chunks": {
+      "1": {
+        "category": "ceremonial",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "2": {
+        "category": "ceremonial",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "3": {
+        "category": "policy",
+        "legal_effect": "nonlegal",
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "4": {
+        "category": "ceremonial",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "5": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    },
+    "wp": {
+      "status": "needs-revision",
+      "comment": "I think the boilerplates are incorrect. "
+    }
+  },
+  "EO6": {
+    "classification": {
+      "category": "ceremonial",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    },
+    "chunks": {
+      "1": {
+        "category": "ceremonial",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    }
+  },
+  "EO7": {
+    "chunks": {
+      "1": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "2": {
+        "category": "policy",
+        "legal_effect": "nonlegal",
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "policy",
+      "legal_effect": "legal",
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    }
+  },
+  "EO8": {
+    "chunks": {
+      "1": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "2": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "policy",
+      "legal_effect": "legal",
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    }
+  },
+  "EO9": {
+    "chunks": {
+      "1": {
+        "category": "ceremonial",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "2": {
+        "category": "ceremonial",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "ceremonial",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    }
+  },
+  "EO10": {
+    "chunks": {
+      "1": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "2": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "3": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "4": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "5": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "6": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "7": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "8": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "9": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "10": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "11": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "12": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "13": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "14": {
+        "category": "ceremonial",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "internal",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    }
+  },
+  "EO11": {
+    "chunks": {
+      "1": {
+        "category": "ceremonial",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "2": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "internal",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    }
+  },
+  "EO12": {
+    "chunks": {
+      "1": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "foreign",
+        "national_security": "no",
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "policy",
+      "legal_effect": "legal",
+      "scope": "foreign",
+      "national_security": "no",
+      "emergency": "yes"
+    }
+  },
+  "EO13": {
+    "chunks": {
+      "1": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "foreign",
+        "national_security": "no",
+        "emergency": null
+      },
+      "2": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "foreign",
+        "national_security": "no",
+        "emergency": null
+      },
+      "3": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "foreign",
+        "national_security": "no",
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "policy",
+      "legal_effect": "legal",
+      "scope": "foreign",
+      "national_security": "no",
+      "emergency": "yes"
+    }
+  },
+  "EO14": {
+    "chunks": {
+      "1": {
+        "category": "ceremonial",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "2": {
+        "category": "other",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "other",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    }
+  },
+  "EO15": {
+    "classification": {
+      "category": "internal",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    }
+  },
+  "EO16": {
+    "chunks": {
+      "1": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "2": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "3": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "4": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "internal",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    }
+  },
+  "EO17": {
+    "chunks": {
+      "1": {
+        "category": "policy",
+        "legal_effect": "nonlegal",
+        "scope": "foreign",
+        "national_security": "no",
+        "emergency": null
+      },
+      "2": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "foreign",
+        "national_security": "no",
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "policy",
+      "legal_effect": "nonlegal",
+      "scope": "foreign",
+      "national_security": "no",
+      "emergency": "no"
+    }
+  },
+  "EO18": {
+    "classification": {
+      "category": "ceremonial",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    }
+  },
+  "EO19": {
+    "chunks": {
+      "1": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "foreign",
+        "national_security": "no",
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "policy",
+      "legal_effect": "legal",
+      "scope": "foreign",
+      "national_security": "no",
+      "emergency": "no"
+    }
+  },
+  "EO20": {
+    "chunks": {
+      "1": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "internal",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    }
+  },
+  "EO21": {
+    "chunks": {
+      "1": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "2": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "internal",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    }
+  },
+  "EO22": {
+    "chunks": {
+      "1": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "2": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "3": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "4": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "internal",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    }
+  },
+  "EO23": {
+    "chunks": {
+      "1": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "2": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "internal",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    }
+  },
+  "EO24": {
+    "chunks": {
+      "1": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "2": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "internal",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    }
+  },
+  "EO25": {
+    "chunks": {
+      "1": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "2": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "internal",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    }
+  },
+  "M1": {
+    "chunks": {
+      "1": {
+        "category": "other",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "2": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "policy",
+      "legal_effect": "legal",
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    }
+  },
+  "M2": {
+    "classification": {
+      "category": "internal",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    }
+  },
+  "M3": {
+    "classification": {
+      "category": "ceremonial",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    }
+  },
+  "M4": {
+    "classification": {
+      "category": "ceremonial",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    },
+    "chunks": {
+      "1": {
+        "category": "ceremonial",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "2": {
+        "category": "ceremonial",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    }
+  },
+  "M5": {
+    "chunks": {
+      "1": {
+        "category": "other",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "2": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "internal",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    }
+  },
+  "M6": {
+    "chunks": {
+      "1": {
+        "category": "ceremonial",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "2": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "foreign",
+        "national_security": "no",
+        "emergency": null
+      },
+      "3": {
+        "category": "ceremonial",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "4": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "foreign",
+        "national_security": "no",
+        "emergency": null
+      },
+      "5": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "foreign",
+        "national_security": "no",
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "policy",
+      "legal_effect": "legal",
+      "scope": "foreign",
+      "national_security": "no",
+      "emergency": "no"
+    }
+  },
+  "M7": {
+    "chunks": {
+      "1": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "internal",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    }
+  },
+  "M8": {
+    "chunks": {
+      "1": {
+        "category": "ceremonial",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "2": {
+        "category": "ceremonial",
+        "legal_effect": null,
+        "scope": "foreign",
+        "national_security": "no",
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "ceremonial",
+      "legal_effect": null,
+      "scope": "foreign",
+      "national_security": "no",
+      "emergency": "no"
+    }
+  },
+  "M9": {
+    "classification": {
+      "category": "ceremonial",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    }
+  },
+  "M10": {
+    "chunks": {
+      "1": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "foreign",
+        "national_security": "yes",
+        "emergency": null
+      },
+      "2": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "foreign",
+        "national_security": "no",
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "internal",
+      "legal_effect": null,
+      "scope": "foreign",
+      "national_security": "yes",
+      "emergency": "yes"
+    }
+  },
+  "M11": {
+    "chunks": {
+      "1": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "internal",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    }
+  },
+  "M12": {
+    "classification": {
+      "category": "internal",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    }
+  },
+  "M13": {
+    "chunks": {
+      "1": {
+        "category": "other",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "2": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "3": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "4": {
+        "category": "other",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "5": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "6": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "7": {
+        "category": "other",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "8": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "9": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "10": {
+        "category": "other",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "11": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "12": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "13": {
+        "category": "other",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "14": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "15": {
+        "category": "other",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "16": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "internal",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    }
+  },
+  "M14": {
+    "chunks": {
+      "1": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "foreign",
+        "national_security": "no",
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "policy",
+      "legal_effect": "legal",
+      "scope": "foreign",
+      "national_security": "yes",
+      "emergency": "no"
+    }
+  },
+  "M15": {
+    "chunks": {
+      "1": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "foreign",
+        "national_security": "no",
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "policy",
+      "legal_effect": "legal",
+      "scope": "foreign",
+      "national_security": "no",
+      "emergency": "no"
+    }
+  },
+  "M16": {
+    "chunks": {
+      "1": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": null,
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    }
+  },
+  "M17": {
+    "classification": {
+      "category": "internal",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    }
+  },
+  "M18": {
+    "chunks": {
+      "1": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "2": {
+        "category": "ceremonial",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "3": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "internal",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    }
+  },
+  "M19": {
+    "chunks": {
+      "1": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "internal",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": null
+    }
+  },
+  "M20": {
+    "classification": {
+      "category": "ceremonial",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    }
+  },
+  "M21": {
+    "chunks": {
+      "1": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "2": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "internal",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    }
+  },
+  "M22": {
+    "chunks": {
+      "1": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "internal",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    }
+  },
+  "M23": {
+    "chunks": {
+      "1": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "2": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "3": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "internal",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    }
+  },
+  "M24": {
+    "chunks": {
+      "1": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "2": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "internal",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    }
+  },
+  "M25": {
+    "chunks": {
+      "1": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "internal",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    }
+  },
+  "P1": {
+    "chunks": {
+      "1": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "policy",
+      "legal_effect": "legal",
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    }
+  },
+  "P2": {
+    "chunks": {
+      "1": {
+        "category": "other",
+        "legal_effect": null,
+        "scope": "foreign",
+        "national_security": "no",
+        "emergency": null
+      },
+      "2": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "foreign",
+        "national_security": null,
+        "emergency": null
+      },
+      "3": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "foreign",
+        "national_security": "no",
+        "emergency": null
+      },
+      "4": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "foreign",
+        "national_security": "no",
+        "emergency": null
+      },
+      "5": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "foreign",
+        "national_security": "no",
+        "emergency": null
+      },
+      "6": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "foreign",
+        "national_security": "yes",
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "policy",
+      "legal_effect": "legal",
+      "scope": "foreign",
+      "national_security": "no",
+      "emergency": "no"
+    }
+  },
+  "P3": {
+    "chunks": {
+      "1": {
+        "category": "other",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "policy",
+      "legal_effect": "legal",
+      "scope": "foreign",
+      "national_security": "no",
+      "emergency": "no"
+    }
+  },
+  "P4": {
+    "chunks": {
+      "1": {
+        "category": "operative_congress",
+        "legal_effect": null,
+        "scope": "foreign",
+        "national_security": "no",
+        "emergency": null
+      },
+      "2": {
+        "category": "other",
+        "legal_effect": null,
+        "scope": "foreign",
+        "national_security": "no",
+        "emergency": null
+      },
+      "3": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "foreign",
+        "national_security": null,
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "policy",
+      "legal_effect": "legal",
+      "scope": "foreign",
+      "national_security": "yes",
+      "emergency": "no"
+    }
+  },
+  "P5": {
+    "chunks": {
+      "1": {
+        "category": "other",
+        "legal_effect": null,
+        "scope": "foreign",
+        "national_security": "no",
+        "emergency": null
+      },
+      "2": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "foreign",
+        "national_security": "no",
+        "emergency": null
+      },
+      "3": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "foreign",
+        "national_security": "no",
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "policy",
+      "legal_effect": "legal",
+      "scope": "foreign",
+      "national_security": "no",
+      "emergency": "no"
+    }
+  },
+  "P6": {
+    "classification": {
+      "category": "ceremonial",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    },
+    "chunks": {
+      "1": {
+        "category": "ceremonial",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    }
+  },
+  "P7": {
+    "chunks": {
+      "1": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "foreign",
+        "national_security": "no",
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "policy",
+      "legal_effect": "legal",
+      "scope": "foreign",
+      "national_security": "no",
+      "emergency": "no"
+    }
+  },
+  "P8": {
+    "classification": {
+      "category": "policy",
+      "legal_effect": "legal",
+      "scope": "foreign",
+      "national_security": "no",
+      "emergency": "no"
+    },
+    "chunks": {
+      "1": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "foreign",
+        "national_security": "no",
+        "emergency": null
+      },
+      "2": {
+        "category": "other",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "3": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "foreign",
+        "national_security": "no",
+        "emergency": null
+      }
+    }
+  },
+  "P9": {
+    "chunks": {
+      "1": {
+        "category": "ceremonial",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "2": {
+        "category": "ceremonial",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "3": {
+        "category": "ceremonial",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "4": {
+        "category": "ceremonial",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "ceremonial",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    }
+  },
+  "P10": {
+    "classification": {
+      "category": "ceremonial",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    },
+    "chunks": {
+      "1": {
+        "category": "ceremonial",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "2": {
+        "category": "ceremonial",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "3": {
+        "category": "ceremonial",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    }
+  },
+  "P11": {
+    "chunks": {
+      "1": {
+        "category": "ceremonial",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "2": {
+        "category": "ceremonial",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "3": {
+        "category": "ceremonial",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "ceremonial",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": null
+    }
+  },
+  "P12": {
+    "chunks": {
+      "1": {
+        "category": "other",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": "no",
+        "emergency": null
+      },
+      "2": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "3": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "4": {
+        "category": "policy",
+        "legal_effect": "nonlegal",
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "policy",
+      "legal_effect": "legal",
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    }
+  },
+  "P13": {
+    "chunks": {
+      "1": {
+        "category": "ceremonial",
+        "legal_effect": null,
+        "scope": "foreign",
+        "national_security": "no",
+        "emergency": null
+      },
+      "2": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "foreign",
+        "national_security": "no",
+        "emergency": null
+      },
+      "3": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "foreign",
+        "national_security": "no",
+        "emergency": null
+      },
+      "4": {
+        "category": "policy",
+        "legal_effect": "nonlegal",
+        "scope": "foreign",
+        "national_security": "no",
+        "emergency": null
+      },
+      "5": {
+        "category": "policy",
+        "legal_effect": "nonlegal",
+        "scope": "foreign",
+        "national_security": "no",
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "policy",
+      "legal_effect": "legal",
+      "scope": "foreign",
+      "national_security": "no",
+      "emergency": "no"
+    }
+  },
+  "P14": {
+    "classification": {
+      "category": "policy",
+      "legal_effect": "legal",
+      "scope": "foreign",
+      "national_security": "no",
+      "emergency": "no"
+    },
+    "chunks": {
+      "1": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "foreign",
+        "national_security": "no",
+        "emergency": null
+      },
+      "2": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "foreign",
+        "national_security": "no",
+        "emergency": null
+      }
+    }
+  },
+  "P15": {
+    "classification": {
+      "category": "ceremonial",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    },
+    "chunks": {
+      "1": {
+        "category": "ceremonial",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    }
+  },
+  "P16": {
+    "classification": {
+      "category": "ceremonial",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    },
+    "chunks": {
+      "1": {
+        "category": "ceremonial",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    }
+  },
+  "P17": {
+    "classification": {
+      "category": "ceremonial",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    },
+    "chunks": {
+      "1": {
+        "category": "ceremonial",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "2": {
+        "category": "ceremonial",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "3": {
+        "category": "ceremonial",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    }
+  },
+  "P18": {
+    "classification": {
+      "category": "policy",
+      "legal_effect": "legal",
+      "scope": "foreign",
+      "national_security": "no",
+      "emergency": "no"
+    },
+    "chunks": {
+      "1": {
+        "category": "ceremonial",
+        "legal_effect": null,
+        "scope": "foreign",
+        "national_security": "no",
+        "emergency": null
+      },
+      "2": {
+        "category": "ceremonial",
+        "legal_effect": null,
+        "scope": "foreign",
+        "national_security": "no",
+        "emergency": null
+      },
+      "3": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "foreign",
+        "national_security": "no",
+        "emergency": null
+      },
+      "4": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "foreign",
+        "national_security": "no",
+        "emergency": null
+      }
+    }
+  },
+  "P19": {
+    "chunks": {
+      "1": {
+        "category": "ceremonial",
+        "legal_effect": null,
+        "scope": "foreign",
+        "national_security": "no",
+        "emergency": null
+      },
+      "2": {
+        "category": "ceremonial",
+        "legal_effect": null,
+        "scope": "foreign",
+        "national_security": "no",
+        "emergency": null
+      },
+      "3": {
+        "category": "ceremonial",
+        "legal_effect": null,
+        "scope": "foreign",
+        "national_security": "no",
+        "emergency": null
+      },
+      "4": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "foreign",
+        "national_security": "no",
+        "emergency": null
+      },
+      "5": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "foreign",
+        "national_security": "no",
+        "emergency": null
+      },
+      "6": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "foreign",
+        "national_security": "no",
+        "emergency": null
+      },
+      "7": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "foreign",
+        "national_security": "no",
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "policy",
+      "legal_effect": "legal",
+      "scope": "foreign",
+      "national_security": "no",
+      "emergency": "no"
+    }
+  },
+  "P20": {
+    "chunks": {
+      "1": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "policy",
+      "legal_effect": "legal",
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    }
+  },
+  "P21": {
+    "classification": {
+      "category": "ceremonial",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    }
+  },
+  "P22": {
+    "chunks": {
+      "1": {
+        "category": "ceremonial",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "2": {
+        "category": "ceremonial",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "ceremonial",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    }
+  },
+  "P23": {
+    "chunks": {
+      "1": {
+        "category": "ceremonial",
+        "legal_effect": null,
+        "scope": "foreign",
+        "national_security": "no",
+        "emergency": null
+      },
+      "2": {
+        "category": "ceremonial",
+        "legal_effect": null,
+        "scope": "foreign",
+        "national_security": "no",
+        "emergency": null
+      },
+      "3": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "foreign",
+        "national_security": null,
+        "emergency": null
+      },
+      "4": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "foreign",
+        "national_security": "no",
+        "emergency": null
+      },
+      "5": {
+        "category": "other",
+        "legal_effect": null,
+        "scope": "foreign",
+        "national_security": "no",
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "policy",
+      "legal_effect": "legal",
+      "scope": "foreign",
+      "national_security": "no",
+      "emergency": "no"
+    }
+  },
+  "P24": {
+    "chunks": {
+      "1": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "foreign",
+        "national_security": "no",
+        "emergency": null
+      },
+      "2": {
+        "category": "policy",
+        "legal_effect": "nonlegal",
+        "scope": "foreign",
+        "national_security": "no",
+        "emergency": null
+      },
+      "3": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "foreign",
+        "national_security": "no",
+        "emergency": null
+      },
+      "4": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "foreign",
+        "national_security": "no",
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "policy",
+      "legal_effect": "legal",
+      "scope": "foreign",
+      "national_security": "no",
+      "emergency": "no"
+    }
+  },
+  "P25": {
+    "classification": {
+      "category": "ceremonial",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    },
+    "chunks": {
+      "1": {
+        "category": "ceremonial",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "2": {
+        "category": "ceremonial",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    }
+  },
+  "L1": {
+    "classification": {
+      "category": "operative_congress",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "yes"
+    }
+  },
+  "L2": {
+    "classification": {
+      "category": "operative_congress",
+      "legal_effect": null,
+      "scope": "foreign",
+      "national_security": "yes",
+      "emergency": "no"
+    }
+  },
+  "L3": {
+    "classification": {
+      "category": "ceremonial",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    }
+  },
+  "L4": {
+    "classification": {
+      "category": "operative_congress",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    }
+  },
+  "L5": {
+    "classification": {
+      "category": "operative_congress",
+      "legal_effect": null,
+      "scope": "foreign",
+      "national_security": "yes",
+      "emergency": "yes"
+    },
+    "chunks": {
+      "1": {
+        "category": "ceremonial",
+        "legal_effect": null,
+        "scope": "foreign",
+        "national_security": "no",
+        "emergency": null
+      }
+    }
+  },
+  "L6": {
+    "classification": {
+      "category": "ceremonial",
+      "legal_effect": null,
+      "scope": "foreign",
+      "national_security": "no",
+      "emergency": "no"
+    }
+  },
+  "L7": {
+    "classification": {
+      "category": "ceremonial",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    }
+  },
+  "L8": {
+    "classification": {
+      "category": "ceremonial",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    }
+  },
+  "L9": {
+    "classification": {
+      "category": "ceremonial",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    }
+  },
+  "L10": {
+    "classification": {
+      "category": "operative_congress",
+      "legal_effect": null,
+      "scope": "foreign",
+      "national_security": "no",
+      "emergency": "no"
+    },
+    "chunks": {
+      "1": {
+        "category": "operative_congress",
+        "legal_effect": null,
+        "scope": "foreign",
+        "national_security": "no",
+        "emergency": null
+      },
+      "2": {
+        "category": "ceremonial",
+        "legal_effect": null,
+        "scope": "foreign",
+        "national_security": "no",
+        "emergency": null
+      }
+    }
+  },
+  "L11": {
+    "classification": {
+      "category": "ceremonial",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    }
+  },
+  "L12": {
+    "classification": {
+      "category": "ceremonial",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    }
+  },
+  "L13": {
+    "classification": {
+      "category": "ceremonial",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    }
+  },
+  "L14": {
+    "classification": {
+      "category": "operative_congress",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    },
+    "chunks": {
+      "1": {
+        "category": "operative_congress",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    }
+  },
+  "L15": {
+    "classification": {
+      "category": "operative_congress",
+      "legal_effect": null,
+      "scope": "foreign",
+      "national_security": "yes",
+      "emergency": "yes"
+    },
+    "chunks": {
+      "1": {
+        "category": "operative_congress",
+        "legal_effect": null,
+        "scope": "foreign",
+        "national_security": "yes",
+        "emergency": null
+      }
+    }
+  },
+  "L16": {
+    "classification": {
+      "category": "policy",
+      "legal_effect": "legal",
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    },
+    "chunks": {
+      "1": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    }
+  },
+  "L17": {
+    "classification": {
+      "category": "ceremonial",
+      "legal_effect": null,
+      "scope": "foreign",
+      "national_security": "no",
+      "emergency": "no"
+    }
+  },
+  "L18": {
+    "chunks": {
+      "1": {
+        "category": "operative_congress",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "operative_congress",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    }
+  },
+  "L19": {
+    "classification": {
+      "category": "operative_congress",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    }
+  },
+  "L20": {
+    "classification": {
+      "category": "ceremonial",
+      "legal_effect": null,
+      "scope": "foreign",
+      "national_security": "no",
+      "emergency": "no"
+    }
+  },
+  "L21": {
+    "classification": {
+      "category": "operative_congress",
+      "legal_effect": null,
+      "scope": "foreign",
+      "national_security": "no",
+      "emergency": "no"
+    },
+    "chunks": {
+      "1": {
+        "category": "operative_congress",
+        "legal_effect": null,
+        "scope": "foreign",
+        "national_security": "no",
+        "emergency": null
+      }
+    }
+  },
+  "L22": {
+    "classification": {
+      "category": "ceremonial",
+      "legal_effect": null,
+      "scope": "foreign",
+      "national_security": "yes",
+      "emergency": "no"
+    }
+  },
+  "L23": {
+    "classification": {
+      "category": "ceremonial",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    }
+  },
+  "L24": {
+    "classification": {
+      "category": "operative_congress",
+      "legal_effect": null,
+      "scope": "foreign",
+      "national_security": "yes",
+      "emergency": "no"
+    }
+  },
+  "L25": {
+    "chunks": {
+      "1": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "internal",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    }
+  }
+}

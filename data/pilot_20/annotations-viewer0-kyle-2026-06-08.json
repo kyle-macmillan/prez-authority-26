@@ -1,0 +1,560 @@
+{
+  "annotator": "Kyle",
+  "EO1": {
+    "annotations": [
+      {
+        "start": 387,
+        "end": 445,
+        "label": "vesting_clause"
+      }
+    ],
+    "chunks": {
+      "1": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": "yes"
+      },
+      "2": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "foreign",
+        "national_security": "no",
+        "emergency": "yes"
+      },
+      "3": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "foreign",
+        "national_security": "no",
+        "emergency": "yes"
+      },
+      "4": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": "yes"
+      },
+      "5": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": "yes"
+      },
+      "6": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": "no"
+      },
+      "7": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": "no"
+      },
+      "8": {
+        "category": "policy",
+        "legal_effect": "nonlegal",
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": "no"
+      },
+      "9": {
+        "category": "policy",
+        "legal_effect": "nonlegal",
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": "no"
+      }
+    },
+    "classification": {
+      "category": "policy",
+      "legal_effect": "nonlegal",
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "yes"
+    },
+    "wp": {
+      "status": "needs-revision",
+      "comment": "I think the segmentation is largely correct. A few tricky parts: \n(a) This order cites another order than declares an Emergency and cites as authority the IEEPA, so I wasn't sure whether the order_actions should be classified as emergency or not. \n(b) There is boilerplate at the bottom that says no right or benefit, but the order sounds in having a legal effect for the most part (prohibitions in section 1). \n(c) Trouble deciding whether to classify as foreign or domestic because some of them are about US citizens interactions with foreign persons or entities. \n(d) I think the segmentation might need some work. For order_action #6 and #7 are related, even if they both use ordering phrases. I find -> then determine. Worth clarifying whether the finding has legal effect. "
+    }
+  },
+  "EO2": {
+    "chunks": {
+      "1": {
+        "category": "policy",
+        "legal_effect": "nonlegal",
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": "no"
+      }
+    },
+    "classification": {
+      "category": "policy",
+      "legal_effect": "nonlegal",
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    },
+    "wp": {
+      "status": "correct",
+      "comment": "I think we should use this example to decide how to break up orders with sublists. "
+    }
+  },
+  "EO3": {
+    "chunks": {
+      "2": {
+        "category": "policy",
+        "legal_effect": "nonlegal",
+        "scope": "foreign",
+        "national_security": "yes",
+        "emergency": "no"
+      },
+      "3": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "foreign",
+        "national_security": "yes",
+        "emergency": "no"
+      }
+    },
+    "classification": {
+      "category": "policy",
+      "legal_effect": "legal",
+      "scope": "foreign",
+      "national_security": "yes",
+      "emergency": "no"
+    },
+    "wp": {
+      "status": "needs-revision",
+      "comment": "I think that first order_action is probably not doing anything other than including an ordering phrase."
+    }
+  },
+  "EO4": {
+    "annotations": [
+      {
+        "start": 0,
+        "end": 167,
+        "label": "vesting_clause"
+      }
+    ],
+    "chunks": {
+      "1": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "foreign",
+        "national_security": "yes",
+        "emergency": "no"
+      },
+      "2": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "foreign",
+        "national_security": "yes",
+        "emergency": "no"
+      }
+    },
+    "classification": {
+      "category": "policy",
+      "legal_effect": "legal",
+      "scope": "foreign",
+      "national_security": "yes",
+      "emergency": "no"
+    },
+    "wp": {
+      "status": "needs-revision",
+      "comment": "(1) The vesting Clause needs to include the cited section of the IRC\n(2) Unclear when a designation has legal effect. Probably no?"
+    }
+  },
+  "EO5": {
+    "chunks": {
+      "1": {
+        "category": "policy",
+        "legal_effect": "nonlegal",
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": "no"
+      },
+      "2": {
+        "category": "policy",
+        "legal_effect": "nonlegal",
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": "no"
+      },
+      "4": {
+        "category": "policy",
+        "legal_effect": "nonlegal",
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": "no"
+      },
+      "5": {
+        "category": "policy",
+        "legal_effect": "nonlegal",
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": "no"
+      }
+    },
+    "annotations": [
+      {
+        "start": 8935,
+        "end": 9041,
+        "label": "vesting_clause"
+      }
+    ],
+    "classification": {
+      "category": "policy",
+      "legal_effect": "nonlegal",
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    },
+    "wp": {
+      "status": "needs-revision",
+      "comment": "One missed vesting clause."
+    }
+  },
+  "M2": {
+    "classification": {
+      "category": "internal",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    }
+  },
+  "M1": {
+    "classification": {
+      "category": "policy",
+      "legal_effect": "legal",
+      "scope": "foreign",
+      "national_security": "yes",
+      "emergency": "no"
+    },
+    "wp": {
+      "status": "correct"
+    }
+  },
+  "M3": {
+    "chunks": {
+      "1": {
+        "category": "ceremonial",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": "no"
+      }
+    },
+    "classification": {
+      "category": "ceremonial",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    },
+    "wp": {
+      "status": "correct"
+    }
+  },
+  "M4": {
+    "annotations": [
+      {
+        "start": 77,
+        "end": 190,
+        "label": "vesting_clause"
+      }
+    ],
+    "chunks": {
+      "1": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "foreign",
+        "national_security": "no",
+        "emergency": "no"
+      }
+    },
+    "wp": {
+      "status": "correct",
+      "comment": "(1) What counts as an emergency? Is it just when the President officially calls something an emergency? Or when drawing on emergency powers. \n(2) I'm just a little hazy on what counts as legal effect vs. non-legally binding. Would this count?"
+    },
+    "classification": {
+      "category": "policy",
+      "legal_effect": "legal",
+      "scope": "foreign",
+      "national_security": "no",
+      "emergency": "no"
+    }
+  },
+  "M5": {
+    "classification": {
+      "category": "policy",
+      "legal_effect": "nonlegal",
+      "scope": "foreign",
+      "national_security": "yes",
+      "emergency": "no"
+    },
+    "wp": {
+      "status": "correct"
+    }
+  },
+  "L1": {
+    "chunks": {
+      "1": {
+        "category": "policy",
+        "legal_effect": "nonlegal",
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": "no"
+      }
+    },
+    "classification": {
+      "category": "policy",
+      "legal_effect": "nonlegal",
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    },
+    "wp": {
+      "status": "correct",
+      "comment": "Another question: if the President is just speaking to the nation / coordinate branch, does this count as ceremonial? Currently doesn't fall under our definition. "
+    }
+  },
+  "L2": {
+    "classification": {
+      "category": "policy",
+      "legal_effect": "nonlegal",
+      "scope": "foreign",
+      "national_security": "yes",
+      "emergency": "no"
+    },
+    "wp": {
+      "status": "needs-revision"
+    },
+    "annotations": [
+      {
+        "start": 119,
+        "end": 534,
+        "label": "order_action",
+        "classification": {
+          "category": "policy",
+          "legal_effect": "nonlegal",
+          "scope": "foreign",
+          "national_security": "yes",
+          "emergency": "no"
+        }
+      }
+    ]
+  },
+  "L3": {
+    "classification": {
+      "category": "ceremonial",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    },
+    "wp": {
+      "status": "correct"
+    }
+  },
+  "L4": {
+    "annotations": [
+      {
+        "start": 41,
+        "end": 139,
+        "label": "vesting_clause"
+      }
+    ],
+    "chunks": {
+      "1": {
+        "category": "policy",
+        "legal_effect": "nonlegal",
+        "scope": "foreign",
+        "national_security": "no",
+        "emergency": "no"
+      }
+    },
+    "classification": {
+      "category": "policy",
+      "legal_effect": "nonlegal",
+      "scope": "foreign",
+      "national_security": "no",
+      "emergency": "no"
+    },
+    "wp": {
+      "status": "correct"
+    }
+  },
+  "L5": {
+    "classification": {
+      "category": "policy",
+      "legal_effect": "nonlegal",
+      "scope": "foreign",
+      "national_security": "no",
+      "emergency": "no"
+    },
+    "wp": {
+      "status": "correct",
+      "comment": "How should we classify these letters that accompany other types of directives?"
+    }
+  },
+  "P1": {
+    "chunks": {
+      "1": {
+        "category": "ceremonial",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": "no"
+      },
+      "2": {
+        "category": "ceremonial",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": "no"
+      }
+    },
+    "classification": {
+      "category": "ceremonial",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    },
+    "wp": {
+      "status": "correct"
+    }
+  },
+  "P2": {
+    "chunks": {
+      "1": {
+        "category": "ceremonial",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": "no"
+      },
+      "2": {
+        "category": "ceremonial",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": "no"
+      },
+      "3": {
+        "category": "ceremonial",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": "no"
+      }
+    },
+    "classification": {
+      "category": "ceremonial",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    },
+    "wp": {
+      "status": "correct"
+    }
+  },
+  "P3": {
+    "chunks": {
+      "1": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "foreign",
+        "national_security": "no",
+        "emergency": "no"
+      },
+      "2": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "foreign",
+        "national_security": "no",
+        "emergency": "no"
+      }
+    },
+    "classification": {
+      "category": "policy",
+      "legal_effect": "legal",
+      "scope": "foreign",
+      "national_security": "no",
+      "emergency": "no"
+    },
+    "annotations": [
+      {
+        "start": 74,
+        "end": 152,
+        "label": "vesting_clause"
+      },
+      {
+        "start": 481,
+        "end": 559,
+        "label": "vesting_clause"
+      },
+      {
+        "start": 872,
+        "end": 926,
+        "label": "vesting_clause"
+      }
+    ],
+    "wp": {
+      "status": "needs-revision",
+      "comment": "The marked vesting clause references previous Acts. "
+    }
+  },
+  "P4": {
+    "chunks": {
+      "1": {
+        "category": "ceremonial",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": "no"
+      }
+    },
+    "classification": {
+      "category": "ceremonial",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    },
+    "wp": {
+      "status": "correct"
+    }
+  },
+  "P5": {
+    "chunks": {
+      "1": {
+        "category": "ceremonial",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": "no"
+      }
+    },
+    "classification": {
+      "category": "ceremonial",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    },
+    "wp": {
+      "status": "correct"
+    }
+  }
+}

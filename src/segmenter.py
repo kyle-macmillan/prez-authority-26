@@ -55,6 +55,11 @@ class Segment:
 # from references to external law sections ("Section 1016 of the Intelligence Reform Act").
 # Allow optional whitespace before the period to handle "Sec. 2 . Title" formatting variants.
 _SECTION_RE = re.compile(r"^(Section|Sec\.)\s+\d+\s*\.(?!\d)", re.IGNORECASE)
+# Some executive orders use title-part numbering: "1-1. Title" for top-level
+# sections and "1-101. Text" for subsections under that section.
+_SECTION_HYPHEN_PRIMARY_RE = re.compile(r"^\d+-\d{1,2}\.\s+\S")
+_SECTION_HYPHEN_SUB_RE = re.compile(r"^\d+-\d{3,}\.\s+\S")
+_SECTION_HYPHEN_RE = re.compile(r"^\d+-\d+\.\s+\S")
 # Some documents (e.g. NSC-organization memos) use uppercase-letter section headers: "A. Title".
 # Must be case-sensitive — lowercase (a), (b) are list sub-items, not section headers.
 # Require the word after the period to begin with a letter (not a digit) to avoid matching
@@ -67,6 +72,11 @@ _SECTION_ROMAN_RE = re.compile(r"^[IVX]{2,}\.\s+[A-Za-z]")
 # Restricted to I/V/X so that C./D./L./M. (common alpha subsection labels) are not misread as
 # Roman numeral primaries — presidential documents never reach Roman numerals that high.
 _SECTION_ROMAN_ALL_RE = re.compile(r"^[IVX]+\.\s+[A-Za-z]")
+# Sections whose title is "Purpose", "Purposes", or "Definitions" are always preamble.
+_PURPOSE_TITLE_RE = re.compile(
+    r"^(?:(?:Section|Sec\.)\s+\S+|[A-Z](?:\.[A-Z])*\.)\s+(?:Purposes?|Definitions)\b",
+    re.IGNORECASE,
+)
 _STRUCT_ITEM_RE = re.compile(
     r"^(\(\d+\)|\([a-z]\)|\([ivxlcdm]+\)|\d+\.)\s", re.IGNORECASE
 )
@@ -179,7 +189,7 @@ def _classify_chunk(chunk: str, position: int, total: int, is_last_n: bool) -> S
     if is_last_n and len(s) < 55 and _SIGNATURE_RE.match(s) and not _SECTION_ALPHA_RE.match(s):
         return "metadata"
 
-    if _SECTION_RE.match(s):
+    if _SECTION_RE.match(s) or _SECTION_HYPHEN_RE.match(s):
         return "section"
 
     lower = s.lower()
@@ -222,7 +232,8 @@ _PRESIDENT_NAME_RE = re.compile(
 # Embedded section header: a new "Sec. N." or "Section N." that follows a sentence-end
 # within a chunk (single-space separated, not caught by the initial double-space split).
 _EMBEDDED_SECTION_RE = re.compile(
-    r"(?<=[.!?:])\s+(?=(?:Section|Sec\.)\s+\d+\s*\.(?!\d))", re.IGNORECASE
+    r"(?<=[.!?:])\s+(?=(?:(?:Section|Sec\.)\s+\d+\s*\.(?!\d)|\d+-\d+\.\s+\S))",
+    re.IGNORECASE,
 )
 
 
@@ -245,7 +256,21 @@ def _is_list_item(s: str) -> bool:
 
 def _is_section_header(s: str) -> bool:
     """True if the chunk is a formal section header (Section N., Sec. N., A./B./C., or Roman numeral style)."""
-    return bool(_SECTION_RE.match(s) or _SECTION_ALPHA_RE.match(s) or _SECTION_ROMAN_RE.match(s))
+    return bool(
+        _SECTION_RE.match(s)
+        or _SECTION_HYPHEN_RE.match(s)
+        or _SECTION_ALPHA_RE.match(s)
+        or _SECTION_ROMAN_RE.match(s)
+    )
+
+
+def _is_primary_section_header(s: str) -> bool:
+    return bool(
+        _SECTION_RE.match(s)
+        or _SECTION_HYPHEN_PRIMARY_RE.match(s)
+        or _SECTION_ALPHA_RE.match(s)
+        or _SECTION_ROMAN_RE.match(s)
+    )
 
 
 def _has_formal_sections(tagged: list[tuple[SegmentType, str, int]]) -> bool:
@@ -347,9 +372,9 @@ def _group_by_sections(
         # headers (including single I./V./X.) are primary.  A./B./C. are sub-headers.
         # When alpha_as_subsection=False, all formal section headers are primary.
         is_primary = (
-            bool(_SECTION_RE.match(s) or _SECTION_ROMAN_ALL_RE.match(s))
+            bool(_SECTION_RE.match(s) or _SECTION_HYPHEN_PRIMARY_RE.match(s) or _SECTION_ROMAN_ALL_RE.match(s))
             if alpha_as_subsection
-            else _is_section_header(s)
+            else _is_primary_section_header(s)
         )
 
         if is_primary:
@@ -373,6 +398,21 @@ def _group_by_sections(
                 current_chunks.append(text)
                 current_indices.append(idx)
                 # current_type stays "section"
+            else:
+                current_chunks.append(text)
+                current_indices.append(idx)
+            continue
+
+        # Hyphen-coded subsections such as "1-101." belong under a top-level
+        # "1-1." section. For classifier output they can split into their own
+        # provisions; for display/review they remain merged with the parent.
+        if _SECTION_HYPHEN_SUB_RE.match(s) and current_type == "section":
+            if (split_subsections
+                    and current_chunks
+                    and not _ends_incomplete(current_chunks[-1])):
+                flush()
+                current_chunks.append(text)
+                current_indices.append(idx)
             else:
                 current_chunks.append(text)
                 current_indices.append(idx)
@@ -624,6 +664,7 @@ def segment(
     doc_type: str = "",
     split_subsections: bool = True,
     split_paragraphs: bool = True,
+    strict_wp: bool = False,
 ) -> list[Segment]:
     """Segment a document's text into classifiable units.
 
@@ -633,11 +674,11 @@ def segment(
         split_subsections: When True (default), numbered items (1. 2. 3.) within a
             formal section each become their own segment.  Set to False to keep entire
             sections merged — useful for display/review.
-        split_paragraphs: When True (default), documents without formal sections are
-            split into individual paragraph/section segments.  When False, all content
-            in a non-sectioned document is merged into a single paragraph segment —
-            useful for classification where the whole document is one unit.
+        split_paragraphs: Deprecated. Documents without formal sections are segmented
+            by ordering phrases.
             Has no effect on documents that have formal sections.
+        strict_wp: When True, disable all extensions (section-only shall verbs,
+            opening-authority vesting) and use only the original W&P phrase list.
     """
     raw_chunks = re.split(r"  +", doc_text)
     chunks = _resplit_embedded_sections(
@@ -645,15 +686,17 @@ def segment(
     )
     total = len(chunks)
 
-    ordering_re = _get_ordering_re()
+    ordering_re = _get_ordering_re(extended=False)  # W&P only for initial scan
+    opening_authority = not strict_wp
+    is_proclamation = doc_type == "proclamation"
     tagged: list[tuple[SegmentType, str, int]] = []
     for i, chunk in enumerate(chunks):
         is_last_n = i >= total - 5
         ct = _classify_chunk(chunk, i, total, is_last_n)
         # Metadata and boilerplate bypass the vesting carve-out — they are complete chunks
         # whose classification is already settled (mirrors segment_ordering() behavior).
-        if ct not in ("metadata", "boilerplate") and _chunk_has_vesting(chunk, ordering_re):
-            for piece, is_vesting in _carve_vesting(chunk, ordering_re):
+        if ct not in ("metadata", "boilerplate") and _chunk_has_vesting(chunk, ordering_re, opening_authority=opening_authority, is_proclamation=is_proclamation):
+            for piece, is_vesting in _carve_vesting(chunk, ordering_re, opening_authority=opening_authority, is_proclamation=is_proclamation):
                 if is_vesting:
                     tagged.append(("vesting_clause", piece, i))
                 else:
@@ -672,20 +715,67 @@ def segment(
     if has_sections:
         segs = _group_by_sections(tagged, split_subsections=split_subsections,
                                   alpha_as_subsection=alpha_as_sub)
-    elif _has_structural_items(chunks):
-        segs = _group_by_struct_items(tagged)
     else:
-        segs = _group_as_paragraphs(tagged)
+        segs = segment_ordering(doc_text, doc_type, strict_wp=strict_wp)
 
     segs = _merge_incomplete_paragraphs(segs)
     segs = _enforce_closing_cutoff(segs)
     segs = _enforce_signoff_cutoff(segs)
     segs = _reclassify_titles_before_metadata(segs)
 
-    if not split_paragraphs and not has_sections:
-        segs = _merge_content_segments(segs)
-
     return segs
+
+
+def _reclassify_sections_without_ordering_phrase(
+    segs: list[Segment], ordering_re: re.Pattern
+) -> list[Segment]:
+    """Reclassify section segments that lack a W&P ordering phrase as preamble."""
+    return [
+        seg if seg.seg_type != "section" or ordering_re.search(seg.text)
+        else Segment(seg.text, "preamble", seg.chunk_indices)
+        for seg in segs
+    ]
+
+
+def _relabel_for_wp(segs: list[Segment], ordering_re: re.Pattern) -> list[Segment]:
+    """Translate section-grouper labels into the W&P taxonomy.
+
+    Paragraphs (pre-section introductory text):
+      has ordering phrase  → ordering_phrase  (introductory, not a standalone directive)
+      no ordering phrase   → preamble
+
+    Sections (priority order):
+      has boilerplate signal     → boilerplate
+      default                    → order_action
+    """
+    result = []
+    seen_action = False  # True once the first order_action section has been emitted
+
+    for seg in segs:
+        if seg.seg_type == "paragraph":
+            if ordering_re.search(seg.text):
+                # ordering_phrase only at the document opening (before any order_action
+                # section); mid-document ordering paragraphs become order_action.
+                new_type: SegmentType = "ordering_phrase" if not seen_action else "order_action"
+            else:
+                new_type = "order_action" if seen_action else "preamble"
+            result.append(Segment(seg.text, new_type, seg.chunk_indices))
+
+        elif seg.seg_type == "section":
+            lower = seg.text.lower()
+            _ends_law = lower.rstrip().rstrip('.').endswith("to the extent permitted by law")
+            if ((_ends_law or any(signal in lower for signal in _BOILERPLATE_SIGNALS))
+                    and not seg.text.rstrip().endswith(":")):
+                new_type = "boilerplate"
+            else:
+                new_type = "order_action"
+                seen_action = True
+            result.append(Segment(seg.text, new_type, seg.chunk_indices))
+
+        else:
+            result.append(seg)
+
+    return result
 
 
 def _starts_with_list_marker(text: str) -> bool:
@@ -823,26 +913,55 @@ def _merge_content_segments(segs: list[Segment]) -> list[Segment]:
 # Woolley & Peters ordering-phrase strategy
 # ---------------------------------------------------------------------------
 
+# Additional high-confidence directive verbs used only to classify formal sections.
+# Keeping these out of ORDERING_PHRASES prevents them from becoming split points in
+# unstructured documents, where a match beginning at "shall" would drop the actor.
+_SECTION_SHALL_ACTION = (
+    r"shall\s+"
+    r"(?:(?:also|promptly|immediately)\s+){0,2}"
+    r"(?:take|develop|designate|establish|perform|make|issue|identify|prepare|"
+    r"implement|determine|recommend|prescribe|seek|assist)\b"
+)
+
+
 # Import phrase list lazily so the module loads even if ordering_phrases.py is absent.
-def _build_ordering_re() -> re.Pattern:
+def _build_ordering_re(section_extensions: bool = False) -> re.Pattern:
     from ordering_phrases import ORDERING_PHRASES, CURATED_OUT
     active = [p for p in ORDERING_PHRASES if p not in CURATED_OUT]
     # Sort longest-first so more-specific phrases win over shorter prefixes.
     active.sort(key=len, reverse=True)
+    phrase_alt = "|".join(re.escape(p) for p in active)
+
+    if not section_extensions:
+        return re.compile(r"\b(" + phrase_alt + r")", re.IGNORECASE)
+
     return re.compile(
-        r"\b(" + "|".join(re.escape(p) for p in active) + r")",
+        r"\b(" + phrase_alt + r"|" + _SECTION_SHALL_ACTION + r")",
         re.IGNORECASE,
     )
 
 
-_ordering_re_cache: re.Pattern | None = None
+_ordering_re_cache: re.Pattern | None = None           # W&P phrases only
+_ordering_re_extended_cache: re.Pattern | None = None  # W&P + section-only shall verbs
 
 
-def _get_ordering_re() -> re.Pattern:
-    global _ordering_re_cache
-    if _ordering_re_cache is None:
-        _ordering_re_cache = _build_ordering_re()
-    return _ordering_re_cache
+def _get_ordering_re(extended: bool = False) -> re.Pattern:
+    """Return the ordering-phrase regex.
+
+    extended=False (default): pure W&P phrase list — used for initial scan,
+        non-sections path, and strict_wp mode.
+    extended=True: adds the allowlisted shall + verb pattern — used only in
+        formal-section classification paths.
+    """
+    global _ordering_re_cache, _ordering_re_extended_cache
+    if extended:
+        if _ordering_re_extended_cache is None:
+            _ordering_re_extended_cache = _build_ordering_re(section_extensions=True)
+        return _ordering_re_extended_cache
+    else:
+        if _ordering_re_cache is None:
+            _ordering_re_cache = _build_ordering_re(section_extensions=False)
+        return _ordering_re_cache
 
 
 # Sentence boundary: terminal punctuation followed by whitespace and a capital letter or "(".
@@ -862,23 +981,40 @@ _STRONG_VESTING_RE = re.compile(
     re.IGNORECASE,
 )
 
+# Additional strong markers that apply only to proclamations.  Congressional joint
+# resolutions and Public Law citations signal authority invocations in proclamations
+# but are mere references in memos, EOs, and letters.
+_PROC_VESTING_RE = re.compile(
+    r"joint\s+resolution|public\s+law\b",
+    re.IGNORECASE,
+)
+
 # Conditional authority markers: only create a vesting_clause carve-out when an
 # ordering phrase also appears in the same sentence.
 #   "now, therefore, i" — standard proclamation invocation formula
-#   "consistent with / pursuant to" — cite-authority prefix, qualified by a law citation
+#   "pursuant to" — cite-authority prefix, qualified by a law citation
 _CONDITIONAL_VESTING_RE = re.compile(
     r"\bnow,?\s+therefore,?\s+i\b",
     re.IGNORECASE,
 )
 
-# "Pursuant to" / "consistent with" prefix used as a law-citation anchor for has_vesting
+# "Pursuant to" prefix used as a law-citation anchor for has_vesting
 # and as an authority-marker anchor for _vesting_marker_end.
-_PURSUANT_RE = re.compile(r"\b(?:consistent\s+with|pursuant\s+to)\b", re.IGNORECASE)
+_PURSUANT_RE = re.compile(r"\bpursuant\s+to\b", re.IGNORECASE)
 
 # First-person presidential reference.  Required alongside _PURSUANT_RE + _LAW_CITATION_RE
 # to avoid tagging cabinet-delegation sentences ("The Secretary of State … shall…") as
 # vesting clauses.  True presidential authority sentences always use "I" as the actor.
 _PRESIDENTIAL_I_RE = re.compile(r"\bI\b")
+
+# Sentence-opening statutory authority citation.  "Pursuant to section X", "Under section Z"
+# at the START of a sentence (checked via re.match) — indicates the sentence is an authority
+# invocation regardless of whether an ordering phrase follows.  "Consistent with" is excluded:
+# it signals non-disagreement with a law, not that the law authorizes the action.
+_OPENING_AUTHORITY_RE = re.compile(
+    r"(?:pursuant\s+to|under\s+(?:section|title|the\s+authority))",
+    re.IGNORECASE,
+)
 
 # Law-citation anchor for "consistent with" / "pursuant to" qualification.
 # Matches specific statutory/constitutional references; excludes vague terms like
@@ -897,8 +1033,25 @@ _LAW_CITATION_RE = re.compile(
     r")"
 )
 
+# Text after an internal comma that remains part of the same statutory citation.  This lets
+# inline vesting carve-outs span citation components without depending on a particular Act or
+# directive's wording.
+_CITATION_CONTINUATION_RE = re.compile(
+    r"(?:"
+    r"\d{4}\b"                              # "Act, 2020"
+    r"|as\s+amended\b"                      # "Act of 1962, as amended"
+    r"|\d+\s+U\.S\.C\."                     # "22 U.S.C. 2601"
+    r"|United\s+States\s+Code\b"            # "title 5, United States Code"
+    r"|\d+\s+Stat\."                        # "74 Stat. 898"
+    r"|Public\s+Law\b|Pub\.\s*L\."          # Public Law references
+    r"|\((?:\d+|H\.?R\.?|S\.\s*\d)"        # parenthetical citation components
+    r"|(?:and|or)\s+(?:section|title|chapter|\d+\s+U\.S\.C\.)\b"
+    r")",
+    re.IGNORECASE,
+)
 
-def _vesting_marker_end(sent: str, limit: int) -> int:
+
+def _vesting_marker_end(sent: str, limit: int, is_proclamation: bool = False) -> int:
     """End offset of the last authority-invocation marker at or before *limit*.
 
     Used to anchor the vesting/directive cut search: by starting the punctuation
@@ -908,7 +1061,10 @@ def _vesting_marker_end(sent: str, limit: int) -> int:
     Returns 0 when no qualifying marker precedes *limit*.
     """
     ends = [0]
-    for rgx in (_STRONG_VESTING_RE, _CONDITIONAL_VESTING_RE, _PURSUANT_RE):
+    patterns = (_STRONG_VESTING_RE, _CONDITIONAL_VESTING_RE, _PURSUANT_RE)
+    if is_proclamation:
+        patterns = patterns + (_PROC_VESTING_RE,)
+    for rgx in patterns:
         ends += [am.end() for am in rgx.finditer(sent) if am.end() <= limit]
     return max(ends)
 
@@ -918,8 +1074,76 @@ def _split_sentences(text: str) -> list[str]:
     return [s for s in _SENT_SPLIT_RE.split(text) if s.strip()]
 
 
+def _inline_pursuant_start(sent: str, ordering_re: re.Pattern) -> int | None:
+    """Return a presidential mid-sentence statutory ``pursuant to`` citation's start.
+
+    Requiring both a preceding ordering phrase and first-person presidential actor keeps
+    cabinet instructions such as "The Secretary shall, pursuant to section 5" from being
+    treated as the President's vesting clause.
+    """
+    for match in _PURSUANT_RE.finditer(sent):
+        preceding = sent[:match.start()]
+        if (
+            ordering_re.search(preceding)
+            and _PRESIDENTIAL_I_RE.search(preceding)
+            and _LAW_CITATION_RE.search(sent, match.end())
+        ):
+            return match.start()
+    return None
+
+
+def _carve_inline_pursuant(
+    pieces: list[tuple[str, "SegmentType | None"]], ordering_re: re.Pattern
+) -> list[tuple[str, "SegmentType | None"]]:
+    """Carve a trailing mid-sentence statutory citation from an order-action piece."""
+    result: list[tuple[str, "SegmentType | None"]] = []
+    for text, seg_type in pieces:
+        start = _inline_pursuant_start(text, ordering_re) if seg_type == "order_action" else None
+        if start is None:
+            result.append((text, seg_type))
+            continue
+        directive = text[:start].strip()
+        suffix = text[start:]
+        end = len(suffix)
+        for comma in re.finditer(r",", suffix):
+            following = suffix[comma.end():].lstrip()
+            if not following or not _CITATION_CONTINUATION_RE.match(following):
+                end = comma.end()
+                break
+        citation = suffix[:end].strip()
+        remainder = suffix[end:].strip()
+        if directive:
+            result.append((directive, seg_type))
+        if citation:
+            result.append((citation, "vesting_clause"))
+        if remainder:
+            result.append((remainder, seg_type))
+    return result
+
+
+def _opening_authority_cut(sent: str) -> int | None:
+    """Return the end offset of a sentence-opening authority citation.
+
+    Handles "Pursuant to section X ..., [operative text]" sentences that have no
+    W&P ordering phrase.  Citation-internal commas are skipped until the following
+    text no longer looks like a citation continuation.
+    """
+    if not _OPENING_AUTHORITY_RE.match(sent.lstrip()):
+        return None
+    for comma in re.finditer(r",", sent):
+        prefix = sent[:comma.end()]
+        if not _LAW_CITATION_RE.search(prefix):
+            continue
+        following = sent[comma.end():].lstrip()
+        if following and _CITATION_CONTINUATION_RE.match(following):
+            continue
+        return comma.end()
+    return None
+
+
 def _segment_sentence(
-    sent: str, ordering_re: re.Pattern
+    sent: str, ordering_re: re.Pattern, opening_authority: bool = True,
+    is_proclamation: bool = False,
 ) -> list[tuple[str, "SegmentType | None"]]:
     """Split a sentence into (text, start_type) pieces for the W&P strategy.
 
@@ -932,7 +1156,7 @@ def _segment_sentence(
     - Authority markers come in two strengths:
         Strong ("vested in me", "by virtue of the authority"): the sentence is tagged
           vesting_clause even when no ordering phrase is present.
-        Conditional ("now, therefore, i"; "consistent with/pursuant to" + law citation):
+        Conditional ("now, therefore, i"; "pursuant to" + law citation):
           only creates a vesting_clause carve-out when an ordering phrase also appears.
     - For every ordering phrase after the first, we cut at the nearest punctuation mark
       before that phrase (within the span since the previous phrase ended); if none exists,
@@ -946,7 +1170,18 @@ def _segment_sentence(
     # This prevents post-phrase citations like "I hereby order, by the authority vested in
     # me…" from triggering a spurious vesting carve-out of the contextual prefix.
     prefix = sent[:matches[0].start()] if matches else sent
-    has_strong_vesting = bool(_STRONG_VESTING_RE.search(prefix))
+    # A sentence that OPENS with "Pursuant to / Under section [law]"
+    # is a statutory authority invocation — treat as strong vesting when extensions are on.
+    _sentence_opens_with_authority = (
+        opening_authority
+        and bool(_OPENING_AUTHORITY_RE.match(sent.lstrip()))
+        and bool(_LAW_CITATION_RE.search(sent))
+    )
+    has_strong_vesting = (
+        bool(_STRONG_VESTING_RE.search(prefix))
+        or (is_proclamation and bool(_PROC_VESTING_RE.search(prefix)))
+        or _sentence_opens_with_authority
+    )
     has_vesting = has_strong_vesting or bool(
         _CONDITIONAL_VESTING_RE.search(prefix)
         or (
@@ -959,6 +1194,13 @@ def _segment_sentence(
     if not matches:
         # Strong markers → the sentence itself is the authority citation.
         # Conditional markers only create a carve-out when an ordering phrase follows.
+        if _sentence_opens_with_authority:
+            cut = _opening_authority_cut(sent)
+            if cut is not None and cut < len(sent):
+                return [
+                    (sent[:cut].strip(), "vesting_clause"),
+                    (sent[cut:].strip(), None),
+                ]
         return [(sent, "vesting_clause" if has_strong_vesting else None)]
 
     # Build cut positions.  Each cut is the index in `sent` where a new piece starts.
@@ -976,15 +1218,24 @@ def _segment_sentence(
         if i > 0:
             win_start = matches[i - 1].end()
         else:
-            win_start = _vesting_marker_end(sent, m.start())
+            win_start = _vesting_marker_end(sent, m.start(), is_proclamation=is_proclamation)
         window = sent[win_start : m.start()]
         pm = list(_PUNCT_RE.finditer(window))
-        # Cut just after the last punctuation in the window, or right before the phrase.
-        cuts.append(win_start + pm[-1].end() if pm else m.start())
+        if pm:
+            cut_pos = win_start + pm[-1].end()
+            # "including <statutory citation>" after the comma is a continuation of the
+            # authority citation, not the start of a new directive clause — extend the
+            # vesting prefix to right before the ordering phrase.
+            after_cut = sent[cut_pos : m.start()].lstrip()
+            cuts.append(
+                m.start() if after_cut.lower().startswith("including ") else cut_pos
+            )
+        else:
+            cuts.append(m.start())
 
     if not cuts:
         # Single ordering phrase, no vesting prefix — the whole sentence is one directive.
-        return [(sent, "order_action")]
+        return _carve_inline_pursuant([(sent, "order_action")], ordering_re)
 
     bounds = [0, *cuts, len(sent)]
     result: list[tuple[str, "SegmentType | None"]] = []
@@ -994,16 +1245,17 @@ def _segment_sentence(
             continue
         seg_type: "SegmentType | None" = "vesting_clause" if (has_vesting and i == 0) else "order_action"
         result.append((piece, seg_type))
-    return result
+    return _carve_inline_pursuant(result, ordering_re)
 
 
-def _chunk_has_vesting(chunk: str, ordering_re: re.Pattern) -> bool:
+def _chunk_has_vesting(chunk: str, ordering_re: re.Pattern, opening_authority: bool = True,
+                       is_proclamation: bool = False) -> bool:
     """True if the chunk contains an authority-invocation marker that warrants a carve-out.
 
     Mirrors the has_vesting logic in _segment_sentence, evaluated at chunk level so that
     segment() can apply the same cutoff as segment_ordering().
     Strong markers ('vested in me', 'by virtue of the authority') trigger unconditionally;
-    conditional markers ('now, therefore, I'; 'pursuant to/consistent with' + law citation)
+    conditional markers ('now, therefore, I'; 'pursuant to' + law citation)
     only trigger when an ordering phrase is also present in the chunk.
 
     Critically, all marker searches are restricted to the text *before* the first ordering
@@ -1014,6 +1266,18 @@ def _chunk_has_vesting(chunk: str, ordering_re: re.Pattern) -> bool:
     first_match = ordering_re.search(chunk)
     prefix = chunk[:first_match.start()] if first_match else chunk
     if _STRONG_VESTING_RE.search(prefix):
+        return True
+    if is_proclamation and _PROC_VESTING_RE.search(prefix):
+        return True
+    if opening_authority and any(
+        _OPENING_AUTHORITY_RE.match(s.lstrip()) and _LAW_CITATION_RE.search(s)
+        for s in (_split_sentences(chunk) or [chunk])
+    ):
+        return True
+    if any(
+        _inline_pursuant_start(s, ordering_re) is not None
+        for s in (_split_sentences(chunk) or [chunk])
+    ):
         return True
     has_cond = bool(
         _CONDITIONAL_VESTING_RE.search(prefix)
@@ -1026,7 +1290,8 @@ def _chunk_has_vesting(chunk: str, ordering_re: re.Pattern) -> bool:
     return has_cond and bool(first_match)
 
 
-def _carve_vesting(chunk: str, ordering_re: re.Pattern) -> list[tuple[str, bool]]:
+def _carve_vesting(chunk: str, ordering_re: re.Pattern, opening_authority: bool = True,
+                   is_proclamation: bool = False) -> list[tuple[str, bool]]:
     """Split a chunk into ordered (text, is_vesting) pieces using the W&P sentence carve.
 
     Non-vesting pieces (directive/None from _segment_sentence) are coalesced so that the
@@ -1034,7 +1299,8 @@ def _carve_vesting(chunk: str, ordering_re: re.Pattern) -> list[tuple[str, bool]
     """
     pieces: list[tuple[str, bool]] = []
     for sent in _split_sentences(chunk) or [chunk]:
-        for text, start_type in _segment_sentence(sent, ordering_re):
+        for text, start_type in _segment_sentence(sent, ordering_re, opening_authority=opening_authority,
+                                                  is_proclamation=is_proclamation):
             pieces.append((text, start_type == "vesting_clause"))
     # Coalesce consecutive content pieces; vesting pieces are always kept standalone.
     coalesced: list[tuple[str, bool]] = []
@@ -1177,7 +1443,7 @@ def _merge_sublists(segments: list[Segment]) -> list[Segment]:
 _ORDERING_PHRASE_MAX_CHARS = 80
 
 
-def _split_colon_lists(segments: list[Segment]) -> list[Segment]:
+def _split_colon_lists(segments: list[Segment], ordering_re: re.Pattern | None = None) -> list[Segment]:
     """Split order_action segments that contain a colon-introduced list.
 
     Fix A: the header portion (text up through the colon) is only labeled
@@ -1193,6 +1459,10 @@ def _split_colon_lists(segments: list[Segment]) -> list[Segment]:
     - header (text up to colon inclusive) → 'ordering_phrase' if <= max chars, else
       'order_action'
     - each list item → 'order_action'
+
+    When ordering_re is provided, a colon-list is only split if at least one of its
+    items contains a W&P ordering phrase.  Lists whose items are purely quoted content
+    (e.g. numbered sub-paragraphs in an amending order) are left whole.
     """
     result: list[Segment] = []
     for seg in segments:
@@ -1244,6 +1514,18 @@ def _split_colon_lists(segments: list[Segment]) -> list[Segment]:
             result.append(seg)
             continue
 
+        # Only split when at least one item carries an ordering phrase.  Lists
+        # whose items are purely quoted content (e.g. numbered sub-paragraphs in
+        # an amending order) should stay grouped under their parent directive.
+        if ordering_re is not None:
+            item_texts = []
+            for k, sp in enumerate(split_points):
+                end = split_points[k + 1] if k + 1 < len(split_points) else len(after_colon)
+                item_texts.append(after_colon[sp:end].strip())
+            if not any(ordering_re.search(t) for t in item_texts):
+                result.append(seg)
+                continue
+
         # Fix A: only label header 'ordering_phrase' when it is short enough.
         header_type: SegmentType = (
             "ordering_phrase" if len(header_text) <= _ORDERING_PHRASE_MAX_CHARS
@@ -1294,7 +1576,7 @@ def _merge_short_fragments(segments: list[Segment]) -> list[Segment]:
     return result
 
 
-def segment_ordering(doc_text: str, doc_type: str = "") -> list[Segment]:
+def segment_ordering(doc_text: str, doc_type: str = "", strict_wp: bool = False) -> list[Segment]:
     """Segment a document using the Woolley & Peters ordering-phrase strategy.
 
     Each ordering phrase starts a new 'directive' segment.  When a sentence contains
@@ -1312,15 +1594,54 @@ def segment_ordering(doc_text: str, doc_type: str = "") -> list[Segment]:
     grouped into it only when they contain no ordering phrase of their own; list items
     that do contain an ordering phrase are processed normally and start a new directive.
 
+    strict_wp=True disables all extensions (section-only shall verbs, opening-authority vesting)
+    and uses only the original W&P phrase list.
+
     Returns a list of Segment objects with seg_type in
     {'preamble', 'order_action', 'metadata', 'boilerplate', 'vesting_clause'}.
     """
-    ordering_re = _get_ordering_re()
+    ordering_re = _get_ordering_re(extended=False)  # W&P only for base detection
+    opening_authority = not strict_wp
+    is_proclamation = doc_type == "proclamation"
 
     raw_chunks = re.split(r"  +", doc_text)
-    chunks = [c.strip() for c in raw_chunks if c.strip()]
+    chunks = _resplit_embedded_sections(
+        [c.strip() for c in raw_chunks if c.strip()]
+    )
     total = len(chunks)
 
+    # Build tagged list (with vesting carve-out) to detect formal sections.
+    tagged: list[tuple[SegmentType, str, int]] = []
+    for i, chunk in enumerate(chunks):
+        is_last_n = i >= total - 5
+        ct = _classify_chunk(chunk, i, total, is_last_n)
+        if ct not in ("metadata", "boilerplate") and _chunk_has_vesting(chunk, ordering_re, opening_authority=opening_authority, is_proclamation=is_proclamation):
+            for piece, is_vesting in _carve_vesting(chunk, ordering_re, opening_authority=opening_authority, is_proclamation=is_proclamation):
+                if is_vesting:
+                    tagged.append(("vesting_clause", piece, i))
+                else:
+                    tagged.append((_classify_chunk(piece, i, total, is_last_n), piece, i))
+        else:
+            tagged.append((ct, chunk, i))
+
+    # Section-priority branch: when formal sections exist, split on sections only.
+    # Actor-agnostic shall + verb extensions apply only in this sections path.
+    if _has_formal_sections(tagged):
+        alpha_as_sub = any(
+            bool(_SECTION_ROMAN_RE.match(text.strip()))
+            for seg_type, text, _ in tagged
+            if seg_type != "metadata"
+        )
+        segs = _group_by_sections(tagged, split_subsections=False,
+                                  alpha_as_subsection=alpha_as_sub)
+        relabel_re = ordering_re if strict_wp else _get_ordering_re(extended=True)
+        segs = _relabel_for_wp(segs, relabel_re)
+        segs = _enforce_closing_cutoff(segs)
+        segs = _enforce_signoff_cutoff(segs)
+        segs = _reclassify_titles_before_metadata(segs)
+        return segs
+
+    # No formal sections: ordering-phrase strategy.
     segments: list[Segment] = []
     current_parts: list[str] = []   # text pieces for the open segment
     current_indices: list[int] = [] # original chunk indices
@@ -1370,4 +1691,4 @@ def segment_ordering(doc_text: str, doc_type: str = "") -> list[Segment]:
                         current_indices.append(chunk_idx)
 
     flush()
-    return _merge_short_fragments(_merge_sublists(_split_colon_lists(segments)))
+    return _merge_short_fragments(_merge_sublists(_split_colon_lists(segments, ordering_re)))

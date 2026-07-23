@@ -99,6 +99,13 @@ def test_validate_export_annotator_key_skipped():
     assert errors == []
 
 
+def test_validate_export_document_metadata_key_skipped():
+    """Top-level document metadata should not be treated as a doc entry."""
+    export = {"document_metadata": {"EO1": {"global_dev_id": "123"}}}
+    errors = validate_export(export, doc_id_map={}, all_display_texts={})
+    assert errors == []
+
+
 def test_all_labels_are_valid():
     """Every label in VALID_LABELS passes its own validation."""
     dtext = "x" * 200

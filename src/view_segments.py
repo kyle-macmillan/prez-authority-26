@@ -30,7 +30,9 @@ import re
 import statistics
 from collections import Counter
 from pathlib import Path
+from typing import TypedDict
 
+from ceremonial import is_ceremonial
 from segmenter import Segment, segment, segment_ordering, _get_ordering_re
 
 ROOT = Path(__file__).parent.parent
@@ -52,6 +54,9 @@ SP_COLORS = {
     "vesting_clause": ("#6d28d9", "#ede9fe"),  # purple
     "section":        ("#1d4ed8", "#dbeafe"),  # blue
     "paragraph":      ("#065f46", "#d1fae5"),  # green
+    "preamble":       ("#6b7280", "#f3f4f6"),  # gray
+    "ordering_phrase":("#0f766e", "#ccfbf1"),  # teal
+    "order_action":   ("#b91c1c", "#fee2e2"),  # red
     "boilerplate":    ("#92400e", "#fef3c7"),  # amber
 }
 
@@ -78,41 +83,58 @@ ANNOTATION_COLORS = {
 }
 
 # ── Classification taxonomy ───────────────────────────────────────────────────
-CATEGORIES = [
-    ("ceremonial",  "Ceremonial/Expressive"),
-    ("internal",    "Internal Management"),
-    ("policy",      "Policy Setting"),
-    ("other",       "Other"),
+OPERATIVE_CODE_OPTIONS = [
+    ("0", "0 - Outside scope"),
+    ("1", "1 - Discretionary executive direction / internal management"),
+    ("2", "2 - Dictated agency legal outcome"),
+    ("3", "3 - Self-executing legal effect"),
+    ("4", "4 - Unclear / inseparable mixed"),
 ]
-LEGAL_EFFECT_OPTIONS = [
-    ("legal",    "Likely legal effect"),
-    ("nonlegal", "Non-legally binding"),
-]
-SCOPE_OPTIONS = [
-    ("domestic", "Domestic"),
-    ("foreign",  "Foreign"),
+BINARY_FLAG_OPTIONS = [
+    ("yes", "Yes"),
+    ("no", "No"),
 ]
 
 
-def load_rows(doc_type: str, n: int, seed: int = 42) -> list[dict]:
+class RenderSegment(TypedDict):
+    seg_type: str
+    parts: list[tuple[str, bool]]
+    chunk_indices: list[int]
+
+
+def load_rows(doc_type: str, n: int, seed: int = 42, exclude_ceremonial: bool = False,
+              exclude_ids: frozenset[int] = frozenset()) -> list[dict]:
     with open(DATA_FILE) as f:
         reader = csv.DictReader(f)
         rows = list(reader)
 
-    pool = [r for r in rows if r["doc_type"] == doc_type and int(r[""]) not in HOLDOUT_IDS]
+    pool = [r for r in rows
+            if r["doc_type"] == doc_type
+            and int(r[""]) not in HOLDOUT_IDS
+            and int(r[""]) not in exclude_ids
+            and not (exclude_ceremonial and is_ceremonial(r))]
 
-    # Sample across length tiers for coverage
-    random.seed(seed)
-    tiers = [
-        [r for r in pool if len(r["doc_text"]) < 1000],
-        [r for r in pool if 1000 <= len(r["doc_text"]) < 5000],
-        [r for r in pool if 5000 <= len(r["doc_text"]) < 15000],
-        [r for r in pool if len(r["doc_text"]) >= 15000],
-    ]
-    per_tier = max(1, n // len(tiers))
-    sample = []
-    for tier in tiers:
-        sample.extend(random.sample(tier, min(per_tier, len(tier))))
+    rng = random.Random(seed)
+    by_prez: dict[str, list] = {}
+    for r in pool:
+        by_prez.setdefault(r["president"], []).append(r)
+    for bucket in by_prez.values():
+        rng.shuffle(bucket)
+    presidents = sorted(by_prez.keys())
+    iters = {p: iter(by_prez[p]) for p in presidents}
+
+    sample: list = []
+    while len(sample) < n:
+        made_progress = False
+        for p in presidents:
+            if len(sample) < n:
+                row = next(iters[p], None)
+                if row is not None:
+                    sample.append(row)
+                    made_progress = True
+        if not made_progress:
+            break
+
     return sample[:n]
 
 
@@ -127,51 +149,37 @@ def render_classification_form(prefix: str) -> str:
     prefix should be unique per form instance (e.g. 'EO1-doc' or 'EO1-chunk-3').
     JS will read/write values using data-prefix attributes.
     """
-    cat_radios = "".join(
+    code_radios = "".join(
         f'<label class="clf-radio-label">'
-        f'<input type="radio" name="{prefix}-cat" value="{val}" class="clf-cat-radio" data-prefix="{prefix}"> {lbl}'
+        f'<input type="radio" name="{prefix}-code" value="{val}" class="clf-code-radio" data-prefix="{prefix}"> {lbl}'
         f'</label>'
-        for val, lbl in CATEGORIES
+        for val, lbl in OPERATIVE_CODE_OPTIONS
     )
-    legal_radios = "".join(
+    diplomacy_radios = "".join(
         f'<label class="clf-radio-label">'
-        f'<input type="radio" name="{prefix}-legal" value="{val}" class="clf-legal-radio" data-prefix="{prefix}"> {lbl}'
+        f'<input type="radio" name="{prefix}-diplomacy" value="{val}" class="clf-diplomacy-radio" data-prefix="{prefix}"> {lbl}'
         f'</label>'
-        for val, lbl in LEGAL_EFFECT_OPTIONS
+        for val, lbl in BINARY_FLAG_OPTIONS
     )
-    scope_radios = "".join(
+    military_radios = "".join(
         f'<label class="clf-radio-label">'
-        f'<input type="radio" name="{prefix}-scope" value="{val}" class="clf-scope-radio" data-prefix="{prefix}"> {lbl}'
+        f'<input type="radio" name="{prefix}-military" value="{val}" class="clf-military-radio" data-prefix="{prefix}"> {lbl}'
         f'</label>'
-        for val, lbl in SCOPE_OPTIONS
+        for val, lbl in BINARY_FLAG_OPTIONS
     )
     return f"""<div class="clf-form" data-prefix="{prefix}">
   <div class="clf-row">
-    <span class="clf-label">Category</span>
-    <button type="button" class="clf-help-btn" title="Category descriptions">?</button>
-    <div class="clf-radios">{cat_radios}</div>
-  </div>
-  <div class="clf-row clf-legal-row" style="display:none">
-    <span class="clf-label">Legal effect</span>
-    <div class="clf-radios">{legal_radios}</div>
+    <span class="clf-label">Code</span>
+    <button type="button" class="clf-help-btn" title="Codebook">?</button>
+    <div class="clf-radios clf-code-radios">{code_radios}</div>
   </div>
   <div class="clf-row">
-    <span class="clf-label">Scope</span>
-    <div class="clf-radios">{scope_radios}</div>
-  </div>
-  <div class="clf-row clf-ns-row" style="display:none">
-    <span class="clf-label">National security?</span>
-    <div class="clf-radios">
-      <label class="clf-radio-label"><input type="radio" name="{prefix}-ns" value="yes" class="clf-ns-radio" data-prefix="{prefix}"> Yes</label>
-      <label class="clf-radio-label"><input type="radio" name="{prefix}-ns" value="no"  class="clf-ns-radio" data-prefix="{prefix}"> No</label>
-    </div>
+    <span class="clf-label">Diplomacy / recognition</span>
+    <div class="clf-radios">{diplomacy_radios}</div>
   </div>
   <div class="clf-row">
-    <span class="clf-label">Emergency?</span>
-    <div class="clf-radios">
-      <label class="clf-radio-label"><input type="radio" name="{prefix}-emerg" value="yes" class="clf-emerg-radio" data-prefix="{prefix}"> Yes</label>
-      <label class="clf-radio-label"><input type="radio" name="{prefix}-emerg" value="no"  class="clf-emerg-radio" data-prefix="{prefix}"> No</label>
-    </div>
+    <span class="clf-label">Military / intel ops</span>
+    <div class="clf-radios">{military_radios}</div>
   </div>
 </div>"""
 
@@ -186,21 +194,122 @@ def render_annotation_area(doc_text: str, doc_id: str) -> str:
     )
 
 
-def render_sp_segments(segments: list[Segment]) -> str:
+def _shares_chunk(a: Segment | RenderSegment, b: Segment | RenderSegment) -> bool:
+    return bool(set(a["chunk_indices"] if isinstance(a, dict) else a.chunk_indices)
+                & set(b["chunk_indices"] if isinstance(b, dict) else b.chunk_indices))
+
+
+def _merge_vesting_for_display(segments: list[Segment]) -> list[RenderSegment]:
+    """Merge vesting carve-outs back into their containing provision for display."""
+    rendered: list[RenderSegment] = []
+    pending_vesting: list[tuple[str, bool]] = []
+    pending_indices: list[int] = []
+
+    for seg in segments:
+        if seg.seg_type == "vesting_clause":
+            if rendered and _shares_chunk(rendered[-1], seg):
+                rendered[-1]["parts"].append((" " + seg.text, True))
+                rendered[-1]["chunk_indices"] = sorted(set(rendered[-1]["chunk_indices"] + seg.chunk_indices))
+            else:
+                pending_vesting.append((seg.text, True))
+                pending_indices.extend(seg.chunk_indices)
+            continue
+
+        parts: list[tuple[str, bool]] = [(seg.text, False)]
+        indices = seg.chunk_indices[:]
+        if pending_vesting and set(pending_indices) & set(seg.chunk_indices):
+            parts = pending_vesting + [(" " + seg.text, False)]
+            indices = sorted(set(indices + pending_indices))
+            pending_vesting = []
+            pending_indices = []
+        elif pending_vesting:
+            rendered.append({
+                "seg_type": "paragraph",
+                "parts": pending_vesting,
+                "chunk_indices": pending_indices[:],
+            })
+            pending_vesting = []
+            pending_indices = []
+
+        if (rendered
+                and rendered[-1]["seg_type"] in ("section", "paragraph", "order_action")
+                and seg.seg_type in ("paragraph", "order_action")
+                and _shares_chunk(rendered[-1], seg)):
+            if parts and not parts[0][0].startswith(" "):
+                parts[0] = (" " + parts[0][0], parts[0][1])
+            rendered[-1]["parts"].extend(parts)
+            rendered[-1]["chunk_indices"] = sorted(set(rendered[-1]["chunk_indices"] + indices))
+            continue
+
+        rendered.append({
+            "seg_type": seg.seg_type,
+            "parts": parts,
+            "chunk_indices": indices,
+        })
+
+    if pending_vesting:
+        rendered.append({
+            "seg_type": "paragraph",
+            "parts": pending_vesting,
+            "chunk_indices": pending_indices[:],
+        })
+
+    return rendered
+
+
+def _render_seg_text(parts: list[tuple[str, bool]]) -> str:
+    html_parts = []
+    for text, is_vesting in parts:
+        if is_vesting:
+            html_parts.append(_render_vesting_text(text))
+        else:
+            html_parts.append(_highlight_ordering_phrases(html.escape(text)))
+    return "".join(html_parts)
+
+
+_VESTING_VISIBLE_LEAD_RE = re.compile(
+    r"^\s*(?:"
+    r"pursuant\s+to|"
+    r"in\s+accordance\s+with|"
+    r"under\s+(?:and\s+by\s+virtue\s+of\s+)?|"
+    r"by\s+(?:the\s+)?(?:authority|power|virtue)\s+(?:vested\s+in\s+me\s+)?(?:of|by)?"
+    r")\b",
+    re.IGNORECASE,
+)
+
+
+def _render_vesting_text(text: str) -> str:
+    """Render vesting text so redaction preserves the opening authority signal."""
+    match = _VESTING_VISIBLE_LEAD_RE.match(text)
+    if not match:
+        return f'<mark class="vesting-mark"><span class="vesting-redact">{html.escape(text)}</span></mark>'
+
+    lead = text[:match.end()]
+    tail = text[match.end():]
+    return (
+        f'<mark class="vesting-mark">'
+        f'<span class="vesting-lead">{html.escape(lead)}</span>'
+        f'<span class="vesting-redact">{html.escape(tail)}</span>'
+        f'</mark>'
+    )
+
+
+def render_sp_segments(segments: list[Segment], doc_id: str = "") -> str:
     """Render Section/Paragraph strategy segments."""
     parts = []
     content_n = 0
-    for seg in segments:
-        fg, bg = SP_COLORS.get(seg.seg_type, ("#111", "#fff"))
-        label = seg.seg_type
-        text_e = html.escape(seg.text)
-        if seg.seg_type == "metadata":
+    for seg in _merge_vesting_for_display(segments):
+        seg_type = seg["seg_type"]
+        fg, bg = SP_COLORS.get(seg_type, ("#111", "#fff"))
+        label = seg_type
+        text_e = _render_seg_text(seg["parts"])
+        if seg_type == "metadata":
             parts.append(
                 f'<div class="seg seg-meta" style="border-left:3px solid {fg};background:{bg}">'
                 f'<span class="seg-label" style="color:{fg}">{label}</span>'
                 f'<span class="seg-text">{text_e}</span></div>'
             )
-        elif seg.seg_type in ("boilerplate", "vesting_clause"):
+        elif seg_type == "boilerplate":
             parts.append(
                 f'<div class="seg" style="border-left:3px solid {fg};background:{bg}">'
                 f'<span class="seg-label" style="color:{fg}">{label}</span>'
@@ -208,18 +317,31 @@ def render_sp_segments(segments: list[Segment]) -> str:
             )
         else:
             content_n += 1
-            parts.append(
-                f'<div class="seg" style="border-left:4px solid {fg};background:{bg}">'
-                f'<span class="seg-num" style="color:{fg}">#{content_n}</span>'
-                f'<span class="seg-label" style="color:{fg}">{label}</span>'
-                f'<span class="seg-text">{text_e}</span></div>'
-            )
+            if seg_type in ("section", "paragraph", "order_action"):
+                chunk_key = f"{doc_id}-chunk-{content_n}"
+                parts.append(
+                    f'<div class="seg seg-chunk" style="border-left:4px solid {fg};background:{bg};cursor:pointer"'
+                    f' data-strategy="sp" data-chunkkey="{chunk_key}" data-doc="{doc_id}" data-chunkn="{content_n}"'
+                    f' title="Click to classify this provision">'
+                    f'<span class="seg-num" style="color:{fg}">#{content_n}</span>'
+                    f'<span class="seg-label" style="color:{fg}">{label}</span>'
+                    f'<span class="seg-text">{text_e}</span>'
+                    f'<span class="chunk-badge" id="badge-{chunk_key}"></span>'
+                    f'</div>'
+                )
+            else:
+                parts.append(
+                    f'<div class="seg" style="border-left:4px solid {fg};background:{bg}">'
+                    f'<span class="seg-num" style="color:{fg}">#{content_n}</span>'
+                    f'<span class="seg-label" style="color:{fg}">{label}</span>'
+                    f'<span class="seg-text">{text_e}</span></div>'
+                )
     return "\n".join(parts)
 
 
 def _highlight_ordering_phrases(text_escaped: str) -> str:
     """Wrap matched ordering phrases in <strong class='op'> for visibility."""
-    ordering_re = _get_ordering_re()
+    ordering_re = _get_ordering_re(extended=True)
     def replacer(m: re.Match) -> str:
         return f'<strong class="op">{m.group(0)}</strong>'
     return ordering_re.sub(replacer, text_escaped)
@@ -229,30 +351,35 @@ def render_wp_segments(segments: list[Segment], doc_id: str = "") -> str:
     """Render Woolley & Peters ordering-phrase strategy segments."""
     parts = []
     directive_n = 0
-    for seg in segments:
-        fg, bg = WP_COLORS.get(seg.seg_type, ("#111", "#fff"))
-        label = seg.seg_type
-        text_e = html.escape(seg.text)
-        if seg.seg_type == "order_action":
+    for seg in _merge_vesting_for_display(segments):
+        seg_type = seg["seg_type"]
+        fg, bg = WP_COLORS.get(seg_type, ("#111", "#fff"))
+        label = seg_type
+        text_e = _render_seg_text(seg["parts"])
+        if seg_type == "order_action":
             directive_n += 1
-            text_highlighted = _highlight_ordering_phrases(text_e)
-            chunk_key = f"{doc_id}-chunk-{directive_n}"
+            chunk_key = f"{doc_id}-wp-chunk-{directive_n}"
             parts.append(
                 f'<div class="seg seg-chunk" style="border-left:4px solid {fg};background:{bg};cursor:pointer"'
-                f' data-chunkkey="{chunk_key}" data-doc="{doc_id}" data-chunkn="{directive_n}"'
-                f' title="Click to classify this directive">'
+                f' data-strategy="wp" data-chunkkey="{chunk_key}" data-doc="{doc_id}" data-chunkn="{directive_n}"'
+                f' title="Click to classify this W&amp;P order action">'
                 f'<span class="seg-num" style="color:{fg}">#{directive_n}</span>'
                 f'<span class="seg-label" style="color:{fg}">{label}</span>'
-                f'<span class="seg-text">{text_highlighted}</span>'
+                f'<span class="seg-text">{text_e}</span>'
                 f'<span class="chunk-badge" id="badge-{chunk_key}"></span>'
                 f'</div>'
             )
-        elif seg.seg_type == "ordering_phrase":
-            text_highlighted = _highlight_ordering_phrases(text_e)
+        elif seg_type == "ordering_phrase":
             parts.append(
                 f'<div class="seg" style="border-left:3px solid {fg};background:{bg}">'
                 f'<span class="seg-label" style="color:{fg}">{label}</span>'
-                f'<span class="seg-text">{text_highlighted}</span></div>'
+                f'<span class="seg-text">{text_e}</span></div>'
+            )
+        elif seg_type == "vesting_clause":
+            parts.append(
+                f'<div class="seg seg-meta" style="border-left:3px solid {fg};background:{bg}">'
+                f'<span class="seg-label" style="color:{fg}">{label}</span>'
+                f'<span class="seg-text">{text_e}</span></div>'
             )
         else:
             parts.append(
@@ -267,18 +394,20 @@ def build_doc_block(row: dict, doc_id: str) -> str:
     # Section/Paragraph segmentation
     sp_segs = segment(row["doc_text"], row["doc_type"], split_subsections=False)
     sp_content = [s for s in sp_segs if s.seg_type not in ("metadata",)]
-    sp_html = render_sp_segments(sp_segs)
+    sp_html = render_sp_segments(sp_segs, doc_id=doc_id)
 
-    # Woolley & Peters segmentation
+    # Woolley & Peters segmentation (always ordering-phrase based)
     wp_segs = segment_ordering(row["doc_text"], row["doc_type"])
     wp_directives = [s for s in wp_segs if s.seg_type == "order_action"]
     wp_html = render_wp_segments(wp_segs, doc_id=doc_id)
+    wp_label = f"{len(wp_directives)} directives"
 
     annot_html = render_annotation_area(row["doc_text"], doc_id)
     url = html.escape(row["url"])
     president = html.escape(row["president"])
     date = html.escape(row["date"])
     doc_type = html.escape(row["doc_type"])
+    global_id = html.escape(str(row[""]))
     char_len = len(row["doc_text"])
     truncated = " <span class='trunc'>[TRUNCATED]</span>" if char_len == 32766 else ""
 
@@ -286,11 +415,12 @@ def build_doc_block(row: dict, doc_id: str) -> str:
 <details class="doc-block" open>
   <summary>
     <span class="doc-id">{doc_id}</span>
+    <span class="global-id">dev:{global_id}</span>
     <span class="doc-prez">{president}</span>
     <span class="doc-date">{date}</span>
     <span class="doc-type">{doc_type}</span>
     <span class="doc-stats mode-sp-stat">{len(sp_segs)} chunks &rarr; {len(sp_content)} segments{truncated}</span>
-    <span class="doc-stats mode-wp-stat">{len(wp_directives)} directives{truncated}</span>
+    <span class="doc-stats mode-wp-stat">{wp_label}{truncated}</span>
     <a href="{url}" target="_blank" class="doc-link">original &rarr;</a>
   </summary>
   <div class="doc-body">
@@ -304,7 +434,7 @@ def build_doc_block(row: dict, doc_id: str) -> str:
         {sp_html}
       </div>
       <div class="seg-view view-wp">
-        <h3>Woolley &amp; Peters &mdash; {len(wp_directives)} directives</h3>
+        <h3>Woolley &amp; Peters &mdash; {wp_label}</h3>
         {wp_html}
       </div>
     </div>
@@ -312,7 +442,7 @@ def build_doc_block(row: dict, doc_id: str) -> str:
   <div class="clf-panel" data-doc="{doc_id}">
     <div class="clf-panel-header">
       <span class="clf-panel-title">Document classification &mdash; {doc_id}</span>
-      <span class="clf-panel-hint">Classify the document as a whole, then click each W&amp;P directive (right column) to classify it individually.</span>
+      <span class="clf-panel-hint">Classify the document as a whole, then click each section/paragraph provision (right column) to classify it individually.</span>
     </div>
     {render_classification_form(f"{doc_id}-doc")}
   </div>
@@ -369,9 +499,17 @@ def _legend_html(colors: dict) -> str:
 
 def build_html(rows_by_type: list[tuple[str, str, str, list[dict]]], seed: int = 42, viewer_num: int = 1) -> str:
     """Build the full HTML page with doc-type tabs and a strategy toggle."""
-    # Category descriptions for the help modal
-    cat_desc_path = ROOT / "methodology" / "category_descriptions.md"
-    cat_desc_escaped = html.escape(cat_desc_path.read_text()) if cat_desc_path.exists() else "(descriptions not found)"
+    codebook_help = """Operative provision codes
+0 - Outside scope: not presidential governance over agencies or legal rights.
+1 - Discretionary executive direction / internal management: organizes, reviews, coordinates, studies, prioritizes, or directs discretionary implementation.
+2 - Dictated agency legal outcome: requires an agency or official to produce a specified legally consequential result later.
+3 - Self-executing legal effect: the provision itself changes legal rights, duties, eligibility, status, sanctions, funding, entry, land designation, or other legal consequences.
+4 - Unclear / inseparable mixed: cannot be reliably classified or combines postures that cannot reasonably be separated.
+
+Flags
+Diplomacy / recognition: Yes when the text concerns recognition, diplomacy, ambassadors, embassies, consulates, envoys, negotiation, official representation abroad, treaty negotiation/withdrawal, or participation in/withdrawal from international organizations.
+Military / intelligence operations: Yes when the text concerns Commander in Chief, Armed Forces, military operations, deployment, hostilities, combat, rules of engagement, readiness, combatant commands, detention, military commissions, intelligence operations, counterintelligence, classified information, classification/declassification, security clearances, or intelligence sources and methods."""
+    codebook_help_escaped = html.escape(codebook_help)
 
     sp_legend = _legend_html(SP_COLORS)
     wp_legend = _legend_html(WP_COLORS)
@@ -410,10 +548,20 @@ def build_html(rows_by_type: list[tuple[str, str, str, list[dict]]], seed: int =
 
     # Build DOC_TEXTS for the annotation JS (plain display text per doc_id)
     doc_texts: dict[str, str] = {}
+    doc_metadata: dict[str, dict[str, str]] = {}
     for _, prefix, _, rows in rows_by_type:
         for j, row in enumerate(rows, start=1):
-            doc_texts[f"{prefix}{j}"] = display_text(row["doc_text"])
+            doc_id = f"{prefix}{j}"
+            doc_texts[doc_id] = display_text(row["doc_text"])
+            doc_metadata[doc_id] = {
+                "global_dev_id": str(row[""]),
+                "url": row["url"],
+                "date": row["date"],
+                "president": row["president"],
+                "doc_type": row["doc_type"],
+            }
     doc_texts_js = "var DOC_TEXTS=" + json.dumps(doc_texts, ensure_ascii=False) + ";"
+    doc_metadata_js = "var DOC_METADATA=" + json.dumps(doc_metadata, ensure_ascii=False) + ";"
 
     # Annotation label picker buttons (one per label, styled to match colors)
     picker_btns = "".join(
@@ -428,6 +576,7 @@ def build_html(rows_by_type: list[tuple[str, str, str, list[dict]]], seed: int =
   <span class="strategy-label">Strategy:</span>
   <button class="strat-btn active" data-mode="sp">Section / Paragraph</button>
   <button class="strat-btn" data-mode="wp">Woolley &amp; Peters</button>
+  <button class="strat-btn redact-btn" id="vesting-redact-toggle" type="button">Black out vesting clauses</button>
 </div>"""
 
     # Doc-type tabs
@@ -499,6 +648,7 @@ def build_html(rows_by_type: list[tuple[str, str, str, list[dict]]], seed: int =
   }}
   .doc-block > summary::-webkit-details-marker {{ display: none; }}
   .doc-id    {{ font-weight: 800; font-size: 17px; color: #1d4ed8; min-width: 3.2em; }}
+  .global-id {{ font-weight: 700; font-size: 12px; color: #4b5563; background: #eef2ff; border: 1px solid #c7d2fe; border-radius: 4px; padding: 1px 6px; }}
   .doc-prez  {{ font-weight: 700; font-size: 16px; }}
   .doc-date  {{ color: #6b7280; font-size: 14px; }}
   .doc-type  {{ font-style: italic; color: #6b7280; font-size: 14px; }}
@@ -546,6 +696,22 @@ def build_html(rows_by_type: list[tuple[str, str, str, list[dict]]], seed: int =
   .seg-label {{ font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; margin-right: 6px; }}
   .seg-num   {{ font-size: 10px; font-weight: 700; margin-right: 4px; }}
   .seg-text  {{ }}
+  .vesting-mark {{
+    background: #ede9fe; color: #4c1d95; border-bottom: 2px solid #6d28d9;
+    border-radius: 2px; padding: 0 2px;
+  }}
+  body.redact-vesting .vesting-mark {{
+    background: #ede9fe; color: #4c1d95; border-bottom-color: #6d28d9;
+  }}
+  body.redact-vesting .vesting-lead {{
+    background: #ede9fe; color: #4c1d95;
+    text-shadow: none; user-select: text; -webkit-user-select: text;
+  }}
+  body.redact-vesting .vesting-redact {{
+    background: #111827; color: transparent; border-bottom-color: #111827;
+    text-shadow: none; user-select: none; -webkit-user-select: none;
+    border-radius: 2px;
+  }}
   strong.op  {{ background: rgba(185,28,28,.12); border-radius: 2px; padding: 0 2px; }}
   /* Feedback bar */
   .feedback-bar {{
@@ -661,7 +827,7 @@ def build_html(rows_by_type: list[tuple[str, str, str, list[dict]]], seed: int =
   .chunk-popup-close {{
     background: none; border: none; font-size: 16px; cursor: pointer; color: #6b7280; line-height: 1;
   }}
-  /* Category descriptions modal */
+  /* Codebook modal */
   #cat-modal-overlay {{
     display: none; position: fixed; inset: 0; z-index: 400;
     background: rgba(0,0,0,.45);
@@ -682,12 +848,12 @@ def build_html(rows_by_type: list[tuple[str, str, str, list[dict]]], seed: int =
 </head>
 <body class="mode-sp">
 
-<!-- Category descriptions modal -->
+<!-- Codebook modal -->
 <div id="cat-modal-overlay">
   <div id="cat-modal">
     <button class="cat-modal-close" id="cat-modal-close" title="Close">&times;</button>
-    <h2>Category Descriptions</h2>
-    <pre>{cat_desc_escaped}</pre>
+    <h2>Codebook</h2>
+    <pre>{codebook_help_escaped}</pre>
   </div>
 </div>
 
@@ -730,12 +896,26 @@ def build_html(rows_by_type: list[tuple[str, str, str, list[dict]]], seed: int =
 {panels_html}
 <script>
 // ── Strategy toggle ───────────────────────────────────────────────────────────
-document.querySelectorAll('.strat-btn').forEach(function(btn) {{
+document.querySelectorAll('.strat-btn[data-mode]').forEach(function(btn) {{
   btn.addEventListener('click', function() {{
-    document.querySelectorAll('.strat-btn').forEach(function(b) {{ b.classList.remove('active'); }});
+    document.querySelectorAll('.strat-btn[data-mode]').forEach(function(b) {{ b.classList.remove('active'); }});
     btn.classList.add('active');
-    document.body.className = 'mode-' + btn.dataset.mode;
+    document.body.classList.remove('mode-sp', 'mode-wp');
+    document.body.classList.add('mode-' + btn.dataset.mode);
   }});
+}});
+
+var REDACT_KEY = 'seg-redact-vesting';
+var redactBtn = document.getElementById('vesting-redact-toggle');
+function setVestingRedaction(enabled) {{
+  document.body.classList.toggle('redact-vesting', enabled);
+  redactBtn.classList.toggle('active', enabled);
+  redactBtn.textContent = enabled ? 'Show vesting clauses' : 'Black out vesting clauses';
+  localStorage.setItem(REDACT_KEY, enabled ? '1' : '0');
+}}
+setVestingRedaction(localStorage.getItem(REDACT_KEY) === '1');
+redactBtn.addEventListener('click', function() {{
+  setVestingRedaction(!document.body.classList.contains('redact-vesting'));
 }});
 
 // ── Tab switching ─────────────────────────────────────────────────────────────
@@ -750,8 +930,9 @@ document.querySelectorAll('.tab-btn').forEach(function(btn) {{
 
 // ── Annotation engine ─────────────────────────────────────────────────────────
 {doc_texts_js}
+{doc_metadata_js}
 
-var STORAGE_KEY = 'seg-annotations-v2-{seed}';
+var STORAGE_KEY = 'seg-annotations-v3-viewer{viewer_num}-{seed}';
 var VIEWER_NUM = {viewer_num};
 var LABEL_COLORS = {{
   'preamble':        {{bg:'#f3f4f6', border:'#6b7280'}},
@@ -824,15 +1005,16 @@ function renderAnnotArea(docId) {{
 }}
 
 // Get character offset of a boundary point within root, excluding text inside
-// .ann-tag superscripts (label decorations, not document text). Works for both
-// text-node boundaries (offset = char index) and element-node boundaries
-// (offset = child index), which browsers produce on double-click or paragraph-end.
+// .ann-tag superscripts and .ann-clf-badge spans (UI decorations, not document
+// text). Works for both text-node boundaries (offset = char index) and
+// element-node boundaries (offset = child index), which browsers produce on
+// double-click or paragraph-end.
 function getCharOffset(root, targetNode, targetOff) {{
   var r = document.createRange();
   r.setStart(root, 0);
   r.setEnd(targetNode, targetOff);
   var frag = r.cloneContents();
-  frag.querySelectorAll('.ann-tag').forEach(function(el) {{ el.remove(); }});
+  frag.querySelectorAll('.ann-tag, .ann-clf-badge').forEach(function(el) {{ el.remove(); }});
   return frag.textContent.length;
 }}
 
@@ -962,10 +1144,10 @@ document.getElementById('annotator-name').addEventListener('input', function() {
 
 // ── Export ────────────────────────────────────────────────────────────────────
 document.getElementById('export-btn').addEventListener('click', function() {{
-  var out = loadData();
+  var out = Object.assign({{document_metadata: DOC_METADATA}}, loadData());
   var name = (localStorage.getItem(NAME_KEY) || '').trim();
   if (name) out = Object.assign({{annotator: name}}, out);
-  var safeName = name ? name.replace(/\s+/g, '_').toLowerCase() : 'unknown';
+  var safeName = name ? name.replace(/\\s+/g, '_').toLowerCase() : 'unknown';
   var today = new Date().toISOString().slice(0, 10);
   var filename = 'annotations-viewer' + VIEWER_NUM + '-' + safeName + '-' + today + '.json';
   var blob = new Blob([JSON.stringify(out, null, 2)], {{type:'application/json'}});
@@ -977,20 +1159,12 @@ document.getElementById('export-btn').addEventListener('click', function() {{
 
 // ── Classification helpers ────────────────────────────────────────────────────
 
-// Conditionally show/hide sub-fields based on current form values.
-function updateClfConditions(prefix) {{
-  var form = document.querySelector('.clf-form[data-prefix="' + prefix + '"]');
-  if (!form) return;
-  var cat = form.querySelector('input[name="' + prefix + '-cat"]:checked');
-  var scope = form.querySelector('input[name="' + prefix + '-scope"]:checked');
-  var legalRow = form.querySelector('.clf-legal-row');
-  var nsRow    = form.querySelector('.clf-ns-row');
-  if (legalRow) legalRow.style.display = (cat && cat.value === 'policy') ? '' : 'none';
-  if (nsRow)    nsRow.style.display    = (scope && scope.value === 'foreign') ? '' : 'none';
+// Save classification values from a form to localStorage.
+function chunkStoreName(strategy) {{
+  return strategy === 'wp' ? 'wp_chunks' : 'chunks';
 }}
 
-// Save classification values from a form to localStorage.
-function saveClfForm(prefix, docId, chunkN) {{
+function saveClfForm(prefix, docId, chunkN, strategy) {{
   var form = document.querySelector('.clf-form[data-prefix="' + prefix + '"]');
   if (!form) return;
   var getRadio = function(name) {{
@@ -998,11 +1172,9 @@ function saveClfForm(prefix, docId, chunkN) {{
     return el ? el.value : null;
   }};
   var obj = {{
-    category: getRadio(prefix + '-cat'),
-    legal_effect: getRadio(prefix + '-legal'),
-    scope: getRadio(prefix + '-scope'),
-    national_security: getRadio(prefix + '-ns'),
-    emergency: getRadio(prefix + '-emerg'),
+    code: getRadio(prefix + '-code'),
+    diplomacy: getRadio(prefix + '-diplomacy'),
+    military_ops: getRadio(prefix + '-military'),
   }};
   var d = loadData();
   d[docId] = d[docId] || {{}};
@@ -1010,10 +1182,11 @@ function saveClfForm(prefix, docId, chunkN) {{
     // Sample-level classification (doc panel form)
     d[docId].classification = obj;
   }} else if (chunkN !== null) {{
-    // W&P chunk classification
-    d[docId].chunks = d[docId].chunks || {{}};
-    d[docId].chunks[String(chunkN)] = obj;
-    renderChunkBadge(docId, chunkN, obj);
+    // Provision classification
+    var store = chunkStoreName(strategy);
+    d[docId][store] = d[docId][store] || {{}};
+    d[docId][store][String(chunkN)] = obj;
+    renderChunkBadge(docId, chunkN, obj, strategy);
   }} else {{
     // Left-side annotation classification (annIdx path)
     var annIdx = _cp.annIdx;
@@ -1038,54 +1211,42 @@ function restoreClfForm(prefix, obj) {{
     var el = form.querySelector('input[name="' + name + '"][value="' + val + '"]');
     if (el) el.checked = true;
   }};
-  setRadio(prefix + '-cat',   obj.category);
-  setRadio(prefix + '-legal', obj.legal_effect);
-  setRadio(prefix + '-scope', obj.scope);
-  setRadio(prefix + '-ns',    obj.national_security);
-  setRadio(prefix + '-emerg', obj.emergency);
-  updateClfConditions(prefix);
+  setRadio(prefix + '-code',      obj.code);
+  setRadio(prefix + '-diplomacy', obj.diplomacy);
+  setRadio(prefix + '-military',  obj.military_ops);
 }}
 
 // Build a short badge text from a classification object.
 function clfBadgeText(obj) {{
-  if (!obj || !obj.category) return '';
-  var labels = {{ ceremonial:'Cer', internal:'Intl', policy:'Pol', other:'Other' }};
-  var legal  = {{ legal:'Legal', nonlegal:'Non-legal' }};
-  var scope  = {{ domestic:'Dom', foreign:'For' }};
-  var parts = [labels[obj.category] || obj.category];
-  if (obj.category === 'policy' && obj.legal_effect) parts.push(legal[obj.legal_effect] || obj.legal_effect);
-  if (obj.scope) parts.push(scope[obj.scope] || obj.scope);
-  if (obj.national_security === 'yes') parts.push('NatSec');
-  if (obj.emergency === 'yes') parts.push('Emerg');
+  if (!obj || !obj.code) return '';
+  var codeLabels = {{
+    '0': '0 Outside',
+    '1': '1 Discretion',
+    '2': '2 Agency legal',
+    '3': '3 Self-exec',
+    '4': '4 Unclear',
+  }};
+  var parts = [codeLabels[obj.code] || ('Code ' + obj.code)];
+  if (obj.diplomacy === 'yes') parts.push('Diplomacy');
+  if (obj.military_ops === 'yes') parts.push('Mil/Intel');
   return parts.join(' · ');
 }}
 
-function renderChunkBadge(docId, chunkN, obj) {{
-  var badge = document.getElementById('badge-' + docId + '-chunk-' + chunkN);
+function renderChunkBadge(docId, chunkN, obj, strategy) {{
+  var key = strategy === 'wp' ? (docId + '-wp-chunk-' + chunkN) : (docId + '-chunk-' + chunkN);
+  var badge = document.getElementById('badge-' + key);
   if (!badge) return;
   badge.textContent = clfBadgeText(obj);
 }}
 
 // Wire up change/input events for a classification form.
-function bindClfForm(form, docId, chunkN) {{
-  form.querySelectorAll('.clf-cat-radio').forEach(function(r) {{
+function bindClfForm(form, docId, chunkN, strategy) {{
+  form.querySelectorAll('.clf-code-radio, .clf-diplomacy-radio, .clf-military-radio').forEach(function(r) {{
     r.addEventListener('change', function() {{
-      updateClfConditions(form.dataset.prefix);
-      saveClfForm(form.dataset.prefix, docId, chunkN);
+      saveClfForm(form.dataset.prefix, docId, chunkN, strategy);
     }});
   }});
-  form.querySelectorAll('.clf-legal-radio, .clf-scope-radio').forEach(function(r) {{
-    r.addEventListener('change', function() {{
-      updateClfConditions(form.dataset.prefix);
-      saveClfForm(form.dataset.prefix, docId, chunkN);
-    }});
-  }});
-  form.querySelectorAll('.clf-ns-radio, .clf-emerg-radio').forEach(function(r) {{
-    r.addEventListener('change', function() {{
-      saveClfForm(form.dataset.prefix, docId, chunkN);
-    }});
-  }});
-  // Help button opens category descriptions modal
+  // Help button opens codebook modal
   form.querySelectorAll('.clf-help-btn').forEach(function(btn) {{
     btn.addEventListener('click', function(e) {{
       e.stopPropagation();
@@ -1099,12 +1260,12 @@ document.querySelectorAll('.clf-panel').forEach(function(panel) {{
   var docId = panel.dataset.doc;
   var form  = panel.querySelector('.clf-form');
   if (!form) return;
-  bindClfForm(form, docId, null);
+  bindClfForm(form, docId, null, 'doc');
   var d = loadData();
   restoreClfForm(form.dataset.prefix, (d[docId] || {{}}).classification);
 }});
 
-// ── Category descriptions modal ───────────────────────────────────────────────
+// ── Codebook modal ────────────────────────────────────────────────────────────
 document.getElementById('cat-modal-close').addEventListener('click', function() {{
   document.getElementById('cat-modal-overlay').style.display = 'none';
 }});
@@ -1152,22 +1313,19 @@ document.addEventListener('mousedown', function(e) {{
 }});
 
 // ── Chunk classification popup ────────────────────────────────────────────────
-var _cp = null; // {{docId, chunkN, annIdx}} — annIdx set when opened from left-side annotation
+var _cp = null; // {{docId, chunkN, annIdx, strategy}} — annIdx set when opened from left-side annotation
 
 // Inlined classification form template (matches render_classification_form output structure)
-var CLF_CAT_OPTS = [
-  ['ceremonial','Ceremonial/Expressive'],
-  ['internal',  'Internal Management'],
-  ['policy',    'Policy Setting'],
-  ['other',     'Other'],
+var CLF_CODE_OPTS = [
+  ['0', '0 - Outside scope'],
+  ['1', '1 - Discretionary executive direction / internal management'],
+  ['2', '2 - Dictated agency legal outcome'],
+  ['3', '3 - Self-executing legal effect'],
+  ['4', '4 - Unclear / inseparable mixed'],
 ];
-var CLF_LEGAL_OPTS = [
-  ['legal',    'Likely legal effect'],
-  ['nonlegal', 'Non-legally binding'],
-];
-var CLF_SCOPE_OPTS = [
-  ['domestic', 'Domestic'],
-  ['foreign',  'Foreign'],
+var CLF_BINARY_OPTS = [
+  ['yes', 'Yes'],
+  ['no',  'No'],
 ];
 
 function buildClfFormHTML(prefix) {{
@@ -1177,46 +1335,38 @@ function buildClfFormHTML(prefix) {{
     }}).join('');
   }}
   return '<div class="clf-form" data-prefix="' + prefix + '">'
-    + '<div class="clf-row"><span class="clf-label">Category</span>'
-    + '<button type="button" class="clf-help-btn" title="Category descriptions">?</button>'
-    + '<div class="clf-radios">' + radios(prefix+'-cat', CLF_CAT_OPTS, 'clf-cat-radio') + '</div></div>'
-    + '<div class="clf-row clf-legal-row" style="display:none"><span class="clf-label">Legal effect</span>'
-    + '<div class="clf-radios">' + radios(prefix+'-legal', CLF_LEGAL_OPTS, 'clf-legal-radio') + '</div></div>'
-    + '<div class="clf-row"><span class="clf-label">Scope</span>'
-    + '<div class="clf-radios">' + radios(prefix+'-scope', CLF_SCOPE_OPTS, 'clf-scope-radio') + '</div></div>'
-    + '<div class="clf-row clf-ns-row" style="display:none"><span class="clf-label">National security?</span>'
-    + '<div class="clf-radios">'
-    + '<label class="clf-radio-label"><input type="radio" name="' + prefix + '-ns" value="yes" class="clf-ns-radio" data-prefix="' + prefix + '"> Yes</label>'
-    + '<label class="clf-radio-label"><input type="radio" name="' + prefix + '-ns" value="no" class="clf-ns-radio" data-prefix="' + prefix + '"> No</label>'
-    + '</div></div>'
-    + '<div class="clf-row"><span class="clf-label">Emergency?</span>'
-    + '<div class="clf-radios">'
-    + '<label class="clf-radio-label"><input type="radio" name="' + prefix + '-emerg" value="yes" class="clf-emerg-radio" data-prefix="' + prefix + '"> Yes</label>'
-    + '<label class="clf-radio-label"><input type="radio" name="' + prefix + '-emerg" value="no" class="clf-emerg-radio" data-prefix="' + prefix + '"> No</label>'
-    + '</div></div>'
+    + '<div class="clf-row"><span class="clf-label">Code</span>'
+    + '<button type="button" class="clf-help-btn" title="Codebook">?</button>'
+    + '<div class="clf-radios clf-code-radios">' + radios(prefix+'-code', CLF_CODE_OPTS, 'clf-code-radio') + '</div></div>'
+    + '<div class="clf-row"><span class="clf-label">Diplomacy / recognition</span>'
+    + '<div class="clf-radios">' + radios(prefix+'-diplomacy', CLF_BINARY_OPTS, 'clf-diplomacy-radio') + '</div></div>'
+    + '<div class="clf-row"><span class="clf-label">Military / intel ops</span>'
+    + '<div class="clf-radios">' + radios(prefix+'-military', CLF_BINARY_OPTS, 'clf-military-radio') + '</div></div>'
     + '</div>';
 }}
 
-function openChunkPopup(x, y, docId, chunkN, annIdx) {{
-  _cp = {{docId: docId, chunkN: chunkN, annIdx: (annIdx !== undefined ? annIdx : null)}};
+function openChunkPopup(x, y, docId, chunkN, annIdx, strategy) {{
+  _cp = {{docId: docId, chunkN: chunkN, annIdx: (annIdx !== undefined ? annIdx : null), strategy: strategy || 'sp'}};
   var isAnn = (_cp.annIdx !== null);
-  var prefix = isAnn ? (docId + '-ann-' + annIdx) : (docId + '-chunk-' + chunkN);
+  var prefix = isAnn ? (docId + '-ann-' + annIdx) : (docId + '-' + _cp.strategy + '-chunk-' + chunkN);
   var titleEl = document.getElementById('chunk-popup-title');
   if (isAnn) {{
     titleEl.textContent = 'Classify annotation (' + docId + ')';
+  }} else if (_cp.strategy === 'wp') {{
+    titleEl.textContent = 'Classify W&P order action #' + chunkN + ' (' + docId + ')';
   }} else {{
-    titleEl.textContent = 'Classify directive #' + chunkN + ' (' + docId + ')';
+    titleEl.textContent = 'Classify provision #' + chunkN + ' (' + docId + ')';
   }}
   document.getElementById('chunk-popup-form').innerHTML = buildClfFormHTML(prefix);
   // Restore saved values
   var d = loadData();
   var saved = isAnn
     ? (((d[docId] || {{}}).annotations || [])[annIdx] || {{}}).classification
-    : ((d[docId] || {{}}).chunks || {{}})[String(chunkN)];
+    : (((d[docId] || {{}})[chunkStoreName(_cp.strategy)] || {{}})[String(chunkN)]);
   restoreClfForm(prefix, saved);
   // Wire up events
   var form = document.querySelector('#chunk-popup-form .clf-form');
-  bindClfForm(form, docId, chunkN);
+  bindClfForm(form, docId, chunkN, _cp.strategy);
   // Position
   var pop = document.getElementById('chunk-popup');
   pop.style.display = 'block';
@@ -1239,13 +1389,14 @@ document.addEventListener('mousedown', function(e) {{
   if (pop.style.display !== 'none' && !pop.contains(e.target)) closeChunkPopup();
 }});
 
-// Clicking a W&P directive chunk opens the classification popup.
+// Clicking a provision/order-action chunk opens the classification popup.
 document.querySelectorAll('.seg-chunk').forEach(function(seg) {{
   seg.addEventListener('click', function(e) {{
     e.stopPropagation();
     var docId  = seg.dataset.doc;
     var chunkN = parseInt(seg.dataset.chunkn);
-    openChunkPopup(e.clientX, e.clientY, docId, chunkN);
+    var strategy = seg.dataset.strategy || 'sp';
+    openChunkPopup(e.clientX, e.clientY, docId, chunkN, null, strategy);
   }});
 }});
 
@@ -1276,7 +1427,13 @@ document.querySelectorAll('.seg-chunk').forEach(function(seg) {{
   for (var docId in d) {{
     if (!d[docId].chunks) continue;
     for (var chunkN in d[docId].chunks) {{
-      renderChunkBadge(docId, parseInt(chunkN), d[docId].chunks[chunkN]);
+      renderChunkBadge(docId, parseInt(chunkN), d[docId].chunks[chunkN], 'sp');
+    }}
+  }}
+  for (var docId in d) {{
+    if (!d[docId].wp_chunks) continue;
+    for (var chunkN in d[docId].wp_chunks) {{
+      renderChunkBadge(docId, parseInt(chunkN), d[docId].wp_chunks[chunkN], 'wp');
     }}
   }}
 }})();
@@ -1285,7 +1442,7 @@ document.querySelectorAll('.seg-chunk').forEach(function(seg) {{
 </html>"""
 
 
-def load_pilot(per_type: int = 5, seed: int = 99) -> list[tuple[str, str, str, list[dict]]]:
+def load_pilot(per_type: int = 5, seed: int = 99, exclude_ceremonial: bool = False) -> list[tuple[str, str, str, list[dict]]]:
     """Return per_type docs per doc type sampled round-robin across administrations."""
     with open(DATA_FILE) as f:
         all_rows = list(csv.DictReader(f))
@@ -1294,7 +1451,10 @@ def load_pilot(per_type: int = 5, seed: int = 99) -> list[tuple[str, str, str, l
     result: list[tuple[str, str, str, list[dict]]] = []
 
     for doc_type_key, prefix, tab_label in DOC_TYPES:
-        pool = [r for r in all_rows if r["doc_type"] == doc_type_key and int(r[""]) not in HOLDOUT_IDS]
+        pool = [r for r in all_rows
+                if r["doc_type"] == doc_type_key
+                and int(r[""]) not in HOLDOUT_IDS
+                and not (exclude_ceremonial and is_ceremonial(r))]
         by_prez: dict[str, list[dict]] = {}
         for r in pool:
             by_prez.setdefault(r["president"], []).append(r)
@@ -1321,7 +1481,7 @@ def load_pilot(per_type: int = 5, seed: int = 99) -> list[tuple[str, str, str, l
     return result
 
 
-def load_balanced_dual(per_type: int = 25, seed: int = 42) -> tuple[
+def load_balanced_dual(per_type: int = 25, seed: int = 42, exclude_ceremonial: bool = False) -> tuple[
     list[tuple[str, str, str, list[dict]]],
     list[tuple[str, str, str, list[dict]]],
 ]:
@@ -1340,7 +1500,10 @@ def load_balanced_dual(per_type: int = 25, seed: int = 42) -> tuple[
     set_b: list[tuple[str, str, str, list[dict]]] = []
 
     for doc_type_key, prefix, tab_label in DOC_TYPES:
-        pool = [r for r in all_rows if r["doc_type"] == doc_type_key and int(r[""]) not in HOLDOUT_IDS]
+        pool = [r for r in all_rows
+                if r["doc_type"] == doc_type_key
+                and int(r[""]) not in HOLDOUT_IDS
+                and not (exclude_ceremonial and is_ceremonial(r))]
         by_prez: dict[str, list[dict]] = {}
         for r in pool:
             by_prez.setdefault(r["president"], []).append(r)
@@ -1391,10 +1554,35 @@ def main():
                         help="Build two disjoint 100-doc classification viewers (25 per type)")
     parser.add_argument("--pilot", action="store_true",
                         help="Build pilot_20.html: 5 docs per type sampled round-robin across admins")
+    parser.add_argument("--from-map", type=str, default=None, dest="from_map",
+                        help="Rebuild pilot_20.html using exact doc IDs from a saved doc_id_map JSON")
+    parser.add_argument("--exclude-ceremonial", action="store_true", dest="exclude_ceremonial",
+                        help="Drop ceremonial proclamations (holidays, half-staff, seal/flag designs) before sampling")
+    parser.add_argument("--exclude-map", type=str, default=None, dest="exclude_map",
+                        help="Path to a doc_id_map JSON whose CSV row indices are excluded from sampling")
     args = parser.parse_args()
 
+    if args.from_map:
+        with open(args.from_map) as f:
+            id_map: dict[str, int] = json.load(f)
+        with open(DATA_FILE) as f:
+            all_rows = {int(r[""]): r for r in csv.DictReader(f)}
+        rows_by_type = []
+        for doc_type_key, prefix, tab_label in DOC_TYPES:
+            rows = [all_rows[csv_idx] for key, csv_idx in id_map.items()
+                    if key.startswith(prefix) and csv_idx in all_rows]
+            rows.sort(key=lambda r: next(k for k, v in id_map.items() if v == int(r[""])))
+            if rows:
+                rows_by_type.append((doc_type_key, prefix, tab_label, rows))
+        out_file = OUT_FILE.with_name(args.out) if args.out else OUT_FILE.with_name("pilot_20.html")
+        html_out = build_html(rows_by_type, seed=args.seed, viewer_num=0)
+        out_file.write_text(html_out)
+        total = sum(len(rows) for _, _, _, rows in rows_by_type)
+        print(f"Wrote {out_file}  ({total} docs, {len(rows_by_type)} tabs)")
+        return
+
     if args.pilot:
-        rows_by_type = load_pilot(per_type=5, seed=args.seed)
+        rows_by_type = load_pilot(per_type=5, seed=args.seed, exclude_ceremonial=args.exclude_ceremonial)
         out_file = OUT_FILE.with_name("pilot_20.html")
         html_out = build_html(rows_by_type, seed=args.seed, viewer_num=0)
         out_file.write_text(html_out)
@@ -1410,7 +1598,7 @@ def main():
         return
 
     if args.dual:
-        set_a, set_b = load_balanced_dual(per_type=25, seed=args.seed)
+        set_a, set_b = load_balanced_dual(per_type=25, seed=args.seed, exclude_ceremonial=args.exclude_ceremonial)
         dual_names = ["entries_100", "classification_viewer_2"]
         for idx, (rows_by_type, viewer_seed, name) in enumerate(
             zip([set_a, set_b], [args.seed, args.seed + 1000], dual_names), start=1
@@ -1429,6 +1617,11 @@ def main():
             print(f"Wrote {map_file}")
         return
 
+    exclude_ids: frozenset[int] = frozenset()
+    if args.exclude_map:
+        id_map_ex: dict[str, int] = json.load(open(args.exclude_map))
+        exclude_ids = frozenset(id_map_ex.values())
+
     if args.row_id is not None:
         with open(DATA_FILE) as f:
             all_rows = list(csv.DictReader(f))
@@ -1440,7 +1633,9 @@ def main():
         rows_by_type = []
         for doc_type_key, prefix, tab_label in DOC_TYPES:
             n = args.n_memo if (doc_type_key == "memorandum" and args.n_memo is not None) else args.n
-            rows = load_rows(doc_type_key, n, seed=args.seed)
+            rows = load_rows(doc_type_key, n, seed=args.seed,
+                             exclude_ceremonial=args.exclude_ceremonial,
+                             exclude_ids=exclude_ids)
             if rows:
                 rows_by_type.append((doc_type_key, prefix, tab_label, rows))
 
@@ -1450,7 +1645,8 @@ def main():
         for j, row in enumerate(rows, start=1):
             doc_id_map[f"{prefix}{j}"] = int(row[""])
 
-    out_file = OUT_FILE.with_name(args.out) if args.out else OUT_FILE
+    out_file = (ROOT / args.out) if args.out else OUT_FILE
+    out_file.parent.mkdir(parents=True, exist_ok=True)
     html_out = build_html(rows_by_type, seed=args.seed if hasattr(args, "seed") else 42)
     out_file.write_text(html_out)
     map_file = out_file.with_name(f"doc_id_map_{out_file.stem}.json")

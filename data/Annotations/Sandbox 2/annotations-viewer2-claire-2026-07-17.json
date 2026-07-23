@@ -1,0 +1,1834 @@
+{
+  "annotator": "Claire",
+  "document_metadata": {
+    "EO1": {
+      "global_dev_id": "666",
+      "url": "https://www.presidency.ucsb.edu/documents/executive-order-13753-amending-the-order-succession-the-department-homeland-security",
+      "date": "December 09, 2016",
+      "president": "Barack Obama",
+      "doc_type": "executive_order"
+    },
+    "EO2": {
+      "global_dev_id": "615",
+      "url": "https://www.presidency.ucsb.edu/documents/executive-order-13804-allowing-additional-time-for-recognizing-positive-actions-the",
+      "date": "July 11, 2017",
+      "president": "Donald J. Trump",
+      "doc_type": "executive_order"
+    },
+    "EO3": {
+      "global_dev_id": "3963",
+      "url": "https://www.presidency.ucsb.edu/documents/executive-order-10459-amendment-executive-order-no-10422-january-9-1953-prescribing",
+      "date": "June 02, 1953",
+      "president": "Dwight D. Eisenhower",
+      "doc_type": "executive_order"
+    },
+    "EO4": {
+      "global_dev_id": "1633",
+      "url": "https://www.presidency.ucsb.edu/documents/executive-order-12786-adjustments-certain-rates-pay-and-allowances",
+      "date": "December 26, 1991",
+      "president": "George Bush",
+      "doc_type": "executive_order"
+    },
+    "EO5": {
+      "global_dev_id": "1098",
+      "url": "https://www.presidency.ucsb.edu/documents/executive-order-13321-appointments-during-national-emergency",
+      "date": "December 17, 2003",
+      "president": "George W. Bush",
+      "doc_type": "executive_order"
+    },
+    "EO6": {
+      "global_dev_id": "2569",
+      "url": "https://www.presidency.ucsb.edu/documents/executive-order-11850-renunciation-certain-uses-war-chemical-herbicides-and-riot-control",
+      "date": "April 08, 1975",
+      "president": "Gerald R. Ford",
+      "doc_type": "executive_order"
+    },
+    "EO7": {
+      "global_dev_id": "4076",
+      "url": "https://www.presidency.ucsb.edu/documents/executive-order-10347-providing-for-the-affixing-the-seal-the-united-states-certain",
+      "date": "April 18, 1952",
+      "president": "Harry S Truman",
+      "doc_type": "executive_order"
+    },
+    "EO8": {
+      "global_dev_id": "2450",
+      "url": "https://www.presidency.ucsb.edu/documents/executive-order-11969-administration-the-emergency-natural-gas-act-1977",
+      "date": "February 02, 1977",
+      "president": "Jimmy Carter",
+      "doc_type": "executive_order"
+    },
+    "EO9": {
+      "global_dev_id": "3324",
+      "url": "https://www.presidency.ucsb.edu/documents/executive-order-11097-amendment-executive-order-no-10501-amended-relating-authority-for",
+      "date": "February 28, 1963",
+      "president": "John F. Kennedy",
+      "doc_type": "executive_order"
+    },
+    "EO10": {
+      "global_dev_id": "419",
+      "url": "https://www.presidency.ucsb.edu/documents/executive-order-14000-supporting-the-reopening-and-continuing-operation-schools-and-early",
+      "date": "January 21, 2021",
+      "president": "Joseph R. Biden, Jr.",
+      "doc_type": "executive_order"
+    },
+    "EO11": {
+      "global_dev_id": "3235",
+      "url": "https://www.presidency.ucsb.edu/documents/executive-order-11185-facilitate-coordination-federal-education-programs",
+      "date": "October 16, 1964",
+      "president": "Lyndon B. Johnson",
+      "doc_type": "executive_order"
+    },
+    "EO12": {
+      "global_dev_id": "2922",
+      "url": "https://www.presidency.ucsb.edu/documents/executive-order-11497-amending-the-selective-service-regulations-prescribe-random",
+      "date": "November 26, 1969",
+      "president": "Richard Nixon",
+      "doc_type": "executive_order"
+    },
+    "EO13": {
+      "global_dev_id": "2118",
+      "url": "https://www.presidency.ucsb.edu/documents/executive-order-12301-integrity-and-efficiency-federal-programs",
+      "date": "March 26, 1981",
+      "president": "Ronald Reagan",
+      "doc_type": "executive_order"
+    },
+    "EO14": {
+      "global_dev_id": "1402",
+      "url": "https://www.presidency.ucsb.edu/documents/executive-order-13017-advisory-commission-consumer-protection-and-quality-the-health-care",
+      "date": "September 05, 1996",
+      "president": "William J. Clinton",
+      "doc_type": "executive_order"
+    },
+    "EO15": {
+      "global_dev_id": "830",
+      "url": "https://www.presidency.ucsb.edu/documents/executive-order-13589-promoting-efficient-spending",
+      "date": "November 09, 2011",
+      "president": "Barack Obama",
+      "doc_type": "executive_order"
+    },
+    "EO16": {
+      "global_dev_id": "111",
+      "url": "https://www.presidency.ucsb.edu/documents/executive-order-14308-empowering-commonsense-wildfire-prevention-and-response",
+      "date": "June 12, 2025",
+      "president": "Donald J. Trump",
+      "doc_type": "executive_order"
+    },
+    "EO17": {
+      "global_dev_id": "3916",
+      "url": "https://www.presidency.ucsb.edu/documents/executive-order-10507-further-amendment-executive-order-no-9805-prescribing-regulations",
+      "date": "December 10, 1953",
+      "president": "Dwight D. Eisenhower",
+      "doc_type": "executive_order"
+    },
+    "EO18": {
+      "global_dev_id": "1678",
+      "url": "https://www.presidency.ucsb.edu/documents/executive-order-12741-extending-the-presidents-education-policy-advisory-committee",
+      "date": "December 31, 1990",
+      "president": "George Bush",
+      "doc_type": "executive_order"
+    },
+    "EO19": {
+      "global_dev_id": "1125",
+      "url": "https://www.presidency.ucsb.edu/documents/executive-order-13293-amendment-executive-order-10448-establishing-the-national-defense",
+      "date": "March 28, 2003",
+      "president": "George W. Bush",
+      "doc_type": "executive_order"
+    },
+    "EO20": {
+      "global_dev_id": "2534",
+      "url": "https://www.presidency.ucsb.edu/documents/executive-order-11885-amending-executive-order-no-11861-amended-placing-certain-positions",
+      "date": "October 15, 1975",
+      "president": "Gerald R. Ford",
+      "doc_type": "executive_order"
+    },
+    "EO21": {
+      "global_dev_id": "4230",
+      "url": "https://www.presidency.ucsb.edu/documents/executive-order-10193-providing-for-the-conduct-the-mobilization-effort-the-government",
+      "date": "December 16, 1950",
+      "president": "Harry S Truman",
+      "doc_type": "executive_order"
+    },
+    "EO22": {
+      "global_dev_id": "2133",
+      "url": "https://www.presidency.ucsb.edu/documents/executive-order-12286-responses-environmental-damage",
+      "date": "January 19, 1981",
+      "president": "Jimmy Carter",
+      "doc_type": "executive_order"
+    },
+    "EO23": {
+      "global_dev_id": "3320",
+      "url": "https://www.presidency.ucsb.edu/documents/executive-order-11100-establishing-the-presidents-commission-registration-and-voting",
+      "date": "March 30, 1963",
+      "president": "John F. Kennedy",
+      "doc_type": "executive_order"
+    },
+    "EO24": {
+      "global_dev_id": "276",
+      "url": "https://www.presidency.ucsb.edu/documents/executive-order-14144-strengthening-and-promoting-innovation-the-nations-cybersecurity",
+      "date": "January 16, 2025",
+      "president": "Joseph R. Biden, Jr.",
+      "doc_type": "executive_order"
+    },
+    "EO25": {
+      "global_dev_id": "3153",
+      "url": "https://www.presidency.ucsb.edu/documents/executive-order-11267-relating-the-implementation-the-treaty-friendship-and-general",
+      "date": "January 19, 1966",
+      "president": "Lyndon B. Johnson",
+      "doc_type": "executive_order"
+    },
+    "M1": {
+      "global_dev_id": "9212",
+      "url": "https://www.presidency.ucsb.edu/documents/memorandum-delegation-reporting-functions-specified-section-941-the-fiscal-year-2014",
+      "date": "December 02, 2015",
+      "president": "Barack Obama",
+      "doc_type": "memorandum"
+    },
+    "M2": {
+      "global_dev_id": "9038",
+      "url": "https://www.presidency.ucsb.edu/documents/presidential-determination-with-respect-the-efforts-foreign-governments-regarding-0",
+      "date": "November 29, 2018",
+      "president": "Donald J. Trump",
+      "doc_type": "memorandum"
+    },
+    "M3": {
+      "global_dev_id": "11803",
+      "url": "https://www.presidency.ucsb.edu/documents/memorandum-concerning-career-executive-development-program-all-departments-and-agencies",
+      "date": "February 05, 1960",
+      "president": "Dwight D. Eisenhower",
+      "doc_type": "memorandum"
+    },
+    "M4": {
+      "global_dev_id": "11022",
+      "url": "https://www.presidency.ucsb.edu/documents/memorandum-transfer-165-million-military-assistance-funds-the-account-for-anti-narcotics",
+      "date": "June 21, 1990",
+      "president": "George Bush",
+      "doc_type": "memorandum"
+    },
+    "M5": {
+      "global_dev_id": "17",
+      "url": "https://www.presidency.ucsb.edu/documents/homeland-security-presidential-directivehspd-12-policy-for-common-identification-standard",
+      "date": "August 27, 2004",
+      "president": "George W. Bush",
+      "doc_type": "memorandum"
+    },
+    "M6": {
+      "global_dev_id": "11547",
+      "url": "https://www.presidency.ucsb.edu/documents/memorandum-establishing-the-agricultural-policy-committee",
+      "date": "March 11, 1976",
+      "president": "Gerald R. Ford",
+      "doc_type": "memorandum"
+    },
+    "M7": {
+      "global_dev_id": "11975",
+      "url": "https://www.presidency.ucsb.edu/documents/memorandum-agency-heads-the-channeling-federal-procurement-etc-programs-areas-economic",
+      "date": "July 14, 1949",
+      "president": "Harry S Truman",
+      "doc_type": "memorandum"
+    },
+    "M8": {
+      "global_dev_id": "11502",
+      "url": "https://www.presidency.ucsb.edu/documents/memorandum-the-heads-certain-federal-agencies-dam-safety",
+      "date": "April 23, 1977",
+      "president": "Jimmy Carter",
+      "doc_type": "memorandum"
+    },
+    "M9": {
+      "global_dev_id": "11781",
+      "url": "https://www.presidency.ucsb.edu/documents/memorandum-federal-agencies-the-duties-the-director-the-food-for-peace-program",
+      "date": "January 24, 1961",
+      "president": "John F. Kennedy",
+      "doc_type": "memorandum"
+    },
+    "M10": {
+      "global_dev_id": "8783",
+      "url": "https://www.presidency.ucsb.edu/documents/presidential-determination-with-respect-the-efforts-foreign-governments-regarding-4",
+      "date": "October 14, 2022",
+      "president": "Joseph R. Biden, Jr.",
+      "doc_type": "memorandum"
+    },
+    "M11": {
+      "global_dev_id": "11679",
+      "url": "https://www.presidency.ucsb.edu/documents/memorandum-directing-reduction-aid-expenditures-overseas-connection-with-the-balance",
+      "date": "January 11, 1968",
+      "president": "Lyndon B. Johnson",
+      "doc_type": "memorandum"
+    },
+    "M12": {
+      "global_dev_id": "11636",
+      "url": "https://www.presidency.ucsb.edu/documents/memorandum-disapproval-bill-promote-training-family-medicine",
+      "date": "December 26, 1970",
+      "president": "Richard Nixon",
+      "doc_type": "memorandum"
+    },
+    "M13": {
+      "global_dev_id": "11137",
+      "url": "https://www.presidency.ucsb.edu/documents/memorandum-new-foreign-policy-export-controls-iran",
+      "date": "September 23, 1987",
+      "president": "Ronald Reagan",
+      "doc_type": "memorandum"
+    },
+    "M14": {
+      "global_dev_id": "10300",
+      "url": "https://www.presidency.ucsb.edu/documents/memorandum-vietnamese-cooperation-accounting-for-united-states-prisoners-war-and-missing",
+      "date": "February 03, 1999",
+      "president": "William J. Clinton",
+      "doc_type": "memorandum"
+    },
+    "M15": {
+      "global_dev_id": "9512",
+      "url": "https://www.presidency.ucsb.edu/documents/memorandum-suspension-limitations-under-the-jerusalem-embassy-act-15",
+      "date": "June 02, 2010",
+      "president": "Barack Obama",
+      "doc_type": "memorandum"
+    },
+    "M16": {
+      "global_dev_id": "8628",
+      "url": "https://www.presidency.ucsb.edu/documents/memorandum-from-the-acting-director-office-management-and-budget-guidance-regarding",
+      "date": "January 21, 2025",
+      "president": "Donald J. Trump",
+      "doc_type": "memorandum"
+    },
+    "M17": {
+      "global_dev_id": "11835",
+      "url": "https://www.presidency.ucsb.edu/documents/memorandum-disapproval-bill-for-the-relief-the-malowney-real-estate-co-inc",
+      "date": "August 28, 1958",
+      "president": "Dwight D. Eisenhower",
+      "doc_type": "memorandum"
+    },
+    "M18": {
+      "global_dev_id": "10951",
+      "url": "https://www.presidency.ucsb.edu/documents/memorandum-determination-pursuant-section-2c1-the-migration-and-refugee-assistance-act-28",
+      "date": "April 17, 1991",
+      "president": "George Bush",
+      "doc_type": "memorandum"
+    },
+    "M19": {
+      "global_dev_id": "9632",
+      "url": "https://www.presidency.ucsb.edu/documents/memorandum-fy-2009-refugee-admissions-numbers-and-authorizations-country-refugee-status",
+      "date": "September 30, 2008",
+      "president": "George W. Bush",
+      "doc_type": "memorandum"
+    },
+    "M20": {
+      "global_dev_id": "11566",
+      "url": "https://www.presidency.ucsb.edu/documents/memorandum-annual-report-federal-executive-boards",
+      "date": "March 21, 1975",
+      "president": "Gerald R. Ford",
+      "doc_type": "memorandum"
+    },
+    "M21": {
+      "global_dev_id": "11968",
+      "url": "https://www.presidency.ucsb.edu/documents/memorandum-the-need-for-protecting-free-enterprise-during-the-defense-emergency",
+      "date": "September 29, 1950",
+      "president": "Harry S Truman",
+      "doc_type": "memorandum"
+    },
+    "M22": {
+      "global_dev_id": "11430",
+      "url": "https://www.presidency.ucsb.edu/documents/memorandum-from-the-president-veterans-readjustment-and-career-conditional-appointment",
+      "date": "October 10, 1978",
+      "president": "Jimmy Carter",
+      "doc_type": "memorandum"
+    },
+    "M23": {
+      "global_dev_id": "11779",
+      "url": "https://www.presidency.ucsb.edu/documents/memorandum-racial-or-other-discrimination-federal-employee-recreational-associations",
+      "date": "April 18, 1961",
+      "president": "John F. Kennedy",
+      "doc_type": "memorandum"
+    },
+    "M24": {
+      "global_dev_id": "8695",
+      "url": "https://www.presidency.ucsb.edu/documents/presidential-determination-the-proposed-amendment-the-1958-agreement-between-the",
+      "date": "July 16, 2024",
+      "president": "Joseph R. Biden, Jr.",
+      "doc_type": "memorandum"
+    },
+    "M25": {
+      "global_dev_id": "11754",
+      "url": "https://www.presidency.ucsb.edu/documents/memorandum-disapproval-bill-relating-the-marking-imported-articles",
+      "date": "December 31, 1963",
+      "president": "Lyndon B. Johnson",
+      "doc_type": "memorandum"
+    },
+    "L1": {
+      "global_dev_id": "5161",
+      "url": "https://www.presidency.ucsb.edu/documents/letter-congressional-leaders-continuation-the-national-emergency-with-respect-iran-13",
+      "date": "November 10, 2010",
+      "president": "Barack Obama",
+      "doc_type": "letter"
+    },
+    "L2": {
+      "global_dev_id": "4903",
+      "url": "https://www.presidency.ucsb.edu/documents/letter-the-congress-continuation-the-national-emergency-with-respect-lebanon",
+      "date": "July 29, 2017",
+      "president": "Donald J. Trump",
+      "doc_type": "letter"
+    },
+    "L3": {
+      "global_dev_id": "8118",
+      "url": "https://www.presidency.ucsb.edu/documents/letter-percival-f-brundage-director-bureau-the-budget-the-hoover-commission-recommendation",
+      "date": "May 21, 1956",
+      "president": "Dwight D. Eisenhower",
+      "doc_type": "letter"
+    },
+    "L4": {
+      "global_dev_id": "6298",
+      "url": "https://www.presidency.ucsb.edu/documents/letter-congressional-leaders-transmitting-report-arms-control-treaty-compliance",
+      "date": "January 19, 1993",
+      "president": "George Bush",
+      "doc_type": "letter"
+    },
+    "L5": {
+      "global_dev_id": "5474",
+      "url": "https://www.presidency.ucsb.edu/documents/letter-congressional-leaders-transmitting-report-implementation-the-inter-american-1",
+      "date": "April 01, 2003",
+      "president": "George W. Bush",
+      "doc_type": "letter"
+    },
+    "L6": {
+      "global_dev_id": "7131",
+      "url": "https://www.presidency.ucsb.edu/documents/letter-senator-edward-w-brooke-expressing-reservations-about-the-foreign-assistance",
+      "date": "March 29, 1976",
+      "president": "Gerald R. Ford",
+      "doc_type": "letter"
+    },
+    "L7": {
+      "global_dev_id": "8321",
+      "url": "https://www.presidency.ucsb.edu/documents/letter-committee-chairmen-the-need-for-continuing-aid-denmark",
+      "date": "July 25, 1952",
+      "president": "Harry S Truman",
+      "doc_type": "letter"
+    },
+    "L8": {
+      "global_dev_id": "6932",
+      "url": "https://www.presidency.ucsb.edu/documents/letter-the-secretary-defense-benefits-for-members-the-armed-forces",
+      "date": "May 23, 1980",
+      "president": "Jimmy Carter",
+      "doc_type": "letter"
+    },
+    "L9": {
+      "global_dev_id": "7874",
+      "url": "https://www.presidency.ucsb.edu/documents/letter-the-president-the-senate-and-the-speaker-the-house-urging-enactment-distressed-area",
+      "date": "January 25, 1961",
+      "president": "John F. Kennedy",
+      "doc_type": "letter"
+    },
+    "L10": {
+      "global_dev_id": "4698",
+      "url": "https://www.presidency.ucsb.edu/documents/letter-congressional-leaders-the-termination-emergency-with-respect-the-international",
+      "date": "April 02, 2021",
+      "president": "Joseph R. Biden, Jr.",
+      "doc_type": "letter"
+    },
+    "L11": {
+      "global_dev_id": "7501",
+      "url": "https://www.presidency.ucsb.edu/documents/letter-the-president-the-senate-and-the-speaker-the-house-transmitting-bill-encouraging",
+      "date": "April 20, 1966",
+      "president": "Lyndon B. Johnson",
+      "doc_type": "letter"
+    },
+    "L12": {
+      "global_dev_id": "7326",
+      "url": "https://www.presidency.ucsb.edu/documents/letter-the-president-the-senate-and-the-speaker-the-house-transmitting-proposals-0",
+      "date": "April 28, 1971",
+      "president": "Richard Nixon",
+      "doc_type": "letter"
+    },
+    "L13": {
+      "global_dev_id": "6860",
+      "url": "https://www.presidency.ucsb.edu/documents/letter-the-speaker-the-house-and-the-chairman-the-senate-foreign-relations-committee-14",
+      "date": "May 25, 1982",
+      "president": "Ronald Reagan",
+      "doc_type": "letter"
+    },
+    "L14": {
+      "global_dev_id": "6283",
+      "url": "https://www.presidency.ucsb.edu/documents/letter-congressional-leaders-trade-with-ecuador",
+      "date": "April 13, 1993",
+      "president": "William J. Clinton",
+      "doc_type": "letter"
+    },
+    "L15": {
+      "global_dev_id": "4938",
+      "url": "https://www.presidency.ucsb.edu/documents/letter-the-speaker-the-house-representatives-transmitting-budget-amendments-for-fiscal-8",
+      "date": "November 10, 2016",
+      "president": "Barack Obama",
+      "doc_type": "letter"
+    },
+    "L16": {
+      "global_dev_id": "4736",
+      "url": "https://www.presidency.ucsb.edu/documents/letter-congressional-leaders-continuation-the-national-emergency-with-respect-certain-5",
+      "date": "September 10, 2020",
+      "president": "Donald J. Trump",
+      "doc_type": "letter"
+    },
+    "L17": {
+      "global_dev_id": "8055",
+      "url": "https://www.presidency.ucsb.edu/documents/telegram-the-governor-arkansas-response-his-request-for-meeting",
+      "date": "September 11, 1957",
+      "president": "Dwight D. Eisenhower",
+      "doc_type": "letter"
+    },
+    "L18": {
+      "global_dev_id": "6334",
+      "url": "https://www.presidency.ucsb.edu/documents/letter-congressional-leaders-reporting-iraqs-compliance-with-united-nations-security",
+      "date": "November 16, 1992",
+      "president": "George Bush",
+      "doc_type": "letter"
+    },
+    "L19": {
+      "global_dev_id": "5347",
+      "url": "https://www.presidency.ucsb.edu/documents/letter-congressional-leaders-continuation-the-national-emergency-relating-cuba-and-the-0",
+      "date": "February 18, 2005",
+      "president": "George W. Bush",
+      "doc_type": "letter"
+    },
+    "L20": {
+      "global_dev_id": "7140",
+      "url": "https://www.presidency.ucsb.edu/documents/letter-the-speaker-the-house-and-the-president-the-senate-nuclear-powered-navy",
+      "date": "February 13, 1976",
+      "president": "Gerald R. Ford",
+      "doc_type": "letter"
+    },
+    "L21": {
+      "global_dev_id": "8341",
+      "url": "https://www.presidency.ucsb.edu/documents/letter-henry-h-fowler-his-assumption-the-post-administrator-the-defense-production",
+      "date": "May 07, 1952",
+      "president": "Harry S Truman",
+      "doc_type": "letter"
+    },
+    "L22": {
+      "global_dev_id": "6955",
+      "url": "https://www.presidency.ucsb.edu/documents/strategic-arms-limitation-treaty-letter-the-majority-leader-the-senate-requesting-delay",
+      "date": "January 03, 1980",
+      "president": "Jimmy Carter",
+      "doc_type": "letter"
+    },
+    "L23": {
+      "global_dev_id": "7775",
+      "url": "https://www.presidency.ucsb.edu/documents/letter-the-president-the-senate-and-the-speaker-the-house-transmitting-bill-authorize-us",
+      "date": "February 02, 1962",
+      "president": "John F. Kennedy",
+      "doc_type": "letter"
+    },
+    "L24": {
+      "global_dev_id": "4692",
+      "url": "https://www.presidency.ucsb.edu/documents/letter-congressional-leaders-the-continuation-the-national-emergency-with-respect-the-6",
+      "date": "June 08, 2021",
+      "president": "Joseph R. Biden, Jr.",
+      "doc_type": "letter"
+    },
+    "L25": {
+      "global_dev_id": "7437",
+      "url": "https://www.presidency.ucsb.edu/documents/the-presidents-telegrams-the-participating-teams-the-final-day-the-1967-world-series",
+      "date": "October 12, 1967",
+      "president": "Lyndon B. Johnson",
+      "doc_type": "letter"
+    },
+    "P1": {
+      "global_dev_id": "13334",
+      "url": "https://www.presidency.ucsb.edu/documents/proclamation-8645-national-child-abuse-prevention-month-2011",
+      "date": "March 31, 2011",
+      "president": "Barack Obama",
+      "doc_type": "proclamation"
+    },
+    "P2": {
+      "global_dev_id": "17347",
+      "url": "https://www.presidency.ucsb.edu/documents/proclamation-10888-guaranteeing-the-states-protection-against-invasion",
+      "date": "January 20, 2025",
+      "president": "Donald J. Trump",
+      "doc_type": "proclamation"
+    },
+    "P3": {
+      "global_dev_id": "14812",
+      "url": "https://www.presidency.ucsb.edu/documents/proclamation-3166-united-nation-human-rights-day-1956",
+      "date": "December 07, 1956",
+      "president": "Dwight D. Eisenhower",
+      "doc_type": "proclamation"
+    },
+    "P4": {
+      "global_dev_id": "18285",
+      "url": "https://www.presidency.ucsb.edu/documents/proclamation-5948-national-child-care-awareness-week-1989",
+      "date": "April 02, 1989",
+      "president": "George Bush",
+      "doc_type": "proclamation"
+    },
+    "P5": {
+      "global_dev_id": "15478",
+      "url": "https://www.presidency.ucsb.edu/documents/proclamation-7739-national-family-week-2003",
+      "date": "November 21, 2003",
+      "president": "George W. Bush",
+      "doc_type": "proclamation"
+    },
+    "P6": {
+      "global_dev_id": "19889",
+      "url": "https://www.presidency.ucsb.edu/documents/proclamation-4345-program-for-the-return-vietnam-era-draft-evaders-and-military-deserters",
+      "date": "January 30, 1975",
+      "president": "Gerald R. Ford",
+      "doc_type": "proclamation"
+    },
+    "P7": {
+      "global_dev_id": "15215",
+      "url": "https://www.presidency.ucsb.edu/documents/proclamation-2764-carrying-out-exclusive-trade-agreement-with-cuba-october-30-1947",
+      "date": "January 01, 1948",
+      "president": "Harry S Truman",
+      "doc_type": "proclamation"
+    },
+    "P8": {
+      "global_dev_id": "19550",
+      "url": "https://www.presidency.ucsb.edu/documents/proclamation-4682-national-hunting-and-fishing-day-1979",
+      "date": "September 11, 1979",
+      "president": "Jimmy Carter",
+      "doc_type": "proclamation"
+    },
+    "P9": {
+      "global_dev_id": "14550",
+      "url": "https://www.presidency.ucsb.edu/documents/proclamation-3427-child-health-day-1961",
+      "date": "September 06, 1961",
+      "president": "John F. Kennedy",
+      "doc_type": "proclamation"
+    },
+    "P10": {
+      "global_dev_id": "17632",
+      "url": "https://www.presidency.ucsb.edu/documents/proclamation-10599-captive-nations-week-2023",
+      "date": "July 14, 2023",
+      "president": "Joseph R. Biden, Jr.",
+      "doc_type": "proclamation"
+    },
+    "P11": {
+      "global_dev_id": "14103",
+      "url": "https://www.presidency.ucsb.edu/documents/proclamation-3874-national-forest-products-week-1968",
+      "date": "October 02, 1968",
+      "president": "Lyndon B. Johnson",
+      "doc_type": "proclamation"
+    },
+    "P12": {
+      "global_dev_id": "19994",
+      "url": "https://www.presidency.ucsb.edu/documents/proclamation-4240-united-nations-day-1973",
+      "date": "September 04, 1973",
+      "president": "Richard Nixon",
+      "doc_type": "proclamation"
+    },
+    "P13": {
+      "global_dev_id": "18348",
+      "url": "https://www.presidency.ucsb.edu/documents/proclamation-5885-increase-the-rates-duty-for-certain-articles-from-brazil",
+      "date": "October 20, 1988",
+      "president": "Ronald Reagan",
+      "doc_type": "proclamation"
+    },
+    "P14": {
+      "global_dev_id": "16406",
+      "url": "https://www.presidency.ucsb.edu/documents/proclamation-6810-captive-nations-week-1995",
+      "date": "July 17, 1995",
+      "president": "William J. Clinton",
+      "doc_type": "proclamation"
+    },
+    "P15": {
+      "global_dev_id": "12978",
+      "url": "https://www.presidency.ucsb.edu/documents/proclamation-9000-national-korean-war-veterans-armistice-day-2013",
+      "date": "July 25, 2013",
+      "president": "Barack Obama",
+      "doc_type": "proclamation"
+    },
+    "P16": {
+      "global_dev_id": "18232",
+      "url": "https://www.presidency.ucsb.edu/documents/proclamation-10000-national-doctors-day-2020",
+      "date": "March 30, 2020",
+      "president": "Donald J. Trump",
+      "doc_type": "proclamation"
+    },
+    "P17": {
+      "global_dev_id": "14625",
+      "url": "https://www.presidency.ucsb.edu/documents/proclamation-3352-general-the-armies-john-j-pershing-centennial-day",
+      "date": "June 03, 1960",
+      "president": "Dwight D. Eisenhower",
+      "doc_type": "proclamation"
+    },
+    "P18": {
+      "global_dev_id": "16974",
+      "url": "https://www.presidency.ucsb.edu/documents/proclamation-6242-martin-luther-king-jr-federal-holiday-1991",
+      "date": "January 14, 1991",
+      "president": "George Bush",
+      "doc_type": "proclamation"
+    },
+    "P19": {
+      "global_dev_id": "15457",
+      "url": "https://www.presidency.ucsb.edu/documents/proclamation-7759-american-red-cross-month-2004",
+      "date": "March 03, 2004",
+      "president": "George W. Bush",
+      "doc_type": "proclamation"
+    },
+    "P20": {
+      "global_dev_id": "19796",
+      "url": "https://www.presidency.ucsb.edu/documents/proclamation-4437-mothers-day-1976",
+      "date": "May 05, 1976",
+      "president": "Gerald R. Ford",
+      "doc_type": "proclamation"
+    },
+    "P21": {
+      "global_dev_id": "15132",
+      "url": "https://www.presidency.ucsb.edu/documents/proclamation-2846-immigration-quotas",
+      "date": "July 27, 1949",
+      "president": "Harry S Truman",
+      "doc_type": "proclamation"
+    },
+    "P22": {
+      "global_dev_id": "19654",
+      "url": "https://www.presidency.ucsb.edu/documents/proclamation-4579-citizenship-day-and-constitution-week-1978",
+      "date": "July 19, 1978",
+      "president": "Jimmy Carter",
+      "doc_type": "proclamation"
+    },
+    "P23": {
+      "global_dev_id": "14430",
+      "url": "https://www.presidency.ucsb.edu/documents/proclamation-3547-national-farm-city-week-1963",
+      "date": "August 05, 1963",
+      "president": "John F. Kennedy",
+      "doc_type": "proclamation"
+    },
+    "P24": {
+      "global_dev_id": "17612",
+      "url": "https://www.presidency.ucsb.edu/documents/proclamation-10621-world-suicide-prevention-day-2023",
+      "date": "September 08, 2023",
+      "president": "Joseph R. Biden, Jr.",
+      "doc_type": "proclamation"
+    },
+    "P25": {
+      "global_dev_id": "14213",
+      "url": "https://www.presidency.ucsb.edu/documents/proclamation-3764-national-safe-boating-week-1967",
+      "date": "January 24, 1967",
+      "president": "Lyndon B. Johnson",
+      "doc_type": "proclamation"
+    }
+  },
+  "EO1": {
+    "classification": {
+      "code": "3",
+      "diplomacy": "no",
+      "military_ops": "no"
+    },
+    "wp_chunks": {
+      "1": {
+        "code": "1",
+        "diplomacy": "no",
+        "military_ops": "no"
+      },
+      "2": {
+        "code": "3",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    }
+  },
+  "EO2": {
+    "classification": {
+      "code": "3",
+      "diplomacy": "no",
+      "military_ops": "no"
+    },
+    "sp": {
+      "status": "correct"
+    },
+    "wp_chunks": {
+      "1": {
+        "code": "3",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    }
+  },
+  "EO3": {
+    "classification": {
+      "code": "1",
+      "diplomacy": "no",
+      "military_ops": "no"
+    },
+    "sp": {
+      "status": "correct",
+      "comment": "was unsure on 1 vs. 3 on this one--while this may have concrete effects for IO participation, still feels very much internal management. "
+    }
+  },
+  "EO4": {
+    "classification": {
+      "code": "2",
+      "diplomacy": "no",
+      "military_ops": "no"
+    },
+    "wp_chunks": {
+      "1": {
+        "code": "1",
+        "diplomacy": null,
+        "military_ops": null
+      },
+      "2": {
+        "code": "1",
+        "diplomacy": null,
+        "military_ops": null
+      },
+      "3": {
+        "code": "1",
+        "diplomacy": null,
+        "military_ops": null
+      },
+      "4": {
+        "code": "1",
+        "diplomacy": null,
+        "military_ops": null
+      },
+      "5": {
+        "code": "2",
+        "diplomacy": "no",
+        "military_ops": "no"
+      },
+      "6": {
+        "code": "3",
+        "diplomacy": "no",
+        "military_ops": "no"
+      },
+      "7": {
+        "code": "3",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    }
+  },
+  "EO5": {
+    "classification": {
+      "code": "3",
+      "diplomacy": "no",
+      "military_ops": "no"
+    },
+    "sp": {
+      "status": "correct"
+    },
+    "wp_chunks": {
+      "1": {
+        "code": "3",
+        "diplomacy": "no",
+        "military_ops": "no"
+      },
+      "2": {
+        "code": "0",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    }
+  },
+  "EO6": {
+    "classification": {
+      "code": "2",
+      "diplomacy": "no",
+      "military_ops": "yes"
+    },
+    "sp": {
+      "status": "correct"
+    },
+    "wp_chunks": {
+      "1": {
+        "code": "1",
+        "diplomacy": "no",
+        "military_ops": "yes"
+      },
+      "2": {
+        "code": "1",
+        "diplomacy": "no",
+        "military_ops": "yes"
+      }
+    }
+  },
+  "EO7": {
+    "classification": {
+      "code": "0",
+      "diplomacy": "no",
+      "military_ops": "no"
+    },
+    "sp": {
+      "status": "correct"
+    }
+  },
+  "EO8": {
+    "classification": {
+      "code": "1",
+      "diplomacy": "no",
+      "military_ops": "no"
+    },
+    "sp": {
+      "status": "correct"
+    }
+  },
+  "EO9": {
+    "classification": {
+      "code": "3",
+      "diplomacy": "no",
+      "military_ops": "no"
+    },
+    "sp": {
+      "status": "correct"
+    },
+    "wp_chunks": {
+      "1": {
+        "code": "3",
+        "diplomacy": "no",
+        "military_ops": "no"
+      },
+      "2": {
+        "code": "1",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    }
+  },
+  "EO10": {
+    "classification": {
+      "code": "1",
+      "diplomacy": "no",
+      "military_ops": "no"
+    },
+    "sp": {
+      "status": "correct"
+    }
+  },
+  "EO11": {
+    "classification": {
+      "code": "1",
+      "diplomacy": "no",
+      "military_ops": "no"
+    },
+    "sp": {
+      "status": "correct"
+    }
+  },
+  "EO12": {
+    "classification": {
+      "code": "3",
+      "diplomacy": "no",
+      "military_ops": "yes"
+    },
+    "sp": {
+      "status": "correct"
+    },
+    "wp_chunks": {
+      "1": {
+        "code": "2",
+        "diplomacy": "no",
+        "military_ops": "yes"
+      }
+    }
+  },
+  "EO14": {
+    "classification": {
+      "code": "1",
+      "diplomacy": "no",
+      "military_ops": "no"
+    },
+    "sp": {
+      "status": "correct"
+    }
+  },
+  "EO15": {
+    "classification": {
+      "code": "1",
+      "diplomacy": "no",
+      "military_ops": "no"
+    },
+    "sp": {
+      "status": "correct"
+    }
+  },
+  "EO16": {
+    "classification": {
+      "code": "1",
+      "diplomacy": "no",
+      "military_ops": "no"
+    },
+    "sp": {
+      "status": "correct"
+    }
+  },
+  "EO17": {
+    "classification": {
+      "code": "3",
+      "diplomacy": "no",
+      "military_ops": "no"
+    },
+    "sp": {
+      "status": "correct"
+    }
+  },
+  "EO18": {
+    "classification": {
+      "code": "3",
+      "diplomacy": "no",
+      "military_ops": "no"
+    },
+    "sp": {
+      "status": "correct"
+    },
+    "wp_chunks": {
+      "1": {
+        "code": "0",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    }
+  },
+  "EO19": {
+    "classification": {
+      "code": "3",
+      "diplomacy": "no",
+      "military_ops": "yes"
+    },
+    "sp": {
+      "status": "correct"
+    },
+    "wp_chunks": {
+      "1": {
+        "code": "3",
+        "diplomacy": "no",
+        "military_ops": "yes"
+      }
+    }
+  },
+  "EO20": {
+    "classification": {
+      "code": "3",
+      "diplomacy": "no",
+      "military_ops": "yes"
+    },
+    "sp": {
+      "status": "correct",
+      "comment": ""
+    },
+    "wp_chunks": {
+      "1": {
+        "code": "0",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    }
+  },
+  "EO21": {
+    "classification": {
+      "code": "3",
+      "diplomacy": "no",
+      "military_ops": "yes"
+    },
+    "sp": {
+      "status": "correct"
+    },
+    "wp_chunks": {
+      "1": {
+        "code": "1",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    }
+  },
+  "EO22": {
+    "classification": {
+      "code": "1",
+      "diplomacy": "no",
+      "military_ops": "no"
+    },
+    "sp": {
+      "status": "correct"
+    }
+  },
+  "EO23": {
+    "classification": {
+      "code": "1",
+      "diplomacy": "no",
+      "military_ops": "no"
+    },
+    "sp": {
+      "status": "correct"
+    }
+  },
+  "EO24": {
+    "classification": {
+      "code": "1",
+      "diplomacy": "no",
+      "military_ops": "yes"
+    },
+    "sp": {
+      "status": "correct"
+    }
+  },
+  "M1": {
+    "classification": {
+      "code": "1",
+      "diplomacy": "no",
+      "military_ops": "yes"
+    },
+    "sp": {
+      "status": "correct",
+      "comment": ""
+    }
+  },
+  "M2": {
+    "classification": {
+      "code": "3",
+      "diplomacy": "no",
+      "military_ops": "no"
+    },
+    "sp": {
+      "status": "correct"
+    }
+  },
+  "M3": {
+    "classification": {
+      "code": "0",
+      "diplomacy": "no",
+      "military_ops": "no"
+    },
+    "sp": {
+      "status": "correct"
+    }
+  },
+  "M4": {
+    "classification": {
+      "code": "3",
+      "diplomacy": "no",
+      "military_ops": "no"
+    },
+    "sp": {
+      "status": "correct"
+    }
+  },
+  "M5": {
+    "classification": {
+      "code": "2",
+      "diplomacy": "no",
+      "military_ops": "no"
+    },
+    "sp": {
+      "status": "correct"
+    },
+    "wp_chunks": {
+      "1": {
+        "code": "1",
+        "diplomacy": null,
+        "military_ops": null
+      },
+      "2": {
+        "code": "1",
+        "diplomacy": "no",
+        "military_ops": "no"
+      },
+      "3": {
+        "code": "1",
+        "diplomacy": "no",
+        "military_ops": "no"
+      },
+      "4": {
+        "code": "1",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    "wp": {
+      "status": "correct"
+    }
+  },
+  "M6": {
+    "classification": {
+      "code": "1",
+      "diplomacy": "no",
+      "military_ops": "no"
+    },
+    "sp": {
+      "status": "correct"
+    }
+  },
+  "M7": {
+    "classification": {
+      "code": "1",
+      "diplomacy": "no",
+      "military_ops": "no"
+    },
+    "sp": {
+      "status": "correct"
+    }
+  },
+  "M8": {
+    "classification": {
+      "code": "1",
+      "diplomacy": "no",
+      "military_ops": "no"
+    },
+    "sp": {
+      "status": "correct"
+    }
+  },
+  "M9": {
+    "classification": {
+      "code": "0",
+      "diplomacy": "no",
+      "military_ops": "no"
+    },
+    "sp": {
+      "status": "correct"
+    }
+  },
+  "M10": {
+    "classification": {
+      "code": "3",
+      "diplomacy": "no",
+      "military_ops": "no"
+    },
+    "sp": {
+      "status": "correct"
+    }
+  },
+  "M11": {
+    "classification": {
+      "code": "1",
+      "diplomacy": "no",
+      "military_ops": "no"
+    }
+  },
+  "M12": {
+    "classification": {
+      "code": "0",
+      "diplomacy": "no",
+      "military_ops": "no"
+    },
+    "sp": {
+      "status": "correct"
+    }
+  },
+  "M13": {
+    "classification": {
+      "code": "3",
+      "diplomacy": "no",
+      "military_ops": "yes"
+    },
+    "sp": {
+      "status": "correct"
+    }
+  },
+  "M14": {
+    "classification": {
+      "code": "1",
+      "diplomacy": "no",
+      "military_ops": "no"
+    },
+    "sp": {
+      "status": "correct"
+    }
+  },
+  "M15": {
+    "classification": {
+      "code": "3",
+      "diplomacy": "yes",
+      "military_ops": "no"
+    },
+    "sp": {
+      "status": "correct"
+    }
+  },
+  "M16": {
+    "classification": {
+      "code": "0",
+      "diplomacy": "no",
+      "military_ops": "no"
+    },
+    "sp": {
+      "status": "correct"
+    },
+    "wp": {
+      "status": "needs-revision",
+      "comment": "no directives pulled out?"
+    }
+  },
+  "M17": {
+    "classification": {
+      "code": "0",
+      "diplomacy": "no",
+      "military_ops": "no"
+    }
+  },
+  "M18": {
+    "classification": {
+      "code": "2",
+      "diplomacy": "no",
+      "military_ops": "no"
+    },
+    "sp": {
+      "status": "correct"
+    },
+    "wp_chunks": {
+      "1": {
+        "code": "3",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    "wp": {
+      "status": "correct"
+    }
+  },
+  "M19": {
+    "classification": {
+      "code": "1",
+      "diplomacy": "no",
+      "military_ops": "no"
+    },
+    "sp": {
+      "status": "correct"
+    }
+  },
+  "M20": {
+    "classification": {
+      "code": "0",
+      "diplomacy": "no",
+      "military_ops": "no"
+    },
+    "sp": {
+      "status": "correct"
+    }
+  },
+  "M21": {
+    "classification": {
+      "code": "1",
+      "diplomacy": "no",
+      "military_ops": "no"
+    },
+    "sp": {
+      "status": "correct"
+    }
+  },
+  "M22": {
+    "classification": {
+      "code": "0",
+      "diplomacy": "no",
+      "military_ops": "no"
+    },
+    "sp": {
+      "status": "correct"
+    }
+  },
+  "M23": {
+    "classification": {
+      "code": "1",
+      "diplomacy": "no",
+      "military_ops": "no"
+    },
+    "sp": {
+      "status": "correct"
+    }
+  },
+  "M24": {
+    "classification": {
+      "code": "3",
+      "diplomacy": "no",
+      "military_ops": "no"
+    },
+    "sp": {
+      "status": "correct"
+    }
+  },
+  "M25": {
+    "classification": {
+      "code": "0",
+      "diplomacy": "no",
+      "military_ops": "no"
+    }
+  },
+  "L1": {
+    "classification": {
+      "code": "0",
+      "diplomacy": "no",
+      "military_ops": "no"
+    },
+    "sp": {
+      "status": "correct"
+    }
+  },
+  "L2": {
+    "classification": {
+      "code": "0",
+      "diplomacy": "no",
+      "military_ops": "yes"
+    },
+    "sp": {
+      "status": "correct"
+    }
+  },
+  "L3": {
+    "classification": {
+      "code": "1",
+      "diplomacy": "no",
+      "military_ops": "no"
+    },
+    "sp": {
+      "status": "correct"
+    }
+  },
+  "L4": {
+    "classification": {
+      "code": "0",
+      "diplomacy": "no",
+      "military_ops": "yes"
+    },
+    "sp": {
+      "status": "correct"
+    }
+  },
+  "L5": {
+    "classification": {
+      "code": "0",
+      "diplomacy": "no",
+      "military_ops": "no"
+    },
+    "sp": {
+      "status": "correct"
+    }
+  },
+  "L6": {
+    "classification": {
+      "code": "0",
+      "diplomacy": "no",
+      "military_ops": "yes"
+    },
+    "sp": {
+      "status": "correct"
+    }
+  },
+  "L7": {
+    "classification": {
+      "code": "3",
+      "diplomacy": "yes",
+      "military_ops": "no"
+    },
+    "sp": {
+      "status": "correct"
+    }
+  },
+  "L8": {
+    "classification": {
+      "code": "0",
+      "diplomacy": "no",
+      "military_ops": "no"
+    },
+    "sp": {
+      "status": "correct"
+    }
+  },
+  "L9": {
+    "classification": {
+      "code": "0",
+      "diplomacy": "no",
+      "military_ops": "no"
+    },
+    "sp": {
+      "status": "correct"
+    }
+  },
+  "L10": {
+    "classification": {
+      "code": "0",
+      "diplomacy": "yes",
+      "military_ops": "no"
+    },
+    "sp": {
+      "status": "correct"
+    }
+  },
+  "L11": {
+    "classification": {
+      "code": "0",
+      "diplomacy": "no",
+      "military_ops": "no"
+    },
+    "sp": {
+      "status": "correct"
+    }
+  },
+  "L12": {
+    "classification": {
+      "code": "0",
+      "diplomacy": "no",
+      "military_ops": "no"
+    },
+    "sp": {
+      "status": "correct"
+    }
+  },
+  "L13": {
+    "classification": {
+      "code": "0",
+      "diplomacy": "yes",
+      "military_ops": "no"
+    },
+    "sp": {
+      "status": "correct"
+    }
+  },
+  "L14": {
+    "classification": {
+      "code": "0",
+      "diplomacy": "no",
+      "military_ops": "no"
+    },
+    "sp": {
+      "status": "correct"
+    }
+  },
+  "L15": {
+    "classification": {
+      "code": "0",
+      "diplomacy": "no",
+      "military_ops": "yes"
+    },
+    "sp": {
+      "status": "correct"
+    }
+  },
+  "L16": {
+    "classification": {
+      "code": "0",
+      "diplomacy": "no",
+      "military_ops": "no"
+    },
+    "sp": {
+      "status": "correct"
+    }
+  },
+  "L17": {
+    "classification": {
+      "code": "0",
+      "diplomacy": "no",
+      "military_ops": "no"
+    },
+    "sp": {
+      "status": "correct"
+    }
+  },
+  "L18": {
+    "classification": {
+      "code": "0",
+      "diplomacy": "yes",
+      "military_ops": "yes"
+    },
+    "sp": {
+      "status": "correct"
+    }
+  },
+  "L19": {
+    "classification": {
+      "code": "0",
+      "diplomacy": "no",
+      "military_ops": "yes"
+    },
+    "sp": {
+      "status": "correct"
+    }
+  },
+  "L20": {
+    "classification": {
+      "code": "0",
+      "diplomacy": "no",
+      "military_ops": "yes"
+    },
+    "sp": {
+      "status": "correct"
+    }
+  },
+  "L21": {
+    "classification": {
+      "code": "1",
+      "diplomacy": "no",
+      "military_ops": "no"
+    },
+    "sp": {
+      "status": "correct"
+    }
+  },
+  "L22": {
+    "classification": {
+      "code": "0",
+      "diplomacy": "no",
+      "military_ops": "no"
+    },
+    "sp": {
+      "status": "correct",
+      "comment": "feels internal management-like but not an agency?"
+    }
+  },
+  "L23": {
+    "classification": {
+      "code": "0",
+      "diplomacy": "yes",
+      "military_ops": "no"
+    },
+    "sp": {
+      "status": "correct"
+    }
+  },
+  "L24": {
+    "classification": {
+      "code": "0",
+      "diplomacy": "no",
+      "military_ops": "no"
+    },
+    "sp": {
+      "status": "correct"
+    }
+  },
+  "L25": {
+    "classification": {
+      "code": "0",
+      "diplomacy": "no",
+      "military_ops": "no"
+    },
+    "sp": {
+      "status": "correct"
+    }
+  },
+  "P1": {
+    "classification": {
+      "code": "0",
+      "diplomacy": "no",
+      "military_ops": "no"
+    },
+    "sp": {
+      "status": "correct"
+    }
+  },
+  "P2": {
+    "classification": {
+      "code": "3",
+      "diplomacy": "no",
+      "military_ops": "no"
+    },
+    "sp": {
+      "status": "correct"
+    }
+  },
+  "P3": {
+    "classification": {
+      "code": "0",
+      "diplomacy": "no",
+      "military_ops": "no"
+    }
+  },
+  "P4": {
+    "classification": {
+      "code": "0",
+      "diplomacy": "no",
+      "military_ops": "no"
+    },
+    "sp": {
+      "status": "correct"
+    }
+  },
+  "P5": {
+    "classification": {
+      "code": "0",
+      "diplomacy": "no",
+      "military_ops": "no"
+    },
+    "sp": {
+      "status": "correct"
+    }
+  },
+  "P6": {
+    "classification": {
+      "code": "3",
+      "diplomacy": "no",
+      "military_ops": "no"
+    },
+    "sp": {
+      "status": "correct"
+    }
+  },
+  "P7": {
+    "classification": {
+      "code": "3",
+      "diplomacy": "no",
+      "military_ops": "no"
+    },
+    "sp": {
+      "status": "correct"
+    }
+  },
+  "P8": {
+    "classification": {
+      "code": "0",
+      "diplomacy": "no",
+      "military_ops": "no"
+    },
+    "sp": {
+      "status": "correct"
+    }
+  },
+  "P9": {
+    "classification": {
+      "code": "0",
+      "diplomacy": "no",
+      "military_ops": "no"
+    },
+    "sp": {
+      "status": "correct"
+    }
+  },
+  "P10": {
+    "classification": {
+      "code": "0",
+      "diplomacy": "no",
+      "military_ops": "no"
+    },
+    "sp": {
+      "status": "correct"
+    }
+  },
+  "P11": {
+    "classification": {
+      "code": "0",
+      "diplomacy": "no",
+      "military_ops": "no"
+    },
+    "sp": {
+      "status": "correct"
+    }
+  },
+  "P12": {
+    "classification": {
+      "code": "0",
+      "diplomacy": "no",
+      "military_ops": "no"
+    },
+    "sp": {
+      "status": "correct"
+    }
+  },
+  "P13": {
+    "classification": {
+      "code": "3",
+      "diplomacy": "no",
+      "military_ops": "no"
+    },
+    "sp": {
+      "status": "correct"
+    }
+  },
+  "P14": {
+    "classification": {
+      "code": "0",
+      "diplomacy": "no",
+      "military_ops": "no"
+    },
+    "sp": {
+      "status": "correct"
+    }
+  },
+  "P15": {
+    "classification": {
+      "code": "0",
+      "diplomacy": "no",
+      "military_ops": "no"
+    },
+    "sp": {
+      "status": "correct"
+    }
+  },
+  "P16": {
+    "classification": {
+      "code": "0",
+      "diplomacy": "no",
+      "military_ops": "no"
+    },
+    "sp": {
+      "status": "correct"
+    }
+  },
+  "P17": {
+    "classification": {
+      "code": "0",
+      "diplomacy": "no",
+      "military_ops": "no"
+    },
+    "sp": {
+      "status": "correct"
+    }
+  },
+  "P18": {
+    "classification": {
+      "code": "0",
+      "diplomacy": "no",
+      "military_ops": "no"
+    },
+    "sp": {
+      "status": "correct"
+    }
+  },
+  "P19": {
+    "classification": {
+      "code": "0",
+      "diplomacy": "no",
+      "military_ops": "no"
+    }
+  },
+  "P20": {
+    "classification": {
+      "code": "0",
+      "diplomacy": "no",
+      "military_ops": "no"
+    },
+    "sp": {
+      "status": "correct"
+    }
+  },
+  "P21": {
+    "classification": {
+      "code": "3",
+      "diplomacy": "no",
+      "military_ops": "no"
+    },
+    "sp": {
+      "status": "correct"
+    }
+  },
+  "P22": {
+    "classification": {
+      "code": "0",
+      "diplomacy": "no",
+      "military_ops": "no"
+    },
+    "sp": {
+      "status": "correct"
+    }
+  },
+  "P23": {
+    "classification": {
+      "code": "0",
+      "diplomacy": "no",
+      "military_ops": "no"
+    },
+    "sp": {
+      "status": "correct"
+    }
+  },
+  "P24": {
+    "classification": {
+      "code": "0",
+      "diplomacy": "no",
+      "military_ops": "no"
+    },
+    "sp": {
+      "status": "correct"
+    }
+  },
+  "P25": {
+    "classification": {
+      "code": "0",
+      "diplomacy": "no",
+      "military_ops": "no"
+    },
+    "sp": {
+      "status": "correct"
+    }
+  }
+}

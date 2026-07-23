@@ -1,0 +1,2215 @@
+{
+  "annotator": "Jennifer Nou",
+  "EO6": {
+    "wp": {
+      "comment": "The sections following the ordering phrase should all be included as the ordering action do this can be properly coded."
+    }
+  },
+  "EO7": {
+    "chunks": {
+      "1": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "2": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "policy",
+      "legal_effect": "legal",
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    },
+    "wp": {
+      "status": "correct"
+    }
+  },
+  "EO8": {
+    "chunks": {
+      "1": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "2": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "internal",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    },
+    "wp": {
+      "status": "correct"
+    }
+  },
+  "EO9": {
+    "chunks": {
+      "1": {
+        "category": "ceremonial",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "2": {
+        "category": "ceremonial",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "ceremonial",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    },
+    "wp": {
+      "status": "correct"
+    }
+  },
+  "EO10": {
+    "chunks": {
+      "1": {
+        "category": "policy",
+        "legal_effect": "nonlegal",
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "2": {
+        "category": "policy",
+        "legal_effect": "nonlegal",
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "3": {
+        "category": "policy",
+        "legal_effect": "nonlegal",
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "4": {
+        "category": "policy",
+        "legal_effect": "nonlegal",
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "5": {
+        "category": "policy",
+        "legal_effect": "nonlegal",
+        "scope": null,
+        "national_security": null,
+        "emergency": null
+      },
+      "6": {
+        "category": "policy",
+        "legal_effect": "nonlegal",
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "7": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": null,
+        "national_security": null,
+        "emergency": null
+      },
+      "8": {
+        "category": "policy",
+        "legal_effect": "nonlegal",
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "9": {
+        "category": "policy",
+        "legal_effect": "nonlegal",
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "10": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "11": {
+        "category": "policy",
+        "legal_effect": "nonlegal",
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "12": {
+        "category": "policy",
+        "legal_effect": "nonlegal",
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "13": {
+        "category": "policy",
+        "legal_effect": "nonlegal",
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "14": {
+        "category": "other",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "policy",
+      "legal_effect": "nonlegal",
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": null
+    },
+    "wp": {
+      "status": "correct"
+    }
+  },
+  "EO11": {
+    "wp": {
+      "status": "needs-revision",
+      "comment": "I think these provisions discussing amendment to an EO should not be their own ordering action (or somehow be grouped with later sections)"
+    },
+    "chunks": {
+      "2": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "internal",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    }
+  },
+  "EO12": {
+    "classification": {
+      "category": "policy",
+      "legal_effect": "legal",
+      "scope": null,
+      "national_security": null,
+      "emergency": "yes"
+    },
+    "chunks": {
+      "1": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "foreign",
+        "national_security": "yes",
+        "emergency": null
+      }
+    },
+    "wp": {
+      "status": null,
+      "comment": "Section 3 should be an action order as well, why isn't being coded in same way as others?"
+    }
+  },
+  "EO13": {
+    "chunks": {
+      "1": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "foreign",
+        "national_security": "yes",
+        "emergency": null
+      },
+      "2": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "foreign",
+        "national_security": "yes",
+        "emergency": null
+      },
+      "3": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "foreign",
+        "national_security": "yes",
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "policy",
+      "legal_effect": "legal",
+      "scope": "foreign",
+      "national_security": "yes",
+      "emergency": "yes"
+    },
+    "wp": {
+      "status": "correct"
+    }
+  },
+  "EO14": {
+    "chunks": {
+      "2": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "internal",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    },
+    "wp": {
+      "status": "needs-revision",
+      "comment": "As mentioned, EO amendments should not be coded or should be aggregated with other orders."
+    }
+  },
+  "EO15": {
+    "wp": {
+      "status": "needs-revision",
+      "comment": "Section 1 should have been included."
+    },
+    "classification": {
+      "category": "internal",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    }
+  },
+  "EO16": {
+    "chunks": {
+      "1": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "2": {
+        "category": "policy",
+        "legal_effect": "nonlegal",
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "3": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "4": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    },
+    "wp": {
+      "status": "needs-revision",
+      "comment": "Why is Section 4 excluded while others are included?"
+    },
+    "classification": {
+      "category": "internal",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    }
+  },
+  "EO17": {
+    "chunks": {
+      "1": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "2": {
+        "category": "other",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    },
+    "wp": {
+      "status": "needs-revision",
+      "comment": "This seems to mix internal management (delegations) with policy-setting non legal effects (e.g., authoring rulemaking, though that authorization did not seem necessary)."
+    },
+    "classification": {
+      "category": "internal",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    }
+  },
+  "EO18": {
+    "classification": {
+      "category": "ceremonial",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    },
+    "wp": {
+      "status": "needs-revision",
+      "comment": "There shouldn't be ordering language without ordering action."
+    },
+    "annotations": [
+      {
+        "start": 211,
+        "end": 740,
+        "label": "order_action",
+        "classification": {
+          "category": "ceremonial",
+          "legal_effect": null,
+          "scope": "domestic",
+          "national_security": null,
+          "emergency": null
+        }
+      }
+    ]
+  },
+  "EO19": {
+    "chunks": {
+      "1": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "foreign",
+        "national_security": null,
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "policy",
+      "legal_effect": "legal",
+      "scope": "foreign",
+      "national_security": "no",
+      "emergency": "no"
+    }
+  },
+  "EO20": {
+    "chunks": {
+      "1": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "internal",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": null
+    },
+    "wp": {
+      "status": "correct"
+    }
+  },
+  "EO21": {
+    "chunks": {
+      "1": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "2": {
+        "category": "policy",
+        "legal_effect": "nonlegal",
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "internal",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    }
+  },
+  "EO22": {
+    "chunks": {
+      "2": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "3": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "4": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "internal",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    }
+  },
+  "EO23": {
+    "chunks": {
+      "1": {
+        "category": "policy",
+        "legal_effect": "nonlegal",
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "2": {
+        "category": "policy",
+        "legal_effect": "nonlegal",
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "policy",
+      "legal_effect": "nonlegal",
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    }
+  },
+  "EO24": {
+    "chunks": {
+      "1": {
+        "category": "policy",
+        "legal_effect": "nonlegal",
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "2": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    }
+  },
+  "EO25": {
+    "chunks": {
+      "1": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "2": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "internal",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    },
+    "wp": {
+      "status": "correct"
+    }
+  },
+  "M1": {
+    "chunks": {
+      "1": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "2": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "policy",
+      "legal_effect": "legal",
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    }
+  },
+  "M2": {
+    "classification": {
+      "category": "internal",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    },
+    "wp": {
+      "status": "needs-revision",
+      "comment": "This should have captured this funding provision -- I still don't understand these aren't being picked up as seems comparable to other internal management ones."
+    }
+  },
+  "M3": {
+    "classification": {
+      "category": "other",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    },
+    "wp": {
+      "status": "needs-revision",
+      "comment": "Regex should capture \"I withhold\"?"
+    }
+  },
+  "M4": {
+    "chunks": {
+      "1": {
+        "category": "policy",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "2": {
+        "category": "policy",
+        "legal_effect": "nonlegal",
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "policy",
+      "legal_effect": "nonlegal",
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    },
+    "wp": {
+      "status": "needs-revision",
+      "comment": "No vesting clause. Should we exclude this from dataset or include and say no vesting clause?"
+    }
+  },
+  "M5": {
+    "chunks": {
+      "1": {
+        "category": "policy",
+        "legal_effect": "nonlegal",
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "2": {
+        "category": "policy",
+        "legal_effect": "nonlegal",
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "policy",
+      "legal_effect": "nonlegal",
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": null
+    },
+    "wp": {
+      "status": "correct"
+    }
+  },
+  "M6": {
+    "chunks": {
+      "1": {
+        "category": "other",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "2": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "3": {
+        "category": "other",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "4": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "5": {
+        "category": "policy",
+        "legal_effect": "nonlegal",
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    },
+    "wp": {
+      "status": "needs-revision",
+      "comment": "Regex should pickup \"I am ending\""
+    },
+    "classification": {
+      "category": "policy",
+      "legal_effect": "legal",
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    }
+  },
+  "M7": {
+    "classification": {
+      "category": "other",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    },
+    "wp": {
+      "status": "needs-revision",
+      "comment": "The preamble is the language that led me to code as \"other\" not the ordering action itself (because it indicates copy of letter)"
+    }
+  },
+  "M8": {
+    "chunks": {
+      "1": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "2": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "policy",
+      "legal_effect": "legal",
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    },
+    "wp": {
+      "status": "correct"
+    }
+  },
+  "M9": {
+    "wp": {
+      "status": "needs-revision",
+      "comment": "MUST DISCUSS WHAT TO DO WITH DIRECTIVES LIKE THIS WITHOUT VESTING CLAUSES OR ORDERING ACTIONS"
+    },
+    "classification": {
+      "category": "internal",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    }
+  },
+  "M10": {
+    "chunks": {
+      "1": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "2": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "internal",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    },
+    "wp": {
+      "status": "correct"
+    }
+  },
+  "M11": {
+    "chunks": {
+      "1": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "internal",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    },
+    "wp": {
+      "status": "correct"
+    }
+  },
+  "M12": {
+    "classification": {
+      "category": "internal",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    },
+    "wp": {
+      "status": "needs-revision",
+      "comment": "Example of need to distinguish between internal management and policy-non-legally-binding."
+    }
+  },
+  "M13": {
+    "wp": {
+      "status": "needs-revision",
+      "comment": "Ordering action 1 and 2 should be combined. Perhaps could solve by breaking up by punctuation (i.e., these actions are part of the same sentence)"
+    },
+    "chunks": {
+      "1": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "2": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "3": {
+        "category": "policy",
+        "legal_effect": "nonlegal",
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "4": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "5": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "policy",
+      "legal_effect": "nonlegal",
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    }
+  },
+  "M14": {
+    "chunks": {
+      "1": {
+        "category": "policy",
+        "legal_effect": "nonlegal",
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "policy",
+      "legal_effect": "nonlegal",
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    },
+    "wp": {
+      "status": "correct"
+    }
+  },
+  "M15": {
+    "wp": {
+      "status": "needs-revision",
+      "comment": "This is an example of an order action that is aggregated. WE SHOULD DISCUSS THIS ONE."
+    },
+    "chunks": {
+      "1": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "foreign",
+        "national_security": "yes",
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "policy",
+      "legal_effect": "legal",
+      "scope": "foreign",
+      "national_security": "yes",
+      "emergency": "no"
+    }
+  },
+  "M16": {
+    "chunks": {
+      "1": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "internal",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "yes"
+    }
+  },
+  "M17": {
+    "chunks": {
+      "1": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "internal",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    }
+  },
+  "M18": {
+    "chunks": {
+      "1": {
+        "category": "policy",
+        "legal_effect": "nonlegal",
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "2": {
+        "category": "policy",
+        "legal_effect": "nonlegal",
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "3": {
+        "category": "policy",
+        "legal_effect": "nonlegal",
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "policy",
+      "legal_effect": "nonlegal",
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    }
+  },
+  "M19": {
+    "chunks": {
+      "1": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "internal",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": null
+    }
+  },
+  "M20": {
+    "classification": {
+      "category": "other",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    },
+    "wp": {
+      "status": "needs-revision",
+      "comment": "TO DISCUSS. What should we do about these memos with no vesting clause. Action item regex to include \"I withheld\" or exclude these? I think we should prob include given that we're including everything for now."
+    }
+  },
+  "M21": {
+    "chunks": {
+      "1": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "2": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "internal",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    }
+  },
+  "M22": {
+    "chunks": {
+      "1": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "internal",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    }
+  },
+  "M23": {
+    "chunks": {
+      "1": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "2": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "3": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "internal",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    }
+  },
+  "M24": {
+    "chunks": {
+      "1": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "2": {
+        "category": "policy",
+        "legal_effect": "nonlegal",
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "policy",
+      "legal_effect": "nonlegal",
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    }
+  },
+  "M25": {
+    "chunks": {
+      "1": {
+        "category": "policy",
+        "legal_effect": "nonlegal",
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "policy",
+      "legal_effect": "nonlegal",
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    }
+  },
+  "L1": {
+    "wp": {
+      "status": "needs-revision",
+      "comment": "Regex needs to pick up \"I have sent\"?"
+    },
+    "classification": {
+      "category": "other",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    }
+  },
+  "L2": {
+    "classification": {
+      "category": "other",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    },
+    "wp": {
+      "status": "needs-revision",
+      "comment": "Regex picks up \"I transmit.\" Or exclude all? DISCUSS."
+    }
+  },
+  "L3": {
+    "classification": {
+      "category": "other",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    }
+  },
+  "L4": {
+    "classification": {
+      "category": "operative_congress",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    },
+    "wp": {
+      "status": "needs-revision",
+      "comment": "Regex to capture \"I herewith report\"? DISCUSS MORE GENERALLY ORDERING LANGUAGE WITH THIS EXAMPLE. JUST EXCLUDE ALL OF THEM?"
+    }
+  },
+  "L5": {
+    "chunks": {
+      "1": {
+        "category": "other",
+        "legal_effect": null,
+        "scope": "foreign",
+        "national_security": "no",
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "other",
+      "legal_effect": null,
+      "scope": "foreign",
+      "national_security": "no",
+      "emergency": "no"
+    },
+    "wp": {
+      "status": "needs-revision",
+      "comment": "This would have been mischaracterized if just focused on ordering action (because preamble clarifies that this is transmission\""
+    }
+  },
+  "L6": {
+    "classification": {
+      "category": "other",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    }
+  },
+  "L7": {
+    "classification": {
+      "category": "other",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    }
+  },
+  "L8": {
+    "classification": {
+      "category": "other",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    }
+  },
+  "L9": {
+    "classification": {
+      "category": "other",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    }
+  },
+  "L10": {
+    "classification": {
+      "category": null,
+      "legal_effect": null,
+      "scope": "foreign",
+      "national_security": "yes",
+      "emergency": "yes"
+    }
+  },
+  "L11": {
+    "classification": {
+      "category": "other",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    }
+  },
+  "L12": {
+    "classification": {
+      "category": "other",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    }
+  },
+  "L13": {
+    "classification": {
+      "category": "other",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    }
+  },
+  "L14": {
+    "classification": {
+      "category": "operative_congress",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    },
+    "chunks": {
+      "1": {
+        "category": "operative_congress",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    }
+  },
+  "L15": {
+    "chunks": {
+      "1": {
+        "category": "other",
+        "legal_effect": null,
+        "scope": "foreign",
+        "national_security": "yes",
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "other",
+      "legal_effect": null,
+      "scope": "foreign",
+      "national_security": "yes",
+      "emergency": "yes"
+    }
+  },
+  "L16": {
+    "chunks": {
+      "1": {
+        "category": "operative_congress",
+        "legal_effect": null,
+        "scope": "foreign",
+        "national_security": "yes",
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "operative_congress",
+      "legal_effect": null,
+      "scope": "foreign",
+      "national_security": "no",
+      "emergency": "no"
+    }
+  },
+  "L17": {
+    "classification": {
+      "category": "other",
+      "legal_effect": null,
+      "scope": "foreign",
+      "national_security": "no",
+      "emergency": "no"
+    }
+  },
+  "L18": {
+    "classification": {
+      "category": "operative_congress",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    },
+    "wp": {
+      "status": "needs-revision",
+      "comment": "Ordering language requires context from preamble"
+    }
+  },
+  "L19": {
+    "wp": {
+      "status": "needs-revision",
+      "comment": "Regex should pick up \"transmit\"?"
+    },
+    "classification": {
+      "category": "other",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    }
+  },
+  "L20": {
+    "classification": {
+      "category": "other",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    }
+  },
+  "L21": {
+    "classification": {
+      "category": "operative_congress",
+      "legal_effect": null,
+      "scope": "foreign",
+      "national_security": "no",
+      "emergency": "no"
+    }
+  },
+  "L22": {
+    "classification": {
+      "category": "other",
+      "legal_effect": null,
+      "scope": "foreign",
+      "national_security": "no",
+      "emergency": "no"
+    }
+  },
+  "L23": {
+    "classification": {
+      "category": "other",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    }
+  },
+  "L24": {
+    "classification": {
+      "category": "other",
+      "legal_effect": null,
+      "scope": "foreign",
+      "national_security": "no",
+      "emergency": "no"
+    }
+  },
+  "L25": {
+    "classification": {
+      "category": "other",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    }
+  },
+  "P1": {
+    "chunks": {
+      "1": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "policy",
+      "legal_effect": "legal",
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    }
+  },
+  "P2": {
+    "wp": {
+      "status": "needs-revision",
+      "comment": "Again, we should group ordering actions together if they are part of the same sentence (in this case, Ordering Actions 1 and 2). DISCUSS SUBSTANCE of quotas"
+    },
+    "chunks": {
+      "1": {
+        "category": "policy",
+        "legal_effect": "nonlegal",
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "2": {
+        "category": "policy",
+        "legal_effect": "nonlegal",
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "3": {
+        "category": "policy",
+        "legal_effect": "nonlegal",
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "4": {
+        "category": "policy",
+        "legal_effect": "nonlegal",
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "5": {
+        "category": "policy",
+        "legal_effect": "nonlegal",
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "6": {
+        "category": "policy",
+        "legal_effect": "nonlegal",
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "policy",
+      "legal_effect": "nonlegal",
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    }
+  },
+  "P3": {
+    "chunks": {
+      "1": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "policy",
+      "legal_effect": "legal",
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    },
+    "wp": {
+      "status": "needs-revision",
+      "comment": "Needed context from preceding sections to characterize this properly"
+    }
+  },
+  "P4": {
+    "chunks": {
+      "1": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "foreign",
+        "national_security": "no",
+        "emergency": null
+      },
+      "2": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "foreign",
+        "national_security": null,
+        "emergency": null
+      },
+      "3": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "policy",
+      "legal_effect": "legal",
+      "scope": "foreign",
+      "national_security": "no",
+      "emergency": "no"
+    }
+  },
+  "P5": {
+    "chunks": {
+      "1": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "foreign",
+        "national_security": "no",
+        "emergency": null
+      },
+      "2": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "foreign",
+        "national_security": null,
+        "emergency": null
+      },
+      "3": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "policy",
+      "legal_effect": "legal",
+      "scope": "foreign",
+      "national_security": "no",
+      "emergency": "no"
+    }
+  },
+  "P6": {
+    "chunks": {
+      "1": {
+        "category": "ceremonial",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "ceremonial",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": null
+    }
+  },
+  "P7": {
+    "chunks": {
+      "1": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "foreign",
+        "national_security": "no",
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "policy",
+      "legal_effect": "legal",
+      "scope": "foreign",
+      "national_security": "no",
+      "emergency": "no"
+    }
+  },
+  "P8": {
+    "chunks": {
+      "1": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "3": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "policy",
+      "legal_effect": "legal",
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    }
+  },
+  "P9": {
+    "chunks": {
+      "1": {
+        "category": "ceremonial",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "2": {
+        "category": "ceremonial",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "3": {
+        "category": "ceremonial",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "4": {
+        "category": "ceremonial",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "ceremonial",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    }
+  },
+  "P10": {
+    "chunks": {
+      "1": {
+        "category": "ceremonial",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "2": {
+        "category": "ceremonial",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "3": {
+        "category": "ceremonial",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "ceremonial",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    }
+  },
+  "P11": {
+    "chunks": {
+      "1": {
+        "category": "ceremonial",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "2": {
+        "category": "ceremonial",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "3": {
+        "category": "ceremonial",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    }
+  },
+  "P12": {
+    "chunks": {
+      "1": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "foreign",
+        "national_security": "yes",
+        "emergency": null
+      },
+      "2": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "foreign",
+        "national_security": "yes",
+        "emergency": null
+      },
+      "3": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "foreign",
+        "national_security": "yes",
+        "emergency": null
+      },
+      "4": {
+        "category": "policy",
+        "legal_effect": "nonlegal",
+        "scope": "foreign",
+        "national_security": "yes",
+        "emergency": null
+      }
+    },
+    "wp": {
+      "status": "needs-revision",
+      "comment": "DISCUSS WHETHER FOREIGN OR DOMESTIC."
+    },
+    "classification": {
+      "category": "policy",
+      "legal_effect": "legal",
+      "scope": "foreign",
+      "national_security": "yes",
+      "emergency": "no"
+    }
+  },
+  "P13": {
+    "chunks": {
+      "1": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "foreign",
+        "national_security": "no",
+        "emergency": null
+      },
+      "2": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "foreign",
+        "national_security": "no",
+        "emergency": null
+      },
+      "3": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "foreign",
+        "national_security": null,
+        "emergency": null
+      },
+      "4": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "foreign",
+        "national_security": null,
+        "emergency": null
+      },
+      "5": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "foreign",
+        "national_security": "no",
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "policy",
+      "legal_effect": "legal",
+      "scope": "foreign",
+      "national_security": "no",
+      "emergency": "no"
+    }
+  },
+  "P14": {
+    "chunks": {
+      "1": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "foreign",
+        "national_security": null,
+        "emergency": null
+      },
+      "2": {
+        "category": "policy",
+        "legal_effect": "nonlegal",
+        "scope": "foreign",
+        "national_security": null,
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "policy",
+      "legal_effect": "legal",
+      "scope": "foreign",
+      "national_security": "no",
+      "emergency": "no"
+    }
+  },
+  "P15": {
+    "chunks": {
+      "1": {
+        "category": "ceremonial",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "ceremonial",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    }
+  },
+  "P16": {
+    "chunks": {
+      "1": {
+        "category": "ceremonial",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "ceremonial",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    }
+  },
+  "P17": {
+    "chunks": {
+      "1": {
+        "category": "ceremonial",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "2": {
+        "category": "ceremonial",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "3": {
+        "category": "ceremonial",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "ceremonial",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    }
+  },
+  "P18": {
+    "chunks": {
+      "1": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "foreign",
+        "national_security": "no",
+        "emergency": null
+      },
+      "2": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "foreign",
+        "national_security": null,
+        "emergency": null
+      },
+      "3": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "foreign",
+        "national_security": null,
+        "emergency": null
+      },
+      "4": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "foreign",
+        "national_security": "no",
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "policy",
+      "legal_effect": "legal",
+      "scope": "foreign",
+      "national_security": "no",
+      "emergency": "no"
+    }
+  },
+  "P19": {
+    "chunks": {
+      "1": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "foreign",
+        "national_security": null,
+        "emergency": null
+      },
+      "2": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "3": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "4": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "foreign",
+        "national_security": null,
+        "emergency": null
+      },
+      "5": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "foreign",
+        "national_security": null,
+        "emergency": null
+      },
+      "6": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "foreign",
+        "national_security": null,
+        "emergency": null
+      },
+      "7": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "policy",
+      "legal_effect": "legal",
+      "scope": "foreign",
+      "national_security": "no",
+      "emergency": null
+    }
+  },
+  "P20": {
+    "chunks": {
+      "1": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "foreign",
+        "national_security": "no",
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "policy",
+      "legal_effect": "legal",
+      "scope": "foreign",
+      "national_security": "no",
+      "emergency": "no"
+    }
+  },
+  "P21": {
+    "wp": {
+      "status": "needs-revision",
+      "comment": "Regex should pickup \"hereby proclaim\" as ordering ACTION. DISCUSS whether this has legal effect (President seems to be last step OR have separate category for statutory findings and determinations)"
+    },
+    "classification": {
+      "category": "policy",
+      "legal_effect": "legal",
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    }
+  },
+  "P22": {
+    "chunks": {
+      "1": {
+        "category": "ceremonial",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "2": {
+        "category": "ceremonial",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "ceremonial",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": null
+    }
+  },
+  "P23": {
+    "chunks": {
+      "1": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "foreign",
+        "national_security": "no",
+        "emergency": null
+      },
+      "2": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "foreign",
+        "national_security": null,
+        "emergency": null
+      },
+      "3": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "foreign",
+        "national_security": "no",
+        "emergency": null
+      },
+      "4": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "foreign",
+        "national_security": null,
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "policy",
+      "legal_effect": "legal",
+      "scope": "foreign",
+      "national_security": "no",
+      "emergency": "no"
+    }
+  },
+  "P24": {
+    "chunks": {
+      "1": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "foreign",
+        "national_security": "no",
+        "emergency": null
+      },
+      "2": {
+        "category": "policy",
+        "legal_effect": "nonlegal",
+        "scope": "foreign",
+        "national_security": null,
+        "emergency": null
+      },
+      "3": {
+        "category": "policy",
+        "legal_effect": "nonlegal",
+        "scope": "foreign",
+        "national_security": null,
+        "emergency": null
+      },
+      "4": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "foreign",
+        "national_security": null,
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "policy",
+      "legal_effect": "legal",
+      "scope": "foreign",
+      "national_security": "no",
+      "emergency": "no"
+    },
+    "wp": {
+      "status": "needs-revision",
+      "comment": "Why did this miss the vesting clause? \"Now, Therefore, I, Joseph R. Biden Jr., President of the United States, by the authority vested in me by the Constitution and the laws of the United States of America, including sections 212(f) and 215(a) of the Immigration and Nationality Act, 8 U.S.C. 1182(f) and 1185(a), and section 301 of title 3, United States Code.\" Boilerplate also seemed too broad."
+    }
+  },
+  "P25": {
+    "chunks": {
+      "1": {
+        "category": "ceremonial",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      },
+      "2": {
+        "category": "ceremonial",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    },
+    "classification": {
+      "category": "ceremonial",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    }
+  }
+}

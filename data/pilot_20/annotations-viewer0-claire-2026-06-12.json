@@ -1,0 +1,526 @@
+{
+  "annotator": "Claire",
+  "EO1": {
+    "classification": {
+      "category": "policy",
+      "legal_effect": "legal",
+      "scope": "foreign",
+      "national_security": "no",
+      "emergency": "no"
+    },
+    "sp": {
+      "status": "correct",
+      "comment": "Was unsure on emergency classification. Ultimately chose yes because it cites emergency powers and Obama says administration is taking these steps \"with respect to the national emergency declared in Executive Order 13660 of March 6, 2014\""
+    },
+    "chunks": {
+      "1": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "foreign",
+        "national_security": null,
+        "emergency": null
+      },
+      "2": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "foreign",
+        "national_security": "no",
+        "emergency": "no"
+      },
+      "3": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "foreign",
+        "national_security": "no",
+        "emergency": "no"
+      },
+      "4": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "foreign",
+        "national_security": "yes",
+        "emergency": "yes"
+      },
+      "5": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "foreign",
+        "national_security": "no",
+        "emergency": "no"
+      },
+      "6": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "foreign",
+        "national_security": "no",
+        "emergency": "yes"
+      },
+      "7": {
+        "category": "policy",
+        "legal_effect": null,
+        "scope": "foreign",
+        "national_security": null,
+        "emergency": "yes"
+      },
+      "8": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": "yes"
+      },
+      "9": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": "no"
+      }
+    },
+    "wp": {
+      "status": "correct"
+    }
+  },
+  "EO2": {
+    "classification": {
+      "category": "policy",
+      "legal_effect": "legal",
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    },
+    "sp": {
+      "status": "correct",
+      "comment": "Was going back and forth on our question of whether instruction to agency heads is considered legal effect. Ultimately decided binding because subsection 3(b)(ii) gives secretary power to regulate private actors (preventing certain generators from leaving the bulk power system). However, does include language that says it is not creating legally enforceable right of potential legal parties against the government. "
+    },
+    "chunks": {
+      "1": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": "no"
+      }
+    },
+    "wp": {
+      "status": "needs-revision",
+      "comment": "unsure if W&P should be broken out more?"
+    }
+  },
+  "EO3": {
+    "classification": {
+      "category": "internal",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    },
+    "sp": {
+      "status": "correct",
+      "comment": "This felt internal management-esque since EO is just upping personnel. But not sure if this label was applicable to armed forces, that is, not an executive agency?"
+    },
+    "chunks": {
+      "1": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": "no"
+      },
+      "2": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": "no"
+      },
+      "3": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": "no"
+      }
+    }
+  },
+  "EO4": {
+    "classification": {
+      "category": "policy",
+      "legal_effect": "legal",
+      "scope": "foreign",
+      "national_security": "yes",
+      "emergency": "no"
+    },
+    "sp": {
+      "status": "correct"
+    },
+    "chunks": {
+      "1": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "foreign",
+        "national_security": "yes",
+        "emergency": "no"
+      },
+      "2": {
+        "category": "policy",
+        "legal_effect": null,
+        "scope": "foreign",
+        "national_security": "yes",
+        "emergency": "no"
+      }
+    }
+  },
+  "EO5": {
+    "classification": {
+      "category": "internal",
+      "legal_effect": "legal",
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    },
+    "sp": {
+      "status": "correct"
+    },
+    "chunks": {
+      "5": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": "no"
+      }
+    }
+  },
+  "M1": {
+    "classification": {
+      "category": "policy",
+      "legal_effect": "legal",
+      "scope": "foreign",
+      "national_security": "no",
+      "emergency": "no"
+    },
+    "sp": {
+      "status": "correct",
+      "comment": "Two notes. First, I coded \"No\" for national security since Obama only cites drug trafficking as a national security concern to Brazil, not the US. Second, was unsure if the last paragraph, which authorizes the sec. of state to publish in registry, is boilerplate. "
+    },
+    "chunks": {
+      "1": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "foreign",
+        "national_security": "no",
+        "emergency": "no"
+      }
+    },
+    "wp": {
+      "status": "correct"
+    }
+  },
+  "M2": {
+    "classification": {
+      "category": "internal",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    },
+    "sp": {
+      "status": "correct"
+    },
+    "wp": {
+      "status": "needs-revision",
+      "comment": "directive labeled as preamble"
+    }
+  },
+  "M3": {
+    "classification": {
+      "category": "other",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    },
+    "sp": {
+      "status": "correct",
+      "comment": "Was unsure if this could be considered Internal Management. If the sum was to be paid from the involved agencies, then maybe yes. Regardless of the source of payment, though, the president is essentially directing congressional actors? But far too granular for next best category of Policy Setting. "
+    },
+    "wp": {
+      "status": "needs-revision",
+      "comment": "I'm not sure if this breakdown is technically correct, but current directive omits substantive portions. "
+    },
+    "chunks": {
+      "1": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": null
+      }
+    }
+  },
+  "M4": {
+    "classification": {
+      "category": "internal",
+      "legal_effect": "legal",
+      "scope": "foreign",
+      "national_security": "no",
+      "emergency": "yes"
+    },
+    "chunks": {
+      "1": {
+        "category": "internal",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": "yes"
+      }
+    },
+    "wp": {
+      "status": "correct"
+    }
+  },
+  "M5": {
+    "classification": {
+      "category": "policy",
+      "legal_effect": "legal",
+      "scope": "foreign",
+      "national_security": "yes",
+      "emergency": "no"
+    },
+    "sp": {
+      "status": "correct"
+    },
+    "chunks": {
+      "1": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "foreign",
+        "national_security": "yes",
+        "emergency": "no"
+      }
+    },
+    "wp": {
+      "status": "correct",
+      "comment": "categorizing as national security-related here since world peace is mentioned?"
+    }
+  },
+  "L1": {
+    "classification": {
+      "category": "policy",
+      "legal_effect": "nonlegal",
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "yes"
+    },
+    "sp": {
+      "status": "correct"
+    },
+    "wp": {
+      "status": "needs-revision",
+      "comment": "preamble seems as though it should be a directive?"
+    },
+    "chunks": {
+      "1": {
+        "category": "policy",
+        "legal_effect": "nonlegal",
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": "yes"
+      }
+    }
+  },
+  "L2": {
+    "classification": {
+      "category": "policy",
+      "legal_effect": "legal",
+      "scope": "foreign",
+      "national_security": "yes",
+      "emergency": "no"
+    },
+    "sp": {
+      "status": "correct"
+    },
+    "wp": {
+      "status": "needs-revision",
+      "comment": "preamble seems as though it should "
+    }
+  },
+  "L3": {
+    "classification": {
+      "category": "other",
+      "legal_effect": "nonlegal",
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    },
+    "sp": {
+      "status": "correct"
+    },
+    "chunks": {
+      "1": {
+        "category": "policy",
+        "legal_effect": "nonlegal",
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": "no"
+      }
+    }
+  },
+  "L5": {
+    "classification": {
+      "category": "other",
+      "legal_effect": null,
+      "scope": "foreign",
+      "national_security": "no",
+      "emergency": "no"
+    },
+    "sp": {
+      "status": "correct"
+    },
+    "wp": {
+      "status": "needs-revision",
+      "comment": "preamble seems as though it should be directive?"
+    }
+  },
+  "L4": {
+    "classification": {
+      "category": "policy",
+      "legal_effect": "legal",
+      "scope": "foreign",
+      "national_security": "no",
+      "emergency": "no"
+    },
+    "sp": {
+      "status": "correct"
+    },
+    "chunks": {
+      "1": {
+        "category": "policy",
+        "legal_effect": "legal",
+        "scope": "foreign",
+        "national_security": "no",
+        "emergency": "no"
+      }
+    }
+  },
+  "P1": {
+    "classification": {
+      "category": "ceremonial",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    },
+    "sp": {
+      "status": "correct"
+    },
+    "chunks": {
+      "1": {
+        "category": "ceremonial",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": "no"
+      },
+      "2": {
+        "category": "ceremonial",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": "no"
+      }
+    }
+  },
+  "P2": {
+    "classification": {
+      "category": "ceremonial",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    },
+    "sp": {
+      "status": "correct",
+      "comment": ""
+    },
+    "chunks": {
+      "1": {
+        "category": "ceremonial",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": "no"
+      },
+      "2": {
+        "category": "ceremonial",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": "no"
+      },
+      "3": {
+        "category": "ceremonial",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": "no"
+      }
+    }
+  },
+  "P3": {
+    "classification": {
+      "category": "policy",
+      "legal_effect": "legal",
+      "scope": "domestic",
+      "national_security": "no",
+      "emergency": "no"
+    },
+    "sp": {
+      "status": "correct",
+      "comment": "Classified this as domestic since it alters inbound immigration, but not sure on this. "
+    }
+  },
+  "P4": {
+    "classification": {
+      "category": "ceremonial",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    },
+    "sp": {
+      "status": "correct"
+    },
+    "chunks": {
+      "1": {
+        "category": "ceremonial",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": "no"
+      }
+    }
+  },
+  "P5": {
+    "classification": {
+      "category": "ceremonial",
+      "legal_effect": null,
+      "scope": "domestic",
+      "national_security": null,
+      "emergency": "no"
+    },
+    "sp": {
+      "status": "correct"
+    },
+    "chunks": {
+      "1": {
+        "category": "ceremonial",
+        "legal_effect": null,
+        "scope": "domestic",
+        "national_security": null,
+        "emergency": "no"
+      }
+    }
+  }
+}
