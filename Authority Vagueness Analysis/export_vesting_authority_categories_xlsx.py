@@ -9,9 +9,10 @@ from urllib.parse import unquote, urlparse
 from xml.sax.saxutils import escape, quoteattr
 
 from vesting_authority_breakdown import (
+    CATEGORIES,
     POSSIBLE_VESTING_RE,
     PRESIDENTIAL_TITLE_INVOCATION_RE,
-    classify_authority_categories,
+    classify_authority_category,
     extract_vesting_clauses,
 )
 from vesting_authority_stats import DEFAULT_DEV, DEFAULT_HOLDOUT, load_corpus
@@ -19,29 +20,30 @@ from vesting_authority_stats import DEFAULT_DEV, DEFAULT_HOLDOUT, load_corpus
 
 ANALYSIS_DIR = Path(__file__).resolve().parent
 OUTPUT = ANALYSIS_DIR / "vesting_authority_all_categories.xlsx"
-TARGETS = (
-    "generic_constitution",
-    "specific_constitution",
-    "specific_constitutional_provision",
-    "generic_statute",
-    "act_of_congress",
-    "specific_statutory_section",
-    "constitution_and_laws",
-    "no_vesting_clause",
-    "other_vesting_authority",
-)
+TARGETS = CATEGORIES
 SHEET_NAMES = {
-    "generic_constitution": "1 Generic Constitution",
-    "specific_constitution": "2 Specific Constitution",
-    "specific_constitutional_provision": "3 Specific Provision",
-    "generic_statute": "4 Generic Statute",
-    "act_of_congress": "5 Act of Congress",
-    "specific_statutory_section": "6 Specific Statutory Section",
-    "constitution_and_laws": "7 Constitution and Laws",
-    "no_vesting_clause": "8 No Vesting Clause",
-    "other_vesting_authority": "9 Other Authority",
+    "generic_constitution_only": "1 Generic Constitution",
+    "specific_constitution_only": "2 Specific Constitution",
+    "specific_constitutional_provision_only": "3 Constitutional Provision",
+    "generic_statute_only": "4 Generic Statute",
+    "act_of_congress_only": "5 Act of Congress",
+    "specific_statutory_section_only": "6 Statutory Section",
+    "generic_constitution_and_generic_statute": "7 Gen Const + Gen Statute",
+    "generic_constitution_and_act_of_congress": "8 Gen Const + Act",
+    "generic_constitution_and_specific_statutory_section": "9 Gen Const + Stat Section",
+    "specific_constitution_and_generic_statute": "10 Spec Const + Gen Statute",
+    "specific_constitution_and_act_of_congress": "11 Spec Const + Act",
+    "specific_constitution_and_specific_statutory_section": "12 Spec Const + Stat Section",
+    "specific_constitutional_provision_and_generic_statute": "13 Const Prov + Gen Statute",
+    "specific_constitutional_provision_and_act_of_congress": "14 Const Prov + Act",
+    "specific_constitutional_provision_and_specific_statutory_section": (
+        "15 Const Prov + Stat Section"
+    ),
+    "no_vesting_clause": "16 No Vesting Clause",
+    "other_vesting_authority": "17 Other Authority",
 }
-HEADERS = ("Title", "Directive Type", "Year", "Administration", "URL to UCSB Link")
+HEADERS = ("Title", "Directive Type", "Year", "Administration", "URL to UCSB Link", "Full Text")
+EXCEL_CELL_CHAR_LIMIT = 32_767
 
 
 def title_from_url(url: str) -> str:
@@ -75,36 +77,38 @@ def number_cell(column: int, row: int, value: int) -> str:
     return f'<c r="{cell_ref(column, row)}" s="2"><v>{value}</v></c>'
 
 
-def worksheet_xml(rows: list[tuple[str, str, int, str, str]]) -> str:
+def worksheet_xml(rows: list[tuple[str, str, int, str, str, str]]) -> str:
     xml_rows = []
     header = "".join(inline_cell(column, 1, value, 1) for column, value in enumerate(HEADERS, 1))
     xml_rows.append(f'<row r="1" ht="22" customHeight="1">{header}</row>')
     hyperlinks = []
     for row_number, values in enumerate(rows, 2):
-        title, directive_type, year, administration, url = values
+        title, directive_type, year, administration, url, full_text = values
         cells = (
             inline_cell(1, row_number, title)
             + inline_cell(2, row_number, directive_type)
             + number_cell(3, row_number, year)
             + inline_cell(4, row_number, administration)
             + inline_cell(5, row_number, url, 3)
+            + inline_cell(6, row_number, full_text)
         )
         xml_rows.append(f'<row r="{row_number}">{cells}</row>')
         hyperlinks.append(f'<hyperlink ref="E{row_number}" r:id="rId{row_number - 1}"/>')
 
     last_row = max(1, len(rows) + 1)
+    hyperlinks_xml = f"<hyperlinks>{''.join(hyperlinks)}</hyperlinks>" if hyperlinks else ""
     return f'''<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <worksheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main"
  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships">
  <sheetViews><sheetView workbookViewId="0"><pane ySplit="1" topLeftCell="A2" activePane="bottomLeft" state="frozen"/></sheetView></sheetViews>
- <cols><col min="1" max="1" width="54" customWidth="1"/><col min="2" max="2" width="19" customWidth="1"/><col min="3" max="3" width="10" customWidth="1"/><col min="4" max="4" width="31" customWidth="1"/><col min="5" max="5" width="72" customWidth="1"/></cols>
+ <cols><col min="1" max="1" width="54" customWidth="1"/><col min="2" max="2" width="19" customWidth="1"/><col min="3" max="3" width="10" customWidth="1"/><col min="4" max="4" width="31" customWidth="1"/><col min="5" max="5" width="72" customWidth="1"/><col min="6" max="6" width="100" customWidth="1"/></cols>
  <sheetData>{''.join(xml_rows)}</sheetData>
- <autoFilter ref="A1:E{last_row}"/>
- <hyperlinks>{''.join(hyperlinks)}</hyperlinks>
+ <autoFilter ref="A1:F{last_row}"/>
+ {hyperlinks_xml}
 </worksheet>'''
 
 
-def worksheet_relationships(rows: list[tuple[str, str, int, str, str]]) -> str:
+def worksheet_relationships(rows: list[tuple[str, str, int, str, str, str]]) -> str:
     relationships = "".join(
         f'<Relationship Id="rId{index}" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target={quoteattr(row[4])} TargetMode="External"/>'
         for index, row in enumerate(rows, 1)
@@ -113,7 +117,7 @@ def worksheet_relationships(rows: list[tuple[str, str, int, str, str]]) -> str:
 <Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">{relationships}</Relationships>'''
 
 
-def write_workbook(path: Path, sheets: list[tuple[str, list[tuple[str, str, int, str, str]]]]) -> None:
+def write_workbook(path: Path, sheets: list[tuple[str, list[tuple[str, str, int, str, str, str]]]]) -> None:
     sheet_elements = "".join(
         f'<sheet name={quoteattr(name)} sheetId="{index}" r:id="rId{index}"/>'
         for index, (name, _) in enumerate(sheets, 1)
@@ -157,7 +161,8 @@ def write_workbook(path: Path, sheets: list[tuple[str, list[tuple[str, str, int,
 
 def main() -> None:
     categorized = {category: [] for category in TARGETS}
-    for row in load_corpus([DEFAULT_DEV, DEFAULT_HOLDOUT]):
+    corpus = load_corpus([DEFAULT_DEV, DEFAULT_HOLDOUT])
+    for row in corpus:
         text = row["doc_text"]
         clauses = (
             extract_vesting_clauses(text, row["doc_type"])
@@ -170,12 +175,15 @@ def main() -> None:
             int(row["date"][-4:]),
             f'{row["president"]} ({row["term"]})',
             row["url"],
+            row["doc_text"][:EXCEL_CELL_CHAR_LIMIT],
         )
-        for category in classify_authority_categories(clauses):
-            if category in categorized:
-                categorized[category].append(values)
+        category = classify_authority_category(clauses)
+        categorized[category].append(values)
 
     sheets = [(sheet_name(category), categorized[category]) for category in TARGETS]
+    categorized_total = sum(len(rows) for rows in categorized.values())
+    if categorized_total != len(corpus):
+        raise ValueError("Excel category total does not match the number of exported directives")
     write_workbook(OUTPUT, sheets)
     print(OUTPUT)
     for name, rows in sheets:

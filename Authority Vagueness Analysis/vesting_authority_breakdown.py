@@ -30,54 +30,132 @@ ANALYSIS_DIR = Path(__file__).resolve().parent
 DEFAULT_HTML = ANALYSIS_DIR / "README.html"
 
 CATEGORIES = (
-    "generic_constitution",
-    "specific_constitution",
-    "specific_constitutional_provision",
-    "generic_statute",
-    "act_of_congress",
-    "specific_statutory_section",
-    "constitution_and_laws",
+    "generic_constitution_only",
+    "specific_constitution_only",
+    "specific_constitutional_provision_only",
+    "generic_statute_only",
+    "act_of_congress_only",
+    "specific_statutory_section_only",
+    "generic_constitution_and_generic_statute",
+    "generic_constitution_and_act_of_congress",
+    "generic_constitution_and_specific_statutory_section",
+    "specific_constitution_and_generic_statute",
+    "specific_constitution_and_act_of_congress",
+    "specific_constitution_and_specific_statutory_section",
+    "specific_constitutional_provision_and_generic_statute",
+    "specific_constitutional_provision_and_act_of_congress",
+    "specific_constitutional_provision_and_specific_statutory_section",
     "no_vesting_clause",
     "other_vesting_authority",
 )
 
 CATEGORY_LABELS = {
-    "generic_constitution": "(1) Generic Constitution",
-    "specific_constitution": "(2) Specific constitution",
-    "specific_constitutional_provision": "(3) Specific provision in Constitution",
-    "generic_statute": "(4) Generic Statute",
-    "act_of_congress": "(5) An Act of Congress",
-    "specific_statutory_section": "(6) Specific statutory section",
-    "constitution_and_laws": "(7) Constitution and laws of the United States",
-    "no_vesting_clause": "(8) No vesting clause",
-    "other_vesting_authority": "(9) Other/unclassified vesting authority",
+    "generic_constitution_only": "(1) Generic Constitution only",
+    "specific_constitution_only": "(2) Specific Constitution only",
+    "specific_constitutional_provision_only": "(3) Specific constitutional provision only",
+    "generic_statute_only": "(4) Generic Statute only",
+    "act_of_congress_only": "(5) Act of Congress only",
+    "specific_statutory_section_only": "(6) Specific statutory section only",
+    "generic_constitution_and_generic_statute": "(7) Generic Constitution + Generic Statute",
+    "generic_constitution_and_act_of_congress": "(8) Generic Constitution + Act of Congress",
+    "generic_constitution_and_specific_statutory_section": (
+        "(9) Generic Constitution + Specific statutory section"
+    ),
+    "specific_constitution_and_generic_statute": "(10) Specific Constitution + Generic Statute",
+    "specific_constitution_and_act_of_congress": "(11) Specific Constitution + Act of Congress",
+    "specific_constitution_and_specific_statutory_section": (
+        "(12) Specific Constitution + Specific statutory section"
+    ),
+    "specific_constitutional_provision_and_generic_statute": (
+        "(13) Specific constitutional provision + Generic Statute"
+    ),
+    "specific_constitutional_provision_and_act_of_congress": (
+        "(14) Specific constitutional provision + Act of Congress"
+    ),
+    "specific_constitutional_provision_and_specific_statutory_section": (
+        "(15) Specific constitutional provision + Specific statutory section"
+    ),
+    "no_vesting_clause": "(16) No vesting clause",
+    "other_vesting_authority": "(17) Other/unclassified vesting authority",
 }
 
 CATEGORY_DESCRIPTIONS = {
-    "generic_constitution": "The Constitution is the only authority cited.",
-    "specific_constitution": (
+    "generic_constitution_only": "The Constitution is cited without statutory authority.",
+    "specific_constitution_only": (
         "A constitutional Article or the Chief Executive role is cited, without a more "
-        "specific constitutional provision."
+        "specific constitutional provision or statutory authority."
     ),
-    "specific_constitutional_provision": (
+    "specific_constitutional_provision_only": (
         "A constitutional section, Amendment, named Clause, Commander in Chief role, "
-        "or pardon/reprieve power is cited."
+        "or pardon/reprieve power is cited without statutory authority."
     ),
-    "generic_statute": "Generic law or statute wording is the only authority cited.",
-    "act_of_congress": (
+    "generic_statute_only": "Generic law or statute wording is cited without constitutional authority.",
+    "act_of_congress_only": (
         "A named or referenced Act, numbered Public Law, Act of Congress, or authorizing "
-        "joint resolution is cited without a specific statutory section."
+        "joint resolution is cited without constitutional authority or a specific statutory section."
     ),
-    "specific_statutory_section": (
-        "A statutory section or subsection, U.S.C. provision, title, or chapter is cited; "
-        "this category supersedes An Act of Congress."
+    "specific_statutory_section_only": (
+        "A statutory section or subsection, U.S.C. provision, title, or chapter is cited "
+        "without constitutional authority."
     ),
-    "constitution_and_laws": (
-        "The combined Constitution-and-laws boilerplate is the only authority cited."
+    "generic_constitution_and_generic_statute": (
+        "Generic constitutional and statutory authority are both cited."
+    ),
+    "generic_constitution_and_act_of_congress": (
+        "Generic constitutional authority and an Act of Congress are cited."
+    ),
+    "generic_constitution_and_specific_statutory_section": (
+        "Generic constitutional authority and a specific statutory section are cited."
+    ),
+    "specific_constitution_and_generic_statute": (
+        "A constitutional Article or the Chief Executive role and generic statutory authority are cited."
+    ),
+    "specific_constitution_and_act_of_congress": (
+        "A constitutional Article or the Chief Executive role and an Act of Congress are cited."
+    ),
+    "specific_constitution_and_specific_statutory_section": (
+        "A constitutional Article or the Chief Executive role and a specific statutory section are cited."
+    ),
+    "specific_constitutional_provision_and_generic_statute": (
+        "A specific constitutional provision and generic statutory authority are cited."
+    ),
+    "specific_constitutional_provision_and_act_of_congress": (
+        "A specific constitutional provision and an Act of Congress are cited."
+    ),
+    "specific_constitutional_provision_and_specific_statutory_section": (
+        "A specific constitutional provision and a specific statutory section are cited."
     ),
     "no_vesting_clause": "No vesting clause was extracted.",
     "other_vesting_authority": (
-        "A vesting clause was extracted, but none of categories (1)-(7) applies."
+        "A vesting clause was extracted, but no constitutional or statutory authority was classified."
+    ),
+}
+
+COMBINATION_CATEGORIES = {
+    ("generic_constitution", None): "generic_constitution_only",
+    ("specific_constitution", None): "specific_constitution_only",
+    ("specific_constitutional_provision", None): "specific_constitutional_provision_only",
+    (None, "generic_statute"): "generic_statute_only",
+    (None, "act_of_congress"): "act_of_congress_only",
+    (None, "specific_statutory_section"): "specific_statutory_section_only",
+    ("generic_constitution", "generic_statute"): "generic_constitution_and_generic_statute",
+    ("generic_constitution", "act_of_congress"): "generic_constitution_and_act_of_congress",
+    ("generic_constitution", "specific_statutory_section"): (
+        "generic_constitution_and_specific_statutory_section"
+    ),
+    ("specific_constitution", "generic_statute"): "specific_constitution_and_generic_statute",
+    ("specific_constitution", "act_of_congress"): "specific_constitution_and_act_of_congress",
+    ("specific_constitution", "specific_statutory_section"): (
+        "specific_constitution_and_specific_statutory_section"
+    ),
+    ("specific_constitutional_provision", "generic_statute"): (
+        "specific_constitutional_provision_and_generic_statute"
+    ),
+    ("specific_constitutional_provision", "act_of_congress"): (
+        "specific_constitutional_provision_and_act_of_congress"
+    ),
+    ("specific_constitutional_provision", "specific_statutory_section"): (
+        "specific_constitutional_provision_and_specific_statutory_section"
     ),
 }
 
@@ -195,18 +273,6 @@ NONSTATUTORY_SECTION_RE = re.compile(
     re.I,
 )
 
-OTHER_AUTHORITY_RE = re.compile(
-    r"\b(?:Executive\s+Order|Proclamation)\s+(?:No\.?\s*)?\d+\b"
-    r"|\b(?:the\s+)?(?:[A-Z][A-Za-z'&.-]*(?:\s+[A-Z][A-Za-z'&.-]*){0,8}\s+Treaty"
-    r"|Treaty\s+of\s+[A-Z])\b"
-    r"|\b(?:the\s+)?(?:[A-Z][A-Za-z0-9'&.-]*\s+){1,10}"
-    r"(?:Agreement|Settlement|Accord|Convention|Protocol)\b"
-    r"|\btreaties?\b"
-    r"|\b(?:by|under)\s+(?:the\s+)?Commission\b"
-    r"|\b\d+\s+C\.?F\.?R\.?\s+\d+",
-    re.I,
-)
-
 AUTHORITY_MARKER_RE = re.compile(
     r"\b(?:authority\s+(?:vested|conferred|granted)|vested\s+in\s+me|"
     r"by\s+virtue\s+of\s+the\s+authority|pursuant\s+to|acting\s+under\s+the\s+authority|"
@@ -279,15 +345,15 @@ def _has_specific_statutory_section(text: str) -> bool:
     return False
 
 
-def classify_authority_categories(clauses: list[str]) -> tuple[str, ...]:
-    """Return all document-level categories that apply to extracted vesting clauses."""
+def classify_authority_category(clauses: list[str]) -> str:
+    """Return the one document-level category that applies to extracted vesting clauses."""
     if not clauses:
-        return ("no_vesting_clause",)
+        return "no_vesting_clause"
 
     spans = extract_authority_spans(clauses)
     authority_text = " ".join(spans)
     if not authority_text:
-        return ("other_vesting_authority",)
+        return "other_vesting_authority"
 
     has_constitution = bool(CONSTITUTION_RE.search(authority_text) or CONSTITUTIONAL_AUTHORITY_RE.search(authority_text))
     has_combined = bool(COMBINED_RE.search(authority_text))
@@ -315,29 +381,27 @@ def classify_authority_categories(clauses: list[str]) -> tuple[str, ...]:
         or REFERENCED_ACT_RE.search(authority_text)
     )
     has_statutory_section = _has_specific_statutory_section(authority_text)
-    has_other = bool(OTHER_AUTHORITY_RE.search(authority_text))
-
-    has_any_specific = has_specific_constitution or has_constitutional_provision or has_act or has_statutory_section
-    has_any_other_authority = has_any_specific or has_other
-    categories = []
-
     if has_constitutional_provision:
-        categories.append("specific_constitutional_provision")
+        constitutional_category = "specific_constitutional_provision"
     elif has_specific_constitution:
-        categories.append("specific_constitution")
+        constitutional_category = "specific_constitution"
+    elif has_constitution:
+        constitutional_category = "generic_constitution"
+    else:
+        constitutional_category = None
+
     if has_statutory_section:
-        categories.append("specific_statutory_section")
+        statutory_category = "specific_statutory_section"
     elif has_act:
-        categories.append("act_of_congress")
+        statutory_category = "act_of_congress"
+    elif has_generic_law or has_combined:
+        statutory_category = "generic_statute"
+    else:
+        statutory_category = None
 
-    if has_combined and not has_any_other_authority:
-        categories.append("constitution_and_laws")
-    elif has_constitution and not has_generic_law and not has_any_other_authority:
-        categories.append("generic_constitution")
-    elif has_generic_law and not has_constitution and not has_any_other_authority:
-        categories.append("generic_statute")
-
-    return tuple(categories or ["other_vesting_authority"])
+    if constitutional_category is None and statutory_category is None:
+        return "other_vesting_authority"
+    return COMBINATION_CATEGORIES[(constitutional_category, statutory_category)]
 
 
 def analyze(rows: list[dict]) -> tuple[list[dict], Counter, Counter]:
@@ -350,22 +414,21 @@ def analyze(rows: list[dict]) -> tuple[list[dict], Counter, Counter]:
             clauses = extract_vesting_clauses(text, row["doc_type"])
         else:
             clauses = []
-        categories = classify_authority_categories(clauses)
+        category = classify_authority_category(clauses)
         administration = f"{row['president']} ({row['term']})"
         administration_totals[(administration, "all")] += 1
         administration_totals[(administration, row["doc_type"])] += 1
         administration_totals[("total", "all")] += 1
         administration_totals[("total", row["doc_type"])] += 1
-        for category in categories:
-            counts[(administration, "all", category)] += 1
-            counts[(administration, row["doc_type"], category)] += 1
-            counts[("total", "all", category)] += 1
-            counts[("total", row["doc_type"], category)] += 1
+        counts[(administration, "all", category)] += 1
+        counts[(administration, row["doc_type"], category)] += 1
+        counts[("total", "all", category)] += 1
+        counts[("total", row["doc_type"], category)] += 1
         output.append(
             {
                 "document_id": row[""],
                 "administration": administration,
-                "categories": categories,
+                "category": category,
             }
         )
     return output, counts, administration_totals
@@ -394,17 +457,40 @@ def _heat_class(percent: float) -> str:
     return "heat-5"
 
 
+def validate_category_totals(
+    counts: Counter,
+    administrations: list[str],
+    administration_totals: Counter,
+) -> None:
+    for view in VIEWS:
+        for administration in (*administrations, "total"):
+            category_sum = sum(counts[(administration, view, category)] for category in CATEGORIES)
+            directive_total = administration_totals[(administration, view)]
+            if category_sum != directive_total:
+                raise ValueError(
+                    f"category total mismatch for {administration}, {view}: "
+                    f"{category_sum:,} categories != {directive_total:,} directives"
+                )
+
+
 def render_html(
     counts: Counter,
     document_count: int,
     administrations: list[str],
     administration_totals: Counter,
 ) -> str:
+    if administration_totals[("total", "all")] != document_count:
+        raise ValueError(
+            f"directive total mismatch: report has {document_count:,} directives, "
+            f"counts have {administration_totals[('total', 'all')]:,}"
+        )
+    validate_category_totals(counts, administrations, administration_totals)
     table_bodies = []
     for view in VIEWS:
         count_rows = []
         for administration in (*administrations, "total"):
             denominator = administration_totals[(administration, view)]
+            category_sum = sum(counts[(administration, view, category)] for category in CATEGORIES)
             label = "All administrations" if administration == "total" else administration
             cells = []
             for category in CATEGORIES:
@@ -420,7 +506,9 @@ def render_html(
             count_rows.append(
                 f'<tr class="{"total-row" if administration == "total" else ""}">'
                 f'<th scope="row">{html.escape(label)}</th>{"".join(cells)}'
-                f'<td class="count total"><b>{denominator:,}</b></td></tr>'
+                f'<td class="count total"><b>{category_sum:,}</b></td>'
+                f'<td class="count total"><b>{denominator:,}</b></td>'
+                f'<td class="check pass"><b>PASS</b></td></tr>'
             )
         table_bodies.append(
             f'<tbody data-view="{view}"{"" if view == "all" else " hidden"}>'
@@ -462,7 +550,7 @@ def render_html(
     thead th {{ background: #e8edf4; white-space: nowrap; }}
     tbody tr:last-child th, tbody tr:last-child td {{ border-bottom: 0; }}
     tbody th {{ font-weight: 650; }}
-    .administration-table {{ min-width: 1180px; }}
+    .administration-table {{ min-width: 1780px; }}
     .administration-table tbody th {{ position: sticky; left: 0; z-index: 1; min-width: 210px; background: #fff; }}
     .administration-table .total-row th {{ background: #e8edf4; }}
     .count {{ text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }}
@@ -477,6 +565,8 @@ def render_html(
     .heat-5 .pct {{ color: #fff; }}
     .total-row th, .total-row td {{ border-top: 2px solid #8795a8; }}
     .total {{ background: #f2f4f7; }}
+    .check {{ text-align: center; white-space: nowrap; }}
+    .pass {{ background: #d9ebe5; color: #245c4d; }}
     abbr {{ text-decoration: none; cursor: help; }}
     .legend {{ display: flex; flex-wrap: wrap; gap: 12px; margin: 8px 0 14px; font-size: 13px; color: #4c5968; }}
     .swatch {{ display: inline-block; width: 16px; height: 16px; margin-right: 5px; border: 1px solid #cfd7e3; vertical-align: -3px; }}
@@ -494,7 +584,7 @@ def render_html(
 <main>
   <h1>Vesting Authority Specificity Analysis</h1>
   <p>This report analyzes {document_count:,} presidential directives in the development and holdout corpora. Each presidential term is reported as a separate administration.</p>
-  <p class="note"><strong>When categories overlap.</strong> Categories are not mutually exclusive across the constitutional and statutory families: a directive may receive one specific constitutional category—(2) or (3)—and one specific statutory category—(5) or (6)—when its vesting clause cites both kinds of authority. Within each family, the categories are hierarchical and mutually exclusive: (3) supersedes (2), and (6) supersedes (5). Categories (1), (4), and (7) apply only when no specific authority is detected, so they do not overlap with the specific-authority categories. Categories (8) and (9) are mutually exclusive coverage categories for, respectively, directives with no extracted vesting clause and directives with an extracted but unclassified vesting clause. A directive is counted at most once in each applicable category, so category totals should not be added together.</p>
+  <p class="note"><strong>Mutually exclusive categories.</strong> Every directive receives exactly one category. Constitutional and statutory specificity are classified independently and then combined: a specific constitutional provision supersedes a constitutional Article or role, and a specific statutory section supersedes an Act of Congress. Additional citations to Executive Orders, treaties, agreements, or similar authorities do not displace a recognized constitutional/statutory combination. Category sums are checked against directive totals for every administration and directive-type view.</p>
 
   <h2>Counts by Administration</h2>
   <p>Each cell gives the number of matching directives and its share of the selected directive type in that administration. The background color provides an absolute percentage heatmap.</p>
@@ -504,7 +594,7 @@ def render_html(
   </div>
   <div class="table-wrap">
     <table class="administration-table">
-      <thead><tr><th scope="col">Administration</th>{headers}<th scope="col">Directives</th></tr></thead>
+      <thead><tr><th scope="col">Administration</th>{headers}<th scope="col">Category sum</th><th scope="col">Directives</th><th scope="col">Check</th></tr></thead>
       {''.join(table_bodies)}
     </table>
   </div>
