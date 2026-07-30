@@ -1,5 +1,22 @@
 ## from https://github.com/github/gitignore/blob/master/TeX.gitignore
 .venv/
+
+# Parent-analysis local runtime and downloaded model files. Keep the generated
+# results in data/parent_analysis/embeddings/ trackable.
+.venv-parent-analysis/
+.cache/
+.huggingface/
+huggingface/
+models--*/
+*.safetensors
+pytorch_model*.bin
+*.pt
+*.pth
+slurm-*.out
+
+# Regenerable embedding matrices; retain their provenance metadata.
+data/parent_analysis/embeddings/*.npz
+
 node_modules/
 
 __pycache__/

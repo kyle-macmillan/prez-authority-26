@@ -1,0 +1,73 @@
+{
+  "created_at": "2026-07-30T20:14:23.019305+00:00",
+  "model_id": "Qwen/Qwen3-Embedding-0.6B",
+  "model_revision": "97b0c614be4d77ee51c0cef4e5f07c00f9eb65b3",
+  "tokenizer_revision": "97b0c614be4d77ee51c0cef4e5f07c00f9eb65b3",
+  "model_path": ".cache/huggingface/hub/models--Qwen--Qwen3-Embedding-0.6B/snapshots/97b0c614be4d77ee51c0cef4e5f07c00f9eb65b3",
+  "embedding_dimension": 1024,
+  "model_max_sequence_length": 32768,
+  "model_load_seconds": 2.504710386041552,
+  "device": "NVIDIA GeForce RTX 2080 Ti",
+  "torch_dtype": "float16",
+  "normalized": true,
+  "packages": {
+    "numpy": "2.2.6",
+    "sentence-transformers": "4.1.0",
+    "torch": "2.6.0",
+    "transformers": "4.51.3"
+  },
+  "artifacts": [
+    {
+      "source": "data/parent_analysis/eo_similarity_documents.jsonl",
+      "source_sha256": "964e191c604d44ae5216914eb056eac955108ad0a1c2e3c895b881995bbb8563",
+      "output": "data/parent_analysis/embeddings/eo_document_embeddings.npz",
+      "output_sha256": "9918506a2a5bfce3d05ed60a8c4ada4dc2ee59711ed19f3f3a8b08de938081b8",
+      "id_field": "document_id",
+      "text_field": "cleaned_masked_text",
+      "instruction": "Represent this executive order for identifying earlier executive orders that address the same substantive policy problem and contain a similar legal directive or directed operative action.",
+      "roles": {
+        "query_embeddings": "instructed child queries",
+        "document_embeddings": "unprompted candidate-parent documents"
+      },
+      "shape": [
+        3620,
+        1024
+      ],
+      "dtype": "float16",
+      "batch_size": 2,
+      "token_lengths": {
+        "count": 3620,
+        "document_max": 13774,
+        "query_max": 13806
+      }
+    },
+    {
+      "source": "data/parent_analysis/eo_operative_segments.jsonl",
+      "source_sha256": "a1bc3b05cf41840666f53ae84a1411033e73d874371b02488d99ce8098c8828c",
+      "output": "data/parent_analysis/embeddings/eo_operative_segment_embeddings.npz",
+      "output_sha256": "364acd0d92c0a25e0d2d76cc7a05f4f7459b156fb87a6c0c99f2ffbac95dc0f5",
+      "id_field": "segment_id",
+      "text_field": "text",
+      "instruction": "Represent this directed operative action for identifying earlier executive-order actions that use a similar legal or administrative mechanism.",
+      "roles": {
+        "query_embeddings": "instructed child queries",
+        "document_embeddings": "unprompted candidate-parent documents"
+      },
+      "shape": [
+        14309,
+        1024
+      ],
+      "dtype": "float16",
+      "token_lengths": {
+        "count": 14309,
+        "document_max": 12897,
+        "query_max": 12921,
+        "document_mean": 203.17415612551542,
+        "query_mean": 227.87797889440213
+      },
+      "batch_size": 2,
+      "document_seconds": 309.76405019313097,
+      "query_seconds": 303.8619188279845
+    }
+  ]
+}

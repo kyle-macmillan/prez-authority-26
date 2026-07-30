@@ -23,8 +23,9 @@ that the drafter actually consulted or copied it.
 
 ## 1.1 Implementation status — July 30, 2026
 
-Implementation is paused before model download and embedding generation while GPU
-provisioning is considered.
+Implementation has resumed on an NVIDIA GeForce RTX 2080 Ti with 11,264 MiB of memory.
+The locked local environment and pinned Qwen snapshot are installed. GPU smoke tests and
+full dual-role embedding generation are complete.
 
 ### Completed
 
@@ -47,7 +48,24 @@ provisioning is considered.
 - Added tests showing that connectors remain visible, internal references such as
   `section 2 of this order` are retained, and findings and definitions remain.
 - Generated stable cleaned-document and operative-segment JSONL artifacts.
-- Added a project-local dependency specification for the embedding pipeline.
+- Pinned the embedding pipeline dependencies to exact versions compatible with the
+  CUDA 12.5-era host driver.
+- Compiled `requirements-parent-analysis.lock.txt` with all transitive dependencies for
+  reproducible installation.
+- Installed the locked dependencies into `.venv-parent-analysis`.
+- Downloaded `Qwen/Qwen3-Embedding-0.6B` at exact revision
+  `97b0c614be4d77ee51c0cef4e5f07c00f9eb65b3` into the project-local cache.
+- Verified PyTorch 2.6.0+cu124 can access the RTX 2080 Ti.
+- Verified both retrieval instructions on the RTX 2080 Ti.
+- Audited all model inputs against Qwen's 32,768-token limit; the maxima are 13,806 tokens
+  for instructed full-document queries and 12,921 for instructed operative-segment
+  queries, with no overlength input.
+- Generated normalized 1,024-dimensional embeddings for 3,620 full documents and 14,309
+  operative segments. Each item has an instructed child-query embedding and an unprompted
+  candidate-parent embedding.
+- Cached both embedding matrices with stable identifiers, source hashes, model and
+  tokenizer revisions, package versions, instructions, token-length summaries, and
+  runtime provenance.
 
 ### Current generated results
 
@@ -83,10 +101,6 @@ remain provisional pending manual audit:
 
 ### Not yet completed
 
-- Install the local embedding environment.
-- Download and pin `Qwen/Qwen3-Embedding-0.6B`.
-- Run representative GPU runtime and memory smoke tests.
-- Generate full-document and operative-segment embeddings.
 - Retrieve the top 25 earlier EOs for each unresolved child.
 - Implement the within-pool BM25, n-gram, text-reuse, and operative-embedding rankings.
 - Implement unweighted Reciprocal Rank Fusion and select the top 10 candidates.
@@ -96,11 +110,12 @@ remain provisional pending manual audit:
 - Estimate and qualitatively assess orphanhood.
 - Specify or run the later authority-divergence analysis.
 
-### Resume point after GPU provisioning
+### Current resume point
 
-Resume at section 13, step 5. First record the GPU model and available memory, create the
-project-local environment from `requirements-parent-analysis.txt`, download the pinned
-Qwen revision, and run a small benchmark before generating the full embedding artifacts.
+Resume at section 13, step 6. Use each unresolved child's instructed full-document query
+embedding to retrieve the 25 most similar chronologically eligible candidate-parent
+document embeddings. The dual-role document and operative-segment caches and their
+provenance are stored in `data/parent_analysis/embeddings/`.
 
 ## 2. Parent definition
 
@@ -487,10 +502,14 @@ must not affect parent selection.
    - Record identifiers and preprocessing provenance.
 
 5. **Install and validate Qwen locally**
-   - Pin the model and dependency revisions.
-   - run a small smoke test with both agreed instructions;
-   - check input lengths and runtime; and
-   - cache embeddings.
+   - [x] Pin dependency revisions and compile a transitive lockfile.
+   - [x] Record the available GPU model, memory, and driver.
+   - [x] Create the project-local environment from the lockfile.
+   - [x] Download and record exact model and tokenizer revision
+     `97b0c614be4d77ee51c0cef4e5f07c00f9eb65b3`.
+   - [x] Re-run the small smoke test with both agreed instructions.
+   - [x] Check input lengths and runtime.
+   - [x] Cache dual-role document and operative-segment embeddings.
 
 6. **Run candidate generation**
    - Retrieve the top 25 earlier EOs with full-document embeddings.
