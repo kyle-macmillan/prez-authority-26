@@ -913,9 +913,9 @@ def _merge_content_segments(segs: list[Segment]) -> list[Segment]:
 # Woolley & Peters ordering-phrase strategy
 # ---------------------------------------------------------------------------
 
-# Additional high-confidence directive verbs used only to classify formal sections.
-# Keeping these out of ORDERING_PHRASES prevents them from becoming split points in
-# unstructured documents, where a match beginning at "shall" would drop the actor.
+# Additional high-confidence directive verbs used by the extended W&P strategy.
+# These supplement the original W&P phrase list for every document, regardless of
+# whether the document has formal section headings.
 _SECTION_SHALL_ACTION = (
     r"shall\s+"
     r"(?:(?:also|promptly|immediately)\s+){0,2}"
@@ -942,16 +942,15 @@ def _build_ordering_re(section_extensions: bool = False) -> re.Pattern:
 
 
 _ordering_re_cache: re.Pattern | None = None           # W&P phrases only
-_ordering_re_extended_cache: re.Pattern | None = None  # W&P + section-only shall verbs
+_ordering_re_extended_cache: re.Pattern | None = None  # W&P + allowlisted shall verbs
 
 
 def _get_ordering_re(extended: bool = False) -> re.Pattern:
     """Return the ordering-phrase regex.
 
-    extended=False (default): pure W&P phrase list — used for initial scan,
-        non-sections path, and strict_wp mode.
-    extended=True: adds the allowlisted shall + verb pattern — used only in
-        formal-section classification paths.
+    extended=False (default): pure W&P phrase list, used by strict_wp mode.
+    extended=True: adds the allowlisted shall + verb pattern for the extended
+        W&P strategy.
     """
     global _ordering_re_cache, _ordering_re_extended_cache
     if extended:
@@ -1594,13 +1593,16 @@ def segment_ordering(doc_text: str, doc_type: str = "", strict_wp: bool = False)
     grouped into it only when they contain no ordering phrase of their own; list items
     that do contain an ordering phrase are processed normally and start a new directive.
 
-    strict_wp=True disables all extensions (section-only shall verbs, opening-authority vesting)
+    Formal section boundaries do not control this strategy.  The same extended
+    ordering-phrase matcher is applied across documents with and without sections.
+
+    strict_wp=True disables all extensions (allowlisted shall verbs, opening-authority vesting)
     and uses only the original W&P phrase list.
 
     Returns a list of Segment objects with seg_type in
     {'preamble', 'order_action', 'metadata', 'boilerplate', 'vesting_clause'}.
     """
-    ordering_re = _get_ordering_re(extended=False)  # W&P only for base detection
+    ordering_re = _get_ordering_re(extended=not strict_wp)
     opening_authority = not strict_wp
     is_proclamation = doc_type == "proclamation"
 
@@ -1610,38 +1612,8 @@ def segment_ordering(doc_text: str, doc_type: str = "", strict_wp: bool = False)
     )
     total = len(chunks)
 
-    # Build tagged list (with vesting carve-out) to detect formal sections.
-    tagged: list[tuple[SegmentType, str, int]] = []
-    for i, chunk in enumerate(chunks):
-        is_last_n = i >= total - 5
-        ct = _classify_chunk(chunk, i, total, is_last_n)
-        if ct not in ("metadata", "boilerplate") and _chunk_has_vesting(chunk, ordering_re, opening_authority=opening_authority, is_proclamation=is_proclamation):
-            for piece, is_vesting in _carve_vesting(chunk, ordering_re, opening_authority=opening_authority, is_proclamation=is_proclamation):
-                if is_vesting:
-                    tagged.append(("vesting_clause", piece, i))
-                else:
-                    tagged.append((_classify_chunk(piece, i, total, is_last_n), piece, i))
-        else:
-            tagged.append((ct, chunk, i))
-
-    # Section-priority branch: when formal sections exist, split on sections only.
-    # Actor-agnostic shall + verb extensions apply only in this sections path.
-    if _has_formal_sections(tagged):
-        alpha_as_sub = any(
-            bool(_SECTION_ROMAN_RE.match(text.strip()))
-            for seg_type, text, _ in tagged
-            if seg_type != "metadata"
-        )
-        segs = _group_by_sections(tagged, split_subsections=False,
-                                  alpha_as_subsection=alpha_as_sub)
-        relabel_re = ordering_re if strict_wp else _get_ordering_re(extended=True)
-        segs = _relabel_for_wp(segs, relabel_re)
-        segs = _enforce_closing_cutoff(segs)
-        segs = _enforce_signoff_cutoff(segs)
-        segs = _reclassify_titles_before_metadata(segs)
-        return segs
-
-    # No formal sections: ordering-phrase strategy.
+    # Ordering-phrase strategy for every document; section headings are ordinary
+    # surrounding text rather than segmentation boundaries.
     segments: list[Segment] = []
     current_parts: list[str] = []   # text pieces for the open segment
     current_indices: list[int] = [] # original chunk indices

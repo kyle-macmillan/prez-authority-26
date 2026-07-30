@@ -1,0 +1,6 @@
+# Local embedding and similarity pipeline.
+# Exact installed versions are recorded in generated provenance metadata.
+numpy>=1.26
+torch>=2.4
+transformers>=4.51
+sentence-transformers>=2.7

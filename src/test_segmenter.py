@@ -1,4 +1,4 @@
-"""Focused regression tests for section-only ordering-phrase extensions.
+"""Focused regression tests for extended ordering-phrase segmentation.
 
 Run from the project root:
   python3 src/test_segmenter.py
@@ -21,15 +21,15 @@ ALLOWLISTED_VERBS = (
 
 def _section_type(predicate: str, *, strict_wp: bool = False) -> str:
     text = f"Introductory context.  Section 1. The Board shall {predicate} the work."
-    sections = [
+    matches = [
         seg for seg in segment_ordering(text, strict_wp=strict_wp)
-        if seg.text.startswith("Section 1.")
+        if f"shall {predicate}" in seg.text
     ]
-    assert len(sections) == 1
-    return sections[0].seg_type
+    assert len(matches) == 1
+    return matches[0].seg_type
 
 
-def test_allowlisted_verbs_classify_formal_sections():
+def test_allowlisted_verbs_split_regardless_of_formal_sections():
     for verb in ALLOWLISTED_VERBS:
         assert _section_type(verb) == "order_action", verb
 
@@ -42,7 +42,7 @@ def test_explicit_modifiers_are_supported():
 
 def test_status_and_definition_verbs_are_excluded():
     for verb in ("be", "have", "include", "apply"):
-        assert _section_type(verb) == "order_action", verb
+        assert _section_type(verb) == "preamble", verb
 
 
 def test_actor_does_not_affect_matching():
@@ -51,8 +51,12 @@ def test_actor_does_not_affect_matching():
         "Section 2. Federal agencies shall make recommendations.  "
         "Section 3. The Secretary shall issue guidance."
     )
-    types = [seg.seg_type for seg in segment_ordering(text) if seg.text.startswith("Section")]
-    assert types == ["order_action", "order_action", "order_action"]
+    actions = [seg.text for seg in segment_ordering(text) if seg.seg_type == "order_action"]
+    assert actions == [
+        "The Board shall perform the work. Section 2.",
+        "Federal agencies shall make recommendations. Section 3.",
+        "The Secretary shall issue guidance.",
+    ]
 
 
 def test_section_paragraph_strategy_uses_same_extension():
@@ -106,8 +110,11 @@ def test_purpose_and_definitions_sections_are_order_actions():
         "Section 1. Purpose. The Board shall perform the work.  "
         "Section 2. Definitions. The agency shall make determinations."
     )
-    types = [seg.seg_type for seg in segment_ordering(text) if seg.text.startswith("Section")]
-    assert types == ["order_action", "order_action"]
+    actions = [seg.text for seg in segment_ordering(text) if seg.seg_type == "order_action"]
+    assert actions == [
+        "The Board shall perform the work. Section 2. Definitions.",
+        "The agency shall make determinations.",
+    ]
 
 
 def test_section_continuation_after_vesting_is_order_action():
@@ -126,16 +133,17 @@ def test_section_continuation_after_vesting_is_order_action():
     assert continuation[0].seg_type == "order_action"
 
 
-def test_extension_does_not_split_unstructured_documents():
+def test_extension_splits_unstructured_documents():
     text = "Background context. The Board shall perform the work."
     segments = segment_ordering(text)
-    assert len(segments) == 1
-    assert segments[0].seg_type == "preamble"
-    assert segments[0].text == text
+    assert [(seg.seg_type, seg.text) for seg in segments] == [
+        ("preamble", "Background context."),
+        ("order_action", "The Board shall perform the work."),
+    ]
 
 
 def test_strict_wp_disables_section_extension():
-    assert _section_type("perform", strict_wp=True) == "order_action"
+    assert _section_type("perform", strict_wp=True) == "preamble"
 
 
 def test_original_wp_phrase_still_matches_in_strict_mode():
