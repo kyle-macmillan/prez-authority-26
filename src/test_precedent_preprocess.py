@@ -27,6 +27,20 @@ def test_masks_named_act_and_executive_order():
     assert masked == "Under [AUTHORITY] and [AUTHORITY]."
 
 
+def test_masks_other_directive_references():
+    masked, spans = mask_authorities(
+        "Under Proclamation 9984, PPD-41, my memorandum of March 31, 2010, "
+        'and the letter entitled "Report to the Congress".'
+    )
+    assert masked == "Under [AUTHORITY], [AUTHORITY], my [AUTHORITY], and the [AUTHORITY]."
+    assert [span.kind for span in spans] == [
+        "proclamation",
+        "numbered_memorandum",
+        "dated_unnumbered_directive",
+        "titled_unnumbered_directive",
+    ]
+
+
 def test_does_not_mask_internal_section_reference():
     masked, spans = mask_authorities("The Secretary shall act under section 2 of this order.")
     assert masked == "The Secretary shall act under section 2 of this order."
@@ -58,6 +72,18 @@ def test_removes_severability_clause():
     cleaned, _, removed = preprocess_for_similarity(text)
     assert cleaned == "The agency shall act."
     assert len(removed) == 1
+
+
+def test_removes_non_eo_limitation_and_severability_language():
+    text = (
+        "The Secretary shall establish a program.  "
+        "This memorandum shall be implemented consistent with applicable law.  "
+        "If any provision of this proclamation is held invalid, "
+        "the remainder shall not be affected."
+    )
+    cleaned, _, removed = preprocess_for_similarity(text)
+    assert cleaned == "The Secretary shall establish a program."
+    assert len(removed) == 2
 
 
 def test_retains_findings_and_definitions():

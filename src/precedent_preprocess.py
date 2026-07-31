@@ -1,4 +1,4 @@
-"""Authority masking and shared preprocessing for similarity-based EO retrieval."""
+"""Authority masking shared by similarity retrieval for all directive types."""
 
 from __future__ import annotations
 
@@ -65,6 +65,33 @@ AUTHORITY_PATTERNS: tuple[tuple[str, re.Pattern[str]], ...] = (
         re.compile(r"\bProclamation(?:\s+No\.?)?\s+\d+\b", re.I),
     ),
     (
+        "numbered_memorandum",
+        re.compile(
+            r"\b(?:(?:National\s+Security|Homeland\s+Security|Presidential\s+Policy|"
+            r"Presidential\s+Study|National\s+Security\s+Presidential)\s+Directive\s*/?\s*)?"
+            r"(?:NSD|PPD|PSD|NSDD|NSPD|HSPD|PDD|NSM|NSPM)-\s*\d+\b"
+            r"|\bPresidential\s+Determination(?:\s+No\.?)?\s+\d{4}\s*[-–—]\s*\d+\b",
+            re.I,
+        ),
+    ),
+    (
+        "dated_unnumbered_directive",
+        re.compile(
+            r"\b(?:memorandum|letter)(?:\s+(?:to|for|from)\b.{0,100}?)?\s+"
+            r"(?:of|dated|on)\s+(?:January|February|March|April|May|June|July|"
+            r"August|September|October|November|December)\s+\d{1,2},\s+\d{4}\b",
+            re.I,
+        ),
+    ),
+    (
+        "titled_unnumbered_directive",
+        re.compile(
+            r"\b(?:memorandum|letter)(?:\s+(?:titled|entitled|regarding|concerning))?"
+            r"\s*[\"“][^\"”]{4,300}[\"”]",
+            re.I,
+        ),
+    ),
+    (
         "constitution",
         re.compile(
             r"\b(?:Article\s+[IVXLC\d]+\s+of\s+)?(?:the\s+)?Constitution"
@@ -103,20 +130,25 @@ AUTHORITY_PATTERNS: tuple[tuple[str, re.Pattern[str]], ...] = (
 )
 
 
-BOILERPLATE_SIGNALS = (
-    "nothing in this order shall be construed to impair or otherwise affect",
-    "nothing in this order shall be construed to impair",
-    "this order shall be implemented consistent with applicable law",
-    "this order shall be implemented in accordance with applicable law",
-    "this order is not intended to, and does not, create any right or benefit",
-    "this order is not intended to create, and does not create, any right or benefit",
-    "shall be published in the federal register",
-)
+BOILERPLATE_SIGNALS = tuple(
+    signal.format(noun=noun)
+    for noun in ("order", "memorandum", "proclamation", "letter", "directive")
+    for signal in (
+        "nothing in this {noun} shall be construed to impair or otherwise affect",
+        "nothing in this {noun} shall be construed to impair",
+        "this {noun} shall be implemented consistent with applicable law",
+        "this {noun} shall be implemented in accordance with applicable law",
+        "this {noun} is not intended to, and does not, create any right or benefit",
+        "this {noun} is not intended to create, and does not create, any right or benefit",
+    )
+) + ("shall be published in the federal register",)
 
 SEVERABILITY_RE = re.compile(
-    r"\bif\s+any\s+provision\s+of\s+this\s+order\b.{0,1200}?"
+    r"\bif\s+any\s+provision\s+of\s+this\s+"
+    r"(?:order|memorandum|proclamation|letter|directive)\b.{0,1200}?"
     r"\b(?:held\s+invalid|invalidated|not\s+given\s+effect)\b"
-    r"|\bthe\s+invalidity\s+of\s+any\s+provision\s+of\s+this\s+order\b",
+    r"|\bthe\s+invalidity\s+of\s+any\s+provision\s+of\s+this\s+"
+    r"(?:order|memorandum|proclamation|letter|directive)\b",
     re.I | re.S,
 )
 
@@ -174,8 +206,9 @@ def remove_similarity_boilerplate(text: str) -> tuple[str, list[str]]:
 
     for paragraph in paragraphs:
         lower = paragraph.lower()
-        is_impairment_start = any(
-            signal in lower for signal in BOILERPLATE_SIGNALS[:2]
+        is_impairment_start = (
+            "nothing in this " in lower
+            and "shall be construed to impair" in lower
         )
         should_remove = (
             any(signal in lower for signal in BOILERPLATE_SIGNALS)

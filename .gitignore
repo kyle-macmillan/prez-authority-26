@@ -1,8 +1,7 @@
 ## from https://github.com/github/gitignore/blob/master/TeX.gitignore
 .venv/
 
-# Parent-analysis local runtime and downloaded model files. Keep the generated
-# results in data/parent_analysis/embeddings/ trackable.
+# Parent-analysis local runtime and downloaded model files.
 .venv-parent-analysis/
 .cache/
 .huggingface/
@@ -14,8 +13,19 @@ pytorch_model*.bin
 *.pth
 slurm-*.out
 
-# Regenerable embedding matrices; retain their provenance metadata.
+# Large source inputs are supplied through external storage at these stable paths.
+/data/4_28_2026_build_dev.csv
+/Authority Vagueness Analysis/vesting_authority_all_categories.xlsx
+/Authority Vagueness Analysis/vesting_authority_breakdown.csv
+/data/vesting_authority_breakdown.csv
+
+# Large, regenerable parent-analysis artifacts. Keep small audit CSVs and
+# embeddings/provenance.json trackable.
 data/parent_analysis/embeddings/*.npz
+/data/parent_analysis/*_similarity_documents.jsonl
+/data/parent_analysis/*_operative_segments.jsonl
+/data/parent_analysis/embedding_candidate_pool.csv
+/data/parent_analysis/ranked_candidates.csv
 
 node_modules/
 

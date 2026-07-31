@@ -269,6 +269,37 @@ def test_cabinet_mid_sentence_pursuant_clause_is_not_vesting():
     assert _vesting_texts(text) == []
 
 
+def test_present_tense_command_is_split_from_subject_metadata():
+    text = (
+        "Memorandum for the Director of the Office of Management and Budget  "
+        "Subject: Delegation of Functions, I hereby delegate to the Director "
+        "the functions vested in the President.  "
+        "You are authorized and directed to publish this memorandum."
+    )
+    segments = segment_ordering(text, "memorandum")
+    assert [(segment.seg_type, segment.text) for segment in segments] == [
+        ("metadata", "Memorandum for the Director of the Office of Management and Budget"),
+        ("metadata", "Subject: Delegation of Functions"),
+        (
+            "order_action",
+            "I hereby delegate to the Director the functions vested in the President.",
+        ),
+        (
+            "boilerplate",
+            "You are authorized and directed to publish this memorandum.",
+        ),
+    ]
+
+
+def test_non_command_letter_language_remains_nonoperative():
+    text = (
+        "Dear Madam Speaker:  I ask the Congress to consider the enclosed amendments.  "
+        "I herewith forward the report.  I have directed the agency to respond."
+    )
+    segments = segment_ordering(text, "letter")
+    assert not any(segment.seg_type == "order_action" for segment in segments)
+
+
 if __name__ == "__main__":
     tests = [v for k, v in sorted(globals().items()) if k.startswith("test_")]
     for test in tests:

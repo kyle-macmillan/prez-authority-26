@@ -112,6 +112,24 @@ _METADATA_PATTERNS = [
     ),
 ]
 
+# A subject/header chunk can contain the beginning of the operative text when the
+# source omits a paragraph boundary (for example, "Subject: Delegation ..., I hereby
+# delegate ..."). Split only at clear present-tense commands. Requests, transmissions,
+# endorsements, and descriptions of completed actions intentionally remain metadata or
+# preamble.
+_EMBEDDED_METADATA_COMMAND_RE = re.compile(
+    r"\b(?:"
+    r"I\s+(?:(?:do|am)\s+)?(?:hereby\s+)?"
+    r"(?:authorize|appoint|delegate|designate|direct|establish|instruct|order|"
+    r"prescribe|prohibit|revoke|terminate|transfer|withdraw)"
+    r"|this\s+(?:memorandum|directive)\s+"
+    r"(?:assigns|directs|establishes|instructs)"
+    r"|you\s+are\s+(?:hereby\s+)?"
+    r"(?:appointed|authorized|delegated|directed|instructed)"
+    r")\b",
+    re.IGNORECASE,
+)
+
 _BOILERPLATE_SIGNALS = [
     "nothing in this",
     "does not create any right or benefit",
@@ -1630,6 +1648,15 @@ def segment_ordering(doc_text: str, doc_type: str = "", strict_wp: bool = False)
         # Metadata and boilerplate chunks: flush the open segment and emit standalone.
         is_last_n = chunk_idx >= total - 5
         chunk_type = _classify_chunk(chunk, chunk_idx, total, is_last_n)
+        if chunk_type == "metadata":
+            embedded_command = _EMBEDDED_METADATA_COMMAND_RE.search(chunk)
+            if embedded_command and embedded_command.start() > 0:
+                flush()
+                metadata_text = chunk[: embedded_command.start()].rstrip(" ,:;")
+                if metadata_text:
+                    segments.append(Segment(metadata_text, "metadata", [chunk_idx]))
+                chunk = chunk[embedded_command.start() :]
+                chunk_type = "paragraph"
         if chunk_type in ("metadata", "boilerplate"):
             flush()
             segments.append(Segment(chunk, chunk_type, [chunk_idx]))
