@@ -2,7 +2,7 @@
 Tests for annotation export parsing.
 
 Run from the project root:
-  python3 src/test_parse_annotations.py
+  python3 src/tests/test_parse_annotations.py
 """
 
 import json
@@ -11,7 +11,7 @@ import sys
 import tempfile
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).parent))
+sys.path.insert(0, str(Path(__file__).parents[1]))
 
 from parse_annotations import display_text, load_annotations, validate_export, VALID_LABELS
 
@@ -19,7 +19,7 @@ from parse_annotations import display_text, load_annotations, validate_export, V
 # Helpers
 # ---------------------------------------------------------------------------
 
-ROOT = Path(__file__).parent.parent
+ROOT = Path(__file__).parents[2]
 DATA_FILE   = ROOT / "data" / "4_28_2026_build_dev.csv"
 DOC_ID_MAP  = ROOT / "data" / "sample_segmentation" / "doc_id_map.json"
 

@@ -234,6 +234,10 @@ def _merge_vesting_for_display(segments: list[Segment]) -> list[RenderSegment]:
         if (rendered
                 and rendered[-1]["seg_type"] in ("section", "paragraph", "order_action")
                 and seg.seg_type in ("paragraph", "order_action")
+                and not (
+                    rendered[-1]["seg_type"] == "order_action"
+                    and seg.seg_type == "order_action"
+                )
                 and _shares_chunk(rendered[-1], seg)):
             if parts and not parts[0][0].startswith(" "):
                 parts[0] = (" " + parts[0][0], parts[0][1])
@@ -390,11 +394,13 @@ def render_wp_segments(segments: list[Segment], doc_id: str = "") -> str:
     return "\n".join(parts)
 
 
-def build_doc_block(row: dict, doc_id: str) -> str:
-    # Section/Paragraph segmentation
-    sp_segs = segment(row["doc_text"], row["doc_type"], split_subsections=False)
+def build_doc_block(row: dict, doc_id: str, wp_only: bool = False) -> str:
+    # The legacy structural strategy is omitted entirely for W&P-only rounds.
+    sp_segs = [] if wp_only else segment(
+        row["doc_text"], row["doc_type"], split_subsections=False
+    )
     sp_content = [s for s in sp_segs if s.seg_type not in ("metadata",)]
-    sp_html = render_sp_segments(sp_segs, doc_id=doc_id)
+    sp_html = "" if wp_only else render_sp_segments(sp_segs, doc_id=doc_id)
 
     # Woolley & Peters segmentation (always ordering-phrase based)
     wp_segs = segment_ordering(row["doc_text"], row["doc_type"])
@@ -411,6 +417,23 @@ def build_doc_block(row: dict, doc_id: str) -> str:
     char_len = len(row["doc_text"])
     truncated = " <span class='trunc'>[TRUNCATED]</span>" if char_len == 32766 else ""
 
+    sp_stat = "" if wp_only else (
+        f'<span class="doc-stats mode-sp-stat">{len(sp_segs)} chunks &rarr; '
+        f'{len(sp_content)} segments{truncated}</span>'
+    )
+    sp_view = "" if wp_only else f"""
+      <div class="seg-view view-sp">
+        <h3>Section / Paragraph &mdash; {len(sp_content)} segments</h3>
+        {sp_html}
+      </div>"""
+    sp_feedback = "" if wp_only else f"""
+  <div class="feedback-bar fb-sp">
+    <span class="fb-label">S/P quality:</span>
+    <button class="fb-btn fb-ok"  data-doc="{doc_id}" data-val="correct"        data-strategy="sp">&#10003; Correct</button>
+    <button class="fb-btn fb-bad" data-doc="{doc_id}" data-val="needs-revision" data-strategy="sp">&#10007; Needs revision</button>
+    <textarea class="fb-comment" data-doc="{doc_id}" data-strategy="sp" placeholder="Optional notes…" rows="2"></textarea>
+  </div>"""
+
     return f"""
 <details class="doc-block" open>
   <summary>
@@ -419,7 +442,7 @@ def build_doc_block(row: dict, doc_id: str) -> str:
     <span class="doc-prez">{president}</span>
     <span class="doc-date">{date}</span>
     <span class="doc-type">{doc_type}</span>
-    <span class="doc-stats mode-sp-stat">{len(sp_segs)} chunks &rarr; {len(sp_content)} segments{truncated}</span>
+    {sp_stat}
     <span class="doc-stats mode-wp-stat">{wp_label}{truncated}</span>
     <a href="{url}" target="_blank" class="doc-link">original &rarr;</a>
   </summary>
@@ -429,10 +452,7 @@ def build_doc_block(row: dict, doc_id: str) -> str:
       {annot_html}
     </div>
     <div class="col">
-      <div class="seg-view view-sp">
-        <h3>Section / Paragraph &mdash; {len(sp_content)} segments</h3>
-        {sp_html}
-      </div>
+      {sp_view}
       <div class="seg-view view-wp">
         <h3>Woolley &amp; Peters &mdash; {wp_label}</h3>
         {wp_html}
@@ -446,12 +466,7 @@ def build_doc_block(row: dict, doc_id: str) -> str:
     </div>
     {render_classification_form(f"{doc_id}-doc")}
   </div>
-  <div class="feedback-bar fb-sp">
-    <span class="fb-label">S/P quality:</span>
-    <button class="fb-btn fb-ok"  data-doc="{doc_id}" data-val="correct"        data-strategy="sp">&#10003; Correct</button>
-    <button class="fb-btn fb-bad" data-doc="{doc_id}" data-val="needs-revision" data-strategy="sp">&#10007; Needs revision</button>
-    <textarea class="fb-comment" data-doc="{doc_id}" data-strategy="sp" placeholder="Optional notes…" rows="2"></textarea>
-  </div>
+  {sp_feedback}
   <div class="feedback-bar fb-wp">
     <span class="fb-label">W&amp;P quality:</span>
     <button class="fb-btn fb-ok"  data-doc="{doc_id}" data-val="correct"        data-strategy="wp">&#10003; Correct</button>
@@ -461,13 +476,15 @@ def build_doc_block(row: dict, doc_id: str) -> str:
 </details>"""
 
 
-def compute_label_stats(rows_by_type):
+def compute_label_stats(rows_by_type, wp_only: bool = False):
     """Per-label count stats (min/median/max/std dev) across all docs in the sample."""
     sp_counts = {label: [] for label in SP_COLORS}
     wp_counts = {label: [] for label in WP_COLORS}
     for _, _, _, rows in rows_by_type:
         for row in rows:
-            sp_segs = segment(row["doc_text"], row["doc_type"], split_subsections=False)
+            sp_segs = [] if wp_only else segment(
+                row["doc_text"], row["doc_type"], split_subsections=False
+            )
             wp_segs = segment_ordering(row["doc_text"], row["doc_type"])
             sp_doc = Counter(s.seg_type for s in sp_segs)
             wp_doc = Counter(s.seg_type for s in wp_segs)
@@ -485,7 +502,7 @@ def compute_label_stats(rows_by_type):
         }
 
     return (
-        {lbl: _stats(v) for lbl, v in sp_counts.items()},
+        {} if wp_only else {lbl: _stats(v) for lbl, v in sp_counts.items()},
         {lbl: _stats(v) for lbl, v in wp_counts.items()},
     )
 
@@ -497,8 +514,9 @@ def _legend_html(colors: dict) -> str:
     )
 
 
-def build_html(rows_by_type: list[tuple[str, str, str, list[dict]]], seed: int = 42, viewer_num: int = 1) -> str:
-    """Build the full HTML page with doc-type tabs and a strategy toggle."""
+def build_html(rows_by_type: list[tuple[str, str, str, list[dict]]], seed: int = 42,
+               viewer_num: int = 1, wp_only: bool = False) -> str:
+    """Build the HTML viewer, optionally exposing only extended W&P segments."""
     codebook_help = """Operative provision codes
 0 - Outside scope: not presidential governance over agencies or legal rights.
 1 - Discretionary executive direction / internal management: organizes, reviews, coordinates, studies, prioritizes, or directs discretionary implementation.
@@ -517,7 +535,7 @@ Military / intelligence operations: Yes when the text concerns Commander in Chie
     total_docs = sum(len(rows) for _, _, _, rows in rows_by_type)
 
     # Aggregate label stats across all docs in the sample
-    sp_stats, wp_stats = compute_label_stats(rows_by_type)
+    sp_stats, wp_stats = compute_label_stats(rows_by_type, wp_only=wp_only)
 
     def _stats_rows(stats_dict, colors):
         parts = []
@@ -530,14 +548,16 @@ Military / intelligence operations: Yes when the text concerns Commander in Chie
             )
         return "\n".join(parts)
 
-    stats_html = f"""<details class="stats-panel">
-  <summary>Aggregate label stats &mdash; {total_docs} docs (counts per document)</summary>
+    sp_stats_html = "" if wp_only else f"""
   <div class="stats-sp">
     <table class="stats-table">
       <tr><th>Label</th><th>Min</th><th>Median</th><th>Max</th><th>Std dev</th></tr>
       {_stats_rows(sp_stats, SP_COLORS)}
     </table>
-  </div>
+  </div>"""
+    stats_html = f"""<details class="stats-panel">
+  <summary>Aggregate label stats &mdash; {total_docs} docs (counts per document)</summary>
+  {sp_stats_html}
   <div class="stats-wp">
     <table class="stats-table">
       <tr><th>Label</th><th>Min</th><th>Median</th><th>Max</th><th>Std dev</th></tr>
@@ -571,7 +591,10 @@ Military / intelligence operations: Yes when the text concerns Commander in Chie
     )
 
     # Strategy toggle
-    strategy_toggle = """
+    strategy_toggle = """<div class="strategy-toggle">
+  <span class="strategy-label">Segmentation: Extended Woolley &amp; Peters only</span>
+  <button class="strat-btn redact-btn" id="vesting-redact-toggle" type="button">Black out vesting clauses</button>
+</div>""" if wp_only else """
 <div class="strategy-toggle">
   <span class="strategy-label">Strategy:</span>
   <button class="strat-btn active" data-mode="sp">Section / Paragraph</button>
@@ -595,7 +618,7 @@ Military / intelligence operations: Yes when the text concerns Commander in Chie
 
         doc_blocks = []
         for j, row in enumerate(rows, start=1):
-            doc_blocks.append(build_doc_block(row, f"{prefix}{j}"))
+            doc_blocks.append(build_doc_block(row, f"{prefix}{j}", wp_only=wp_only))
 
         tab_panels.append(
             f'<div class="tab-panel{active_panel}" id="{panel_id}">'
@@ -846,7 +869,7 @@ Military / intelligence operations: Yes when the text concerns Commander in Chie
   }}
 </style>
 </head>
-<body class="mode-sp">
+<body class="{'mode-wp' if wp_only else 'mode-sp'}">
 
 <!-- Codebook modal -->
 <div id="cat-modal-overlay">
@@ -886,7 +909,7 @@ Military / intelligence operations: Yes when the text concerns Commander in Chie
     <button class="export-btn" id="export-btn">&#8659; Export annotations</button>
   </div>
   {strategy_toggle}
-  <div class="legend leg-sp">{sp_legend}</div>
+  {'' if wp_only else f'<div class="legend leg-sp">{sp_legend}</div>'}
   <div class="legend leg-wp">{wp_legend}</div>
   <div class="tab-bar">
 {tab_bar}

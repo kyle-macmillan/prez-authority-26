@@ -5,7 +5,7 @@ from pathlib import Path
 
 import numpy as np
 
-sys.path.insert(0, str(Path(__file__).parent))
+sys.path.insert(0, str(Path(__file__).parents[1]))
 
 from generate_candidate_pool import top_candidates
 

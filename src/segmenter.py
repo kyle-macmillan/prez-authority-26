@@ -933,12 +933,20 @@ def _merge_content_segments(segs: list[Segment]) -> list[Segment]:
 
 # Additional high-confidence directive verbs used by the extended W&P strategy.
 # These supplement the original W&P phrase list for every document, regardless of
-# whether the document has formal section headings.
-_SECTION_SHALL_ACTION = (
-    r"shall\s+"
-    r"(?:(?:also|promptly|immediately)\s+){0,2}"
+# whether the document has formal section headings.  The comma-delimited branch
+# captures constructions such as ``shall, within 90 days, take`` without allowing
+# the match to cross a sentence/semicolon boundary or span more than 160 characters.
+_SHALL_ACTION_VERBS = (
     r"(?:take|develop|designate|establish|perform|make|issue|identify|prepare|"
-    r"implement|determine|recommend|prescribe|seek|assist)\b"
+    r"implement|determine|recommend|prescribe|seek|assist)"
+)
+_SHALL_COMMA_INTERVENING_MAX = 160
+_SECTION_SHALL_ACTION = (
+    r"shall(?:"
+    r"\s+(?:(?:also|promptly|immediately)\s+){0,2}" + _SHALL_ACTION_VERBS +
+    r"|\s*,\s*[^.;]{1," + str(_SHALL_COMMA_INTERVENING_MAX) + r"},\s*" +
+    _SHALL_ACTION_VERBS +
+    r")\b"
 )
 
 
@@ -1593,6 +1601,41 @@ def _merge_short_fragments(segments: list[Segment]) -> list[Segment]:
     return result
 
 
+_INTERRUPTED_DETERMINATION_RE = re.compile(
+    r"^I\s+(?:further\s+)?determine\s*,\s*$",
+    re.IGNORECASE,
+)
+_DETERMINATION_CONTINUATION_RE = re.compile(r"^(?:that|whether)\b", re.IGNORECASE)
+
+
+def _relabel_interrupted_determination_connectors(
+    segments: list[Segment],
+) -> list[Segment]:
+    """Do not code a vesting-interrupted ``I determine,`` as its own action.
+
+    In ``I determine, pursuant to section X, that ...``, authority carving
+    produces a connector, a vesting clause, and the substantive continuation.
+    Preserve those splits while making the connector an unnumbered ordering
+    phrase rather than an independently classifiable action.
+    """
+    result = segments[:]
+    for index in range(len(result) - 2):
+        connector, vesting, continuation = result[index : index + 3]
+        if (
+            connector.seg_type == "order_action"
+            and _INTERRUPTED_DETERMINATION_RE.fullmatch(connector.text)
+            and vesting.seg_type == "vesting_clause"
+            and continuation.seg_type == "order_action"
+            and _DETERMINATION_CONTINUATION_RE.match(continuation.text)
+            and bool(set(connector.chunk_indices) & set(vesting.chunk_indices))
+            and bool(set(vesting.chunk_indices) & set(continuation.chunk_indices))
+        ):
+            result[index] = Segment(
+                connector.text, "ordering_phrase", connector.chunk_indices[:]
+            )
+    return result
+
+
 def segment_ordering(doc_text: str, doc_type: str = "", strict_wp: bool = False) -> list[Segment]:
     """Segment a document using the Woolley & Peters ordering-phrase strategy.
 
@@ -1690,4 +1733,7 @@ def segment_ordering(doc_text: str, doc_type: str = "", strict_wp: bool = False)
                         current_indices.append(chunk_idx)
 
     flush()
-    return _merge_short_fragments(_merge_sublists(_split_colon_lists(segments, ordering_re)))
+    segments = _merge_short_fragments(
+        _merge_sublists(_split_colon_lists(segments, ordering_re))
+    )
+    return _relabel_interrupted_determination_connectors(segments)

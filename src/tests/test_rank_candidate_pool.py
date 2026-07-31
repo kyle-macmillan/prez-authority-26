@@ -3,7 +3,7 @@ from pathlib import Path
 
 import numpy as np
 
-sys.path.insert(0, str(Path(__file__).parent))
+sys.path.insert(0, str(Path(__file__).parents[1]))
 
 from rank_candidate_pool import bm25_scores, reused_word_count, top_pair_average
 

@@ -4,7 +4,10 @@
 classifiable units. Each document's `doc_text` field has all whitespace collapsed by the
 scraper: paragraphs are separated by **double spaces** and there are no newlines.
 
-Two segmentation strategies are available via the same API.
+Two segmentation strategies remain available via the same API for historical comparison.
+Starting with annotation Round 2, annotation viewers no longer use sections or expose the
+Section/Paragraph strategy: they show only the extended Woolley & Peters strategy
+(`segment_ordering(..., strict_wp=False)`).
 
 ---
 
@@ -80,12 +83,17 @@ Examples matched:
 - `"The Board shall perform"`
 - `"Federal agencies shall promptly develop"`
 - `"The Secretary shall also make"`
+- `"The Secretary shall, within 90 days, prepare"`
+- `"The agency shall, in consultation with other agencies, issue"`
+
+The comma-delimited form permits up to 160 intervening characters, may contain internal
+commas, and cannot cross a period or semicolon. The action verb after the closing comma
+must still be on the allowlist.
 
 The allowlisted verbs are `take`, `develop`, `designate`, `establish`, `perform`, `make`,
 `issue`, `identify`, `prepare`, `implement`, `determine`, `recommend`, `prescribe`, `seek`,
-and `assist`. This pattern fires **only in formal-section classification paths** and is
-suppressed for documents without formal sections and when `strict_wp=True`; it therefore
-does not create actorless split points in unstructured documents.
+and `assist`. The extension applies across structured and unstructured documents and is
+disabled when `strict_wp=True`.
 
 ---
 

@@ -5,7 +5,7 @@ Produces:
   data/self_executing_review.html                 -- interactive review doc
 
 Run from project root:
-  python3 src/self_executing_clustering.py
+  python3 src/analysis/self_executing_clustering.py
 """
 
 import csv
@@ -15,7 +15,7 @@ from collections import Counter
 from pathlib import Path
 from html import escape
 
-ROOT = Path(__file__).parent.parent
+ROOT = Path(__file__).parents[2]
 
 # ---------------------------------------------------------------------------
 # Claude's independent self-executing classifications

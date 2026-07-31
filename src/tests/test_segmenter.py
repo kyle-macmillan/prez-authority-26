@@ -1,13 +1,13 @@
 """Focused regression tests for extended ordering-phrase segmentation.
 
 Run from the project root:
-  python3 src/test_segmenter.py
+  python3 src/tests/test_segmenter.py
 """
 
 import sys
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).parent))
+sys.path.insert(0, str(Path(__file__).parents[1]))
 
 from segmenter import segment, segment_ordering
 
@@ -298,6 +298,74 @@ def test_non_command_letter_language_remains_nonoperative():
     )
     segments = segment_ordering(text, "letter")
     assert not any(segment.seg_type == "order_action" for segment in segments)
+
+
+def test_vesting_interrupted_i_determine_is_not_an_independent_action():
+    text = (
+        "Pursuant to the authority vested in me under the Trade Act of 1974, "
+        "I determine, pursuant to section 402(d)(1) of the Act (19 U.S.C. 2432(d)(1)), "
+        "that extending the waiver will promote the objectives of the Act."
+    )
+    segments = segment_ordering(text, "memorandum")
+
+    assert [(segment.seg_type, segment.text) for segment in segments] == [
+        (
+            "vesting_clause",
+            "Pursuant to the authority vested in me under the Trade Act of 1974,",
+        ),
+        ("ordering_phrase", "I determine,"),
+        (
+            "vesting_clause",
+            "pursuant to section 402(d)(1) of the Act (19 U.S.C. 2432(d)(1)),",
+        ),
+        (
+            "order_action",
+            "that extending the waiver will promote the objectives of the Act.",
+        ),
+    ]
+
+
+def test_standalone_i_determine_remains_an_action():
+    segments = segment_ordering(
+        "I determine that extending the waiver will promote the objectives of the Act.",
+        "memorandum",
+    )
+    assert len(segments) == 1
+    assert segments[0].seg_type == "order_action"
+
+
+def test_comma_delimited_shall_extension_matches_bounded_intervening_text():
+    text = (
+        "The Secretary shall, within 90 days of the date of this order, "
+        "prepare a report."
+    )
+    actions = [s.text for s in segment_ordering(text) if s.seg_type == "order_action"]
+    assert actions == [text]
+
+
+def test_comma_delimited_shall_extension_allows_internal_commas():
+    text = (
+        "The Secretary shall, in coordination with the Secretary of State, the "
+        "Attorney General, and relevant agencies, develop a plan."
+    )
+    actions = [s.text for s in segment_ordering(text) if s.seg_type == "order_action"]
+    assert actions == [text]
+
+
+def test_comma_delimited_shall_extension_does_not_cross_semicolon():
+    text = "The Secretary shall, as appropriate; take action."
+    assert not any(s.seg_type == "order_action" for s in segment_ordering(text))
+
+
+def test_comma_delimited_shall_extension_is_bounded():
+    intervening = "x" * 161
+    text = f"The Secretary shall, {intervening}, take action."
+    assert not any(s.seg_type == "order_action" for s in segment_ordering(text))
+
+
+def test_comma_delimited_shall_extension_keeps_action_verb_allowlist():
+    text = "The Secretary shall, within 90 days, consider the proposal."
+    assert not any(s.seg_type == "order_action" for s in segment_ordering(text))
 
 
 if __name__ == "__main__":
