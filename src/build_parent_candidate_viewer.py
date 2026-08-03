@@ -93,8 +93,12 @@ def _alignment_evidence(
 def build_payload(
     sampled: list[dict], documents: list[dict], segment_rows: list[dict],
     candidates: dict[str, list[dict]], seed: int = SEED,
+    selections: dict[str, dict] | None = None, sample_prefix: str = "PC",
+    viewer_title: str = "Parent candidate review", storage_namespace: str = "parent-candidate-pilot-v1",
+    sample_design: str = "50 unresolved children per directive type",
 ) -> dict:
-    """Create a browser payload without exposing ranks or similarity scores."""
+    """Create the self-contained browser payload."""
+    selections = selections or {}
     documents_by_id = {str(row["document_id"]): row for row in documents}
     segments: dict[str, list[dict]] = defaultdict(list)
     for row in segment_rows:
@@ -137,15 +141,18 @@ def build_payload(
                 },
             })
         children.append({
-            "sample_id": f"PC{display_index:03d}",
+            "sample_id": f"{sample_prefix}{display_index:03d}",
             "child": _document_payload(child),
             "candidates": displayed,
+            "selection": selections.get(child_id),
         })
     return {
         "schema_version": 1,
         "seed": seed,
-        "per_type": PER_TYPE,
+        "sample_design": sample_design,
         "candidate_order": "deterministically shuffled; retrieval ranks blinded",
+        "viewer_title": viewer_title,
+        "storage_namespace": storage_namespace,
         "children": children,
     }
 
@@ -183,7 +190,7 @@ def build_html(payload: dict) -> str:
     return f"""<!doctype html>
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Parent candidate review</title>
+<title>{html.escape(payload.get("viewer_title", "Parent candidate review"))}</title>
 <style>
 :root{{--ink:#172033;--muted:#667085;--line:#d8dee9;--paper:#fff;--wash:#f4f7fb;--accent:#225ea8;--yes:#18794e;--no:#b42318}}
 *{{box-sizing:border-box}} body{{margin:0;font:14px/1.45 system-ui,sans-serif;color:var(--ink);background:var(--wash)}}
@@ -197,16 +204,17 @@ button,input,textarea{{font:inherit}} button{{cursor:pointer}} .top{{position:st
 .candidate-tab{{border:1px solid var(--line);background:#fff;border-radius:6px;padding:6px 10px}} .candidate-tab.active{{color:#fff;background:var(--accent)}} .candidate-tab.yes{{border-color:var(--yes)}} .candidate-tab.no{{border-color:var(--no)}}
 .score-toggle{{border:1px solid var(--accent);color:var(--accent);background:#fff;border-radius:6px;padding:6px 10px}} .score-toggle.active{{background:var(--accent);color:#fff}}
 .scores{{display:none;margin-top:10px;padding-top:10px;border-top:1px solid var(--line)}} .scores.visible{{display:block}} .score-grid{{display:grid;grid-template-columns:repeat(3,minmax(150px,1fr));gap:8px}} .score-card{{background:var(--wash);border-radius:6px;padding:8px}} .score-value{{font-size:18px;font-weight:750}} .score-help{{font-size:12px;color:var(--muted)}}
+.selection{{margin-top:10px;padding:10px;border-left:4px solid #7c3aed;background:#f5f3ff;border-radius:4px}} .selection blockquote{{margin:6px 0;font-family:Georgia,serif}} .selection-meta{{font-size:12px;color:var(--muted)}}
 .compare{{display:grid;grid-template-columns:1fr 1fr;gap:12px}} .doc{{min-width:0}} .doc-head{{padding:10px 12px;border-bottom:1px solid var(--line)}} .doc-text{{white-space:pre-wrap;padding:14px;max-height:52vh;overflow:auto;font-family:Georgia,serif;font-size:15px;line-height:1.58}}
 mark.m0{{background:#fff2a8}} mark.m1{{background:#c9f1e5}} mark.m2{{background:#dbeafe}} .evidence{{grid-column:1/-1;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px}} .pair{{display:grid;grid-template-columns:1fr 1fr;gap:12px;border-top:1px solid var(--line);padding:10px 0}} .pair:first-of-type{{border:0}}
 .decision{{padding:12px;margin-top:12px}} .choice{{border:1px solid var(--line);background:#fff;border-radius:6px;padding:7px 13px;margin-right:6px}} .choice.active.yes{{background:var(--yes);color:#fff}} .choice.active.no{{background:var(--no);color:#fff}} textarea{{display:block;width:100%;min-height:70px;margin-top:9px;padding:8px;border:1px solid var(--line);border-radius:5px}}
 .none-row{{margin-top:12px;padding-top:10px;border-top:1px solid var(--line)}} .empty{{padding:30px;background:#fff;border:1px solid var(--line)}}
 @media(max-width:900px){{.layout{{grid-template-columns:1fr;height:auto}}.sidebar{{max-height:220px;border-right:0}}.compare,.pair{{grid-template-columns:1fr}}.main{{overflow:visible}}}}
 </style></head><body>
-<div class="top"><h1>Parent candidate review</h1><span id="progress"></span><label>Reviewer <input id="reviewer"></label><button id="export">Export JSON</button></div>
+<div class="top"><h1>{html.escape(payload.get("viewer_title", "Parent candidate review"))}</h1><span id="progress"></span><label>Reviewer <input id="reviewer"></label><button id="export">Export JSON</button></div>
 <div class="layout"><nav class="sidebar" id="sidebar"></nav><main class="main" id="main"></main></div>
 <script>const DATA={data};
-const STORE='parent-candidate-pilot-v1-'+DATA.seed; const NAME=STORE+'-reviewer';
+const STORE=DATA.storage_namespace+'-'+DATA.seed; const NAME=STORE+'-reviewer';
 const SCORE_KEY=STORE+'-show-scores';
 const sidebar=document.getElementById('sidebar'), main=document.getElementById('main');
 const progress=document.getElementById('progress'), reviewer=document.getElementById('reviewer');
@@ -227,6 +235,7 @@ function scoreHtml(c){{let s=c.scores,shown=localStorage.getItem(SCORE_KEY)==='1
   scoreCard('Fused result','Rank '+s.rrf.rank,fmt(s.rrf.score,4)+' RRF score','Unweighted rank fusion with k='+s.rrf.k)+
   '</div><p class="score-help">Cosine and lexical scores are evidence, not probabilities that this candidate is a parent. Candidate tabs remain shuffled.</p></div>'}}
 function scoreCard(label,value,rank,help){{return '<div class="score-card"><b>'+label+'</b><div class="score-value">'+value+'</div><div>'+rank+'</div><div class="score-help">'+help+'</div></div>'}}
+function selectionHtml(x){{let s=x.selection;if(!s)return '';let model=s.model_code3?'dual-prompt Code 3':'rule-selected Code 3';return '<section class="selection"><b>Why this child was selected</b><div>'+esc(model)+' · policy: '+esc(s.selected_policy)+'</div><blockquote>'+esc(s.model_evidence||s.rule_excerpt||'')+'</blockquote><div class="selection-meta">Evidence segment: '+esc(s.evidence_segment_id||'not available')+' · minimum model P(Code 3): '+fmt(s.minimum_code3_probability,3)+' · rule: '+esc(s.rule_rationale||s.rule_category)+'</div></section>'}}
 function highlighted(doc,evidence,side){{let text=doc.text,marks=[];evidence.forEach((e,i)=>{{let needle=e[side+'_text'],start=0,pos;while(needle&&(pos=text.indexOf(needle,start))>=0){{marks.push([pos,pos+needle.length,i]);start=pos+needle.length}}}});return styledText(text,doc.ordering_spans,marks)}}
 function styledText(text,boldSpans,marks=[]){{
  let bounds=new Set([0,text.length]);boldSpans.forEach(s=>{{bounds.add(s[0]);bounds.add(s[1])}});marks.forEach(s=>{{bounds.add(s[0]);bounds.add(s[1])}});let points=Array.from(bounds).sort((a,b)=>a-b),out='';
@@ -239,13 +248,13 @@ function renderProgress(){{let answered=0,total=0;DATA.children.forEach(x=>{{tot
 function render(){{renderSidebar();renderProgress();let x=DATA.children[ci],s=childState(x.child.document_id);if(!x.candidates.length){{main.innerHTML='<div class="empty"><h2>'+esc(x.sample_id)+' · '+esc(title(x.child))+'</h2><p>No eligible earlier candidate was available.</p>'+decisionHtml(x,s,null)+'</div>';wire(x,s,null);return}}pi=Math.min(pi,x.candidates.length-1);let c=x.candidates[pi],p=c.parent;
  let tabs=x.candidates.map((z,i)=>{{let v=s.candidates[z.parent.document_id];return '<button class="candidate-tab '+(i===pi?'active ':'')+(v||'')+'" data-p="'+i+'">Candidate '+(i+1)+'</button>'}}).join('');
  let pairs=c.evidence.map((e,i)=>'<div class="pair"><div><b>Child segment '+(i+1)+'</b><br>'+styledText(e.child_text,e.child_ordering_spans)+'</div><div><b>Candidate segment '+(i+1)+'</b><br>'+styledText(e.parent_text,e.parent_ordering_spans)+'</div></div>').join('')||'<p>No operative-segment alignment available.</p>';
- main.innerHTML='<section class="head-card"><h2>'+esc(x.sample_id)+' · '+esc(title(x.child))+'</h2><div class="meta">'+esc(meta(x.child))+'</div><div class="candidate-tabs">'+tabs+'</div>'+scoreHtml(c)+'</section><div class="compare"><article class="doc"><div class="doc-head"><b>Child</b><br>'+esc(title(x.child))+'<div class="meta">'+esc(meta(x.child))+'</div></div><div class="doc-text">'+highlighted(x.child,c.evidence,'child')+'</div></article><article class="doc"><div class="doc-head"><b>Candidate parent '+(pi+1)+'</b><br>'+esc(title(p))+'<div class="meta">'+esc(meta(p))+'</div></div><div class="doc-text">'+highlighted(p,c.evidence,'parent')+'</div></article><section class="evidence"><b>Strongest operative-segment matches</b>'+pairs+'</section></div>'+decisionHtml(x,s,p);
+ main.innerHTML='<section class="head-card"><h2>'+esc(x.sample_id)+' · '+esc(title(x.child))+'</h2><div class="meta">'+esc(meta(x.child))+'</div>'+selectionHtml(x)+'<div class="candidate-tabs">'+tabs+'</div>'+scoreHtml(c)+'</section><div class="compare"><article class="doc"><div class="doc-head"><b>Child</b><br>'+esc(title(x.child))+'<div class="meta">'+esc(meta(x.child))+'</div></div><div class="doc-text">'+highlighted(x.child,c.evidence,'child')+'</div></article><article class="doc"><div class="doc-head"><b>Candidate parent '+(pi+1)+'</b><br>'+esc(title(p))+'<div class="meta">'+esc(meta(p))+'</div></div><div class="doc-text">'+highlighted(p,c.evidence,'parent')+'</div></article><section class="evidence"><b>Strongest operative-segment matches</b>'+pairs+'</section></div>'+decisionHtml(x,s,p);
  main.querySelectorAll('.candidate-tab').forEach(b=>b.onclick=()=>{{pi=+b.dataset.p;render()}});document.getElementById('score-toggle').onclick=()=>{{let show=localStorage.getItem(SCORE_KEY)!=='1';localStorage.setItem(SCORE_KEY,show?'1':'0');render()}};wire(x,s,p)
 }}
 function decisionHtml(x,s,p){{let v=p?(s.candidates[p.document_id]||''):'';return '<section class="decision">'+(p?'<b>Is this candidate a drafting parent?</b><div><button class="choice yes '+(v==='yes'?'active yes':'')+'" data-value="yes">Parent</button><button class="choice no '+(v==='no'?'active no':'')+'" data-value="no">Not parent</button></div>':'')+'<label class="none-row"><input type="checkbox" id="none" '+(s.none?'checked':'')+'> None of this child’s candidates is a parent</label><textarea id="explanation" placeholder="Brief explanation for the final parent selection or none decision">'+esc(s.explanation)+'</textarea></section>'}}
 function wire(x,s,p){{document.querySelectorAll('.choice').forEach(b=>b.onclick=()=>{{s.candidates[p.document_id]=b.dataset.value;if(b.dataset.value==='yes')s.none=false;save();render()}});let n=document.getElementById('none');n.onchange=()=>{{s.none=n.checked;if(s.none)Object.keys(s.candidates).forEach(k=>s.candidates[k]='no');save();render()}};let t=document.getElementById('explanation');t.oninput=()=>{{s.explanation=t.value;save()}}}}
 reviewer.value=localStorage.getItem(NAME)||'';reviewer.oninput=()=>localStorage.setItem(NAME,reviewer.value);
-exportButton.onclick=()=>{{let judgments=DATA.children.map(x=>{{let s=state[x.child.document_id]||{{candidates:{{}},none:false,explanation:''}};return {{sample_id:x.sample_id,child_id:x.child.document_id,document_type:x.child.document_type,none:s.none,explanation:s.explanation,candidates:x.candidates.map(c=>({{parent_id:c.parent.document_id,decision:s.candidates[c.parent.document_id]||'not_reviewed',alignment_segment_ids:c.evidence.map(e=>[e.child_segment_id,e.parent_segment_id])}}))}}}});let out={{schema_version:1,reviewer:reviewer.value.trim(),exported_at:new Date().toISOString(),sample:{{seed:DATA.seed,per_type:DATA.per_type,candidate_order:DATA.candidate_order}},judgments}};let blob=new Blob([JSON.stringify(out,null,2)],{{type:'application/json'}}),a=document.createElement('a'),name=(reviewer.value.trim()||'unknown').replace(/\\s+/g,'_').toLowerCase();a.href=URL.createObjectURL(blob);a.download='parent-candidate-review-'+name+'-'+new Date().toISOString().slice(0,10)+'.json';a.click();URL.revokeObjectURL(a.href)}};
+exportButton.onclick=()=>{{let judgments=DATA.children.map(x=>{{let s=state[x.child.document_id]||{{candidates:{{}},none:false,explanation:''}};return {{sample_id:x.sample_id,child_id:x.child.document_id,document_type:x.child.document_type,selection:x.selection,none:s.none,explanation:s.explanation,candidates:x.candidates.map(c=>({{parent_id:c.parent.document_id,decision:s.candidates[c.parent.document_id]||'not_reviewed',alignment_segment_ids:c.evidence.map(e=>[e.child_segment_id,e.parent_segment_id])}}))}}}});let out={{schema_version:1,reviewer:reviewer.value.trim(),exported_at:new Date().toISOString(),sample:{{seed:DATA.seed,sample_design:DATA.sample_design,candidate_order:DATA.candidate_order}},judgments}};let blob=new Blob([JSON.stringify(out,null,2)],{{type:'application/json'}}),a=document.createElement('a'),name=(reviewer.value.trim()||'unknown').replace(/\\s+/g,'_').toLowerCase();a.href=URL.createObjectURL(blob);a.download=DATA.storage_namespace+'-'+name+'-'+new Date().toISOString().slice(0,10)+'.json';a.click();URL.revokeObjectURL(a.href)}};
 render();</script></body></html>"""
 
 

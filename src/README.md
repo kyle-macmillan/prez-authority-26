@@ -18,3 +18,8 @@ Similarity scores and channel ranks are available behind an explicit toggle so t
 default review remains blinded; candidate tab order stays deterministically shuffled.
 Extended Woolley and Peters ordering phrases are bolded in full documents and in the
 aligned operative-segment excerpts.
+
+The separate legally operative path-dependency pilot is organized under
+`src/path_dependency/` with artifacts under
+`data/parent_analysis/path_dependency_pilot/`. See the README files in those directories
+for the GPU classification and viewer-generation commands.

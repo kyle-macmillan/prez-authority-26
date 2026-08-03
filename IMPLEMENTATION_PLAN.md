@@ -125,6 +125,19 @@ remain provisional pending manual audit:
 - Estimate and qualitatively assess orphanhood.
 - Specify or run the later authority-divergence analysis.
 
+### Legally operative path-dependency comparison pilot
+
+A separate 50-child comparison pilot is implemented under `src/path_dependency/`. It
+uses the codebook's Code 3 definition, two codebook-grounded Qwen classification prompts,
+the existing conservative self-executing rules, and the existing Round 2 majority labels
+for automated validation. It changes child selection only: candidate generation and
+ranking remain identical to the original random pilot. Its outputs are isolated under
+`data/parent_analysis/path_dependency_pilot/operative/`.
+
+The classifier and viewer generator are complete, and the pinned model snapshot is stored
+in the ignored project cache. GPU inference, validation, selection, and final viewer
+materialization remain pending until a CUDA GPU with at least 11 GB VRAM is provisioned.
+
 ### Current resume point
 
 Resume at section 13, step 7 by conducting the 200-child blinded pilot review in

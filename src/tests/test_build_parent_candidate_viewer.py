@@ -48,3 +48,22 @@ def test_payload_preserves_scores_and_alignment_ids():
     assert candidate["evidence"][0]["child_segment_id"] == "2:oa:001"
     assert candidate["evidence"][0]["parent_segment_id"] == "1:oa:001"
     assert payload["children"][0]["child"]["ordering_spans"] == [[0, 13]]
+
+
+def test_payload_keeps_operative_selection_and_separate_namespace():
+    sampled = [{"document_id": "2", "document_type": "letter"}]
+    documents = [{
+        "document_id": "2", "document_type": "letter", "identifier": "",
+        "title": "child", "date": "date", "url": "url",
+        "cleaned_masked_text": "entry is hereby suspended",
+    }]
+    selection = {"2": {"selected_policy": "rule", "model_evidence": "entry is suspended"}}
+    payload = build_payload(
+        sampled, documents, [], {}, selections=selection, sample_prefix="OP",
+        storage_namespace="path-dependency-operative-pilot-v1",
+        sample_design="automated Code 3",
+    )
+    assert payload["children"][0]["sample_id"] == "OP001"
+    assert payload["children"][0]["selection"] == selection["2"]
+    assert payload["storage_namespace"] == "path-dependency-operative-pilot-v1"
+    assert payload["sample_design"] == "automated Code 3"
