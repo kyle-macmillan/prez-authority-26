@@ -29,8 +29,9 @@ It does not prove that the drafter actually consulted or copied it.
 The embedding pipeline was run on an NVIDIA GeForce RTX 2080 Ti with 11,264 MiB of
 memory. GPU smoke tests and full dual-role embedding generation were completed for all
 four directive types. The ranking code has since been revised to exclude W&P phrase
-agreement from RRF, so the prior four-channel ranked output and viewer are superseded and
-must be regenerated. The generated results remain provisional until the cross-type
+agreement from RRF, and the all-corpus ranking, pilot viewer, and Candidate 1–2 score
+distributions have been regenerated under the three-channel rule. The generated results
+remain provisional until the cross-type
 reference extraction, masking, segmentation, and retrieval outputs receive manual
 validation.
 
@@ -97,6 +98,12 @@ validation.
 - Built an interactive masked-document viewer containing 1,994 candidate
   comparisons, highlighted operative-segment alignments, persistent judgments, and JSON
   export.
+- Regenerated the 356,100-pair all-corpus ranking and 200-child pilot viewer under the
+  three-channel RRF rule.
+- Generated the Candidate 1–2 pair-level scores, descriptive summary, and six-panel
+  histogram report. Of 14,295 unresolved children, 14,291 have Candidate 1 and 14,287
+  have Candidate 2; each directive type is missing Candidate 1 for its earliest child and
+  Candidate 2 for its two earliest children.
 
 ### Previous generated build
 
@@ -112,10 +119,8 @@ The previous all-directive build contains:
 
 Generated artifacts are written under `data/parent_analysis/`. Small audit tables and
 embedding provenance may be committed. Large, reproducible JSONL, embedding, candidate-
-pool, and ranked-candidate artifacts are ignored by Git and must be transferred through
-external artifact storage when they need to be shared. The current checkout does not
-contain the JSONL artifacts, candidate pool, embedding arrays, or ranked-candidate CSV
-needed to regenerate and calculate the new Candidate 1–2 distributions. Large source
+pool, ranked-candidate, and distribution artifacts are ignored by Git and must be
+transferred through external artifact storage when they need to be shared. Large source
 datasets are handled the same way; their expected local paths remain stable so the
 pipeline commands do not change.
 
@@ -136,16 +141,6 @@ remain provisional pending manual audit:
 
 ### Not yet completed
 
-- Restore the provenance-matched document and operative-segment JSONL files, document and
-  operative-segment embedding arrays, and embedding candidate pool from external artifact
-  storage, or regenerate them with the pinned model and revision.
-- Run `python src/rank_candidate_pool.py` to produce the all-corpus three-channel ranking.
-- Run `python src/analysis/candidate_score_distributions.py` to write the Candidate 1–2
-  pair-level CSV, summary CSV, and six-panel histogram report.
-- Rebuild the 200-child viewer so its candidate order and top-10 set use three-channel
-  RRF; do not treat the existing four-channel viewer as current.
-- Inspect and report the Candidate 1–2 distributions and reconcile their counts with the
-  14,295 unresolved children, including children without an eligible Candidate 1 or 2.
 - Collect parent-or-none judgments and explanations.
 - Estimate and qualitatively assess orphanhood.
 - Specify or run the later authority-divergence analysis.
@@ -614,9 +609,9 @@ must not affect parent selection.
      all eligible candidates when fewer than 25 exist.
    - [x] Compute the three fusion rankings and the separate diagnostic W&P ranking.
    - [x] Implement three-channel unweighted RRF (`k=20`) and top-10 selection.
-   - [ ] Restore or regenerate the ignored runtime artifacts and rerun the all-corpus
+   - [x] Restore or regenerate the ignored runtime artifacts and rerun the all-corpus
      ranking under the three-channel rule.
-   - [ ] Generate and inspect the Candidate 1–2 score distributions.
+   - [x] Generate and inspect the Candidate 1–2 score distributions.
 
 7. **Build the 200-child pilot and viewer**
    - [x] Draw a reproducible random sample of 50 unresolved children from each of the four
@@ -624,7 +619,7 @@ must not affect parent selection.
    - [x] Build the interactive masked-document viewer.
    - [x] For every sampled child, present up to 10 same-type candidates with highlighted
      operative-segment matches, or every available candidate if fewer than 10 exist.
-   - [ ] Rebuild the viewer with the regenerated three-channel candidate ordering.
+   - [x] Rebuild the viewer with the regenerated three-channel candidate ordering.
    - [ ] Collect candidate-level parent/not-parent judgments, child-level `none` judgments,
      multiple-parent selections, and explanations.
 
