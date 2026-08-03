@@ -79,6 +79,11 @@ extraction, masking, segmentation, and retrieval outputs receive manual validati
   3-gram TF-IDF, 10-word-minimum text-reuse, and top-three operative-embedding rankings.
 - Fused the four rankings with unweighted RRF using `k=20` and selected up to 10
   candidates per child.
+- Drew a reproducible, holdout-excluding pilot sample of 50 unresolved children per
+  directive type (200 children total).
+- Built a blinded interactive masked-document viewer containing 1,994 candidate
+  comparisons, highlighted operative-segment alignments, persistent judgments, and JSON
+  export.
 
 ### Current generated results
 
@@ -116,21 +121,16 @@ remain provisional pending manual audit:
 
 ### Not yet completed
 
-- Draw reproducible random samples of 50 unresolved children per directive type
-  (200 children total).
-- Build an interactive masked-document viewer for analyzing each sampled child and each
-  of its available candidate parents, up to 10, with highlighted operative-segment
-  matches.
 - Collect parent-or-none judgments and explanations.
 - Estimate and qualitatively assess orphanhood.
 - Specify or run the later authority-divergence analysis.
 
 ### Current resume point
 
-Resume at section 13, step 7. Draw 50 unresolved children per directive type and build the
-interactive masked-document viewer around their fused candidate lists. Generalized
-artifacts, embeddings, the 356,100-pair embedding gate, and all within-pool scores and
-ranks are stored in `data/parent_analysis/`.
+Resume at section 13, step 7 by conducting the 200-child blinded pilot review in
+`data/parent_analysis/pilot/parent_candidate_viewer.html`. Generalized artifacts,
+embeddings, the 356,100-pair embedding gate, and all within-pool scores and ranks are
+stored in `data/parent_analysis/`.
 
 ## 2. Parent definition
 
@@ -567,12 +567,12 @@ must not affect parent selection.
    - [x] Fuse them with unweighted RRF (`k=20`) and select up to 10.
 
 7. **Build the 200-child pilot and viewer**
-   - Draw a reproducible random sample of 50 unresolved children from each of the four
+   - [x] Draw a reproducible random sample of 50 unresolved children from each of the four
      directive types.
-   - Build the interactive masked-document viewer.
-   - For every sampled child, present up to 10 same-type candidates with highlighted
+   - [x] Build the interactive masked-document viewer.
+   - [x] For every sampled child, present up to 10 same-type candidates with highlighted
      operative-segment matches, or every available candidate if fewer than 10 exist.
-   - Collect candidate-level parent/not-parent judgments, child-level `none` judgments,
+   - [ ] Collect candidate-level parent/not-parent judgments, child-level `none` judgments,
      multiple-parent selections, and explanations.
 
 8. **Evaluate and revise**

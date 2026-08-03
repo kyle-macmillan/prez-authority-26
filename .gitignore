@@ -26,6 +26,7 @@ data/parent_analysis/embeddings/*.npz
 /data/parent_analysis/*_operative_segments.jsonl
 /data/parent_analysis/embedding_candidate_pool.csv
 /data/parent_analysis/ranked_candidates.csv
+/data/parent_analysis/pilot/parent_candidate_viewer.html
 
 node_modules/
 

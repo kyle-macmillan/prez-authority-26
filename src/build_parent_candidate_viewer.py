@@ -1,0 +1,254 @@
+#!/usr/bin/env python3
+"""Build the blinded 200-child parent-candidate pilot viewer."""
+
+from __future__ import annotations
+
+import argparse
+import csv
+import html
+import json
+import random
+from collections import Counter, defaultdict
+from pathlib import Path
+
+
+ROOT = Path(__file__).resolve().parents[1]
+DEFAULT_INPUT = ROOT / "data" / "parent_analysis"
+DEFAULT_OUTPUT = DEFAULT_INPUT / "pilot"
+DEFAULT_HOLDOUT = ROOT / "data" / "holdout_ids.json"
+SEED = 20260803
+PER_TYPE = 50
+TYPE_ORDER = ("executive_order", "memorandum", "proclamation", "letter")
+TYPE_LABELS = {
+    "executive_order": "Executive orders",
+    "memorandum": "Memoranda",
+    "proclamation": "Proclamations",
+    "letter": "Letters",
+}
+
+
+def read_jsonl(path: Path) -> list[dict]:
+    with path.open(encoding="utf-8") as handle:
+        return [json.loads(line) for line in handle]
+
+
+def select_sample(
+    unresolved: list[dict], holdout_ids: set[str], seed: int = SEED,
+    per_type: int = PER_TYPE,
+) -> list[dict]:
+    """Sample the same number of non-holdout unresolved children per type."""
+    pools: dict[str, list[dict]] = defaultdict(list)
+    for row in unresolved:
+        if str(row["document_id"]) not in holdout_ids:
+            pools[row["document_type"]].append(row)
+    rng = random.Random(seed)
+    selected: list[dict] = []
+    for document_type in TYPE_ORDER:
+        pool = sorted(pools[document_type], key=lambda row: int(row["document_id"]))
+        if len(pool) < per_type:
+            raise ValueError(f"{document_type} has only {len(pool)} eligible children")
+        chosen = rng.sample(pool, per_type)
+        rng.shuffle(chosen)
+        selected.extend(chosen)
+    return selected
+
+
+def _candidate_rows(path: Path, sampled_ids: set[str]) -> dict[str, list[dict]]:
+    candidates: dict[str, list[dict]] = defaultdict(list)
+    with path.open(newline="", encoding="utf-8") as handle:
+        for row in csv.DictReader(handle):
+            if row["child_id"] in sampled_ids and row["selected_top_10"].lower() == "true":
+                candidates[row["child_id"]].append(row)
+    for child_id, rows in candidates.items():
+        rows.sort(key=lambda row: int(row["rrf_rank"]))
+    return candidates
+
+
+def _alignment_evidence(
+    row: dict, segments: dict[str, list[dict]],
+) -> list[dict]:
+    child_segments = segments.get(row["child_id"], [])
+    parent_segments = segments.get(row["parent_id"], [])
+    evidence = []
+    for child_index, parent_index, _score in json.loads(row["operative_alignments"]):
+        if child_index >= len(child_segments) or parent_index >= len(parent_segments):
+            raise ValueError(
+                f"alignment index out of range for {row['child_id']} -> {row['parent_id']}"
+            )
+        child = child_segments[child_index]
+        parent = parent_segments[parent_index]
+        evidence.append({
+            "child_segment_id": child["segment_id"],
+            "parent_segment_id": parent["segment_id"],
+            "child_text": child["text"],
+            "parent_text": parent["text"],
+        })
+    return evidence
+
+
+def build_payload(
+    sampled: list[dict], documents: list[dict], segment_rows: list[dict],
+    candidates: dict[str, list[dict]], seed: int = SEED,
+) -> dict:
+    """Create a browser payload without exposing ranks or similarity scores."""
+    documents_by_id = {str(row["document_id"]): row for row in documents}
+    segments: dict[str, list[dict]] = defaultdict(list)
+    for row in segment_rows:
+        segments[str(row["document_id"])].append(row)
+    for rows in segments.values():
+        rows.sort(key=lambda row: int(row["segment_index"]))
+
+    children = []
+    for display_index, sample_row in enumerate(sampled, 1):
+        child_id = str(sample_row["document_id"])
+        child = documents_by_id[child_id]
+        candidate_rows = list(candidates.get(child_id, []))
+        random.Random(f"{seed}:{child_id}").shuffle(candidate_rows)
+        displayed = []
+        for candidate_row in candidate_rows:
+            parent_id = candidate_row["parent_id"]
+            parent = documents_by_id[parent_id]
+            displayed.append({
+                "parent": _document_payload(parent),
+                "evidence": _alignment_evidence(candidate_row, segments),
+            })
+        children.append({
+            "sample_id": f"PC{display_index:03d}",
+            "child": _document_payload(child),
+            "candidates": displayed,
+        })
+    return {
+        "schema_version": 1,
+        "seed": seed,
+        "per_type": PER_TYPE,
+        "candidate_order": "deterministically shuffled; retrieval ranks blinded",
+        "children": children,
+    }
+
+
+def _document_payload(row: dict) -> dict:
+    return {
+        "document_id": str(row["document_id"]),
+        "document_type": row["document_type"],
+        "identifier": row.get("identifier", ""),
+        "title": row.get("title", ""),
+        "date": row.get("date", ""),
+        "url": row.get("url", ""),
+        "text": row["cleaned_masked_text"],
+    }
+
+
+def _safe_json(data: object) -> str:
+    return json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
+
+
+def build_html(payload: dict) -> str:
+    data = _safe_json(payload)
+    return f"""<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Parent candidate review</title>
+<style>
+:root{{--ink:#172033;--muted:#667085;--line:#d8dee9;--paper:#fff;--wash:#f4f7fb;--accent:#225ea8;--yes:#18794e;--no:#b42318}}
+*{{box-sizing:border-box}} body{{margin:0;font:14px/1.45 system-ui,sans-serif;color:var(--ink);background:var(--wash)}}
+button,input,textarea{{font:inherit}} button{{cursor:pointer}} .top{{position:sticky;top:0;z-index:5;display:flex;gap:12px;align-items:center;padding:10px 16px;background:#172033;color:#fff}}
+.top h1{{font-size:18px;margin:0 auto 0 0}} .top input{{width:170px;padding:6px}} .top button{{padding:7px 11px;border:0;border-radius:5px}}
+.layout{{display:grid;grid-template-columns:245px minmax(0,1fr);height:calc(100vh - 52px)}}
+.sidebar{{overflow:auto;border-right:1px solid var(--line);background:#fff;padding:10px}} .type-title{{font-weight:750;margin:12px 5px 5px}}
+.child-nav{{display:block;width:100%;text-align:left;border:0;border-radius:5px;background:transparent;padding:7px;color:var(--ink)}} .child-nav:hover,.child-nav.active{{background:#dbeafe}} .child-nav.done::after{{content:' ✓';color:var(--yes);font-weight:bold}}
+.main{{overflow:auto;padding:16px}} .head-card,.decision,.doc{{background:#fff;border:1px solid var(--line);border-radius:8px}}
+.head-card{{padding:12px;margin-bottom:12px}} h2{{margin:0 0 4px;font-size:19px}} .meta{{color:var(--muted)}} .candidate-tabs{{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0}}
+.candidate-tab{{border:1px solid var(--line);background:#fff;border-radius:6px;padding:6px 10px}} .candidate-tab.active{{color:#fff;background:var(--accent)}} .candidate-tab.yes{{border-color:var(--yes)}} .candidate-tab.no{{border-color:var(--no)}}
+.compare{{display:grid;grid-template-columns:1fr 1fr;gap:12px}} .doc{{min-width:0}} .doc-head{{padding:10px 12px;border-bottom:1px solid var(--line)}} .doc-text{{white-space:pre-wrap;padding:14px;max-height:52vh;overflow:auto;font-family:Georgia,serif;font-size:15px;line-height:1.58}}
+mark.m0{{background:#fff2a8}} mark.m1{{background:#c9f1e5}} mark.m2{{background:#dbeafe}} .evidence{{grid-column:1/-1;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px}} .pair{{display:grid;grid-template-columns:1fr 1fr;gap:12px;border-top:1px solid var(--line);padding:10px 0}} .pair:first-of-type{{border:0}}
+.decision{{padding:12px;margin-top:12px}} .choice{{border:1px solid var(--line);background:#fff;border-radius:6px;padding:7px 13px;margin-right:6px}} .choice.active.yes{{background:var(--yes);color:#fff}} .choice.active.no{{background:var(--no);color:#fff}} textarea{{display:block;width:100%;min-height:70px;margin-top:9px;padding:8px;border:1px solid var(--line);border-radius:5px}}
+.none-row{{margin-top:12px;padding-top:10px;border-top:1px solid var(--line)}} .empty{{padding:30px;background:#fff;border:1px solid var(--line)}}
+@media(max-width:900px){{.layout{{grid-template-columns:1fr;height:auto}}.sidebar{{max-height:220px;border-right:0}}.compare,.pair{{grid-template-columns:1fr}}.main{{overflow:visible}}}}
+</style></head><body>
+<div class="top"><h1>Parent candidate review</h1><span id="progress"></span><label>Reviewer <input id="reviewer"></label><button id="export">Export JSON</button></div>
+<div class="layout"><nav class="sidebar" id="sidebar"></nav><main class="main" id="main"></main></div>
+<script>const DATA={data};
+const STORE='parent-candidate-pilot-v1-'+DATA.seed; const NAME=STORE+'-reviewer';
+const sidebar=document.getElementById('sidebar'), main=document.getElementById('main');
+const progress=document.getElementById('progress'), reviewer=document.getElementById('reviewer');
+const exportButton=document.getElementById('export');
+let state=JSON.parse(localStorage.getItem(STORE)||'{{}}'), ci=0, pi=0;
+const esc=s=>String(s??'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+const save=()=>{{localStorage.setItem(STORE,JSON.stringify(state));renderSidebar();renderProgress()}};
+const childState=id=>state[id]||(state[id]={{candidates:{{}},none:false,explanation:''}});
+function title(d){{return d.title||d.identifier||('Document '+d.document_id)}}
+function meta(d){{return [d.document_type.replaceAll('_',' '),d.identifier,d.date,'ID '+d.document_id].filter(Boolean).join(' · ')}}
+function highlighted(text,evidence,side){{
+ let spans=[]; evidence.forEach((e,i)=>{{let needle=e[side+'_text'],start=0,pos;while(needle&&(pos=text.indexOf(needle,start))>=0){{spans.push([pos,pos+needle.length,i]);start=pos+needle.length}}}});
+ spans.sort((a,b)=>a[0]-b[0]||b[1]-a[1]); let out='',pos=0; spans.forEach(s=>{{if(s[0]<pos)return;out+=esc(text.slice(pos,s[0]))+'<mark class="m'+Math.min(s[2],2)+'">'+esc(text.slice(s[0],s[1]))+'</mark>';pos=s[1]}}); return out+esc(text.slice(pos));
+}}
+function renderSidebar(){{
+ let out='',last=''; DATA.children.forEach((x,i)=>{{let type=x.child.document_type;if(type!==last){{out+='<div class="type-title">'+esc(type.replaceAll('_',' '))+'</div>';last=type}}let s=state[x.child.document_id],done=s&&(s.none||Object.keys(s.candidates||{{}}).length===x.candidates.length)&&s.explanation?.trim();out+='<button class="child-nav '+(i===ci?'active ':'')+(done?'done':'')+'" data-i="'+i+'">'+esc(x.sample_id)+' · '+esc(title(x.child).slice(0,27))+'</button>'}}); sidebar.innerHTML=out;sidebar.querySelectorAll('button').forEach(b=>b.onclick=()=>{{ci=+b.dataset.i;pi=0;render()}})
+}}
+function renderProgress(){{let answered=0,total=0;DATA.children.forEach(x=>{{total+=x.candidates.length;let s=state[x.child.document_id];if(s)answered+=Object.keys(s.candidates||{{}}).length}});progress.textContent=answered+' / '+total+' pairs judged'}}
+function render(){{renderSidebar();renderProgress();let x=DATA.children[ci],s=childState(x.child.document_id);if(!x.candidates.length){{main.innerHTML='<div class="empty"><h2>'+esc(x.sample_id)+' · '+esc(title(x.child))+'</h2><p>No eligible earlier candidate was available.</p>'+decisionHtml(x,s,null)+'</div>';wire(x,s,null);return}}pi=Math.min(pi,x.candidates.length-1);let c=x.candidates[pi],p=c.parent;
+ let tabs=x.candidates.map((z,i)=>{{let v=s.candidates[z.parent.document_id];return '<button class="candidate-tab '+(i===pi?'active ':'')+(v||'')+'" data-p="'+i+'">Candidate '+(i+1)+'</button>'}}).join('');
+ let pairs=c.evidence.map((e,i)=>'<div class="pair"><div><b>Child segment '+(i+1)+'</b><br>'+esc(e.child_text)+'</div><div><b>Candidate segment '+(i+1)+'</b><br>'+esc(e.parent_text)+'</div></div>').join('')||'<p>No operative-segment alignment available.</p>';
+ main.innerHTML='<section class="head-card"><h2>'+esc(x.sample_id)+' · '+esc(title(x.child))+'</h2><div class="meta">'+esc(meta(x.child))+'</div><div class="candidate-tabs">'+tabs+'</div></section><div class="compare"><article class="doc"><div class="doc-head"><b>Child</b><br>'+esc(title(x.child))+'<div class="meta">'+esc(meta(x.child))+'</div></div><div class="doc-text">'+highlighted(x.child.text,c.evidence,'child')+'</div></article><article class="doc"><div class="doc-head"><b>Candidate parent '+(pi+1)+'</b><br>'+esc(title(p))+'<div class="meta">'+esc(meta(p))+'</div></div><div class="doc-text">'+highlighted(p.text,c.evidence,'parent')+'</div></article><section class="evidence"><b>Strongest operative-segment matches</b>'+pairs+'</section></div>'+decisionHtml(x,s,p);
+ main.querySelectorAll('.candidate-tab').forEach(b=>b.onclick=()=>{{pi=+b.dataset.p;render()}});wire(x,s,p)
+}}
+function decisionHtml(x,s,p){{let v=p?(s.candidates[p.document_id]||''):'';return '<section class="decision">'+(p?'<b>Is this candidate a drafting parent?</b><div><button class="choice yes '+(v==='yes'?'active yes':'')+'" data-value="yes">Parent</button><button class="choice no '+(v==='no'?'active no':'')+'" data-value="no">Not parent</button></div>':'')+'<label class="none-row"><input type="checkbox" id="none" '+(s.none?'checked':'')+'> None of this child’s candidates is a parent</label><textarea id="explanation" placeholder="Brief explanation for the final parent selection or none decision">'+esc(s.explanation)+'</textarea></section>'}}
+function wire(x,s,p){{document.querySelectorAll('.choice').forEach(b=>b.onclick=()=>{{s.candidates[p.document_id]=b.dataset.value;if(b.dataset.value==='yes')s.none=false;save();render()}});let n=document.getElementById('none');n.onchange=()=>{{s.none=n.checked;if(s.none)Object.keys(s.candidates).forEach(k=>s.candidates[k]='no');save();render()}};let t=document.getElementById('explanation');t.oninput=()=>{{s.explanation=t.value;save()}}}}
+reviewer.value=localStorage.getItem(NAME)||'';reviewer.oninput=()=>localStorage.setItem(NAME,reviewer.value);
+exportButton.onclick=()=>{{let judgments=DATA.children.map(x=>{{let s=state[x.child.document_id]||{{candidates:{{}},none:false,explanation:''}};return {{sample_id:x.sample_id,child_id:x.child.document_id,document_type:x.child.document_type,none:s.none,explanation:s.explanation,candidates:x.candidates.map(c=>({{parent_id:c.parent.document_id,decision:s.candidates[c.parent.document_id]||'not_reviewed',alignment_segment_ids:c.evidence.map(e=>[e.child_segment_id,e.parent_segment_id])}}))}}}});let out={{schema_version:1,reviewer:reviewer.value.trim(),exported_at:new Date().toISOString(),sample:{{seed:DATA.seed,per_type:DATA.per_type,candidate_order:DATA.candidate_order}},judgments}};let blob=new Blob([JSON.stringify(out,null,2)],{{type:'application/json'}}),a=document.createElement('a'),name=(reviewer.value.trim()||'unknown').replace(/\\s+/g,'_').toLowerCase();a.href=URL.createObjectURL(blob);a.download='parent-candidate-review-'+name+'-'+new Date().toISOString().slice(0,10)+'.json';a.click();URL.revokeObjectURL(a.href)}};
+render();</script></body></html>"""
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--input-dir", type=Path, default=DEFAULT_INPUT)
+    parser.add_argument("--output-dir", type=Path, default=DEFAULT_OUTPUT)
+    parser.add_argument("--holdout-ids", type=Path, default=DEFAULT_HOLDOUT)
+    parser.add_argument("--seed", type=int, default=SEED)
+    parser.add_argument("--per-type", type=int, default=PER_TYPE)
+    args = parser.parse_args()
+
+    with (args.input_dir / "unresolved_children.csv").open(newline="", encoding="utf-8") as handle:
+        unresolved = list(csv.DictReader(handle))
+    holdout_ids = {str(value) for value in json.loads(args.holdout_ids.read_text())}
+    sampled = select_sample(unresolved, holdout_ids, args.seed, args.per_type)
+    sampled_ids = {str(row["document_id"]) for row in sampled}
+    candidates = _candidate_rows(args.input_dir / "ranked_candidates.csv", sampled_ids)
+    documents = read_jsonl(args.input_dir / "directive_similarity_documents.jsonl")
+    segments = read_jsonl(args.input_dir / "directive_operative_segments.jsonl")
+    payload = build_payload(sampled, documents, segments, candidates, args.seed)
+
+    args.output_dir.mkdir(parents=True, exist_ok=True)
+    viewer_path = args.output_dir / "parent_candidate_viewer.html"
+    manifest_path = args.output_dir / "sample_manifest.json"
+    sample_path = args.output_dir / "sampled_children.csv"
+    viewer_path.write_text(build_html(payload), encoding="utf-8")
+    manifest = {
+        "seed": args.seed,
+        "per_type": args.per_type,
+        "sample_size": len(sampled),
+        "sample_counts_by_type": dict(Counter(row["document_type"] for row in sampled)),
+        "holdout_count": len(holdout_ids),
+        "sampled_holdout_overlap": sorted(sampled_ids & holdout_ids),
+        "candidate_comparisons": sum(len(row["candidates"]) for row in payload["children"]),
+        "candidate_order": payload["candidate_order"],
+        "inputs": {
+            "unresolved_children": "data/parent_analysis/unresolved_children.csv",
+            "ranked_candidates": "data/parent_analysis/ranked_candidates.csv",
+            "documents": "data/parent_analysis/directive_similarity_documents.jsonl",
+            "segments": "data/parent_analysis/directive_operative_segments.jsonl",
+            "holdout_ids": "data/holdout_ids.json",
+        },
+        "sampled_ids": [str(row["document_id"]) for row in sampled],
+    }
+    manifest_path.write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
+    with sample_path.open("w", newline="", encoding="utf-8") as handle:
+        writer = csv.DictWriter(handle, fieldnames=list(sampled[0]))
+        writer.writeheader(); writer.writerows(sampled)
+    print(f"Wrote {viewer_path} ({len(sampled)} children, {manifest['candidate_comparisons']} comparisons)")
+    print(f"Wrote {manifest_path}")
+    print(f"Wrote {sample_path}")
+
+
+if __name__ == "__main__":
+    main()
