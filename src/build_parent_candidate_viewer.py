@@ -11,6 +11,8 @@ import random
 from collections import Counter, defaultdict
 from pathlib import Path
 
+from segmenter import _get_ordering_re
+
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_INPUT = ROOT / "data" / "parent_analysis"
@@ -82,6 +84,8 @@ def _alignment_evidence(
             "parent_segment_id": parent["segment_id"],
             "child_text": child["text"],
             "parent_text": parent["text"],
+            "child_ordering_spans": _ordering_spans(child["text"]),
+            "parent_ordering_spans": _ordering_spans(parent["text"]),
         })
     return evidence
 
@@ -111,6 +115,26 @@ def build_payload(
             displayed.append({
                 "parent": _document_payload(parent),
                 "evidence": _alignment_evidence(candidate_row, segments),
+                "scores": {
+                    "document_embedding": _score_rank(
+                        candidate_row, "document_embedding_score", "document_embedding_rank"
+                    ),
+                    "operative_embedding": _score_rank(
+                        candidate_row, "operative_embedding_score", "operative_embedding_rank"
+                    ),
+                    "bm25": _score_rank(candidate_row, "bm25_score", "bm25_rank"),
+                    "word_trigram": _score_rank(
+                        candidate_row, "word_trigram_tfidf_score", "word_trigram_rank"
+                    ),
+                    "text_reuse": _score_rank(
+                        candidate_row, "text_reuse_words", "text_reuse_rank"
+                    ),
+                    "rrf": {
+                        "score": float(candidate_row["rrf_score"]),
+                        "rank": int(candidate_row["rrf_rank"]),
+                        "k": int(candidate_row["rrf_k"]),
+                    },
+                },
             })
         children.append({
             "sample_id": f"PC{display_index:03d}",
@@ -135,6 +159,18 @@ def _document_payload(row: dict) -> dict:
         "date": row.get("date", ""),
         "url": row.get("url", ""),
         "text": row["cleaned_masked_text"],
+        "ordering_spans": _ordering_spans(row["cleaned_masked_text"]),
+    }
+
+
+def _ordering_spans(text: str) -> list[list[int]]:
+    return [[match.start(), match.end()] for match in _get_ordering_re(extended=True).finditer(text)]
+
+
+def _score_rank(row: dict, score_field: str, rank_field: str) -> dict:
+    return {
+        "score": float(row[score_field]) if row[score_field] != "" else None,
+        "rank": int(row[rank_field]) if row[rank_field] != "" else None,
     }
 
 
@@ -159,6 +195,8 @@ button,input,textarea{{font:inherit}} button{{cursor:pointer}} .top{{position:st
 .main{{overflow:auto;padding:16px}} .head-card,.decision,.doc{{background:#fff;border:1px solid var(--line);border-radius:8px}}
 .head-card{{padding:12px;margin-bottom:12px}} h2{{margin:0 0 4px;font-size:19px}} .meta{{color:var(--muted)}} .candidate-tabs{{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0}}
 .candidate-tab{{border:1px solid var(--line);background:#fff;border-radius:6px;padding:6px 10px}} .candidate-tab.active{{color:#fff;background:var(--accent)}} .candidate-tab.yes{{border-color:var(--yes)}} .candidate-tab.no{{border-color:var(--no)}}
+.score-toggle{{border:1px solid var(--accent);color:var(--accent);background:#fff;border-radius:6px;padding:6px 10px}} .score-toggle.active{{background:var(--accent);color:#fff}}
+.scores{{display:none;margin-top:10px;padding-top:10px;border-top:1px solid var(--line)}} .scores.visible{{display:block}} .score-grid{{display:grid;grid-template-columns:repeat(3,minmax(150px,1fr));gap:8px}} .score-card{{background:var(--wash);border-radius:6px;padding:8px}} .score-value{{font-size:18px;font-weight:750}} .score-help{{font-size:12px;color:var(--muted)}}
 .compare{{display:grid;grid-template-columns:1fr 1fr;gap:12px}} .doc{{min-width:0}} .doc-head{{padding:10px 12px;border-bottom:1px solid var(--line)}} .doc-text{{white-space:pre-wrap;padding:14px;max-height:52vh;overflow:auto;font-family:Georgia,serif;font-size:15px;line-height:1.58}}
 mark.m0{{background:#fff2a8}} mark.m1{{background:#c9f1e5}} mark.m2{{background:#dbeafe}} .evidence{{grid-column:1/-1;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px}} .pair{{display:grid;grid-template-columns:1fr 1fr;gap:12px;border-top:1px solid var(--line);padding:10px 0}} .pair:first-of-type{{border:0}}
 .decision{{padding:12px;margin-top:12px}} .choice{{border:1px solid var(--line);background:#fff;border-radius:6px;padding:7px 13px;margin-right:6px}} .choice.active.yes{{background:var(--yes);color:#fff}} .choice.active.no{{background:var(--no);color:#fff}} textarea{{display:block;width:100%;min-height:70px;margin-top:9px;padding:8px;border:1px solid var(--line);border-radius:5px}}
@@ -169,6 +207,7 @@ mark.m0{{background:#fff2a8}} mark.m1{{background:#c9f1e5}} mark.m2{{background:
 <div class="layout"><nav class="sidebar" id="sidebar"></nav><main class="main" id="main"></main></div>
 <script>const DATA={data};
 const STORE='parent-candidate-pilot-v1-'+DATA.seed; const NAME=STORE+'-reviewer';
+const SCORE_KEY=STORE+'-show-scores';
 const sidebar=document.getElementById('sidebar'), main=document.getElementById('main');
 const progress=document.getElementById('progress'), reviewer=document.getElementById('reviewer');
 const exportButton=document.getElementById('export');
@@ -178,9 +217,20 @@ const save=()=>{{localStorage.setItem(STORE,JSON.stringify(state));renderSidebar
 const childState=id=>state[id]||(state[id]={{candidates:{{}},none:false,explanation:''}});
 function title(d){{return d.title||d.identifier||('Document '+d.document_id)}}
 function meta(d){{return [d.document_type.replaceAll('_',' '),d.identifier,d.date,'ID '+d.document_id].filter(Boolean).join(' · ')}}
-function highlighted(text,evidence,side){{
- let spans=[]; evidence.forEach((e,i)=>{{let needle=e[side+'_text'],start=0,pos;while(needle&&(pos=text.indexOf(needle,start))>=0){{spans.push([pos,pos+needle.length,i]);start=pos+needle.length}}}});
- spans.sort((a,b)=>a[0]-b[0]||b[1]-a[1]); let out='',pos=0; spans.forEach(s=>{{if(s[0]<pos)return;out+=esc(text.slice(pos,s[0]))+'<mark class="m'+Math.min(s[2],2)+'">'+esc(text.slice(s[0],s[1]))+'</mark>';pos=s[1]}}); return out+esc(text.slice(pos));
+function fmt(v,n){{return v==null?'not available':Number(v).toFixed(n)}}
+function scoreHtml(c){{let s=c.scores,shown=localStorage.getItem(SCORE_KEY)==='1';return '<button class="score-toggle '+(shown?'active':'')+'" id="score-toggle">'+(shown?'Hide':'Show')+' similarity scores</button><div class="scores '+(shown?'visible':'')+'"><div class="score-grid">'+
+  scoreCard('Document embedding',fmt(s.document_embedding.score,3),'Gate rank '+s.document_embedding.rank+' of up to 25','Cosine similarity of complete masked documents')+
+  scoreCard('Operative embedding',fmt(s.operative_embedding.score,3),'Rank '+s.operative_embedding.rank+' of 25','Mean of three strongest segment alignments')+
+  scoreCard('3-gram similarity',fmt(s.word_trigram.score,3),'Rank '+s.word_trigram.rank+' of 25','Case-sensitive word 3-gram TF-IDF')+
+  scoreCard('BM25',fmt(s.bm25.score,1),'Rank '+s.bm25.rank+' of 25','Lexical relevance; scale varies by child')+
+  scoreCard('Text reuse',fmt(s.text_reuse.score,0)+' words','Rank '+s.text_reuse.rank+' of 25','Unique child words in qualifying reused passages')+
+  scoreCard('Fused result','Rank '+s.rrf.rank,fmt(s.rrf.score,4)+' RRF score','Unweighted rank fusion with k='+s.rrf.k)+
+  '</div><p class="score-help">Cosine and lexical scores are evidence, not probabilities that this candidate is a parent. Candidate tabs remain shuffled.</p></div>'}}
+function scoreCard(label,value,rank,help){{return '<div class="score-card"><b>'+label+'</b><div class="score-value">'+value+'</div><div>'+rank+'</div><div class="score-help">'+help+'</div></div>'}}
+function highlighted(doc,evidence,side){{let text=doc.text,marks=[];evidence.forEach((e,i)=>{{let needle=e[side+'_text'],start=0,pos;while(needle&&(pos=text.indexOf(needle,start))>=0){{marks.push([pos,pos+needle.length,i]);start=pos+needle.length}}}});return styledText(text,doc.ordering_spans,marks)}}
+function styledText(text,boldSpans,marks=[]){{
+ let bounds=new Set([0,text.length]);boldSpans.forEach(s=>{{bounds.add(s[0]);bounds.add(s[1])}});marks.forEach(s=>{{bounds.add(s[0]);bounds.add(s[1])}});let points=Array.from(bounds).sort((a,b)=>a-b),out='';
+ for(let i=0;i<points.length-1;i++){{let a=points[i],b=points[i+1],part=esc(text.slice(a,b)),bold=boldSpans.some(s=>s[0]<=a&&s[1]>=b),mark=marks.find(s=>s[0]<=a&&s[1]>=b);if(bold)part='<strong>'+part+'</strong>';if(mark)part='<mark class="m'+Math.min(mark[2],2)+'">'+part+'</mark>';out+=part}}return out
 }}
 function renderSidebar(){{
  let out='',last=''; DATA.children.forEach((x,i)=>{{let type=x.child.document_type;if(type!==last){{out+='<div class="type-title">'+esc(type.replaceAll('_',' '))+'</div>';last=type}}let s=state[x.child.document_id],done=s&&(s.none||Object.keys(s.candidates||{{}}).length===x.candidates.length)&&s.explanation?.trim();out+='<button class="child-nav '+(i===ci?'active ':'')+(done?'done':'')+'" data-i="'+i+'">'+esc(x.sample_id)+' · '+esc(title(x.child).slice(0,27))+'</button>'}}); sidebar.innerHTML=out;sidebar.querySelectorAll('button').forEach(b=>b.onclick=()=>{{ci=+b.dataset.i;pi=0;render()}})
@@ -188,9 +238,9 @@ function renderSidebar(){{
 function renderProgress(){{let answered=0,total=0;DATA.children.forEach(x=>{{total+=x.candidates.length;let s=state[x.child.document_id];if(s)answered+=Object.keys(s.candidates||{{}}).length}});progress.textContent=answered+' / '+total+' pairs judged'}}
 function render(){{renderSidebar();renderProgress();let x=DATA.children[ci],s=childState(x.child.document_id);if(!x.candidates.length){{main.innerHTML='<div class="empty"><h2>'+esc(x.sample_id)+' · '+esc(title(x.child))+'</h2><p>No eligible earlier candidate was available.</p>'+decisionHtml(x,s,null)+'</div>';wire(x,s,null);return}}pi=Math.min(pi,x.candidates.length-1);let c=x.candidates[pi],p=c.parent;
  let tabs=x.candidates.map((z,i)=>{{let v=s.candidates[z.parent.document_id];return '<button class="candidate-tab '+(i===pi?'active ':'')+(v||'')+'" data-p="'+i+'">Candidate '+(i+1)+'</button>'}}).join('');
- let pairs=c.evidence.map((e,i)=>'<div class="pair"><div><b>Child segment '+(i+1)+'</b><br>'+esc(e.child_text)+'</div><div><b>Candidate segment '+(i+1)+'</b><br>'+esc(e.parent_text)+'</div></div>').join('')||'<p>No operative-segment alignment available.</p>';
- main.innerHTML='<section class="head-card"><h2>'+esc(x.sample_id)+' · '+esc(title(x.child))+'</h2><div class="meta">'+esc(meta(x.child))+'</div><div class="candidate-tabs">'+tabs+'</div></section><div class="compare"><article class="doc"><div class="doc-head"><b>Child</b><br>'+esc(title(x.child))+'<div class="meta">'+esc(meta(x.child))+'</div></div><div class="doc-text">'+highlighted(x.child.text,c.evidence,'child')+'</div></article><article class="doc"><div class="doc-head"><b>Candidate parent '+(pi+1)+'</b><br>'+esc(title(p))+'<div class="meta">'+esc(meta(p))+'</div></div><div class="doc-text">'+highlighted(p.text,c.evidence,'parent')+'</div></article><section class="evidence"><b>Strongest operative-segment matches</b>'+pairs+'</section></div>'+decisionHtml(x,s,p);
- main.querySelectorAll('.candidate-tab').forEach(b=>b.onclick=()=>{{pi=+b.dataset.p;render()}});wire(x,s,p)
+ let pairs=c.evidence.map((e,i)=>'<div class="pair"><div><b>Child segment '+(i+1)+'</b><br>'+styledText(e.child_text,e.child_ordering_spans)+'</div><div><b>Candidate segment '+(i+1)+'</b><br>'+styledText(e.parent_text,e.parent_ordering_spans)+'</div></div>').join('')||'<p>No operative-segment alignment available.</p>';
+ main.innerHTML='<section class="head-card"><h2>'+esc(x.sample_id)+' · '+esc(title(x.child))+'</h2><div class="meta">'+esc(meta(x.child))+'</div><div class="candidate-tabs">'+tabs+'</div>'+scoreHtml(c)+'</section><div class="compare"><article class="doc"><div class="doc-head"><b>Child</b><br>'+esc(title(x.child))+'<div class="meta">'+esc(meta(x.child))+'</div></div><div class="doc-text">'+highlighted(x.child,c.evidence,'child')+'</div></article><article class="doc"><div class="doc-head"><b>Candidate parent '+(pi+1)+'</b><br>'+esc(title(p))+'<div class="meta">'+esc(meta(p))+'</div></div><div class="doc-text">'+highlighted(p,c.evidence,'parent')+'</div></article><section class="evidence"><b>Strongest operative-segment matches</b>'+pairs+'</section></div>'+decisionHtml(x,s,p);
+ main.querySelectorAll('.candidate-tab').forEach(b=>b.onclick=()=>{{pi=+b.dataset.p;render()}});document.getElementById('score-toggle').onclick=()=>{{let show=localStorage.getItem(SCORE_KEY)!=='1';localStorage.setItem(SCORE_KEY,show?'1':'0');render()}};wire(x,s,p)
 }}
 function decisionHtml(x,s,p){{let v=p?(s.candidates[p.document_id]||''):'';return '<section class="decision">'+(p?'<b>Is this candidate a drafting parent?</b><div><button class="choice yes '+(v==='yes'?'active yes':'')+'" data-value="yes">Parent</button><button class="choice no '+(v==='no'?'active no':'')+'" data-value="no">Not parent</button></div>':'')+'<label class="none-row"><input type="checkbox" id="none" '+(s.none?'checked':'')+'> None of this child’s candidates is a parent</label><textarea id="explanation" placeholder="Brief explanation for the final parent selection or none decision">'+esc(s.explanation)+'</textarea></section>'}}
 function wire(x,s,p){{document.querySelectorAll('.choice').forEach(b=>b.onclick=()=>{{s.candidates[p.document_id]=b.dataset.value;if(b.dataset.value==='yes')s.none=false;save();render()}});let n=document.getElementById('none');n.onchange=()=>{{s.none=n.checked;if(s.none)Object.keys(s.candidates).forEach(k=>s.candidates[k]='no');save();render()}};let t=document.getElementById('explanation');t.oninput=()=>{{s.explanation=t.value;save()}}}}

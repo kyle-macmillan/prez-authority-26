@@ -14,3 +14,7 @@ Build the blinded 200-child parent-candidate pilot viewer with:
 The generated viewer is written to
 `data/parent_analysis/pilot/parent_candidate_viewer.html`. It is intentionally ignored
 because it embeds masked source documents; the sample CSV and manifest remain trackable.
+Similarity scores and channel ranks are available behind an explicit toggle so the
+default review remains blinded; candidate tab order stays deterministically shuffled.
+Extended Woolley and Peters ordering phrases are bolded in full documents and in the
+aligned operative-segment excerpts.
