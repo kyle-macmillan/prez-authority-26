@@ -24,13 +24,15 @@ within the same document type; cross-document-type parents are not permitted.
 Parent status means that an earlier same-type directive is a useful drafting precedent.
 It does not prove that the drafter actually consulted or copied it.
 
-## 1.1 Implementation status — July 31, 2026
+## 1.1 Implementation status — August 3, 2026
 
-Implementation has resumed on an NVIDIA GeForce RTX 2080 Ti with 11,264 MiB of memory.
-The locked local environment and pinned Qwen snapshot are installed. GPU smoke tests and
-full dual-role embedding generation and candidate ranking are complete for all four
-directive types. The generated results remain provisional until the cross-type reference
-extraction, masking, segmentation, and retrieval outputs receive manual validation.
+The embedding pipeline was run on an NVIDIA GeForce RTX 2080 Ti with 11,264 MiB of
+memory. GPU smoke tests and full dual-role embedding generation were completed for all
+four directive types. The ranking code has since been revised to exclude W&P phrase
+agreement from RRF, so the prior four-channel ranked output and viewer are superseded and
+must be regenerated. The generated results remain provisional until the cross-type
+reference extraction, masking, segmentation, and retrieval outputs receive manual
+validation.
 
 ### Completed
 
@@ -75,21 +77,30 @@ extraction, masking, segmentation, and retrieval outputs receive manual validati
 - Retrieved up to 25 strictly earlier same-type candidates for 14,291 unresolved
   children, producing 356,100 candidate pairs; four earliest directives have no eligible
   same-type predecessor.
-- Implemented four segment-level within-pool channels: top-three operative embeddings,
-  exact normalized W&P phrase agreement, case-sensitive word 3-gram TF-IDF, and
-  10-word-minimum text reuse. Full-document embeddings are used only for the initial
-  pool of up to 25 candidates; BM25 is not used in within-pool ranking.
-- Fused the four rankings with unweighted RRF using `k=20` and selected up to 10
-  candidates per child.
+- Implemented three segment-level fusion channels: top-three operative embeddings,
+  case-sensitive word 3-gram TF-IDF, and 10-word-minimum text reuse. Full-document
+  embeddings are used only for the initial pool of up to 25 candidates; BM25 is not used
+  in within-pool ranking.
+- Retained exact normalized W&P phrase agreement, its rank, and its alignments as
+  diagnostic output while excluding it from RRF.
+- Implemented unweighted three-channel RRF using `k=20` and selection of up to 10
+  candidates per child without changing the ranked-candidate CSV schema.
+- Added a corpus analysis command for Candidate 1 and Candidate 2 that produces
+  pair-level scores, descriptive statistics and quantiles, missing- and zero-value
+  counts, and six comparable histogram panels for operative embedding, trigram TF-IDF,
+  and text reuse.
+- Added regression tests for three-channel fusion, diagnostic W&P retention, Candidate
+  1–2 extraction, missing scores, zero text reuse, summary statistics, and plot output.
+- Ran the complete `src/tests` suite after these changes: 115 tests passed.
 - Drew a reproducible, holdout-excluding pilot sample of 50 unresolved children per
   directive type (200 children total).
 - Built an interactive masked-document viewer containing 1,994 candidate
   comparisons, highlighted operative-segment alignments, persistent judgments, and JSON
   export.
 
-### Current generated results
+### Previous generated build
 
-The current all-directive build contains:
+The previous all-directive build contains:
 
 - 16,397 directives;
 - 5,020 automatic parent edges across 2,102 children;
@@ -97,14 +108,16 @@ The current all-directive build contains:
   2,764 memoranda, 6,279 proclamations, and 3,274 letters;
 - 5,099 unresolved or non-parent references retained for audit;
 - 356,100 embedding-gated candidate pairs; and
-- 356,100 fully ranked candidate pairs with an RRF top-10 flag.
+- 356,100 candidate pairs ranked under the superseded four-channel RRF rule.
 
 Generated artifacts are written under `data/parent_analysis/`. Small audit tables and
 embedding provenance may be committed. Large, reproducible JSONL, embedding, candidate-
 pool, and ranked-candidate artifacts are ignored by Git and must be transferred through
-external artifact storage when they need to be shared. Large source datasets are handled
-the same way; their expected local paths remain stable so the pipeline commands do not
-change.
+external artifact storage when they need to be shared. The current checkout does not
+contain the JSONL artifacts, candidate pool, embedding arrays, or ranked-candidate CSV
+needed to regenerate and calculate the new Candidate 1–2 distributions. Large source
+datasets are handled the same way; their expected local paths remain stable so the
+pipeline commands do not change.
 
 ### Validation still required for completed components
 
@@ -123,6 +136,16 @@ remain provisional pending manual audit:
 
 ### Not yet completed
 
+- Restore the provenance-matched document and operative-segment JSONL files, document and
+  operative-segment embedding arrays, and embedding candidate pool from external artifact
+  storage, or regenerate them with the pinned model and revision.
+- Run `python src/rank_candidate_pool.py` to produce the all-corpus three-channel ranking.
+- Run `python src/analysis/candidate_score_distributions.py` to write the Candidate 1–2
+  pair-level CSV, summary CSV, and six-panel histogram report.
+- Rebuild the 200-child viewer so its candidate order and top-10 set use three-channel
+  RRF; do not treat the existing four-channel viewer as current.
+- Inspect and report the Candidate 1–2 distributions and reconcile their counts with the
+  14,295 unresolved children, including children without an eligible Candidate 1 or 2.
 - Collect parent-or-none judgments and explanations.
 - Estimate and qualitatively assess orphanhood.
 - Specify or run the later authority-divergence analysis.
@@ -237,8 +260,9 @@ Only unresolved directives enter the similarity pipeline:
    child's document type. Use all eligible earlier same-type directives when fewer than
    25 exist.
 3. Within those 25, independently rank candidates using operative-segment embeddings,
-   exact W&P phrase agreement, segment-level n-grams, and segment-level text reuse.
-4. Combine those rankings using unweighted Reciprocal Rank Fusion (RRF).
+   segment-level n-grams, and segment-level text reuse. Calculate exact W&P phrase
+   agreement separately as diagnostic evidence.
+4. Combine the three similarity rankings using unweighted Reciprocal Rank Fusion (RRF).
 5. Retain up to 10 candidates for manual review. Use every candidate in the embedding
    pool when fewer than 10 exist.
 
@@ -347,7 +371,9 @@ parents. Generic embedding benchmarks alone are not validation for this task.
 
 ## 7. Candidate-ranking channels
 
-The four within-pool rankings remain separate and inspectable before fusion.
+The three similarity rankings used in fusion remain separate and inspectable. W&P
+ordering-phrase agreement is retained as a diagnostic ranking but does not contribute to
+fusion.
 
 ### 7.1 Operative-segment embeddings
 
@@ -389,10 +415,11 @@ similarity-based parent.
 
 ### 7.5 Rank fusion
 
-Use unweighted Reciprocal Rank Fusion with `k=20` to combine the four segment-level
-rankings within each child's pool of up to 25 candidates. The full-document embedding
-score remains retrieval-gate provenance and does not contribute to RRF. Retain every raw
-score, rank, alignment, and channel contribution in the candidate dataset.
+Use unweighted Reciprocal Rank Fusion with `k=20` to combine the operative-segment
+embedding, word 3-gram, and text-reuse rankings within each child's pool of up to 25
+candidates. The W&P ordering-phrase ranking remains diagnostic, and the full-document
+embedding score remains retrieval-gate provenance; neither contributes to RRF. Retain
+every raw score, rank, alignment, and channel contribution in the candidate dataset.
 
 Use the fused rank to select up to 10 candidates shown in manual review.
 
@@ -585,8 +612,11 @@ must not affect parent selection.
 6. **Run candidate generation**
    - [x] Retrieve up to 25 earlier same-type directives with full-document embeddings, using
      all eligible candidates when fewer than 25 exist.
-   - [x] Compute the four within-pool rankings.
-   - [x] Fuse them with unweighted RRF (`k=20`) and select up to 10.
+   - [x] Compute the three fusion rankings and the separate diagnostic W&P ranking.
+   - [x] Implement three-channel unweighted RRF (`k=20`) and top-10 selection.
+   - [ ] Restore or regenerate the ignored runtime artifacts and rerun the all-corpus
+     ranking under the three-channel rule.
+   - [ ] Generate and inspect the Candidate 1–2 score distributions.
 
 7. **Build the 200-child pilot and viewer**
    - [x] Draw a reproducible random sample of 50 unresolved children from each of the four
@@ -594,6 +624,7 @@ must not affect parent selection.
    - [x] Build the interactive masked-document viewer.
    - [x] For every sampled child, present up to 10 same-type candidates with highlighted
      operative-segment matches, or every available candidate if fewer than 10 exist.
+   - [ ] Rebuild the viewer with the regenerated three-channel candidate ordering.
    - [ ] Collect candidate-level parent/not-parent judgments, child-level `none` judgments,
      multiple-parent selections, and explanations.
 
@@ -630,7 +661,7 @@ The initial pilot is complete when:
 - Qwen embeddings are reproducible and cached with complete provenance;
 - every unresolved directive can produce a same-type embedding pool of up to 25 and a
   fused list of up to 10, using all eligible candidates when fewer exist;
-- the same four within-pool channels can be inspected independently;
+- the three fusion channels and diagnostic W&P channel can be inspected independently;
 - the viewer exposes masked full text and highlighted operative-segment matches for every
   sampled child and each of its available candidates, up to 10;
 - 50 randomly sampled unresolved children per directive type (200 total) receive recorded

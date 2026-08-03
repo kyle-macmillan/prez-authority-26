@@ -16,6 +16,7 @@ from segmenter import _get_ordering_re
 
 
 TOKEN_RE = re.compile(r"[A-Za-z0-9]+(?:['’][A-Za-z0-9]+)*")
+FUSION_CHANNELS = ("operative", "ngram", "text_reuse")
 
 
 def tokens(text: str) -> list[str]:
@@ -70,6 +71,20 @@ def ordinal_ranks(values: dict[str, float]) -> dict[str, int]:
     """Deterministically break score ties so top-N selection has at most N rows."""
     ordered = sorted(values, key=lambda item: (-values[item], item))
     return {item: rank for rank, item in enumerate(ordered, 1)}
+
+
+def reciprocal_rank_scores(
+    item_ids: list[str], channel_ranks: dict[str, dict[str, int]], k: int = 20,
+) -> dict[str, float]:
+    """Fuse only the supplied ranking channels with reciprocal rank fusion."""
+    return {
+        item_id: sum(
+            1.0 / (k + ranks[item_id])
+            for ranks in channel_ranks.values()
+            if item_id in ranks
+        )
+        for item_id in item_ids
+    }
 
 
 def top_pairs(
@@ -252,21 +267,14 @@ def main() -> None:
                 reuse_alignments[parent_id] = []
                 phrase_alignments[parent_id] = []
 
-        scores_by_channel = {
-            "operative": operative,
-            "same_phrase": same_phrase,
-            "ngram": ngram,
-            "text_reuse": reuse,
+        fusion_scores_by_channel = dict(zip(
+            FUSION_CHANNELS, (operative, ngram, reuse), strict=True
+        ))
+        ranks = {
+            name: dense_ranks(values) for name, values in fusion_scores_by_channel.items()
         }
-        ranks = {name: dense_ranks(values) for name, values in scores_by_channel.items()}
-        rrf = {
-            parent_id: sum(
-                1.0 / (args.rrf_k + channel_ranks[parent_id])
-                for channel_ranks in ranks.values()
-                if parent_id in channel_ranks
-            )
-            for parent_id in parent_ids
-        }
+        same_phrase_ranks = dense_ranks(same_phrase)
+        rrf = reciprocal_rank_scores(parent_ids, ranks, args.rrf_k)
         rrf_ranks = ordinal_ranks(rrf)
         for candidate in candidates:
             parent_id = candidate["parent_id"]
@@ -280,7 +288,7 @@ def main() -> None:
                     "same_ordering_phrase": (
                         bool(same_phrase[parent_id]) if parent_id in same_phrase else ""
                     ),
-                    "same_ordering_phrase_rank": ranks["same_phrase"].get(parent_id, ""),
+                    "same_ordering_phrase_rank": same_phrase_ranks.get(parent_id, ""),
                     "same_ordering_phrase_alignments": json.dumps(phrase_alignments[parent_id]),
                     "segment_word_trigram_tfidf_score": ngram.get(parent_id, ""),
                     "segment_word_trigram_rank": ranks["ngram"].get(parent_id, ""),

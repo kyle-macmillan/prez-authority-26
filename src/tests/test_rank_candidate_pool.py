@@ -6,8 +6,8 @@ import numpy as np
 sys.path.insert(0, str(Path(__file__).parents[1]))
 
 from rank_candidate_pool import (
-    dense_ranks, matching_phrase_pairs, reused_word_count, segment_reuse_score,
-    top_pair_average,
+    FUSION_CHANNELS, dense_ranks, matching_phrase_pairs, reciprocal_rank_scores,
+    reused_word_count, segment_reuse_score, top_pair_average,
 )
 
 
@@ -29,6 +29,23 @@ def test_dense_ranks_preserve_ties():
     assert dense_ranks({"a": 1.0, "b": 1.0, "c": 0.0}) == {
         "a": 1, "b": 1, "c": 2,
     }
+
+
+def test_rrf_uses_three_similarity_channels_and_excludes_wp_phrase():
+    ranks = {
+        "operative": {"a": 1, "b": 2},
+        "ngram": {"a": 2, "b": 1},
+        "text_reuse": {"a": 1, "b": 2},
+    }
+    assert FUSION_CHANNELS == tuple(ranks)
+    scores = reciprocal_rank_scores(["a", "b"], ranks, k=20)
+    assert np.isclose(scores["a"], 2 / 21 + 1 / 22)
+    assert np.isclose(scores["b"], 1 / 21 + 2 / 22)
+
+    # W&P can still change diagnostically without changing the supplied fusion ranks.
+    for diagnostic_wp_ranks in ({"a": 1, "b": 2}, {"a": 2, "b": 1}):
+        assert set(diagnostic_wp_ranks) == set(scores)
+        assert reciprocal_rank_scores(["a", "b"], ranks, k=20) == scores
 
 
 def test_matching_phrase_pairs_detect_exact_normalized_wp_phrase():

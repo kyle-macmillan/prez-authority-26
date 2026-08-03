@@ -19,6 +19,15 @@ tabs follow ascending fused RRF rank.
 Extended Woolley and Peters ordering phrases are bolded in full documents and in the
 aligned operative-segment excerpts.
 
+Build the corpus-wide Candidate 1 and Candidate 2 score distributions after ranking with:
+
+`python src/analysis/candidate_score_distributions.py`
+
+The command writes pair-level scores, descriptive statistics, and a six-panel histogram
+report under `data/parent_analysis/candidate_score_distributions/`. Candidate positions
+use three-channel RRF; W&P phrase agreement remains visible as a diagnostic but is not a
+fusion channel.
+
 The separate legally operative path-dependency pilot is organized under
 `src/path_dependency/` with artifacts under
 `data/parent_analysis/path_dependency_pilot/`. See the README files in those directories

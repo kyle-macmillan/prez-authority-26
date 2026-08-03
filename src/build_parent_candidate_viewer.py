@@ -269,10 +269,10 @@ function fmt(v,n){{return v==null?'not available':Number(v).toFixed(n)}}
 function scoreHtml(c){{let s=c.scores,shown=localStorage.getItem(SCORE_KEY)==='1';return '<button class="score-toggle '+(shown?'active':'')+'" id="score-toggle">'+(shown?'Hide':'Show')+' similarity scores</button><div class="scores '+(shown?'visible':'')+'"><div class="score-grid">'+
   scoreCard('Document embedding gate',fmt(s.document_embedding.score,3),'Gate rank '+s.document_embedding.rank+' of up to 25','Used only to create the candidate pool; excluded from RRF')+
   scoreCard('Operative embedding',fmt(s.operative_embedding.score,3),'Rank '+s.operative_embedding.rank+' of 25','Mean of three strongest segment alignments')+
-  scoreCard('Same W&P phrase',s.same_ordering_phrase.score==null?'not available':(s.same_ordering_phrase.score?'Yes':'No'),s.same_ordering_phrase.rank==null?'Rank not available':'Rank '+s.same_ordering_phrase.rank+' of 25','Any operative segment pair shares the same normalized ordering phrase')+
+  scoreCard('Same W&P phrase',s.same_ordering_phrase.score==null?'not available':(s.same_ordering_phrase.score?'Yes':'No'),s.same_ordering_phrase.rank==null?'Rank not available':'Rank '+s.same_ordering_phrase.rank+' of 25','Diagnostic only; excluded from RRF')+
   scoreCard('Segment 3-gram similarity',fmt(s.word_trigram.score,3),'Rank '+s.word_trigram.rank+' of 25','Mean of three strongest segment-pair TF-IDF cosine scores')+
   scoreCard('Segment text reuse',fmt(s.text_reuse.score,1)+' words','Rank '+s.text_reuse.rank+' of 25','Mean reused words across the three strongest segment pairs')+
-  scoreCard('Fused result','Rank '+s.rrf.rank,fmt(s.rrf.score,4)+' RRF score','Unweighted rank fusion with k='+s.rrf.k)+
+  scoreCard('Fused result','Rank '+s.rrf.rank,fmt(s.rrf.score,4)+' RRF score','Three-channel rank fusion with k='+s.rrf.k)+
   '</div><p class="score-help">Segment-level scores are evidence, not probabilities that this candidate is a parent. Candidate tabs follow fused RRF rank.</p></div>'}}
 function scoreCard(label,value,rank,help){{return '<div class="score-card"><b>'+label+'</b><div class="score-value">'+value+'</div><div>'+rank+'</div><div class="score-help">'+help+'</div></div>'}}
 function authorityToggleHtml(){{let shown=localStorage.getItem(AUTHORITY_KEY)==='1';return '<button class="authority-toggle '+(shown?'active':'')+'" id="authority-toggle">'+(shown?'Mask':'Show')+' cited authorities in text</button>'}}
