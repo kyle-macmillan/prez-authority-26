@@ -677,7 +677,7 @@ def segment(
         split_paragraphs: Deprecated. Documents without formal sections are segmented
             by ordering phrases.
             Has no effect on documents that have formal sections.
-        strict_wp: When True, disable all extensions (section-only shall verbs,
+        strict_wp: When True, disable all extensions (generic shall verbs,
             opening-authority vesting) and use only the original W&P phrase list.
     """
     raw_chunks = re.split(r"  +", doc_text)
@@ -686,7 +686,7 @@ def segment(
     )
     total = len(chunks)
 
-    ordering_re = _get_ordering_re(extended=False)  # W&P only for initial scan
+    ordering_re = _get_ordering_re(extended=not strict_wp)
     opening_authority = not strict_wp
     is_proclamation = doc_type == "proclamation"
     tagged: list[tuple[SegmentType, str, int]] = []
@@ -913,55 +913,118 @@ def _merge_content_segments(segs: list[Segment]) -> list[Segment]:
 # Woolley & Peters ordering-phrase strategy
 # ---------------------------------------------------------------------------
 
-# Additional high-confidence directive verbs used only to classify formal sections.
-# Keeping these out of ORDERING_PHRASES prevents them from becoming split points in
-# unstructured documents, where a match beginning at "shall" would drop the actor.
-_SECTION_SHALL_ACTION = (
+# Additional high-confidence directive verbs used across structured and unstructured
+# documents. They remain separate from ORDERING_PHRASES so strict_wp can reproduce
+# the original W&P phrase list.
+_SHALL_ACTION = (
     r"shall\s+"
     r"(?:(?:also|promptly|immediately)\s+){0,2}"
     r"(?:take|develop|designate|establish|perform|make|issue|identify|prepare|"
     r"implement|determine|recommend|prescribe|seek|assist)\b"
 )
 
+_QUOTED_SHALL_LOWER_MASK = "\ue000"
+_QUOTED_SHALL_UPPER_MASK = "\ue001"
+
 
 # Import phrase list lazily so the module loads even if ordering_phrases.py is absent.
-def _build_ordering_re(section_extensions: bool = False) -> re.Pattern:
+def _build_ordering_re(include_extensions: bool = False) -> re.Pattern:
     from ordering_phrases import ORDERING_PHRASES, CURATED_OUT
     active = [p for p in ORDERING_PHRASES if p not in CURATED_OUT]
     # Sort longest-first so more-specific phrases win over shorter prefixes.
     active.sort(key=len, reverse=True)
     phrase_alt = "|".join(re.escape(p) for p in active)
 
-    if not section_extensions:
+    if not include_extensions:
         return re.compile(r"\b(" + phrase_alt + r")", re.IGNORECASE)
 
     return re.compile(
-        r"\b(" + phrase_alt + r"|" + _SECTION_SHALL_ACTION + r")",
+        r"\b(" + phrase_alt + r"|" + _SHALL_ACTION + r")",
         re.IGNORECASE,
     )
 
 
 _ordering_re_cache: re.Pattern | None = None           # W&P phrases only
-_ordering_re_extended_cache: re.Pattern | None = None  # W&P + section-only shall verbs
+_ordering_re_extended_cache: re.Pattern | None = None  # W&P + generic shall verbs
 
 
 def _get_ordering_re(extended: bool = False) -> re.Pattern:
     """Return the ordering-phrase regex.
 
-    extended=False (default): pure W&P phrase list — used for initial scan,
-        non-sections path, and strict_wp mode.
-    extended=True: adds the allowlisted shall + verb pattern — used only in
-        formal-section classification paths.
+    extended=False (default): pure W&P phrase list, used in strict_wp mode.
+    extended=True: adds the allowlisted shall + verb pattern for all document
+        structures.
     """
     global _ordering_re_cache, _ordering_re_extended_cache
     if extended:
         if _ordering_re_extended_cache is None:
-            _ordering_re_extended_cache = _build_ordering_re(section_extensions=True)
+            _ordering_re_extended_cache = _build_ordering_re(include_extensions=True)
         return _ordering_re_extended_cache
     else:
         if _ordering_re_cache is None:
-            _ordering_re_cache = _build_ordering_re(section_extensions=False)
+            _ordering_re_cache = _build_ordering_re(include_extensions=False)
         return _ordering_re_cache
+
+
+def _mask_quoted_shall_extensions(text: str) -> str:
+    """Mask generic shall-extension matches inside straight or curly double quotes.
+
+    Quote state is tracked across the entire document so quoted material can span
+    sentences and scraper paragraph chunks. Original W&P phrases are not masked.
+    """
+    matches = list(re.finditer(_SHALL_ACTION, text, re.IGNORECASE))
+    if not matches:
+        return text
+
+    quoted = bytearray(len(text))
+    in_straight_quote = False
+    curly_quote_depth = 0
+    for i, char in enumerate(text):
+        if char == '"':
+            previous = text[i - 1] if i else ""
+            following = text[i + 1] if i + 1 < len(text) else ""
+            if not previous or previous.isspace() or previous in "([{:":
+                # Legal amendments often begin every quoted paragraph with a new
+                # quote mark without closing the preceding quoted paragraph.
+                in_straight_quote = True
+            elif not following or following.isspace() or following in ".,;:!?)]}":
+                in_straight_quote = False
+            else:
+                in_straight_quote = not in_straight_quote
+        elif char == "“":
+            curly_quote_depth += 1
+        elif char == "”" and curly_quote_depth:
+            curly_quote_depth -= 1
+        elif in_straight_quote or curly_quote_depth:
+            quoted[i] = 1
+
+    base_ordering_re = _get_ordering_re(extended=False)
+    chars = list(text)
+    changed = False
+    for match in matches:
+        if not quoted[match.start()] or base_ordering_re.match(text, match.start()):
+            continue
+        chars[match.start()] = (
+            _QUOTED_SHALL_UPPER_MASK
+            if text[match.start()].isupper()
+            else _QUOTED_SHALL_LOWER_MASK
+        )
+        changed = True
+    return "".join(chars) if changed else text
+
+
+def _restore_quoted_shall_masks(segments: list[Segment]) -> list[Segment]:
+    """Restore the first letter hidden by _mask_quoted_shall_extensions()."""
+    return [
+        Segment(
+            seg.text.replace(_QUOTED_SHALL_LOWER_MASK, "s").replace(
+                _QUOTED_SHALL_UPPER_MASK, "S"
+            ),
+            seg.seg_type,
+            seg.chunk_indices,
+        )
+        for seg in segments
+    ]
 
 
 # Sentence boundary: terminal punctuation followed by whitespace and a capital letter or "(".
@@ -1594,17 +1657,20 @@ def segment_ordering(doc_text: str, doc_type: str = "", strict_wp: bool = False)
     grouped into it only when they contain no ordering phrase of their own; list items
     that do contain an ordering phrase are processed normally and start a new directive.
 
-    strict_wp=True disables all extensions (section-only shall verbs, opening-authority vesting)
+    strict_wp=True disables all extensions (generic shall verbs, opening-authority vesting)
     and uses only the original W&P phrase list.
 
     Returns a list of Segment objects with seg_type in
     {'preamble', 'order_action', 'metadata', 'boilerplate', 'vesting_clause'}.
     """
-    ordering_re = _get_ordering_re(extended=False)  # W&P only for base detection
+    ordering_re = _get_ordering_re(extended=not strict_wp)
     opening_authority = not strict_wp
     is_proclamation = doc_type == "proclamation"
+    working_text = (
+        doc_text if strict_wp else _mask_quoted_shall_extensions(doc_text)
+    )
 
-    raw_chunks = re.split(r"  +", doc_text)
+    raw_chunks = re.split(r"  +", working_text)
     chunks = _resplit_embedded_sections(
         [c.strip() for c in raw_chunks if c.strip()]
     )
@@ -1625,7 +1691,6 @@ def segment_ordering(doc_text: str, doc_type: str = "", strict_wp: bool = False)
             tagged.append((ct, chunk, i))
 
     # Section-priority branch: when formal sections exist, split on sections only.
-    # Actor-agnostic shall + verb extensions apply only in this sections path.
     if _has_formal_sections(tagged):
         alpha_as_sub = any(
             bool(_SECTION_ROMAN_RE.match(text.strip()))
@@ -1634,12 +1699,11 @@ def segment_ordering(doc_text: str, doc_type: str = "", strict_wp: bool = False)
         )
         segs = _group_by_sections(tagged, split_subsections=False,
                                   alpha_as_subsection=alpha_as_sub)
-        relabel_re = ordering_re if strict_wp else _get_ordering_re(extended=True)
-        segs = _relabel_for_wp(segs, relabel_re)
+        segs = _relabel_for_wp(segs, ordering_re)
         segs = _enforce_closing_cutoff(segs)
         segs = _enforce_signoff_cutoff(segs)
         segs = _reclassify_titles_before_metadata(segs)
-        return segs
+        return _restore_quoted_shall_masks(segs)
 
     # No formal sections: ordering-phrase strategy.
     segments: list[Segment] = []
@@ -1691,4 +1755,7 @@ def segment_ordering(doc_text: str, doc_type: str = "", strict_wp: bool = False)
                         current_indices.append(chunk_idx)
 
     flush()
-    return _merge_short_fragments(_merge_sublists(_split_colon_lists(segments, ordering_re)))
+    segs = _merge_short_fragments(
+        _merge_sublists(_split_colon_lists(segments, ordering_re))
+    )
+    return _restore_quoted_shall_masks(segs)

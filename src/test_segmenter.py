@@ -1,4 +1,4 @@
-"""Focused regression tests for section-only ordering-phrase extensions.
+"""Focused regression tests for ordering-phrase extensions.
 
 Run from the project root:
   python3 src/test_segmenter.py
@@ -126,16 +126,116 @@ def test_section_continuation_after_vesting_is_order_action():
     assert continuation[0].seg_type == "order_action"
 
 
-def test_extension_does_not_split_unstructured_documents():
+def test_extension_splits_unstructured_documents():
     text = "Background context. The Board shall perform the work."
-    segments = segment_ordering(text)
-    assert len(segments) == 1
-    assert segments[0].seg_type == "preamble"
-    assert segments[0].text == text
+    expected = [
+        ("preamble", "Background context."),
+        ("order_action", "The Board shall perform the work."),
+    ]
+    assert [(seg.seg_type, seg.text) for seg in segment_ordering(text)] == expected
+    assert [(seg.seg_type, seg.text) for seg in segment(text)] == expected
 
 
-def test_strict_wp_disables_section_extension():
-    assert _section_type("perform", strict_wp=True) == "order_action"
+def test_all_allowlisted_verbs_split_unstructured_documents():
+    for verb in ALLOWLISTED_VERBS:
+        text = f"Background context. The Board shall {verb} the work."
+        assert [(seg.seg_type, seg.text) for seg in segment_ordering(text)] == [
+            ("preamble", "Background context."),
+            ("order_action", f"The Board shall {verb} the work."),
+        ], verb
+
+
+def test_extension_applies_to_every_document_type():
+    text = "Background context. The Board shall perform the work."
+    expected = [
+        ("preamble", "Background context."),
+        ("order_action", "The Board shall perform the work."),
+    ]
+    for doc_type in ("executive_order", "memorandum", "letter", "proclamation"):
+        assert [
+            (seg.seg_type, seg.text)
+            for seg in segment_ordering(text, doc_type)
+        ] == expected, doc_type
+
+
+def test_extension_ignores_straight_quoted_text():
+    text = (
+        'Background context. The regulation provides: "The medical advisor shall make '
+        'an examination."'
+    )
+    assert [(seg.seg_type, seg.text) for seg in segment_ordering(text)] == [
+        ("preamble", text),
+    ]
+
+
+def test_extension_ignores_curly_quoted_text():
+    text = (
+        "Background context. The regulation provides: “The medical advisor shall determine "
+        "whether the condition exists.”"
+    )
+    assert [(seg.seg_type, seg.text) for seg in segment_ordering(text)] == [
+        ("preamble", text),
+    ]
+
+
+def test_extension_ignores_quotation_across_paragraph_chunks():
+    text = (
+        '"The medical advisor shall make an examination.  '
+        'From that examination, the advisor shall determine whether the condition exists."  '
+        "The Board shall perform the review."
+    )
+    assert [(seg.seg_type, seg.text) for seg in segment_ordering(text)] == [
+        (
+            "preamble",
+            '"The medical advisor shall make an examination. From that examination, '
+            'the advisor shall determine whether the condition exists."',
+        ),
+        ("order_action", "The Board shall perform the review."),
+    ]
+
+
+def test_extension_ignores_legal_block_with_repeated_opening_quotes():
+    text = (
+        'The regulation is amended to read as follows:  "§ 1. Medical review.  '
+        '"(a) The advisor shall make an examination.  '
+        '"(b) The advisor shall determine whether the condition exists."  '
+        "The Board shall perform the final review."
+    )
+    actions = [
+        seg.text for seg in segment_ordering(text) if seg.seg_type == "order_action"
+    ]
+    assert len(actions) == 2
+    assert "shall make" in actions[0]
+    assert "shall determine" in actions[0]
+    assert actions[1] == "The Board shall perform the final review."
+
+
+def test_extension_still_matches_unquoted_text_after_quotation():
+    text = (
+        'The regulation states: "The medical advisor shall make an examination."  '
+        "The Board shall perform the review."
+    )
+    assert [(seg.seg_type, seg.text) for seg in segment_ordering(text)] == [
+        (
+            "preamble",
+            'The regulation states: "The medical advisor shall make an examination."',
+        ),
+        ("order_action", "The Board shall perform the review."),
+    ]
+
+
+def test_unlisted_shall_verb_does_not_split_unstructured_documents():
+    text = "Background context. The Board shall archive the records."
+    assert [(seg.seg_type, seg.text) for seg in segment_ordering(text)] == [
+        ("preamble", text),
+    ]
+
+
+def test_strict_wp_disables_unstructured_extension():
+    text = "Background context. The Board shall perform the work."
+    assert [(seg.seg_type, seg.text) for seg in segment_ordering(text, strict_wp=True)] == [
+        ("preamble", text),
+    ]
 
 
 def test_original_wp_phrase_still_matches_in_strict_mode():

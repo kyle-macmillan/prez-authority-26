@@ -54,7 +54,7 @@ segments = segment_ordering(
 )
 ```
 
-`strict_wp=True` disables both the section-only `shall + verb` extension and the sentence-opening
+`strict_wp=True` disables both the generic `shall + verb` extension and the sentence-opening
 authority-citation vesting detection, falling back to the original W&P phrase list and
 standard vesting logic.
 
@@ -69,7 +69,7 @@ The W&P ordering-phrase list (`src/ordering_phrases.py`) drives both strategies.
 `CURATED_OUT` is a small exclusion set for phrases that fire too heavily in non-directive
 contexts (currently `"this directive"`, `"designated"`, `"designation"`).
 
-### `shall + verb` extension (sections path only)
+### `shall + verb` extension
 
 In addition to the phrase list, the extended regex (`extended=True`) adds a pattern for
 directives of the form:
@@ -83,9 +83,11 @@ Examples matched:
 
 The allowlisted verbs are `take`, `develop`, `designate`, `establish`, `perform`, `make`,
 `issue`, `identify`, `prepare`, `implement`, `determine`, `recommend`, `prescribe`, `seek`,
-and `assist`. This pattern fires **only in formal-section classification paths** and is
-suppressed for documents without formal sections and when `strict_wp=True`; it therefore
-does not create actorless split points in unstructured documents.
+and `assist`. This pattern applies to both formal sections and unstructured documents
+when `strict_wp=False`. In unstructured documents, a match starts a new `order_action`
+using the same sentence-boundary rules as the original W&P phrases. Generic `shall + verb`
+matches inside straight or curly double-quoted text are ignored so that quoted statutes,
+regulations, and prior directives do not create new actions.
 
 ---
 
@@ -201,8 +203,8 @@ Applied after `_group_by_sections` when called from `segment_ordering()`:
 | Paragraph with ordering phrase, **after** first `order_action` section | `order_action` |
 | Paragraph without ordering phrase | `preamble` |
 
-The extended regex (with section-only `shall + verb` matching) is used here when
-`strict_wp=False`.
+The extended regex (with generic `shall + verb` matching) is used here when
+`strict_wp=False`, as it is in the no-sections path.
 
 ### Step 8 — Ordering-phrase segmentation (no-sections path)
 

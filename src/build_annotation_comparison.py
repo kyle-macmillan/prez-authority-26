@@ -17,6 +17,41 @@ import numpy as np
 ROOT = Path(__file__).resolve().parents[1]
 ANNOTATIONS_DIR = ROOT / "data" / "Annotations"
 DATASETS = {
+    "round1": {
+        "label": "Round 1",
+        "schema": "round2",
+        "source_viewer": ANNOTATIONS_DIR / "Round 1" / "round_1.html",
+        "results_dir": ANNOTATIONS_DIR / "Round 1",
+        "output": ANNOTATIONS_DIR / "Round 1" / "annotation-comparison.html",
+        "result_files": (
+            "annotations-viewer1-claire-2026-07-29.json",
+            "annotations-viewer1-kylem-2026-07-29.json",
+        ),
+        "fields": {
+            "directive": ("code", "diplomacy", "military_ops"),
+            "chunk": ("code", "diplomacy", "military_ops"),
+        },
+        "field_labels": {
+            "code": "Code",
+            "diplomacy": "Diplomacy / recognition",
+            "military_ops": "Military / intel ops",
+        },
+        "value_labels": {
+            "0": "0 - Outside scope",
+            "1": "1 - Discretionary executive direction / internal management",
+            "2": "2 - Dictated agency legal outcome",
+            "3": "3 - Self-executing legal effect",
+            "4": "4 - Unclear / inseparable mixed",
+            "yes": "Yes",
+            "no": "No",
+        },
+        "field_options": {
+            "code": ("0", "1", "2", "3", "4"),
+            "diplomacy": ("yes", "no"),
+            "military_ops": ("yes", "no"),
+        },
+        "chunk_strategy": "wp",
+    },
     "sample100": {
         "label": "Sample 100",
         "schema": "policy",
