@@ -1,8 +1,10 @@
 # Document Segmenter
 
-`src/segmenter.py` splits presidential documents from `data/4_28_2026_build_dev.csv` into
-classifiable units. Each document's `doc_text` field has all whitespace collapsed by the
-scraper: paragraphs are separated by **double spaces** and there are no newlines.
+`src/segmenter.py` splits presidential documents into classifiable units. The vesting-authority
+analysis runs it over the union of `data/4_28_2026_build_dev.csv` and
+`data/4_28_2026_build_holdout.csv` (20,232 unique directives). Each document's `doc_text` field
+has all whitespace collapsed by the scraper: paragraphs are separated by **double spaces** and
+there are no newlines.
 
 Two segmentation strategies remain available via the same API for historical comparison.
 Starting with annotation Round 2, annotation viewers no longer use sections or expose the
@@ -99,48 +101,85 @@ disabled when `strict_wp=True`.
 
 ## Vesting clause detection
 
-A sentence is carved out as `vesting_clause` when it contains one of the following signals.
-Detection happens sentence-by-sentence after the primary chunk split.
+Vesting detection is rule-based and case-insensitive. Before matching, the authority-analysis
+extractor collapses whitespace and splits sentences only at terminal punctuation outside
+parentheses. This prevents periods in parenthetical citations such as `U.S.C.` or OCR variants
+such as `13. S. C.` from truncating an authority clause.
 
-### Strong signals (unconditional)
+### Strong authority signals
 
-The sentence is tagged `vesting_clause` regardless of whether an ordering phrase follows:
+`_STRONG_VESTING_RE` recognizes the following reviewed formulations without requiring a
+separate ordering phrase:
 
-| Signal | Typical form |
-|--------|-------------|
-| `"vested in me"` | "By the authority vested in me as President…" |
-| `"by virtue of the authority"` | "By virtue of the authority vested in me…" |
-| `"joint resolution"` | Proclamations citing a Congressional joint resolution |
-| `"public law"` | Proclamations citing a Public Law (e.g. "Public Law 87-20") |
-| Sentence **opens with** `"Pursuant to / Under section [law citation]"` | "Pursuant to section 121(a) of title 40…", "Pursuant to the International Emergency Economic Powers Act…" |
+| Regex family | Examples and scope |
+|--------------|--------------------|
+| `vested\s+in\s+(?:me|my(?=\s+by))` | Standard `vested in me` language and the observed OCR error `vested in my by` |
+| `by\s+virtue\s+of\s+the\s+authority` | Standard `By virtue of the authority vested in me…` clauses |
+| `by\s+virtue\s+of\s+and\s+pursuant\s+to…vested\s+in\s+the\s+President` | Historical third-person presidential formula |
+| `by\s+virtue\s+of\s+my\s+authority\s+as\s+President` | `By virtue of my authority as President of the United States…` |
+| `pursuant\s+to\s+my\s+authority\s+to\s+regulate\s+federal\s+employment` | Reviewed federal-employment determination |
+| `pursuant\s+to\s+my\s+authority\s+under\s+subsection\s+\d` | Reviewed trade-agreement reconfirmations |
 
-The sentence-opening authority pattern (`_OPENING_AUTHORITY_RE`) requires a matching law
-citation (`_LAW_CITATION_RE`) somewhere in the same sentence and anchors to the **start** of
-the sentence — it does not fire for mid-sentence "pursuant to" qualifiers like "The Secretary
-shall, pursuant to section 5, submit reports."
+Proclamations additionally treat a Congressional `joint resolution` or `public law` citation
+as a strong signal. The formal `I, [name], President of the United States…` invocation is also
+retained as generic presidential authority.
 
-### Conditional signals (require an ordering phrase in the same sentence)
+The reviewed Unified Command Plan formulation is narrower: `_REVIEWED_COMMANDER_AUTHORITY_RE`
+matches `pursuant to my authority as Commander in Chief` only when it is followed by
+`I hereby approve` or `I hereby rescind`. This avoids absorbing congressional-report letters
+that describe military actions under the same constitutional role.
 
-| Signal | Typical form |
-|--------|-------------|
-| `"now, therefore, i"` | Standard proclamation invocation formula |
-| `"pursuant to"` + law citation + `"I"` | "Pursuant to section X…, I hereby order…" |
+### Statutory and constitutional citation anchors
 
-A mid-sentence `"pursuant to"` statutory citation is also carved out when it follows both
-a first-person presidential actor and an ordering phrase. This captures forms such as
-`"I hereby designate … pursuant to section 251…"` without treating cabinet instructions
-such as `"The Secretary shall, pursuant to section 5…"` as presidential vesting clauses.
-Internal citation commas are retained when followed by another citation component, including
-a year, `"as amended"`, a U.S.C./Stat./Public Law reference, or an additional provision.
+`_LAW_CITATION_RE` recognizes `section` or `subsection` numbers, numbered U.S.C. citations,
+numbered titles and chapters, Public Laws, the Constitution, the laws or statutes of the United
+States, and named Acts. `_AUTHORITY_CITATION_RE` adds `my constitutional authority`.
+
+A sentence opening with `pursuant to`, `under section`, `under title`, or `under the authority`
+is treated as an authority invocation only when one of those anchors appears in the sentence.
+This prevents vague references such as `pursuant to applicable policy` from qualifying.
+
+### Conditional and mid-sentence signals
+
+The following constructions require an ordering phrase or a specifically reviewed
+first-person action in the same sentence:
+
+| Construction | Rule |
+|--------------|------|
+| `Now, therefore, I…` | Standard proclamation invocation followed by an ordering phrase |
+| `pursuant to` + citation + presidential `I` | Authority prefix followed by a first-person ordering phrase |
+| `It is hereby ordered, pursuant to [citation]…` | Passive presidential order followed by an inline authority citation |
+| `I hereby order, by [the] authority vested in me…` | Post-ordering first-person vesting clause |
+| `pursuant to [citation], I determine…` | Mid-sentence determination authority, including text following metadata or introductory context |
+| `pursuant to [citation], I hereby exempt…` | Reviewed statutory exemption determinations |
+
+For the last two constructions, `_pursuant_authority_action_start` selects the nearest
+qualifying `pursuant to` before the action. It does not bridge intervening `consistent with`,
+`in accordance with`, or `in response to` language. This guard prevents a `Pursuant to…`
+document title from converting a later compliance statement into a vesting clause.
+
+An inline `pursuant to` citation that follows an ordering phrase is retained only when the
+preceding actor is first-person presidential or the passive formula is `it is hereby ordered`.
+Thus `The Secretary shall, pursuant to section 5…` is not treated as presidential vesting.
 
 ### Vesting carve mechanics
 
-When a sentence contains both a vesting signal **and** an ordering phrase, the text is split:
+When a sentence contains both a vesting signal and an ordering phrase, the authority text is
+separated from the operative action. The extracted clause begins at the reviewed authority
+connector (`by`, `by virtue of`, `pursuant to`, or `under`) and ordinarily ends at the comma
+before the action. Citation-continuation commas are retained when followed by a year,
+`as amended`, a U.S.C./Stat./Public Law reference, an additional section/title/chapter, or a
+parenthetical citation. Parenthetical citations remain intact.
 
-- Everything before the ordering phrase (up to the last punctuation before it, or right before
-  the phrase if the intervening text is a continuation clause starting with `"including "`) →
-  `vesting_clause`
-- The ordering phrase and everything after → `order_action`
+The extractor also applies narrow boundary corrections for reviewed historical Executive
+Order and Proclamation citations and removes an `and in order to…` purpose tail from the
+reviewed `By virtue of my authority as President…` formula.
+
+Compliance or context language is not by itself a vesting signal. In particular, the matcher
+does not infer presidential authority solely from `consistent with`, `in accordance with`,
+`in order to`, `in furtherance of`, `in light of`, or `as contemplated by`. Reviewed letters
+that merely report an action taken in another directive, and reviewed memoranda that only carry
+out a statutory duty without invoking presidential authority, remain outside the matched forms.
 
 ---
 
@@ -237,7 +276,9 @@ individual items; `_merge_sublists` reassembles sub-items into their parent dire
 ## Holdout and review sets
 
 `data/holdout_ids.json` — 2,021 document IDs (10% of each doc type, stratified, seed 42)
-set aside before any rule development. Do not use for further rule tuning.
+originally set aside before rule development. The current descriptive vesting-authority
+analysis covers the entire 20,232-document corpus by combining this set with the 18,211
+development documents; it does not use child-parent-analysis exclusions.
 
 `data/sample_segmentation/` — HTML viewers for successive review batches used during
 development, including `pilot_20.html` (20-document pilot with multi-annotator labels)

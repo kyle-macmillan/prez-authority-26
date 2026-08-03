@@ -1,5 +1,6 @@
 """Tests for presidential-directive parent artifacts."""
 
+import csv
 import sys
 from datetime import datetime
 from pathlib import Path
@@ -13,6 +14,7 @@ from parent_analysis import (
     eo_number_from_url,
     extract_directive_references,
     extract_eo_references,
+    load_directive_corpus,
 )
 
 
@@ -35,6 +37,24 @@ def document(
         url=f"https://example.test/{document_type}/{document_id}",
         text=text,
     )
+
+
+def test_loads_development_and_holdout_as_one_corpus(tmp_path):
+    fieldnames = ["", "doc_type", "url", "date", "doc_text"]
+    paths = [tmp_path / "dev.csv", tmp_path / "holdout.csv"]
+    for path, document_id in zip(paths, ("1", "2"), strict=True):
+        with path.open("w", newline="", encoding="utf-8") as handle:
+            writer = csv.DictWriter(handle, fieldnames=fieldnames)
+            writer.writeheader()
+            writer.writerow({
+                "": document_id,
+                "doc_type": "memorandum",
+                "url": f"https://example.test/memorandum-{document_id}",
+                "date": "January 1, 2020",
+                "doc_text": "The agency shall act.",
+            })
+
+    assert [row.document_id for row in load_directive_corpus(paths)] == ["1", "2"]
 
 
 def test_extracts_common_eo_reference_forms():

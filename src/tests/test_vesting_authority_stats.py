@@ -95,6 +95,182 @@ def test_comma_in_ordering_formula_still_ends_vesting_clause():
     assert clauses == ["By virtue of the authority vested in me by the Constitution and laws"]
 
 
+def test_ocr_code_citation_does_not_truncate_vesting_clause():
+    clauses = extract_vesting_clauses(
+        "By virtue of the authority vested in me by sections 55 (a), 508, 603, 729 (a), "
+        "and 1204 of the Internal Revenue Code of 1939 (53 Stat. 29, 111, 171; 54 Stat. "
+        "989, 1008; 55 Stat. 722; 26 13. S. C. 55 (a), 508, 603, 729 (a), and 1204), "
+        "and by section 6103 (a) of the Internal Revenue Code of 1954 (68A Stat. 753; "
+        "26 U.S.C. 6103 (a)), it is hereby ordered that the returns shall be open.",
+        "executive_order",
+    )
+    assert clauses == [
+        "By virtue of the authority vested in me by sections 55 (a), 508, 603, 729 (a), "
+        "and 1204 of the Internal Revenue Code of 1939 (53 Stat. 29, 111, 171; 54 Stat. "
+        "989, 1008; 55 Stat. 722; 26 13. S. C. 55 (a), 508, 603, 729 (a), and 1204), "
+        "and by section 6103 (a) of the Internal Revenue Code of 1954 (68A Stat. 753; "
+        "26 U.S.C. 6103 (a)),"
+    ]
+
+
+def test_reviewed_historical_and_post_ordering_vesting_clauses():
+    cases = [
+        (
+            "By virtue of and pursuant to the authority vested in the President by section 18 "
+            "of the Pay Readjustment Act of 1942 (56 Stat. 368), and for the purpose of carrying "
+            "into effect certain provisions of section 14 of the said Act as amended by section 3 "
+            "of the act of March 25, 1948 Public Law 460, 80th Congress, Executive Order No. 9195 "
+            "of July 7, 1942, as amended, prescribing regulations, is hereby further amended.",
+            "executive_order",
+            "By virtue of and pursuant to the authority vested in the President by section 18 "
+            "of the Pay Readjustment Act of 1942 (56 Stat. 368), and for the purpose of carrying "
+            "into effect certain provisions of section 14 of the said Act as amended by section 3 "
+            "of the act of March 25, 1948 Public Law 460, 80th Congress, Executive Order No. 9195 "
+            "of July 7, 1942",
+        ),
+        (
+            "It is hereby ordered, pursuant to the provisions of Section 4 of Proclamation 3044 "
+            "of March 1, 1954, that the flag shall be flown at half-staff.",
+            "executive_order",
+            "pursuant to the provisions of Section 4 of Proclamation 3044 of March 1, 1954,",
+        ),
+        (
+            "It is hereby ordered, pursuant to the provisions of Section 4 of Proclamation 3044 "
+            "of March 1, 1954, as amended, that the flag shall be flown at half-staff.",
+            "executive_order",
+            "pursuant to the provisions of Section 4 of Proclamation 3044 of March 1, 1954,",
+        ),
+        (
+            "I hereby order, by virtue of the authority vested in me as President of the United "
+            "States of America by Section 175 of Title 36 of the United States Code, that the flag "
+            "shall be flown at half-staff.",
+            "proclamation",
+            "by virtue of the authority vested in me as President of the United States of America "
+            "by Section 175 of Title 36 of the United States Code,",
+        ),
+        (
+            "I hereby order, by virtue of the authority vested in me as President of the United "
+            "States of America, that the flag shall be flown at half-staff.",
+            "proclamation",
+            "by virtue of the authority vested in me as President of the United States of America,",
+        ),
+        (
+            "I hereby order, by the authority vested in me as President of the United States of "
+            "America by section 175 of title 36 of the United States Code, that the flag shall be "
+            "flown at half-staff.",
+            "proclamation",
+            "by the authority vested in me as President of the United States of America by section "
+            "175 of title 36 of the United States Code,",
+        ),
+        (
+            "I hereby order, by the authority vested in me as President by the Constitution and "
+            "the laws of the United States of America, that the flag shall be flown at half-staff.",
+            "proclamation",
+            "by the authority vested in me as President by the Constitution and the laws of the "
+            "United States of America,",
+        ),
+        (
+            "Memorandum for the Secretary Subject: Delegation of Authority Under Section 1424 "
+            "By the authority vested in my by the Constitution and the laws of the United States "
+            "of America, including section 301 of title 3 of the United States Code, I hereby "
+            "delegate the function.",
+            "memorandum",
+            "By the authority vested in my by the Constitution and the laws of the United States "
+            "of America, including section 301 of title 3 of the United States Code,",
+        ),
+        (
+            "Pursuant to my constitutional authority to conduct the foreign relations of the "
+            "United States, I have determined that deportation should be deferred.",
+            "memorandum",
+            "Pursuant to my constitutional authority to conduct the foreign relations of the "
+            "United States,",
+        ),
+        (
+            "By virtue of my authority as President of the United States of America, and in "
+            "order to promote equality for women, it is hereby ordered as follows.",
+            "executive_order",
+            "By virtue of my authority as President of the United States of America",
+        ),
+        (
+            "Therefore, pursuant to my authority to regulate federal employment, I have "
+            "determined that agencies may receive applications from these individuals.",
+            "memorandum",
+            "pursuant to my authority to regulate federal employment,",
+        ),
+        (
+            "In relation to the agreement, pursuant to my authority under subsection 405(b)(1) "
+            "of the Trade Act of 1974 (19 U.S.C. 2435(b)(1)), I reconfirm that a satisfactory "
+            "balance of concessions has been maintained.",
+            "memorandum",
+            "pursuant to my authority under subsection 405(b)(1) of the Trade Act of 1974 "
+            "(19 U.S.C. 2435(b)(1)),",
+        ),
+        (
+            "Pursuant to my authority as Commander in Chief, I hereby approve and direct the "
+            "implementation of the revised Unified Command Plan.",
+            "memorandum",
+            "Pursuant to my authority as Commander in Chief,",
+        ),
+        (
+            "Based on a petition submitted by the Governor, pursuant to Section 110(f) of the "
+            "Clean Air Act, I hereby determine that a regional energy emergency exists.",
+            "memorandum",
+            "pursuant to Section 110(f) of the Clean Air Act,",
+        ),
+        (
+            "Thus, pursuant to section 1106(a) of the 1988 Act, I determine that state trading "
+            "enterprises do not account for a significant share of exports.",
+            "memorandum",
+            "pursuant to section 1106(a) of the 1988 Act,",
+        ),
+        (
+            "Presidential Determination No. 98-34 Memorandum for the Secretary of State Subject: "
+            "Assistance to Kosovo Pursuant to section 2(c)(1) of the Migration and Refugee "
+            "Assistance Act of 1962, as amended, 22 U.S.C. 2601(c)(1), I hereby determine that "
+            "it is important to the national interest to make funds available.",
+            "memorandum",
+            "Pursuant to section 2(c)(1) of the Migration and Refugee Assistance Act of 1962, "
+            "as amended, 22 U.S.C. 2601(c)(1),",
+        ),
+        (
+            "Presidential Determination No. 97-24 Memorandum for the Secretary of State Subject: "
+            "Assistance to Turkey Pursuant to subsection (b) of section 620I of the Foreign "
+            "Assistance Act of 1961, as amended, I hereby determine that assistance should be "
+            "furnished to Turkey.",
+            "memorandum",
+            "Pursuant to subsection (b) of section 620I of the Foreign Assistance Act of 1961, "
+            "as amended,",
+        ),
+        (
+            "I find that exemption is in the paramount interest of the United States. Therefore, "
+            "pursuant to 42 U.S.C. § 6961(a), I hereby exempt the Air Force operating location "
+            "from requirements that would disclose classified information.",
+            "memorandum",
+            "pursuant to 42 U.S.C. § 6961(a),",
+        ),
+    ]
+    for text, doc_type, expected in cases:
+        assert extract_vesting_clauses(text, doc_type) == [expected]
+
+
+def test_reviewed_action_reports_remain_without_vesting_clauses():
+    assert extract_vesting_clauses(
+        "This is to inform you that, pursuant to Section 22 of the Agricultural Adjustment Act "
+        "of 1933, as amended, I have modified the quotas established in another directive.",
+        "letter",
+    ) == []
+    assert extract_vesting_clauses(
+        "Section 1105 requires the President to determine whether concessions were made. "
+        "I hereby determine that there has been no failure to make concessions.",
+        "memorandum",
+    ) == []
+    assert extract_vesting_clauses(
+        "Subject: Determination Pursuant to Section 207(b) of the Act In accordance with "
+        "section 207(b) of the Act, I hereby determine that an emergency exists.",
+        "memorandum",
+    ) == []
+
+
 def test_policy_cross_reference_is_not_a_vesting_clause():
     clauses = extract_vesting_clauses(
         "By the authority vested in me by the Constitution, it is hereby ordered as follows:  "

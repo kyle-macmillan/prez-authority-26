@@ -32,98 +32,53 @@ DEFAULT_HTML = ANALYSIS_DIR / "README.html"
 CATEGORIES = (
     "generic_constitution_only",
     "specific_constitution_only",
-    "specific_constitutional_provision_only",
     "generic_statute_only",
-    "act_of_congress_only",
-    "specific_statutory_section_only",
+    "specific_statute_only",
     "generic_constitution_and_generic_statute",
-    "generic_constitution_and_act_of_congress",
-    "generic_constitution_and_specific_statutory_section",
+    "generic_constitution_and_specific_statute",
     "specific_constitution_and_generic_statute",
-    "specific_constitution_and_act_of_congress",
-    "specific_constitution_and_specific_statutory_section",
-    "specific_constitutional_provision_and_generic_statute",
-    "specific_constitutional_provision_and_act_of_congress",
-    "specific_constitutional_provision_and_specific_statutory_section",
+    "specific_constitution_and_specific_statute",
     "no_vesting_clause",
     "other_vesting_authority",
 )
+SUBSTANTIVE_CATEGORIES = CATEGORIES[:-2]
 
 CATEGORY_LABELS = {
     "generic_constitution_only": "(1) Generic Constitution only",
     "specific_constitution_only": "(2) Specific Constitution only",
-    "specific_constitutional_provision_only": "(3) Specific constitutional provision only",
-    "generic_statute_only": "(4) Generic Statute only",
-    "act_of_congress_only": "(5) Act of Congress only",
-    "specific_statutory_section_only": "(6) Specific statutory section only",
-    "generic_constitution_and_generic_statute": "(7) Generic Constitution + Generic Statute",
-    "generic_constitution_and_act_of_congress": "(8) Generic Constitution + Act of Congress",
-    "generic_constitution_and_specific_statutory_section": (
-        "(9) Generic Constitution + Specific statutory section"
-    ),
-    "specific_constitution_and_generic_statute": "(10) Specific Constitution + Generic Statute",
-    "specific_constitution_and_act_of_congress": "(11) Specific Constitution + Act of Congress",
-    "specific_constitution_and_specific_statutory_section": (
-        "(12) Specific Constitution + Specific statutory section"
-    ),
-    "specific_constitutional_provision_and_generic_statute": (
-        "(13) Specific constitutional provision + Generic Statute"
-    ),
-    "specific_constitutional_provision_and_act_of_congress": (
-        "(14) Specific constitutional provision + Act of Congress"
-    ),
-    "specific_constitutional_provision_and_specific_statutory_section": (
-        "(15) Specific constitutional provision + Specific statutory section"
-    ),
-    "no_vesting_clause": "(16) No vesting clause",
-    "other_vesting_authority": "(17) Other/unclassified vesting authority",
+    "generic_statute_only": "(3) Generic Statute only",
+    "specific_statute_only": "(4) Specific Statute only",
+    "generic_constitution_and_generic_statute": "(5) Generic Constitution + Generic Statute",
+    "generic_constitution_and_specific_statute": "(6) Generic Constitution + Specific Statute",
+    "specific_constitution_and_generic_statute": "(7) Specific Constitution + Generic Statute",
+    "specific_constitution_and_specific_statute": "(8) Specific Constitution + Specific Statute",
+    "no_vesting_clause": "No vesting clause",
+    "other_vesting_authority": "Other/unclassified vesting authority",
 }
 
 CATEGORY_DESCRIPTIONS = {
     "generic_constitution_only": "The Constitution is cited without statutory authority.",
     "specific_constitution_only": (
-        "A constitutional Article or the Chief Executive role is cited, without a more "
-        "specific constitutional provision or statutory authority."
-    ),
-    "specific_constitutional_provision_only": (
-        "A constitutional section, Amendment, named Clause, Commander in Chief role, "
-        "or pardon/reprieve power is cited without statutory authority."
+        "A constitutional Article, section, Amendment, named Clause, Chief Executive or "
+        "Commander in Chief role, or pardon/reprieve power is cited without statutory authority."
     ),
     "generic_statute_only": "Generic law or statute wording is cited without constitutional authority.",
-    "act_of_congress_only": (
+    "specific_statute_only": (
         "A named or referenced Act, numbered Public Law, Act of Congress, or authorizing "
-        "joint resolution is cited without constitutional authority or a specific statutory section."
-    ),
-    "specific_statutory_section_only": (
-        "A statutory section or subsection, U.S.C. provision, title, or chapter is cited "
-        "without constitutional authority."
+        "joint resolution, statutory section or subsection, U.S.C. provision, title, or chapter "
+        "is cited without constitutional authority."
     ),
     "generic_constitution_and_generic_statute": (
         "Generic constitutional and statutory authority are both cited."
     ),
-    "generic_constitution_and_act_of_congress": (
-        "Generic constitutional authority and an Act of Congress are cited."
-    ),
-    "generic_constitution_and_specific_statutory_section": (
-        "Generic constitutional authority and a specific statutory section are cited."
+    "generic_constitution_and_specific_statute": (
+        "Generic constitutional authority and a specific Act or statutory provision are cited."
     ),
     "specific_constitution_and_generic_statute": (
-        "A constitutional Article or the Chief Executive role and generic statutory authority are cited."
+        "A specific constitutional source and generic statutory authority are cited."
     ),
-    "specific_constitution_and_act_of_congress": (
-        "A constitutional Article or the Chief Executive role and an Act of Congress are cited."
-    ),
-    "specific_constitution_and_specific_statutory_section": (
-        "A constitutional Article or the Chief Executive role and a specific statutory section are cited."
-    ),
-    "specific_constitutional_provision_and_generic_statute": (
-        "A specific constitutional provision and generic statutory authority are cited."
-    ),
-    "specific_constitutional_provision_and_act_of_congress": (
-        "A specific constitutional provision and an Act of Congress are cited."
-    ),
-    "specific_constitutional_provision_and_specific_statutory_section": (
-        "A specific constitutional provision and a specific statutory section are cited."
+    "specific_constitution_and_specific_statute": (
+        "A specific constitutional source and a specific Act or statutory provision are cited."
     ),
     "no_vesting_clause": "No vesting clause was extracted.",
     "other_vesting_authority": (
@@ -134,29 +89,12 @@ CATEGORY_DESCRIPTIONS = {
 COMBINATION_CATEGORIES = {
     ("generic_constitution", None): "generic_constitution_only",
     ("specific_constitution", None): "specific_constitution_only",
-    ("specific_constitutional_provision", None): "specific_constitutional_provision_only",
     (None, "generic_statute"): "generic_statute_only",
-    (None, "act_of_congress"): "act_of_congress_only",
-    (None, "specific_statutory_section"): "specific_statutory_section_only",
+    (None, "specific_statute"): "specific_statute_only",
     ("generic_constitution", "generic_statute"): "generic_constitution_and_generic_statute",
-    ("generic_constitution", "act_of_congress"): "generic_constitution_and_act_of_congress",
-    ("generic_constitution", "specific_statutory_section"): (
-        "generic_constitution_and_specific_statutory_section"
-    ),
+    ("generic_constitution", "specific_statute"): "generic_constitution_and_specific_statute",
     ("specific_constitution", "generic_statute"): "specific_constitution_and_generic_statute",
-    ("specific_constitution", "act_of_congress"): "specific_constitution_and_act_of_congress",
-    ("specific_constitution", "specific_statutory_section"): (
-        "specific_constitution_and_specific_statutory_section"
-    ),
-    ("specific_constitutional_provision", "generic_statute"): (
-        "specific_constitutional_provision_and_generic_statute"
-    ),
-    ("specific_constitutional_provision", "act_of_congress"): (
-        "specific_constitutional_provision_and_act_of_congress"
-    ),
-    ("specific_constitutional_provision", "specific_statutory_section"): (
-        "specific_constitutional_provision_and_specific_statutory_section"
-    ),
+    ("specific_constitution", "specific_statute"): "specific_constitution_and_specific_statute",
 }
 
 VIEWS = {
@@ -303,7 +241,8 @@ FIRST_PERSON_AUTHORITY_RE = re.compile(
     re.I,
 )
 POSSIBLE_VESTING_RE = re.compile(
-    r"vested\s+in\s+me|by\s+virtue\s+of\s+the\s+authority|"
+    r"vested\s+in\s+(?:me|my(?=\s+by\b))|"
+    r"by\s+virtue\s+of\s+(?:my\s+authority|the\s+authority|and\s+pursuant\s+to\s+the\s+authority\s+vested\s+in\s+the\s+President)|"
     r"\bnow,?\s+therefore,?\s+i\b|\bpursuant\s+to\b|"
     r"\b(?:joint\s+resolution|public\s+law)\b|"
     r"\bunder\s+(?:section|title|the\s+authority)\b",
@@ -381,19 +320,15 @@ def classify_authority_category(clauses: list[str]) -> str:
         or REFERENCED_ACT_RE.search(authority_text)
     )
     has_statutory_section = _has_specific_statutory_section(authority_text)
-    if has_constitutional_provision:
-        constitutional_category = "specific_constitutional_provision"
-    elif has_specific_constitution:
+    if has_constitutional_provision or has_specific_constitution:
         constitutional_category = "specific_constitution"
     elif has_constitution:
         constitutional_category = "generic_constitution"
     else:
         constitutional_category = None
 
-    if has_statutory_section:
-        statutory_category = "specific_statutory_section"
-    elif has_act:
-        statutory_category = "act_of_congress"
+    if has_statutory_section or has_act:
+        statutory_category = "specific_statute"
     elif has_generic_law or has_combined:
         statutory_category = "generic_statute"
     else:
@@ -498,8 +433,9 @@ def render_html(
                 if denominator:
                     percent = 100 * count / denominator
                     cells.append(
-                        f'<td class="count {_heat_class(percent)}" title="{percent:.2f}% of this administration">'
-                        f'<b>{count:,}</b><span class="pct">{percent:.1f}%</span></td>'
+                        f'<td class="count category-count {_heat_class(percent)}" '
+                        f'title="{percent:.2f}% of this administration">'
+                        f'<b class="raw-count">{count:,}</b><span class="pct">{percent:.1f}%</span></td>'
                     )
                 else:
                     cells.append('<td class="count heat-0 empty" title="No directives of this type">-</td>')
@@ -520,11 +456,19 @@ def render_html(
         f"<td>{html.escape(CATEGORY_DESCRIPTIONS[category])}</td></tr>"
         for category in CATEGORIES
     )
-    headers = "".join(
-        f'<th scope="col"><abbr title="{html.escape(CATEGORY_LABELS[category])}">'
-        f'({index})</abbr></th>'
-        for index, category in enumerate(CATEGORIES, 1)
-    )
+    headers = []
+    for index, category in enumerate(CATEGORIES, 1):
+        if category in SUBSTANTIVE_CATEGORIES:
+            short_label = f"({index})"
+        elif category == "no_vesting_clause":
+            short_label = "No clause"
+        else:
+            short_label = "Other"
+        headers.append(
+            f'<th scope="col"><abbr title="{html.escape(CATEGORY_LABELS[category])}">'
+            f'{short_label}</abbr></th>'
+        )
+    headers = "".join(headers)
     view_buttons = "".join(
         f'<button type="button" data-view="{view}" aria-pressed="{"true" if view == "all" else "false"}">'
         f'{html.escape(label)}</button>'
@@ -556,6 +500,8 @@ def render_html(
     .count {{ text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }}
     .count b {{ display: block; }}
     .pct {{ display: block; margin-top: 1px; color: #4c5968; font-size: 12px; }}
+    main[data-display="number"] .category-count .pct {{ display: none; }}
+    main[data-display="proportion"] .category-count .raw-count {{ display: none; }}
     .heat-0 {{ background: #fff; }}
     .heat-1 {{ background: #eef6f3; }}
     .heat-2 {{ background: #d9ebe5; }}
@@ -570,25 +516,29 @@ def render_html(
     abbr {{ text-decoration: none; cursor: help; }}
     .legend {{ display: flex; flex-wrap: wrap; gap: 12px; margin: 8px 0 14px; font-size: 13px; color: #4c5968; }}
     .swatch {{ display: inline-block; width: 16px; height: 16px; margin-right: 5px; border: 1px solid #cfd7e3; vertical-align: -3px; }}
-    .view-toggle {{ display: inline-flex; max-width: 100%; overflow-x: auto; margin: 4px 0 12px; border: 1px solid #aab5c3; background: #fff; }}
-    .view-toggle button {{ min-height: 38px; padding: 7px 12px; border: 0; border-right: 1px solid #cfd7e3; background: #fff; color: #202936; font: inherit; font-size: 14px; white-space: nowrap; cursor: pointer; }}
-    .view-toggle button:last-child {{ border-right: 0; }}
-    .view-toggle button[aria-pressed="true"] {{ background: #263d55; color: #fff; font-weight: 650; }}
-    .view-toggle button:focus-visible {{ outline: 3px solid #d29b42; outline-offset: -3px; }}
+    .view-toggle, .display-toggle {{ display: inline-flex; max-width: 100%; overflow-x: auto; margin: 4px 8px 12px 0; border: 1px solid #aab5c3; background: #fff; }}
+    .view-toggle button, .display-toggle button {{ min-height: 38px; padding: 7px 12px; border: 0; border-right: 1px solid #cfd7e3; background: #fff; color: #202936; font: inherit; font-size: 14px; white-space: nowrap; cursor: pointer; }}
+    .view-toggle button:last-child, .display-toggle button:last-child {{ border-right: 0; }}
+    .view-toggle button[aria-pressed="true"], .display-toggle button[aria-pressed="true"] {{ background: #263d55; color: #fff; font-weight: 650; }}
+    .view-toggle button:focus-visible, .display-toggle button:focus-visible {{ outline: 3px solid #d29b42; outline-offset: -3px; }}
     [hidden] {{ display: none !important; }}
     .note {{ border-left: 4px solid #4f657e; padding: 10px 14px; background: #fff; }}
     code {{ background: #e9edf2; padding: 1px 4px; border-radius: 3px; }}
   </style>
 </head>
 <body>
-<main>
+<main data-display="number">
   <h1>Vesting Authority Specificity Analysis</h1>
   <p>This report analyzes {document_count:,} presidential directives in the development and holdout corpora. Each presidential term is reported as a separate administration.</p>
-  <p class="note"><strong>Mutually exclusive categories.</strong> Every directive receives exactly one category. Constitutional and statutory specificity are classified independently and then combined: a specific constitutional provision supersedes a constitutional Article or role, and a specific statutory section supersedes an Act of Congress. Additional citations to Executive Orders, treaties, agreements, or similar authorities do not displace a recognized constitutional/statutory combination. Category sums are checked against directive totals for every administration and directive-type view.</p>
+  <p class="note"><strong>Mutually exclusive categories.</strong> Every directive receives exactly one category. Constitutional and statutory specificity are classified independently and then combined. Constitutional Articles, roles, and provisions share one specific-Constitution level; named Acts and statutory provisions share one specific-statute level. The resulting eight substantive categories are accompanied by two bookkeeping buckets for no extracted vesting clause and other/unclassified authority. Additional citations to Executive Orders, treaties, agreements, or similar authorities do not displace a recognized constitutional/statutory combination. Category sums are checked against directive totals for every administration and directive-type view.</p>
 
   <h2>Counts by Administration</h2>
   <p>Each cell gives the number of matching directives and its share of the selected directive type in that administration. The background color provides an absolute percentage heatmap.</p>
   <div class="view-toggle" role="group" aria-label="Directive type">{view_buttons}</div>
+  <div class="display-toggle" role="group" aria-label="Cell display">
+    <button type="button" data-display="number" aria-pressed="true">Number</button>
+    <button type="button" data-display="proportion" aria-pressed="false">Proportion</button>
+  </div>
   <div class="legend" aria-label="Heatmap legend">
     <span><i class="swatch heat-0"></i>0%</span><span><i class="swatch heat-1"></i>Less than 1%</span><span><i class="swatch heat-2"></i>1-4.9%</span><span><i class="swatch heat-3"></i>5-14.9%</span><span><i class="swatch heat-4"></i>15-34.9%</span><span><i class="swatch heat-5"></i>35% or more</span>
   </div>
@@ -608,20 +558,32 @@ def render_html(
   </div>
 
   <h2>Method</h2>
-  <p>The analysis first applies the project's existing vesting-clause extractor. Within each extracted clause, it retains sources presented as presidential authority through wording such as <code>by</code>, <code>under</code>, <code>pursuant to</code>, <code>including</code>, or <code>authority conferred/granted by</code>. A proclamation's <code>Whereas</code> recital is retained only when it makes a first-person authority assertion or states that Congress or law authorizes, empowers, or directs the President to act. Contextual uses of <code>pursuant to</code> within other recitals are discarded.</p>
+  <p>The analysis first applies the project's rule-based vesting-clause extractor. Strong signals include <code>vested in me</code> (plus the reviewed OCR form <code>vested in my by</code>), <code>by virtue of [the/my] authority</code>, the historical <code>authority vested in the President</code> formula, and narrowly reviewed <code>pursuant to my authority</code> constructions. Sentence-opening <code>pursuant to</code> or <code>under</code> language must contain a statutory or constitutional citation.</p>
+  <p>Conditional rules retain authority appearing before or after an ordering phrase, including <code>It is hereby ordered, pursuant to…</code>, <code>I hereby order, by the authority vested in me…</code>, and <code>pursuant to [citation], I determine/I hereby exempt…</code>. The last construction selects the nearest authority marker and does not cross intervening <code>consistent with</code>, <code>in accordance with</code>, or <code>in response to</code> language. Parenthetical citations are protected during sentence splitting, and internal citation commas are retained through U.S.C., Statutes at Large, Public Law, amendment, and additional-provision components.</p>
+  <p>Within each extracted clause, the analysis retains sources presented as presidential authority through wording such as <code>by</code>, <code>under</code>, <code>pursuant to</code>, <code>including</code>, or <code>authority conferred/granted by</code>. A proclamation's <code>Whereas</code> recital is retained only when it makes a first-person authority assertion or states that Congress or law authorizes, empowers, or directs the President to act. Contextual uses of <code>pursuant to</code> within other recitals are discarded.</p>
   <p>Citations appearing only as compliance, purpose, or context are excluded, including citations following <code>consistent with</code>, <code>in accordance with</code>, <code>in order to</code>, <code>in furtherance of</code>, <code>in light of</code>, and <code>as contemplated by</code>. Matching tolerates capitalization, punctuation, singular/plural forms, and observed OCR variants; it does not use fuzzy matching.</p>
 </main>
 <script>
-  const buttons = document.querySelectorAll('.view-toggle button');
+  const viewButtons = document.querySelectorAll('.view-toggle button');
   const bodies = document.querySelectorAll('.administration-table tbody');
-  for (const button of buttons) {{
+  for (const button of viewButtons) {{
     button.addEventListener('click', () => {{
       const view = button.dataset.view;
-      for (const candidate of buttons) {{
+      for (const candidate of viewButtons) {{
         candidate.setAttribute('aria-pressed', String(candidate === button));
       }}
       for (const body of bodies) {{
         body.hidden = body.dataset.view !== view;
+      }}
+    }});
+  }}
+  const displayButtons = document.querySelectorAll('.display-toggle button');
+  const main = document.querySelector('main');
+  for (const button of displayButtons) {{
+    button.addEventListener('click', () => {{
+      main.dataset.display = button.dataset.display;
+      for (const candidate of displayButtons) {{
+        candidate.setAttribute('aria-pressed', String(candidate === button));
       }}
     }});
   }}

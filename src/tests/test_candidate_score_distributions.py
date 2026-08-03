@@ -7,7 +7,8 @@ import numpy as np
 sys.path.insert(0, str(Path(__file__).parents[1]))
 
 from analysis.candidate_score_distributions import (
-    build_plot_html, extract_candidate_scores, summarize_scores, write_analysis,
+    _histogram_specs, build_plot_html, extract_candidate_scores, summarize_scores,
+    write_analysis,
 )
 
 
@@ -71,6 +72,32 @@ def test_summary_statistics_and_plot_are_deterministic():
     plot = build_plot_html(extracted)
     assert plot.count('"title":') == 6
     assert "Thirty equal-width bins" in plot
+    assert "How to read these metrics" in plot
+    assert "Operative embedding similarity" in plot
+    assert "Word-trigram TF-IDF similarity" in plot
+    assert "Text reuse" in plot
+    assert "Why this report starts with 16,397 rather than 20,232 directives" in plot
+    assert "Why Candidate 2 has n = 11,716" in plot
+
+
+def test_text_reuse_histogram_excludes_values_above_combined_p99():
+    extracted = [
+        {
+            "candidate_rank": 1,
+            "operative_embedding_similarity": 0.5,
+            "trigram_tfidf_similarity": 0.5,
+            "text_reuse_words": float(value),
+        }
+        for value in [*range(100), 1000]
+    ]
+
+    reuse = next(
+        spec for spec in _histogram_specs(extracted)
+        if spec["title"] == "Candidate 1: text reuse"
+    )
+    assert reuse["maximum"] == 99.0
+    assert reuse["above_display_range"] == 1
+    assert np.isclose(sum(reuse["shares"]), 100 / 101)
 
 
 def test_write_analysis_creates_scores_summary_and_plot(tmp_path):

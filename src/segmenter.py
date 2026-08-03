@@ -1002,7 +1002,25 @@ _PUNCT_RE = re.compile(r"[,;:—–]")
 # High-confidence authority-invocation markers: the sentence IS an authority citation
 # even when no ordering phrase follows.
 _STRONG_VESTING_RE = re.compile(
-    r"vested\s+in\s+me|by\s+virtue\s+of\s+the\s+authority",
+    r"vested\s+in\s+(?:me|my(?=\s+by\b))"
+    r"|by\s+virtue\s+of\s+the\s+authority"
+    r"|by\s+virtue\s+of\s+and\s+pursuant\s+to\s+the\s+authority\s+vested\s+in\s+the\s+President"
+    r"|by\s+virtue\s+of\s+my\s+authority\s+as\s+President\b"
+    r"|pursuant\s+to\s+my\s+authority\s+(?:"
+    r"to\s+regulate\s+federal\s+employment\b"
+    r"|under\s+subsection\s+\d)",
+    re.IGNORECASE,
+)
+
+_REVIEWED_COMMANDER_AUTHORITY_RE = re.compile(
+    r"pursuant\s+to\s+my\s+authority\s+as\s+Commander\s+in\s+Chief"
+    r"(?=,\s+I\s+hereby\s+(?:approve|rescind)\b)",
+    re.IGNORECASE,
+)
+
+_INLINE_VESTING_RE = re.compile(
+    r"\b(?:by\s+virtue\s+of\s+|by\s+)?the\s+authority\s+vested\s+in\s+"
+    r"(?:me|my(?=\s+by\b))\b",
     re.IGNORECASE,
 )
 
@@ -1027,7 +1045,7 @@ _CONDITIONAL_VESTING_RE = re.compile(
 # and as an authority-marker anchor for _vesting_marker_end.
 _PURSUANT_RE = re.compile(r"\bpursuant\s+to\b", re.IGNORECASE)
 
-# First-person presidential reference.  Required alongside _PURSUANT_RE + _LAW_CITATION_RE
+# First-person presidential reference.  Required alongside _PURSUANT_RE + an authority citation
 # to avoid tagging cabinet-delegation sentences ("The Secretary of State … shall…") as
 # vesting clauses.  True presidential authority sentences always use "I" as the actor.
 _PRESIDENTIAL_I_RE = re.compile(r"\bI\b")
@@ -1046,7 +1064,8 @@ _OPENING_AUTHORITY_RE = re.compile(
 # "applicable law" or "existing policy".
 _LAW_CITATION_RE = re.compile(
     r"\b(?:"
-    r"[Ss]ection\s+\d"                       # "section 110", "Section 506A"
+    r"[Ss]ubsections?\s+\d"                  # "subsection 405(b)(1)"
+    r"|[Ss]ection\s+\d"                      # "section 110", "Section 506A"
     r"|\d+\s+U\.S\.C\."                       # "22 U.S.C."
     r"|[Tt]itle\s+\d"                         # "Title 10"
     r"|[Cc]hapter\s+\d"                       # "Chapter 15"
@@ -1056,6 +1075,12 @@ _LAW_CITATION_RE = re.compile(
     r"|statutes?\s+of\s+the\s+United\s+States"
     r"|[A-Z]\w+\s+Act\b"                      # "Trade Act", "USIFTA Act"
     r")"
+)
+
+_AUTHORITY_CITATION_RE = re.compile(
+    _LAW_CITATION_RE.pattern
+    + r"|\bmy\s+constitutional\s+authority\b",
+    re.IGNORECASE,
 )
 
 # Text after an internal comma that remains part of the same statutory citation.  This lets
@@ -1086,7 +1111,12 @@ def _vesting_marker_end(sent: str, limit: int, is_proclamation: bool = False) ->
     Returns 0 when no qualifying marker precedes *limit*.
     """
     ends = [0]
-    patterns = (_STRONG_VESTING_RE, _CONDITIONAL_VESTING_RE, _PURSUANT_RE)
+    patterns = (
+        _STRONG_VESTING_RE,
+        _REVIEWED_COMMANDER_AUTHORITY_RE,
+        _CONDITIONAL_VESTING_RE,
+        _PURSUANT_RE,
+    )
     if is_proclamation:
         patterns = patterns + (_PROC_VESTING_RE,)
     for rgx in patterns:
@@ -1095,8 +1125,22 @@ def _vesting_marker_end(sent: str, limit: int, is_proclamation: bool = False) ->
 
 
 def _split_sentences(text: str) -> list[str]:
-    """Split text into sentences on terminal-punctuation boundaries."""
-    return [s for s in _SENT_SPLIT_RE.split(text) if s.strip()]
+    """Split text on terminal punctuation outside parenthetical citations."""
+    sentences = []
+    start = scan_start = depth = 0
+    for boundary in _SENT_SPLIT_RE.finditer(text):
+        for char in text[scan_start:boundary.start()]:
+            if char == "(":
+                depth += 1
+            elif char == ")":
+                depth = max(0, depth - 1)
+        scan_start = boundary.end()
+        if depth:
+            continue
+        sentences.append(text[start:boundary.start()])
+        start = boundary.end()
+    sentences.append(text[start:])
+    return [sentence for sentence in sentences if sentence.strip()]
 
 
 def _inline_pursuant_start(sent: str, ordering_re: re.Pattern) -> int | None:
@@ -1110,9 +1154,39 @@ def _inline_pursuant_start(sent: str, ordering_re: re.Pattern) -> int | None:
         preceding = sent[:match.start()]
         if (
             ordering_re.search(preceding)
-            and _PRESIDENTIAL_I_RE.search(preceding)
-            and _LAW_CITATION_RE.search(sent, match.end())
+            and (
+                _PRESIDENTIAL_I_RE.search(preceding)
+                or re.search(r"\bit\s+is\s+hereby,?\s+ordered\b", preceding, re.I)
+            )
+            and _AUTHORITY_CITATION_RE.search(sent, match.end())
         ):
+            return match.start()
+    return None
+
+
+def _pursuant_authority_action_start(sent: str, ordering_re: re.Pattern) -> int | None:
+    """Return a mid-sentence ``pursuant to`` citation before a reviewed presidential action."""
+    start = None
+    for match in _PURSUANT_RE.finditer(sent):
+        action = ordering_re.search(sent, match.end())
+        if not action:
+            continue
+        action_text = sent[action.start():action.start() + 40]
+        if not re.match(r"I\s+(?:hereby\s+)?(?:determine|exempt)\b", action_text, re.I):
+            continue
+        intervening = sent[match.end():action.start()]
+        if re.search(r"\b(?:consistent\s+with|in\s+accordance\s+with|in\s+response\s+to)\b", intervening, re.I):
+            continue
+        if _AUTHORITY_CITATION_RE.search(sent, match.end(), action.start()):
+            start = match.start()
+    return start
+
+
+def _inline_vesting_start(sent: str, ordering_re: re.Pattern) -> int | None:
+    """Return a post-ordering first-person vesting invocation's start."""
+    for match in _INLINE_VESTING_RE.finditer(sent):
+        preceding = sent[:match.start()]
+        if ordering_re.search(preceding) and _PRESIDENTIAL_I_RE.search(preceding):
             return match.start()
     return None
 
@@ -1123,7 +1197,12 @@ def _carve_inline_pursuant(
     """Carve a trailing mid-sentence statutory citation from an order-action piece."""
     result: list[tuple[str, "SegmentType | None"]] = []
     for text, seg_type in pieces:
-        start = _inline_pursuant_start(text, ordering_re) if seg_type == "order_action" else None
+        starts = (
+            [_inline_pursuant_start(text, ordering_re), _inline_vesting_start(text, ordering_re)]
+            if seg_type == "order_action"
+            else []
+        )
+        start = min((value for value in starts if value is not None), default=None)
         if start is None:
             result.append((text, seg_type))
             continue
@@ -1157,7 +1236,7 @@ def _opening_authority_cut(sent: str) -> int | None:
         return None
     for comma in re.finditer(r",", sent):
         prefix = sent[:comma.end()]
-        if not _LAW_CITATION_RE.search(prefix):
+        if not _AUTHORITY_CITATION_RE.search(prefix):
             continue
         following = sent[comma.end():].lstrip()
         if following and _CITATION_CONTINUATION_RE.match(following):
@@ -1200,18 +1279,20 @@ def _segment_sentence(
     _sentence_opens_with_authority = (
         opening_authority
         and bool(_OPENING_AUTHORITY_RE.match(sent.lstrip()))
-        and bool(_LAW_CITATION_RE.search(sent))
+        and bool(_AUTHORITY_CITATION_RE.search(sent))
     )
     has_strong_vesting = (
         bool(_STRONG_VESTING_RE.search(prefix))
+        or bool(_REVIEWED_COMMANDER_AUTHORITY_RE.search(sent))
         or (is_proclamation and bool(_PROC_VESTING_RE.search(prefix)))
         or _sentence_opens_with_authority
     )
     has_vesting = has_strong_vesting or bool(
         _CONDITIONAL_VESTING_RE.search(prefix)
+        or _pursuant_authority_action_start(sent, ordering_re) is not None
         or (
             _PURSUANT_RE.search(prefix)
-            and _LAW_CITATION_RE.search(prefix)
+            and _AUTHORITY_CITATION_RE.search(prefix)
             and _PRESIDENTIAL_I_RE.search(prefix)
         )
     )
@@ -1283,24 +1364,27 @@ def _chunk_has_vesting(chunk: str, ordering_re: re.Pattern, opening_authority: b
     conditional markers ('now, therefore, I'; 'pursuant to' + law citation)
     only trigger when an ordering phrase is also present in the chunk.
 
-    Critically, all marker searches are restricted to the text *before* the first ordering
-    phrase.  This prevents sentences like "As a mark of respect…, I hereby order, by the
-    authority vested in me…" from being mis-carved: the authority language follows the
-    ordering phrase, so there is nothing to carve out before it.
+    Opening marker searches are restricted to the text before the first ordering phrase.
+    Separately, tightly scoped inline rules recognize presidential authority citations that
+    immediately follow an ordering phrase.
     """
     first_match = ordering_re.search(chunk)
     prefix = chunk[:first_match.start()] if first_match else chunk
     if _STRONG_VESTING_RE.search(prefix):
         return True
+    if _REVIEWED_COMMANDER_AUTHORITY_RE.search(chunk):
+        return True
     if is_proclamation and _PROC_VESTING_RE.search(prefix):
         return True
     if opening_authority and any(
-        _OPENING_AUTHORITY_RE.match(s.lstrip()) and _LAW_CITATION_RE.search(s)
+        _OPENING_AUTHORITY_RE.match(s.lstrip()) and _AUTHORITY_CITATION_RE.search(s)
         for s in (_split_sentences(chunk) or [chunk])
     ):
         return True
     if any(
         _inline_pursuant_start(s, ordering_re) is not None
+        or _inline_vesting_start(s, ordering_re) is not None
+        or _pursuant_authority_action_start(s, ordering_re) is not None
         for s in (_split_sentences(chunk) or [chunk])
     ):
         return True
@@ -1308,7 +1392,7 @@ def _chunk_has_vesting(chunk: str, ordering_re: re.Pattern, opening_authority: b
         _CONDITIONAL_VESTING_RE.search(prefix)
         or (
             _PURSUANT_RE.search(prefix)
-            and _LAW_CITATION_RE.search(prefix)
+            and _AUTHORITY_CITATION_RE.search(prefix)
             and _PRESIDENTIAL_I_RE.search(prefix)
         )
     )

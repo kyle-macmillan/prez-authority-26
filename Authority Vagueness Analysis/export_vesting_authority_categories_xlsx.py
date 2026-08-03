@@ -24,23 +24,14 @@ TARGETS = CATEGORIES
 SHEET_NAMES = {
     "generic_constitution_only": "1 Generic Constitution",
     "specific_constitution_only": "2 Specific Constitution",
-    "specific_constitutional_provision_only": "3 Constitutional Provision",
-    "generic_statute_only": "4 Generic Statute",
-    "act_of_congress_only": "5 Act of Congress",
-    "specific_statutory_section_only": "6 Statutory Section",
-    "generic_constitution_and_generic_statute": "7 Gen Const + Gen Statute",
-    "generic_constitution_and_act_of_congress": "8 Gen Const + Act",
-    "generic_constitution_and_specific_statutory_section": "9 Gen Const + Stat Section",
-    "specific_constitution_and_generic_statute": "10 Spec Const + Gen Statute",
-    "specific_constitution_and_act_of_congress": "11 Spec Const + Act",
-    "specific_constitution_and_specific_statutory_section": "12 Spec Const + Stat Section",
-    "specific_constitutional_provision_and_generic_statute": "13 Const Prov + Gen Statute",
-    "specific_constitutional_provision_and_act_of_congress": "14 Const Prov + Act",
-    "specific_constitutional_provision_and_specific_statutory_section": (
-        "15 Const Prov + Stat Section"
-    ),
-    "no_vesting_clause": "16 No Vesting Clause",
-    "other_vesting_authority": "17 Other Authority",
+    "generic_statute_only": "3 Generic Statute",
+    "specific_statute_only": "4 Specific Statute",
+    "generic_constitution_and_generic_statute": "5 Gen Const + Gen Statute",
+    "generic_constitution_and_specific_statute": "6 Gen Const + Spec Statute",
+    "specific_constitution_and_generic_statute": "7 Spec Const + Gen Statute",
+    "specific_constitution_and_specific_statute": "8 Spec Const + Spec Statute",
+    "no_vesting_clause": "No Vesting Clause",
+    "other_vesting_authority": "Other Authority",
 }
 HEADERS = ("Title", "Directive Type", "Year", "Administration", "URL to UCSB Link", "Full Text")
 EXCEL_CELL_CHAR_LIMIT = 32_767

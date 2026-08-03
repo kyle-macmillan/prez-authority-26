@@ -17,12 +17,15 @@ from dataclasses import dataclass
 from pathlib import Path
 
 from segmenter import (
+    _AUTHORITY_CITATION_RE,
     _CONDITIONAL_VESTING_RE,
     _get_ordering_re,
-    _LAW_CITATION_RE,
+    _inline_pursuant_start,
+    _pursuant_authority_action_start,
     _PRESIDENTIAL_I_RE,
     _PROC_VESTING_RE,
     _PURSUANT_RE,
+    _REVIEWED_COMMANDER_AUTHORITY_RE,
     _segment_sentence,
     _split_sentences,
     _STRONG_VESTING_RE,
@@ -34,7 +37,7 @@ ROOT = Path(__file__).parent.parent
 DEFAULT_DEV = ROOT / "data" / "4_28_2026_build_dev.csv"
 DEFAULT_HOLDOUT = ROOT / "data" / "4_28_2026_build_holdout.csv"
 DEFAULT_AUDIT = ROOT / "data" / "generic_vesting_authority_audit.csv"
-EXPECTED_FULL_CORPUS_SIZE = 18_418
+EXPECTED_FULL_CORPUS_SIZE = 20_232
 DOC_TYPES = ("executive_order", "memorandum", "letter", "proclamation")
 
 PRESIDENTIAL_TITLE_INVOCATION_RE = re.compile(
@@ -206,18 +209,21 @@ def extract_vesting_clauses(doc_text: str, doc_type: str) -> list[str]:
             or _STRONG_VESTING_RE.search(sentence)
             or (is_proclamation and _PROC_VESTING_RE.search(sentence))
             or _CONDITIONAL_VESTING_RE.search(sentence)
+            or _REVIEWED_COMMANDER_AUTHORITY_RE.search(sentence)
             or (
                 _PURSUANT_RE.search(sentence)
-                and _LAW_CITATION_RE.search(sentence)
+                and _AUTHORITY_CITATION_RE.search(sentence)
                 and _PRESIDENTIAL_I_RE.search(sentence)
             )
             or (
                 sentence.lstrip().lower().startswith("pursuant to")
-                and _LAW_CITATION_RE.search(sentence)
+                and _AUTHORITY_CITATION_RE.search(sentence)
             )
+            or _inline_pursuant_start(sentence, ordering_re) is not None
         )
         if not could_be_vesting:
             continue
+        sentence_authority_action_start = _pursuant_authority_action_start(sentence, ordering_re)
         sentence_clauses = []
         for text, start_type in _segment_sentence(
                 sentence,
@@ -238,21 +244,22 @@ def extract_vesting_clauses(doc_text: str, doc_type: str) -> list[str]:
                 anchors = list(
                     re.finditer(r"\b(?:pursuant\s+to|under\s+(?:section|title))\b", preceding, re.I)
                 )
+                anchors.extend(
+                    re.finditer(r"\bby\s+(?:the\s+)?authority\b", preceding, re.I)
+                )
                 if anchors:
-                    start = max(0, start - 250) + anchors[-1].start()
-                else:
-                    authority_anchors = list(
-                        re.finditer(r"\bby\s+(?:the\s+)?authority\b", preceding, re.I)
-                    )
-                    if authority_anchors:
-                        start = max(0, start - 250) + authority_anchors[-1].start()
+                    start = max(0, start - 250) + max(anchors, key=lambda match: match.start()).start()
             else:
-                markers = [
-                    match
-                    for regex in (_CONDITIONAL_VESTING_RE, _PURSUANT_RE, _PROC_VESTING_RE)
-                    for match in regex.finditer(text)
-                ]
-                start = min((match.start() for match in markers), default=0)
+                authority_markers = list(_PURSUANT_RE.finditer(text))
+                if sentence_authority_action_start is not None and authority_markers:
+                    start = authority_markers[-1].start()
+                else:
+                    markers = [
+                        match
+                        for regex in (_CONDITIONAL_VESTING_RE, _PURSUANT_RE, _PROC_VESTING_RE)
+                        for match in regex.finditer(text)
+                    ]
+                    start = min((match.start() for match in markers), default=0)
             clause = text[start:].strip()
             explicit_order = re.search(
                 r"\b(?:it\s+is|I\s+do)\s+hereby,?\s+(?:order(?:ed)?|proclaim)\b",
@@ -261,6 +268,32 @@ def extract_vesting_clauses(doc_text: str, doc_type: str) -> list[str]:
             )
             if explicit_order:
                 clause = clause[:explicit_order.start()].rstrip(" ,;:")
+            presidential_authority = re.match(
+                r"By\s+virtue\s+of\s+my\s+authority\s+as\s+President\s+of\s+the\s+"
+                r"United\s+States(?:\s+of\s+America)?(?=,\s+and\s+in\s+order\s+to\b)",
+                clause,
+                re.I,
+            )
+            if presidential_authority:
+                clause = clause[:presidential_authority.end()]
+            historical_order = re.search(
+                r"\bExecutive\s+Order(?:\s+No\.?)?\s+\d+\s+of\s+"
+                r"(?:January|February|March|April|May|June|July|August|September|October|"
+                r"November|December)\s+\d{1,2},\s+\d{4}"
+                r"(?=,\s+as\s+amended,\s+(?:prescribing|entitled)\b)",
+                clause,
+                re.I,
+            )
+            if historical_order:
+                clause = clause[:historical_order.end()]
+            clause = re.sub(
+                r"(\bProclamation(?:\s+No\.?)?\s+\d+\s+of\s+"
+                r"(?:January|February|March|April|May|June|July|August|September|October|"
+                r"November|December)\s+\d{1,2},\s+\d{4}),\s+as\s+amended,$",
+                r"\1,",
+                clause,
+                flags=re.I,
+            )
             sentence_clauses.append(clause)
 
         # The formal "I, [name], President ..." formula is itself a generic

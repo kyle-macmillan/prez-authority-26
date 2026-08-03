@@ -315,6 +315,7 @@ ORDERING_PHRASES: list[str] = [
     "do invite",
     "i appoint",
     "i approve",
+    "i reconfirm",
     "i request",
     "you will:",
     "do amend",

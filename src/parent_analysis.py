@@ -21,6 +21,11 @@ from segmenter import segment_ordering
 
 
 DIRECTIVE_TYPES = ("executive_order", "memorandum", "proclamation", "letter")
+DEFAULT_CORPORA = (
+    Path("data/4_28_2026_build_dev.csv"),
+    Path("data/4_28_2026_build_holdout.csv"),
+)
+EXPECTED_FULL_CORPUS_SIZE = 20_232
 
 # UCSB omits the "-A" suffix from seven duplicate-number EO URLs.
 EO_NUMBER_CORRECTIONS = {
@@ -206,6 +211,15 @@ def load_directives(path: Path) -> list[DirectiveDocument]:
                     text=row["doc_text"],
                 )
             )
+    return documents
+
+
+def load_directive_corpus(paths: Iterable[Path]) -> list[DirectiveDocument]:
+    """Load multiple corpus partitions while requiring unique document IDs."""
+    documents = [document for path in paths for document in load_directives(path)]
+    document_ids = [document.document_id for document in documents]
+    if len(document_ids) != len(set(document_ids)):
+        raise ValueError("corpus partitions contain duplicate document IDs")
     return documents
 
 
@@ -452,11 +466,23 @@ def build_similarity_artifacts(
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--corpus", type=Path, default=Path("data/4_28_2026_build_dev.csv"))
+    parser.add_argument(
+        "--corpus",
+        dest="corpora",
+        action="append",
+        type=Path,
+        help="Corpus CSV to include; repeat for multiple partitions. Defaults to dev plus holdout.",
+    )
     parser.add_argument("--output-dir", type=Path, default=Path("data/parent_analysis"))
     args = parser.parse_args()
 
-    documents = load_directives(args.corpus)
+    corpus_paths = tuple(args.corpora) if args.corpora else DEFAULT_CORPORA
+    documents = load_directive_corpus(corpus_paths)
+    if not args.corpora and len(documents) != EXPECTED_FULL_CORPUS_SIZE:
+        raise ValueError(
+            f"expected {EXPECTED_FULL_CORPUS_SIZE:,} full-corpus directives, "
+            f"found {len(documents):,}"
+        )
     edges, unresolved_references = build_automatic_edges(documents)
     automatic_child_ids = {str(row["child_id"]) for row in edges}
     unresolved_children = [

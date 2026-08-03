@@ -187,6 +187,21 @@ def merge_artifact_provenance(path: Path, artifacts: list[dict]) -> list[dict]:
     ] + artifacts
 
 
+def select_device(torch, requested: str) -> str:
+    """Select an available accelerator, preferring CUDA and then Apple MPS."""
+    if requested == "auto":
+        if torch.cuda.is_available():
+            return "cuda"
+        if torch.backends.mps.is_available():
+            return "mps"
+        raise RuntimeError("no supported GPU is available (CUDA or Apple MPS)")
+    if requested == "cuda" and not torch.cuda.is_available():
+        raise RuntimeError("CUDA was requested but is not available")
+    if requested == "mps" and not torch.backends.mps.is_available():
+        raise RuntimeError("Apple MPS was requested but is not available")
+    return requested
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument(
@@ -205,6 +220,7 @@ def main() -> None:
     )
     parser.add_argument("--document-batch-size", type=int, default=2)
     parser.add_argument("--segment-batch-size", type=int, default=8)
+    parser.add_argument("--device", choices=("auto", "cuda", "mps"), default="auto")
     parser.add_argument(
         "--artifact",
         choices=("all", "documents", "segments"),
@@ -220,13 +236,12 @@ def main() -> None:
     import torch
     from sentence_transformers import SentenceTransformer
 
-    if not torch.cuda.is_available():
-        raise RuntimeError("CUDA is required to generate the embedding artifacts")
+    device = select_device(torch, args.device)
 
     started = time.perf_counter()
     model = SentenceTransformer(
         str(args.model_path),
-        device="cuda",
+        device=device,
         model_kwargs={"torch_dtype": torch.float16},
         tokenizer_kwargs={"padding_side": "left"},
         local_files_only=True,
@@ -270,7 +285,11 @@ def main() -> None:
         "embedding_dimension": EMBEDDING_DIMENSION,
         "model_max_sequence_length": model.max_seq_length,
         "model_load_seconds": load_seconds,
-        "device": torch.cuda.get_device_name(0),
+        "device": (
+            torch.cuda.get_device_name(0)
+            if device == "cuda"
+            else "Apple Metal Performance Shaders"
+        ),
         "torch_dtype": "float16",
         "normalized": True,
         "packages": {
