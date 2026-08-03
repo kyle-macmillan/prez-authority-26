@@ -135,8 +135,11 @@ ranking remain identical to the original random pilot. Its outputs are isolated 
 `data/parent_analysis/path_dependency_pilot/operative/`.
 
 The classifier and viewer generator are complete, and the pinned model snapshot is stored
-in the ignored project cache. GPU inference, validation, selection, and final viewer
-materialization remain pending until a CUDA GPU with at least 11 GB VRAM is provisioned.
+in the ignored project cache. GPU inference and validation selected the conservative rule
+policy (precision 0.857 and recall 0.300 on the Round 2 majority labels). The resulting
+50-child sample and 500-comparison viewer are materialized under
+`data/parent_analysis/path_dependency_pilot/operative/`; the sample has no overlap with
+the original pilot or the holdout set.
 
 ### Current resume point
 
