@@ -6,6 +6,7 @@ import argparse
 import csv
 import hashlib
 import json
+from collections import Counter
 from collections.abc import Iterable
 from pathlib import Path
 
@@ -181,7 +182,14 @@ def build_threshold_samples(
                 "child_excerpt": child["cleaned_masked_text"][:900],
                 "parent_excerpt": parent["cleaned_masked_text"][:900],
             })
-        output.append({"id": band_id, "label": label, "total": len(eligible), "pairs": pairs})
+        type_counts = Counter(row["document_type"] for row in eligible)
+        output.append({
+            "id": band_id,
+            "label": label,
+            "total": len(eligible),
+            "type_counts": dict(sorted(type_counts.items())),
+            "pairs": pairs,
+        })
     return output
 
 
@@ -220,6 +228,7 @@ h1{{margin-bottom:4px}}p{{color:#667085}}.grid{{display:grid;grid-template-colum
 .panel,.population{{background:#fff;border:1px solid #d8dee9;border-radius:8px;padding:12px}}.population{{margin:16px 0}}h2{{font-size:15px;margin:0 0 6px}}
 .tabs{{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0}}.tab{{border:1px solid #98a2b3;background:#fff;border-radius:6px;padding:8px 12px;cursor:pointer}}.tab.active{{background:#225ea8;color:#fff;border-color:#225ea8}}
 .tab-view[hidden]{{display:none}}.pairs{{display:grid;gap:16px}}.pair{{background:#fff;border:1px solid #d8dee9;border-radius:8px;padding:14px}}.pair-meta{{color:#475467;margin:0 0 10px}}.documents{{display:grid;grid-template-columns:1fr 1fr;gap:14px}}.document{{border-left:3px solid #84b4d8;padding-left:10px}}.document h3{{font-size:14px;margin:0 0 4px}}.document p{{white-space:pre-wrap;line-height:1.45}}a{{color:#225ea8}}
+.type-counts{{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 18px}}.type-count{{background:#e8f1f8;border-radius:999px;padding:6px 10px;color:#344054}}
 canvas{{display:block;width:100%;height:240px}}@media(max-width:850px){{.grid{{grid-template-columns:1fr}}}}
 @media(max-width:700px){{.documents{{grid-template-columns:1fr}}}}
 </style></head><body>
@@ -247,7 +256,8 @@ const tabs=document.getElementById('tabs'),views=document.getElementById('sample
 SAMPLES.forEach(b=>{{
  const button=document.createElement('button');button.className='tab';button.dataset.view=b.id;button.textContent=b.label;tabs.appendChild(button);
  const section=document.createElement('section');section.className='tab-view';section.id=b.id;section.hidden=true;
- section.innerHTML='<h2>Operative embedding: '+esc(b.label)+'</h2><p>Deterministic sample of '+b.pairs.length+' from '+b.total.toLocaleString()+' Candidate 1–2 pairs in this band.</p><div class="pairs">'+b.pairs.map((p,i)=>'<article class="pair"><p class="pair-meta"><strong>Pair '+(i+1)+'</strong> · Candidate '+p.candidate_rank+' · score <strong>'+p.score.toFixed(3)+'</strong></p><div class="documents">'+[['Child',p.child,p.child_excerpt],['Parent',p.parent,p.parent_excerpt]].map(x=>'<section class="document"><h3>'+x[0]+': <a href="'+esc(x[1].url)+'" target="_blank" rel="noopener">'+esc(x[1].title)+'</a></h3><small>'+esc(x[1].date)+' · ID '+esc(x[1].document_id)+'</small><p>'+esc(x[2])+(x[2].length===900?'…':'')+'</p></section>').join('')+'</div></article>').join('')+'</div>';
+ const counts=Object.entries(b.type_counts).map(x=>'<span class="type-count">'+esc(x[0].split('_').join(' '))+': <strong>'+x[1].toLocaleString()+'</strong></span>').join('');
+ section.innerHTML='<h2>Operative embedding: '+esc(b.label)+'</h2><p><strong>'+b.total.toLocaleString()+'</strong> Candidate 1–2 pairs are in this band, broken down by directive type:</p><div class="type-counts">'+counts+'</div><p>Showing a deterministic sample of '+b.pairs.length+' pairs.</p><div class="pairs">'+b.pairs.map((p,i)=>'<article class="pair"><p class="pair-meta"><strong>Pair '+(i+1)+'</strong> · Candidate '+p.candidate_rank+' · score <strong>'+p.score.toFixed(3)+'</strong></p><div class="documents">'+[['Child',p.child,p.child_excerpt],['Parent',p.parent,p.parent_excerpt]].map(x=>'<section class="document"><h3>'+x[0]+': <a href="'+esc(x[1].url)+'" target="_blank" rel="noopener">'+esc(x[1].title)+'</a></h3><small>'+esc(x[1].date)+' · ID '+esc(x[1].document_id)+'</small><p>'+esc(x[2])+(x[2].length===900?'…':'')+'</p></section>').join('')+'</div></article>').join('')+'</div>';
  views.appendChild(section);
 }});
 tabs.addEventListener('click',event=>{{const button=event.target.closest('button');if(!button)return;document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('active',x===button));document.querySelectorAll('.tab-view').forEach(x=>x.hidden=x.id!==button.dataset.view);}});
