@@ -1,0 +1,6 @@
+# Local embedding and similarity pipeline.
+# Pinned for reproducibility and compatibility with the CUDA 12.5-era host driver.
+numpy==2.2.6
+torch==2.6.0
+transformers==4.51.3
+sentence-transformers==4.1.0

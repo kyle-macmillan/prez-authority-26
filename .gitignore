@@ -1,5 +1,35 @@
 ## from https://github.com/github/gitignore/blob/master/TeX.gitignore
 .venv/
+
+# Parent-analysis local runtime and downloaded model files.
+.venv-parent-analysis/
+.cache/
+.huggingface/
+huggingface/
+models--*/
+*.safetensors
+pytorch_model*.bin
+*.pt
+*.pth
+slurm-*.out
+
+# Large source inputs are supplied through external storage at these stable paths.
+/data/4_28_2026_build_dev.csv
+/Authority Vagueness Analysis/vesting_authority_all_categories.xlsx
+/Authority Vagueness Analysis/vesting_authority_breakdown.csv
+/data/vesting_authority_breakdown.csv
+
+# Large, regenerable parent-analysis artifacts. Keep small audit CSVs and
+# embeddings/provenance.json trackable.
+data/parent_analysis/embeddings/*.npz
+/data/parent_analysis/*_similarity_documents.jsonl
+/data/parent_analysis/*_operative_segments.jsonl
+/data/parent_analysis/embedding_candidate_pool.csv
+/data/parent_analysis/ranked_candidates.csv
+/data/parent_analysis/pilot/parent_candidate_viewer.html
+/data/parent_analysis/path_dependency_pilot/**/parent_candidate_viewer.html
+/data/parent_analysis/path_dependency_pilot/**/model_provision_predictions.jsonl
+
 node_modules/
 
 __pycache__/

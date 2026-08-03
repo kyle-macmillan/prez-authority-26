@@ -112,6 +112,24 @@ _METADATA_PATTERNS = [
     ),
 ]
 
+# A subject/header chunk can contain the beginning of the operative text when the
+# source omits a paragraph boundary (for example, "Subject: Delegation ..., I hereby
+# delegate ..."). Split only at clear present-tense commands. Requests, transmissions,
+# endorsements, and descriptions of completed actions intentionally remain metadata or
+# preamble.
+_EMBEDDED_METADATA_COMMAND_RE = re.compile(
+    r"\b(?:"
+    r"I\s+(?:(?:do|am)\s+)?(?:hereby\s+)?"
+    r"(?:authorize|appoint|delegate|designate|direct|establish|instruct|order|"
+    r"prescribe|prohibit|revoke|terminate|transfer|withdraw)"
+    r"|this\s+(?:memorandum|directive)\s+"
+    r"(?:assigns|directs|establishes|instructs)"
+    r"|you\s+are\s+(?:hereby\s+)?"
+    r"(?:appointed|authorized|delegated|directed|instructed)"
+    r")\b",
+    re.IGNORECASE,
+)
+
 _BOILERPLATE_SIGNALS = [
     "nothing in this",
     "does not create any right or benefit",
@@ -677,7 +695,7 @@ def segment(
         split_paragraphs: Deprecated. Documents without formal sections are segmented
             by ordering phrases.
             Has no effect on documents that have formal sections.
-        strict_wp: When True, disable all extensions (generic shall verbs,
+        strict_wp: When True, disable all extensions (section-only shall verbs,
             opening-authority vesting) and use only the original W&P phrase list.
     """
     raw_chunks = re.split(r"  +", doc_text)
@@ -686,7 +704,7 @@ def segment(
     )
     total = len(chunks)
 
-    ordering_re = _get_ordering_re(extended=not strict_wp)
+    ordering_re = _get_ordering_re(extended=False)  # W&P only for initial scan
     opening_authority = not strict_wp
     is_proclamation = doc_type == "proclamation"
     tagged: list[tuple[SegmentType, str, int]] = []
@@ -913,118 +931,62 @@ def _merge_content_segments(segs: list[Segment]) -> list[Segment]:
 # Woolley & Peters ordering-phrase strategy
 # ---------------------------------------------------------------------------
 
-# Additional high-confidence directive verbs used across structured and unstructured
-# documents. They remain separate from ORDERING_PHRASES so strict_wp can reproduce
-# the original W&P phrase list.
-_SHALL_ACTION = (
-    r"shall\s+"
-    r"(?:(?:also|promptly|immediately)\s+){0,2}"
+# Additional high-confidence directive verbs used by the extended W&P strategy.
+# These supplement the original W&P phrase list for every document, regardless of
+# whether the document has formal section headings.  The comma-delimited branch
+# captures constructions such as ``shall, within 90 days, take`` without allowing
+# the match to cross a sentence/semicolon boundary or span more than 160 characters.
+_SHALL_ACTION_VERBS = (
     r"(?:take|develop|designate|establish|perform|make|issue|identify|prepare|"
-    r"implement|determine|recommend|prescribe|seek|assist)\b"
+    r"implement|determine|recommend|prescribe|seek|assist)"
 )
-
-_QUOTED_SHALL_LOWER_MASK = "\ue000"
-_QUOTED_SHALL_UPPER_MASK = "\ue001"
+_SHALL_COMMA_INTERVENING_MAX = 160
+_SECTION_SHALL_ACTION = (
+    r"shall(?:"
+    r"\s+(?:(?:also|promptly|immediately)\s+){0,2}" + _SHALL_ACTION_VERBS +
+    r"|\s*,\s*[^.;]{1," + str(_SHALL_COMMA_INTERVENING_MAX) + r"},\s*" +
+    _SHALL_ACTION_VERBS +
+    r")\b"
+)
 
 
 # Import phrase list lazily so the module loads even if ordering_phrases.py is absent.
-def _build_ordering_re(include_extensions: bool = False) -> re.Pattern:
+def _build_ordering_re(section_extensions: bool = False) -> re.Pattern:
     from ordering_phrases import ORDERING_PHRASES, CURATED_OUT
     active = [p for p in ORDERING_PHRASES if p not in CURATED_OUT]
     # Sort longest-first so more-specific phrases win over shorter prefixes.
     active.sort(key=len, reverse=True)
     phrase_alt = "|".join(re.escape(p) for p in active)
 
-    if not include_extensions:
+    if not section_extensions:
         return re.compile(r"\b(" + phrase_alt + r")", re.IGNORECASE)
 
     return re.compile(
-        r"\b(" + phrase_alt + r"|" + _SHALL_ACTION + r")",
+        r"\b(" + phrase_alt + r"|" + _SECTION_SHALL_ACTION + r")",
         re.IGNORECASE,
     )
 
 
 _ordering_re_cache: re.Pattern | None = None           # W&P phrases only
-_ordering_re_extended_cache: re.Pattern | None = None  # W&P + generic shall verbs
+_ordering_re_extended_cache: re.Pattern | None = None  # W&P + allowlisted shall verbs
 
 
 def _get_ordering_re(extended: bool = False) -> re.Pattern:
     """Return the ordering-phrase regex.
 
-    extended=False (default): pure W&P phrase list, used in strict_wp mode.
-    extended=True: adds the allowlisted shall + verb pattern for all document
-        structures.
+    extended=False (default): pure W&P phrase list, used by strict_wp mode.
+    extended=True: adds the allowlisted shall + verb pattern for the extended
+        W&P strategy.
     """
     global _ordering_re_cache, _ordering_re_extended_cache
     if extended:
         if _ordering_re_extended_cache is None:
-            _ordering_re_extended_cache = _build_ordering_re(include_extensions=True)
+            _ordering_re_extended_cache = _build_ordering_re(section_extensions=True)
         return _ordering_re_extended_cache
     else:
         if _ordering_re_cache is None:
-            _ordering_re_cache = _build_ordering_re(include_extensions=False)
+            _ordering_re_cache = _build_ordering_re(section_extensions=False)
         return _ordering_re_cache
-
-
-def _mask_quoted_shall_extensions(text: str) -> str:
-    """Mask generic shall-extension matches inside straight or curly double quotes.
-
-    Quote state is tracked across the entire document so quoted material can span
-    sentences and scraper paragraph chunks. Original W&P phrases are not masked.
-    """
-    matches = list(re.finditer(_SHALL_ACTION, text, re.IGNORECASE))
-    if not matches:
-        return text
-
-    quoted = bytearray(len(text))
-    in_straight_quote = False
-    curly_quote_depth = 0
-    for i, char in enumerate(text):
-        if char == '"':
-            previous = text[i - 1] if i else ""
-            following = text[i + 1] if i + 1 < len(text) else ""
-            if not previous or previous.isspace() or previous in "([{:":
-                # Legal amendments often begin every quoted paragraph with a new
-                # quote mark without closing the preceding quoted paragraph.
-                in_straight_quote = True
-            elif not following or following.isspace() or following in ".,;:!?)]}":
-                in_straight_quote = False
-            else:
-                in_straight_quote = not in_straight_quote
-        elif char == "“":
-            curly_quote_depth += 1
-        elif char == "”" and curly_quote_depth:
-            curly_quote_depth -= 1
-        elif in_straight_quote or curly_quote_depth:
-            quoted[i] = 1
-
-    base_ordering_re = _get_ordering_re(extended=False)
-    chars = list(text)
-    changed = False
-    for match in matches:
-        if not quoted[match.start()] or base_ordering_re.match(text, match.start()):
-            continue
-        chars[match.start()] = (
-            _QUOTED_SHALL_UPPER_MASK
-            if text[match.start()].isupper()
-            else _QUOTED_SHALL_LOWER_MASK
-        )
-        changed = True
-    return "".join(chars) if changed else text
-
-
-def _restore_quoted_shall_masks(segments: list[Segment]) -> list[Segment]:
-    """Restore the first letter hidden by _mask_quoted_shall_extensions()."""
-    return [
-        Segment(
-            seg.text.replace(_QUOTED_SHALL_LOWER_MASK, "s").replace(
-                _QUOTED_SHALL_UPPER_MASK, "S"
-            ),
-            seg.seg_type,
-            seg.chunk_indices,
-        )
-        for seg in segments
-    ]
 
 
 # Sentence boundary: terminal punctuation followed by whitespace and a capital letter or "(".
@@ -1639,6 +1601,41 @@ def _merge_short_fragments(segments: list[Segment]) -> list[Segment]:
     return result
 
 
+_INTERRUPTED_DETERMINATION_RE = re.compile(
+    r"^I\s+(?:further\s+)?determine\s*,\s*$",
+    re.IGNORECASE,
+)
+_DETERMINATION_CONTINUATION_RE = re.compile(r"^(?:that|whether)\b", re.IGNORECASE)
+
+
+def _relabel_interrupted_determination_connectors(
+    segments: list[Segment],
+) -> list[Segment]:
+    """Do not code a vesting-interrupted ``I determine,`` as its own action.
+
+    In ``I determine, pursuant to section X, that ...``, authority carving
+    produces a connector, a vesting clause, and the substantive continuation.
+    Preserve those splits while making the connector an unnumbered ordering
+    phrase rather than an independently classifiable action.
+    """
+    result = segments[:]
+    for index in range(len(result) - 2):
+        connector, vesting, continuation = result[index : index + 3]
+        if (
+            connector.seg_type == "order_action"
+            and _INTERRUPTED_DETERMINATION_RE.fullmatch(connector.text)
+            and vesting.seg_type == "vesting_clause"
+            and continuation.seg_type == "order_action"
+            and _DETERMINATION_CONTINUATION_RE.match(continuation.text)
+            and bool(set(connector.chunk_indices) & set(vesting.chunk_indices))
+            and bool(set(vesting.chunk_indices) & set(continuation.chunk_indices))
+        ):
+            result[index] = Segment(
+                connector.text, "ordering_phrase", connector.chunk_indices[:]
+            )
+    return result
+
+
 def segment_ordering(doc_text: str, doc_type: str = "", strict_wp: bool = False) -> list[Segment]:
     """Segment a document using the Woolley & Peters ordering-phrase strategy.
 
@@ -1657,7 +1654,10 @@ def segment_ordering(doc_text: str, doc_type: str = "", strict_wp: bool = False)
     grouped into it only when they contain no ordering phrase of their own; list items
     that do contain an ordering phrase are processed normally and start a new directive.
 
-    strict_wp=True disables all extensions (generic shall verbs, opening-authority vesting)
+    Formal section boundaries do not control this strategy.  The same extended
+    ordering-phrase matcher is applied across documents with and without sections.
+
+    strict_wp=True disables all extensions (allowlisted shall verbs, opening-authority vesting)
     and uses only the original W&P phrase list.
 
     Returns a list of Segment objects with seg_type in
@@ -1666,46 +1666,15 @@ def segment_ordering(doc_text: str, doc_type: str = "", strict_wp: bool = False)
     ordering_re = _get_ordering_re(extended=not strict_wp)
     opening_authority = not strict_wp
     is_proclamation = doc_type == "proclamation"
-    working_text = (
-        doc_text if strict_wp else _mask_quoted_shall_extensions(doc_text)
-    )
 
-    raw_chunks = re.split(r"  +", working_text)
+    raw_chunks = re.split(r"  +", doc_text)
     chunks = _resplit_embedded_sections(
         [c.strip() for c in raw_chunks if c.strip()]
     )
     total = len(chunks)
 
-    # Build tagged list (with vesting carve-out) to detect formal sections.
-    tagged: list[tuple[SegmentType, str, int]] = []
-    for i, chunk in enumerate(chunks):
-        is_last_n = i >= total - 5
-        ct = _classify_chunk(chunk, i, total, is_last_n)
-        if ct not in ("metadata", "boilerplate") and _chunk_has_vesting(chunk, ordering_re, opening_authority=opening_authority, is_proclamation=is_proclamation):
-            for piece, is_vesting in _carve_vesting(chunk, ordering_re, opening_authority=opening_authority, is_proclamation=is_proclamation):
-                if is_vesting:
-                    tagged.append(("vesting_clause", piece, i))
-                else:
-                    tagged.append((_classify_chunk(piece, i, total, is_last_n), piece, i))
-        else:
-            tagged.append((ct, chunk, i))
-
-    # Section-priority branch: when formal sections exist, split on sections only.
-    if _has_formal_sections(tagged):
-        alpha_as_sub = any(
-            bool(_SECTION_ROMAN_RE.match(text.strip()))
-            for seg_type, text, _ in tagged
-            if seg_type != "metadata"
-        )
-        segs = _group_by_sections(tagged, split_subsections=False,
-                                  alpha_as_subsection=alpha_as_sub)
-        segs = _relabel_for_wp(segs, ordering_re)
-        segs = _enforce_closing_cutoff(segs)
-        segs = _enforce_signoff_cutoff(segs)
-        segs = _reclassify_titles_before_metadata(segs)
-        return _restore_quoted_shall_masks(segs)
-
-    # No formal sections: ordering-phrase strategy.
+    # Ordering-phrase strategy for every document; section headings are ordinary
+    # surrounding text rather than segmentation boundaries.
     segments: list[Segment] = []
     current_parts: list[str] = []   # text pieces for the open segment
     current_indices: list[int] = [] # original chunk indices
@@ -1722,6 +1691,15 @@ def segment_ordering(doc_text: str, doc_type: str = "", strict_wp: bool = False)
         # Metadata and boilerplate chunks: flush the open segment and emit standalone.
         is_last_n = chunk_idx >= total - 5
         chunk_type = _classify_chunk(chunk, chunk_idx, total, is_last_n)
+        if chunk_type == "metadata":
+            embedded_command = _EMBEDDED_METADATA_COMMAND_RE.search(chunk)
+            if embedded_command and embedded_command.start() > 0:
+                flush()
+                metadata_text = chunk[: embedded_command.start()].rstrip(" ,:;")
+                if metadata_text:
+                    segments.append(Segment(metadata_text, "metadata", [chunk_idx]))
+                chunk = chunk[embedded_command.start() :]
+                chunk_type = "paragraph"
         if chunk_type in ("metadata", "boilerplate"):
             flush()
             segments.append(Segment(chunk, chunk_type, [chunk_idx]))
@@ -1755,7 +1733,7 @@ def segment_ordering(doc_text: str, doc_type: str = "", strict_wp: bool = False)
                         current_indices.append(chunk_idx)
 
     flush()
-    segs = _merge_short_fragments(
+    segments = _merge_short_fragments(
         _merge_sublists(_split_colon_lists(segments, ordering_re))
     )
-    return _restore_quoted_shall_masks(segs)
+    return _relabel_interrupted_determination_connectors(segments)

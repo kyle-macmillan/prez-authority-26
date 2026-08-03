@@ -4,7 +4,10 @@
 classifiable units. Each document's `doc_text` field has all whitespace collapsed by the
 scraper: paragraphs are separated by **double spaces** and there are no newlines.
 
-Two segmentation strategies are available via the same API.
+Two segmentation strategies remain available via the same API for historical comparison.
+Starting with annotation Round 2, annotation viewers no longer use sections or expose the
+Section/Paragraph strategy: they show only the extended Woolley & Peters strategy
+(`segment_ordering(..., strict_wp=False)`).
 
 ---
 
@@ -54,7 +57,7 @@ segments = segment_ordering(
 )
 ```
 
-`strict_wp=True` disables both the generic `shall + verb` extension and the sentence-opening
+`strict_wp=True` disables both the section-only `shall + verb` extension and the sentence-opening
 authority-citation vesting detection, falling back to the original W&P phrase list and
 standard vesting logic.
 
@@ -69,7 +72,7 @@ The W&P ordering-phrase list (`src/ordering_phrases.py`) drives both strategies.
 `CURATED_OUT` is a small exclusion set for phrases that fire too heavily in non-directive
 contexts (currently `"this directive"`, `"designated"`, `"designation"`).
 
-### `shall + verb` extension
+### `shall + verb` extension (sections path only)
 
 In addition to the phrase list, the extended regex (`extended=True`) adds a pattern for
 directives of the form:
@@ -80,14 +83,17 @@ Examples matched:
 - `"The Board shall perform"`
 - `"Federal agencies shall promptly develop"`
 - `"The Secretary shall also make"`
+- `"The Secretary shall, within 90 days, prepare"`
+- `"The agency shall, in consultation with other agencies, issue"`
+
+The comma-delimited form permits up to 160 intervening characters, may contain internal
+commas, and cannot cross a period or semicolon. The action verb after the closing comma
+must still be on the allowlist.
 
 The allowlisted verbs are `take`, `develop`, `designate`, `establish`, `perform`, `make`,
 `issue`, `identify`, `prepare`, `implement`, `determine`, `recommend`, `prescribe`, `seek`,
-and `assist`. This pattern applies to both formal sections and unstructured documents
-when `strict_wp=False`. In unstructured documents, a match starts a new `order_action`
-using the same sentence-boundary rules as the original W&P phrases. Generic `shall + verb`
-matches inside straight or curly double-quoted text are ignored so that quoted statutes,
-regulations, and prior directives do not create new actions.
+and `assist`. The extension applies across structured and unstructured documents and is
+disabled when `strict_wp=True`.
 
 ---
 
@@ -203,8 +209,8 @@ Applied after `_group_by_sections` when called from `segment_ordering()`:
 | Paragraph with ordering phrase, **after** first `order_action` section | `order_action` |
 | Paragraph without ordering phrase | `preamble` |
 
-The extended regex (with generic `shall + verb` matching) is used here when
-`strict_wp=False`, as it is in the no-sections path.
+The extended regex (with section-only `shall + verb` matching) is used here when
+`strict_wp=False`.
 
 ### Step 8 — Ordering-phrase segmentation (no-sections path)
 
