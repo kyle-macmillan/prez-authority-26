@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import argparse
 import csv
+import hashlib
 import json
 from collections.abc import Iterable
 from pathlib import Path
@@ -14,6 +15,9 @@ import numpy as np
 ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_INPUT = ROOT / "data" / "parent_analysis" / "ranked_candidates.csv"
 DEFAULT_CHILDREN = ROOT / "data" / "parent_analysis" / "unresolved_children.csv"
+DEFAULT_CORPUS = ROOT / "data" / "4_28_2026_build_dev.csv"
+DEFAULT_AUTOMATIC_EDGES = ROOT / "data" / "parent_analysis" / "automatic_edges.csv"
+DEFAULT_DOCUMENTS = ROOT / "data" / "parent_analysis" / "directive_similarity_documents.jsonl"
 DEFAULT_OUTPUT = ROOT / "data" / "parent_analysis" / "candidate_score_distributions"
 CANDIDATE_RANKS = (1, 2)
 SCORE_FIELDS = {
@@ -146,26 +150,89 @@ def _histogram_specs(extracted: list[dict], bins: int = 30) -> list[dict]:
     return specs
 
 
-def build_plot_html(extracted: list[dict]) -> str:
+def build_threshold_samples(
+    extracted: list[dict], documents: dict[str, dict], sample_size: int = 12,
+) -> list[dict]:
+    """Build reproducible pair samples for operative-embedding score bands."""
+    bands = (
+        ("above_09", "At least .9", 0.9, float("inf")),
+        ("08_to_09", ".8 to under .9", 0.8, 0.9),
+        ("07_to_08", ".7 to under .8", 0.7, 0.8),
+    )
+    output = []
+    for band_id, label, low, high in bands:
+        eligible = [
+            row for row in extracted
+            if row["operative_embedding_similarity"] is not None
+            and low <= row["operative_embedding_similarity"] < high
+        ]
+        eligible.sort(key=lambda row: hashlib.sha256(
+            f"{band_id}:{row['child_id']}:{row['parent_id']}:{row['candidate_rank']}".encode()
+        ).hexdigest())
+        pairs = []
+        for row in eligible[:sample_size]:
+            child = documents[row["child_id"]]
+            parent = documents[row["parent_id"]]
+            pairs.append({
+                "candidate_rank": row["candidate_rank"],
+                "score": row["operative_embedding_similarity"],
+                "child": {key: child[key] for key in ("document_id", "title", "date", "url")},
+                "parent": {key: parent[key] for key in ("document_id", "title", "date", "url")},
+                "child_excerpt": child["cleaned_masked_text"][:900],
+                "parent_excerpt": parent["cleaned_masked_text"][:900],
+            })
+        output.append({"id": band_id, "label": label, "total": len(eligible), "pairs": pairs})
+    return output
+
+
+def build_plot_html(
+    extracted: list[dict], population: dict | None = None, threshold_samples: list[dict] | None = None,
+) -> str:
     """Build a dependency-free six-panel histogram report."""
     data = json.dumps(_histogram_specs(extracted), separators=(",", ":")).replace(
         "</", "<\\/"
     )
+    sample_data = json.dumps(threshold_samples or [], separators=(",", ":")).replace("</", "<\\/")
+    if population:
+        population_note = f"""
+<section class="population">
+<h2>How the source corpus becomes the reported n</h2>
+<p>Source document IDs run as high as <strong>{population['maximum_document_id']:,}</strong>,
+but IDs are not contiguous. This analysis starts from the
+<strong>{population['corpus_documents']:,}-document development corpus</strong>—the main
+analysis split used to construct and rank parent candidates. The separately reserved
+holdout split is not used in this ranking. Automatic reference matching identifies parents for
+<strong>{population['automatic_parent_children']:,}</strong> children, leaving
+<strong>{population['unresolved_children']:,}</strong> unresolved children for candidate
+ranking. Candidate 1 exists for <strong>{population['candidate_1_children']:,}</strong>
+children and Candidate 2 for <strong>{population['candidate_2_children']:,}</strong>.
+Each chart's <em>n</em> is the number of those candidate rows with a non-missing score in
+that channel, so it can be smaller again.</p>
+</section>"""
+    else:
+        population_note = ""
     return f"""<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Candidate 1–2 similarity score distributions</title>
 <style>
 body{{margin:24px;font:14px system-ui,sans-serif;color:#172033;background:#f4f7fb}}
 h1{{margin-bottom:4px}}p{{color:#667085}}.grid{{display:grid;grid-template-columns:repeat(2,minmax(360px,1fr));gap:16px}}
-.panel{{background:#fff;border:1px solid #d8dee9;border-radius:8px;padding:12px}}h2{{font-size:15px;margin:0 0 6px}}
+.panel,.population{{background:#fff;border:1px solid #d8dee9;border-radius:8px;padding:12px}}.population{{margin:16px 0}}h2{{font-size:15px;margin:0 0 6px}}
+.tabs{{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0}}.tab{{border:1px solid #98a2b3;background:#fff;border-radius:6px;padding:8px 12px;cursor:pointer}}.tab.active{{background:#225ea8;color:#fff;border-color:#225ea8}}
+.tab-view[hidden]{{display:none}}.pairs{{display:grid;gap:16px}}.pair{{background:#fff;border:1px solid #d8dee9;border-radius:8px;padding:14px}}.pair-meta{{color:#475467;margin:0 0 10px}}.documents{{display:grid;grid-template-columns:1fr 1fr;gap:14px}}.document{{border-left:3px solid #84b4d8;padding-left:10px}}.document h3{{font-size:14px;margin:0 0 4px}}.document p{{white-space:pre-wrap;line-height:1.45}}a{{color:#225ea8}}
 canvas{{display:block;width:100%;height:240px}}@media(max-width:850px){{.grid{{grid-template-columns:1fr}}}}
+@media(max-width:700px){{.documents{{grid-template-columns:1fr}}}}
 </style></head><body>
 <h1>Candidate 1–2 similarity score distributions</h1>
 <p>Thirty equal-width bins use shared limits for Candidate 1 and 2 within each channel. Bar heights are shares of non-missing scores.</p>
-<div class="grid" id="grid"></div>
+{population_note}
+<nav class="tabs" id="tabs"><button class="tab active" data-view="distributions">Distributions</button></nav>
+<section class="tab-view" id="distributions"><div class="grid" id="grid"></div></section>
+<div id="sample-views"></div>
 <script>
-const DATA={data},grid=document.getElementById('grid');
+const DATA={data},SAMPLES={sample_data},grid=document.getElementById('grid');
 const fmt=x=>Math.abs(x)>=100?x.toFixed(0):x.toFixed(3);
+const esc=s=>String(s==null?'':s).replace(/[&<>"']/g,c=>({{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}}[c]));
 DATA.forEach((d,i)=>{{
  const panel=document.createElement('section');panel.className='panel';
  panel.innerHTML='<h2>'+d.title+'</h2><canvas width="600" height="240"></canvas><p>n = '+d.n.toLocaleString()+' · '+d.unit+'</p>';grid.appendChild(panel);
@@ -176,6 +243,14 @@ DATA.forEach((d,i)=>{{
  x.fillStyle='#475467';x.font='12px system-ui';x.textAlign='left';x.fillText(fmt(d.minimum),left,top+h+18);
  x.textAlign='right';x.fillText(fmt(d.maximum),left+w,top+h+18);x.fillText((peak*100).toFixed(1)+'%',left-5,top+5);
 }});
+const tabs=document.getElementById('tabs'),views=document.getElementById('sample-views');
+SAMPLES.forEach(b=>{{
+ const button=document.createElement('button');button.className='tab';button.dataset.view=b.id;button.textContent=b.label;tabs.appendChild(button);
+ const section=document.createElement('section');section.className='tab-view';section.id=b.id;section.hidden=true;
+ section.innerHTML='<h2>Operative embedding: '+esc(b.label)+'</h2><p>Deterministic sample of '+b.pairs.length+' from '+b.total.toLocaleString()+' Candidate 1–2 pairs in this band.</p><div class="pairs">'+b.pairs.map((p,i)=>'<article class="pair"><p class="pair-meta"><strong>Pair '+(i+1)+'</strong> · Candidate '+p.candidate_rank+' · score <strong>'+p.score.toFixed(3)+'</strong></p><div class="documents">'+[['Child',p.child,p.child_excerpt],['Parent',p.parent,p.parent_excerpt]].map(x=>'<section class="document"><h3>'+x[0]+': <a href="'+esc(x[1].url)+'" target="_blank" rel="noopener">'+esc(x[1].title)+'</a></h3><small>'+esc(x[1].date)+' · ID '+esc(x[1].document_id)+'</small><p>'+esc(x[2])+(x[2].length===900?'…':'')+'</p></section>').join('')+'</div></article>').join('')+'</div>';
+ views.appendChild(section);
+}});
+tabs.addEventListener('click',event=>{{const button=event.target.closest('button');if(!button)return;document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('active',x===button));document.querySelectorAll('.tab-view').forEach(x=>x.hidden=x.id!==button.dataset.view);}});
 </script></body></html>"""
 
 
@@ -186,18 +261,48 @@ def _write_csv(path: Path, rows: list[dict]) -> None:
         writer.writerows(rows)
 
 
-def write_analysis(ranked_path: Path, children_path: Path, output_dir: Path) -> dict[str, Path]:
+def write_analysis(
+    ranked_path: Path,
+    children_path: Path,
+    output_dir: Path,
+    corpus_path: Path | None = None,
+    automatic_edges_path: Path | None = None,
+    documents_path: Path | None = None,
+) -> dict[str, Path]:
     with ranked_path.open(newline="", encoding="utf-8") as handle:
         extracted = extract_candidate_scores(csv.DictReader(handle))
     with children_path.open(newline="", encoding="utf-8") as handle:
         child_ids = {row["document_id"] for row in csv.DictReader(handle)}
+    population = None
+    if corpus_path is not None and automatic_edges_path is not None:
+        with corpus_path.open(newline="", encoding="utf-8") as handle:
+            corpus_rows = list(csv.DictReader(handle))
+        with automatic_edges_path.open(newline="", encoding="utf-8") as handle:
+            automatic_children = {row["child_id"] for row in csv.DictReader(handle)}
+        candidate_counts = {
+            rank: len({row["child_id"] for row in extracted if row["candidate_rank"] == rank})
+            for rank in CANDIDATE_RANKS
+        }
+        population = {
+            "corpus_documents": len(corpus_rows),
+            "maximum_document_id": max(int(row[""]) for row in corpus_rows),
+            "automatic_parent_children": len(automatic_children),
+            "unresolved_children": len(child_ids),
+            "candidate_1_children": candidate_counts[1],
+            "candidate_2_children": candidate_counts[2],
+        }
     output_dir.mkdir(parents=True, exist_ok=True)
     raw_path = output_dir / "candidate_1_2_scores.csv"
     summary_path = output_dir / "candidate_1_2_score_summary.csv"
     plot_path = output_dir / "candidate_1_2_score_distributions.html"
     _write_csv(raw_path, extracted)
     _write_csv(summary_path, summarize_scores(extracted, len(child_ids)))
-    plot_path.write_text(build_plot_html(extracted), encoding="utf-8")
+    threshold_samples = None
+    if documents_path is not None:
+        with documents_path.open(encoding="utf-8") as handle:
+            documents = {row["document_id"]: row for row in map(json.loads, handle)}
+        threshold_samples = build_threshold_samples(extracted, documents)
+    plot_path.write_text(build_plot_html(extracted, population, threshold_samples), encoding="utf-8")
     return {"scores": raw_path, "summary": summary_path, "plots": plot_path}
 
 
@@ -205,9 +310,19 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--ranked-candidates", type=Path, default=DEFAULT_INPUT)
     parser.add_argument("--children", type=Path, default=DEFAULT_CHILDREN)
+    parser.add_argument("--corpus", type=Path, default=DEFAULT_CORPUS)
+    parser.add_argument("--automatic-edges", type=Path, default=DEFAULT_AUTOMATIC_EDGES)
+    parser.add_argument("--documents", type=Path, default=DEFAULT_DOCUMENTS)
     parser.add_argument("--output-dir", type=Path, default=DEFAULT_OUTPUT)
     args = parser.parse_args()
-    outputs = write_analysis(args.ranked_candidates, args.children, args.output_dir)
+    outputs = write_analysis(
+        args.ranked_candidates,
+        args.children,
+        args.output_dir,
+        args.corpus,
+        args.automatic_edges,
+        args.documents,
+    )
     for label, path in outputs.items():
         print(f"{label}: {path}")
 
