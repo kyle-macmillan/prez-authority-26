@@ -5,7 +5,10 @@ import numpy as np
 
 sys.path.insert(0, str(Path(__file__).parents[1]))
 
-from rank_candidate_pool import bm25_scores, reused_word_count, top_pair_average
+from rank_candidate_pool import (
+    dense_ranks, matching_phrase_pairs, reused_word_count, segment_reuse_score,
+    top_pair_average,
+)
 
 
 def test_top_three_pair_average():
@@ -22,9 +25,28 @@ def test_reuse_counts_only_blocks_of_ten_or_more_words():
     assert reused_word_count(common[:9], common[:9]) == 0
 
 
-def test_bm25_is_case_sensitive():
-    upper, lower = bm25_scores(["Agency"], [["Agency"], ["agency"]])
-    assert upper > lower
+def test_dense_ranks_preserve_ties():
+    assert dense_ranks({"a": 1.0, "b": 1.0, "c": 0.0}) == {
+        "a": 1, "b": 1, "c": 2,
+    }
+
+
+def test_matching_phrase_pairs_detect_exact_normalized_wp_phrase():
+    child = [{"text": "I hereby order the agency to act."}]
+    parent = [
+        {"text": "I HEREBY ORDER a different agency to act."},
+        {"text": "The Secretary shall develop a report."},
+    ]
+    assert matching_phrase_pairs(child, parent) == [(0, 0, ["i hereby"])]
+
+
+def test_segment_reuse_does_not_cross_segment_boundaries():
+    first = "one two three four five"; second = "six seven eight nine ten"
+    child = [{"text": first}, {"text": second}]
+    parent = [{"text": first + " " + second}]
+    score, pairs = segment_reuse_score(child, parent)
+    assert score == 0.0
+    assert all(pair[2] == 0.0 for pair in pairs)
 
 
 if __name__ == "__main__":

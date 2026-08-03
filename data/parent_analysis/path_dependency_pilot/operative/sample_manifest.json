@@ -64,7 +64,7 @@
     "1104"
   ],
   "candidate_comparisons": 500,
-  "candidate_order": "deterministically shuffled; retrieval ranks blinded",
+  "candidate_order": "ascending fused RRF rank",
   "viewer": "data/parent_analysis/path_dependency_pilot/operative/parent_candidate_viewer.html",
   "comparison_pilot": "data/parent_analysis/pilot/parent_candidate_viewer.html"
 }

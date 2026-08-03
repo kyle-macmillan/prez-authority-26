@@ -11,7 +11,7 @@
   "holdout_count": 2021,
   "sampled_holdout_overlap": [],
   "candidate_comparisons": 1994,
-  "candidate_order": "deterministically shuffled; retrieval ranks blinded",
+  "candidate_order": "ascending fused RRF rank",
   "inputs": {
     "unresolved_children": "data/parent_analysis/unresolved_children.csv",
     "ranked_candidates": "data/parent_analysis/ranked_candidates.csv",

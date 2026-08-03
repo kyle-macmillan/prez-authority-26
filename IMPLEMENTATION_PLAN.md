@@ -75,13 +75,15 @@ extraction, masking, segmentation, and retrieval outputs receive manual validati
 - Retrieved up to 25 strictly earlier same-type candidates for 14,291 unresolved
   children, producing 356,100 candidate pairs; four earliest directives have no eligible
   same-type predecessor.
-- Implemented and retained separate case-sensitive BM25, case-sensitive corpus-wide word
-  3-gram TF-IDF, 10-word-minimum text-reuse, and top-three operative-embedding rankings.
+- Implemented four segment-level within-pool channels: top-three operative embeddings,
+  exact normalized W&P phrase agreement, case-sensitive word 3-gram TF-IDF, and
+  10-word-minimum text reuse. Full-document embeddings are used only for the initial
+  pool of up to 25 candidates; BM25 is not used in within-pool ranking.
 - Fused the four rankings with unweighted RRF using `k=20` and selected up to 10
   candidates per child.
 - Drew a reproducible, holdout-excluding pilot sample of 50 unresolved children per
   directive type (200 children total).
-- Built a blinded interactive masked-document viewer containing 1,994 candidate
+- Built an interactive masked-document viewer containing 1,994 candidate
   comparisons, highlighted operative-segment alignments, persistent judgments, and JSON
   export.
 
@@ -143,7 +145,7 @@ the original pilot or the holdout set.
 
 ### Current resume point
 
-Resume at section 13, step 7 by conducting the 200-child blinded pilot review in
+Resume at section 13, step 7 by conducting the 200-child pilot review in
 `data/parent_analysis/pilot/parent_candidate_viewer.html`. Generalized artifacts,
 embeddings, the 356,100-pair embedding gate, and all within-pool scores and ranks are
 stored in `data/parent_analysis/`.
@@ -235,7 +237,7 @@ Only unresolved directives enter the similarity pipeline:
    child's document type. Use all eligible earlier same-type directives when fewer than
    25 exist.
 3. Within those 25, independently rank candidates using operative-segment embeddings,
-   lexical similarity, n-grams, and text reuse.
+   exact W&P phrase agreement, segment-level n-grams, and segment-level text reuse.
 4. Combine those rankings using unweighted Reciprocal Rank Fusion (RRF).
 5. Retain up to 10 candidates for manual review. Use every candidate in the embedding
    pool when fewer than 10 exist.
@@ -357,22 +359,25 @@ Rank candidates by the mean of the three strongest child-parent segment-pair cos
 similarities, or all available pairs when fewer than three exist. Preserve those
 alignments for review.
 
-### 7.2 Lexical similarity
+### 7.2 W&P ordering-phrase agreement
 
-Use case-sensitive BM25 over the complete cleaned, authority-masked text with `k1=1.5`
-and `b=0.75`. This channel should capture shared policy vocabulary, institutional names,
-affected groups, and operative terms.
+Record whether any child and candidate operative-segment pair contains the same
+case-insensitive, whitespace-normalized extended W&P ordering phrase. Rank candidates on
+this binary indicator, preserving the matching phrases and segment-pair indices.
 
 ### 7.3 N-gram similarity
 
-Use case-sensitive word 3-gram TF-IDF cosine similarity, with IDF calculated across the
-full directive corpus so common drafting phrases are discounted.
+Use case-sensitive word 3-gram TF-IDF cosine similarity between individual operative
+segments, with IDF calculated across the complete operative-segment corpus. Rank each
+candidate by the mean of its three strongest child-parent segment-pair scores, or all
+available pairs when fewer than three exist.
 
 ### 7.4 Text reuse
 
-Measure sustained local copying using exact matching passages of at least 10 words.
-Rank candidates by the total number of unique child words covered by qualifying passages,
-without double-counting overlapping passages. This includes:
+Measure sustained local copying separately for every child-parent operative-segment pair
+using exact matching passages of at least 10 words. Rank each candidate by the mean reused
+word count of its three strongest segment pairs, or all pairs when fewer than three exist.
+Within a segment pair, do not double-count overlapping passages. This includes:
 
 - verbatim passages;
 - small substitutions;
@@ -384,9 +389,10 @@ similarity-based parent.
 
 ### 7.5 Rank fusion
 
-Use unweighted Reciprocal Rank Fusion with `k=20` to combine the four rankings within each
-child's pool of up to 25 candidates. Retain every raw score, rank, and channel contribution
-in the candidate dataset.
+Use unweighted Reciprocal Rank Fusion with `k=20` to combine the four segment-level
+rankings within each child's pool of up to 25 candidates. The full-document embedding
+score remains retrieval-gate provenance and does not contribute to RRF. Retain every raw
+score, rank, alignment, and channel contribution in the candidate dataset.
 
 Use the fused rank to select up to 10 candidates shown in manual review.
 
@@ -433,7 +439,7 @@ Do not show:
 - extracted authority outcomes; or
 - a model-generated parent conclusion.
 
-Candidate order should not expose the fused ranking.
+Candidate order follows the fused ranking during the current pilot.
 
 ### 8.3 Reviewer decision
 
