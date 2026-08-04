@@ -23,6 +23,16 @@ def test_observance_reference_does_not_exclude_other_directive_types():
     assert not is_ceremonial(item)
 
 
+def test_national_maritime_day_honor_formula_is_ceremonial():
+    item = row(
+        "proclamation",
+        "I do hereby urge the citizens of the United States to honor our American "
+        "Merchant Marine on May 22 by displaying the flag.",
+        "National Maritime Day 1963",
+    )
+    assert ceremonial_reason(item) == "public_commemoration"
+
+
 def test_strong_symbolic_actions_apply_to_all_directive_types():
     assert ceremonial_reason(row(
         "executive_order", "The flag shall be flown at half-staff for the late Justice."

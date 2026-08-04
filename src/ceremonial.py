@@ -19,7 +19,7 @@ _HALF_STAFF_RE = re.compile(r"\bhalf[- ]?(?:staff|mast)\b", re.IGNORECASE)
 # Covers the main observance-designation formula and its common variants.
 # Bounded to 400 chars so the match doesn't span multiple paragraphs.
 _OBSERVANCE_RE = re.compile(
-    r"\bdo\s+hereby\s+(?:proclaim|designate|request|urge|invite|ask|call\s+upon|affirm)\b"
+    r"\bdo\s+hereby\s+(?:proclaim|designate|request|urge|invite|ask|call\s+upon|affirm|set\s+aside)\b"
     r".{0,400}?\bas\s+(?:National\s+|the\s+)?[A-Z][\w\s,.'`\-]{1,100}?"
     r"\b(?:Day|Week|Month|Year|Holiday)\b",
     re.IGNORECASE | re.DOTALL,
@@ -30,8 +30,8 @@ _OBSERVANCE_RE = re.compile(
 # United States to observe", etc. — the standard closing of observance proclamations.
 _CALL_UPON_RE = re.compile(
     r"\b(?:I\s+)?(?:call\s+upon|urge|invite|ask)"
-    r"\s+(?:all\s+)?(?:Americans?|the\s+people\s+of\s+the\s+United\s+States)\b"
-    r".{0,300}?\b(?:observe|observance|commemorate|celebration|ceremonies)\b",
+    r"\s+(?:all\s+)?(?:Americans?|the\s+(?:people|citizens)\s+of\s+the\s+United\s+States)\b"
+    r".{0,300}?\b(?:observe|observance|commemorate|celebration|ceremonies|honor|pay\s+tribute)\b",
     re.IGNORECASE | re.DOTALL,
 )
 

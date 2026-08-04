@@ -6,6 +6,7 @@ import argparse
 import csv
 import hashlib
 import json
+import re
 from collections import Counter
 from collections.abc import Iterable
 from pathlib import Path
@@ -65,6 +66,7 @@ def extract_candidate_scores(
             "parent_id": row["parent_id"],
             "document_type": row["document_type"],
             "candidate_rank": candidate_rank,
+            "_operative_alignments": json.loads(row.get("operative_alignments", "[]")),
         }
         for channel, (source_field, _unit) in SCORE_FIELDS.items():
             output[RAW_FIELDS[channel]] = _score(row[source_field])
@@ -159,10 +161,37 @@ def _histogram_specs(extracted: list[dict], bins: int = 30) -> list[dict]:
     return specs
 
 
+def _directive_sections(text: str, segments: list[dict], aligned: dict[int, list[float]]) -> list[dict]:
+    """Interleave full-document context with extracted operative provisions."""
+    sections = []
+    cursor = 0
+    for index, segment in enumerate(segments):
+        tokens = segment["text"].split()
+        pattern = re.compile(r"\s+".join(re.escape(token) for token in tokens))
+        match = pattern.search(text, cursor)
+        if match is None:
+            continue
+        context = text[cursor:match.start()].strip()
+        if context:
+            sections.append({"kind": "context", "text": context})
+        sections.append({
+            "kind": "operative",
+            "text": match.group(0),
+            "segment_id": segment["segment_id"],
+            "segment_index": segment["segment_index"],
+            "alignment_scores": aligned.get(index, []),
+        })
+        cursor = match.end()
+    remainder = text[cursor:].strip()
+    if remainder:
+        sections.append({"kind": "context", "text": remainder})
+    return sections
+
+
 def build_threshold_samples(
     extracted: list[dict],
     documents: dict[str, dict],
-    segments_by_document: dict[str, list[str]],
+    segments_by_document: dict[str, list[dict]],
     sample_size: int = 12,
 ) -> list[dict]:
     """Build reproducible pair samples for operative-embedding score bands."""
@@ -185,13 +214,24 @@ def build_threshold_samples(
         for row in eligible[:sample_size]:
             child = documents[row["child_id"]]
             parent = documents[row["parent_id"]]
+            alignments = row["_operative_alignments"]
+            child_aligned: dict[int, list[float]] = {}
+            parent_aligned: dict[int, list[float]] = {}
+            for child_index, parent_index, score in alignments:
+                child_aligned.setdefault(child_index, []).append(score)
+                parent_aligned.setdefault(parent_index, []).append(score)
             pairs.append({
                 "candidate_rank": row["candidate_rank"],
                 "score": row["operative_embedding_similarity"],
                 "child": {key: child[key] for key in ("document_id", "title", "date", "url")},
                 "parent": {key: parent[key] for key in ("document_id", "title", "date", "url")},
-                "child_segments": segments_by_document[row["child_id"]],
-                "parent_segments": segments_by_document[row["parent_id"]],
+                "alignment_count": len(alignments),
+                "child_sections": _directive_sections(
+                    child["cleaned_masked_text"], segments_by_document[row["child_id"]], child_aligned
+                ),
+                "parent_sections": _directive_sections(
+                    parent["cleaned_masked_text"], segments_by_document[row["parent_id"]], parent_aligned
+                ),
             })
         type_counts = Counter(row["document_type"] for row in eligible)
         output.append({
@@ -306,7 +346,7 @@ body{{margin:24px;font:14px system-ui,sans-serif;color:#172033;background:#f4f7f
 h1{{margin-bottom:4px}}p{{color:#667085}}.grid{{display:grid;grid-template-columns:repeat(2,minmax(360px,1fr));gap:16px}}
 .panel,.population{{background:#fff;border:1px solid #d8dee9;border-radius:8px;padding:12px}}.population{{margin:16px 0}}h2{{font-size:15px;margin:0 0 6px}}
 .tabs{{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0}}.tab{{border:1px solid #98a2b3;background:#fff;border-radius:6px;padding:8px 12px;cursor:pointer}}.tab.active{{background:#225ea8;color:#fff;border-color:#225ea8}}
-.tab-view[hidden]{{display:none}}.pairs{{display:grid;gap:16px}}.pair{{background:#fff;border:1px solid #d8dee9;border-radius:8px;padding:14px}}.pair-meta{{color:#475467;margin:0 0 10px}}.documents{{display:grid;grid-template-columns:1fr 1fr;gap:14px}}.document{{border-left:3px solid #84b4d8;padding-left:10px}}.document h3{{font-size:14px;margin:0 0 4px}}.segments{{padding-left:24px}}.segments li{{white-space:pre-wrap;line-height:1.45;margin:10px 0}}a{{color:#225ea8}}
+.tab-view[hidden]{{display:none}}.pairs{{display:grid;gap:16px}}.pair{{background:#fff;border:1px solid #d8dee9;border-radius:8px;padding:14px}}.pair-meta{{color:#475467;margin:0 0 10px}}.documents{{display:grid;grid-template-columns:1fr 1fr;gap:14px}}.document{{border-left:3px solid #84b4d8;padding-left:10px}}.document h3{{font-size:14px;margin:0 0 4px}}.directive-parts{{margin-top:10px}}.directive-part{{white-space:pre-wrap;line-height:1.45;padding:9px;margin:5px 0;border-radius:5px}}.directive-part.context{{background:#f8fafc;color:#475467}}.directive-part.operative{{background:#e8f1f8;border-left:4px solid #4b8bbb}}.directive-part.aligned{{background:#fff0c2;border-left-color:#d79500}}.provision-label{{display:block;font-size:11px;font-weight:700;text-transform:uppercase;color:#475467;margin-bottom:5px}}a{{color:#225ea8}}
 .type-counts{{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 18px}}.type-count{{background:#e8f1f8;border-radius:999px;padding:6px 10px;color:#344054}}
 .metric-guide{{background:#fff;border:1px solid #d8dee9;border-radius:8px;padding:12px;margin:16px 0}}.metric-guide li{{margin:6px 0;color:#475467}}
 .table-wrap{{overflow-x:auto}}table{{border-collapse:collapse;width:100%;font-size:12px}}th,td{{border:1px solid #d8dee9;padding:7px;text-align:left;vertical-align:top}}th{{background:#eef3f8}}
@@ -322,6 +362,15 @@ canvas{{display:block;width:100%;height:240px}}@media(max-width:850px){{.grid{{g
 <li><strong>Text reuse:</strong> average reused-word count among the strongest aligned segment pairs.</li>
 <li><strong>Why Candidate 2 can have a smaller n:</strong> the earliest directives of each type may have fewer than two eligible earlier parents, and directives without operative segments have missing channel scores.</li>
 </ul></section>
+<section class="metric-guide"><h2>How the example operative provisions are chosen</h2>
+<p>For each candidate pair, the analysis computes cosine similarity for every possible
+child-operative-provision × parent-operative-provision combination. It selects the three
+highest-scoring combinations (or all combinations when fewer than three exist), and the
+pair's operative-embedding score is their arithmetic mean. In the threshold examples,
+the full cleaned directive is shown in order; blue blocks are extracted operative
+provisions, gray blocks are the remaining context, and gold blocks are provisions used
+in one or more of those top-three alignments. The gold-block badge reports the individual
+alignment score, which can differ from the pair-level mean.</p></section>
 <nav class="tabs" id="tabs"><button class="tab active" data-view="distributions">Distributions</button></nav>
 <section class="tab-view" id="distributions"><div class="grid" id="grid"></div></section>
 <div id="sample-views"></div>
@@ -344,7 +393,8 @@ SAMPLES.forEach(b=>{{
  const button=document.createElement('button');button.className='tab';button.dataset.view=b.id;button.textContent=b.label;tabs.appendChild(button);
  const section=document.createElement('section');section.className='tab-view';section.id=b.id;section.hidden=true;
  const counts=Object.entries(b.type_counts).map(x=>'<span class="type-count">'+esc(x[0].split('_').join(' '))+': <strong>'+x[1].toLocaleString()+'</strong></span>').join('');
- section.innerHTML='<h2>Operative embedding: '+esc(b.label)+'</h2><p><strong>'+b.total.toLocaleString()+'</strong> Candidate 1–2 pairs are in this band, broken down by directive type:</p><div class="type-counts">'+counts+'</div><p>Showing a deterministic sample of '+b.pairs.length+' pairs. Each document column displays every extracted operative segment used by the segment-level similarity channels.</p><div class="pairs">'+b.pairs.map((p,i)=>'<article class="pair"><p class="pair-meta"><strong>Pair '+(i+1)+'</strong> · Candidate '+p.candidate_rank+' · score <strong>'+p.score.toFixed(3)+'</strong></p><div class="documents">'+[['Child',p.child,p.child_segments],['Parent',p.parent,p.parent_segments]].map(x=>'<section class="document"><h3>'+x[0]+': <a href="'+esc(x[1].url)+'" target="_blank" rel="noopener">'+esc(x[1].title)+'</a></h3><small>'+esc(x[1].date)+' · ID '+esc(x[1].document_id)+' · '+x[2].length+' operative segment'+(x[2].length===1?'':'s')+'</small><ol class="segments">'+x[2].map(segment=>'<li>'+esc(segment)+'</li>').join('')+'</ol></section>').join('')+'</div></article>').join('')+'</div>';
+ const renderParts=parts=>'<div class="directive-parts">'+parts.map(part=>'<div class="directive-part '+part.kind+(part.alignment_scores&&part.alignment_scores.length?' aligned':'')+'">'+(part.kind==='operative'?'<span class="provision-label">Operative provision '+part.segment_index+(part.alignment_scores.length?' · selected alignment '+part.alignment_scores.map(x=>x.toFixed(3)).join(', '):'')+'</span>':'<span class="provision-label">Context</span>')+esc(part.text)+'</div>').join('')+'</div>';
+ section.innerHTML='<h2>Operative embedding: '+esc(b.label)+'</h2><p><strong>'+b.total.toLocaleString()+'</strong> Candidate 1–2 pairs are in this band, broken down by directive type:</p><div class="type-counts">'+counts+'</div><p>Showing a deterministic sample of '+b.pairs.length+' pairs. Each column shows the full cleaned directive, broken into context and operative provisions; gold marks the '+(b.pairs.length?b.pairs[0].alignment_count:3)+' selected alignment pairs used in the score.</p><div class="pairs">'+b.pairs.map((p,i)=>'<article class="pair"><p class="pair-meta"><strong>Pair '+(i+1)+'</strong> · Candidate '+p.candidate_rank+' · mean of '+p.alignment_count+' selected alignment'+(p.alignment_count===1?'':'s')+' = <strong>'+p.score.toFixed(3)+'</strong></p><div class="documents">'+[['Child',p.child,p.child_sections],['Parent',p.parent,p.parent_sections]].map(x=>'<section class="document"><h3>'+x[0]+': <a href="'+esc(x[1].url)+'" target="_blank" rel="noopener">'+esc(x[1].title)+'</a></h3><small>'+esc(x[1].date)+' · ID '+esc(x[1].document_id)+'</small>'+renderParts(x[2])+'</section>').join('')+'</div></article>').join('')+'</div>';
  views.appendChild(section);
 }});
 tabs.addEventListener('click',event=>{{const button=event.target.closest('button');if(!button)return;document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('active',x===button));document.querySelectorAll('.tab-view').forEach(x=>x.hidden=x.id!==button.dataset.view);}});
@@ -353,7 +403,8 @@ tabs.addEventListener('click',event=>{{const button=event.target.closest('button
 
 def _write_csv(path: Path, rows: list[dict]) -> None:
     with path.open("w", newline="", encoding="utf-8") as handle:
-        writer = csv.DictWriter(handle, fieldnames=list(rows[0]))
+        fieldnames = [field for field in rows[0] if not field.startswith("_")]
+        writer = csv.DictWriter(handle, fieldnames=fieldnames, extrasaction="ignore")
         writer.writeheader()
         writer.writerows(rows)
 
@@ -416,10 +467,10 @@ def write_analysis(
     _write_csv(summary_path, summarize_scores(extracted, len(child_ids)))
     threshold_samples = None
     if documents is not None and segments_path is not None:
-        segments_by_document: dict[str, list[str]] = {}
+        segments_by_document: dict[str, list[dict]] = {}
         with segments_path.open(encoding="utf-8") as handle:
             for segment in map(json.loads, handle):
-                segments_by_document.setdefault(segment["document_id"], []).append(segment["text"])
+                segments_by_document.setdefault(segment["document_id"], []).append(segment)
         threshold_samples = build_threshold_samples(extracted, documents, segments_by_document)
     plot_path.write_text(build_plot_html(extracted, population, threshold_samples), encoding="utf-8")
     return {"scores": raw_path, "summary": summary_path, "plots": plot_path}
