@@ -191,6 +191,19 @@ def test_compliance_and_purpose_citations_are_excluded():
     ) == "generic_constitution_and_generic_statute"
 
 
+def test_compliance_language_can_be_included_for_comparison():
+    clause = (
+        "By the authority vested in me by the Constitution and laws of the United States, "
+        "and consistent with section 301 of title 3, United States Code,"
+    )
+    assert classify_authority_category([clause]) == (
+        "generic_constitution_and_generic_statute"
+    )
+    assert classify_authority_category(
+        [clause], include_compliance_language=True
+    ) == "generic_constitution_and_specific_statute"
+
+
 def test_including_is_authority_but_in_furtherance_is_not():
     clause = (
         "By the authority vested in me by the Constitution and laws of the United States, "

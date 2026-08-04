@@ -37,7 +37,7 @@ ROOT = Path(__file__).parent.parent
 DEFAULT_DEV = ROOT / "data" / "4_28_2026_build_dev.csv"
 DEFAULT_HOLDOUT = ROOT / "data" / "4_28_2026_build_holdout.csv"
 DEFAULT_AUDIT = ROOT / "data" / "generic_vesting_authority_audit.csv"
-EXPECTED_FULL_CORPUS_SIZE = 20_232
+EXPECTED_FULL_CORPUS_SIZE = 18_418
 DOC_TYPES = ("executive_order", "memorandum", "letter", "proclamation")
 
 PRESIDENTIAL_TITLE_INVOCATION_RE = re.compile(

@@ -27,7 +27,7 @@ from vesting_authority_stats import (
 
 
 ANALYSIS_DIR = Path(__file__).resolve().parent
-DEFAULT_HTML = ANALYSIS_DIR / "README.html"
+DEFAULT_HTML = ANALYSIS_DIR / "vesting_authority_specificity_by_administration.html"
 
 CATEGORIES = (
     "generic_constitution_only",
@@ -250,8 +250,11 @@ POSSIBLE_VESTING_RE = re.compile(
 )
 
 
-def extract_authority_spans(clauses: list[str]) -> list[str]:
-    """Keep asserted authority sources and discard compliance or purpose citations."""
+def extract_authority_spans(
+    clauses: list[str],
+    include_compliance_language: bool = False,
+) -> list[str]:
+    """Keep asserted authority sources, optionally retaining compliance-language tails."""
     spans = []
     for clause in clauses:
         normalized = re.sub(r"\s+", " ", clause).strip()
@@ -266,9 +269,10 @@ def extract_authority_spans(clauses: list[str]) -> list[str]:
 
             start = marker.start() if marker else 0
             end = len(unit)
-            excluded = EXCLUDED_TAIL_RE.search(unit, start)
-            if excluded:
-                end = excluded.start()
+            if not include_compliance_language:
+                excluded = EXCLUDED_TAIL_RE.search(unit, start)
+                if excluded:
+                    end = excluded.start()
             span = unit[start:end].strip(" ,;:")
             if span:
                 spans.append(span)
@@ -284,12 +288,15 @@ def _has_specific_statutory_section(text: str) -> bool:
     return False
 
 
-def classify_authority_category(clauses: list[str]) -> str:
+def classify_authority_category(
+    clauses: list[str],
+    include_compliance_language: bool = False,
+) -> str:
     """Return the one document-level category that applies to extracted vesting clauses."""
     if not clauses:
         return "no_vesting_clause"
 
-    spans = extract_authority_spans(clauses)
+    spans = extract_authority_spans(clauses, include_compliance_language)
     authority_text = " ".join(spans)
     if not authority_text:
         return "other_vesting_authority"
@@ -339,7 +346,10 @@ def classify_authority_category(clauses: list[str]) -> str:
     return COMBINATION_CATEGORIES[(constitutional_category, statutory_category)]
 
 
-def analyze(rows: list[dict]) -> tuple[list[dict], Counter, Counter]:
+def analyze(
+    rows: list[dict],
+    include_compliance_language: bool = False,
+) -> tuple[list[dict], Counter, Counter]:
     output = []
     counts = Counter()
     administration_totals = Counter()
@@ -349,7 +359,7 @@ def analyze(rows: list[dict]) -> tuple[list[dict], Counter, Counter]:
             clauses = extract_vesting_clauses(text, row["doc_type"])
         else:
             clauses = []
-        category = classify_authority_category(clauses)
+        category = classify_authority_category(clauses, include_compliance_language)
         administration = f"{row['president']} ({row['term']})"
         administration_totals[(administration, "all")] += 1
         administration_totals[(administration, row["doc_type"])] += 1
@@ -364,6 +374,10 @@ def analyze(rows: list[dict]) -> tuple[list[dict], Counter, Counter]:
                 "document_id": row[""],
                 "administration": administration,
                 "category": category,
+                "uses_compliance_language": (
+                    extract_authority_spans(clauses)
+                    != extract_authority_spans(clauses, include_compliance_language=True)
+                ),
             }
         )
     return output, counts, administration_totals
@@ -413,43 +427,64 @@ def render_html(
     document_count: int,
     administrations: list[str],
     administration_totals: Counter,
+    compliance_language_counts: Counter | None = None,
+    compliance_language_directive_count: int = 0,
 ) -> str:
     if administration_totals[("total", "all")] != document_count:
         raise ValueError(
             f"directive total mismatch: report has {document_count:,} directives, "
             f"counts have {administration_totals[('total', 'all')]:,}"
-        )
+    )
+    if compliance_language_counts is None:
+        compliance_language_counts = counts
     validate_category_totals(counts, administrations, administration_totals)
-    table_bodies = []
-    for view in VIEWS:
-        count_rows = []
-        for administration in (*administrations, "total"):
-            denominator = administration_totals[(administration, view)]
-            category_sum = sum(counts[(administration, view, category)] for category in CATEGORIES)
-            label = "All administrations" if administration == "total" else administration
-            cells = []
-            for category in CATEGORIES:
-                count = counts[(administration, view, category)]
-                if denominator:
-                    percent = 100 * count / denominator
-                    cells.append(
-                        f'<td class="count category-count {_heat_class(percent)}" '
-                        f'title="{percent:.2f}% of this administration">'
-                        f'<b class="raw-count">{count:,}</b><span class="pct">{percent:.1f}%</span></td>'
-                    )
-                else:
-                    cells.append('<td class="count heat-0 empty" title="No directives of this type">-</td>')
-            count_rows.append(
-                f'<tr class="{"total-row" if administration == "total" else ""}">'
-                f'<th scope="row">{html.escape(label)}</th>{"".join(cells)}'
-                f'<td class="count total"><b>{category_sum:,}</b></td>'
-                f'<td class="count total"><b>{denominator:,}</b></td>'
-                f'<td class="check pass"><b>PASS</b></td></tr>'
+    validate_category_totals(compliance_language_counts, administrations, administration_totals)
+    directive_types = tuple(view for view in VIEWS if view != "all")
+    for administration in (*administrations, "total"):
+        type_sum = sum(administration_totals[(administration, view)] for view in directive_types)
+        if type_sum != administration_totals[(administration, "all")]:
+            raise ValueError(
+                f"directive-type total mismatch for {administration}: "
+                f"{type_sum:,} directive types != "
+                f"{administration_totals[(administration, 'all')]:,} directives"
             )
-        table_bodies.append(
-            f'<tbody data-view="{view}"{"" if view == "all" else " hidden"}>'
-            f'{"".join(count_rows)}</tbody>'
-        )
+    def render_category_table_bodies(category_counts: Counter) -> list[str]:
+        bodies = []
+        for view in VIEWS:
+            count_rows = []
+            for administration in (*administrations, "total"):
+                denominator = administration_totals[(administration, view)]
+                category_sum = sum(
+                    category_counts[(administration, view, category)] for category in CATEGORIES
+                )
+                label = "All administrations" if administration == "total" else administration
+                cells = []
+                for category in CATEGORIES:
+                    count = category_counts[(administration, view, category)]
+                    if denominator:
+                        percent = 100 * count / denominator
+                        cells.append(
+                            f'<td class="count category-count {_heat_class(percent)}" '
+                            f'title="{percent:.2f}% of this administration">'
+                            f'<b class="raw-count">{count:,}</b><span class="pct">{percent:.1f}%</span></td>'
+                        )
+                    else:
+                        cells.append('<td class="count heat-0 empty" title="No directives of this type">-</td>')
+                count_rows.append(
+                    f'<tr class="{"total-row" if administration == "total" else ""}">'
+                    f'<th scope="row">{html.escape(label)}</th>{"".join(cells)}'
+                    f'<td class="count total"><b>{category_sum:,}</b></td>'
+                    f'<td class="count total"><b>{denominator:,}</b></td>'
+                    f'<td class="check pass"><b>PASS</b></td></tr>'
+                )
+            bodies.append(
+                f'<tbody data-view="{view}"{"" if view == "all" else " hidden"}>'
+                f'{"".join(count_rows)}</tbody>'
+            )
+        return bodies
+
+    table_bodies = render_category_table_bodies(counts)
+    compliance_language_table_bodies = render_category_table_bodies(compliance_language_counts)
 
     definitions = "".join(
         f"<tr><th scope=\"row\">{html.escape(CATEGORY_LABELS[category])}</th>"
@@ -473,6 +508,52 @@ def render_html(
         f'<button type="button" data-view="{view}" aria-pressed="{"true" if view == "all" else "false"}">'
         f'{html.escape(label)}</button>'
         for view, label in VIEWS.items()
+    )
+    directive_total_rows = []
+    for administration in (*administrations, "total"):
+        label = "All administrations" if administration == "total" else administration
+        cells = "".join(
+            f'<td class="count"><b>{administration_totals[(administration, view)]:,}</b></td>'
+            for view in directive_types
+        )
+        directive_total_rows.append(
+            f'<tr class="{"total-row" if administration == "total" else ""}">'
+            f'<th scope="row">{html.escape(label)}</th>{cells}'
+            f'<td class="count total"><b>{administration_totals[(administration, "all")]:,}</b></td>'
+            f'</tr>'
+        )
+    directive_total_headers = "".join(
+        f'<th scope="col">{html.escape(VIEWS[view])}</th>' for view in directive_types
+    )
+    comparison_table_bodies = []
+    for view in VIEWS:
+        comparison_rows = []
+        for administration in (*administrations, "total"):
+            label = "All administrations" if administration == "total" else administration
+            denominator = administration_totals[(administration, view)]
+            comparison_counts = (
+                counts[(administration, view, "specific_statute_only")],
+                counts[(administration, view, "generic_constitution_and_generic_statute")]
+                + counts[(administration, view, "generic_constitution_and_specific_statute")],
+            )
+            cells = []
+            for count in comparison_counts:
+                percent = 100 * count / denominator if denominator else 0
+                cells.append(
+                    f'<td class="count category-count {_heat_class(percent)}" '
+                    f'title="{percent:.2f}% of this administration">'
+                    f'<b class="raw-count">{count:,}</b><span class="pct">{percent:.1f}%</span></td>'
+                )
+            comparison_rows.append(
+                f'<tr class="{"total-row" if administration == "total" else ""}">'
+                f'<th scope="row">{html.escape(label)}</th>{"".join(cells)}</tr>'
+            )
+        comparison_table_bodies.append(
+            f'<tbody data-view="{view}"{"" if view == "all" else " hidden"}>'
+            f'{"".join(comparison_rows)}</tbody>'
+        )
+    compliance_language_percent = (
+        100 * compliance_language_directive_count / document_count if document_count else 0
     )
 
     return f"""<!doctype html>
@@ -516,11 +597,11 @@ def render_html(
     abbr {{ text-decoration: none; cursor: help; }}
     .legend {{ display: flex; flex-wrap: wrap; gap: 12px; margin: 8px 0 14px; font-size: 13px; color: #4c5968; }}
     .swatch {{ display: inline-block; width: 16px; height: 16px; margin-right: 5px; border: 1px solid #cfd7e3; vertical-align: -3px; }}
-    .view-toggle, .display-toggle {{ display: inline-flex; max-width: 100%; overflow-x: auto; margin: 4px 8px 12px 0; border: 1px solid #aab5c3; background: #fff; }}
-    .view-toggle button, .display-toggle button {{ min-height: 38px; padding: 7px 12px; border: 0; border-right: 1px solid #cfd7e3; background: #fff; color: #202936; font: inherit; font-size: 14px; white-space: nowrap; cursor: pointer; }}
-    .view-toggle button:last-child, .display-toggle button:last-child {{ border-right: 0; }}
-    .view-toggle button[aria-pressed="true"], .display-toggle button[aria-pressed="true"] {{ background: #263d55; color: #fff; font-weight: 650; }}
-    .view-toggle button:focus-visible, .display-toggle button:focus-visible {{ outline: 3px solid #d29b42; outline-offset: -3px; }}
+    .report-toggle, .view-toggle, .display-toggle {{ display: inline-flex; max-width: 100%; overflow-x: auto; margin: 4px 8px 12px 0; border: 1px solid #aab5c3; background: #fff; }}
+    .report-toggle button, .view-toggle button, .display-toggle button {{ min-height: 38px; padding: 7px 12px; border: 0; border-right: 1px solid #cfd7e3; background: #fff; color: #202936; font: inherit; font-size: 14px; white-space: nowrap; cursor: pointer; }}
+    .report-toggle button:last-child, .view-toggle button:last-child, .display-toggle button:last-child {{ border-right: 0; }}
+    .report-toggle button[aria-selected="true"], .view-toggle button[aria-pressed="true"], .display-toggle button[aria-pressed="true"] {{ background: #263d55; color: #fff; font-weight: 650; }}
+    .report-toggle button:focus-visible, .view-toggle button:focus-visible, .display-toggle button:focus-visible {{ outline: 3px solid #d29b42; outline-offset: -3px; }}
     [hidden] {{ display: none !important; }}
     .note {{ border-left: 4px solid #4f657e; padding: 10px 14px; background: #fff; }}
     code {{ background: #e9edf2; padding: 1px 4px; border-radius: 3px; }}
@@ -533,20 +614,59 @@ def render_html(
   <p class="note"><strong>Mutually exclusive categories.</strong> Every directive receives exactly one category. Constitutional and statutory specificity are classified independently and then combined. Constitutional Articles, roles, and provisions share one specific-Constitution level; named Acts and statutory provisions share one specific-statute level. The resulting eight substantive categories are accompanied by two bookkeeping buckets for no extracted vesting clause and other/unclassified authority. Additional citations to Executive Orders, treaties, agreements, or similar authorities do not displace a recognized constitutional/statutory combination. Category sums are checked against directive totals for every administration and directive-type view.</p>
 
   <h2>Counts by Administration</h2>
-  <p>Each cell gives the number of matching directives and its share of the selected directive type in that administration. The background color provides an absolute percentage heatmap.</p>
-  <div class="view-toggle" role="group" aria-label="Directive type">{view_buttons}</div>
-  <div class="display-toggle" role="group" aria-label="Cell display">
-    <button type="button" data-display="number" aria-pressed="true">Number</button>
-    <button type="button" data-display="proportion" aria-pressed="false">Proportion</button>
+  <div class="report-toggle" role="tablist" aria-label="Report table">
+    <button type="button" role="tab" data-report="original_directives" aria-selected="true">Original directive tables</button>
+    <button type="button" role="tab" data-report="compliance_language" aria-selected="false">Including compliance language</button>
+    <button type="button" role="tab" data-report="directive_totals" aria-selected="false">Directive totals</button>
+    <button type="button" role="tab" data-report="category_comparison" aria-selected="false">(4) vs. (5)+(6)</button>
   </div>
-  <div class="legend" aria-label="Heatmap legend">
-    <span><i class="swatch heat-0"></i>0%</span><span><i class="swatch heat-1"></i>Less than 1%</span><span><i class="swatch heat-2"></i>1-4.9%</span><span><i class="swatch heat-3"></i>5-14.9%</span><span><i class="swatch heat-4"></i>15-34.9%</span><span><i class="swatch heat-5"></i>35% or more</span>
+  <div id="category-controls">
+    <div class="display-toggle" role="group" aria-label="Cell display">
+      <button type="button" data-display="number" aria-pressed="true">Number</button>
+      <button type="button" data-display="proportion" aria-pressed="false">Proportion</button>
+    </div>
+    <div class="legend" aria-label="Heatmap legend">
+      <span><i class="swatch heat-0"></i>0%</span><span><i class="swatch heat-1"></i>Less than 1%</span><span><i class="swatch heat-2"></i>1-4.9%</span><span><i class="swatch heat-3"></i>5-14.9%</span><span><i class="swatch heat-4"></i>15-34.9%</span><span><i class="swatch heat-5"></i>35% or more</span>
+    </div>
   </div>
-  <div class="table-wrap">
-    <table class="administration-table">
-      <thead><tr><th scope="col">Administration</th>{headers}<th scope="col">Category sum</th><th scope="col">Directives</th><th scope="col">Check</th></tr></thead>
-      {''.join(table_bodies)}
-    </table>
+  <div id="original-directives-panel" role="tabpanel">
+    <p>Each cell gives the number of matching directives and its share of the selected directive type in that administration. The background color provides an absolute percentage heatmap.</p>
+    <div class="view-toggle" role="group" aria-label="Directive type">{view_buttons}</div>
+    <div class="table-wrap">
+      <table class="administration-table">
+        <thead><tr><th scope="col">Administration</th>{headers}<th scope="col">Category sum</th><th scope="col">Directives</th><th scope="col">Check</th></tr></thead>
+        {''.join(table_bodies)}
+      </table>
+    </div>
+  </div>
+  <div id="compliance-language-panel" role="tabpanel" hidden>
+    <p><strong>{compliance_language_directive_count:,} directives ({compliance_language_percent:.1f}% of the corpus) use compliance or context language retained by this version.</strong> This version retains citations after phrases such as <code>consistent with</code> and <code>in accordance with</code>. Each cell gives the count and share of the selected directive type in the administration.</p>
+    <div class="view-toggle" role="group" aria-label="Compliance-language directive type">{view_buttons}</div>
+    <div class="table-wrap">
+      <table class="administration-table compliance-language-table">
+        <thead><tr><th scope="col">Administration</th>{headers}<th scope="col">Category sum</th><th scope="col">Directives</th><th scope="col">Check</th></tr></thead>
+        {''.join(compliance_language_table_bodies)}
+      </table>
+    </div>
+  </div>
+  <div id="directive-totals-panel" role="tabpanel" hidden>
+    <p>Each cell gives the number of directives of that type in the administration.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th scope="col">Administration</th>{directive_total_headers}<th scope="col">All directives</th></tr></thead>
+        <tbody>{''.join(directive_total_rows)}</tbody>
+      </table>
+    </div>
+  </div>
+  <div id="category-comparison-panel" role="tabpanel" hidden>
+    <p>Each cell gives the count and share of the selected directive type in the administration. The second column combines categories (5) and (6).</p>
+    <div class="view-toggle comparison-view-toggle" role="group" aria-label="Comparison directive type">{view_buttons}</div>
+    <div class="table-wrap">
+      <table class="comparison-table">
+        <thead><tr><th scope="col">Administration</th><th scope="col">(4) Specific Statute only</th><th scope="col">(5)+(6) Generic Constitution + Statute</th></tr></thead>
+        {''.join(comparison_table_bodies)}
+      </table>
+    </div>
   </div>
 
   <h2>Category Definitions</h2>
@@ -564,19 +684,47 @@ def render_html(
   <p>Citations appearing only as compliance, purpose, or context are excluded, including citations following <code>consistent with</code>, <code>in accordance with</code>, <code>in order to</code>, <code>in furtherance of</code>, <code>in light of</code>, and <code>as contemplated by</code>. Matching tolerates capitalization, punctuation, singular/plural forms, and observed OCR variants; it does not use fuzzy matching.</p>
 </main>
 <script>
-  const viewButtons = document.querySelectorAll('.view-toggle button');
-  const bodies = document.querySelectorAll('.administration-table tbody');
-  for (const button of viewButtons) {{
+  const reportButtons = document.querySelectorAll('.report-toggle button');
+  const originalViewButtons = document.querySelectorAll('#original-directives-panel .view-toggle button');
+  const originalBodies = document.querySelectorAll('#original-directives-panel .administration-table tbody');
+  const complianceViewButtons = document.querySelectorAll('#compliance-language-panel .view-toggle button');
+  const complianceBodies = document.querySelectorAll('.compliance-language-table tbody');
+  const comparisonViewButtons = document.querySelectorAll('#category-comparison-panel .view-toggle button');
+  const comparisonBodies = document.querySelectorAll('.comparison-table tbody');
+  const categoryControls = document.querySelector('#category-controls');
+  const originalDirectivesPanel = document.querySelector('#original-directives-panel');
+  const complianceLanguagePanel = document.querySelector('#compliance-language-panel');
+  const directiveTotalsPanel = document.querySelector('#directive-totals-panel');
+  const categoryComparisonPanel = document.querySelector('#category-comparison-panel');
+  for (const button of reportButtons) {{
     button.addEventListener('click', () => {{
-      const view = button.dataset.view;
-      for (const candidate of viewButtons) {{
-        candidate.setAttribute('aria-pressed', String(candidate === button));
+      const report = button.dataset.report;
+      for (const candidate of reportButtons) {{
+        candidate.setAttribute('aria-selected', String(candidate === button));
       }}
-      for (const body of bodies) {{
-        body.hidden = body.dataset.view !== view;
-      }}
+      categoryControls.hidden = report === 'directive_totals';
+      originalDirectivesPanel.hidden = report !== 'original_directives';
+      complianceLanguagePanel.hidden = report !== 'compliance_language';
+      directiveTotalsPanel.hidden = report !== 'directive_totals';
+      categoryComparisonPanel.hidden = report !== 'category_comparison';
     }});
   }}
+  function bindViewToggle(buttons, tableBodies) {{
+    for (const button of buttons) {{
+      button.addEventListener('click', () => {{
+        const view = button.dataset.view;
+        for (const candidate of buttons) {{
+          candidate.setAttribute('aria-pressed', String(candidate === button));
+        }}
+        for (const body of tableBodies) {{
+          body.hidden = body.dataset.view !== view;
+        }}
+      }});
+    }}
+  }}
+  bindViewToggle(originalViewButtons, originalBodies);
+  bindViewToggle(complianceViewButtons, complianceBodies);
+  bindViewToggle(comparisonViewButtons, comparisonBodies);
   const displayButtons = document.querySelectorAll('.display-toggle button');
   const main = document.querySelector('main');
   for (const button of displayButtons) {{
@@ -608,9 +756,27 @@ def main() -> None:
     rows = load_corpus([args.dev, args.holdout])
     if args.dev == DEFAULT_DEV and args.holdout == DEFAULT_HOLDOUT and len(rows) != EXPECTED_FULL_CORPUS_SIZE:
         raise ValueError(f"expected {EXPECTED_FULL_CORPUS_SIZE:,} full-corpus documents, found {len(rows):,}")
-    _, counts, administration_totals = analyze(rows)
+    output, counts, administration_totals = analyze(rows)
+    compliance_language_directive_count = sum(
+        row["uses_compliance_language"] for row in output
+    )
+    _, compliance_language_counts, compliance_language_totals = analyze(
+        rows, include_compliance_language=True
+    )
+    if compliance_language_totals != administration_totals:
+        raise ValueError("directive totals differ between authority-classification variants")
     administrations = administration_order(rows)
-    write_html(args.html, render_html(counts, len(rows), administrations, administration_totals))
+    write_html(
+        args.html,
+        render_html(
+            counts,
+            len(rows),
+            administrations,
+            administration_totals,
+            compliance_language_counts,
+            compliance_language_directive_count,
+        ),
+    )
     print(f"\nHTML: {args.html} ({len(rows):,} directives)")
 
 

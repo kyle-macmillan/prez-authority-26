@@ -18,11 +18,14 @@ canvas{display:block;width:100%;height:240px}@media(max-width:850px){.grid{grid-
 
 <section class="population">
 <h2>How the source corpus becomes the reported n</h2>
-<p>Source document IDs run as high as <strong>20,232</strong>,
-but IDs are not contiguous. This analysis starts from the
-<strong>16,397-document development corpus</strong>—the main
-analysis split used to construct and rank parent candidates. The separately reserved
-holdout split is not used in this ranking. The codebook-based ceremonial filter excludes
+<p>The <strong>20,232</strong> figure is the largest source
+document ID, not a count of documents. Source IDs contain gaps and span records assigned
+to separate dataset splits, so the analysis does not obtain 16,397 by subtracting 3,835
+documents from a 20,232-document corpus. The development CSV itself contains
+<strong>16,397 documents</strong> and is the split used to
+construct and rank parent candidates; the separately reserved holdout split is not used
+in this ranking. From those 16,397 development documents, the codebook-based ceremonial
+filter excludes
 <strong>5,470</strong> directives, leaving
 <strong>10,927</strong> directives eligible to appear as
 children or parents. Automatic reference matching identifies parents for
