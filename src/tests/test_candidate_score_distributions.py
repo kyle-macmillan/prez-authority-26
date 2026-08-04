@@ -76,8 +76,7 @@ def test_summary_statistics_and_plot_are_deterministic():
     assert "Operative embedding similarity" in plot
     assert "Word-trigram TF-IDF similarity" in plot
     assert "Text reuse" in plot
-    assert "Why this report starts with 16,397 rather than 20,232 directives" in plot
-    assert "Why Candidate 2 has n = 11,716" in plot
+    assert "Why Candidate 2 can have a smaller n" in plot
 
 
 def test_text_reuse_histogram_excludes_values_above_combined_p99():

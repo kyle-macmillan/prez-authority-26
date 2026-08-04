@@ -1,5 +1,5 @@
 {
-  "created_at": "2026-07-31T19:50:58.651026+00:00",
+  "created_at": "2026-08-04T00:57:04.053156+00:00",
   "model_id": "Qwen/Qwen3-Embedding-0.6B",
   "model_revision": "97b0c614be4d77ee51c0cef4e5f07c00f9eb65b3",
   "tokenizer_revision": "97b0c614be4d77ee51c0cef4e5f07c00f9eb65b3",
@@ -18,9 +18,9 @@
   "artifacts": [
     {
       "source": "data/parent_analysis/directive_similarity_documents.jsonl",
-      "source_sha256": "6504d32e25733d3f8625667e9183ee3c167f84505200f174e048a3324ba940ad",
+      "source_sha256": "f555e4423bda050cc485ac3b62e663ba0771c15eabb3a77d3d87074b52fcdcd0",
       "output": "data/parent_analysis/embeddings/directive_document_embeddings.npz",
-      "output_sha256": "bbb436f22a286db6bba27a747cbc4af7d475aca4cfdf605d50f337d340d46f03",
+      "output_sha256": "3e09123665f4d786d320b9b2747f39b92eb87c38adf6cd343b088f3b8ab22f58",
       "id_field": "document_id",
       "text_field": "cleaned_masked_text",
       "instruction": "Represent this presidential directive for identifying earlier directives of the same document type that address the same substantive policy problem and contain a similar legal directive or directed operative action.",
@@ -29,29 +29,22 @@
         "document_embeddings": "unprompted candidate-parent documents"
       },
       "shape": [
-        16397,
+        10960,
         1024
       ],
       "dtype": "float16",
-      "token_lengths": {
-        "count": 16397,
-        "document_max": 13774,
-        "query_max": 13810,
-        "document_mean": 680.445752271757,
-        "query_mean": 716.3689089467586
-      },
       "cache_reuse": {
-        "basis": "all document_id and cleaned_masked_text inputs are byte-identical; only the non-embedding operative_segment_count metadata changed",
-        "prior_source_sha256": "b1d6d8d2bef069acd4e0238c5e234491dff02ca8df6c6f80582a3a016e835a62",
-        "reused_rows": 16397,
+        "basis": "subset to non-ceremonial rows with identical stable IDs under the original embedding model and preprocessing revision",
+        "prior_rows": 16397,
+        "reused_rows": 10960,
         "encoded_rows": 0
       }
     },
     {
       "source": "data/parent_analysis/directive_operative_segments.jsonl",
-      "source_sha256": "13030d5c9879ba124d9a980f262fccfa4150e8bcd645f522aada56d4e7343a81",
+      "source_sha256": "b9693c30405efc5371837291e03e880329142c5d3fa788393a60f07201269ab2",
       "output": "data/parent_analysis/embeddings/directive_operative_segment_embeddings.npz",
-      "output_sha256": "71b64710edc5b80c733755bb4b6c8093f8799e49c71554822b3f57fd3c5a5df2",
+      "output_sha256": "7a5aa17beb7321eb2e545705d9aa9524eea7864a8e875b961856bef4bc85d6ff",
       "id_field": "segment_id",
       "text_field": "text",
       "instruction": "Represent this directed operative action for identifying earlier actions in directives of the same document type that use a similar legal or administrative mechanism.",
@@ -60,29 +53,21 @@
         "document_embeddings": "unprompted candidate-parent documents"
       },
       "shape": [
-        35006,
+        25913,
         1024
       ],
       "dtype": "float16",
-      "token_lengths": {
-        "count": 35006,
-        "document_max": 12897,
-        "query_max": 12926,
-        "document_mean": 150.60726732560133,
-        "query_mean": 180.2626406901674
-      },
       "batch_size": 1,
       "document_seconds": 17.75218750908971,
       "query_seconds": 17.73147872975096,
       "cache_reuse": {
-        "basis": "exact segment text equality under identical model, revision, instruction, and roles",
-        "prior_source_commit": "968b4bd",
-        "prior_source_rows": 34761,
-        "reused_rows": 34483,
-        "encoded_rows": 523,
-        "encoded_unique_texts": 521
+        "basis": "subset to non-ceremonial rows with identical stable IDs under the original embedding model and preprocessing revision",
+        "prior_rows": 35006,
+        "reused_rows": 25913,
+        "encoded_rows": 0
       }
     }
   ],
-  "model_load_seconds": 2.8347160308621824
+  "model_load_seconds": 2.8347160308621824,
+  "ceremonial_filter": "project codebook heuristic; see data/parent_analysis/ceremonial_exclusions.csv"
 }

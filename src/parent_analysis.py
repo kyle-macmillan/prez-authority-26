@@ -16,6 +16,7 @@ from datetime import datetime
 from pathlib import Path
 from urllib.parse import unquote
 
+from ceremonial import ceremonial_reason
 from precedent_preprocess import preprocess_for_similarity
 from segmenter import segment_ordering
 
@@ -119,6 +120,16 @@ UNRESOLVED_REFERENCE_FIELDS = (
     "reason",
     "reference_text",
     "context",
+)
+
+CEREMONIAL_EXCLUSION_FIELDS = (
+    "document_id",
+    "document_type",
+    "identifier",
+    "title",
+    "date",
+    "url",
+    "exclusion_reason",
 )
 
 
@@ -474,15 +485,41 @@ def main() -> None:
         help="Corpus CSV to include; repeat for multiple partitions. Defaults to dev plus holdout.",
     )
     parser.add_argument("--output-dir", type=Path, default=Path("data/parent_analysis"))
+    parser.add_argument(
+        "--include-ceremonial",
+        action="store_true",
+        help="Retain codebook-defined ceremonial directives (excluded by default).",
+    )
     args = parser.parse_args()
 
     corpus_paths = tuple(args.corpora) if args.corpora else DEFAULT_CORPORA
-    documents = load_directive_corpus(corpus_paths)
-    if not args.corpora and len(documents) != EXPECTED_FULL_CORPUS_SIZE:
+    all_documents = load_directive_corpus(corpus_paths)
+    if not args.corpora and len(all_documents) != EXPECTED_FULL_CORPUS_SIZE:
         raise ValueError(
             f"expected {EXPECTED_FULL_CORPUS_SIZE:,} full-corpus directives, "
-            f"found {len(documents):,}"
+            f"found {len(all_documents):,}"
         )
+    ceremonial_exclusions = []
+    if not args.include_ceremonial:
+        for document in all_documents:
+            reason = ceremonial_reason({
+                "doc_type": document.document_type,
+                "doc_text": document.text,
+                "title": document.title,
+                "url": document.url,
+            })
+            if reason:
+                ceremonial_exclusions.append({
+                    "document_id": document.document_id,
+                    "document_type": document.document_type,
+                    "identifier": document.identifier,
+                    "title": document.title,
+                    "date": document.date_text,
+                    "url": document.url,
+                    "exclusion_reason": reason,
+                })
+    excluded_ids = {row["document_id"] for row in ceremonial_exclusions}
+    documents = [row for row in all_documents if row.document_id not in excluded_ids]
     edges, unresolved_references = build_automatic_edges(documents)
     automatic_child_ids = {str(row["child_id"]) for row in edges}
     unresolved_children = [
@@ -505,11 +542,18 @@ def main() -> None:
         UNRESOLVED_REFERENCE_FIELDS,
     )
     write_csv(args.output_dir / "unresolved_children.csv", unresolved_children)
+    write_csv(
+        args.output_dir / "ceremonial_exclusions.csv",
+        ceremonial_exclusions,
+        CEREMONIAL_EXCLUSION_FIELDS,
+    )
     document_rows, segment_rows = build_similarity_artifacts(documents, automatic_child_ids)
     write_jsonl(args.output_dir / "directive_similarity_documents.jsonl", document_rows)
     write_jsonl(args.output_dir / "directive_operative_segments.jsonl", segment_rows)
     print(
-        f"{len(documents)} directives; {len(edges)} automatic edges; "
+        f"{len(all_documents)} source directives; "
+        f"{len(ceremonial_exclusions)} ceremonial exclusions; "
+        f"{len(documents)} analyzed directives; {len(edges)} automatic edges; "
         f"{len(automatic_child_ids)} children with automatic parents; "
         f"{len(unresolved_children)} unresolved children; "
         f"{len(unresolved_references)} unresolved references; "

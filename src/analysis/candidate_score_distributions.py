@@ -18,6 +18,7 @@ DEFAULT_INPUT = ROOT / "data" / "parent_analysis" / "ranked_candidates.csv"
 DEFAULT_CHILDREN = ROOT / "data" / "parent_analysis" / "unresolved_children.csv"
 DEFAULT_CORPUS = ROOT / "data" / "4_28_2026_build_dev.csv"
 DEFAULT_AUTOMATIC_EDGES = ROOT / "data" / "parent_analysis" / "automatic_edges.csv"
+DEFAULT_CEREMONIAL_EXCLUSIONS = ROOT / "data" / "parent_analysis" / "ceremonial_exclusions.csv"
 DEFAULT_DOCUMENTS = ROOT / "data" / "parent_analysis" / "directive_similarity_documents.jsonl"
 DEFAULT_OUTPUT = ROOT / "data" / "parent_analysis" / "candidate_score_distributions"
 CANDIDATE_RANKS = (1, 2)
@@ -128,7 +129,11 @@ def _histogram_specs(extracted: list[dict], bins: int = 30) -> list[dict]:
         field = RAW_FIELDS[channel]
         combined = [row[field] for row in extracted if row[field] is not None]
         low = min(combined, default=0.0)
-        high = max(combined, default=1.0)
+        high = (
+            float(np.quantile(combined, 0.99))
+            if channel == "text_reuse" and combined
+            else max(combined, default=1.0)
+        )
         if low == high:
             low -= 0.5
             high += 0.5
@@ -138,6 +143,7 @@ def _histogram_specs(extracted: list[dict], bins: int = 30) -> list[dict]:
                 row[field] for row in extracted
                 if row["candidate_rank"] == candidate_rank and row[field] is not None
             ], dtype=float)
+            above_display_range = int(np.count_nonzero(values > high))
             counts, _ = np.histogram(values, bins=edges)
             shares = counts / len(values) if len(values) else counts.astype(float)
             specs.append({
@@ -146,6 +152,7 @@ def _histogram_specs(extracted: list[dict], bins: int = 30) -> list[dict]:
                 "minimum": low,
                 "maximum": high,
                 "n": len(values),
+                "above_display_range": above_display_range,
                 "shares": shares.tolist(),
             })
     return specs
@@ -209,7 +216,10 @@ def build_plot_html(
 but IDs are not contiguous. This analysis starts from the
 <strong>{population['corpus_documents']:,}-document development corpus</strong>—the main
 analysis split used to construct and rank parent candidates. The separately reserved
-holdout split is not used in this ranking. Automatic reference matching identifies parents for
+holdout split is not used in this ranking. The codebook-based ceremonial filter excludes
+<strong>{population['ceremonial_exclusions']:,}</strong> directives, leaving
+<strong>{population['analyzed_directives']:,}</strong> directives eligible to appear as
+children or parents. Automatic reference matching identifies parents for
 <strong>{population['automatic_parent_children']:,}</strong> children, leaving
 <strong>{population['unresolved_children']:,}</strong> unresolved children for candidate
 ranking. Candidate 1 exists for <strong>{population['candidate_1_children']:,}</strong>
@@ -229,12 +239,19 @@ h1{{margin-bottom:4px}}p{{color:#667085}}.grid{{display:grid;grid-template-colum
 .tabs{{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0}}.tab{{border:1px solid #98a2b3;background:#fff;border-radius:6px;padding:8px 12px;cursor:pointer}}.tab.active{{background:#225ea8;color:#fff;border-color:#225ea8}}
 .tab-view[hidden]{{display:none}}.pairs{{display:grid;gap:16px}}.pair{{background:#fff;border:1px solid #d8dee9;border-radius:8px;padding:14px}}.pair-meta{{color:#475467;margin:0 0 10px}}.documents{{display:grid;grid-template-columns:1fr 1fr;gap:14px}}.document{{border-left:3px solid #84b4d8;padding-left:10px}}.document h3{{font-size:14px;margin:0 0 4px}}.document p{{white-space:pre-wrap;line-height:1.45}}a{{color:#225ea8}}
 .type-counts{{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 18px}}.type-count{{background:#e8f1f8;border-radius:999px;padding:6px 10px;color:#344054}}
+.metric-guide{{background:#fff;border:1px solid #d8dee9;border-radius:8px;padding:12px;margin:16px 0}}.metric-guide li{{margin:6px 0;color:#475467}}
 canvas{{display:block;width:100%;height:240px}}@media(max-width:850px){{.grid{{grid-template-columns:1fr}}}}
 @media(max-width:700px){{.documents{{grid-template-columns:1fr}}}}
 </style></head><body>
 <h1>Candidate 1–2 similarity score distributions</h1>
 <p>Thirty equal-width bins use shared limits for Candidate 1 and 2 within each channel. Bar heights are shares of non-missing scores.</p>
 {population_note}
+<section class="metric-guide"><h2>How to read these metrics</h2><ul>
+<li><strong>Operative embedding similarity:</strong> semantic similarity between the strongest aligned operative segments.</li>
+<li><strong>Word-trigram TF-IDF similarity:</strong> overlap in distinctive case-sensitive three-word sequences.</li>
+<li><strong>Text reuse:</strong> average reused-word count among the strongest aligned segment pairs.</li>
+<li><strong>Why Candidate 2 can have a smaller n:</strong> the earliest directives of each type may have fewer than two eligible earlier parents, and directives without operative segments have missing channel scores.</li>
+</ul></section>
 <nav class="tabs" id="tabs"><button class="tab active" data-view="distributions">Distributions</button></nav>
 <section class="tab-view" id="distributions"><div class="grid" id="grid"></div></section>
 <div id="sample-views"></div>
@@ -244,7 +261,7 @@ const fmt=x=>Math.abs(x)>=100?x.toFixed(0):x.toFixed(3);
 const esc=s=>String(s==null?'':s).replace(/[&<>"']/g,c=>({{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}}[c]));
 DATA.forEach((d,i)=>{{
  const panel=document.createElement('section');panel.className='panel';
- panel.innerHTML='<h2>'+d.title+'</h2><canvas width="600" height="240"></canvas><p>n = '+d.n.toLocaleString()+' · '+d.unit+'</p>';grid.appendChild(panel);
+ panel.innerHTML='<h2>'+d.title+'</h2><canvas width="600" height="240"></canvas><p>n = '+d.n.toLocaleString()+' · '+d.unit+(d.above_display_range?' · '+d.above_display_range.toLocaleString()+' above display range':'')+'</p>';grid.appendChild(panel);
  const c=panel.querySelector('canvas'),x=c.getContext('2d'),left=48,right=12,top=12,bottom=35,w=c.width-left-right,h=c.height-top-bottom;
  x.strokeStyle='#98a2b3';x.beginPath();x.moveTo(left,top);x.lineTo(left,top+h);x.lineTo(left+w,top+h);x.stroke();
  const peak=Math.max(...d.shares,0.01),bw=w/d.shares.length;x.fillStyle='#225ea8';
@@ -278,6 +295,7 @@ def write_analysis(
     corpus_path: Path | None = None,
     automatic_edges_path: Path | None = None,
     documents_path: Path | None = None,
+    ceremonial_exclusions_path: Path | None = None,
 ) -> dict[str, Path]:
     with ranked_path.open(newline="", encoding="utf-8") as handle:
         extracted = extract_candidate_scores(csv.DictReader(handle))
@@ -289,6 +307,10 @@ def write_analysis(
             corpus_rows = list(csv.DictReader(handle))
         with automatic_edges_path.open(newline="", encoding="utf-8") as handle:
             automatic_children = {row["child_id"] for row in csv.DictReader(handle)}
+        ceremonial_count = 0
+        if ceremonial_exclusions_path is not None:
+            with ceremonial_exclusions_path.open(newline="", encoding="utf-8") as handle:
+                ceremonial_count = sum(1 for _row in csv.DictReader(handle))
         candidate_counts = {
             rank: len({row["child_id"] for row in extracted if row["candidate_rank"] == rank})
             for rank in CANDIDATE_RANKS
@@ -296,6 +318,8 @@ def write_analysis(
         population = {
             "corpus_documents": len(corpus_rows),
             "maximum_document_id": max(int(row[""]) for row in corpus_rows),
+            "ceremonial_exclusions": ceremonial_count,
+            "analyzed_directives": len(corpus_rows) - ceremonial_count,
             "automatic_parent_children": len(automatic_children),
             "unresolved_children": len(child_ids),
             "candidate_1_children": candidate_counts[1],
@@ -323,6 +347,9 @@ def main() -> None:
     parser.add_argument("--corpus", type=Path, default=DEFAULT_CORPUS)
     parser.add_argument("--automatic-edges", type=Path, default=DEFAULT_AUTOMATIC_EDGES)
     parser.add_argument("--documents", type=Path, default=DEFAULT_DOCUMENTS)
+    parser.add_argument(
+        "--ceremonial-exclusions", type=Path, default=DEFAULT_CEREMONIAL_EXCLUSIONS
+    )
     parser.add_argument("--output-dir", type=Path, default=DEFAULT_OUTPUT)
     args = parser.parse_args()
     outputs = write_analysis(
@@ -332,6 +359,7 @@ def main() -> None:
         args.corpus,
         args.automatic_edges,
         args.documents,
+        args.ceremonial_exclusions,
     )
     for label, path in outputs.items():
         print(f"{label}: {path}")
