@@ -5,9 +5,9 @@
 This project studies when a presidential directive invokes legal authority that differs
 from the authority invoked by its most relevant earlier precedent.
 
-The immediate task is to construct and validate a parent graph for all 16,397 directives
-in `data/4_28_2026_build_dev.csv`: 3,620 executive orders, 2,806 memoranda,
-6,691 proclamations, and 3,280 letters.
+The immediate task is to construct and validate a parent graph over the full 18,418-
+directive corpus: the 16,397 directives in `data/4_28_2026_build_dev.csv` plus the 2,021
+directives in `data/4_28_2026_build_holdout.csv`.
 
 - A **child** is the later directive being evaluated.
 - A **parent** is an earlier directive of the same document type with a qualifying
@@ -24,16 +24,15 @@ within the same document type; cross-document-type parents are not permitted.
 Parent status means that an earlier same-type directive is a useful drafting precedent.
 It does not prove that the drafter actually consulted or copied it.
 
-## 1.1 Implementation status — August 3, 2026
+## 1.1 Implementation status — August 4, 2026
 
-The embedding pipeline was run on an NVIDIA GeForce RTX 2080 Ti with 11,264 MiB of
-memory. GPU smoke tests and full dual-role embedding generation were completed for all
-four directive types. The ranking code has since been revised to exclude W&P phrase
-agreement from RRF, and the all-corpus ranking, pilot viewer, and Candidate 1–2 score
-distributions have been regenerated under the three-channel rule. The generated results
-remain provisional until the cross-type
-reference extraction, masking, segmentation, and retrieval outputs receive manual
-validation.
+The CPU preprocessing pipeline has been rebuilt over the full development-plus-holdout
+corpus. The operative-embedding channel now uses mean cosine similarity across every
+child-parent operative-provision pair, with higher values indicating greater similarity;
+the three strongest pairs are retained only as illustrative review evidence. The prior
+development-only embeddings, rankings, score tables, provenance, and Candidate 1–2 HTML
+were removed because they are stale. Full-corpus GPU embeddings and all downstream
+artifacts still need to be regenerated.
 
 ### Completed
 
@@ -78,7 +77,7 @@ validation.
 - Retrieved up to 25 strictly earlier same-type candidates for 14,291 unresolved
   children, producing 356,100 candidate pairs; four earliest directives have no eligible
   same-type predecessor.
-- Implemented three segment-level fusion channels: top-three operative embeddings,
+- Implemented three segment-level fusion channels: all-pairs-mean operative embeddings,
   case-sensitive word 3-gram TF-IDF, and 10-word-minimum text reuse. Full-document
   embeddings are used only for the initial pool of up to 25 candidates; BM25 is not used
   in within-pool ranking.
@@ -105,9 +104,9 @@ validation.
   have Candidate 2; each directive type is missing Candidate 1 for its earliest child and
   Candidate 2 for its two earliest children.
 
-### Previous generated build
+### Superseded generated build
 
-The previous all-directive build contains:
+The removed development-only build contained:
 
 - 16,397 directives;
 - 5,020 automatic parent edges across 2,102 children;
@@ -137,7 +136,7 @@ remain provisional pending manual audit:
 - the quality and granularity of the generalized operative segments;
 - treatment of directives producing no operative segment; and
 - quality of the 356,100-pair candidate ranking, including tie behavior and the
-  top-three segment-pair aggregation.
+  all-pairs operative-segment aggregation.
 
 ### Not yet completed
 
@@ -163,10 +162,23 @@ the original pilot or the holdout set.
 
 ### Current resume point
 
-Resume at section 13, step 7 by conducting the 200-child pilot review in
-`data/parent_analysis/pilot/parent_candidate_viewer.html`. Generalized artifacts,
-embeddings, the 356,100-pair embedding gate, and all within-pool scores and ranks are
-stored in `data/parent_analysis/`.
+Resume on a GPU host from the repository root. The pinned model and environment are
+already local. Run these commands in order:
+
+```bash
+.venv-parent-analysis/bin/python src/embeddings/embed_parent_analysis.py
+.venv-parent-analysis/bin/python src/generate_candidate_pool.py
+.venv-parent-analysis/bin/python src/rank_candidate_pool.py
+.venv-parent-analysis/bin/python src/analysis/candidate_score_distributions.py
+```
+
+The first command must generate both full-document and operative-segment caches for all
+12,265 analyzed directives and 29,023 operative provisions. Do not reuse the removed
+development-only caches. The remaining commands regenerate the full-corpus candidate
+pool, rankings, Candidate 1–2 score tables, summary, and HTML. Confirm that embedding IDs
+match the JSONL artifact order and that provenance source hashes match before accepting
+the downstream outputs. Afterward, rerun the focused tests and inspect the regenerated
+HTML before rebuilding or using either pilot viewer.
 
 ## 2. Parent definition
 
@@ -376,9 +388,9 @@ Compare the child's extended W&P operative segments with the candidate's operati
 segments using the segment-specific Qwen instruction. Preserve the strongest supporting
 segment alignments rather than only a document-level average.
 
-Rank candidates by the mean of the three strongest child-parent segment-pair cosine
-similarities, or all available pairs when fewer than three exist. Preserve those
-alignments for review.
+Rank candidates by the mean cosine similarity across every child-parent operative-segment
+pair. Preserve the three strongest alignments as compact illustrative evidence for review;
+they do not determine the all-pairs score.
 
 ### 7.2 W&P ordering-phrase agreement
 
@@ -600,8 +612,8 @@ must not affect parent selection.
    - [x] Re-run the small smoke test with both agreed instructions.
    - [x] Check input lengths and runtime.
    - [x] Cache dual-role document and operative-segment embeddings for executive orders.
-   - [x] Generate generalized-instruction caches for all four document types, including
-     regenerated executive-order caches.
+   - [ ] Regenerate generalized-instruction caches over the full development-plus-holdout
+     corpus for all four document types.
    - [ ] Manually validate the generalized caches and representative retrieval results.
 
 6. **Run candidate generation**
@@ -609,9 +621,9 @@ must not affect parent selection.
      all eligible candidates when fewer than 25 exist.
    - [x] Compute the three fusion rankings and the separate diagnostic W&P ranking.
    - [x] Implement three-channel unweighted RRF (`k=20`) and top-10 selection.
-   - [x] Restore or regenerate the ignored runtime artifacts and rerun the all-corpus
-     ranking under the three-channel rule.
-   - [x] Generate and inspect the Candidate 1–2 score distributions.
+   - [ ] Regenerate the ignored full-corpus runtime artifacts and rerun ranking with the
+     all-pairs-mean operative channel and three-channel RRF.
+   - [ ] Generate and inspect the full-corpus Candidate 1–2 score distributions.
 
 7. **Build the 200-child pilot and viewer**
    - [x] Draw a reproducible random sample of 50 unresolved children from each of the four
@@ -619,7 +631,7 @@ must not affect parent selection.
    - [x] Build the interactive masked-document viewer.
    - [x] For every sampled child, present up to 10 same-type candidates with highlighted
      operative-segment matches, or every available candidate if fewer than 10 exist.
-   - [x] Rebuild the viewer with the regenerated three-channel candidate ordering.
+   - [ ] Rebuild the viewer with the full-corpus, all-pairs-mean candidate ordering.
    - [ ] Collect candidate-level parent/not-parent judgments, child-level `none` judgments,
      multiple-parent selections, and explanations.
 

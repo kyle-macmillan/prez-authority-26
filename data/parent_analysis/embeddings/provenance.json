@@ -1,5 +1,5 @@
 {
-  "created_at": "2026-08-04T01:56:46.015842+00:00",
+  "created_at": "2026-08-04T17:05:18.870691+00:00",
   "model_id": "Qwen/Qwen3-Embedding-0.6B",
   "model_revision": "97b0c614be4d77ee51c0cef4e5f07c00f9eb65b3",
   "tokenizer_revision": "97b0c614be4d77ee51c0cef4e5f07c00f9eb65b3",
@@ -18,9 +18,9 @@
   "artifacts": [
     {
       "source": "data/parent_analysis/directive_similarity_documents.jsonl",
-      "source_sha256": "0ecfbb04ffe8705f1edc7a77e21ef9f07bbf507f5aa7d20ad71e89a8ffac5c3a",
+      "source_sha256": "1dc3950575920a5170a4c2cd80651eb5d91f52f980378a78c448aeb5477b8f9f",
       "output": "data/parent_analysis/embeddings/directive_document_embeddings.npz",
-      "output_sha256": "63670ef34efdd502bc6743bf8e5459ca53f2eef759d0a14816b2c2153c025060",
+      "output_sha256": "cb90ed10f6de1b14a29dd06ed250efff1b402e6a551fd8df156d210928fe43be",
       "id_field": "document_id",
       "text_field": "cleaned_masked_text",
       "instruction": "Represent this presidential directive for identifying earlier directives of the same document type that address the same substantive policy problem and contain a similar legal directive or directed operative action.",
@@ -29,22 +29,24 @@
         "document_embeddings": "unprompted candidate-parent documents"
       },
       "shape": [
-        10927,
+        12265,
         1024
       ],
       "dtype": "float16",
-      "cache_reuse": {
-        "basis": "subset to non-ceremonial rows with identical stable IDs under the original embedding model and preprocessing revision",
-        "prior_rows": 10960,
-        "reused_rows": 10927,
-        "encoded_rows": 0
-      }
+      "token_lengths": {
+        "count": 12265,
+        "document_max": 13774,
+        "query_max": 13810,
+        "document_mean": 725.9041174072564,
+        "query_mean": 761.7906237260497
+      },
+      "recovered_from_validated_cache": true
     },
     {
       "source": "data/parent_analysis/directive_operative_segments.jsonl",
-      "source_sha256": "bfacfdc6cc68765d4c5a0686a18e94917701430d497871aa4e7317eeede98f38",
+      "source_sha256": "fa701ff905990730da5eb7f45c70b636f804b7bc2e643c6a42e1d85d330cb0f9",
       "output": "data/parent_analysis/embeddings/directive_operative_segment_embeddings.npz",
-      "output_sha256": "83b2615f4b88360a9a67c0da399d77f86bc8c381c9f481084579c0a63ada163c",
+      "output_sha256": "1ea7bf17a4abcc2634fd6aed370a01ea802dab28a1a4c60bfa932d554284f4f0",
       "id_field": "segment_id",
       "text_field": "text",
       "instruction": "Represent this directed operative action for identifying earlier actions in directives of the same document type that use a similar legal or administrative mechanism.",
@@ -53,21 +55,18 @@
         "document_embeddings": "unprompted candidate-parent documents"
       },
       "shape": [
-        25845,
+        29023,
         1024
       ],
       "dtype": "float16",
-      "batch_size": 1,
-      "document_seconds": 17.75218750908971,
-      "query_seconds": 17.73147872975096,
-      "cache_reuse": {
-        "basis": "subset to non-ceremonial rows with identical stable IDs under the original embedding model and preprocessing revision",
-        "prior_rows": 25913,
-        "reused_rows": 25845,
-        "encoded_rows": 0
-      }
+      "token_lengths": {
+        "count": 29023,
+        "document_max": 12897,
+        "query_max": 12926,
+        "document_mean": 184.81828205216553,
+        "query_mean": 214.46718120111635
+      },
+      "recovered_from_validated_cache": true
     }
-  ],
-  "model_load_seconds": 2.8347160308621824,
-  "ceremonial_filter": "project codebook heuristic; see data/parent_analysis/ceremonial_exclusions.csv"
+  ]
 }
