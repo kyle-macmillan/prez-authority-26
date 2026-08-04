@@ -20,6 +20,7 @@ DEFAULT_CORPUS = ROOT / "data" / "4_28_2026_build_dev.csv"
 DEFAULT_AUTOMATIC_EDGES = ROOT / "data" / "parent_analysis" / "automatic_edges.csv"
 DEFAULT_CEREMONIAL_EXCLUSIONS = ROOT / "data" / "parent_analysis" / "ceremonial_exclusions.csv"
 DEFAULT_DOCUMENTS = ROOT / "data" / "parent_analysis" / "directive_similarity_documents.jsonl"
+DEFAULT_SEGMENTS = ROOT / "data" / "parent_analysis" / "directive_operative_segments.jsonl"
 DEFAULT_OUTPUT = ROOT / "data" / "parent_analysis" / "candidate_score_distributions"
 CANDIDATE_RANKS = (1, 2)
 SCORE_FIELDS = {
@@ -159,7 +160,10 @@ def _histogram_specs(extracted: list[dict], bins: int = 30) -> list[dict]:
 
 
 def build_threshold_samples(
-    extracted: list[dict], documents: dict[str, dict], sample_size: int = 12,
+    extracted: list[dict],
+    documents: dict[str, dict],
+    segments_by_document: dict[str, list[str]],
+    sample_size: int = 12,
 ) -> list[dict]:
     """Build reproducible pair samples for operative-embedding score bands."""
     bands = (
@@ -186,8 +190,8 @@ def build_threshold_samples(
                 "score": row["operative_embedding_similarity"],
                 "child": {key: child[key] for key in ("document_id", "title", "date", "url")},
                 "parent": {key: parent[key] for key in ("document_id", "title", "date", "url")},
-                "child_excerpt": child["cleaned_masked_text"][:900],
-                "parent_excerpt": parent["cleaned_masked_text"][:900],
+                "child_segments": segments_by_document[row["child_id"]],
+                "parent_segments": segments_by_document[row["parent_id"]],
             })
         type_counts = Counter(row["document_type"] for row in eligible)
         output.append({
@@ -200,6 +204,36 @@ def build_threshold_samples(
     return output
 
 
+def missing_operative_breakdown(extracted: list[dict], documents: dict[str, dict]) -> dict[int, dict]:
+    """Explain candidate rows without segment-level scores."""
+    breakdown = {}
+    for rank in CANDIDATE_RANKS:
+        candidates = [row for row in extracted if row["candidate_rank"] == rank]
+        missing = [row for row in candidates if row["operative_embedding_similarity"] is None]
+        causes = Counter()
+        types = Counter(row["document_type"] for row in missing)
+        for row in missing:
+            child_missing = documents[row["child_id"]]["operative_segment_count"] == 0
+            parent_missing = documents[row["parent_id"]]["operative_segment_count"] == 0
+            causes[
+                "both" if child_missing and parent_missing
+                else "child_only" if child_missing
+                else "parent_only" if parent_missing
+                else "unknown"
+            ] += 1
+        breakdown[rank] = {
+            "candidate_count": len(candidates),
+            "scored_count": len(candidates) - len(missing),
+            "missing_count": len(missing),
+            "child_only": causes["child_only"],
+            "parent_only": causes["parent_only"],
+            "both": causes["both"],
+            "unknown": causes["unknown"],
+            "type_counts": dict(sorted(types.items())),
+        }
+    return breakdown
+
+
 def build_plot_html(
     extracted: list[dict], population: dict | None = None, threshold_samples: list[dict] | None = None,
 ) -> str:
@@ -209,6 +243,22 @@ def build_plot_html(
     )
     sample_data = json.dumps(threshold_samples or [], separators=(",", ":")).replace("</", "<\\/")
     if population:
+        missing_rows = "".join(
+            f"<tr><td>Candidate {rank}</td><td>{row['candidate_count']:,}</td>"
+            f"<td>{row['scored_count']:,}</td><td>{row['missing_count']:,}</td>"
+            f"<td>{row['child_only']:,}</td><td>{row['parent_only']:,}</td>"
+            f"<td>{row['both']:,}</td><td>"
+            + ", ".join(
+                f"{document_type.replace('_', ' ')}: {count:,}"
+                for document_type, count in row["type_counts"].items()
+            )
+            + "</td></tr>"
+            for rank, row in population["missing_operative_breakdown"].items()
+        )
+        zero_segment_types = ", ".join(
+            f"{document_type.replace('_', ' ')}: {count:,}"
+            for document_type, count in population["zero_segment_type_counts"].items()
+        )
         population_note = f"""
 <section class="population">
 <h2>How the source corpus becomes the reported n</h2>
@@ -224,8 +274,27 @@ children or parents. Automatic reference matching identifies parents for
 <strong>{population['unresolved_children']:,}</strong> unresolved children for candidate
 ranking. Candidate 1 exists for <strong>{population['candidate_1_children']:,}</strong>
 children and Candidate 2 for <strong>{population['candidate_2_children']:,}</strong>.
-Each chart's <em>n</em> is the number of those candidate rows with a non-missing score in
-that channel, so it can be smaller again.</p>
+Those are candidate-availability counts, not the chart <em>n</em>.</p>
+<p>All three plotted channels are segment-level measures. A pair receives an operative
+embedding, trigram TF-IDF, or text-reuse score only when <strong>both</strong> its child and
+parent have at least one extracted operative segment. Therefore, the charts omit candidate
+pairs for which the child, parent, or both have no operative segment:</p>
+<p>A directive has no extracted operative segment when, after authority masking and
+boilerplate removal, no passage matches the rule-based patterns for a directed operative
+action. Common cases are letters that transmit or report information, narrative or
+explanatory documents, and actionable language phrased outside the recognized ordering
+forms. This is a measurement limitation: it does <strong>not</strong> mean that the directive
+is legally unimportant or has no effect. In this analysis,
+<strong>{population['zero_segment_documents']:,}</strong> of the
+{population['analyzed_directives']:,} eligible directives have zero extracted operative
+segments ({zero_segment_types}).</p>
+<div class="table-wrap"><table><thead><tr><th>Position</th><th>Candidate rows</th>
+<th>Chart n</th><th>Missing score</th><th>Child only has no segment</th>
+<th>Parent only has no segment</th><th>Both have no segment</th>
+<th>Missing-score pairs by directive type</th></tr></thead><tbody>{missing_rows}</tbody></table></div>
+<p>Thus, <em>n</em> is approximately 6,400 rather than 8,890 because roughly 2,480
+otherwise available candidate pairs cannot be scored at the operative-segment level.
+These are missing measurements, not additional substantive exclusions.</p>
 </section>"""
     else:
         population_note = ""
@@ -237,9 +306,10 @@ body{{margin:24px;font:14px system-ui,sans-serif;color:#172033;background:#f4f7f
 h1{{margin-bottom:4px}}p{{color:#667085}}.grid{{display:grid;grid-template-columns:repeat(2,minmax(360px,1fr));gap:16px}}
 .panel,.population{{background:#fff;border:1px solid #d8dee9;border-radius:8px;padding:12px}}.population{{margin:16px 0}}h2{{font-size:15px;margin:0 0 6px}}
 .tabs{{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0}}.tab{{border:1px solid #98a2b3;background:#fff;border-radius:6px;padding:8px 12px;cursor:pointer}}.tab.active{{background:#225ea8;color:#fff;border-color:#225ea8}}
-.tab-view[hidden]{{display:none}}.pairs{{display:grid;gap:16px}}.pair{{background:#fff;border:1px solid #d8dee9;border-radius:8px;padding:14px}}.pair-meta{{color:#475467;margin:0 0 10px}}.documents{{display:grid;grid-template-columns:1fr 1fr;gap:14px}}.document{{border-left:3px solid #84b4d8;padding-left:10px}}.document h3{{font-size:14px;margin:0 0 4px}}.document p{{white-space:pre-wrap;line-height:1.45}}a{{color:#225ea8}}
+.tab-view[hidden]{{display:none}}.pairs{{display:grid;gap:16px}}.pair{{background:#fff;border:1px solid #d8dee9;border-radius:8px;padding:14px}}.pair-meta{{color:#475467;margin:0 0 10px}}.documents{{display:grid;grid-template-columns:1fr 1fr;gap:14px}}.document{{border-left:3px solid #84b4d8;padding-left:10px}}.document h3{{font-size:14px;margin:0 0 4px}}.segments{{padding-left:24px}}.segments li{{white-space:pre-wrap;line-height:1.45;margin:10px 0}}a{{color:#225ea8}}
 .type-counts{{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 18px}}.type-count{{background:#e8f1f8;border-radius:999px;padding:6px 10px;color:#344054}}
 .metric-guide{{background:#fff;border:1px solid #d8dee9;border-radius:8px;padding:12px;margin:16px 0}}.metric-guide li{{margin:6px 0;color:#475467}}
+.table-wrap{{overflow-x:auto}}table{{border-collapse:collapse;width:100%;font-size:12px}}th,td{{border:1px solid #d8dee9;padding:7px;text-align:left;vertical-align:top}}th{{background:#eef3f8}}
 canvas{{display:block;width:100%;height:240px}}@media(max-width:850px){{.grid{{grid-template-columns:1fr}}}}
 @media(max-width:700px){{.documents{{grid-template-columns:1fr}}}}
 </style></head><body>
@@ -274,7 +344,7 @@ SAMPLES.forEach(b=>{{
  const button=document.createElement('button');button.className='tab';button.dataset.view=b.id;button.textContent=b.label;tabs.appendChild(button);
  const section=document.createElement('section');section.className='tab-view';section.id=b.id;section.hidden=true;
  const counts=Object.entries(b.type_counts).map(x=>'<span class="type-count">'+esc(x[0].split('_').join(' '))+': <strong>'+x[1].toLocaleString()+'</strong></span>').join('');
- section.innerHTML='<h2>Operative embedding: '+esc(b.label)+'</h2><p><strong>'+b.total.toLocaleString()+'</strong> Candidate 1–2 pairs are in this band, broken down by directive type:</p><div class="type-counts">'+counts+'</div><p>Showing a deterministic sample of '+b.pairs.length+' pairs.</p><div class="pairs">'+b.pairs.map((p,i)=>'<article class="pair"><p class="pair-meta"><strong>Pair '+(i+1)+'</strong> · Candidate '+p.candidate_rank+' · score <strong>'+p.score.toFixed(3)+'</strong></p><div class="documents">'+[['Child',p.child,p.child_excerpt],['Parent',p.parent,p.parent_excerpt]].map(x=>'<section class="document"><h3>'+x[0]+': <a href="'+esc(x[1].url)+'" target="_blank" rel="noopener">'+esc(x[1].title)+'</a></h3><small>'+esc(x[1].date)+' · ID '+esc(x[1].document_id)+'</small><p>'+esc(x[2])+(x[2].length===900?'…':'')+'</p></section>').join('')+'</div></article>').join('')+'</div>';
+ section.innerHTML='<h2>Operative embedding: '+esc(b.label)+'</h2><p><strong>'+b.total.toLocaleString()+'</strong> Candidate 1–2 pairs are in this band, broken down by directive type:</p><div class="type-counts">'+counts+'</div><p>Showing a deterministic sample of '+b.pairs.length+' pairs. Each document column displays every extracted operative segment used by the segment-level similarity channels.</p><div class="pairs">'+b.pairs.map((p,i)=>'<article class="pair"><p class="pair-meta"><strong>Pair '+(i+1)+'</strong> · Candidate '+p.candidate_rank+' · score <strong>'+p.score.toFixed(3)+'</strong></p><div class="documents">'+[['Child',p.child,p.child_segments],['Parent',p.parent,p.parent_segments]].map(x=>'<section class="document"><h3>'+x[0]+': <a href="'+esc(x[1].url)+'" target="_blank" rel="noopener">'+esc(x[1].title)+'</a></h3><small>'+esc(x[1].date)+' · ID '+esc(x[1].document_id)+' · '+x[2].length+' operative segment'+(x[2].length===1?'':'s')+'</small><ol class="segments">'+x[2].map(segment=>'<li>'+esc(segment)+'</li>').join('')+'</ol></section>').join('')+'</div></article>').join('')+'</div>';
  views.appendChild(section);
 }});
 tabs.addEventListener('click',event=>{{const button=event.target.closest('button');if(!button)return;document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('active',x===button));document.querySelectorAll('.tab-view').forEach(x=>x.hidden=x.id!==button.dataset.view);}});
@@ -296,11 +366,16 @@ def write_analysis(
     automatic_edges_path: Path | None = None,
     documents_path: Path | None = None,
     ceremonial_exclusions_path: Path | None = None,
+    segments_path: Path | None = None,
 ) -> dict[str, Path]:
     with ranked_path.open(newline="", encoding="utf-8") as handle:
         extracted = extract_candidate_scores(csv.DictReader(handle))
     with children_path.open(newline="", encoding="utf-8") as handle:
         child_ids = {row["document_id"] for row in csv.DictReader(handle)}
+    documents = None
+    if documents_path is not None:
+        with documents_path.open(encoding="utf-8") as handle:
+            documents = {row["document_id"]: row for row in map(json.loads, handle)}
     population = None
     if corpus_path is not None and automatic_edges_path is not None:
         with corpus_path.open(newline="", encoding="utf-8") as handle:
@@ -324,6 +399,14 @@ def write_analysis(
             "unresolved_children": len(child_ids),
             "candidate_1_children": candidate_counts[1],
             "candidate_2_children": candidate_counts[2],
+            "missing_operative_breakdown": missing_operative_breakdown(extracted, documents),
+            "zero_segment_documents": sum(
+                row["operative_segment_count"] == 0 for row in documents.values()
+            ),
+            "zero_segment_type_counts": dict(sorted(Counter(
+                row["document_type"] for row in documents.values()
+                if row["operative_segment_count"] == 0
+            ).items())),
         }
     output_dir.mkdir(parents=True, exist_ok=True)
     raw_path = output_dir / "candidate_1_2_scores.csv"
@@ -332,10 +415,12 @@ def write_analysis(
     _write_csv(raw_path, extracted)
     _write_csv(summary_path, summarize_scores(extracted, len(child_ids)))
     threshold_samples = None
-    if documents_path is not None:
-        with documents_path.open(encoding="utf-8") as handle:
-            documents = {row["document_id"]: row for row in map(json.loads, handle)}
-        threshold_samples = build_threshold_samples(extracted, documents)
+    if documents is not None and segments_path is not None:
+        segments_by_document: dict[str, list[str]] = {}
+        with segments_path.open(encoding="utf-8") as handle:
+            for segment in map(json.loads, handle):
+                segments_by_document.setdefault(segment["document_id"], []).append(segment["text"])
+        threshold_samples = build_threshold_samples(extracted, documents, segments_by_document)
     plot_path.write_text(build_plot_html(extracted, population, threshold_samples), encoding="utf-8")
     return {"scores": raw_path, "summary": summary_path, "plots": plot_path}
 
@@ -350,6 +435,7 @@ def main() -> None:
     parser.add_argument(
         "--ceremonial-exclusions", type=Path, default=DEFAULT_CEREMONIAL_EXCLUSIONS
     )
+    parser.add_argument("--segments", type=Path, default=DEFAULT_SEGMENTS)
     parser.add_argument("--output-dir", type=Path, default=DEFAULT_OUTPUT)
     args = parser.parse_args()
     outputs = write_analysis(
@@ -360,6 +446,7 @@ def main() -> None:
         args.automatic_edges,
         args.documents,
         args.ceremonial_exclusions,
+        args.segments,
     )
     for label, path in outputs.items():
         print(f"{label}: {path}")
