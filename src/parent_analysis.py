@@ -26,7 +26,7 @@ DEFAULT_CORPORA = (
     Path("data/4_28_2026_build_dev.csv"),
     Path("data/4_28_2026_build_holdout.csv"),
 )
-EXPECTED_FULL_CORPUS_SIZE = 20_232
+EXPECTED_FULL_CORPUS_SIZE = 18_418
 
 # UCSB omits the "-A" suffix from seven duplicate-number EO URLs.
 EO_NUMBER_CORRECTIONS = {

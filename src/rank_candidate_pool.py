@@ -109,13 +109,23 @@ def top_pairs(
     return float(np.mean([item[2] for item in pairs])), pairs
 
 
-def top_pair_average(
-    child_vectors: np.ndarray, parent_vectors: np.ndarray, count: int = 3
+def all_pair_score(
+    similarities: np.ndarray, evidence_count: int = 3
+) -> tuple[float | None, list[tuple[int, int, float]]]:
+    """Average all pairwise similarities and retain strongest pairs as evidence."""
+    if not similarities.size:
+        return None, []
+    _top_score, evidence = top_pairs(similarities, evidence_count)
+    return float(np.mean(similarities)), evidence
+
+
+def all_pair_average(
+    child_vectors: np.ndarray, parent_vectors: np.ndarray, evidence_count: int = 3
 ) -> tuple[float | None, list[tuple[int, int, float]]]:
     if not len(child_vectors) or not len(parent_vectors):
         return None, []
     similarities = child_vectors.astype(np.float32) @ parent_vectors.astype(np.float32).T
-    return top_pairs(similarities, count)
+    return all_pair_score(similarities, evidence_count)
 
 
 def ordering_phrases(text: str) -> set[str]:
@@ -235,7 +245,7 @@ def main() -> None:
         for parent_id in parent_ids:
             parent_segment_indices = parent_indices[parent_id]
             parent_slice = parent_slices[parent_id]
-            score, pairs = top_pairs(operative_matrix[:, parent_slice])
+            score, pairs = all_pair_score(operative_matrix[:, parent_slice])
             if score is not None:
                 operative[parent_id] = score
             alignments[parent_id] = pairs
