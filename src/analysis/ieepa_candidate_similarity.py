@@ -18,6 +18,7 @@ BAND_LABELS = {
     "at_least_0.9": "≥0.9", "0.8_to_under_0.9": "0.8–<0.9",
     "0.7_to_under_0.8": "0.7–<0.8", "under_0.7": "<0.7", "missing": "Missing",
     "not_applicable_automatic_parent": "Automatic parent — not ranked",
+    "not_applicable_excluded": "Ceremonial exclusion — not ranked",
 }
 
 
@@ -58,13 +59,17 @@ def stratified_examples(rows: list[dict], predicate, limit: int = 2) -> list[dic
 
 
 def build_analysis(corpora: list[Path], ranked_path: Path, automatic_path: Path,
-                   documents_path: Path, segments_path: Path) -> tuple[list[dict], dict]:
+                   documents_path: Path, segments_path: Path,
+                   matcher=is_ieepa, ceremonial_path: Path | None = None) -> tuple[list[dict], dict]:
     corpus = {}
     for partition, path in (("development", corpora[0]), ("holdout", corpora[1])):
         for row in read_csv(path):
-            if is_ieepa(row["doc_text"]):
+            if matcher(row["doc_text"]):
                 corpus[row[""]] = {**row, "partition": partition}
     documents = {row["document_id"]: row for row in read_jsonl(documents_path)}
+    ceremonial = set()
+    if ceremonial_path is not None:
+        ceremonial = {row["document_id"] for row in read_csv(ceremonial_path)}
     segments = defaultdict(list)
     for segment in read_jsonl(segments_path):
         segments[segment["document_id"]].append(segment)
@@ -79,19 +84,25 @@ def build_analysis(corpora: list[Path], ranked_path: Path, automatic_path: Path,
 
     output = []
     for document_id in sorted(corpus, key=int):
-        meta = documents[document_id]
+        source = corpus[document_id]
+        meta = documents.get(document_id, {
+            "document_type": source["doc_type"], "title": source["url"].rstrip("/").split("/")[-1].replace("-", " "),
+            "date": source["date"], "url": source["url"],
+        })
         item = {
             "document_id": document_id, "document_type": meta["document_type"],
             "title": meta["title"], "date": meta["date"], "url": meta["url"],
             "partition": corpus[document_id]["partition"],
             "operative_segment_count": len(segments[document_id]),
-            "status": "automatic_parent" if document_id in automatic else "ranked",
+            "status": ("ceremonial_exclusion" if document_id in ceremonial else
+                       "automatic_parent" if document_id in automatic else "ranked"),
             "automatic_parents": [{k: edge[k] for k in ("parent_id", "parent_identifier", "parent_date", "relation")} for edge in automatic[document_id]],
         }
         for rank in (1, 2):
             candidate = candidates[document_id].get(rank)
-            if item["status"] == "automatic_parent":
-                item[f"candidate_{rank}"] = {"band": "not_applicable_automatic_parent"}
+            if item["status"] != "ranked":
+                band = "not_applicable_automatic_parent" if item["status"] == "automatic_parent" else "not_applicable_excluded"
+                item[f"candidate_{rank}"] = {"band": band}
                 continue
             if candidate is None:
                 item[f"candidate_{rank}"] = {"band": "missing", "reason": "candidate unavailable"}
@@ -120,7 +131,9 @@ def build_analysis(corpora: list[Path], ranked_path: Path, automatic_path: Path,
         output.append(item)
     ranked = [row for row in output if row["status"] == "ranked"]
     summary = {
-        "total": len(output), "ranked": len(ranked), "automatic": len(output) - len(ranked),
+        "total": len(output), "ranked": len(ranked),
+        "automatic": sum(row["status"] == "automatic_parent" for row in output),
+        "excluded": sum(row["status"] == "ceremonial_exclusion" for row in output),
         "types": dict(sorted(Counter(row["document_type"] for row in output).items())),
         "candidates": {str(rank): dict(Counter(row[f"candidate_{rank}"]["band"] for row in ranked)) for rank in (1, 2)},
         "missing_types": {str(rank): dict(sorted(Counter(
@@ -130,7 +143,8 @@ def build_analysis(corpora: list[Path], ranked_path: Path, automatic_path: Path,
     return output, summary
 
 
-def build_html(rows: list[dict], summary: dict) -> str:
+def build_html(rows: list[dict], summary: dict, topic: str = "IEEPA",
+               definition: str = "“IEEPA” or “International Emergency Economic Powers Act”") -> str:
     low = stratified_examples(rows, lambda r: r["status"] == "ranked" and any(r[f"candidate_{n}"]["band"] == "under_0.7" for n in (1, 2)))
     missing = stratified_examples(rows, lambda r: r["status"] == "ranked" and any(r[f"candidate_{n}"]["band"] == "missing" for n in (1, 2)))
     data = json.dumps(rows, separators=(",", ":")).replace("</", "<\\/")
@@ -141,17 +155,17 @@ def build_html(rows: list[dict], summary: dict) -> str:
     counts = "".join(f"<tr><th>{BAND_LABELS[b]}</th><td>{count_cell(1,b)}</td><td>{count_cell(2,b)}</td></tr>" for b in BAND_ORDER)
     def cards(items):
         return "".join(f'<article class="example" data-id="{r["document_id"]}"></article>' for r in items)
-    return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>IEEPA candidate similarity</title>
+    return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{html.escape(topic)} candidate similarity</title>
 <style>body{{font:15px system-ui;margin:0;background:#f5f7fa;color:#172033}}main{{max-width:1400px;margin:auto;padding:28px}}h1,h2{{color:#102a43}}.cards{{display:flex;gap:14px;flex-wrap:wrap}}.stat,.example{{background:white;border:1px solid #d9e2ec;border-radius:10px;padding:16px}}.stat strong{{font-size:26px;display:block}}table{{width:100%;border-collapse:collapse;background:white}}th,td{{padding:9px;border-bottom:1px solid #e5e7eb;text-align:left;vertical-align:top}}nav button{{padding:10px 14px;margin:0 5px 12px 0}}.view[hidden]{{display:none}}input,select{{padding:8px;margin:0 8px 12px 0}}.examples{{display:grid;gap:14px}}.pair{{border-top:1px solid #ddd;padding-top:8px;margin-top:8px}}.evidence{{font-size:13px;background:#f7fafc;padding:8px}}a{{color:#075985}}.badge{{padding:2px 6px;border-radius:10px;background:#e0f2fe;white-space:nowrap}}</style></head><body><main>
-<h1>IEEPA candidate similarity</h1><p>Directives explicitly mentioning “IEEPA” or “International Emergency Economic Powers Act.” Candidate scores are all-pairs mean operative-provision cosine similarities.</p>
-<div class="cards"><div class="stat"><strong>{summary['total']:,}</strong>IEEPA directives</div><div class="stat"><strong>{summary['ranked']:,}</strong>ranked children</div><div class="stat"><strong>{summary['automatic']:,}</strong>automatic-parent directives</div></div>
+<h1>{html.escape(topic)} candidate similarity</h1><p>Directives explicitly mentioning {html.escape(definition)}. Candidate scores are all-pairs mean operative-provision cosine similarities.</p>
+<div class="cards"><div class="stat"><strong>{summary['total']:,}</strong>{html.escape(topic)} directives</div><div class="stat"><strong>{summary['ranked']:,}</strong>ranked children</div><div class="stat"><strong>{summary['automatic']:,}</strong>automatic-parent directives</div><div class="stat"><strong>{summary['excluded']:,}</strong>ceremonial exclusions</div></div>
 <nav><button data-view="overview">Overview</button><button data-view="all">All directives</button><button data-view="low">Below 0.7 examples</button><button data-view="missing">Missing-score examples</button></nav>
 <section class="view" id="overview"><h2>Range counts</h2><table><thead><tr><th>Range</th><th>Candidate 1</th><th>Candidate 2</th></tr></thead><tbody>{counts}</tbody></table><h2>Directive types</h2><p>{html.escape(', '.join(f'{k.replace("_"," ")}: {v:,}' for k,v in summary['types'].items()))}</p><p>Percentages use {summary['ranked']:,} ranked IEEPA children as the denominator. Missing scores are separate from valid scores below 0.7.</p></section>
-<section class="view" id="all" hidden><h2>All IEEPA directives</h2><input id="search" placeholder="Search title or ID"><select id="status"><option value="">All statuses</option><option value="ranked">Ranked</option><option value="automatic_parent">Automatic parent</option></select><select id="band"><option value="">All ranges</option>{''.join(f'<option value="{b}">{BAND_LABELS[b]}</option>' for b in BAND_ORDER)}</select><table><thead><tr><th>Directive</th><th>Type/date</th><th>Status</th><th>Candidate 1</th><th>Candidate 2</th></tr></thead><tbody id="inventory"></tbody></table></section>
+<section class="view" id="all" hidden><h2>All {html.escape(topic)} directives</h2><input id="search" placeholder="Search title or ID"><select id="status"><option value="">All statuses</option><option value="ranked">Ranked</option><option value="automatic_parent">Automatic parent</option><option value="ceremonial_exclusion">Ceremonial exclusion</option></select><select id="band"><option value="">All ranges</option>{''.join(f'<option value="{b}">{BAND_LABELS[b]}</option>' for b in BAND_ORDER)}</select><table><thead><tr><th>Directive</th><th>Type/date</th><th>Status</th><th>Candidate 1</th><th>Candidate 2</th></tr></thead><tbody id="inventory"></tbody></table></section>
 <section class="view" id="low" hidden><h2>Examples below 0.7</h2><p>Up to two deterministic examples per available document type.</p><div class="examples">{cards(low)}</div></section>
 <section class="view" id="missing" hidden><h2>Missing-score examples</h2><p>Missing means the child or candidate parent has no extracted operative provisions. Candidate 1: {html.escape(', '.join(f'{k.replace("_"," ")}: {v}' for k,v in summary['missing_types']['1'].items()))}. Candidate 2: {html.escape(', '.join(f'{k.replace("_"," ")}: {v}' for k,v in summary['missing_types']['2'].items()))}.</p><div class="examples">{cards(missing)}</div></section>
 <script>const ROWS={data},LABELS={labels};const esc=s=>String(s==null?'':s).replace(/[&<>"']/g,c=>({{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}}[c]));
-const link=x=>'<a target="_blank" rel="noopener" href="'+esc(x.url)+'">'+esc(x.title||('ID '+x.document_id))+'</a>';const cand=c=>c.band==='not_applicable_automatic_parent'?LABELS[c.band]:(c.parent_id?link(c)+'<br><span class="badge">'+LABELS[c.band]+(c.score==null?'':' · '+c.score.toFixed(3))+'</span>'+(c.reason?'<br>'+esc(c.reason):''):'Unavailable');
+const link=x=>'<a target="_blank" rel="noopener" href="'+esc(x.url)+'">'+esc(x.title||('ID '+x.document_id))+'</a>';const cand=c=>c.band.indexOf('not_applicable_')===0?LABELS[c.band]:(c.parent_id?link(c)+'<br><span class="badge">'+LABELS[c.band]+(c.score==null?'':' · '+c.score.toFixed(3))+'</span>'+(c.reason?'<br>'+esc(c.reason):''):'Unavailable');
 function renderTable(){{let q=document.querySelector('#search').value.toLowerCase(),s=document.querySelector('#status').value,b=document.querySelector('#band').value;document.querySelector('#inventory').innerHTML=ROWS.filter(r=>(!q||(r.title+' '+r.document_id).toLowerCase().includes(q))&&(!s||r.status===s)&&(!b||r.candidate_1.band===b||r.candidate_2.band===b)).map(r=>'<tr><td>'+link(r)+'<br>ID '+r.document_id+'</td><td>'+esc(r.document_type.replace(/_/g,' '))+'<br>'+esc(r.date)+'</td><td>'+esc(r.status.replace(/_/g,' '))+(r.automatic_parents.length?'<br>'+r.automatic_parents.map(x=>'Parent ID '+esc(x.parent_id)).join(', '):'')+'</td><td>'+cand(r.candidate_1)+'</td><td>'+cand(r.candidate_2)+'</td></tr>').join('')}}
 function renderExample(el){{let r=ROWS.find(x=>x.document_id===el.dataset.id);el.innerHTML='<h3>'+link(r)+'</h3><p>'+esc(r.document_type.replace(/_/g,' '))+' · '+esc(r.date)+' · ID '+r.document_id+' · child operative provisions: '+r.operative_segment_count+'</p>'+[1,2].map(n=>{{let c=r['candidate_'+n];return '<div class="pair"><strong>Candidate '+n+':</strong> '+cand(c)+(c.parent_id?'<br>Parent operative provisions: '+c.parent_segment_count:'')+(c.evidence&&c.evidence.length?'<details><summary>Strongest illustrative operative pairs</summary>'+c.evidence.map(e=>'<div class="evidence"><b>Child:</b> '+esc(e.child)+'<br><b>Parent:</b> '+esc(e.parent)+'<br>Pair similarity: '+e.similarity.toFixed(3)+'</div>').join('')+'</details>':'')+'</div>'}}).join('')}}
 document.querySelectorAll('.example').forEach(renderExample);document.querySelectorAll('nav button').forEach(b=>b.onclick=()=>document.querySelectorAll('.view').forEach(v=>v.hidden=v.id!==b.dataset.view));document.querySelectorAll('#search,#status,#band').forEach(x=>x.oninput=renderTable);renderTable();</script></main></body></html>'''
@@ -164,7 +178,8 @@ def main() -> None:
     rows, summary = build_analysis(
         [ROOT / "data/4_28_2026_build_dev.csv", ROOT / "data/4_28_2026_build_holdout.csv"],
         ROOT / "data/parent_analysis/ranked_candidates.csv", ROOT / "data/parent_analysis/automatic_edges.csv",
-        ROOT / "data/parent_analysis/directive_similarity_documents.jsonl", ROOT / "data/parent_analysis/directive_operative_segments.jsonl")
+        ROOT / "data/parent_analysis/directive_similarity_documents.jsonl", ROOT / "data/parent_analysis/directive_operative_segments.jsonl",
+        ceremonial_path=ROOT / "data/parent_analysis/ceremonial_exclusions.csv")
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(build_html(rows, summary), encoding="utf-8")
     print(json.dumps(summary, indent=2)); print(args.output)

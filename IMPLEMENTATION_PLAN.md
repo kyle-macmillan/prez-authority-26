@@ -29,7 +29,7 @@ It does not prove that the drafter actually consulted or copied it.
 The CPU preprocessing pipeline has been rebuilt over the full development-plus-holdout
 corpus. The operative-embedding channel now uses mean cosine similarity across every
 child-parent operative-provision pair, with higher values indicating greater similarity;
-the three strongest pairs are retained only as illustrative review evidence. The prior
+the bidirectional best matches are retained as review evidence. The prior
 development-only embeddings, rankings, score tables, provenance, and Candidate 1–2 HTML
 were removed because they are stale. Full-corpus GPU embeddings and all downstream
 artifacts still need to be regenerated.
@@ -77,7 +77,7 @@ artifacts still need to be regenerated.
 - Retrieved up to 25 strictly earlier same-type candidates for 14,291 unresolved
   children, producing 356,100 candidate pairs; four earliest directives have no eligible
   same-type predecessor.
-- Implemented three segment-level fusion channels: all-pairs-mean operative embeddings,
+- Implemented three segment-level fusion channels: bidirectional-best-match operative embeddings,
   case-sensitive word 3-gram TF-IDF, and 10-word-minimum text reuse. Full-document
   embeddings are used only for the initial pool of up to 25 candidates; BM25 is not used
   in within-pool ranking.
@@ -136,7 +136,7 @@ remain provisional pending manual audit:
 - the quality and granularity of the generalized operative segments;
 - treatment of directives producing no operative segment; and
 - quality of the 356,100-pair candidate ranking, including tie behavior and the
-  all-pairs operative-segment aggregation.
+  bidirectional best-match operative-segment aggregation.
 
 ### Not yet completed
 
@@ -388,9 +388,8 @@ Compare the child's extended W&P operative segments with the candidate's operati
 segments using the segment-specific Qwen instruction. Preserve the strongest supporting
 segment alignments rather than only a document-level average.
 
-Rank candidates by the mean cosine similarity across every child-parent operative-segment
-pair. Preserve the three strongest alignments as compact illustrative evidence for review;
-they do not determine the all-pairs score.
+For each child provision, retain its most similar parent provision; do the same from parent
+to child. Equally average the two directional means and preserve the union as evidence.
 
 ### 7.2 W&P ordering-phrase agreement
 
@@ -622,7 +621,7 @@ must not affect parent selection.
    - [x] Compute the three fusion rankings and the separate diagnostic W&P ranking.
    - [x] Implement three-channel unweighted RRF (`k=20`) and top-10 selection.
    - [ ] Regenerate the ignored full-corpus runtime artifacts and rerun ranking with the
-     all-pairs-mean operative channel and three-channel RRF.
+     bidirectional-best-match operative channel and three-channel RRF.
    - [ ] Generate and inspect the full-corpus Candidate 1–2 score distributions.
 
 7. **Build the 200-child pilot and viewer**
@@ -631,7 +630,7 @@ must not affect parent selection.
    - [x] Build the interactive masked-document viewer.
    - [x] For every sampled child, present up to 10 same-type candidates with highlighted
      operative-segment matches, or every available candidate if fewer than 10 exist.
-   - [ ] Rebuild the viewer with the full-corpus, all-pairs-mean candidate ordering.
+   - [ ] Rebuild the viewer with the full-corpus, bidirectional-best-match candidate ordering.
    - [ ] Collect candidate-level parent/not-parent judgments, child-level `none` judgments,
      multiple-parent selections, and explanations.
 

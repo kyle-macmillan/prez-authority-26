@@ -74,8 +74,8 @@ def test_summary_statistics_and_plot_are_deterministic():
     assert "Thirty equal-width bins" in plot
     assert "How to read these metrics" in plot
     assert "Operative embedding similarity" in plot
-    assert "mean semantic similarity across every" in plot
-    assert "all-pairs mean" in plot
+    assert "best-match coverage" in plot
+    assert "bidirectional mean" in plot
     assert "Word-trigram TF-IDF similarity" in plot
     assert "Text reuse" in plot
     assert "Why Candidate 2 can have a smaller n" in plot

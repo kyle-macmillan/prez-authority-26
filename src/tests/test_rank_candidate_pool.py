@@ -7,17 +7,17 @@ sys.path.insert(0, str(Path(__file__).parents[1]))
 
 from rank_candidate_pool import (
     FUSION_CHANNELS, dense_ranks, matching_phrase_pairs, reciprocal_rank_scores,
-    all_pair_average, reused_word_count, segment_reuse_score,
+    bidirectional_best_average, reused_word_count, segment_reuse_score,
 )
 
 
-def test_all_pair_average_retains_top_three_as_evidence():
+def test_bidirectional_best_average_and_union_evidence():
     child = np.asarray([[1, 0], [0, 1]], dtype=np.float32)
     parent = np.asarray([[1, 0], [0.6, 0.8]], dtype=np.float32)
-    score, pairs = all_pair_average(child, parent)
-    assert len(pairs) == 3
-    assert np.isclose(score, (1.0 + 0.8 + 0.6 + 0.0) / 4)
-    assert np.allclose([pair[2] for pair in pairs], [1.0, 0.8, 0.6])
+    score, pairs = bidirectional_best_average(child, parent)
+    assert len(pairs) == 2
+    assert np.isclose(score, ((1.0 + 0.8) / 2 + (1.0 + 0.8) / 2) / 2)
+    assert np.allclose([pair[2] for pair in pairs], [1.0, 0.8])
 
 
 def test_reuse_counts_only_blocks_of_ten_or_more_words():

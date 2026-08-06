@@ -39,6 +39,18 @@ def test_ranks_by_cosine_score_and_limits_pool():
     assert rows[0]["parent_id"] == "b"
 
 
+def test_excludes_children_and_parents_without_operative_provisions():
+    documents = [
+        {"document_id": "a", "document_type": "letter", "date": "January 1, 2020"},
+        {"document_id": "b", "document_type": "letter", "date": "January 2, 2020"},
+        {"document_id": "c", "document_type": "letter", "date": "January 3, 2020"},
+    ]
+    embeddings = np.eye(3, dtype=np.float32)
+    rows = top_candidates(documents, {"b", "c"}, ["a", "b", "c"], embeddings,
+                          embeddings, operative_ids={"a", "c"})
+    assert [(row["child_id"], row["parent_id"]) for row in rows] == [("c", "a")]
+
+
 if __name__ == "__main__":
     tests = [value for name, value in sorted(globals().items()) if name.startswith("test_")]
     for test in tests:
