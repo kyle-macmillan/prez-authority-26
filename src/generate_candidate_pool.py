@@ -27,6 +27,7 @@ def top_candidates(
     query_embeddings: np.ndarray,
     document_embeddings: np.ndarray,
     limit: int = 25,
+    operative_ids: set[str] | None = None,
 ) -> list[dict]:
     if ids != [str(row["document_id"]) for row in documents]:
         raise ValueError("embedding IDs do not match document artifact order")
@@ -34,6 +35,8 @@ def top_candidates(
     rows: list[dict] = []
     by_type: dict[str, list[int]] = {}
     for index, document in enumerate(documents):
+        if operative_ids is not None and str(document["document_id"]) not in operative_ids:
+            continue
         by_type.setdefault(document["document_type"], []).append(index)
 
     for document_type, indices in sorted(by_type.items()):
@@ -86,6 +89,10 @@ def main() -> None:
     parser.add_argument("--limit", type=int, default=25)
     args = parser.parse_args()
     documents = load_jsonl(args.input_dir / "directive_similarity_documents.jsonl")
+    operative_ids = {
+        str(row["document_id"])
+        for row in load_jsonl(args.input_dir / "directive_operative_segments.jsonl")
+    }
     with (args.input_dir / "unresolved_children.csv").open(newline="", encoding="utf-8") as handle:
         unresolved_ids = {row["document_id"] for row in csv.DictReader(handle)}
     with np.load(args.input_dir / "embeddings/directive_document_embeddings.npz") as cache:
@@ -96,6 +103,7 @@ def main() -> None:
             cache["query_embeddings"],
             cache["document_embeddings"],
             args.limit,
+            operative_ids,
         )
     output = args.input_dir / "embedding_candidate_pool.csv"
     with output.open("w", newline="", encoding="utf-8") as handle:

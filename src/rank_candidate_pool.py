@@ -109,23 +109,32 @@ def top_pairs(
     return float(np.mean([item[2] for item in pairs])), pairs
 
 
-def all_pair_score(
-    similarities: np.ndarray, evidence_count: int = 3
+def bidirectional_best_score(
+    similarities: np.ndarray,
 ) -> tuple[float | None, list[tuple[int, int, float]]]:
-    """Average all pairwise similarities and retain strongest pairs as evidence."""
+    """Equally average child-to-parent and parent-to-child best-match coverage."""
     if not similarities.size:
         return None, []
-    _top_score, evidence = top_pairs(similarities, evidence_count)
-    return float(np.mean(similarities)), evidence
+    child_best = np.argmax(similarities, axis=1)
+    parent_best = np.argmax(similarities, axis=0)
+    positions = {(i, int(j)) for i, j in enumerate(child_best)}
+    positions.update((int(i), j) for j, i in enumerate(parent_best))
+    evidence = sorted(
+        [(i, j, float(similarities[i, j])) for i, j in positions],
+        key=lambda item: (-item[2], item[0], item[1]),
+    )
+    score = (float(np.mean(np.max(similarities, axis=1))) +
+             float(np.mean(np.max(similarities, axis=0)))) / 2
+    return score, evidence
 
 
-def all_pair_average(
-    child_vectors: np.ndarray, parent_vectors: np.ndarray, evidence_count: int = 3
+def bidirectional_best_average(
+    child_vectors: np.ndarray, parent_vectors: np.ndarray,
 ) -> tuple[float | None, list[tuple[int, int, float]]]:
     if not len(child_vectors) or not len(parent_vectors):
         return None, []
     similarities = child_vectors.astype(np.float32) @ parent_vectors.astype(np.float32).T
-    return all_pair_score(similarities, evidence_count)
+    return bidirectional_best_score(similarities)
 
 
 def ordering_phrases(text: str) -> set[str]:
@@ -245,7 +254,7 @@ def main() -> None:
         for parent_id in parent_ids:
             parent_segment_indices = parent_indices[parent_id]
             parent_slice = parent_slices[parent_id]
-            score, pairs = all_pair_score(operative_matrix[:, parent_slice])
+            score, pairs = bidirectional_best_score(operative_matrix[:, parent_slice])
             if score is not None:
                 operative[parent_id] = score
             alignments[parent_id] = pairs
