@@ -79,12 +79,14 @@ REFERENCE_PATTERNS = (
 )
 
 RELATION_PATTERNS: tuple[tuple[str, re.Pattern[str]], ...] = (
-    ("amends", re.compile(r"\bamend(?:s|ed|ing|ment)?\b|\brevis(?:e|es|ed|ing|ion)\b", re.I)),
-    ("revokes", re.compile(r"\brevok(?:e|es|ed|ing|ation)\b|\brescind(?:s|ed|ing)?\b", re.I)),
+    # Match verbal forms only.  Nominal forms such as "revocation" and
+    # "amendment" often occur in section headings or historical descriptions.
+    ("amends", re.compile(r"\bamend(?:s|ed|ing)?\b|\brevis(?:e|es|ed|ing)\b", re.I)),
+    ("revokes", re.compile(r"\brevok(?:e|es|ed|ing)\b|\brescind(?:s|ed|ing)?\b", re.I)),
     ("supersedes", re.compile(r"\bsupersed(?:e|es|ed|ing)\b", re.I)),
-    ("modifies", re.compile(r"\bmodif(?:y|ies|ied|ying|ication)\b|\badjust(?:s|ed|ing|ment)?\b", re.I)),
-    ("continues", re.compile(r"\bcontinu(?:e|es|ed|ing|ation)\b|\bextend(?:s|ed|ing)?\b", re.I)),
-    ("replaces", re.compile(r"\breplac(?:e|es|ed|ing|ement)\b", re.I)),
+    ("modifies", re.compile(r"\bmodif(?:y|ies|ied|ying)\b|\badjust(?:s|ed|ing)?\b", re.I)),
+    ("continues", re.compile(r"\bcontinu(?:e|es|ed|ing)\b|\bextend(?:s|ed|ing)?\b", re.I)),
+    ("replaces", re.compile(r"\breplac(?:e|es|ed|ing)\b", re.I)),
     (
         "delegates_authority_under",
         re.compile(
@@ -93,6 +95,13 @@ RELATION_PATTERNS: tuple[tuple[str, re.Pattern[str]], ...] = (
             re.I,
         ),
     ),
+)
+
+HISTORICAL_RELATION_PREFIX_RE = re.compile(
+    r"(?:\bas\s+|\bwas\s+|\bwere\s+|\bhas\s+been\s+|\bhave\s+been\s+|"
+    r"\bhad\s+been\s+|\bbeen\s+|\bpreviously\s+|\bformerly\s+|"
+    r"\bprior(?:ly)?\s+|\bsubsequently\s+)",
+    re.I,
 )
 
 EDGE_FIELDS = (
@@ -250,6 +259,9 @@ def _relation_for_reference(context: str, relative_start: int) -> str:
         (abs(match.start() - relative_start), label)
         for label, pattern in RELATION_PATTERNS
         for match in pattern.finditer(context)
+        if not HISTORICAL_RELATION_PREFIX_RE.search(
+            context[max(0, match.start() - 32) : match.start()]
+        )
     ]
     return min(matches)[1] if matches else "citation_discussion"
 

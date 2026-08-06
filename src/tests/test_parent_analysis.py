@@ -99,6 +99,14 @@ def test_assigns_nearby_formal_relation_or_citation_fallback():
     assert [item.relation for item in references] == ["revokes", "citation_discussion"]
 
 
+def test_ignores_historical_relation_phrases():
+    references = extract_eo_references(
+        "Executive Order 12345, as amended and modified in scope, is discussed.  "
+        "Executive Order 12346 is hereby revoked."
+    )
+    assert [item.relation for item in references] == ["citation_discussion", "revokes"]
+
+
 def test_builds_only_resolved_earlier_same_type_edges():
     parent = document(
         "p", "executive_order", "January 1, 2020", "Parent.", identifier="12345"
