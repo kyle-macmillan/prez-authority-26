@@ -368,6 +368,22 @@ def test_comma_delimited_shall_extension_keeps_action_verb_allowlist():
     assert not any(s.seg_type == "order_action" for s in segment_ordering(text))
 
 
+def test_comma_delimited_may_exempt_starts_a_new_operative_segment():
+    text = (
+        "(c) No action shall be taken with respect to an applicant.  "
+        "SEC. 104. The Committee may, by rule, regulation, or order, exempt all "
+        "or part of any program of an administering agency."
+    )
+    assert [(s.seg_type, s.text) for s in segment_ordering(text)] == [
+        ("preamble", "(c) No action shall be taken with respect to an applicant. SEC. 104."),
+        (
+            "order_action",
+            "The Committee may, by rule, regulation, or order, exempt all or part "
+            "of any program of an administering agency.",
+        ),
+    ]
+
+
 if __name__ == "__main__":
     tests = [v for k, v in sorted(globals().items()) if k.startswith("test_")]
     for test in tests:

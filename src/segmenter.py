@@ -949,6 +949,17 @@ _SECTION_SHALL_ACTION = (
     r")\b"
 )
 
+# A narrow modal extension for discretionary delegations.  ``may`` by itself is
+# too broad to signal an operative provision, but ``may ... exempt`` captures a
+# concrete power (including intervening rulemaking language such as "may, by
+# rule, regulation, or order, exempt").
+_MAY_EXEMPT_ACTION = (
+    r"may(?:"
+    r"\s+(?:(?:also|hereby)\s+){0,2}exempt"
+    r"|\s*,\s*[^.;]{1," + str(_SHALL_COMMA_INTERVENING_MAX) + r"},\s*exempt"
+    r")\b"
+)
+
 
 # Import phrase list lazily so the module loads even if ordering_phrases.py is absent.
 def _build_ordering_re(section_extensions: bool = False) -> re.Pattern:
@@ -962,7 +973,7 @@ def _build_ordering_re(section_extensions: bool = False) -> re.Pattern:
         return re.compile(r"\b(" + phrase_alt + r")", re.IGNORECASE)
 
     return re.compile(
-        r"\b(" + phrase_alt + r"|" + _SECTION_SHALL_ACTION + r")",
+        r"\b(" + phrase_alt + r"|" + _SECTION_SHALL_ACTION + r"|" + _MAY_EXEMPT_ACTION + r")",
         re.IGNORECASE,
     )
 

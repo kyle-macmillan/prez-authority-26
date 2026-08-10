@@ -17,7 +17,7 @@ from pathlib import Path
 from urllib.parse import unquote
 
 from ceremonial import ceremonial_reason
-from precedent_preprocess import preprocess_for_similarity
+from precedent_preprocess import preprocess_for_similarity_detailed
 from segmenter import segment_ordering
 
 
@@ -442,12 +442,16 @@ def write_jsonl(path: Path, rows: list[dict]) -> None:
 
 
 def build_similarity_artifacts(
-    documents: list[DirectiveDocument], automatic_child_ids: set[str]
+    documents: list[DirectiveDocument], automatic_child_ids: set[str],
+    referencing_child_ids: set[str] | None = None,
 ) -> tuple[list[dict], list[dict]]:
+    referencing_child_ids = referencing_child_ids or set()
     document_rows = []
     segment_rows = []
     for document in documents:
-        cleaned, masked_spans, removed = preprocess_for_similarity(document.text)
+        preprocessing = preprocess_for_similarity_detailed(document.text)
+        cleaned = preprocessing.text
+        masked_spans = preprocessing.masked_spans
         segments = segment_ordering(cleaned, document.document_type)
         operative_index = 0
         for segment in segments:
@@ -475,16 +479,28 @@ def build_similarity_artifacts(
                 "date": document.date_text,
                 "url": document.url,
                 "has_automatic_parent": document.document_id in automatic_child_ids,
+                "has_directive_reference": document.document_id in referencing_child_ids,
                 "cleaned_masked_text": cleaned,
                 "masked_authorities": [
                     {"start": span.start, "end": span.end, "text": span.text, "kind": span.kind}
                     for span in masked_spans
                 ],
-                "removed_boilerplate": removed,
+                "removed_boilerplate": preprocessing.removed_boilerplate,
+                "removed_vesting_clauses": preprocessing.removed_vesting_clauses,
                 "operative_segment_count": operative_index,
             }
         )
     return document_rows, segment_rows
+
+
+def children_with_directive_references(
+    edges: list[dict], unresolved_references: list[dict],
+) -> set[str]:
+    """Return every child containing a reference to another directive of any type."""
+    return (
+        {str(row["child_id"]) for row in edges}
+        | {str(row["child_id"]) for row in unresolved_references}
+    )
 
 
 def main() -> None:
@@ -534,6 +550,10 @@ def main() -> None:
     documents = [row for row in all_documents if row.document_id not in excluded_ids]
     edges, unresolved_references = build_automatic_edges(documents)
     automatic_child_ids = {str(row["child_id"]) for row in edges}
+    # Target children must contain no reference to another directive of any type.
+    # Resolved same-type edges and every audited unresolved/cross-type reference
+    # therefore remove a document from the latent-parent retrieval population.
+    referencing_child_ids = children_with_directive_references(edges, unresolved_references)
     unresolved_children = [
         {
             "document_id": document.document_id,
@@ -544,7 +564,7 @@ def main() -> None:
             "url": document.url,
         }
         for document in documents
-        if document.document_id not in automatic_child_ids
+        if document.document_id not in referencing_child_ids
     ]
 
     write_csv(args.output_dir / "automatic_edges.csv", edges, EDGE_FIELDS)
@@ -554,12 +574,15 @@ def main() -> None:
         UNRESOLVED_REFERENCE_FIELDS,
     )
     write_csv(args.output_dir / "unresolved_children.csv", unresolved_children)
+    write_csv(args.output_dir / "similarity_target_children.csv", unresolved_children)
     write_csv(
         args.output_dir / "ceremonial_exclusions.csv",
         ceremonial_exclusions,
         CEREMONIAL_EXCLUSION_FIELDS,
     )
-    document_rows, segment_rows = build_similarity_artifacts(documents, automatic_child_ids)
+    document_rows, segment_rows = build_similarity_artifacts(
+        documents, automatic_child_ids, referencing_child_ids
+    )
     write_jsonl(args.output_dir / "directive_similarity_documents.jsonl", document_rows)
     write_jsonl(args.output_dir / "directive_operative_segments.jsonl", segment_rows)
     print(
@@ -567,7 +590,8 @@ def main() -> None:
         f"{len(ceremonial_exclusions)} ceremonial exclusions; "
         f"{len(documents)} analyzed directives; {len(edges)} automatic edges; "
         f"{len(automatic_child_ids)} children with automatic parents; "
-        f"{len(unresolved_children)} unresolved children; "
+        f"{len(referencing_child_ids)} children with any directive reference; "
+        f"{len(unresolved_children)} authority-blind target children; "
         f"{len(unresolved_references)} unresolved references; "
         f"{len(segment_rows)} operative segments"
     )

@@ -17,6 +17,16 @@ class MaskedSpan:
     kind: str
 
 
+@dataclass(frozen=True)
+class SimilarityPreprocessing:
+    """Authority-blind text plus an audit trail of every removed component."""
+
+    text: str
+    masked_spans: list[MaskedSpan]
+    removed_boilerplate: list[str]
+    removed_vesting_clauses: list[str]
+
+
 # Patterns are ordered from larger compound citations to smaller authority names.
 # Internal references such as "section 2 of this order" intentionally do not match.
 AUTHORITY_PATTERNS: tuple[tuple[str, re.Pattern[str]], ...] = (
@@ -158,6 +168,19 @@ GENERAL_PROVISIONS_CONTINUATION_RE = re.compile(
     re.I,
 )
 
+VESTING_START_RE = re.compile(
+    r"\b(?:by\s+(?:virtue\s+of\s+)?(?:the\s+)?|pursuant\s+to\s+the\s+|"
+    r"acting\s+under\s+the\s+|consistent\s+with\s+the\s+)"
+    r"authority\s+vested\s+in\s+me\b",
+    re.I,
+)
+VESTING_CONNECTOR_RE = re.compile(
+    r"\b(?:it\s+is\s+hereby\s+ordered|I\s+(?:do\s+)?hereby\s+"
+    r"(?:order|direct|determine|declare|proclaim|delegate|designate)|"
+    r"(?:do\s+)?hereby\s+(?:order|direct|determine|declare|proclaim|delegate|designate))\b",
+    re.I,
+)
+
 
 def authority_spans(text: str) -> list[MaskedSpan]:
     candidates = [
@@ -197,6 +220,45 @@ def mask_authorities(text: str) -> tuple[str, list[MaskedSpan]]:
     return "".join(pieces), spans
 
 
+def remove_vesting_clauses(text: str) -> tuple[str, list[str]]:
+    """Remove the full vesting clause while retaining its operative connector.
+
+    Directive texts encode paragraphs with two or more spaces.  A vesting clause
+    ordinarily begins with ``By the authority vested in me`` and ends immediately
+    before ``it is hereby ordered`` (or the corresponding proclamation/directive
+    formula).  If a malformed source paragraph has no connector, the remainder of
+    that paragraph is removed rather than leaking cited authority into retrieval.
+    """
+    parts = re.split(r"( {2,})", text)
+    removed: list[str] = []
+    for index in range(0, len(parts), 2):
+        paragraph = parts[index]
+        start = VESTING_START_RE.search(paragraph)
+        if not start:
+            continue
+        connector = VESTING_CONNECTOR_RE.search(paragraph, start.end())
+        next_connector = (
+            VESTING_CONNECTOR_RE.match(parts[index + 2].lstrip())
+            if connector is None and index + 2 < len(parts) else None
+        )
+        prefix = paragraph[: start.start()].strip()
+        title_prefix = bool(prefix) and len(prefix) <= 200 and prefix.upper() == prefix
+        if (
+            connector is None and next_connector is None
+            and index != 0 and prefix and not title_prefix
+        ):
+            # This may be an incidental description of presidential authority
+            # rather than the document's formal vesting clause.
+            continue
+        end = connector.start() if connector else len(paragraph)
+        removed.append(paragraph[start.start() : end].strip(" ,;:"))
+        replacement = paragraph[: start.start()]
+        if connector:
+            replacement += paragraph[connector.start() :]
+        parts[index] = replacement.strip()
+    return "".join(parts).strip(), removed
+
+
 def remove_similarity_boilerplate(text: str) -> tuple[str, list[str]]:
     """Remove recurring limitation/severability paragraphs, preserving other text."""
     paragraphs = [part.strip() for part in re.split(r" {2,}", text) if part.strip()]
@@ -232,6 +294,13 @@ def remove_similarity_boilerplate(text: str) -> tuple[str, list[str]]:
 
 
 def preprocess_for_similarity(text: str) -> tuple[str, list[MaskedSpan], list[str]]:
-    without_boilerplate, removed = remove_similarity_boilerplate(text)
+    result = preprocess_for_similarity_detailed(text)
+    return result.text, result.masked_spans, result.removed_boilerplate
+
+
+def preprocess_for_similarity_detailed(text: str) -> SimilarityPreprocessing:
+    """Apply every authority-blind connector preprocessing rule."""
+    without_vesting, vesting = remove_vesting_clauses(text)
+    without_boilerplate, boilerplate = remove_similarity_boilerplate(without_vesting)
     masked, spans = mask_authorities(without_boilerplate)
-    return masked, spans, removed
+    return SimilarityPreprocessing(masked, spans, boilerplate, vesting)

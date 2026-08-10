@@ -12,8 +12,10 @@ import numpy as np
 
 MODEL_REVISION = "e61197ed45024b0ed8a2d74b80b4d909f1255473"
 INSTRUCTION = (
-    "Rank the earlier presidential directives according to whether they have a similar "
-    "function, directive, or operative instruction to the later directive."
+    "Judge whether the earlier presidential directive is a likely drafting precedent for "
+    "the later directive: it must address the same specific policy problem AND use a "
+    "materially similar operative mechanism. Generic topic, actor, or boilerplate overlap "
+    "alone is insufficient. Do not infer or compare legal authority."
 )
 PREFIX = ('<|im_start|>system\nJudge whether the Document meets the requirements based on '
           'the Query and the Instruct provided. Note that the answer can only be "yes" or '
@@ -117,7 +119,9 @@ def matched_pairs_score(child: list[str], parent: list[str], alignments: list,
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--input-dir", type=Path, default=Path("data/parent_analysis"))
+    parser.add_argument("--candidates", type=Path)
     parser.add_argument("--model-path", type=Path, default=Path(".cache/models/Qwen3-Reranker-0.6B"))
+    parser.add_argument("--model-label", default="qwen3-reranker-0.6b")
     parser.add_argument("--output", type=Path)
     parser.add_argument("--child-id", action="append")
     parser.add_argument("--child-limit", type=int)
@@ -127,7 +131,8 @@ def main() -> None:
     parser.add_argument("--resume", action="store_true")
     args = parser.parse_args()
     rows = []
-    with (args.input_dir / "ranked_candidates.csv").open(newline="", encoding="utf-8") as handle:
+    candidate_path = args.candidates or args.input_dir / "ranked_candidates.csv"
+    with candidate_path.open(newline="", encoding="utf-8") as handle:
         rows = list(csv.DictReader(handle))
     by_child = defaultdict(list)
     for row in rows:
@@ -194,7 +199,9 @@ def main() -> None:
                             "qwen_matched_pairs_score": match_scores[parent_id],
                             "qwen_matched_pairs_rank": match_ranks[parent_id],
                             "qwen_matched_pair_limit": args.matched_pair_limit,
-                            "qwen_matched_model_calls": calls[parent_id]["matched"]}
+                            "qwen_matched_model_calls": calls[parent_id]["matched"],
+                            "reranker_model": args.model_label,
+                            "reranker_instruction_version": "parent-reranker-v1"}
             if writer is None:
                 writer = csv.DictWriter(output_handle, fieldnames=list(result))
                 if not completed:

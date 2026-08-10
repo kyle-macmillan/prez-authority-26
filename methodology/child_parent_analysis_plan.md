@@ -1,170 +1,173 @@
-# Methodological Plan for the Child–Parent Analysis
+# Child–Parent Directive Method (Pilot Specification)
 
-## Research objective
+## Objective and definition
 
-The child–parent analysis will identify the most relevant earlier executive order (EO)
-or orders for each later EO and then assess whether the child invokes different legal
-authority from its parent set.
+For a later presidential directive, identify the earlier directive(s) that an OLC lawyer
+or other drafter would most likely have treated as substantive drafting precedent. This
+is an expected-precedent relationship, not proof that the drafter actually consulted or
+copied the earlier document.
 
-- A **child** is the later EO being evaluated.
-- A **parent** is an earlier EO that has a qualifying explicit or similarity-based
-  relationship to the child.
-- A child may have multiple parents or no parent. An EO with no identified parent is an
-  **orphan**.
-- The initial analysis is limited to EOs. Other presidential documents are outside its
-  scope.
+A candidate parent must:
 
-Parenthood is evidence that an earlier EO is a useful substantive and drafting
-precedent; it does not establish that the child's drafter actually consulted or copied
-the earlier order.
+1. predate the child;
+2. address the same **specific policy problem**; and
+3. use a **materially similar operative action or mechanism**.
 
-## Definition of a parent
+Shared subject words, actors, boilerplate, structure, or copied text are supporting
+signals, not sufficient conditions. A child may have several parents when different
+earlier directives supply precedent for different provisions.
 
-There are two routes to parent status.
+## Eligibility and information separation
 
-### Explicit-reference parent
+- Analyze executive orders, memoranda, proclamations, and letters together.
+- Exclude codebook-defined ceremonial directives.
+- Similarity-retrieval targets are directives that contain no reference to another
+  directive of any type. Referencing documents remain eligible as parents.
+- Any non-ceremonial earlier directive type may be a parent; same-type matching is not
+  required.
+- Require a strictly earlier date. Same-day documents are excluded because their true
+  drafting order is not reliably observed across directive types.
+- Remove the complete vesting clause and mask residual legal-authority citations before
+  synthesis, embeddings, lexical retrieval, reuse detection, reranking, or review.
+- Do not compare vesting-clause authorities until parent judgments and the graph are
+  frozen.
 
-Any resolved reference to an earlier EO creates an automatic parent edge. References
-will be labeled, where possible, as amendments, revocations, supersessions,
-modifications, continuations, replacements, delegations of authority under an earlier
-EO, or general citations/discussions.
+## Representations
 
-### Similarity-based parent
+Each directive has three linked, authority-blind representations:
 
-When a child has no automatic parent, a candidate must satisfy both:
+1. cleaned full text;
+2. stable operative-action segments; and
+3. a grounded LLM synthesis containing a policy card and action records.
 
-1. **Substantive-policy similarity:** the earlier EO addresses the same substantive
-   policy problem.
-2. **Operative-mechanism similarity:** the earlier EO uses a similar legal directive,
-   directed action, or legal or administrative mechanism.
+The policy card records the specific problem, subject matter, affected entities,
+geographic scope, triggers, programs, and institutional actors. Each action record
+describes actor, action, object, mechanism, conditions, timing, and intended effect.
+Every synthesis claim must cite a supplied operative segment ID. The synthesis model is
+not asked to identify a parent.
 
-Shared language, structure, or drafting architecture is supplementary evidence. It may
-strengthen a match but cannot establish parenthood by itself because EOs contain
-substantial recurring boilerplate. One highly similar operative segment can support a
-document-level parent relationship; it need not account for a minimum share of the
-child's text.
+Syntheses are cached with the document ID, source hash, prompt version, schema version,
+and model. During development, synthesize only the 20 pilot children and the deduplicated
+parents returned by the initial authority-blind retrieval. After prompts and schema are
+frozen, synthesize every non-ceremonial directive once to build the evaluation index.
 
-## Parent-identification procedure
+## Hybrid retrieval and ranking
 
-### Stage A: explicit relationships
+For every child, retrieve the top four eligible earlier documents independently from:
 
-Stage A uses the original, unmasked EO text to:
+- cleaned-text embeddings;
+- synthesis embeddings;
+- word/bigram TF–IDF (the lexical/word-importance channel); and
+- distinctive exact ten-word reuse, ignoring phrases appearing in more than 25
+  documents.
 
-1. extract every reference to an EO;
-2. resolve the reference to an EO in the corpus;
-3. confirm that the candidate precedes the child, ordering same-day EOs by EO number;
-4. identify nearby relationship language; and
-5. create a labeled automatic edge.
+Deduplicate the union (normally at most 16; hard cap 20). The existing provision-level
+pipeline then scores operative embeddings, word 3-grams, and sustained text reuse and
+combines those rankings with unweighted RRF (`k=20`). Preserve all component ranks,
+scores, and segment alignments.
 
-Only earlier EOs are eligible, and no maximum temporal distance is imposed. In the
-initial specification, a child with at least one automatic edge does not proceed to
-similarity retrieval for additional uncited parents.
+The resulting candidate set is reranked four ways on identical, authority-blind inputs:
 
-### Stage B: similarity relationships
+1. no LLM (RRF baseline);
+2. Qwen3-Reranker 0.6B;
+3. Qwen3-Reranker 4B; and
+4. one selected frontier model.
 
-Only children without an automatic edge enter Stage B. For each unresolved child:
+The rubric is conjunctive: same specific policy problem **and** materially similar
+operative mechanism. Frontier and general instruct-model responses separately score
+policy match, mechanism match, and expected precedent from 0–3 and cite segment IDs.
+The smaller Qwen rerankers use the same conjunctive language in their binary scoring
+instruction. The comparison determines whether the frontier reranker adds enough value
+to justify its cost. TopicGPT or a refinement may be added only as a retrieval ablation;
+it is not required by the main method.
 
-1. create cleaned, authority-masked full-document and operative-segment
-   representations;
-2. use a full-document embedding to retrieve the 25 most similar earlier EOs;
-3. independently rank those 25 candidates using:
-   - operative-segment embeddings;
-   - lexical similarity, such as BM25;
-   - n-gram similarity; and
-   - sustained text reuse;
-4. combine the four within-pool rankings using unweighted Reciprocal Rank Fusion
-   (RRF); and
-5. retain the fused top 10 for manual review.
+## Pilot and validation
 
-The lexical, n-gram, text-reuse, and operative-embedding channels rerank only the
-embedding-derived pool; they do not introduce candidates outside the top 25.
+Freeze two deterministic samples:
 
-## Preprocessing and representations
+- **Development (20 children):** four random eligible children per directive type plus
+  four additional trade proclamations.
+- **Evaluation (40 untouched children):** eight random eligible existing-holdout
+  children per type plus eight trade proclamations reserved from the non-holdout frame
+  before development begins. (The existing holdout has only eight eligible
+  proclamations total, so it cannot supply both strata.)
 
-Authority information is a later outcome and must not influence similarity-based parent
-selection. All Stage B retrieval and review materials will therefore mask cited legal
-authority throughout the document, including constitutional authority, statutes and
-U.S.C. provisions, Public Laws, named Acts, earlier EOs, and other identifiable legal
-citations.
+Trade proclamations are a known-parent genre and therefore a diagnostic stratum, not a
+positive parent label. Trade-to-trade similarity is never automatically parenthood.
 
-The shared cleaned text will also remove severability clauses and recurring
-general-provisions limitations, while retaining EO-specific provisions, findings,
-purposes, definitions, preambles, and other substantive material. An entire section
-will not be removed merely because it is titled “General Provisions.”
+Reviewers see cleaned text and operative segments, but no authority text, retrieval
+scores, method labels, or candidate ranks. Candidate display order is deterministically
+randomized. For every pair they assign `no`, `plausible`, or `strong` separately to:
 
-Each EO will have two linked representations:
+- the policy-problem match;
+- the operative-mechanism match; and
+- the overall expected-precedent relationship.
 
-1. **Cleaned full-document text**, used for the initial policy-and-action retrieval
-   gate.
-2. **Operative-action segments**, generated with the extended Woolley and Peters
-   ordering-phrase approach and used for mechanism comparison.
+They also record supporting segment IDs and a short explanation. Formal earlier-
+directive references form a separate hidden benchmark; they are not tuning examples.
 
-The operative method will be applied consistently whether or not an EO contains formal
-section headings. Stable document and segment identifiers will preserve links between
-candidate edges and their supporting text.
+Report nDCG@10, precision@5 and @10, MRR, and Success@5/@10/@20 for every reranker,
+overall and for the trade-proclamation stratum. Also audit cross-type parents, policy-
+only false positives, mechanism-only false positives, generic-language matches,
+left-censoring, and failures where no retrieved candidate is adequate.
 
-The planned embedding model for the pilot is `Qwen/Qwen3-Embedding-0.6B`, using its full
-1,024-dimensional output. Model and tokenizer revisions, package versions, embedding
-instructions, preprocessing version, token counts, and creation dates will be recorded;
-overlength documents will not be silently truncated.
+## Implemented workflow
 
-## Manual pilot
+The implementation reuses the existing segmenter, embedding cache, segment-level
+ranking, Qwen runner, and HTML-review conventions.
 
-A reproducible random sample of 50 unresolved children will be drawn after Stage A.
-Reviewers will assess the 10 fused candidates for each child, yielding 500 candidate
-comparisons.
+```bash
+# Rebuild eligibility and authority-blind source artifacts.
+python3 src/parent_analysis.py
 
-The review interface will show titles, dates, EO numbers, complete cleaned text, and
-highlighted proposed operative-segment matches. It will conceal authority text,
-extracted authority outcomes, the vesting clause, the fused candidate order, and any
-model-generated parent conclusion.
+# Freeze the development and evaluation samples.
+python3 src/build_parent_method_pilot.py
 
-For each child, the reviewer will select a qualifying parent or `none` and provide a
-short explanation. If several candidates qualify, the default is the most recent one.
-Multiple parents may be retained when different earlier EOs meaningfully support
-different operative segments, with the exception documented.
+# Initial development retrieval without synthesis, then synthesize only its union.
+python3 src/hybrid_candidate_pool.py \
+  --children data/parent_analysis/method_pilot/development_children.csv
+python3 src/synthesize_directives.py --scope pilot \
+  --pilot-manifest data/parent_analysis/method_pilot/pilot_manifest.json \
+  --candidates data/parent_analysis/hybrid_candidate_pool.csv
 
-## Validation and orphan analysis
+# Run the frozen requests through candidate synthesis models, then validate/import the
+# selected model's JSONL responses and embed the resulting cards.
+python3 src/synthesize_directives.py --scope pilot \
+  --pilot-manifest data/parent_analysis/method_pilot/pilot_manifest.json \
+  --candidates data/parent_analysis/hybrid_candidate_pool.csv \
+  --responses RESPONSES.jsonl
+python3 src/embeddings/embed_parent_analysis.py --artifact syntheses
 
-The pilot will report:
+# Rebuild the union and apply the existing provision-level ranker.
+python3 src/hybrid_candidate_pool.py \
+  --children data/parent_analysis/method_pilot/development_children.csv
+python3 src/rank_candidate_pool.py \
+  --candidate-pool data/parent_analysis/hybrid_candidate_pool.csv \
+  --output data/parent_analysis/ranked_hybrid_candidates.csv
 
-- the share of children with a qualifying parent in the reviewed top 10;
-- the share classified as orphans;
-- the fused ranks and component-channel ranks of selected parents;
-- cases where segment evidence changes the full-document ranking;
-- false positives from generic language;
-- policy matches without a matching mechanism and mechanism matches without a matching
-  policy problem; and
-- apparent retrieval failures.
+# Run Qwen twice by changing model path/label; generate/import frontier pair requests
+# with parent_reranker_protocol.py. Repeated imports accumulate in one comparison CSV.
+python3 src/rerank_qwen_candidates.py \
+  --candidates data/parent_analysis/ranked_hybrid_candidates.csv \
+  --model-path PATH_TO_QWEN_0.6B --model-label qwen3-reranker-0.6b \
+  --output data/parent_analysis/qwen_0.6b.csv
+python3 src/rerank_qwen_candidates.py \
+  --candidates data/parent_analysis/ranked_hybrid_candidates.csv \
+  --model-path PATH_TO_QWEN_4B --model-label qwen3-reranker-4b \
+  --output data/parent_analysis/qwen_4b.csv
+python3 src/parent_reranker_protocol.py \
+  --candidates data/parent_analysis/ranked_hybrid_candidates.csv
 
-An orphan classification will not automatically be treated as an error. Qualitative
-review will distinguish genuine novelty from left-censoring, failure of the top-25
-embedding gate, failure of within-pool ranking, and preprocessing or masking errors.
-The pilot will inform choices that are deliberately left open, including segment-score
-aggregation, BM25 fields, n-gram specification, text-reuse measurement, rank weights,
-and any eventual automated parent threshold.
+# Build blinded review material and evaluate exported judgments.
+python3 src/build_parent_method_viewer.py \
+  --sample data/parent_analysis/method_pilot/development_children.csv \
+  --candidates data/parent_analysis/ranked_hybrid_candidates.csv \
+  --output data/parent_analysis/method_pilot/development_viewer.html
+python3 src/evaluate_parent_retrieval.py \
+  --rankings data/parent_analysis/reranker_comparison.csv \
+  --judgments JUDGMENTS.json --output RESULTS.json
+```
 
-## Graph and authority-divergence analysis
-
-The final parent structure will be stored as a directed graph with typed edges. Edge
-records will preserve child and parent identifiers and dates, temporal distance, edge
-source and formal relation, supporting segment identifiers and excerpts, channel scores
-and ranks, fused rank, review decision, and reviewer explanation.
-
-Authority outcomes will remain in a separate table until parent identification is
-fixed. The later authority comparison will then record, for every child–parent
-relationship, authorities retained, added, removed, or substituted and whether any
-authority divergence occurred. The final divergence summaries and statistical models
-will be specified after the parent-identification pilot.
-
-## Current implementation status
-
-Stage A extraction, chronological eligibility, relation labeling, initial authority
-masking and boilerplate removal, operative segmentation, and stable intermediate
-artifacts have been implemented. Their outputs remain provisional pending manual
-validation, especially for reference recall, relation labeling, masking accuracy,
-boilerplate removal, and segment quality.
-
-Embedding generation, top-25 retrieval, the four within-pool rankings, RRF fusion, the
-50-child sample, manual review, orphan assessment, and authority-divergence modeling
-remain to be completed.
+After development choices are frozen, repeat synthesis with `--scope all`, rebuild the
+full synthesis embedding index, and run only the untouched evaluation children. Parent
+edges and authority divergence are joined only after that evaluation graph is fixed.

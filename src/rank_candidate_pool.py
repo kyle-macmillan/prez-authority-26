@@ -186,11 +186,14 @@ def segment_reuse_score_tokens(
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--input-dir", type=Path, default=Path("data/parent_analysis"))
+    parser.add_argument("--candidate-pool", type=Path)
+    parser.add_argument("--output", type=Path)
     parser.add_argument("--rrf-k", type=int, default=20)
     args = parser.parse_args()
 
     pools: dict[str, list[dict]] = defaultdict(list)
-    with (args.input_dir / "embedding_candidate_pool.csv").open(newline="", encoding="utf-8") as handle:
+    candidate_pool = args.candidate_pool or args.input_dir / "embedding_candidate_pool.csv"
+    with candidate_pool.open(newline="", encoding="utf-8") as handle:
         for row in csv.DictReader(handle):
             pools[row["child_id"]].append(row)
 
@@ -325,7 +328,7 @@ def main() -> None:
             print(f"ranked {child_number}/{len(pools)} children", flush=True)
 
     output_rows.sort(key=lambda row: (row["document_type"], row["child_id"], row["rrf_rank"]))
-    output = args.input_dir / "ranked_candidates.csv"
+    output = args.output or args.input_dir / "ranked_candidates.csv"
     with output.open("w", newline="", encoding="utf-8") as handle:
         writer = csv.DictWriter(handle, fieldnames=list(output_rows[0]))
         writer.writeheader()
