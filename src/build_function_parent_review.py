@@ -48,8 +48,14 @@ def main() -> None:
             sample[row["document_id"]] = row
 
     top = defaultdict(lambda: defaultdict(list))
-    for method in ("deterministic", "qwen", "gemini"):
-        path = args.snapshot_dir / f"{method}_rankings.jsonl"
+    ranking_files = {
+        "deterministic": "deterministic_rankings.jsonl",
+        "qwen": "qwen_rankings.jsonl",
+        "gemini_search": "gemini_rankings.jsonl",
+        "gemini_search_thinking_medium": "gemini_thinking_medium_rankings.jsonl",
+    }
+    for method, filename in ranking_files.items():
+        path = args.snapshot_dir / filename
         if path.exists():
             for row in _read_jsonl(path):
                 if int(row["rank"]) == 1:
@@ -72,7 +78,9 @@ def main() -> None:
         cards = []
         for label, parent_id in enumerate(candidates, 1):
             parent = documents[parent_id]
-            field_id = f"{sample[child_id]['sample_id']}-candidate-{label}"
+            # Persist decisions against stable document IDs, not presentation
+            # labels: adding another method winner may reshuffle the cards.
+            field_id = f"review-{child_id}-{parent_id}"
             cards.append(f"""
             <article class="candidate-card">
               <div class="candidate-heading">
@@ -114,6 +122,7 @@ def main() -> None:
         </section>""")
 
     banner = "PROVISIONAL SNAPSHOT — regenerate after Flash recovery" if manifest["provisional"] else "FINAL SNAPSHOT"
+    candidate_count = sum(len(parents) for parents in top.values())
     page = f"""<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Function-parent blind review</title>
@@ -121,8 +130,9 @@ def main() -> None:
 :root{{--ink:#172033;--muted:#657086;--line:#d9deea;--paper:#fff;--canvas:#f4f6fa;--navy:#183153;--blue:#2463a9;--gold:#f3c969;--shadow:0 8px 28px rgba(24,49,83,.09)}}
 *{{box-sizing:border-box}} html{{scroll-behavior:smooth}} body{{margin:0;background:var(--canvas);color:var(--ink);font:16px/1.55 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}}
 .topbar{{position:sticky;top:0;z-index:10;background:rgba(24,49,83,.97);color:#fff;box-shadow:0 2px 12px rgba(0,0,0,.2)}}
-.topbar-inner{{max-width:1440px;margin:auto;padding:14px 28px;display:flex;gap:24px;align-items:center;justify-content:space-between}}
+.topbar-inner{{max-width:1440px;margin:auto;padding:14px 28px;display:flex;gap:18px;align-items:center;justify-content:space-between}}
 .status{{font-weight:750;color:var(--gold)}} .snapshot{{font:12px ui-monospace,SFMono-Regular,Menlo,monospace;opacity:.8;word-break:break-all}}
+.toolbar{{display:flex;align-items:center;gap:9px;flex-wrap:wrap;justify-content:flex-end}} .progress{{font-size:13px;font-weight:700;margin-right:4px}} .tool-button{{cursor:pointer;border:1px solid rgba(255,255,255,.5);border-radius:7px;background:transparent;color:#fff;padding:7px 10px;font:700 13px system-ui}} .tool-button:hover{{background:rgba(255,255,255,.12)}} #import-file{{display:none}}
 main{{max-width:1440px;margin:30px auto;padding:0 28px 80px}} .intro{{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:24px 28px;box-shadow:var(--shadow);margin-bottom:30px}}
 .intro h1{{margin:0 0 8px;font-size:30px}} .intro p{{margin:6px 0;color:var(--muted);max-width:88ch}}
 .child-section{{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:28px;margin:0 0 38px;box-shadow:var(--shadow);scroll-margin-top:90px}}
@@ -134,16 +144,29 @@ h2{{font:700 28px/1.2 Georgia,serif;margin:6px 0}} h3{{font:700 22px/1.25 Georgi
 .candidate-grid{{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,480px),1fr));gap:22px;margin-top:24px}} .candidate-card{{border:1px solid #cdd5e3;border-radius:13px;padding:20px;background:#fff;min-width:0}}
 .review-fields{{display:grid;grid-template-columns:max-content 1fr;gap:10px 14px;align-items:start;margin-top:18px;padding-top:16px;border-top:1px solid var(--line)}} .review-fields label{{font-weight:750;color:var(--navy);padding-top:8px}}
 select,textarea{{width:100%;border:1px solid #aeb8ca;border-radius:8px;padding:9px 11px;font:inherit;background:#fff}} textarea{{min-height:100px;resize:vertical}}
-@media(max-width:700px){{main{{padding:0 12px}}.child-section{{padding:18px}}.topbar-inner,.child-heading,.candidate-heading{{display:block}}.source-link{{display:inline-block;margin-top:12px}}.review-fields{{grid-template-columns:1fr}}}}
+@media(max-width:700px){{main{{padding:0 12px}}.child-section{{padding:18px}}.topbar-inner,.child-heading,.candidate-heading{{display:block}}.toolbar{{justify-content:flex-start;margin-top:10px}}.source-link{{display:inline-block;margin-top:12px}}.review-fields{{grid-template-columns:1fr}}}}
 @media print{{.topbar{{position:static}}body{{background:#fff}}main{{max-width:none}}.child-section{{break-before:page;box-shadow:none}}.document-text{{max-height:none;overflow:visible}}}}
 </style></head><body>
-<header class="topbar"><div class="topbar-inner"><span class="status">{banner}</span><span class="snapshot">Snapshot {manifest['snapshot_hash']}</span></div></header>
-<main><div class="intro"><h1>Blinded parent-candidate review</h1><p>Review the child directive against each unique top candidate. Candidate order is deterministic and method identity is hidden.</p><p>The displayed text is the fullest locally retained authority-masked pipeline text. Use “Open original source” for the publisher's original page.</p></div>{''.join(sections)}</main>
+<header class="topbar"><div class="topbar-inner"><div><div class="status">{banner}</div><div class="snapshot">Snapshot {manifest['snapshot_hash']}</div></div><div class="toolbar"><span class="progress" id="progress">0 of {candidate_count} candidates decided</span><button class="tool-button" id="export-review" type="button">Export review</button><button class="tool-button" id="import-review" type="button">Import review</button><input id="import-file" type="file" accept="application/json,.json"></div></div></header>
+<main><div class="intro"><h1>Blinded parent-candidate review</h1><p>Review the child directive against each unique top candidate selected by the four ranking methods. Candidate order is reproducibly shuffled and method identity is hidden.</p><p>The displayed text is the fullest locally retained authority-masked pipeline text. Use “Open original source” for the publisher's original page.</p></div>{''.join(sections)}</main>
 <script>
-const storageKey='function-parent-review:{manifest['snapshot_hash']}';
+const snapshotHash='{manifest['snapshot_hash']}';
+const storageKey='function-parent-review:'+snapshotHash;
 const fields=[...document.querySelectorAll('[data-review-field]')];
 try{{const saved=JSON.parse(localStorage.getItem(storageKey)||'{{}}');fields.forEach(x=>{{if(saved[x.id]!==undefined)x.value=saved[x.id]}})}}catch(_e){{}}
-fields.forEach(x=>x.addEventListener('input',()=>{{const saved={{}};fields.forEach(y=>saved[y.id]=y.value);localStorage.setItem(storageKey,JSON.stringify(saved))}}));
+function values(){{const saved={{}};fields.forEach(x=>saved[x.id]=x.value);return saved}}
+function updateProgress(){{const decisions=fields.filter(x=>x.tagName==='SELECT');const done=decisions.filter(x=>x.value).length;document.getElementById('progress').textContent=`${{done}} of ${{decisions.length}} candidates decided`}}
+function save(){{localStorage.setItem(storageKey,JSON.stringify(values()));updateProgress()}}
+fields.forEach(x=>x.addEventListener('input',save));updateProgress();
+document.getElementById('export-review').addEventListener('click',()=>{{
+  const payload={{schema_version:1,snapshot_hash:snapshotHash,exported_at:new Date().toISOString(),review_fields:values()}};
+  const blob=new Blob([JSON.stringify(payload,null,2)+'\n'],{{type:'application/json'}});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=`function-parent-review-${{snapshotHash.slice(0,12)}}.json`;a.click();URL.revokeObjectURL(url);
+}});
+const importFile=document.getElementById('import-file');document.getElementById('import-review').addEventListener('click',()=>importFile.click());
+importFile.addEventListener('change',async()=>{{
+  if(!importFile.files.length)return;
+  try{{const payload=JSON.parse(await importFile.files[0].text());if(payload.snapshot_hash!==snapshotHash)throw new Error('This review belongs to a different snapshot.');if(!payload.review_fields||typeof payload.review_fields!=='object')throw new Error('Review fields are missing.');fields.forEach(x=>{{if(payload.review_fields[x.id]!==undefined)x.value=payload.review_fields[x.id]}});save();alert('Review imported successfully.')}}catch(error){{alert('Import failed: '+error.message)}}finally{{importFile.value=''}}
+}});
 </script></body></html>"""
     output = args.snapshot_dir / "blind_top_candidate_review.html"
     output.write_text(page, encoding="utf-8")
