@@ -161,3 +161,21 @@ RRF versus channel-reserved retrieval and the document-embedding ablation, then 
 everything from a final snapshot after Flash recovery. Do not combine artifacts whose
 snapshot hashes differ. Full decisions, validation normalizations, and remaining work are
 documented in `data/parent_analysis/FUNCTION_PROFILE_PARENT_PIPELINE.md`.
+
+The candidate-or-none extension preserves every method's best candidate even when that
+method abstains. Gemini uses separate top-pair acceptance requests, Qwen uses an absolute
+yes/no reranker judgment, and deterministic abstention is calibrated only after the
+schema-2 blinded case review is complete. Build/validate with
+`build_function_parent_acceptance_requests.py` and
+`validate_function_parent_acceptance.py`; run local Qwen acceptance with
+`judge_qwen_function_parent_acceptance.py`, calibrate deterministic output with
+`calibrate_deterministic_parent_abstention.py`, and combine/evaluate all four methods with
+`evaluate_function_parent_decisions.py`.
+
+Gemini parent ranking and acceptance prompt v2 frame the task from the child's drafter's
+perspective. They reward reusable substantive operative architecture—including close
+templates applied to different country or product targets—while still requiring a shared
+or closely related governmental function and rejecting generic topical or boilerplate
+overlap. The generated pilot rerun inputs are `gemini_accept_v2_requests.jsonl` and
+`gemini_thinking_medium_accept_v2_requests.jsonl`; generating them does not make network
+requests.

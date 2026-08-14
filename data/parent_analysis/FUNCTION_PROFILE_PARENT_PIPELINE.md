@@ -115,3 +115,34 @@ production method is selected.
    rankings across snapshot hashes.
 5. After method selection, implement the durable reviewed-edge output with matched
    function IDs, evidence, scores, model/version, reviewer, and decision provenance.
+
+## Candidate-or-none extension
+
+Each method now separates relative ranking from absolute acceptance. It always retains
+its rank-1 `best_candidate_id`, ranking score, and full 1–25 ranking, then independently
+returns `decision: candidate|none` plus an acceptance score. `none` means the method's own
+best candidate is not a plausible parent; it does not prove that no document elsewhere in
+the 25-candidate pool could qualify.
+
+- Gemini Search thinking-off and thinking-medium preserve their completed rankings and
+  receive separate, resumable top-pair acceptance calls with matching Search/thinking
+  settings. Their boolean decision and 0–1 self-reported score must agree at 0.5.
+  Prompt v2 uses a drafter-centered standard: ask whether the earlier directive supplies
+  reusable substantive drafting architecture for the child. Policy function and operative
+  provisions are evaluated together. Different countries, products, agencies, dates, or
+  other targets are treated as substitutable parameters when the governmental function,
+  operative structure, and legal effect remain substantially unchanged; generic topic,
+  boilerplate, or isolated common verbs remain insufficient.
+- Qwen receives a new absolute top-pair yes/no instruction. Its yes-token softmax is the
+  acceptance score and 0.5 is the decision boundary.
+- Deterministic alignment retains its raw weighted cosine score. After review, its cutoff
+  is chosen by exact case accuracy with a conservative tie-break; leave-one-out predictions
+  are used for pilot reporting and a final all-case cutoff is stored for provisional use.
+- The blind review uses one case-level gold choice: one displayed method winner or `none
+  of the method winners`, plus one explanation. This label must not be described as `none
+  of all 25` without reviewing the remaining candidates.
+
+Common decision records include method, child, best candidate, ranking score, decision,
+acceptance score and semantics, decision source, model/prompt/threshold versions, matches,
+and snapshot hash. Final evaluation reports exact outcome accuracy, coverage, candidate
+precision, abstention precision, error categories, and directive-stratum counts.

@@ -111,6 +111,12 @@ def main() -> None:
         if path.exists():
             for row in _read_jsonl(path):
                 gemini_decisions[str(row["child_id"])][label] = row
+    # A partial v2 pilot overrides the corresponding thinking-off v1 judgments;
+    # children absent from the partial file retain their validated v1 result.
+    v2_path = args.snapshot_dir / "gemini_accept_v2_last10_decisions.jsonl"
+    if v2_path.exists():
+        for row in _read_jsonl(v2_path):
+            gemini_decisions[str(row["child_id"])]["Gemini (thinking off)"] = row
 
     wanted = set(sample) | {parent_id for parents in top.values() for parent_id in parents}
     documents = {}
@@ -170,6 +176,7 @@ def main() -> None:
                 if candidate_number is not None else f"document {parent_id}"
             )
             score = float(decision["acceptance_score"])
+            prompt_version = escaped(decision.get("prompt_version", ""))
             if decision["decision"] == "candidate":
                 verdict = (
                     f'<strong class="gemini-yes">Yes — {candidate_name}</strong>'
@@ -181,7 +188,7 @@ def main() -> None:
                 )
             assessment_rows.append(
                 f'<div class="gemini-row"><span>{escaped(method_label)}</span>'
-                f'<div>{verdict}<small>Plausibility {score:.0%}</small></div></div>'
+                f'<div>{verdict}<small>Plausibility {score:.0%} · {prompt_version}</small></div></div>'
             )
         gemini_panel = (
             '<aside class="gemini-assessment"><h3>Gemini parent assessment</h3>'
