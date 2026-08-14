@@ -8,6 +8,7 @@ import csv
 import html
 import json
 import random
+import re
 from collections import defaultdict
 from pathlib import Path
 
@@ -24,6 +25,32 @@ def escaped(value: object) -> str:
 def document_text(document: dict) -> str:
     """Return the fullest locally retained text used by the parent pipeline."""
     return str(document.get("cleaned_masked_text") or "")
+
+
+def highlighted_text(document: dict, segments: list[str]) -> str:
+    """Escape full text and mark source-exact operative segments."""
+    text = document_text(document)
+    spans = []
+    for segment in segments:
+        tokens = re.split(r"\s+", segment.strip())
+        if not tokens:
+            continue
+        match = re.search(r"\s+".join(map(re.escape, tokens)), text, flags=re.I)
+        if match:
+            spans.append(match.span())
+    merged = []
+    for start, end in sorted(spans):
+        if merged and start <= merged[-1][1]:
+            merged[-1] = (merged[-1][0], max(end, merged[-1][1]))
+        else:
+            merged.append((start, end))
+    output, cursor = [], 0
+    for start, end in merged:
+        output.extend((escaped(text[cursor:start]), '<mark class="operative">',
+                       escaped(text[start:end]), "</mark>"))
+        cursor = end
+    output.append(escaped(text[cursor:]))
+    return "".join(output)
 
 
 def source_link(document: dict) -> str:
@@ -69,20 +96,29 @@ def main() -> None:
             document_id = str(row["document_id"])
             if document_id in wanted:
                 documents[document_id] = row
+    operative_segments = defaultdict(list)
+    with (args.input_dir / "directive_operative_segments.jsonl").open(encoding="utf-8") as handle:
+        for line in handle:
+            row = json.loads(line)
+            document_id = str(row["document_id"])
+            if document_id in wanted:
+                operative_segments[document_id].append(str(row["text"]))
 
     sections = []
     for child_number, child_id in enumerate(sorted(top, key=int), 1):
         child = documents[child_id]
         candidates = list(top[child_id])
         random.Random(f"{manifest['snapshot_hash']}:{child_id}").shuffle(candidates)
-        cards = []
+        cards, selectors = [], []
         for label, parent_id in enumerate(candidates, 1):
             parent = documents[parent_id]
             # Persist decisions against stable document IDs, not presentation
             # labels: adding another method winner may reshuffle the cards.
             field_id = f"review-{child_id}-{parent_id}"
+            active = " active" if label == 1 else ""
+            selectors.append(f"""<button type="button" class="candidate-tab{active}" data-target="candidate-{child_id}-{parent_id}" aria-selected="{'true' if label == 1 else 'false'}"><span>Candidate {label}</span><strong>{escaped(parent['title'])}</strong><small>{escaped(parent['date'])}</small></button>""")
             cards.append(f"""
-            <article class="candidate-card">
+            <article class="candidate-card{active}" id="candidate-{child_id}-{parent_id}">
               <div class="candidate-heading">
                 <div><span class="candidate-number">Candidate {label}</span>
                   <h3>{escaped(parent['title'])}</h3>
@@ -92,7 +128,7 @@ def main() -> None:
               </div>
               <details class="document-panel" open>
                 <summary>Candidate directive text</summary>
-                <div class="document-text">{escaped(document_text(parent))}</div>
+                <div class="document-text">{highlighted_text(parent, operative_segments[parent_id])}</div>
               </details>
               <div class="review-fields">
                 <label for="{field_id}-decision">Decision</label>
@@ -116,9 +152,10 @@ def main() -> None:
           </div>
           <details class="document-panel child-document" open>
             <summary>Child directive text</summary>
-            <div class="document-text">{escaped(document_text(child))}</div>
+            <div class="document-text">{highlighted_text(child, operative_segments[child_id])}</div>
           </details>
-          <div class="candidate-grid">{''.join(cards)}</div>
+          <p class="highlight-key"><mark class="operative">Highlighted text</mark> is an operative segment identified by the preprocessing pipeline.</p>
+          <div class="candidate-workspace"><div class="candidate-stage">{''.join(cards)}</div><nav class="candidate-tabs" aria-label="Candidates for {escaped(sample[child_id]['sample_id'])}">{''.join(selectors)}</nav></div>
         </section>""")
 
     banner = "PROVISIONAL SNAPSHOT — regenerate after Flash recovery" if manifest["provisional"] else "FINAL SNAPSHOT"
@@ -140,11 +177,13 @@ main{{max-width:1440px;margin:30px auto;padding:0 28px 80px}} .intro{{background
 h2{{font:700 28px/1.2 Georgia,serif;margin:6px 0}} h3{{font:700 22px/1.25 Georgia,serif;margin:5px 0}} .metadata{{margin:4px 0;color:var(--muted)}}
 .source-link{{white-space:nowrap;color:var(--blue);font-weight:700;text-decoration:none;border:1px solid #b9cce5;border-radius:8px;padding:8px 11px;background:#f7fbff}} .source-link:hover{{background:#eaf3ff}}
 .document-panel{{margin-top:18px;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#fbfcfe}} .document-panel summary{{cursor:pointer;padding:12px 16px;background:#eef2f8;font-weight:750;color:var(--navy)}}
-.document-text{{padding:18px 20px;white-space:pre-wrap;font:15px/1.68 Georgia,"Times New Roman",serif;max-height:560px;overflow:auto;background:#fff;border-top:1px solid var(--line)}} .child-document .document-text{{max-height:420px}}
-.candidate-grid{{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,480px),1fr));gap:22px;margin-top:24px}} .candidate-card{{border:1px solid #cdd5e3;border-radius:13px;padding:20px;background:#fff;min-width:0}}
+.document-text{{padding:18px 20px;white-space:pre-wrap;font:15px/1.68 Georgia,"Times New Roman",serif;max-height:620px;overflow:auto;background:#fff;border-top:1px solid var(--line)}} .child-document .document-text{{max-height:360px}}
+mark.operative{{background:#fff0a8;color:inherit;border-radius:3px;padding:.08em .03em;box-shadow:inset 0 -1px 0 #e3b92f}} .highlight-key{{font-size:13px;color:var(--muted);margin:10px 2px 0}}
+.candidate-workspace{{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:20px;align-items:start;margin-top:22px}} .candidate-stage{{min-width:0}} .candidate-card{{display:none;border:1px solid #cdd5e3;border-radius:13px;padding:20px;background:#fff;min-width:0}} .candidate-card.active{{display:block}}
+.candidate-tabs{{position:sticky;top:92px;display:flex;flex-direction:column;gap:9px}} .candidate-tab{{cursor:pointer;text-align:left;border:1px solid #c8d1df;border-radius:10px;background:#f8faff;color:var(--ink);padding:12px 13px}} .candidate-tab:hover{{border-color:#7fa6d5;background:#f0f6ff}} .candidate-tab.active{{border-color:var(--blue);background:#eaf3ff;box-shadow:inset 4px 0 0 var(--blue)}} .candidate-tab span{{display:block;color:var(--blue);font-size:11px;font-weight:800;letter-spacing:.07em;text-transform:uppercase}} .candidate-tab strong{{display:block;font:700 15px/1.25 Georgia,serif;margin:3px 0}} .candidate-tab small{{color:var(--muted)}}
 .review-fields{{display:grid;grid-template-columns:max-content 1fr;gap:10px 14px;align-items:start;margin-top:18px;padding-top:16px;border-top:1px solid var(--line)}} .review-fields label{{font-weight:750;color:var(--navy);padding-top:8px}}
 select,textarea{{width:100%;border:1px solid #aeb8ca;border-radius:8px;padding:9px 11px;font:inherit;background:#fff}} textarea{{min-height:100px;resize:vertical}}
-@media(max-width:700px){{main{{padding:0 12px}}.child-section{{padding:18px}}.topbar-inner,.child-heading,.candidate-heading{{display:block}}.toolbar{{justify-content:flex-start;margin-top:10px}}.source-link{{display:inline-block;margin-top:12px}}.review-fields{{grid-template-columns:1fr}}}}
+@media(max-width:850px){{main{{padding:0 12px}}.child-section{{padding:18px}}.topbar-inner,.child-heading,.candidate-heading{{display:block}}.toolbar{{justify-content:flex-start;margin-top:10px}}.source-link{{display:inline-block;margin-top:12px}}.candidate-workspace{{display:flex;flex-direction:column-reverse}}.candidate-tabs{{position:static;width:100%;display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}}.candidate-stage{{width:100%}}.review-fields{{grid-template-columns:1fr}}}}
 @media print{{.topbar{{position:static}}body{{background:#fff}}main{{max-width:none}}.child-section{{break-before:page;box-shadow:none}}.document-text{{max-height:none;overflow:visible}}}}
 </style></head><body>
 <header class="topbar"><div class="topbar-inner"><div><div class="status">{banner}</div><div class="snapshot">Snapshot {manifest['snapshot_hash']}</div></div><div class="toolbar"><span class="progress" id="progress">0 of {candidate_count} candidates decided</span><button class="tool-button" id="export-review" type="button">Export review</button><button class="tool-button" id="import-review" type="button">Import review</button><input id="import-file" type="file" accept="application/json,.json"></div></div></header>
@@ -158,6 +197,7 @@ function values(){{const saved={{}};fields.forEach(x=>saved[x.id]=x.value);retur
 function updateProgress(){{const decisions=fields.filter(x=>x.tagName==='SELECT');const done=decisions.filter(x=>x.value).length;document.getElementById('progress').textContent=`${{done}} of ${{decisions.length}} candidates decided`}}
 function save(){{localStorage.setItem(storageKey,JSON.stringify(values()));updateProgress()}}
 fields.forEach(x=>x.addEventListener('input',save));updateProgress();
+document.querySelectorAll('.candidate-tabs').forEach(nav=>{{nav.addEventListener('click',event=>{{const button=event.target.closest('.candidate-tab');if(!button)return;const section=nav.closest('.child-section');section.querySelectorAll('.candidate-tab').forEach(x=>{{x.classList.toggle('active',x===button);x.setAttribute('aria-selected',x===button?'true':'false')}});section.querySelectorAll('.candidate-card').forEach(x=>x.classList.toggle('active',x.id===button.dataset.target));}})}});
 document.getElementById('export-review').addEventListener('click',()=>{{
   const payload={{schema_version:1,snapshot_hash:snapshotHash,exported_at:new Date().toISOString(),review_fields:values()}};
   const blob=new Blob([JSON.stringify(payload,null,2)+'\n'],{{type:'application/json'}});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=`function-parent-review-${{snapshotHash.slice(0,12)}}.json`;a.click();URL.revokeObjectURL(url);
