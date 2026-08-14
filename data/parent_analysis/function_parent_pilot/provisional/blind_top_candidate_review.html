@@ -3516,8 +3516,7 @@ fields.forEach(x=>x.addEventListener('input',save));updateProgress();
 document.querySelectorAll('.candidate-tabs').forEach(nav=>{nav.addEventListener('click',event=>{const button=event.target.closest('.candidate-tab');if(!button)return;const section=nav.closest('.child-section');section.querySelectorAll('.candidate-tab').forEach(x=>{x.classList.toggle('active',x===button);x.setAttribute('aria-selected',x===button?'true':'false')});section.querySelectorAll('.candidate-card').forEach(x=>x.classList.toggle('active',x.id===button.dataset.target));})});
 document.getElementById('export-review').addEventListener('click',()=>{
   const payload={schema_version:1,snapshot_hash:snapshotHash,exported_at:new Date().toISOString(),review_fields:values()};
-  const blob=new Blob([JSON.stringify(payload,null,2)+'
-'],{type:'application/json'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=`function-parent-review-${snapshotHash.slice(0,12)}.json`;a.click();URL.revokeObjectURL(url);
+  const blob=new Blob([JSON.stringify(payload,null,2)+'\n'],{type:'application/json'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=`function-parent-review-${snapshotHash.slice(0,12)}.json`;a.click();URL.revokeObjectURL(url);
 });
 const importFile=document.getElementById('import-file');document.getElementById('import-review').addEventListener('click',()=>importFile.click());
 importFile.addEventListener('change',async()=>{
