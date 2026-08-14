@@ -27,5 +27,21 @@ PYTHONPATH=src python3 src/build_canonical_function_profiles.py \
 
 If the rebuild emits zero-confirmation requests, run those requests through the same
 harness into a distinct append-only response file and pass both response paths back to the
-builder. Do not proceed to embeddings or parent ranking until the snapshot manifest reports
-`complete: true` and `registry_equals_operative_ids: true`.
+builder.
+
+## Intentional incomplete-snapshot run
+
+The August 14 production decision is to skip the remaining 122 profile requests and embed
+the 9,640 available canonical profiles. This requires an explicit override so an incomplete
+snapshot cannot be used accidentally:
+
+```bash
+python src/embed_function_profiles.py \
+  --snapshot-dir data/parent_analysis/canonical_profiles \
+  --batch-size 64 \
+  --allow-incomplete-profiles
+```
+
+The generated `function_embedding_manifest.json` records that the source snapshot was
+incomplete and reports the available, total, and missing profile counts. Candidate-pool
+construction from this snapshot must likewise use `--allow-incomplete-profiles`.

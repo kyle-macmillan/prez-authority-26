@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import sys
 import tempfile
 from pathlib import Path
 
@@ -41,12 +42,27 @@ def main() -> None:
     parser.add_argument("--model-path", type=Path, default=MODEL_PATH)
     parser.add_argument("--batch-size", type=int, default=32)
     parser.add_argument("--max-seq-length", type=int, default=512)
-    parser.add_argument("--allow-incomplete-profiles", action="store_true")
+    parser.add_argument(
+        "--allow-incomplete-profiles",
+        action="store_true",
+        help="Embed the available canonical profiles even when the snapshot is incomplete.",
+    )
     args = parser.parse_args()
     profiles = _read_jsonl(args.snapshot_dir / "profiles.jsonl")
     manifest = json.loads((args.snapshot_dir / "snapshot_manifest.json").read_text())
-    if manifest.get("complete") is False and not args.allow_incomplete_profiles:
-        raise RuntimeError("canonical profile snapshot is incomplete")
+    snapshot_complete = manifest.get("complete") is not False
+    if not snapshot_complete and not args.allow_incomplete_profiles:
+        raise RuntimeError(
+            "canonical profile snapshot is incomplete; pass --allow-incomplete-profiles "
+            "to embed only the available profiles"
+        )
+    if not snapshot_complete:
+        print(
+            "WARNING: embedding an incomplete canonical profile snapshot "
+            f"({manifest.get('canonical_profiles', len(profiles))}/"
+            f"{manifest.get('operative_directives', 'unknown')} profiles)",
+            file=sys.stderr,
+        )
     rows = profile_function_rows(profiles)
     for row in rows:
         row["row_id"] = f"{row['document_id']}:{row['kind']}:{row['function_id']}"
@@ -94,6 +110,11 @@ def main() -> None:
         "schema_version": 1, "snapshot_hash": manifest["snapshot_hash"],
         "model": "Qwen/Qwen3-Embedding-0.6B", "model_revision": MODEL_REVISION,
         "function_rows": len(rows), "new_embeddings": len(missing),
+        "source_snapshot_complete": snapshot_complete,
+        "allow_incomplete_profiles": args.allow_incomplete_profiles,
+        "canonical_profiles": manifest.get("canonical_profiles", len(profiles)),
+        "operative_directives": manifest.get("operative_directives"),
+        "profiles_missing": manifest.get("requests_remaining"),
         "semantic_fields": ["actor", "action", "target", "mechanism", "effect", "condition", "timing"],
         "evidence_excluded": True,
         "max_seq_length": args.max_seq_length,
