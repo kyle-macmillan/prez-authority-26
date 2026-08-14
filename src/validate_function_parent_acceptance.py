@@ -15,7 +15,7 @@ ROOT = Path(__file__).resolve().parents[1]
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("responses", type=Path, nargs="+")
-    parser.add_argument("--snapshot-dir", type=Path, default=ROOT / "data/parent_analysis/function_parent_pilot/provisional")
+    parser.add_argument("--snapshot-dir", type=Path, default=ROOT / "data/parent_analysis/canonical_profiles")
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--errors", type=Path, required=True)
     args = parser.parse_args()

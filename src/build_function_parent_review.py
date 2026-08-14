@@ -223,6 +223,7 @@ def main() -> None:
 
     banner = "PROVISIONAL SNAPSHOT — regenerate after Flash recovery" if manifest["provisional"] else "FINAL SNAPSHOT"
     candidate_count = sum(len(parents) for parents in top.values())
+    active_method_count = len({method for parents in top.values() for methods in parents.values() for method in methods})
     page = f"""<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Function-parent blind review</title>
@@ -251,7 +252,7 @@ select,textarea{{width:100%;border:1px solid #aeb8ca;border-radius:8px;padding:9
 @media print{{.topbar{{position:static}}body{{background:#fff}}main{{max-width:none}}.child-section{{break-before:page;box-shadow:none}}.document-text{{max-height:none;overflow:visible}}}}
 </style></head><body>
 <header class="topbar"><div class="topbar-inner"><div><div class="status">{banner}</div><div class="snapshot">Snapshot {manifest['snapshot_hash']}</div></div><div class="toolbar"><span class="progress" id="progress">0 of {len(top)} cases decided</span><button class="tool-button" id="export-review" type="button">Export review</button><button class="tool-button" id="import-review" type="button">Import review</button><input id="import-file" type="file" accept="application/json,.json"></div></div></header>
-<main><div class="intro"><h1>Parent-candidate review</h1><p>Review the child directive against each unique top candidate selected by the four ranking methods. Candidate order remains reproducibly shuffled. Gemini's separate absolute parent judgments are now shown for comparison with the completed blinded review.</p><p>The displayed text is the fullest locally retained authority-masked pipeline text. Use “Open original source” for the publisher's original page.</p></div>{''.join(sections)}</main>
+<main><div class="intro"><h1>Parent-candidate review</h1><p>Review the child directive against each unique top candidate selected by the {active_method_count} ranking methods. Candidate order remains reproducibly shuffled. Gemini's separate absolute parent judgments are shown for comparison.</p><p>The displayed text is the fullest locally retained authority-masked pipeline text. Use “Open original source” for the publisher's original page.</p></div>{''.join(sections)}</main>
 <script>
 const snapshotHash='{manifest['snapshot_hash']}';
 const storageKey='function-parent-review:'+snapshotHash;

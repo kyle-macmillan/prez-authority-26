@@ -7,6 +7,17 @@ preserving the evidence needed to audit every retrieval, model, and human-review
 An inferred relationship is a `plausible_precedent`; functional similarity alone is not
 proof of literal drafting dependence.
 
+## Canonical full-corpus profile source
+
+For parent-relationship analysis, both physical corpus partitions are in scope. The
+segmentation/vesting holdout remains task-specific and parent-analysis outputs must not be
+used to tune those pipelines. The only production profile source is
+`canonical_profiles/profiles.jsonl`. Its manifest must report `complete: true`, exactly
+9,762 unique profiles, and an ID set equal to the current operative-document universe.
+Historical derived profile caches are provenance inputs only and are never loaded directly
+by production ranking. Existing profiles are reused only after validation against the
+current masked text and operative segment IDs; raw network logs remain append-only.
+
 ## Pipeline
 
 1. **Create automatic edges from explicit references.** Resolve unambiguous references
@@ -127,12 +138,15 @@ the 25-candidate pool could qualify.
 - Gemini Search thinking-off and thinking-medium preserve their completed rankings and
   receive separate, resumable top-pair acceptance calls with matching Search/thinking
   settings. Their boolean decision and 0–1 self-reported score must agree at 0.5.
-  Prompt v2 uses a drafter-centered standard: ask whether the earlier directive supplies
-  reusable substantive drafting architecture for the child. Policy function and operative
-  provisions are evaluated together. Different countries, products, agencies, dates, or
-  other targets are treated as substitutable parameters when the governmental function,
-  operative structure, and legal effect remain substantially unchanged; generic topic,
-  boilerplate, or isolated common verbs remain insufficient.
+  Prompt v3 uses a drafter-centered standard and recognizes whole-document,
+  structural-framework, and material-provision parents. A candidate need not account for
+  most of the child: evaluation focuses on whether a concrete, material portion supplies
+  reusable language, legal machinery, institutional pathways, or domain-specific regulatory
+  scaffolding. Differences in target, scale, statutory source, or ultimate policy purpose do
+  not defeat a relationship when the operative machinery remains usefully parallel. Generic
+  topic, boilerplate, routine administrative clauses, and a purely historical implementation
+  or repeal relationship remain insufficient. Anchored score ranges put plausible partial or
+  structural parents at 0.50-0.69 and reserve higher scores for stronger or extensive reuse.
 - Qwen receives a new absolute top-pair yes/no instruction. Its yes-token softmax is the
   acceptance score and 0.5 is the decision boundary.
 - Deterministic alignment retains its raw weighted cosine score. After review, its cutoff
@@ -146,3 +160,14 @@ Common decision records include method, child, best candidate, ranking score, de
 acceptance score and semantics, decision source, model/prompt/threshold versions, matches,
 and snapshot hash. Final evaluation reports exact outcome accuracy, coverage, candidate
 precision, abstention precision, error categories, and directive-stratum counts.
+
+## Second EO-only pilot (August 14, 2026)
+
+The directory `function_parent_pilot/eo_pilot_20_v2` contains a second provisional sample
+of 20 executive orders with no overlap with the original 50-child pilot. It uses the same
+frozen profile/embedding snapshot and 25-candidate RRF retrieval, but runs only Gemini 3.6
+Flash with Search in thinking-off and thinking-medium modes. Both ranking and absolute
+acceptance use the drafter-centered v2 prompts. All 1,000 ranking rows and all 40 acceptance
+judgments validated successfully. The variants agree on 17/20 rank-1 candidates and 15/20
+candidate-or-none decisions; thinking-off accepts 15 candidates and thinking-medium accepts
+10. The review artifact is `eo_pilot_20_v2/blind_top_candidate_review.html`.

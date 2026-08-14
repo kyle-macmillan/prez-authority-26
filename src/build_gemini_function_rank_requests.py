@@ -38,11 +38,14 @@ def compact(profile: dict) -> dict:
             for kind in ("policy","operative")}
 
 def main() -> None:
-    p=argparse.ArgumentParser(description=__doc__);p.add_argument("--snapshot-dir",type=Path,default=ROOT/"data/parent_analysis/function_parent_pilot/provisional");p.add_argument("--run-label",default="thinking-off");p.add_argument("--output",type=Path);a=p.parse_args()
+    p=argparse.ArgumentParser(description=__doc__);p.add_argument("--snapshot-dir",type=Path,default=ROOT/"data/parent_analysis/canonical_profiles");p.add_argument("--profiles",type=Path);p.add_argument("--candidates",type=Path);p.add_argument("--run-label",default="thinking-off");p.add_argument("--output",type=Path);a=p.parse_args()
     manifest=json.loads((a.snapshot_dir/"snapshot_manifest.json").read_text())
-    profiles={str(x["document_id"]):x for x in _read_jsonl(a.snapshot_dir/"profiles.jsonl")}
+    if manifest.get("complete") is False: raise RuntimeError("canonical profile snapshot is incomplete")
+    profile_path=a.profiles or a.snapshot_dir/"profiles.jsonl"
+    candidate_path=a.candidates or a.snapshot_dir/"candidate_pool.csv"
+    profiles={str(x["document_id"]):x for x in _read_jsonl(profile_path)}
     grouped=defaultdict(list)
-    with (a.snapshot_dir/"candidate_pool.csv").open(newline="",encoding="utf-8") as h:
+    with candidate_path.open(newline="",encoding="utf-8") as h:
         for row in csv.DictReader(h): grouped[row["child_id"]].append(row)
     output=a.output or a.snapshot_dir/("gemini_rank_requests.jsonl" if a.run_label=="thinking-off" else f"gemini_{a.run_label}_rank_requests.jsonl")
     with output.open("w",encoding="utf-8") as h:

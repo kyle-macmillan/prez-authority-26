@@ -11,6 +11,11 @@ import re
 from collections import Counter, defaultdict
 from pathlib import Path
 
+try:
+    from .vesting_topic import topic_in_vesting_clause
+except ImportError:  # Direct script execution.
+    from vesting_topic import topic_in_vesting_clause
+
 ROOT = Path(__file__).resolve().parents[2]
 IEEPA_RE = re.compile(r"\bIEEPA\b|International Emergency Economic Powers Act", re.I)
 BAND_ORDER = ("at_least_0.9", "0.8_to_under_0.9", "0.7_to_under_0.8", "under_0.7", "missing")
@@ -22,8 +27,8 @@ BAND_LABELS = {
 }
 
 
-def is_ieepa(text: str) -> bool:
-    return bool(IEEPA_RE.search(text))
+def is_ieepa(text: str, doc_type: str) -> bool:
+    return topic_in_vesting_clause(text, doc_type, IEEPA_RE)
 
 
 def score_band(value: str | float | None) -> str:
@@ -62,9 +67,9 @@ def build_analysis(corpora: list[Path], ranked_path: Path, automatic_path: Path,
                    documents_path: Path, segments_path: Path,
                    matcher=is_ieepa, ceremonial_path: Path | None = None) -> tuple[list[dict], dict]:
     corpus = {}
-    for partition, path in (("development", corpora[0]), ("holdout", corpora[1])):
+    for partition, path in zip(("development", "holdout"), corpora):
         for row in read_csv(path):
-            if matcher(row["doc_text"]):
+            if matcher(row["doc_text"], row["doc_type"]):
                 corpus[row[""]] = {**row, "partition": partition}
     documents = {row["document_id"]: row for row in read_jsonl(documents_path)}
     ceremonial = set()
@@ -176,7 +181,7 @@ def main() -> None:
     parser.add_argument("--output", type=Path, default=ROOT / "data/parent_analysis/ieepa_similarity/ieepa_candidate_similarity.html")
     args = parser.parse_args()
     rows, summary = build_analysis(
-        [ROOT / "data/4_28_2026_build_dev.csv", ROOT / "data/4_28_2026_build_holdout.csv"],
+        [ROOT / "data/4_28_2026_build_dev.csv"],
         ROOT / "data/parent_analysis/ranked_candidates.csv", ROOT / "data/parent_analysis/automatic_edges.csv",
         ROOT / "data/parent_analysis/directive_similarity_documents.jsonl", ROOT / "data/parent_analysis/directive_operative_segments.jsonl",
         ceremonial_path=ROOT / "data/parent_analysis/ceremonial_exclusions.csv")

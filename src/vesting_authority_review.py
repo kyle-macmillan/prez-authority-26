@@ -325,7 +325,7 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--audit", type=Path, default=DEFAULT_AUDIT)
     parser.add_argument("--dev", type=Path, default=DEFAULT_DEV)
-    parser.add_argument("--holdout", type=Path, default=DEFAULT_HOLDOUT)
+    parser.add_argument("--holdout", type=Path)
     parser.add_argument("--sample", type=Path, default=DEFAULT_SAMPLE)
     parser.add_argument("--html", type=Path, default=DEFAULT_HTML)
     parser.add_argument("--seed", type=int, default=DEFAULT_SEED)
@@ -338,7 +338,8 @@ def main() -> None:
         return
 
     selected = select_sample(load_audit(args.audit), args.seed)
-    records = materialize_sample(selected, load_corpus([args.dev, args.holdout]))
+    paths = [args.dev] + ([args.holdout] if args.holdout else [])
+    records = materialize_sample(selected, load_corpus(paths))
     write_sample(args.sample, records)
     write_html(args.html, records)
     print(f"Sample CSV: {args.sample} ({len(records)} documents)")

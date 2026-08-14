@@ -7,13 +7,20 @@ import json
 import re
 from pathlib import Path
 
-from ieepa_candidate_similarity import ROOT, build_analysis, build_html
+try:
+    from .ieepa_candidate_similarity import ROOT, build_analysis, build_html
+except ImportError:  # Direct script execution.
+    from ieepa_candidate_similarity import ROOT, build_analysis, build_html
+try:
+    from .vesting_topic import topic_in_vesting_clause
+except ImportError:  # Direct script execution.
+    from vesting_topic import topic_in_vesting_clause
 
 EMERGENCY_RE = re.compile(r"National Emergencies Act", re.I)
 
 
-def is_emergency_authority(text: str) -> bool:
-    return bool(EMERGENCY_RE.search(text))
+def is_emergency_authority(text: str, doc_type: str) -> bool:
+    return topic_in_vesting_clause(text, doc_type, EMERGENCY_RE)
 
 
 def main() -> None:
@@ -24,7 +31,7 @@ def main() -> None:
     )
     args = parser.parse_args()
     rows, summary = build_analysis(
-        [ROOT / "data/4_28_2026_build_dev.csv", ROOT / "data/4_28_2026_build_holdout.csv"],
+        [ROOT / "data/4_28_2026_build_dev.csv"],
         ROOT / "data/parent_analysis/ranked_candidates.csv",
         ROOT / "data/parent_analysis/automatic_edges.csv",
         ROOT / "data/parent_analysis/directive_similarity_documents.jsonl",

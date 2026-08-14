@@ -96,7 +96,7 @@ def _load_annotators() -> list[tuple[str, dict]]:
 
 def build_records() -> list[dict]:
     id_map: dict[str, int] = json.loads(DOC_ID_MAP.read_text())
-    corpus: dict[int, dict] = {int(r[""]): r for r in load_corpus([DEFAULT_DEV, DEFAULT_HOLDOUT])}
+    corpus: dict[int, dict] = {int(r[""]): r for r in load_corpus([DEFAULT_DEV])}
     annotators = _load_annotators()
 
     sorted_labels = sorted(

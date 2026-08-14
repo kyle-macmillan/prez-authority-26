@@ -19,7 +19,6 @@ DEFAULT_INPUT = ROOT / "data" / "parent_analysis" / "ranked_candidates.csv"
 DEFAULT_CHILDREN = ROOT / "data" / "parent_analysis" / "unresolved_children.csv"
 DEFAULT_CORPORA = (
     ROOT / "data" / "4_28_2026_build_dev.csv",
-    ROOT / "data" / "4_28_2026_build_holdout.csv",
 )
 DEFAULT_AUTOMATIC_EDGES = ROOT / "data" / "parent_analysis" / "automatic_edges.csv"
 DEFAULT_CEREMONIAL_EXCLUSIONS = ROOT / "data" / "parent_analysis" / "ceremonial_exclusions.csv"
@@ -307,8 +306,8 @@ def build_plot_html(
 <h2>How the source corpus becomes the reported n</h2>
 <p>Source document IDs run as high as <strong>{population['maximum_document_id']:,}</strong>,
 but IDs are not contiguous. This analysis starts from the
-<strong>{population['corpus_documents']:,}-document full corpus</strong>, combining the
-development and holdout splits. The codebook-based ceremonial filter excludes
+<strong>{population['corpus_documents']:,}-document development corpus</strong>. The
+strict holdout is not loaded. The codebook-based ceremonial filter excludes
 <strong>{population['ceremonial_exclusions']:,}</strong> directives, leaving
 <strong>{population['analyzed_directives']:,}</strong> non-ceremonial directives. Requiring
 at least one extracted operative provision leaves
@@ -489,7 +488,7 @@ def main() -> None:
     parser.add_argument("--children", type=Path, default=DEFAULT_CHILDREN)
     parser.add_argument(
         "--corpus", dest="corpora", action="append", type=Path,
-        help="Corpus CSV to include; repeat for multiple partitions. Defaults to dev plus holdout.",
+        help="Corpus CSV to include; repeat explicitly. Defaults to development only.",
     )
     parser.add_argument("--automatic-edges", type=Path, default=DEFAULT_AUTOMATIC_EDGES)
     parser.add_argument("--documents", type=Path, default=DEFAULT_DOCUMENTS)

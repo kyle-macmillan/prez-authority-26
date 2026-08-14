@@ -38,6 +38,18 @@ def test_masks_named_act_and_executive_order():
     assert masked == "Under [AUTHORITY] and [AUTHORITY]."
 
 
+def test_masks_revised_statutes_and_dated_act_authorities():
+    text = (
+        "By authority of section 1753 of the Revised Statutes of the United States "
+        "and the act of August 26, 1950, the Secretary shall act."
+    )
+    masked, spans = mask_authorities(text)
+    assert "1753 of the Revised Statutes" not in masked
+    assert "act of August 26, 1950" not in masked
+    assert "the Secretary shall act" in masked
+    assert {span.kind for span in spans} >= {"revised_statutes_section", "dated_act"}
+
+
 def test_masks_other_directive_references():
     masked, spans = mask_authorities(
         "Under Proclamation 9984, PPD-41, my memorandum of March 31, 2010, "

@@ -415,14 +415,15 @@ def print_summary(qualifying: Counter, denominators: Counter) -> None:
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--dev", type=Path, default=DEFAULT_DEV)
-    parser.add_argument("--holdout", type=Path, default=DEFAULT_HOLDOUT)
+    parser.add_argument("--holdout", type=Path)
     parser.add_argument("--audit", type=Path, default=DEFAULT_AUDIT)
     args = parser.parse_args()
 
-    rows = load_corpus([args.dev, args.holdout])
-    if args.dev == DEFAULT_DEV and args.holdout == DEFAULT_HOLDOUT and len(rows) != EXPECTED_FULL_CORPUS_SIZE:
+    paths = [args.dev] + ([args.holdout] if args.holdout else [])
+    rows = load_corpus(paths)
+    if args.dev == DEFAULT_DEV and args.holdout is None and len(rows) != EXPECTED_FULL_CORPUS_SIZE:
         raise ValueError(
-            f"expected {EXPECTED_FULL_CORPUS_SIZE:,} full-corpus documents, found {len(rows):,}"
+            f"expected {EXPECTED_FULL_CORPUS_SIZE:,} development documents, found {len(rows):,}"
         )
     audit_rows, qualifying, denominators = analyze(rows)
     write_audit(args.audit, audit_rows)

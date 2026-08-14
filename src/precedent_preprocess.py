@@ -31,6 +31,26 @@ class SimilarityPreprocessing:
 # Internal references such as "section 2 of this order" intentionally do not match.
 AUTHORITY_PATTERNS: tuple[tuple[str, re.Pattern[str]], ...] = (
     (
+        "revised_statutes_section",
+        re.compile(
+            r"\bsections?\s+[\dA-Za-z().,\-–—\s]+?\s+of\s+the\s+"
+            r"Revised\s+Statutes(?:\s+of\s+the\s+United\s+States)?\b",
+            re.I,
+        ),
+    ),
+    (
+        "dated_act",
+        re.compile(
+            r"\b(?:the\s+)?act\s+of\s+(?:January|February|March|April|May|June|July|"
+            r"August|September|October|November|December)\s+\d{1,2},\s+\d{4}\b",
+            re.I,
+        ),
+    ),
+    (
+        "general_agreement_on_tariffs_and_trade",
+        re.compile(r"\bGeneral\s+Agreement\s+on\s+Tariffs\s+and\s+Trade\b", re.I),
+    ),
+    (
         "usc_section",
         re.compile(
             r"\bsections?\s+[\dA-Za-z().,\-\s]+?\s+of\s+title\s+\d+\s*,?\s*"

@@ -10,6 +10,11 @@ import re
 from collections import Counter, defaultdict
 from pathlib import Path
 
+try:
+    from .vesting_topic import extract_vesting_clauses
+except ImportError:  # Direct script execution.
+    from vesting_topic import extract_vesting_clauses
+
 ROOT = Path(__file__).resolve().parents[2]
 TOPICS = {
     "IEEPA": re.compile(r"\bIEEPA\b|International Emergency Economic Powers Act", re.I),
@@ -34,7 +39,7 @@ def read_jsonl(path: Path) -> list[dict]:
 
 def load_corpus(root: Path) -> dict[str, dict[str, str]]:
     corpus = {}
-    for path in (root / "data/4_28_2026_build_dev.csv", root / "data/4_28_2026_build_holdout.csv"):
+    for path in (root / "data/4_28_2026_build_dev.csv",):
         for row in read_csv(path):
             corpus[row[""]] = row
     return corpus
@@ -65,14 +70,34 @@ def top_rows_by_variant(rows: list[dict[str, str]]) -> dict[str, dict[str, dict[
     return output
 
 
-def similarity_distribution(rows: list[dict[str, str]]) -> dict[str, dict[str, float]]:
-    return {
+def similarity_distribution(
+    rows: list[dict[str, str]], qwen_score_field: str | None = None
+) -> dict[str, dict[str, float]]:
+    result = {
         "document_embedding_similarity": quantile_summary(
             [float(row["document_embedding_score"]) for row in rows]
         ),
         "operative_embedding_similarity": quantile_summary(
             [float(row["operative_embedding_score"]) for row in rows]
         ),
+    }
+    if qwen_score_field:
+        result[qwen_score_field] = quantile_summary(
+            [float(row[qwen_score_field]) for row in rows]
+        )
+    return result
+
+
+def variant_detail(rows: list[dict[str, str]], label: str, qwen_score_field: str) -> dict:
+    return {
+        "label": label,
+        "children": len(rows),
+        "similarity": similarity_distribution(rows, qwen_score_field),
+        "histograms": {
+            "document_embedding_similarity": histogram([float(row["document_embedding_score"]) for row in rows]),
+            "operative_embedding_similarity": histogram([float(row["operative_embedding_score"]) for row in rows]),
+            qwen_score_field: histogram([float(row[qwen_score_field]) for row in rows]),
+        },
     }
 
 
@@ -94,42 +119,26 @@ def histogram(values: list[float], bins: int = 20) -> list[dict[str, float | int
 def build_analysis(root: Path = ROOT, sample_limit: int = 10) -> dict:
     corpus = load_corpus(root)
     documents = {row["document_id"]: row for row in read_jsonl(root / "data/parent_analysis/directive_similarity_documents.jsonl")}
-    qwen_path = root / "data/parent_analysis/qwen_pilot_100.csv"
-    if not qwen_path.is_file():
-        qwen_path = root / "data/parent_analysis/qwen_reranked_candidates.csv"
-    qwen_rows = read_csv(qwen_path)
+    qwen_rows = read_csv(root / "data/parent_analysis/qwen_reranked_candidates.csv")
     top_rows = top_rows_by_variant(qwen_rows)
     qwen_children = set(top_rows["full"])
     analyzed = set(documents)
     automatic = {row["child_id"] for row in read_csv(root / "data/parent_analysis/automatic_edges.csv")}
+    vesting_text = {
+        document_id: " ".join(extract_vesting_clauses(row["doc_text"], row["doc_type"]))
+        for document_id, row in corpus.items()
+    }
 
     result = {
         "total_qwen_children": len(qwen_children),
         "total_candidate_pairs": len(qwen_rows),
         "topics": {},
-        "types": {},
     }
-
-    for document_type in sorted({row["document_type"] for row in qwen_rows}):
-        result["types"][document_type] = {}
-        for variant, (_, _, label) in VARIANTS.items():
-            selected = [row for row in top_rows[variant].values()
-                        if row["document_type"] == document_type]
-            result["types"][document_type][variant] = {
-                "label": label,
-                "count": len(selected),
-                "similarity": similarity_distribution(selected),
-                "histograms": {
-                    "document_embedding_similarity": histogram(
-                        [float(row["document_embedding_score"]) for row in selected]
-                    ),
-                    "operative_embedding_similarity": histogram(
-                        [float(row["operative_embedding_score"]) for row in selected]
-                    ),
-                },
-            }
     for topic, matcher in TOPICS.items():
-        topic_ids = {document_id for document_id, row in corpus.items() if matcher.search(row["doc_text"])}
+        topic_ids = {
+            document_id for document_id, row in corpus.items()
+            if matcher.search(vesting_text[document_id])
+        }
         statuses = Counter()
         for document_id in topic_ids:
             if document_id in automatic:
@@ -155,10 +164,11 @@ def build_analysis(root: Path = ROOT, sample_limit: int = 10) -> dict:
                 "qwen_scored": len(selected),
                 "same_topic": len(same_topic),
                 "nonmatching": len(nonmatches),
-                "similarity": similarity_distribution(selected),
+                "similarity": similarity_distribution(selected, score_field),
                 "histograms": {
                     "document_embedding_similarity": histogram([float(row["document_embedding_score"]) for row in selected]),
                     "operative_embedding_similarity": histogram([float(row["operative_embedding_score"]) for row in selected]),
+                    score_field: histogram([float(row[score_field]) for row in selected]),
                 },
                 "nonmatch_examples": [
                     {
@@ -178,15 +188,33 @@ def build_analysis(root: Path = ROOT, sample_limit: int = 10) -> dict:
     all_rows_by_variant = {}
     for variant, (_, _, label) in VARIANTS.items():
         selected = list(top_rows[variant].values())
-        all_rows_by_variant[variant] = {
-            "label": label,
-            "similarity": similarity_distribution(selected),
-            "histograms": {
-                "document_embedding_similarity": histogram([float(row["document_embedding_score"]) for row in selected]),
-                "operative_embedding_similarity": histogram([float(row["operative_embedding_score"]) for row in selected]),
-            },
-        }
+        all_rows_by_variant[variant] = variant_detail(selected, label, VARIANTS[variant][1])
     result["all_qwen_evaluated"] = all_rows_by_variant
+
+    type_rows: dict[str, dict[str, list[dict[str, str]]]] = defaultdict(lambda: defaultdict(list))
+    for variant, rows_by_child in top_rows.items():
+        for row in rows_by_child.values():
+            type_rows[row["document_type"]][variant].append(row)
+    result["directive_types"] = {
+        document_type: {
+            variant: variant_detail(rows, VARIANTS[variant][2], VARIANTS[variant][1])
+            for variant, rows in variants.items()
+        }
+        for document_type, variants in sorted(type_rows.items())
+    }
+    result["matched_examples"] = [
+        {
+            "child_id": row["child_id"],
+            "parent_id": row["parent_id"],
+            "document_type": row["document_type"],
+            "child": {key: documents[row["child_id"]].get(key, "") for key in ("title", "date", "url")},
+            "parent": {key: documents[row["parent_id"]].get(key, "") for key in ("title", "date", "url")},
+            "qwen_score": float(row["qwen_matched_pairs_score"]),
+            "document_embedding_score": float(row["document_embedding_score"]),
+            "operative_embedding_score": float(row["operative_embedding_score"]),
+        }
+        for row in [top_rows["matched"][child_id] for child_id in sorted(top_rows["matched"], key=int)[:20]]
+    ]
     return result
 
 
@@ -207,25 +235,35 @@ def quantile_table(distribution: dict[str, dict[str, float]]) -> str:
     return f"<table><thead>{header}</thead><tbody>{''.join(rows)}</tbody></table>"
 
 
+def render_distribution_sections(details: dict[str, dict]) -> str:
+    return "".join(
+        f'<h3>{html.escape(detail["label"])}</h3>'
+        f'<p>{detail.get("children", "")} top-ranked child directives.</p>'
+        f'{quantile_table(detail["similarity"])}{render_histogram(detail["histograms"])}'
+        for detail in details.values()
+    )
+
+
 def render_histogram(histograms: dict[str, list[dict]]) -> str:
     blocks = []
     for metric, bins in histograms.items():
         peak = max(item["count"] for item in bins) or 1
-        minimum = bins[0]["low"]
-        maximum = bins[-1]["high"]
-        x_ticks = [minimum + (maximum - minimum) * fraction / 4 for fraction in range(5)]
         bars = "".join(
             f'<span title="{item["low"]:.3f}–{item["high"]:.3f}: {item["count"]}" '
             f'style="height:{max(1, 100 * item["count"] / peak):.1f}%"></span>'
             for item in bins
         )
+        low = bins[0]["low"]
+        high = bins[-1]["high"]
+        midpoint = (low + high) / 2
+        ticks = "".join(
+            f'<span><i></i>{value:.3f}</span>'
+            for value in (low, midpoint, high)
+        )
         blocks.append(
             f'<div class="hist"><h4>{html.escape(metric.replace("_", " ").title())}</h4>'
-            f'<div class="plot"><div class="y-title">Count</div><div class="y-axis">'
-            f'<span>{peak:,}</span><span>{peak / 2:g}</span><span>0</span></div>'
-            f'<div class="plot-body"><div class="bars">{bars}</div><div class="x-axis">'
-            f'{"".join(f"<span>{tick:.3f}</span>" for tick in x_ticks)}</div>'
-            f'<div class="x-title">Cosine similarity</div></div></div></div>'
+            f'<div class="plot"><div class="bars">{bars}</div>'
+            f'<div class="axis">{ticks}</div></div></div>'
         )
     return "".join(blocks)
 
@@ -247,51 +285,70 @@ def build_html(result: dict) -> str:
                 )
             variants.append(
                 f'<h3>{html.escape(detail["label"])}</h3>'
-                f'<p>{detail["same_topic"]}/{detail["qwen_scored"]} same-topic top-1; '
+                f'<p class="explain">This section shows the top-ranked parent selected by this Qwen representation. '
+                f'{detail["same_topic"]}/{detail["qwen_scored"]} same-topic top-1; '
                 f'{detail["nonmatching"]} non-matches.</p>'
                 f'{quantile_table(detail["similarity"])}{render_histogram(detail["histograms"])}'
                 f'<h4>Non-matching examples</h4><ol>{"".join(examples)}</ol>'
             )
         sections.append(f'<section><h2>{html.escape(topic)}</h2><p>{html.escape(status)}</p>{"".join(variants)}</section>')
 
-    def render_variants(variants: dict, include_count: bool = False) -> str:
-        rendered = []
-        for detail in variants.values():
-            count = f'<p>{detail["count"]:,} Qwen-evaluated children.</p>' if include_count else ""
-            rendered.append(
-                f'<h3>{html.escape(detail["label"])}</h3>{count}'
-                f'{quantile_table(detail["similarity"])}{render_histogram(detail["histograms"])}'
-            )
-        return "".join(rendered)
-
-    all_sections = render_variants(result["all_qwen_evaluated"])
-    type_tabs = []
-    type_buttons = []
-    for index, (document_type, variants) in enumerate(result["types"].items()):
-        panel_id = f"type-{index}"
+    all_sections = render_distribution_sections(result["all_qwen_evaluated"])
+    type_tabs = ['<button class="tab active" data-tab="tab-overall">Overall</button>']
+    type_panels = [f'<div class="tab-panel active" id="tab-overall"><h2>All Qwen-evaluated directives</h2>{all_sections}</div>']
+    for document_type, details in result["directive_types"].items():
+        tab_id = "tab-" + re.sub(r"[^a-z0-9]+", "-", document_type.lower()).strip("-")
         label = document_type.replace("_", " ").title()
-        type_buttons.append(f'<button class="tab" data-panel="{panel_id}">{html.escape(label)}</button>')
-        type_tabs.append(
-            f'<section class="tab-panel" id="{panel_id}" hidden><h2>{html.escape(label)}</h2>'
-            f'{render_variants(variants, include_count=True)}</section>'
+        type_tabs.append(f'<button class="tab" data-tab="{tab_id}">{html.escape(label)}</button>')
+        type_panels.append(
+            f'<div class="tab-panel" id="{tab_id}"><h2>{html.escape(label)} directives</h2>'
+            f'{render_distribution_sections(details)}</div>'
         )
-    type_counts = ", ".join(
-        f'{next(iter(variants.values()))["count"]:,} {document_type.replace("_", " ")} children'
-        for document_type, variants in result["types"].items()
+    example_rows = "".join(
+        f'<tr><td>{index}</td><td><a href="{html.escape(example["child"]["url"])}">'
+        f'{html.escape(example["child"]["title"])}</a><br><small>ID {example["child_id"]} · '
+        f'{html.escape(example["child"]["date"])} · {html.escape(example["document_type"])}</small></td>'
+        f'<td><a href="{html.escape(example["parent"]["url"])}">{html.escape(example["parent"]["title"])}</a>'
+        f'<br><small>ID {example["parent_id"]} · {html.escape(example["parent"]["date"])}</small></td>'
+        f'<td>{example["qwen_score"]:.3f}</td><td>{example["document_embedding_score"]:.3f}</td>'
+        f'<td>{example["operative_embedding_score"]:.3f}</td></tr>'
+        for index, example in enumerate(result["matched_examples"], 1)
+    )
+    type_tabs.append('<button class="tab" data-tab="tab-examples">20 matched examples</button>')
+    type_panels.append(
+        '<div class="tab-panel" id="tab-examples"><h2>20 matched-pairs Qwen examples</h2>'
+        '<p>These are the first 20 child directives by ID, with the parent ranked first by matched-pairs Qwen. '
+        'They are illustrative examples, not a random sample.</p>'
+        '<table><thead><tr><th>#</th><th>Later child directive</th><th>Earlier matched parent</th>'
+        '<th>Matched-pairs Qwen</th><th>Document embedding</th><th>Operative embedding</th></tr></thead>'
+        f'<tbody>{example_rows}</tbody></table></div>'
     )
     return f'''<!doctype html><html><head><meta charset="utf-8"><title>Qwen topical coverage and similarity</title>
-<style>body{{font:15px system-ui;line-height:1.45;color:#172033;background:#f5f7fa;margin:0}}main{{max-width:1400px;margin:auto;padding:28px}}section,.card{{background:#fff;border:1px solid #d8e1eb;border-radius:9px;padding:18px;margin:18px 0}}table{{border-collapse:collapse;width:100%;margin:10px 0 18px}}th,td{{border:1px solid #d8e1eb;padding:7px;text-align:right}}th:first-child,td:first-child{{text-align:left}}th{{background:#eef3f8}}.hist{{display:inline-block;width:48%;min-width:390px;vertical-align:top;margin-right:1%}}.plot{{display:grid;grid-template-columns:18px 44px 1fr;align-items:stretch}}.y-title{{writing-mode:vertical-rl;transform:rotate(180deg);text-align:center;font-size:12px;color:#52606d}}.y-axis{{height:138px;display:flex;flex-direction:column;justify-content:space-between;align-items:flex-end;padding-right:6px;font-size:11px;color:#52606d}}.plot-body{{min-width:0}}.bars{{height:130px;display:flex;align-items:flex-end;gap:2px;border-left:1px solid #52606d;border-bottom:1px solid #52606d;padding:4px;background:linear-gradient(to bottom,transparent 49.5%,#d8e1eb 50%,transparent 50.5%)}}.bars span{{display:block;flex:1;background:#3b82c4;min-width:2px}}.x-axis{{display:flex;justify-content:space-between;font-size:11px;color:#52606d}}.x-axis span{{position:relative;padding-top:5px;transform:translateX(-50%)}}.x-axis span:first-child{{transform:none}}.x-axis span:last-child{{transform:none}}.x-axis span:before{{content:"";position:absolute;top:0;left:50%;height:4px;border-left:1px solid #52606d}}.x-title{{text-align:center;font-size:12px;color:#52606d;margin-top:2px}}li{{margin:6px 0}}a{{color:#075985}}small{{color:#52606d}}.tabs{{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}}.tabs button{{border:1px solid #9fb3c8;background:#fff;border-radius:6px;padding:8px 12px;cursor:pointer}}.tabs button.active{{background:#075985;color:#fff}}</style></head><body><main>
+<style>body{{font:15px system-ui;line-height:1.45;color:#172033;background:#f5f7fa;margin:0}}main{{max-width:1400px;margin:auto;padding:28px}}section,.card{{background:#fff;border:1px solid #d8e1eb;border-radius:9px;padding:18px;margin:18px 0}}table{{border-collapse:collapse;width:100%;margin:10px 0 18px}}th,td{{border:1px solid #d8e1eb;padding:7px;text-align:right}}th:first-child,td:first-child{{text-align:left}}th{{background:#eef3f8}}.tabs{{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0 0}}.tab{{border:1px solid #b9c8d6;border-bottom:0;border-radius:8px 8px 0 0;background:#e8eef4;padding:10px 14px;cursor:pointer;font:inherit}}.tab.active{{background:#fff;font-weight:700}}.tab-panel{{display:none;background:#fff;border:1px solid #d8e1eb;border-radius:0 9px 9px 9px;padding:18px;margin:0 0 18px}}.tab-panel.active{{display:block}}.hist{{display:inline-block;width:48%;min-width:330px;vertical-align:top;margin-right:1%}}.plot{{padding:0 6px 22px}}.bars{{height:130px;display:flex;align-items:flex-end;gap:2px;border-bottom:1px solid #9aa8b8;padding:4px}}.bars span{{display:block;flex:1;background:#3b82c4;min-width:2px}}.axis{{display:flex;justify-content:space-between;color:#52606d;font-size:11px}}.axis span{{display:flex;flex-direction:column;align-items:center;min-width:42px}}.axis i{{display:block;height:5px;border-left:1px solid #52606d}}li{{margin:6px 0}}a{{color:#075985}}small{{color:#52606d}}</style></head><body><main>
 <h1>Qwen topical coverage and similarity</h1><p>Qwen reranks the RRF top-ten candidate set. Similarity values are cosine similarities; higher values indicate greater similarity. Operative similarity is the bidirectional best-segment aggregate.</p>
-<div class="card"><strong>{result["total_qwen_children"]:,}</strong> Qwen-evaluated children</div>
-<section><h2>Which directives are analyzed?</h2>
-<p>This report analyzes the 100-child Qwen pilot: {html.escape(type_counts)}. These are later directives without an automatically resolved parent for which the retrieval pipeline produced at least one eligible candidate. The current pilot contains no proclamation or letter children, so those directive types do not have distributions here.</p>
-<p>For each child, candidates are earlier directives of the same directive type. The retrieval system first ranks up to 25 candidates using document and operative-provision similarity, three-word-sequence overlap, and text reuse; Qwen then reranks the fused top ten. The pilot contains {result["total_candidate_pairs"]:,} child–candidate comparisons (one child has only nine eligible earlier candidates).</p>
-<p>Each distribution below contains one selected parent per child: Qwen's top-ranked candidate under either the full-operative or matched-pairs representation. The plotted values are the document and operative embedding similarities for those selected pairs, not the Qwen reranker score itself. The IEEPA and National Emergencies Act sections are subsets identified by mentions in the child directive text.</p>
+<section class="card"><h2>How to read this report</h2>
+<p><strong>Document embedding similarity</strong> compares each directive as a whole, using its overall semantic representation. It captures broad subject-matter and meaning overlap.</p>
+<p><strong>Operative embedding similarity</strong> compares the directive’s operative provisions—the passages that contain commands, duties, authorities, or actions—rather than treating the full document as one undifferentiated text.</p>
+<p><strong>Full-operative Qwen</strong> scores every operative provision in the later (child) directive against every operative provision in the earlier (parent) candidate. The displayed score aggregates the strongest matches in both directions, so it asks whether the two directives have similar operative coverage overall.</p>
+<p>More specifically, “strongest matches” means: (1) for each child provision, keep only its highest-scoring parent provision; (2) average those best child-to-parent scores; (3) for each parent provision, keep only its highest-scoring child provision; (4) average those best parent-to-child scores; and (5) average the two directional results.</p>
+<p><strong>Matched-pairs Qwen</strong> uses only the provision pairs identified by the embedding-based alignment step. This focuses Qwen on the passages that the retrieval stage considered most corresponding, instead of scoring every possible provision pair.</p>
+<p><strong>Qwen score distributions</strong> show the model’s yes-probability for the selected child–parent matches. Higher values indicate stronger model support for the match; lower values indicate weaker support.</p>
+<p>A <strong>non-matching example</strong> is a topic directive whose top-ranked Qwen parent belongs outside that topic. For example, an IEEPA child may receive a parent that does not mention IEEPA. These are review examples—not necessarily errors—and help reveal whether the model is matching broader function or operative language rather than the topic label itself.</p>
+<p>The distribution tables and histograms summarize the embedding scores for the selected top-1 rows in each cohort and Qwen representation; they are not distributions of every candidate pair.</p>
 </section>
-<nav class="tabs" aria-label="Directive type"><button class="tab active" data-panel="overall">Overall</button>{"".join(type_buttons)}</nav>
-<section class="tab-panel" id="overall"><h2>All Qwen-evaluated directives</h2>{all_sections}</section>{"".join(type_tabs)}
-<div id="topic-breakdowns">{"".join(sections)}</div>
-<script>document.querySelectorAll('.tab').forEach(button=>button.addEventListener('click',()=>{{document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('active',x===button));document.querySelectorAll('.tab-panel').forEach(panel=>panel.hidden=panel.id!==button.dataset.panel)}}));</script>
+<section class="card"><h2>Dataset composition</h2>
+<ul>
+<li><strong>Directive universe:</strong> the report uses the presidential-directive corpus represented in the document and operative-segment files.</li>
+<li><strong>Candidate inputs:</strong> each later directive contributes its RRF-selected top-ten earlier candidates. The report contains {result["total_candidate_pairs"]:,} candidate rows across {result["total_qwen_children"]:,} later directives.</li>
+<li><strong>Overall cohort:</strong> the overall tables summarize one top-ranked parent per later directive, separately for full-operative and matched-pairs Qwen.</li>
+<li><strong>IEEPA cohort:</strong> directives whose extracted vesting clause mentions “IEEPA” or “International Emergency Economic Powers Act.”</li>
+<li><strong>National Emergencies Act cohort:</strong> directives whose extracted vesting clause mentions “National Emergencies Act.”</li>
+<li><strong>Topic status:</strong> within each topic, the report distinguishes directives with an automatic parent, directives scored by Qwen, and directives analyzed without Qwen.</li>
+</ul>
+</section>
+<div class="card"><strong>{result["total_qwen_children"]:,}</strong> Qwen-evaluated children</div>
+<div class="tabs" role="tablist">{"".join(type_tabs)}</div>{"".join(type_panels)}{"".join(sections)}
+<script>document.querySelectorAll('.tab').forEach(button=>button.addEventListener('click',()=>{{document.querySelectorAll('.tab,.tab-panel').forEach(item=>item.classList.remove('active'));button.classList.add('active');document.getElementById(button.dataset.tab).classList.add('active')}}));</script>
 </main></body></html>'''
 
 

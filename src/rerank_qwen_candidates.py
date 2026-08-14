@@ -67,10 +67,10 @@ class QwenReranker:
         self.no = self.tokenizer.convert_tokens_to_ids("no")
 
     def score_many(self, pairs: list[tuple[str, str]], max_batch: int = 8,
-                   token_budget: int = 12000) -> list[float]:
+                   token_budget: int = 12000, instruction: str | None = None) -> list[float]:
         encoded = []
         for query, document in pairs:
-            text = f"<Instruct>: {INSTRUCTION}\n<Query>: {query}\n<Document>: {document}"
+            text = f"<Instruct>: {instruction or INSTRUCTION}\n<Query>: {query}\n<Document>: {document}"
             item = self.tokenizer(
                 text, padding=False, truncation="longest_first", return_attention_mask=False,
                 max_length=self.max_length - len(self.prefix) - len(self.suffix))

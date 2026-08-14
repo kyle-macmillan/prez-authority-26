@@ -7,9 +7,19 @@ from analysis.ieepa_candidate_similarity import is_ieepa, score_band, stratified
 
 
 def test_ieepa_matching_requires_acronym_boundary_or_full_name():
-    assert is_ieepa("pursuant to IEEPA, sanctions are imposed")
-    assert is_ieepa("the international emergency economic powers act applies")
-    assert not is_ieepa("the token XIEEPAX is unrelated")
+    vesting = "By the authority vested in me by IEEPA, and in order to impose sanctions,"
+    assert is_ieepa(vesting, "executive_order")
+    assert is_ieepa(
+        "By the authority vested in me by the International Emergency Economic Powers Act, "
+        "and in order to impose sanctions,",
+        "executive_order",
+    )
+    assert not is_ieepa("This directive later discusses IEEPA.", "executive_order")
+    assert not is_ieepa(
+        "By the authority vested in me by the Constitution, and in order to act; "
+        "the token XIEEPAX is unrelated.",
+        "executive_order",
+    )
 
 
 def test_score_band_boundaries_and_missing_are_distinct():

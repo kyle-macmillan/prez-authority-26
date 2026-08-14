@@ -9,6 +9,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from calibrate_deterministic_parent_abstention import choose_threshold, correct
 from build_function_parent_acceptance_requests import INSTRUCTION as ACCEPT_INSTRUCTION
+from build_function_parent_acceptance_requests import PROMPT_VERSION as ACCEPT_PROMPT_VERSION
 from build_gemini_function_rank_requests import INSTRUCTION as RANK_INSTRUCTION
 from validate_gemini_function_rankings import parsed
 
@@ -34,6 +35,12 @@ def test_parser_accepts_candidate_or_none_shape():
     assert parsed("```json\n" + json.dumps(payload) + "\n```") == payload
 
 
+def test_parser_prefers_final_fenced_answer_after_search_queries():
+    answer = {"best_candidate_id": "10", "best_candidate_is_plausible": True}
+    text = '```json\n{"queries":["example"]}\n```\nGrounding notes\n```json\n' + json.dumps(answer) + "\n```"
+    assert parsed(text) == answer
+
+
 def test_gemini_prompts_use_drafter_and_target_substitution_standard():
     for instruction in (RANK_INSTRUCTION, ACCEPT_INSTRUCTION):
         lowered = instruction.casefold()
@@ -41,6 +48,27 @@ def test_gemini_prompts_use_drafter_and_target_substitution_standard():
         assert "different target does not defeat" in lowered
         assert "substantive drafting architecture" in lowered
         assert "generic" in lowered
+
+
+def test_acceptance_prompt_recognizes_partial_and_structural_parents():
+    lowered = " ".join(ACCEPT_INSTRUCTION.casefold().split())
+    assert "structural-framework parent" in lowered
+    assert "material-provision parent" in lowered
+    assert "need not explain or template most of the child" in lowered
+    assert "domain-specific regulatory scaffolding" in lowered
+    assert "0.50-0.69" in ACCEPT_INSTRUCTION
+
+
+def test_acceptance_prompt_preserves_negative_controls():
+    lowered = " ".join(ACCEPT_INSTRUCTION.casefold().split())
+    assert "incidental administrative clause" in lowered
+    assert "merely naming, implementing" in lowered
+    assert "repealing a policy" in lowered
+    assert "without such drafting reuse, is not enough" in lowered
+
+
+def test_acceptance_prompt_version_records_recalibration():
+    assert ACCEPT_PROMPT_VERSION == "function-parent-accept-v3"
 
 
 def test_acceptance_request_builder_supports_last_subset():
