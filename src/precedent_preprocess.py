@@ -34,6 +34,7 @@ AUTHORITY_PATTERNS: tuple[tuple[str, re.Pattern[str]], ...] = (
         "usc_section",
         re.compile(
             r"\bsections?\s+[\dA-Za-z().,\-\s]+?\s+of\s+title\s+\d+\s*,?\s*"
+            r"(?:of\s+the\s+)?"
             r"United\s+States\s+Code\b"
             r"|\b\d+\s+U\.?\s*S\.?\s*C\.?\s*(?:§{1,2}\s*)?[\dA-Za-z().\-–—]+"
             r"(?:\s+et\s+seq\.)?",
