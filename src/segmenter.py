@@ -960,6 +960,27 @@ _MAY_EXEMPT_ACTION = (
     r")\b"
 )
 
+# Productive first-person progressive directives. The original phrase inventory
+# contains many individual ``I am ...`` examples, but an allowlisted pattern
+# avoids missing an operative construction solely because its adverb/verb
+# combination was not observed in that historical list. Ordinary predicates
+# such as ``I am pleased`` and non-operative deliberation remain excluded.
+_I_AM_ACTION_VERBS = (
+    r"(?:amending|appointing|approving|assigning|asking|authorizing|charging|"
+    r"continuing|declaring|delegating|designating|determining|directing|"
+    r"establishing|extending|imposing|instructing|modifying|ordering|"
+    r"proclaiming|reestablishing|requesting|requiring|revoking|setting|"
+    r"suspending|terminating|urging|withdrawing)"
+)
+_I_AM_ACTION_ADVERBS = (
+    r"(?:accordingly|again|also|currently|formally|further|herewith|"
+    r"immediately|now|so|temporarily|therefore|today)"
+)
+_I_AM_ACTION = (
+    r"i\s+am(?:\s*,?\s*" + _I_AM_ACTION_ADVERBS + r"){0,2}\s+" +
+    _I_AM_ACTION_VERBS + r"\b"
+)
+
 
 # Import phrase list lazily so the module loads even if ordering_phrases.py is absent.
 def _build_ordering_re(section_extensions: bool = False) -> re.Pattern:
@@ -973,7 +994,8 @@ def _build_ordering_re(section_extensions: bool = False) -> re.Pattern:
         return re.compile(r"\b(" + phrase_alt + r")", re.IGNORECASE)
 
     return re.compile(
-        r"\b(" + phrase_alt + r"|" + _SECTION_SHALL_ACTION + r"|" + _MAY_EXEMPT_ACTION + r")",
+        r"\b(" + phrase_alt + r"|" + _SECTION_SHALL_ACTION + r"|" +
+        _MAY_EXEMPT_ACTION + r"|" + _I_AM_ACTION + r")",
         re.IGNORECASE,
     )
 

@@ -22,6 +22,15 @@ def test_masks_authorities_but_preserves_connectors():
     assert [span.kind for span in spans] == ["constitution", "usc_section"]
 
 
+def test_masks_usc_section_with_of_the_before_code_name():
+    citation = "section 301 of title 3 of the United States Code"
+    masked, spans = mask_authorities(citation)
+    assert masked == "[AUTHORITY]"
+    assert len(spans) == 1
+    assert spans[0].kind == "usc_section"
+    assert spans[0].text == citation
+
+
 def test_masks_named_act_and_executive_order():
     masked, _ = mask_authorities(
         "Under the International Emergency Economic Powers Act and Executive Order 12345."
@@ -107,6 +116,19 @@ def test_removes_full_vesting_clause_but_keeps_operative_connector():
     assert "authority vested" not in result.text.casefold()
     assert len(result.removed_vesting_clauses) == 1
     assert "50 U.S.C. 1701" in result.removed_vesting_clauses[0]
+
+
+def test_removes_vesting_clause_with_usc_of_the_wording():
+    result = preprocess_for_similarity_detailed(
+        "By virtue of the authority vested in me by section 301 of title 3 of the "
+        "United States Code, I hereby delegate the following functions."
+    )
+    assert result.text == "I hereby delegate the following functions."
+    assert len(result.removed_vesting_clauses) == 1
+    assert (
+        "section 301 of title 3 of the United States Code"
+        in result.removed_vesting_clauses[0]
+    )
 
 
 def test_removes_vesting_clause_when_connector_starts_next_source_paragraph():
