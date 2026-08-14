@@ -12,6 +12,7 @@ import re
 from collections import defaultdict
 from pathlib import Path
 
+from segmenter import _get_ordering_re
 from validate_function_profiles import _read_jsonl
 
 
@@ -44,10 +45,22 @@ def highlighted_text(document: dict, segments: list[str]) -> str:
             merged[-1] = (merged[-1][0], max(end, merged[-1][1]))
         else:
             merged.append((start, end))
+    ordering_re = _get_ordering_re(extended=True)
+
+    def render_triggers(value: str) -> str:
+        pieces, trigger_cursor = [], 0
+        for trigger in ordering_re.finditer(value):
+            pieces.extend((escaped(value[trigger_cursor:trigger.start()]),
+                           '<strong class="operative-trigger">',
+                           escaped(trigger.group(0)), "</strong>"))
+            trigger_cursor = trigger.end()
+        pieces.append(escaped(value[trigger_cursor:]))
+        return "".join(pieces)
+
     output, cursor = [], 0
     for start, end in merged:
         output.extend((escaped(text[cursor:start]), '<mark class="operative">',
-                       escaped(text[start:end]), "</mark>"))
+                       render_triggers(text[start:end]), "</mark>"))
         cursor = end
     output.append(escaped(text[cursor:]))
     return "".join(output)
@@ -154,7 +167,7 @@ def main() -> None:
             <summary>Child directive text</summary>
             <div class="document-text">{highlighted_text(child, operative_segments[child_id])}</div>
           </details>
-          <p class="highlight-key"><mark class="operative">Highlighted text</mark> is an operative segment identified by the preprocessing pipeline.</p>
+          <p class="highlight-key"><mark class="operative">Highlighted text with a <strong class="operative-trigger">bold trigger phrase</strong></mark> is an operative segment identified by the preprocessing pipeline.</p>
           <div class="candidate-workspace"><div class="candidate-stage">{''.join(cards)}</div><nav class="candidate-tabs" aria-label="Candidates for {escaped(sample[child_id]['sample_id'])}">{''.join(selectors)}</nav></div>
         </section>""")
 
@@ -178,7 +191,7 @@ h2{{font:700 28px/1.2 Georgia,serif;margin:6px 0}} h3{{font:700 22px/1.25 Georgi
 .source-link{{white-space:nowrap;color:var(--blue);font-weight:700;text-decoration:none;border:1px solid #b9cce5;border-radius:8px;padding:8px 11px;background:#f7fbff}} .source-link:hover{{background:#eaf3ff}}
 .document-panel{{margin-top:18px;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#fbfcfe}} .document-panel summary{{cursor:pointer;padding:12px 16px;background:#eef2f8;font-weight:750;color:var(--navy)}}
 .document-text{{padding:18px 20px;white-space:pre-wrap;font:15px/1.68 Georgia,"Times New Roman",serif;max-height:620px;overflow:auto;background:#fff;border-top:1px solid var(--line)}} .child-document .document-text{{max-height:360px}}
-mark.operative{{background:#fff0a8;color:inherit;border-radius:3px;padding:.08em .03em;box-shadow:inset 0 -1px 0 #e3b92f}} .highlight-key{{font-size:13px;color:var(--muted);margin:10px 2px 0}}
+mark.operative{{background:#fff0a8;color:inherit;border-radius:3px;padding:.08em .03em;box-shadow:inset 0 -1px 0 #e3b92f}} .operative-trigger{{font-weight:850;color:#6f3100;text-decoration:underline;text-decoration-color:#d58b32;text-decoration-thickness:2px;text-underline-offset:2px}} .highlight-key{{font-size:13px;color:var(--muted);margin:10px 2px 0}}
 .candidate-workspace{{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:20px;align-items:start;margin-top:22px}} .candidate-stage{{min-width:0}} .candidate-card{{display:none;border:1px solid #cdd5e3;border-radius:13px;padding:20px;background:#fff;min-width:0}} .candidate-card.active{{display:block}}
 .candidate-tabs{{position:sticky;top:92px;display:flex;flex-direction:column;gap:9px}} .candidate-tab{{cursor:pointer;text-align:left;border:1px solid #c8d1df;border-radius:10px;background:#f8faff;color:var(--ink);padding:12px 13px}} .candidate-tab:hover{{border-color:#7fa6d5;background:#f0f6ff}} .candidate-tab.active{{border-color:var(--blue);background:#eaf3ff;box-shadow:inset 4px 0 0 var(--blue)}} .candidate-tab span{{display:block;color:var(--blue);font-size:11px;font-weight:800;letter-spacing:.07em;text-transform:uppercase}} .candidate-tab strong{{display:block;font:700 15px/1.25 Georgia,serif;margin:3px 0}} .candidate-tab small{{color:var(--muted)}}
 .review-fields{{display:grid;grid-template-columns:max-content 1fr;gap:10px 14px;align-items:start;margin-top:18px;padding-top:16px;border-top:1px solid var(--line)}} .review-fields label{{font-weight:750;color:var(--navy);padding-top:8px}}
