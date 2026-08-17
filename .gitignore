@@ -32,6 +32,10 @@ data/parent_analysis/embeddings/*.npz
 
 node_modules/
 
+# Reproducible presidential-action analysis outputs and human review queues.
+/analysis/recurring_functional_actions/outputs/
+/analysis/day_one_week_one/outputs/
+
 __pycache__/
 *.py[cod]
 .pytest_cache/
