@@ -1,0 +1,1829 @@
+{
+  "schema": "presidential-directive-validation-labels",
+  "schema_version": 1,
+  "finalized": true,
+  "finalized_at": "2026-08-12T17:38:23.524Z",
+  "source": {
+    "annotation_round": "Round 2",
+    "dev_set": "data/4_28_2026_build_dev.csv",
+    "annotators": [
+      "Claire",
+      "KyleM",
+      "Thomas Weil"
+    ]
+  },
+  "label_fields": [
+    "code",
+    "diplomacy",
+    "military_ops"
+  ],
+  "records": [
+    {
+      "global_dev_id": "534",
+      "round_id": "EO1",
+      "url": "https://www.presidency.ucsb.edu/documents/executive-order-13885-establishing-the-national-quantum-initiative-advisory-committee",
+      "date": "August 30, 2019",
+      "president": "Donald J. Trump",
+      "doc_type": "executive_order",
+      "labels": {
+        "diplomacy": "no",
+        "military_ops": "no",
+        "code": "1"
+      }
+    },
+    {
+      "global_dev_id": "2407",
+      "round_id": "EO2",
+      "url": "https://www.presidency.ucsb.edu/documents/executive-order-12012-white-house-fellowships",
+      "date": "October 03, 1977",
+      "president": "Jimmy Carter",
+      "doc_type": "executive_order",
+      "labels": {
+        "diplomacy": "no",
+        "military_ops": "no",
+        "code": "1"
+      }
+    },
+    {
+      "global_dev_id": "3306",
+      "round_id": "EO3",
+      "url": "https://www.presidency.ucsb.edu/documents/executive-order-11114-extending-the-authority-the-presidents-committee-equal-employment",
+      "date": "June 22, 1963",
+      "president": "John F. Kennedy",
+      "doc_type": "executive_order",
+      "labels": {
+        "diplomacy": "no",
+        "military_ops": "no",
+        "code": "2"
+      }
+    },
+    {
+      "global_dev_id": "338",
+      "round_id": "EO4",
+      "url": "https://www.presidency.ucsb.edu/documents/executive-order-14082-implementation-the-energy-and-infrastructure-provisions-the",
+      "date": "September 12, 2022",
+      "president": "Joseph R. Biden, Jr.",
+      "doc_type": "executive_order",
+      "labels": {
+        "code": "1",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "3781",
+      "round_id": "EO5",
+      "url": "https://www.presidency.ucsb.edu/documents/executive-order-10640-the-presidents-committee-employment-the-physically-handicapped",
+      "date": "October 10, 1955",
+      "president": "Dwight D. Eisenhower",
+      "doc_type": "executive_order",
+      "labels": {
+        "code": "1",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "1904",
+      "round_id": "EO6",
+      "url": "https://www.presidency.ucsb.edu/documents/executive-order-12514-prescribing-the-order-succession-officers-act-secretary-defense",
+      "date": "May 14, 1985",
+      "president": "Ronald Reagan",
+      "doc_type": "executive_order",
+      "labels": {
+        "diplomacy": "no",
+        "military_ops": "no",
+        "code": "1"
+      }
+    },
+    {
+      "global_dev_id": "1301",
+      "round_id": "EO7",
+      "url": "https://www.presidency.ucsb.edu/documents/executive-order-13116-identification-trade-expansion-priorities-and-discriminatory",
+      "date": "March 31, 1999",
+      "president": "William J. Clinton",
+      "doc_type": "executive_order",
+      "labels": {
+        "code": "1",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "3841",
+      "round_id": "EO8",
+      "url": "https://www.presidency.ucsb.edu/documents/executive-order-10580-excusing-federal-employees-from-duty-december-24-and-for-one-half",
+      "date": "December 04, 1954",
+      "president": "Dwight D. Eisenhower",
+      "doc_type": "executive_order",
+      "labels": {
+        "diplomacy": "no",
+        "military_ops": "no",
+        "code": "4"
+      }
+    },
+    {
+      "global_dev_id": "507",
+      "round_id": "EO9",
+      "url": "https://www.presidency.ucsb.edu/documents/executive-order-13911-delegating-additional-authority-under-the-defense-production-act",
+      "date": "March 27, 2020",
+      "president": "Donald J. Trump",
+      "doc_type": "executive_order",
+      "labels": {
+        "code": "1",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "2918",
+      "round_id": "EO10",
+      "url": "https://www.presidency.ucsb.edu/documents/executive-order-11501-administration-foreign-military-sales",
+      "date": "December 22, 1969",
+      "president": "Richard Nixon",
+      "doc_type": "executive_order",
+      "labels": {
+        "diplomacy": "no",
+        "military_ops": "no",
+        "code": "0"
+      }
+    },
+    {
+      "global_dev_id": "2463",
+      "round_id": "EO11",
+      "url": "https://www.presidency.ucsb.edu/documents/executive-order-11957-designation-certain-officers-act-secretary-agriculture",
+      "date": "January 13, 1977",
+      "president": "Gerald R. Ford",
+      "doc_type": "executive_order",
+      "labels": {
+        "diplomacy": "no",
+        "military_ops": "no",
+        "code": "0"
+      }
+    },
+    {
+      "global_dev_id": "983",
+      "round_id": "EO12",
+      "url": "https://www.presidency.ucsb.edu/documents/executive-order-13437-waiver-under-the-trade-act-1974-with-respect-turkmenistan",
+      "date": "June 28, 2007",
+      "president": "George W. Bush",
+      "doc_type": "executive_order",
+      "labels": {
+        "code": "3",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "3131",
+      "round_id": "EO13",
+      "url": "https://www.presidency.ucsb.edu/documents/executive-order-11289-national-advisory-commission-selective-service",
+      "date": "July 02, 1966",
+      "president": "Lyndon B. Johnson",
+      "doc_type": "executive_order",
+      "labels": {
+        "diplomacy": "no",
+        "military_ops": "no",
+        "code": "0"
+      }
+    },
+    {
+      "global_dev_id": "1656",
+      "round_id": "EO14",
+      "url": "https://www.presidency.ucsb.edu/documents/executive-order-12763-facilitating-the-operation-the-advisory-commission-conferences-ocean",
+      "date": "June 04, 1991",
+      "president": "George Bush",
+      "doc_type": "executive_order",
+      "labels": {
+        "code": "1",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "3110",
+      "round_id": "EO15",
+      "url": "https://www.presidency.ucsb.edu/documents/executive-order-11310-assigning-emergency-preparedness-functions-the-attorney-general",
+      "date": "October 11, 1966",
+      "president": "Lyndon B. Johnson",
+      "doc_type": "executive_order",
+      "labels": {
+        "code": "1",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "801",
+      "round_id": "EO16",
+      "url": "https://www.presidency.ucsb.edu/documents/executive-order-13618-assignment-national-security-and-emergency-preparedness",
+      "date": "July 06, 2012",
+      "president": "Barack Obama",
+      "doc_type": "executive_order",
+      "labels": {
+        "code": "1",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "3976",
+      "round_id": "EO17",
+      "url": "https://www.presidency.ucsb.edu/documents/executive-order-10446-specification-laws-from-which-the-escapee-program-administered-the",
+      "date": "April 17, 1953",
+      "president": "Dwight D. Eisenhower",
+      "doc_type": "executive_order",
+      "labels": {
+        "diplomacy": "no",
+        "military_ops": "no",
+        "code": "0"
+      }
+    },
+    {
+      "global_dev_id": "1908",
+      "round_id": "EO18",
+      "url": "https://www.presidency.ucsb.edu/documents/executive-order-12511-presidents-child-safety-partnership",
+      "date": "April 29, 1985",
+      "president": "Ronald Reagan",
+      "doc_type": "executive_order",
+      "labels": {
+        "diplomacy": "no",
+        "military_ops": "no",
+        "code": "0"
+      }
+    },
+    {
+      "global_dev_id": "637",
+      "round_id": "EO19",
+      "url": "https://www.presidency.ucsb.edu/documents/executive-order-13782-revocation-federal-contracting-executive-orders",
+      "date": "March 27, 2017",
+      "president": "Donald J. Trump",
+      "doc_type": "executive_order",
+      "labels": {
+        "diplomacy": "no",
+        "military_ops": "no",
+        "code": "0"
+      }
+    },
+    {
+      "global_dev_id": "1182",
+      "round_id": "EO20",
+      "url": "https://www.presidency.ucsb.edu/documents/executive-order-13237-creation-the-presidents-council-bioethics",
+      "date": "November 28, 2001",
+      "president": "George W. Bush",
+      "doc_type": "executive_order",
+      "labels": {
+        "code": "1",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "2722",
+      "round_id": "EO21",
+      "url": "https://www.presidency.ucsb.edu/documents/executive-order-11697-inspection-department-agriculture-income-tax-returns-made-under-the",
+      "date": "January 17, 1973",
+      "president": "Richard Nixon",
+      "doc_type": "executive_order",
+      "labels": {
+        "diplomacy": "no",
+        "military_ops": "no",
+        "code": "0"
+      }
+    },
+    {
+      "global_dev_id": "688",
+      "round_id": "EO22",
+      "url": "https://www.presidency.ucsb.edu/documents/executive-order-13731-global-entrepreneurship",
+      "date": "June 24, 2016",
+      "president": "Barack Obama",
+      "doc_type": "executive_order",
+      "labels": {
+        "diplomacy": "no",
+        "military_ops": "no",
+        "code": "0"
+      }
+    },
+    {
+      "global_dev_id": "2111",
+      "round_id": "EO23",
+      "url": "https://www.presidency.ucsb.edu/documents/executive-order-12308-presidential-task-force-the-arts-and-humanities",
+      "date": "June 05, 1981",
+      "president": "Ronald Reagan",
+      "doc_type": "executive_order",
+      "labels": {
+        "code": "1",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "453",
+      "round_id": "EO24",
+      "url": "https://www.presidency.ucsb.edu/documents/executive-order-13966-increasing-economic-and-geographic-mobility",
+      "date": "December 14, 2020",
+      "president": "Donald J. Trump",
+      "doc_type": "executive_order",
+      "labels": {
+        "code": "1",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "574",
+      "round_id": "EO25",
+      "url": "https://www.presidency.ucsb.edu/documents/executive-order-13845-establishing-the-presidents-national-council-for-the-american-worker",
+      "date": "July 19, 2018",
+      "president": "Donald J. Trump",
+      "doc_type": "executive_order",
+      "labels": {
+        "code": "1",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "287",
+      "round_id": "EO26",
+      "url": "https://www.presidency.ucsb.edu/documents/executive-order-14132-adjustments-certain-rates-pay",
+      "date": "December 23, 2024",
+      "president": "Joseph R. Biden, Jr.",
+      "doc_type": "executive_order",
+      "labels": {
+        "code": "3",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "3229",
+      "round_id": "EO27",
+      "url": "https://www.presidency.ucsb.edu/documents/executive-order-11191-providing-for-the-carrying-out-certain-provisions-the-communications",
+      "date": "January 04, 1965",
+      "president": "Lyndon B. Johnson",
+      "doc_type": "executive_order",
+      "labels": {
+        "code": "1",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "3297",
+      "round_id": "EO28",
+      "url": "https://www.presidency.ucsb.edu/documents/executive-order-11123-amendment-executive-order-no-10853-relating-various-allowances",
+      "date": "October 18, 1963",
+      "president": "John F. Kennedy",
+      "doc_type": "executive_order",
+      "labels": {
+        "diplomacy": "no",
+        "military_ops": "no",
+        "code": "0"
+      }
+    },
+    {
+      "global_dev_id": "1717",
+      "round_id": "EO29",
+      "url": "https://www.presidency.ucsb.edu/documents/executive-order-12702-waiver-under-the-trade-act-1974-with-respect-czechoslovakia",
+      "date": "February 20, 1990",
+      "president": "George Bush",
+      "doc_type": "executive_order",
+      "labels": {
+        "code": "3",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "3972",
+      "round_id": "EO30",
+      "url": "https://www.presidency.ucsb.edu/documents/executive-order-10450-security-requirements-for-government-employment",
+      "date": "April 27, 1953",
+      "president": "Dwight D. Eisenhower",
+      "doc_type": "executive_order",
+      "labels": {
+        "diplomacy": "no",
+        "military_ops": "no",
+        "code": "0"
+      }
+    },
+    {
+      "global_dev_id": "2642",
+      "round_id": "EO31",
+      "url": "https://www.presidency.ucsb.edu/documents/executive-order-11778-amending-executive-order-no-11692-adjusting-the-rates-monthly-basic",
+      "date": "April 12, 1974",
+      "president": "Richard Nixon",
+      "doc_type": "executive_order",
+      "labels": {
+        "code": "3",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "1376",
+      "round_id": "EO32",
+      "url": "https://www.presidency.ucsb.edu/documents/executive-order-13043-increasing-seat-belt-use-the-united-states",
+      "date": "April 16, 1997",
+      "president": "William J. Clinton",
+      "doc_type": "executive_order",
+      "labels": {
+        "diplomacy": "no",
+        "military_ops": "no",
+        "code": "0"
+      }
+    },
+    {
+      "global_dev_id": "1460",
+      "round_id": "EO33",
+      "url": "https://www.presidency.ucsb.edu/documents/executive-order-12959-prohibiting-certain-transactions-with-respect-iran",
+      "date": "May 06, 1995",
+      "president": "William J. Clinton",
+      "doc_type": "executive_order",
+      "labels": {
+        "code": "3",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "10067",
+      "round_id": "M1",
+      "url": "https://www.presidency.ucsb.edu/documents/memorandum-waiver-section-907-the-freedom-support-act-with-respect-assistance-the",
+      "date": "January 25, 2002",
+      "president": "George W. Bush",
+      "doc_type": "memorandum",
+      "labels": {
+        "code": "3",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "11338",
+      "round_id": "M2",
+      "url": "https://www.presidency.ucsb.edu/documents/memorandum-from-the-president-multilateral-trade-negotiations",
+      "date": "December 14, 1979",
+      "president": "Jimmy Carter",
+      "doc_type": "memorandum",
+      "labels": {
+        "code": "3",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "11238",
+      "round_id": "M3",
+      "url": "https://www.presidency.ucsb.edu/documents/memorandum-returning-without-approval-bill-for-the-relief-jerome-j-and-rita-j-hartmann",
+      "date": "October 30, 1984",
+      "president": "Ronald Reagan",
+      "doc_type": "memorandum",
+      "labels": {
+        "code": "0",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "9518",
+      "round_id": "M4",
+      "url": "https://www.presidency.ucsb.edu/documents/presidential-determination-agreement-between-the-government-the-united-states-america-and",
+      "date": "May 10, 2010",
+      "president": "Barack Obama",
+      "doc_type": "memorandum",
+      "labels": {
+        "diplomacy": "no",
+        "military_ops": "no",
+        "code": "0"
+      }
+    },
+    {
+      "global_dev_id": "8961",
+      "round_id": "M5",
+      "url": "https://www.presidency.ucsb.edu/documents/memorandum-providing-federal-support-for-governors-use-the-national-guard-respond-covid-3",
+      "date": "April 07, 2020",
+      "president": "Donald J. Trump",
+      "doc_type": "memorandum",
+      "labels": {
+        "diplomacy": "no",
+        "military_ops": "no",
+        "code": "0"
+      }
+    },
+    {
+      "global_dev_id": "11520",
+      "round_id": "M6",
+      "url": "https://www.presidency.ucsb.edu/documents/memorandum-establishing-federal-energy-management-program",
+      "date": "November 04, 1976",
+      "president": "Gerald R. Ford",
+      "doc_type": "memorandum",
+      "labels": {
+        "code": "1",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "9018",
+      "round_id": "M7",
+      "url": "https://www.presidency.ucsb.edu/documents/presidential-determination-pursuant-section-1245d4b-and-c-the-national-defense-13",
+      "date": "April 29, 2019",
+      "president": "Donald J. Trump",
+      "doc_type": "memorandum",
+      "labels": {
+        "code": "3",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "10864",
+      "round_id": "M8",
+      "url": "https://www.presidency.ucsb.edu/documents/presidential-determination-no-92-30-memorandum-trade-with-certain-states-eastern-europe",
+      "date": "June 03, 1992",
+      "president": "George Bush",
+      "doc_type": "memorandum",
+      "labels": {
+        "code": "3",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "10802",
+      "round_id": "M9",
+      "url": "https://www.presidency.ucsb.edu/documents/memorandum-military-drawdown-for-israel-0",
+      "date": "March 30, 1993",
+      "president": "William J. Clinton",
+      "doc_type": "memorandum",
+      "labels": {
+        "code": "3",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "11002",
+      "round_id": "M10",
+      "url": "https://www.presidency.ucsb.edu/documents/memorandum-determination-pursuant-section-2c1-the-migration-and-refugee-assistance-act-14",
+      "date": "September 07, 1990",
+      "president": "George Bush",
+      "doc_type": "memorandum",
+      "labels": {
+        "code": "3",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "10390",
+      "round_id": "M11",
+      "url": "https://www.presidency.ucsb.edu/documents/memorandum-emigration-policies-certain-former-eastern-bloc-states-0",
+      "date": "December 05, 1997",
+      "president": "William J. Clinton",
+      "doc_type": "memorandum",
+      "labels": {
+        "code": "3",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "10320",
+      "round_id": "M12",
+      "url": "https://www.presidency.ucsb.edu/documents/memorandum-funding-for-the-court-try-accused-perpetrators-the-pan-am-103-bombing",
+      "date": "September 30, 1998",
+      "president": "William J. Clinton",
+      "doc_type": "memorandum",
+      "labels": {
+        "code": "3",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "10950",
+      "round_id": "M13",
+      "url": "https://www.presidency.ucsb.edu/documents/presidential-determination-no-91-30-memorandum-assistance-for-refugees-and-migrants-africa",
+      "date": "April 18, 1991",
+      "president": "George Bush",
+      "doc_type": "memorandum",
+      "labels": {
+        "diplomacy": "no",
+        "military_ops": "no",
+        "code": "0"
+      }
+    },
+    {
+      "global_dev_id": "10866",
+      "round_id": "M14",
+      "url": "https://www.presidency.ucsb.edu/documents/presidential-determination-no-92-32-memorandum-trade-with-angola",
+      "date": "June 03, 1992",
+      "president": "George Bush",
+      "doc_type": "memorandum",
+      "labels": {
+        "code": "3",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "9433",
+      "round_id": "M15",
+      "url": "https://www.presidency.ucsb.edu/documents/memorandum-international-initiatives-advance-the-human-rights-lesbian-gay-bisexual-and",
+      "date": "December 06, 2011",
+      "president": "Barack Obama",
+      "doc_type": "memorandum",
+      "labels": {
+        "code": "1",
+        "military_ops": "no",
+        "diplomacy": "yes"
+      }
+    },
+    {
+      "global_dev_id": "10043",
+      "round_id": "M16",
+      "url": "https://www.presidency.ucsb.edu/documents/memorandum-determination-pursuant-section-2c1-the-migration-and-refugee-assistance-act-17",
+      "date": "April 12, 2002",
+      "president": "George W. Bush",
+      "doc_type": "memorandum",
+      "labels": {
+        "code": "3",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "10650",
+      "round_id": "M17",
+      "url": "https://www.presidency.ucsb.edu/documents/memorandum-drug-interdiction-assistance-the-government-colombia",
+      "date": "December 01, 1994",
+      "president": "William J. Clinton",
+      "doc_type": "memorandum",
+      "labels": {
+        "code": "3",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "5977",
+      "round_id": "L1",
+      "url": "https://www.presidency.ucsb.edu/documents/letter-congressional-leaders-reporting-the-national-emergency-with-respect-narcotics-1",
+      "date": "October 15, 1997",
+      "president": "William J. Clinton",
+      "doc_type": "letter",
+      "labels": {
+        "diplomacy": "no",
+        "military_ops": "no",
+        "code": "0"
+      }
+    },
+    {
+      "global_dev_id": "5083",
+      "round_id": "L2",
+      "url": "https://www.presidency.ucsb.edu/documents/letter-congressional-leaders-the-continuation-the-national-emergency-with-respect-north",
+      "date": "June 21, 2013",
+      "president": "Barack Obama",
+      "doc_type": "letter",
+      "labels": {
+        "code": "3",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "5257",
+      "round_id": "L3",
+      "url": "https://www.presidency.ucsb.edu/documents/letter-president-fatmir-sejdiu-kosovo-recognizing-kosovo-independent-and-sovereign-state",
+      "date": "February 18, 2008",
+      "president": "George W. Bush",
+      "doc_type": "letter",
+      "labels": {
+        "military_ops": "no",
+        "code": "0",
+        "diplomacy": "yes"
+      }
+    },
+    {
+      "global_dev_id": "7578",
+      "round_id": "L4",
+      "url": "https://www.presidency.ucsb.edu/documents/letters-relating-the-disarming-bombs-birmingham-members-army-unit",
+      "date": "April 03, 1965",
+      "president": "Lyndon B. Johnson",
+      "doc_type": "letter",
+      "labels": {
+        "code": "0",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "8131",
+      "round_id": "L5",
+      "url": "https://www.presidency.ucsb.edu/documents/letter-william-greene-president-crusade-for-freedom",
+      "date": "March 27, 1956",
+      "president": "Dwight D. Eisenhower",
+      "doc_type": "letter",
+      "labels": {
+        "code": "0",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "5208",
+      "round_id": "L6",
+      "url": "https://www.presidency.ucsb.edu/documents/letter-congressional-leaders-transmitting-report-the-united-states-india-nuclear",
+      "date": "July 20, 2009",
+      "president": "Barack Obama",
+      "doc_type": "letter",
+      "labels": {
+        "diplomacy": "no",
+        "military_ops": "no",
+        "code": "0"
+      }
+    },
+    {
+      "global_dev_id": "6834",
+      "round_id": "L7",
+      "url": "https://www.presidency.ucsb.edu/documents/letter-members-the-house-representatives-supporting-the-proposed-constitutional-amendment",
+      "date": "October 01, 1982",
+      "president": "Ronald Reagan",
+      "doc_type": "letter",
+      "labels": {
+        "code": "0",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "5393",
+      "round_id": "L8",
+      "url": "https://www.presidency.ucsb.edu/documents/letter-congressional-leaders-transmitting-report-the-security-progress-nato-invitees",
+      "date": "February 26, 2004",
+      "president": "George W. Bush",
+      "doc_type": "letter",
+      "labels": {
+        "military_ops": "no",
+        "code": "0",
+        "diplomacy": "yes"
+      }
+    },
+    {
+      "global_dev_id": "5732",
+      "round_id": "L9",
+      "url": "https://www.presidency.ucsb.edu/documents/letter-congressional-leaders-bankruptcy-reform-legislation-0",
+      "date": "June 09, 2000",
+      "president": "William J. Clinton",
+      "doc_type": "letter",
+      "labels": {
+        "code": "0",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "5708",
+      "round_id": "L10",
+      "url": "https://www.presidency.ucsb.edu/documents/letter-congressional-leaders-transmitting-report-the-korean-peninsula-energy-development",
+      "date": "August 30, 2000",
+      "president": "William J. Clinton",
+      "doc_type": "letter",
+      "labels": {
+        "code": "0",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "5567",
+      "round_id": "L11",
+      "url": "https://www.presidency.ucsb.edu/documents/letter-the-speaker-the-house-representatives-reallocation-emergency-response-funds-0",
+      "date": "February 25, 2002",
+      "president": "George W. Bush",
+      "doc_type": "letter",
+      "labels": {
+        "diplomacy": "no",
+        "code": "1",
+        "military_ops": "yes"
+      }
+    },
+    {
+      "global_dev_id": "4864",
+      "round_id": "L12",
+      "url": "https://www.presidency.ucsb.edu/documents/letter-congressional-leaders-continuation-the-national-emergency-with-respect-yemen-2",
+      "date": "May 14, 2018",
+      "president": "Donald J. Trump",
+      "doc_type": "letter",
+      "labels": {
+        "code": "3",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "7583",
+      "round_id": "L13",
+      "url": "https://www.presidency.ucsb.edu/documents/letter-accepting-resignation-douglas-dillon-secretary-the-treasury",
+      "date": "March 31, 1965",
+      "president": "Lyndon B. Johnson",
+      "doc_type": "letter",
+      "labels": {
+        "code": "0",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "5938",
+      "round_id": "L14",
+      "url": "https://www.presidency.ucsb.edu/documents/letter-congressional-leaders-transmitting-the-annual-certification-the-nuclear-weapons",
+      "date": "February 11, 1998",
+      "president": "William J. Clinton",
+      "doc_type": "letter",
+      "labels": {
+        "code": "0",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "6258",
+      "round_id": "L15",
+      "url": "https://www.presidency.ucsb.edu/documents/letter-congressional-leaders-reporting-proliferation-chemical-and-biological-weapons",
+      "date": "August 19, 1993",
+      "president": "William J. Clinton",
+      "doc_type": "letter",
+      "labels": {
+        "code": "0",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "6113",
+      "round_id": "L16",
+      "url": "https://www.presidency.ucsb.edu/documents/letter-congressional-leaders-reauthorization-the-ryan-white-care-act",
+      "date": "July 05, 1995",
+      "president": "William J. Clinton",
+      "doc_type": "letter",
+      "labels": {
+        "code": "0",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "6796",
+      "round_id": "L17",
+      "url": "https://www.presidency.ucsb.edu/documents/letter-the-withdrawal-the-nomination-thomas-f-ellis-be-member-the-board-for-international",
+      "date": "July 28, 1983",
+      "president": "Ronald Reagan",
+      "doc_type": "letter",
+      "labels": {
+        "code": "0",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "7506",
+      "round_id": "L18",
+      "url": "https://www.presidency.ucsb.edu/documents/letter-the-president-the-senate-and-the-speaker-the-house-transmitting-report-ten-year",
+      "date": "March 19, 1966",
+      "president": "Lyndon B. Johnson",
+      "doc_type": "letter",
+      "labels": {
+        "code": "0",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "7225",
+      "round_id": "L19",
+      "url": "https://www.presidency.ucsb.edu/documents/letter-accepting-the-resignation-dean-burch-counsellor-the-president",
+      "date": "December 02, 1974",
+      "president": "Gerald R. Ford",
+      "doc_type": "letter",
+      "labels": {
+        "code": "0",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "5613",
+      "round_id": "L20",
+      "url": "https://www.presidency.ucsb.edu/documents/letter-congressional-leaders-transmitting-report-the-extension-normal-trade-relations-3",
+      "date": "July 02, 2001",
+      "president": "George W. Bush",
+      "doc_type": "letter",
+      "labels": {
+        "diplomacy": "no",
+        "military_ops": "no",
+        "code": "1"
+      }
+    },
+    {
+      "global_dev_id": "5744",
+      "round_id": "L21",
+      "url": "https://www.presidency.ucsb.edu/documents/letter-the-chairman-the-house-judiciary-committee-proposed-gun-safety-legislation",
+      "date": "April 21, 2000",
+      "president": "William J. Clinton",
+      "doc_type": "letter",
+      "labels": {
+        "code": "0",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "4780",
+      "round_id": "L22",
+      "url": "https://www.presidency.ucsb.edu/documents/letter-congressional-leaders-blocking-property-and-suspending-entry-certain-persons-0",
+      "date": "October 14, 2019",
+      "president": "Donald J. Trump",
+      "doc_type": "letter",
+      "labels": {
+        "diplomacy": "no",
+        "code": "1",
+        "military_ops": "yes"
+      }
+    },
+    {
+      "global_dev_id": "8450",
+      "round_id": "L23",
+      "url": "https://www.presidency.ucsb.edu/documents/letter-ambassador-warren-austin-restating-the-us-position-formosa",
+      "date": "August 27, 1950",
+      "president": "Harry S Truman",
+      "doc_type": "letter",
+      "labels": {
+        "code": "0",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "7940",
+      "round_id": "L24",
+      "url": "https://www.presidency.ucsb.edu/documents/letter-the-attorney-general-directing-him-petition-for-injunction-the-maritime-strike-0",
+      "date": "October 07, 1959",
+      "president": "Dwight D. Eisenhower",
+      "doc_type": "letter",
+      "labels": {
+        "code": "2",
+        "military_ops": "no",
+        "diplomacy": "yes"
+      }
+    },
+    {
+      "global_dev_id": "7810",
+      "round_id": "L25",
+      "url": "https://www.presidency.ucsb.edu/documents/telegram-the-leader-the-italian-mount-mckinley-expedition",
+      "date": "July 27, 1961",
+      "president": "John F. Kennedy",
+      "doc_type": "letter",
+      "labels": {
+        "code": "0",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "5783",
+      "round_id": "L26",
+      "url": "https://www.presidency.ucsb.edu/documents/letter-congressional-leaders-transmitting-report-chemical-weapons",
+      "date": "December 22, 1999",
+      "president": "William J. Clinton",
+      "doc_type": "letter",
+      "labels": {
+        "code": "3",
+        "diplomacy": "yes",
+        "military_ops": "yes"
+      }
+    },
+    {
+      "global_dev_id": "8277",
+      "round_id": "L27",
+      "url": "https://www.presidency.ucsb.edu/documents/letter-the-chairman-senate-committee-foreign-relations-concerning-the-st-lawrence-seaway",
+      "date": "April 24, 1953",
+      "president": "Dwight D. Eisenhower",
+      "doc_type": "letter",
+      "labels": {
+        "diplomacy": "no",
+        "military_ops": "no",
+        "code": "0"
+      }
+    },
+    {
+      "global_dev_id": "7715",
+      "round_id": "L28",
+      "url": "https://www.presidency.ucsb.edu/documents/letter-accepting-resignation-arthur-h-dean-chairman-the-us-delegation-the-geneva",
+      "date": "January 04, 1963",
+      "president": "John F. Kennedy",
+      "doc_type": "letter",
+      "labels": {
+        "code": "0",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "14761",
+      "round_id": "P1",
+      "url": "https://www.presidency.ucsb.edu/documents/proclamation-3216-seventy-fifth-anniversary-the-civil-service-act",
+      "date": "January 13, 1958",
+      "president": "Dwight D. Eisenhower",
+      "doc_type": "proclamation",
+      "labels": {
+        "diplomacy": "no",
+        "military_ops": "no",
+        "code": "1"
+      }
+    },
+    {
+      "global_dev_id": "12060",
+      "round_id": "P2",
+      "url": "https://www.presidency.ucsb.edu/documents/proclamation-9918-national-childhood-cancer-awareness-month-2019",
+      "date": "August 30, 2019",
+      "president": "Donald J. Trump",
+      "doc_type": "proclamation",
+      "labels": {
+        "code": "0",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "18654",
+      "round_id": "P3",
+      "url": "https://www.presidency.ucsb.edu/documents/proclamation-5579-national-farm-city-week-1986",
+      "date": "November 26, 1986",
+      "president": "Ronald Reagan",
+      "doc_type": "proclamation",
+      "labels": {
+        "code": "0",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "19811",
+      "round_id": "P4",
+      "url": "https://www.presidency.ucsb.edu/documents/proclamation-4422-national-day-prayer-1976",
+      "date": "March 16, 1976",
+      "president": "Gerald R. Ford",
+      "doc_type": "proclamation",
+      "labels": {
+        "code": "0",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "17156",
+      "round_id": "P5",
+      "url": "https://www.presidency.ucsb.edu/documents/proclamation-6059-gauchers-disease-awareness-week-1989",
+      "date": "November 01, 1989",
+      "president": "George Bush",
+      "doc_type": "proclamation",
+      "labels": {
+        "code": "0",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "14085",
+      "round_id": "P6",
+      "url": "https://www.presidency.ucsb.edu/documents/proclamation-3892-american-heart-month-1969",
+      "date": "January 27, 1969",
+      "president": "Richard Nixon",
+      "doc_type": "proclamation",
+      "labels": {
+        "code": "0",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "15799",
+      "round_id": "P7",
+      "url": "https://www.presidency.ucsb.edu/documents/proclamation-7417-education-and-sharing-day-usa-2001",
+      "date": "March 22, 2001",
+      "president": "George W. Bush",
+      "doc_type": "proclamation",
+      "labels": {
+        "code": "0",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "12901",
+      "round_id": "P8",
+      "url": "https://www.presidency.ucsb.edu/documents/proclamation-9077-reserving-certain-submerged-lands-the-commonwealth-the-northern-mariana",
+      "date": "January 15, 2014",
+      "president": "Barack Obama",
+      "doc_type": "proclamation",
+      "labels": {
+        "code": "3",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "14700",
+      "round_id": "P9",
+      "url": "https://www.presidency.ucsb.edu/documents/proclamation-3276-pan-american-day-and-pan-america-week-1959",
+      "date": "February 25, 1959",
+      "president": "Dwight D. Eisenhower",
+      "doc_type": "proclamation",
+      "labels": {
+        "code": "0",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "15121",
+      "round_id": "P10",
+      "url": "https://www.presidency.ucsb.edu/documents/proclamation-2857-columbus-day-1949",
+      "date": "September 22, 1949",
+      "president": "Harry S Truman",
+      "doc_type": "proclamation",
+      "labels": {
+        "code": "0",
+        "diplomacy": "yes",
+        "military_ops": "yes"
+      }
+    },
+    {
+      "global_dev_id": "19275",
+      "round_id": "P11",
+      "url": "https://www.presidency.ucsb.edu/documents/proclamation-4958-womens-equality-day-1982",
+      "date": "August 13, 1982",
+      "president": "Ronald Reagan",
+      "doc_type": "proclamation",
+      "labels": {
+        "code": "0",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "14251",
+      "round_id": "P12",
+      "url": "https://www.presidency.ucsb.edu/documents/proclamation-3726-small-business-week",
+      "date": "May 23, 1966",
+      "president": "Lyndon B. Johnson",
+      "doc_type": "proclamation",
+      "labels": {
+        "code": "0",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "18967",
+      "round_id": "P13",
+      "url": "https://www.presidency.ucsb.edu/documents/proclamation-5269-thanksgiving-day-1984",
+      "date": "October 19, 1984",
+      "president": "Ronald Reagan",
+      "doc_type": "proclamation",
+      "labels": {
+        "code": "0",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "12158",
+      "round_id": "P14",
+      "url": "https://www.presidency.ucsb.edu/documents/proclamation-9821-world-freedom-day-2018",
+      "date": "November 08, 2018",
+      "president": "Donald J. Trump",
+      "doc_type": "proclamation",
+      "labels": {
+        "code": "0",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "16418",
+      "round_id": "P15",
+      "url": "https://www.presidency.ucsb.edu/documents/proclamation-6797-mothers-day-1995",
+      "date": "May 11, 1995",
+      "president": "William J. Clinton",
+      "doc_type": "proclamation",
+      "labels": {
+        "code": "0",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "19530",
+      "round_id": "P16",
+      "url": "https://www.presidency.ucsb.edu/documents/proclamation-4703-national-family-week-1979",
+      "date": "November 16, 1979",
+      "president": "Jimmy Carter",
+      "doc_type": "proclamation",
+      "labels": {
+        "code": "0",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "19537",
+      "round_id": "P17",
+      "url": "https://www.presidency.ucsb.edu/documents/proclamation-4696-national-farm-city-week-1979",
+      "date": "October 22, 1979",
+      "president": "Jimmy Carter",
+      "doc_type": "proclamation",
+      "labels": {
+        "code": "0",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "19605",
+      "round_id": "P18",
+      "url": "https://www.presidency.ucsb.edu/documents/proclamation-4628-knoxville-international-energy-exposition-1982",
+      "date": "December 06, 1978",
+      "president": "Jimmy Carter",
+      "doc_type": "proclamation",
+      "labels": {
+        "code": "0",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "17075",
+      "round_id": "P19",
+      "url": "https://www.presidency.ucsb.edu/documents/proclamation-6141-memorial-day-1990",
+      "date": "May 24, 1990",
+      "president": "George Bush",
+      "doc_type": "proclamation",
+      "labels": {
+        "code": "0",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "13813",
+      "round_id": "P20",
+      "url": "https://www.presidency.ucsb.edu/documents/proclamation-8164-womens-equality-day-2007",
+      "date": "August 06, 2007",
+      "president": "George W. Bush",
+      "doc_type": "proclamation",
+      "labels": {
+        "code": "0",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "19876",
+      "round_id": "P21",
+      "url": "https://www.presidency.ucsb.edu/documents/proclamation-4357-armed-forces-day",
+      "date": "March 25, 1975",
+      "president": "Gerald R. Ford",
+      "doc_type": "proclamation",
+      "labels": {
+        "code": "0",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "12364",
+      "round_id": "P22",
+      "url": "https://www.presidency.ucsb.edu/documents/proclamation-9612-emergency-medical-services-week-2017",
+      "date": "May 19, 2017",
+      "president": "Donald J. Trump",
+      "doc_type": "proclamation",
+      "labels": {
+        "code": "0",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "12726",
+      "round_id": "P23",
+      "url": "https://www.presidency.ucsb.edu/documents/proclamation-9251-national-public-health-week-2015",
+      "date": "April 06, 2015",
+      "president": "Barack Obama",
+      "doc_type": "proclamation",
+      "labels": {
+        "code": "0",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "15861",
+      "round_id": "P24",
+      "url": "https://www.presidency.ucsb.edu/documents/proclamation-7356-national-childrens-day-2000",
+      "date": "October 06, 2000",
+      "president": "William J. Clinton",
+      "doc_type": "proclamation",
+      "labels": {
+        "code": "0",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "15554",
+      "round_id": "P25",
+      "url": "https://www.presidency.ucsb.edu/documents/proclamation-7662-education-and-sharing-day-usa-2003",
+      "date": "April 10, 2003",
+      "president": "George W. Bush",
+      "doc_type": "proclamation",
+      "labels": {
+        "code": "0",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "15655",
+      "round_id": "P26",
+      "url": "https://www.presidency.ucsb.edu/documents/proclamation-7561-designate-the-republic-cote-divoire-beneficiary-sub-saharan-african",
+      "date": "May 16, 2002",
+      "president": "George W. Bush",
+      "doc_type": "proclamation",
+      "labels": {
+        "code": "3",
+        "military_ops": "no",
+        "diplomacy": "no"
+      }
+    },
+    {
+      "global_dev_id": "15429",
+      "round_id": "P27",
+      "url": "https://www.presidency.ucsb.edu/documents/proclamation-7786-national-hurricane-preparedness-week-2004",
+      "date": "May 14, 2004",
+      "president": "George W. Bush",
+      "doc_type": "proclamation",
+      "labels": {
+        "code": "0",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "17482",
+      "round_id": "P28",
+      "url": "https://www.presidency.ucsb.edu/documents/proclamation-10749-public-service-recognition-week-2024",
+      "date": "May 03, 2024",
+      "president": "Joseph R. Biden, Jr.",
+      "doc_type": "proclamation",
+      "labels": {
+        "code": "0",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "18793",
+      "round_id": "P29",
+      "url": "https://www.presidency.ucsb.edu/documents/proclamation-5440-national-burn-awareness-week-1986",
+      "date": "February 11, 1986",
+      "president": "Ronald Reagan",
+      "doc_type": "proclamation",
+      "labels": {
+        "code": "0",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "19864",
+      "round_id": "P30",
+      "url": "https://www.presidency.ucsb.edu/documents/proclamation-4369-us-romanian-trade-agreement",
+      "date": "April 24, 1975",
+      "president": "Gerald R. Ford",
+      "doc_type": "proclamation",
+      "labels": {
+        "code": "3",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "14334",
+      "round_id": "P31",
+      "url": "https://www.presidency.ucsb.edu/documents/proclamation-3643-loyalty-day-1965",
+      "date": "March 11, 1965",
+      "president": "Lyndon B. Johnson",
+      "doc_type": "proclamation",
+      "labels": {
+        "code": "0",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "15286",
+      "round_id": "P32",
+      "url": "https://www.presidency.ucsb.edu/documents/proclamation-7934-family-day-2005",
+      "date": "September 16, 2005",
+      "president": "George W. Bush",
+      "doc_type": "proclamation",
+      "labels": {
+        "code": "0",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "16655",
+      "round_id": "P33",
+      "url": "https://www.presidency.ucsb.edu/documents/proclamation-6561-small-business-week-1993",
+      "date": "May 14, 1993",
+      "president": "William J. Clinton",
+      "doc_type": "proclamation",
+      "labels": {
+        "code": "0",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "18819",
+      "round_id": "P34",
+      "url": "https://www.presidency.ucsb.edu/documents/proclamation-5414-national-mark-twain-day-1985",
+      "date": "November 26, 1985",
+      "president": "Ronald Reagan",
+      "doc_type": "proclamation",
+      "labels": {
+        "code": "0",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "20166",
+      "round_id": "P35",
+      "url": "https://www.presidency.ucsb.edu/documents/proclamation-4067-national-moon-walk-day",
+      "date": "July 20, 1971",
+      "president": "Richard Nixon",
+      "doc_type": "proclamation",
+      "labels": {
+        "code": "0",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "13340",
+      "round_id": "P36",
+      "url": "https://www.presidency.ucsb.edu/documents/proclamation-8637-150th-anniversary-the-unification-italy-2011",
+      "date": "March 16, 2011",
+      "president": "Barack Obama",
+      "doc_type": "proclamation",
+      "labels": {
+        "code": "0",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "18507",
+      "round_id": "P37",
+      "url": "https://www.presidency.ucsb.edu/documents/proclamation-5723-national-down-syndrome-month-1987",
+      "date": "October 08, 1987",
+      "president": "Ronald Reagan",
+      "doc_type": "proclamation",
+      "labels": {
+        "code": "0",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "20215",
+      "round_id": "P38",
+      "url": "https://www.presidency.ucsb.edu/documents/proclamation-4018-modifying-proclamation-no-3279-relating-imports-petroleum-and-petroleum",
+      "date": "October 16, 1970",
+      "president": "Richard Nixon",
+      "doc_type": "proclamation",
+      "labels": {
+        "code": "1",
+        "diplomacy": "yes",
+        "military_ops": "yes"
+      }
+    },
+    {
+      "global_dev_id": "12031",
+      "round_id": "P39",
+      "url": "https://www.presidency.ucsb.edu/documents/proclamation-9947-general-pulaski-memorial-day-2019",
+      "date": "October 10, 2019",
+      "president": "Donald J. Trump",
+      "doc_type": "proclamation",
+      "labels": {
+        "code": "0",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "13803",
+      "round_id": "P40",
+      "url": "https://www.presidency.ucsb.edu/documents/proclamation-8172-national-historically-black-colleges-and-universities-week-2007",
+      "date": "September 04, 2007",
+      "president": "George W. Bush",
+      "doc_type": "proclamation",
+      "labels": {
+        "code": "0",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "18519",
+      "round_id": "P41",
+      "url": "https://www.presidency.ucsb.edu/documents/proclamation-5715-general-pulaski-memorial-day-1987",
+      "date": "October 01, 1987",
+      "president": "Ronald Reagan",
+      "doc_type": "proclamation",
+      "labels": {
+        "code": "0",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "16735",
+      "round_id": "P42",
+      "url": "https://www.presidency.ucsb.edu/documents/proclamation-6481-white-cane-safety-day-1992",
+      "date": "September 26, 1992",
+      "president": "George Bush",
+      "doc_type": "proclamation",
+      "labels": {
+        "code": "0",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "19089",
+      "round_id": "P43",
+      "url": "https://www.presidency.ucsb.edu/documents/proclamation-5144-national-consumers-week-1984",
+      "date": "January 03, 1984",
+      "president": "Ronald Reagan",
+      "doc_type": "proclamation",
+      "labels": {
+        "code": "0",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "17121",
+      "round_id": "P44",
+      "url": "https://www.presidency.ucsb.edu/documents/proclamation-6095-american-heart-month-1990",
+      "date": "February 13, 1990",
+      "president": "George Bush",
+      "doc_type": "proclamation",
+      "labels": {
+        "code": "0",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "18211",
+      "round_id": "P45",
+      "url": "https://www.presidency.ucsb.edu/documents/proclamation-10019-national-foster-care-month-2020",
+      "date": "April 30, 2020",
+      "president": "Donald J. Trump",
+      "doc_type": "proclamation",
+      "labels": {
+        "code": "0",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "12734",
+      "round_id": "P46",
+      "url": "https://www.presidency.ucsb.edu/documents/proclamation-9243-cesar-chavez-day-2015",
+      "date": "March 30, 2015",
+      "president": "Barack Obama",
+      "doc_type": "proclamation",
+      "labels": {
+        "code": "0",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "14215",
+      "round_id": "P47",
+      "url": "https://www.presidency.ucsb.edu/documents/proclamation-3761-correction-error-tariff-schedules-united-states-concerning-watch",
+      "date": "January 11, 1967",
+      "president": "Lyndon B. Johnson",
+      "doc_type": "proclamation",
+      "labels": {
+        "code": "3",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "17573",
+      "round_id": "P48",
+      "url": "https://www.presidency.ucsb.edu/documents/proclamation-10659-national-first-responders-day-2023",
+      "date": "October 27, 2023",
+      "president": "Joseph R. Biden, Jr.",
+      "doc_type": "proclamation",
+      "labels": {
+        "code": "0",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "19277",
+      "round_id": "P49",
+      "url": "https://www.presidency.ucsb.edu/documents/proclamation-4955-national-purple-heart-week-1982",
+      "date": "July 30, 1982",
+      "president": "Ronald Reagan",
+      "doc_type": "proclamation",
+      "labels": {
+        "code": "0",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "13064",
+      "round_id": "P50",
+      "url": "https://www.presidency.ucsb.edu/documents/proclamation-8913-international-day-persons-with-disabilities-2012",
+      "date": "December 03, 2012",
+      "president": "Barack Obama",
+      "doc_type": "proclamation",
+      "labels": {
+        "code": "0",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "13695",
+      "round_id": "P51",
+      "url": "https://www.presidency.ucsb.edu/documents/proclamation-8281-national-ovarian-cancer-awareness-month-2008",
+      "date": "August 26, 2008",
+      "president": "George W. Bush",
+      "doc_type": "proclamation",
+      "labels": {
+        "code": "0",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "15052",
+      "round_id": "P52",
+      "url": "https://www.presidency.ucsb.edu/documents/proclamation-2926-national-farm-safety-week-1951",
+      "date": "May 02, 1951",
+      "president": "Harry S Truman",
+      "doc_type": "proclamation",
+      "labels": {
+        "code": "0",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "18514",
+      "round_id": "P53",
+      "url": "https://www.presidency.ucsb.edu/documents/proclamation-5718-implementation-orderly-marketing-agreement-ammonium-paratungstate-and",
+      "date": "October 02, 1987",
+      "president": "Ronald Reagan",
+      "doc_type": "proclamation",
+      "labels": {
+        "code": "3",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "17882",
+      "round_id": "P54",
+      "url": "https://www.presidency.ucsb.edu/documents/proclamation-10350-national-agriculture-day-2022",
+      "date": "March 21, 2022",
+      "president": "Joseph R. Biden, Jr.",
+      "doc_type": "proclamation",
+      "labels": {
+        "code": "0",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "18526",
+      "round_id": "P55",
+      "url": "https://www.presidency.ucsb.edu/documents/proclamation-5706-emergency-medical-services-week-1987",
+      "date": "September 23, 1987",
+      "president": "Ronald Reagan",
+      "doc_type": "proclamation",
+      "labels": {
+        "code": "0",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "19461",
+      "round_id": "P56",
+      "url": "https://www.presidency.ucsb.edu/documents/proclamation-4771-registration-under-the-military-selective-service-act",
+      "date": "July 02, 1980",
+      "president": "Jimmy Carter",
+      "doc_type": "proclamation",
+      "labels": {
+        "code": "3",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "16956",
+      "round_id": "P57",
+      "url": "https://www.presidency.ucsb.edu/documents/proclamation-6260-national-employ-the-older-worker-week-1991",
+      "date": "March 15, 1991",
+      "president": "George Bush",
+      "doc_type": "proclamation",
+      "labels": {
+        "code": "0",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "14403",
+      "round_id": "P58",
+      "url": "https://www.presidency.ucsb.edu/documents/proclamation-3574-national-safe-boating-week-1964",
+      "date": "February 12, 1964",
+      "president": "Lyndon B. Johnson",
+      "doc_type": "proclamation",
+      "labels": {
+        "code": "0",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "18364",
+      "round_id": "P59",
+      "url": "https://www.presidency.ucsb.edu/documents/proclamation-5873-world-food-day-1988",
+      "date": "September 28, 1988",
+      "president": "Ronald Reagan",
+      "doc_type": "proclamation",
+      "labels": {
+        "code": "0",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "19675",
+      "round_id": "P60",
+      "url": "https://www.presidency.ucsb.edu/documents/proclamation-4558-sun-day-1978",
+      "date": "March 27, 1978",
+      "president": "Jimmy Carter",
+      "doc_type": "proclamation",
+      "labels": {
+        "code": "0",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    },
+    {
+      "global_dev_id": "18361",
+      "round_id": "P61",
+      "url": "https://www.presidency.ucsb.edu/documents/proclamation-5870-national-school-lunch-week-1988",
+      "date": "September 28, 1988",
+      "president": "Ronald Reagan",
+      "doc_type": "proclamation",
+      "labels": {
+        "code": "0",
+        "diplomacy": "no",
+        "military_ops": "no"
+      }
+    }
+  ]
+}
