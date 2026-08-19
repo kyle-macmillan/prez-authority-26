@@ -17,7 +17,9 @@ import numpy as np
 ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_INPUT = ROOT / "data" / "parent_analysis" / "ranked_candidates.csv"
 DEFAULT_CHILDREN = ROOT / "data" / "parent_analysis" / "unresolved_children.csv"
-DEFAULT_CORPUS = ROOT / "data" / "4_28_2026_build_dev.csv"
+DEFAULT_CORPORA = (
+    ROOT / "data" / "4_28_2026_build_dev.csv",
+)
 DEFAULT_AUTOMATIC_EDGES = ROOT / "data" / "parent_analysis" / "automatic_edges.csv"
 DEFAULT_CEREMONIAL_EXCLUSIONS = ROOT / "data" / "parent_analysis" / "ceremonial_exclusions.csv"
 DEFAULT_DOCUMENTS = ROOT / "data" / "parent_analysis" / "directive_similarity_documents.jsonl"
@@ -304,21 +306,21 @@ def build_plot_html(
 <h2>How the source corpus becomes the reported n</h2>
 <p>Source document IDs run as high as <strong>{population['maximum_document_id']:,}</strong>,
 but IDs are not contiguous. This analysis starts from the
-<strong>{population['corpus_documents']:,}-document development corpus</strong>—the main
-analysis split used to construct and rank parent candidates. The separately reserved
-holdout split is not used in this ranking. The codebook-based ceremonial filter excludes
+<strong>{population['corpus_documents']:,}-document development corpus</strong>. The
+strict holdout is not loaded. The codebook-based ceremonial filter excludes
 <strong>{population['ceremonial_exclusions']:,}</strong> directives, leaving
-<strong>{population['analyzed_directives']:,}</strong> directives eligible to appear as
+<strong>{population['analyzed_directives']:,}</strong> non-ceremonial directives. Requiring
+at least one extracted operative provision leaves
+<strong>{population['operative_directives']:,}</strong> directives eligible to appear as
 children or parents. Automatic reference matching identifies parents for
 <strong>{population['automatic_parent_children']:,}</strong> children, leaving
 <strong>{population['unresolved_children']:,}</strong> unresolved children for candidate
 ranking. Candidate 1 exists for <strong>{population['candidate_1_children']:,}</strong>
 children and Candidate 2 for <strong>{population['candidate_2_children']:,}</strong>.
 Those are candidate-availability counts, not the chart <em>n</em>.</p>
-<p>All three plotted channels are segment-level measures. A pair receives an operative
-embedding, trigram TF-IDF, or text-reuse score only when <strong>both</strong> its child and
-parent have at least one extracted operative segment. Therefore, the charts omit candidate
-pairs for which the child, parent, or both have no operative segment:</p>
+<p>All three plotted channels are segment-level measures. Directives without an extracted
+operative provision are excluded before candidate generation, so every retained candidate
+pair can be scored in all three channels.</p>
 <p>A directive has no extracted operative segment when, after authority masking and
 boilerplate removal, no passage matches the rule-based patterns for a directed operative
 action. Common cases are letters that transmit or report information, narrative or
@@ -328,13 +330,8 @@ is legally unimportant or has no effect. In this analysis,
 <strong>{population['zero_segment_documents']:,}</strong> of the
 {population['analyzed_directives']:,} eligible directives have zero extracted operative
 segments ({zero_segment_types}).</p>
-<div class="table-wrap"><table><thead><tr><th>Position</th><th>Candidate rows</th>
-<th>Chart n</th><th>Missing score</th><th>Child only has no segment</th>
-<th>Parent only has no segment</th><th>Both have no segment</th>
-<th>Missing-score pairs by directive type</th></tr></thead><tbody>{missing_rows}</tbody></table></div>
-<p>Thus, <em>n</em> is approximately 6,400 rather than 8,890 because roughly 2,480
-otherwise available candidate pairs cannot be scored at the operative-segment level.
-These are missing measurements, not additional substantive exclusions.</p>
+<p>The four earliest operative directives—one per document type—have no eligible earlier
+same-type parent; the next-earliest directives can have Candidate 1 but not Candidate 2.</p>
 </section>"""
     else:
         population_note = ""
@@ -357,20 +354,19 @@ canvas{{display:block;width:100%;height:240px}}@media(max-width:850px){{.grid{{g
 <p>Thirty equal-width bins use shared limits for Candidate 1 and 2 within each channel. Bar heights are shares of non-missing scores.</p>
 {population_note}
 <section class="metric-guide"><h2>How to read these metrics</h2><ul>
-<li><strong>Operative embedding similarity:</strong> semantic similarity between the strongest aligned operative segments.</li>
+<li><strong>Operative embedding similarity:</strong> mean of child-to-parent and parent-to-child best-match coverage.</li>
 <li><strong>Word-trigram TF-IDF similarity:</strong> overlap in distinctive case-sensitive three-word sequences.</li>
 <li><strong>Text reuse:</strong> average reused-word count among the strongest aligned segment pairs.</li>
 <li><strong>Why Candidate 2 can have a smaller n:</strong> the earliest directives of each type may have fewer than two eligible earlier parents, and directives without operative segments have missing channel scores.</li>
 </ul></section>
 <section class="metric-guide"><h2>How the example operative provisions are chosen</h2>
-<p>For each candidate pair, the analysis computes cosine similarity for every possible
-child-operative-provision × parent-operative-provision combination. It selects the three
-highest-scoring combinations (or all combinations when fewer than three exist), and the
-pair's operative-embedding score is their arithmetic mean. In the threshold examples,
+<p>For each candidate pair, every child provision selects its most similar parent provision,
+and every parent provision selects its most similar child provision. The pair score equally
+averages the mean in each direction. In the threshold examples,
 the full cleaned directive is shown in order; blue blocks are extracted operative
-provisions, gray blocks are the remaining context, and gold blocks are provisions used
-in one or more of those top-three alignments. The gold-block badge reports the individual
-alignment score, which can differ from the pair-level mean.</p></section>
+provisions, gray blocks are the remaining context, and gold blocks are provisions in one
+of the retained bidirectional best matches. The gold-block badge reports the individual
+similarity, which can differ from the bidirectional mean.</p></section>
 <nav class="tabs" id="tabs"><button class="tab active" data-view="distributions">Distributions</button></nav>
 <section class="tab-view" id="distributions"><div class="grid" id="grid"></div></section>
 <div id="sample-views"></div>
@@ -394,7 +390,7 @@ SAMPLES.forEach(b=>{{
  const section=document.createElement('section');section.className='tab-view';section.id=b.id;section.hidden=true;
  const counts=Object.entries(b.type_counts).map(x=>'<span class="type-count">'+esc(x[0].split('_').join(' '))+': <strong>'+x[1].toLocaleString()+'</strong></span>').join('');
  const renderParts=parts=>'<div class="directive-parts">'+parts.map(part=>'<div class="directive-part '+part.kind+(part.alignment_scores&&part.alignment_scores.length?' aligned':'')+'">'+(part.kind==='operative'?'<span class="provision-label">Operative provision '+part.segment_index+(part.alignment_scores.length?' · selected alignment '+part.alignment_scores.map(x=>x.toFixed(3)).join(', '):'')+'</span>':'<span class="provision-label">Context</span>')+esc(part.text)+'</div>').join('')+'</div>';
- section.innerHTML='<h2>Operative embedding: '+esc(b.label)+'</h2><p><strong>'+b.total.toLocaleString()+'</strong> Candidate 1–2 pairs are in this band, broken down by directive type:</p><div class="type-counts">'+counts+'</div><p>Showing a deterministic sample of '+b.pairs.length+' pairs. Each column shows the full cleaned directive, broken into context and operative provisions; gold marks the '+(b.pairs.length?b.pairs[0].alignment_count:3)+' selected alignment pairs used in the score.</p><div class="pairs">'+b.pairs.map((p,i)=>'<article class="pair"><p class="pair-meta"><strong>Pair '+(i+1)+'</strong> · Candidate '+p.candidate_rank+' · mean of '+p.alignment_count+' selected alignment'+(p.alignment_count===1?'':'s')+' = <strong>'+p.score.toFixed(3)+'</strong></p><div class="documents">'+[['Child',p.child,p.child_sections],['Parent',p.parent,p.parent_sections]].map(x=>'<section class="document"><h3>'+x[0]+': <a href="'+esc(x[1].url)+'" target="_blank" rel="noopener">'+esc(x[1].title)+'</a></h3><small>'+esc(x[1].date)+' · ID '+esc(x[1].document_id)+'</small>'+renderParts(x[2])+'</section>').join('')+'</div></article>').join('')+'</div>';
+ section.innerHTML='<h2>Operative embedding: '+esc(b.label)+'</h2><p><strong>'+b.total.toLocaleString()+'</strong> Candidate 1–2 pairs are in this band, broken down by directive type:</p><div class="type-counts">'+counts+'</div><p>Showing a deterministic sample of '+b.pairs.length+' pairs. Each column shows the full cleaned directive, broken into context and operative provisions; gold marks bidirectional best matches.</p><div class="pairs">'+b.pairs.map((p,i)=>'<article class="pair"><p class="pair-meta"><strong>Pair '+(i+1)+'</strong> · Candidate '+p.candidate_rank+' · bidirectional mean = <strong>'+p.score.toFixed(3)+'</strong></p><div class="documents">'+[['Child',p.child,p.child_sections],['Parent',p.parent,p.parent_sections]].map(x=>'<section class="document"><h3>'+x[0]+': <a href="'+esc(x[1].url)+'" target="_blank" rel="noopener">'+esc(x[1].title)+'</a></h3><small>'+esc(x[1].date)+' · ID '+esc(x[1].document_id)+'</small>'+renderParts(x[2])+'</section>').join('')+'</div></article>').join('')+'</div>';
  views.appendChild(section);
 }});
 tabs.addEventListener('click',event=>{{const button=event.target.closest('button');if(!button)return;document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('active',x===button));document.querySelectorAll('.tab-view').forEach(x=>x.hidden=x.id!==button.dataset.view);}});
@@ -413,7 +409,7 @@ def write_analysis(
     ranked_path: Path,
     children_path: Path,
     output_dir: Path,
-    corpus_path: Path | None = None,
+    corpus_path: Path | tuple[Path, ...] | list[Path] | None = None,
     automatic_edges_path: Path | None = None,
     documents_path: Path | None = None,
     ceremonial_exclusions_path: Path | None = None,
@@ -427,10 +423,17 @@ def write_analysis(
     if documents_path is not None:
         with documents_path.open(encoding="utf-8") as handle:
             documents = {row["document_id"]: row for row in map(json.loads, handle)}
+        child_ids &= {
+            document_id for document_id, row in documents.items()
+            if row["operative_segment_count"] > 0
+        }
     population = None
     if corpus_path is not None and automatic_edges_path is not None:
-        with corpus_path.open(newline="", encoding="utf-8") as handle:
-            corpus_rows = list(csv.DictReader(handle))
+        corpus_paths = (corpus_path,) if isinstance(corpus_path, Path) else corpus_path
+        corpus_rows = []
+        for path in corpus_paths:
+            with path.open(newline="", encoding="utf-8") as handle:
+                corpus_rows.extend(csv.DictReader(handle))
         with automatic_edges_path.open(newline="", encoding="utf-8") as handle:
             automatic_children = {row["child_id"] for row in csv.DictReader(handle)}
         ceremonial_count = 0
@@ -446,6 +449,9 @@ def write_analysis(
             "maximum_document_id": max(int(row[""]) for row in corpus_rows),
             "ceremonial_exclusions": ceremonial_count,
             "analyzed_directives": len(corpus_rows) - ceremonial_count,
+            "operative_directives": sum(
+                row["operative_segment_count"] > 0 for row in documents.values()
+            ),
             "automatic_parent_children": len(automatic_children),
             "unresolved_children": len(child_ids),
             "candidate_1_children": candidate_counts[1],
@@ -480,7 +486,10 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--ranked-candidates", type=Path, default=DEFAULT_INPUT)
     parser.add_argument("--children", type=Path, default=DEFAULT_CHILDREN)
-    parser.add_argument("--corpus", type=Path, default=DEFAULT_CORPUS)
+    parser.add_argument(
+        "--corpus", dest="corpora", action="append", type=Path,
+        help="Corpus CSV to include; repeat explicitly. Defaults to development only.",
+    )
     parser.add_argument("--automatic-edges", type=Path, default=DEFAULT_AUTOMATIC_EDGES)
     parser.add_argument("--documents", type=Path, default=DEFAULT_DOCUMENTS)
     parser.add_argument(
@@ -493,7 +502,7 @@ def main() -> None:
         args.ranked_candidates,
         args.children,
         args.output_dir,
-        args.corpus,
+        tuple(args.corpora) if args.corpora else DEFAULT_CORPORA,
         args.automatic_edges,
         args.documents,
         args.ceremonial_exclusions,

@@ -5,7 +5,9 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parents[1]))
 
-from precedent_preprocess import mask_authorities, preprocess_for_similarity
+from precedent_preprocess import (
+    mask_authorities, preprocess_for_similarity, preprocess_for_similarity_detailed,
+)
 
 
 def test_masks_authorities_but_preserves_connectors():
@@ -20,11 +22,32 @@ def test_masks_authorities_but_preserves_connectors():
     assert [span.kind for span in spans] == ["constitution", "usc_section"]
 
 
+def test_masks_usc_section_with_of_the_before_code_name():
+    citation = "section 301 of title 3 of the United States Code"
+    masked, spans = mask_authorities(citation)
+    assert masked == "[AUTHORITY]"
+    assert len(spans) == 1
+    assert spans[0].kind == "usc_section"
+    assert spans[0].text == citation
+
+
 def test_masks_named_act_and_executive_order():
     masked, _ = mask_authorities(
         "Under the International Emergency Economic Powers Act and Executive Order 12345."
     )
     assert masked == "Under [AUTHORITY] and [AUTHORITY]."
+
+
+def test_masks_revised_statutes_and_dated_act_authorities():
+    text = (
+        "By authority of section 1753 of the Revised Statutes of the United States "
+        "and the act of August 26, 1950, the Secretary shall act."
+    )
+    masked, spans = mask_authorities(text)
+    assert "1753 of the Revised Statutes" not in masked
+    assert "act of August 26, 1950" not in masked
+    assert "the Secretary shall act" in masked
+    assert {span.kind for span in spans} >= {"revised_statutes_section", "dated_act"}
 
 
 def test_masks_other_directive_references():
@@ -94,6 +117,47 @@ def test_retains_findings_and_definitions():
     cleaned, _, removed = preprocess_for_similarity(text)
     assert cleaned == text
     assert removed == []
+
+
+def test_removes_full_vesting_clause_but_keeps_operative_connector():
+    result = preprocess_for_similarity_detailed(
+        "By the authority vested in me as President by the Constitution and "
+        "50 U.S.C. 1701, it is hereby ordered:  The Secretary shall act."
+    )
+    assert result.text == "it is hereby ordered:  The Secretary shall act."
+    assert "authority vested" not in result.text.casefold()
+    assert len(result.removed_vesting_clauses) == 1
+    assert "50 U.S.C. 1701" in result.removed_vesting_clauses[0]
+
+
+def test_removes_vesting_clause_with_usc_of_the_wording():
+    result = preprocess_for_similarity_detailed(
+        "By virtue of the authority vested in me by section 301 of title 3 of the "
+        "United States Code, I hereby delegate the following functions."
+    )
+    assert result.text == "I hereby delegate the following functions."
+    assert len(result.removed_vesting_clauses) == 1
+    assert (
+        "section 301 of title 3 of the United States Code"
+        in result.removed_vesting_clauses[0]
+    )
+
+
+def test_removes_vesting_clause_when_connector_starts_next_source_paragraph():
+    result = preprocess_for_similarity_detailed(
+        "By virtue of the authority vested in me by the Constitution,  "
+        "I hereby proclaim that imports are restricted."
+    )
+    assert result.text == "I hereby proclaim that imports are restricted."
+    assert len(result.removed_vesting_clauses) == 1
+
+
+def test_removes_standalone_vesting_clause_after_an_uppercase_title():
+    result = preprocess_for_similarity_detailed(
+        "PROGRAM ADMINISTRATION  By the authority vested in me by the Constitution,  "
+        "Section 1. The Secretary shall establish a program."
+    )
+    assert result.text == "PROGRAM ADMINISTRATION  Section 1. The Secretary shall establish a program."
 
 
 if __name__ == "__main__":

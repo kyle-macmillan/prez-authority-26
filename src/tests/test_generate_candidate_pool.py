@@ -10,7 +10,7 @@ sys.path.insert(0, str(Path(__file__).parents[1]))
 from generate_candidate_pool import top_candidates
 
 
-def test_same_type_strictly_earlier_and_up_to_limit():
+def test_cross_type_strictly_earlier_and_up_to_limit():
     documents = [
         {"document_id": "a", "document_type": "letter", "date": "January 1, 2020"},
         {"document_id": "b", "document_type": "letter", "date": "January 2, 2020"},
@@ -21,8 +21,8 @@ def test_same_type_strictly_earlier_and_up_to_limit():
     rows = top_candidates(
         documents, {"c"}, ["a", "b", "c", "d"], embeddings, embeddings, limit=25
     )
-    assert [(row["parent_id"], row["document_embedding_rank"]) for row in rows] == [
-        ("a", 1)
+    assert [(row["parent_id"], row["parent_document_type"]) for row in rows] == [
+        ("a", "letter"), ("d", "memorandum")
     ]
 
 
@@ -37,6 +37,18 @@ def test_ranks_by_cosine_score_and_limits_pool():
     rows = top_candidates(documents, {"c"}, ["a", "b", "c"], query, candidates, limit=1)
     assert len(rows) == 1
     assert rows[0]["parent_id"] == "b"
+
+
+def test_excludes_children_and_parents_without_operative_provisions():
+    documents = [
+        {"document_id": "a", "document_type": "letter", "date": "January 1, 2020"},
+        {"document_id": "b", "document_type": "letter", "date": "January 2, 2020"},
+        {"document_id": "c", "document_type": "letter", "date": "January 3, 2020"},
+    ]
+    embeddings = np.eye(3, dtype=np.float32)
+    rows = top_candidates(documents, {"b", "c"}, ["a", "b", "c"], embeddings,
+                          embeddings, operative_ids={"a", "c"})
+    assert [(row["child_id"], row["parent_id"]) for row in rows] == [("c", "a")]
 
 
 if __name__ == "__main__":

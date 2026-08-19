@@ -368,6 +368,45 @@ def test_comma_delimited_shall_extension_keeps_action_verb_allowlist():
     assert not any(s.seg_type == "order_action" for s in segment_ordering(text))
 
 
+def test_comma_delimited_may_exempt_starts_a_new_operative_segment():
+    text = (
+        "(c) No action shall be taken with respect to an applicant.  "
+        "SEC. 104. The Committee may, by rule, regulation, or order, exempt all "
+        "or part of any program of an administering agency."
+    )
+    assert [(s.seg_type, s.text) for s in segment_ordering(text)] == [
+        ("preamble", "(c) No action shall be taken with respect to an applicant. SEC. 104."),
+        (
+            "order_action",
+            "The Committee may, by rule, regulation, or order, exempt all or part "
+            "of any program of an administering agency.",
+        ),
+    ]
+
+
+def test_productive_i_am_action_pattern_accepts_allowlisted_verbs_and_adverbs():
+    examples = (
+        "I am temporarily revoking the prior designation.",
+        "I am now formally suspending entry of the covered persons.",
+        "I am delegating these functions to the Secretary.",
+    )
+    for text in examples:
+        assert [(segment.seg_type, segment.text) for segment in segment_ordering(text)] == [
+            ("order_action", text)
+        ]
+
+
+def test_productive_i_am_action_pattern_rejects_ordinary_or_deliberative_verbs():
+    for text in ("I am pleased by the report.", "I am considering the proposal."):
+        assert not any(segment.seg_type == "order_action" for segment in segment_ordering(text))
+
+
+def test_productive_i_am_action_pattern_is_an_extended_strategy_only():
+    text = "I am temporarily revoking the prior designation."
+    assert not any(segment.seg_type == "order_action"
+                   for segment in segment_ordering(text, strict_wp=True))
+
+
 if __name__ == "__main__":
     tests = [v for k, v in sorted(globals().items()) if k.startswith("test_")]
     for test in tests:

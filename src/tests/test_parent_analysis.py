@@ -11,6 +11,7 @@ from parent_analysis import (
     DirectiveDocument,
     build_similarity_artifacts,
     build_automatic_edges,
+    children_with_directive_references,
     eo_number_from_url,
     extract_directive_references,
     extract_eo_references,
@@ -97,6 +98,14 @@ def test_assigns_nearby_formal_relation_or_citation_fallback():
         "Executive Order 12345 is hereby revoked.  We discuss Executive Order 12346."
     )
     assert [item.relation for item in references] == ["revokes", "citation_discussion"]
+
+
+def test_ignores_historical_relation_phrases():
+    references = extract_eo_references(
+        "Executive Order 12345, as amended and modified in scope, is discussed.  "
+        "Executive Order 12346 is hereby revoked."
+    )
+    assert [item.relation for item in references] == ["citation_discussion", "revokes"]
 
 
 def test_builds_only_resolved_earlier_same_type_edges():
@@ -244,16 +253,28 @@ def test_similarity_artifacts_have_type_and_stable_operative_ids():
         "c",
         "memorandum",
         "January 2, 2020",
-        "By the Constitution, it is hereby ordered:  "
+        "By the authority vested in me by the Constitution, it is hereby ordered:  "
         "The Secretary shall perform the work.  The agency shall issue guidance.",
         title="Example",
     )
     documents, segments = build_similarity_artifacts([doc], set())
     assert documents[0]["document_id"] == "c"
     assert documents[0]["document_type"] == "memorandum"
-    assert "[AUTHORITY]" in documents[0]["cleaned_masked_text"]
+    assert "authority vested" not in documents[0]["cleaned_masked_text"].casefold()
+    assert documents[0]["removed_vesting_clauses"]
     assert [row["segment_id"] for row in segments] == ["c:oa:001", "c:oa:002"]
     assert {row["document_type"] for row in segments} == {"memorandum"}
+
+
+def test_any_directive_reference_excludes_a_similarity_target():
+    edges = [{"child_id": "same-type"}]
+    unresolved = [
+        {"child_id": "cross-type", "reason": "cross_type_reference"},
+        {"child_id": "outside", "reason": "outside_corpus"},
+    ]
+    assert children_with_directive_references(edges, unresolved) == {
+        "same-type", "cross-type", "outside",
+    }
 
 
 if __name__ == "__main__":

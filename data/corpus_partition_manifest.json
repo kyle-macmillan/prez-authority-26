@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "policy": "task-specific segmentation and vesting holdout: no document present in either previously used CSV; parent-relationship analysis may use both partitions",
+  "master_source": "git:5b128d9:data/4_28_2026_build.csv",
+  "counts": {
+    "master": 20232,
+    "development_exposed": 18418,
+    "holdout_unexposed": 1814
+  },
+  "sha256": {
+    "master_ids": "5c5e7c6c1ddc02705148764c9360b6222b0188557614c45e7e8fac6fd00e4fc3",
+    "development_ids": "212ebe5d8f9b454aa31bbb1008cea8c2bf8d35f5c3a2025a59283b6eca515a07",
+    "holdout_ids": "d9dff943b9b26d8d9012d2156a80aae51a11f435f56f4f390e497f1f31c38889"
+  },
+  "invariants": {
+    "development_holdout_overlap": 0,
+    "development_plus_holdout_equals_master": true,
+    "holdout_intersection_with_previously_used_partitions": 0
+  }
+}

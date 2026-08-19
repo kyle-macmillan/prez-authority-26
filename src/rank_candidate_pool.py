@@ -109,13 +109,32 @@ def top_pairs(
     return float(np.mean([item[2] for item in pairs])), pairs
 
 
-def top_pair_average(
-    child_vectors: np.ndarray, parent_vectors: np.ndarray, count: int = 3
+def bidirectional_best_score(
+    similarities: np.ndarray,
+) -> tuple[float | None, list[tuple[int, int, float]]]:
+    """Equally average child-to-parent and parent-to-child best-match coverage."""
+    if not similarities.size:
+        return None, []
+    child_best = np.argmax(similarities, axis=1)
+    parent_best = np.argmax(similarities, axis=0)
+    positions = {(i, int(j)) for i, j in enumerate(child_best)}
+    positions.update((int(i), j) for j, i in enumerate(parent_best))
+    evidence = sorted(
+        [(i, j, float(similarities[i, j])) for i, j in positions],
+        key=lambda item: (-item[2], item[0], item[1]),
+    )
+    score = (float(np.mean(np.max(similarities, axis=1))) +
+             float(np.mean(np.max(similarities, axis=0)))) / 2
+    return score, evidence
+
+
+def bidirectional_best_average(
+    child_vectors: np.ndarray, parent_vectors: np.ndarray,
 ) -> tuple[float | None, list[tuple[int, int, float]]]:
     if not len(child_vectors) or not len(parent_vectors):
         return None, []
     similarities = child_vectors.astype(np.float32) @ parent_vectors.astype(np.float32).T
-    return top_pairs(similarities, count)
+    return bidirectional_best_score(similarities)
 
 
 def ordering_phrases(text: str) -> set[str]:
@@ -167,11 +186,14 @@ def segment_reuse_score_tokens(
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--input-dir", type=Path, default=Path("data/parent_analysis"))
+    parser.add_argument("--candidate-pool", type=Path)
+    parser.add_argument("--output", type=Path)
     parser.add_argument("--rrf-k", type=int, default=20)
     args = parser.parse_args()
 
     pools: dict[str, list[dict]] = defaultdict(list)
-    with (args.input_dir / "embedding_candidate_pool.csv").open(newline="", encoding="utf-8") as handle:
+    candidate_pool = args.candidate_pool or args.input_dir / "embedding_candidate_pool.csv"
+    with candidate_pool.open(newline="", encoding="utf-8") as handle:
         for row in csv.DictReader(handle):
             pools[row["child_id"]].append(row)
 
@@ -235,7 +257,7 @@ def main() -> None:
         for parent_id in parent_ids:
             parent_segment_indices = parent_indices[parent_id]
             parent_slice = parent_slices[parent_id]
-            score, pairs = top_pairs(operative_matrix[:, parent_slice])
+            score, pairs = bidirectional_best_score(operative_matrix[:, parent_slice])
             if score is not None:
                 operative[parent_id] = score
             alignments[parent_id] = pairs
@@ -306,7 +328,7 @@ def main() -> None:
             print(f"ranked {child_number}/{len(pools)} children", flush=True)
 
     output_rows.sort(key=lambda row: (row["document_type"], row["child_id"], row["rrf_rank"]))
-    output = args.input_dir / "ranked_candidates.csv"
+    output = args.output or args.input_dir / "ranked_candidates.csv"
     with output.open("w", newline="", encoding="utf-8") as handle:
         writer = csv.DictWriter(handle, fieldnames=list(output_rows[0]))
         writer.writeheader()

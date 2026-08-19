@@ -20,13 +20,18 @@ MODEL_REVISION = "97b0c614be4d77ee51c0cef4e5f07c00f9eb65b3"
 EMBEDDING_DIMENSION = 1024
 FULL_DOCUMENT_INSTRUCTION = (
     "Represent this presidential directive for identifying earlier directives of the "
-    "same document type that address the same substantive policy problem and contain a "
+    "same or another document type that address the same substantive policy problem and contain a "
     "similar legal directive or directed operative action."
 )
 OPERATIVE_SEGMENT_INSTRUCTION = (
     "Represent this directed operative action for identifying earlier actions in "
-    "directives of the same document type that use a similar legal or administrative "
+    "directives of any document type that use a similar legal or administrative "
     "mechanism."
+)
+SYNTHESIS_INSTRUCTION = (
+    "Represent this authority-blind policy and operative-action synthesis for identifying "
+    "earlier presidential directives addressing the same specific problem through a "
+    "materially similar mechanism."
 )
 
 
@@ -223,7 +228,7 @@ def main() -> None:
     parser.add_argument("--device", choices=("auto", "cuda", "mps"), default="auto")
     parser.add_argument(
         "--artifact",
-        choices=("all", "documents", "segments"),
+        choices=("all", "documents", "segments", "syntheses"),
         default="all",
         help="Generate both caches or only one cache.",
     )
@@ -272,6 +277,19 @@ def main() -> None:
             "text",
             OPERATIVE_SEGMENT_INSTRUCTION,
             args.segment_batch_size,
+            )
+        )
+    synthesis_source = args.input_dir / "directive_syntheses.jsonl"
+    if args.artifact == "syntheses" or (args.artifact == "all" and synthesis_source.is_file()):
+        artifacts.append(
+            encode_artifact(
+                model,
+                synthesis_source,
+                args.output_dir / "directive_synthesis_embeddings.npz",
+                "document_id",
+                "embedding_text",
+                SYNTHESIS_INSTRUCTION,
+                args.document_batch_size,
             )
         )
     provenance_path = args.output_dir / "provenance.json"

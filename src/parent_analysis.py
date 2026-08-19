@@ -17,16 +17,15 @@ from pathlib import Path
 from urllib.parse import unquote
 
 from ceremonial import ceremonial_reason
-from precedent_preprocess import preprocess_for_similarity
+from precedent_preprocess import authority_spans, preprocess_for_similarity
 from segmenter import segment_ordering
 
 
 DIRECTIVE_TYPES = ("executive_order", "memorandum", "proclamation", "letter")
 DEFAULT_CORPORA = (
     Path("data/4_28_2026_build_dev.csv"),
-    Path("data/4_28_2026_build_holdout.csv"),
 )
-EXPECTED_FULL_CORPUS_SIZE = 20_232
+EXPECTED_FULL_CORPUS_SIZE = 18_418
 
 # UCSB omits the "-A" suffix from seven duplicate-number EO URLs.
 EO_NUMBER_CORRECTIONS = {
@@ -464,6 +463,13 @@ def build_similarity_artifacts(
                 "url": document.url,
                 "has_automatic_parent": document.document_id in automatic_child_ids,
                 "cleaned_masked_text": cleaned,
+                # These offsets refer to the original source text.  They are kept
+                # separate from masked_authorities, whose offsets refer to the
+                # boilerplate-removed similarity text.
+                "original_authorities": [
+                    {"start": span.start, "end": span.end, "text": span.text, "kind": span.kind}
+                    for span in authority_spans(document.text)
+                ],
                 "masked_authorities": [
                     {"start": span.start, "end": span.end, "text": span.text, "kind": span.kind}
                     for span in masked_spans
@@ -482,7 +488,7 @@ def main() -> None:
         dest="corpora",
         action="append",
         type=Path,
-        help="Corpus CSV to include; repeat for multiple partitions. Defaults to dev plus holdout.",
+        help="Corpus CSV to include; repeat explicitly. Defaults to development only.",
     )
     parser.add_argument("--output-dir", type=Path, default=Path("data/parent_analysis"))
     parser.add_argument(
@@ -496,7 +502,7 @@ def main() -> None:
     all_documents = load_directive_corpus(corpus_paths)
     if not args.corpora and len(all_documents) != EXPECTED_FULL_CORPUS_SIZE:
         raise ValueError(
-            f"expected {EXPECTED_FULL_CORPUS_SIZE:,} full-corpus directives, "
+            f"expected {EXPECTED_FULL_CORPUS_SIZE:,} development directives, "
             f"found {len(all_documents):,}"
         )
     ceremonial_exclusions = []
