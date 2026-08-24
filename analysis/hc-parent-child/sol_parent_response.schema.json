@@ -19,7 +19,6 @@
       "type": "array",
       "minItems": 3,
       "maxItems": 3,
-      "uniqueItems": true,
       "items": {"type": "string", "pattern": "^C[0-9]{2}$"}
     },
     "selected_candidate_label": {"type": ["string", "null"]},

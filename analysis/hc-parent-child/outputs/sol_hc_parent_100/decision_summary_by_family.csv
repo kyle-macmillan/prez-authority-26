@@ -1,0 +1,7 @@
+assigned_family,decision,count
+emergency_action,candidate,20
+ieepa_action,candidate,20
+national_monument_action,candidate,20
+property_blocking,candidate,20
+trade_proclamation,candidate,19
+trade_proclamation,none,1
