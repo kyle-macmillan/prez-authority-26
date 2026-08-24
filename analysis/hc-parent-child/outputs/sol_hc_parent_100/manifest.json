@@ -1,0 +1,36 @@
+{
+  "blinding": "requests omit HC category, document IDs, retrieval methods, scores, and ranks",
+  "candidate_channels": {
+    "bm25": 5,
+    "function": 5,
+    "same_family_recent": 2,
+    "word10": 5,
+    "word5": 5
+  },
+  "child_scope": "scoped HC, no resolved explicit link, canonical operative profile available",
+  "explicit_link_children_excluded": 2382,
+  "function_embedding_snapshot": "2821682f301d13e9469124be2da5c43c36d1434284632d6fc6c730818cd3c1fc",
+  "inputs": {
+    "data/parent_analysis/canonical_profiles/function_embeddings.npz": "821a030f9d0ffbb81962ad03098dd30c536cfe144b88d72b6e775afae243825b",
+    "data/parent_analysis_all_corpus/automatic_edges.csv": "3bf71176ccf3b2351343ecd7a521d98bd57c0f11f587b3bd2af6715a4aaf37d8"
+  },
+  "intended_model": "gpt-5.6-sol",
+  "intended_reasoning_effort": "low",
+  "kind": "balanced_hc_silver_parent_identification",
+  "outputs": {
+    "candidate_pool_key.csv": "7e03cc52fe6b85e037b07bac7848a3fe4069ec7305e55fac925f0faf9ce062ba",
+    "sampled_children.csv": "d857ec0eb9c284df9908d813545d6b3c1cf3b2dde9f41a7d9a5bb07d1f3f807e"
+  },
+  "per_assigned_family": {
+    "emergency_action": 20,
+    "ieepa_action": 20,
+    "national_monument_action": 20,
+    "property_blocking": 20,
+    "trade_proclamation": 20
+  },
+  "prior_metric_and_review_children_excluded": 826,
+  "rows": 100,
+  "sample_salt": "sol-hc-parent-100-v1",
+  "text": "vesting clauses and generic boilerplate removed; directive-number references masked",
+  "unique_children": 100
+}

@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "case_id",
+    "decision",
+    "selected_candidate_label",
+    "confidence",
+    "relationship_type",
+    "rationale",
+    "shared_material"
+  ],
+  "properties": {
+    "case_id": {"type": "string"},
+    "decision": {"type": "string", "enum": ["candidate", "none", "uncertain"]},
+    "selected_candidate_label": {"type": ["string", "null"]},
+    "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+    "relationship_type": {
+      "type": "string",
+      "enum": ["literal_language_template", "structural_functional_template", "both", "none", "uncertain"]
+    },
+    "rationale": {"type": "string"},
+    "shared_material": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["child_excerpt", "parent_excerpt", "explanation"],
+        "properties": {
+          "child_excerpt": {"type": "string"},
+          "parent_excerpt": {"type": "string"},
+          "explanation": {"type": "string"}
+        }
+      }
+    }
+  }
+}
