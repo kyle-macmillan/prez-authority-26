@@ -16,7 +16,7 @@ from vesting_authority_breakdown import (
     extract_authority_spans,
     render_html,
 )
-from export_vesting_authority_categories_xlsx import worksheet_xml
+from export_vesting_authority_categories_xlsx import TARGETS, worksheet_xml
 
 
 def category(*clauses: str) -> str:
@@ -342,6 +342,13 @@ def test_html_contains_every_category_and_count_column():
     assert "Contextual uses of <code>pursuant to</code> within other recitals are discarded" in report
     for category in CATEGORIES:
         assert CATEGORY_LABELS[category] in report
+
+
+def test_excel_targets_only_the_eight_substantive_categories():
+    assert TARGETS == SUBSTANTIVE_CATEGORIES
+    assert len(TARGETS) == 8
+    assert "no_vesting_clause" not in TARGETS
+    assert "other_vesting_authority" not in TARGETS
 
 
 def test_html_rejects_category_total_mismatches():
