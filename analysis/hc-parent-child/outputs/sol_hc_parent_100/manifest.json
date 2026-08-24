@@ -3,10 +3,14 @@
   "candidate_channels": {
     "bm25": 5,
     "function": 5,
+    "rrf_fill_to": 25,
+    "rrf_k": 60,
     "same_family_recent": 2,
     "word10": 5,
     "word5": 5
   },
+  "candidate_pool_design": "diversified channel union, deduplicated, then RRF-filled to 25",
+  "candidate_pool_size": 25,
   "child_scope": "scoped HC, no resolved explicit link, canonical operative profile available",
   "explicit_link_children_excluded": 2382,
   "function_embedding_snapshot": "2821682f301d13e9469124be2da5c43c36d1434284632d6fc6c730818cd3c1fc",
@@ -18,8 +22,8 @@
   "intended_reasoning_effort": "low",
   "kind": "balanced_hc_silver_parent_identification",
   "outputs": {
-    "candidate_pool_key.csv": "7e03cc52fe6b85e037b07bac7848a3fe4069ec7305e55fac925f0faf9ce062ba",
-    "sampled_children.csv": "d857ec0eb9c284df9908d813545d6b3c1cf3b2dde9f41a7d9a5bb07d1f3f807e"
+    "candidate_pool_key.csv": "9c5ec7e0990391660e99dc868b265099735f001cd52832f37c26316e5d421fe7",
+    "sampled_children.csv": "17a973629bce6d0f6d72f227f5698867e7a67d78c9e276913083eaf51db4459b"
   },
   "per_assigned_family": {
     "emergency_action": 20,

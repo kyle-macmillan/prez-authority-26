@@ -7,15 +7,19 @@ for 100 fresh HC directives: 20 uniquely assigned to each of the five HC categor
 children are scoped, lack a resolved explicit parent link, have an operative Flash profile,
 and were excluded from prior HC metric and parent-review samples.
 
-Each blinded request contains the child's cleaned text and function profile plus a shuffled
-candidate union. The union takes the top five candidates from five-word reuse, ten-word
-reuse, BM25, and operative-function similarity, plus the two most recent same-family
-predecessors. Requests hide category, document IDs, retrieval sources, scores, and ranks.
-Vesting clauses and generic boilerplate are absent, and directive-number references are
-masked.
+Each blinded request contains the child's cleaned text and function profile plus 25 shuffled
+candidates. The pool preserves the deduplicated union of the top five candidates from
+five-word reuse, ten-word reuse, BM25, and operative-function similarity, plus the two most
+recent same-family predecessors. Remaining slots are filled with the next-best candidates
+under reciprocal-rank fusion across the four retrieval channels, using
+`sum(1 / (60 + channel_rank))`. Requests hide category,
+document IDs, retrieval sources, scores, and ranks. Vesting clauses and generic boilerplate
+are absent, and directive-number references are masked.
 
-The resulting Sol choices are silver labels. They allow comparison of objective retrieval
-metrics against a consistent model judgment, but are not independent ground truth.
+Sol ranks the three strongest displayed candidates and then either accepts the first-ranked
+candidate as a plausible parent, returns `none`, or returns `uncertain`. These decisions are
+silver labels. They allow comparison of objective retrieval metrics against a consistent
+model judgment, but are not independent ground truth.
 
 ## Prerequisites on the run machine
 
@@ -68,6 +72,8 @@ This writes:
 
 - `sol_parent_selections.csv`: one decision per child, with hidden IDs and metric ranks
   restored for analysis;
+- `sol_top3_rankings.csv`: Sol's three strongest candidates per child, with hidden IDs and
+  metric ranks restored;
 - `metric_retrieval_summary.csv`: Recall@1/5/10/25 and MRR for each objective metric among
   Sol-accepted parents; and
 - `decision_summary_by_family.csv`: candidate/none/uncertain counts by assigned HC family.

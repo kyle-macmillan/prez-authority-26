@@ -1,101 +1,101 @@
 case_id,document_id,assigned_family,all_families,document_type,president,date,title,candidate_count
-SHC001,693,ieepa_action,ieepa_action|property_blocking,executive_order,Barack Obama,"April 19, 2016",blocking property and suspending entry into the united states,9
-SHC002,222,ieepa_action,ieepa_action,executive_order,Donald J. Trump,"February 03, 2025",progress the situation our southern border,13
-SHC003,4859,ieepa_action,ieepa_action,letter,Donald J. Trump,"August 06, 2018",congressional leaders reimposing certain sanctions with respect iran,14
-SHC004,6561,ieepa_action,ieepa_action,letter,Ronald Reagan,"January 11, 1989",the speaker the house representatives and the president the senate reporting the 9,7
-SHC005,6044,ieepa_action,ieepa_action,letter,William J. Clinton,"October 12, 1996",congressional leaders transmitting executive order revise procedures for processing,17
-SHC006,5870,ieepa_action,ieepa_action,letter,William J. Clinton,"November 16, 1998",congressional leaders reporting the national emergency with respect iran 5,9
-SHC007,6460,ieepa_action,ieepa_action,letter,George Bush,"November 29, 1990",congressional leaders reporting the national emergency with respect iran 1,9
-SHC008,71,ieepa_action,ieepa_action,executive_order,Donald J. Trump,"September 05, 2025",strengthening efforts protect us nationals from wrongful detention,14
-SHC009,4721,ieepa_action,ieepa_action,letter,Donald J. Trump,"November 12, 2020",congressional leaders addressing the threat from securities investments that,17
-SHC010,6571,ieepa_action,ieepa_action,letter,Ronald Reagan,"November 09, 1988",the speaker the house representatives and the president the senate reporting the 7,8
-SHC011,6659,ieepa_action,ieepa_action,letter,Ronald Reagan,"November 10, 1986",the speaker the house and the president the senate reporting the nicaraguan,16
-SHC012,6162,ieepa_action,ieepa_action,letter,William J. Clinton,"November 18, 1994",congressional leaders reporting the national emergency with respect iran 2,9
-SHC013,4756,ieepa_action,ieepa_action,letter,Donald J. Trump,"May 01, 2020",congressional leaders securing the united states bulk power system,16
-SHC014,5968,ieepa_action,ieepa_action,letter,William J. Clinton,"November 25, 1997",congressional leaders reporting the national emergency with respect iran 4,9
-SHC015,4809,ieepa_action,ieepa_action,letter,Donald J. Trump,"March 15, 2019",congressional leaders taking additional steps address the national emergency with 0,15
-SHC016,5607,ieepa_action,ieepa_action,letter,George W. Bush,"August 17, 2001",congressional leaders continuation export control regulations 0,14
-SHC017,6425,ieepa_action,ieepa_action,letter,George Bush,"May 30, 1991",congressional leaders reporting the national emergency with respect iran 0,8
-SHC018,5143,ieepa_action,ieepa_action|property_blocking,letter,Barack Obama,"May 18, 2011",congressional leaders reporting the executive order blocking property senior,10
-SHC019,6036,ieepa_action,ieepa_action,letter,William J. Clinton,"November 15, 1996",congressional leaders encryption products export controls,16
-SHC020,6037,ieepa_action,ieepa_action,letter,William J. Clinton,"November 14, 1996",congressional leaders reporting the national emergency with respect iran 3,9
-SHC021,4928,property_blocking,property_blocking,letter,Barack Obama,"January 13, 2017",congressional leaders recognizing positive actions the government sudan and,14
-SHC022,829,property_blocking,property_blocking,executive_order,Barack Obama,"November 20, 2011",authorizing the imposition certain sanctions with respect the,11
-SHC023,348,property_blocking,property_blocking,executive_order,"Joseph R. Biden, Jr.","April 06, 2022",prohibiting new investment and certain services the russian,9
-SHC024,650,property_blocking,property_blocking,executive_order,Donald J. Trump,"January 27, 2017",protecting the nation from foreign terrorist entry into the united,17
-SHC025,1019,property_blocking,property_blocking,executive_order,George W. Bush,"April 26, 2006",blocking property persons connection with the conflict sudans darfur,7
-SHC026,5889,property_blocking,property_blocking,letter,William J. Clinton,"August 18, 1998",congressional leaders additional sanctions under the national emergency with,12
-SHC027,1547,property_blocking,property_blocking,executive_order,William J. Clinton,"October 18, 1993",blocking property persons obstructing democratization haiti,10
-SHC028,6742,property_blocking,property_blocking,letter,Ronald Reagan,"October 31, 1984",the speaker the house and the president the senate reporting the declaration,19
-SHC029,380,property_blocking,property_blocking,executive_order,"Joseph R. Biden, Jr.","August 20, 2021",blocking property with respect certain russian energy export,12
-SHC030,592,property_blocking,property_blocking,executive_order,Donald J. Trump,"March 19, 2018",taking additional steps address the situation venezuela,14
-SHC031,4657,property_blocking,property_blocking,letter,"Joseph R. Biden, Jr.","February 21, 2022",congressional leaders blocking property certain persons and prohibiting certain 0,13
-SHC032,4680,property_blocking,property_blocking,letter,"Joseph R. Biden, Jr.","August 09, 2021",congressional leaders blocking property additional persons contributing the 2,15
-SHC033,351,property_blocking,property_blocking,executive_order,"Joseph R. Biden, Jr.","March 11, 2022",prohibiting certain imports exports and new investment with respect,10
-SHC034,981,property_blocking,property_blocking,executive_order,George W. Bush,"July 17, 2007",blocking property certain persons who threaten stabilization efforts,10
-SHC035,584,property_blocking,property_blocking,executive_order,Donald J. Trump,"May 21, 2018",prohibiting certain additional transactions with respect venezuela,13
-SHC036,1206,property_blocking,property_blocking,executive_order,George W. Bush,"May 22, 2001",additional measures with respect prohibiting the importation rough,10
-SHC037,4715,property_blocking,property_blocking,letter,Donald J. Trump,"January 19, 2021",congressional leaders taking additional steps address the national emergency with 1,14
-SHC038,5323,property_blocking,property_blocking,letter,George W. Bush,"November 22, 2005",congressional leaders blocking property additional persons undermining democratic,14
-SHC039,5448,property_blocking,property_blocking,letter,George W. Bush,"July 01, 2003",congressional leaders reporting sanctions under the foreign narcotics kingpin 0,19
-SHC040,10318,property_blocking,property_blocking,memorandum,William J. Clinton,"October 21, 1998",blocked property terrorist list states,21
-SHC041,10008,emergency_action,emergency_action,memorandum,George W. Bush,"November 26, 2002",designation officers the federal emergency management agency act director the,11
-SHC042,5616,emergency_action,emergency_action,letter,George W. Bush,"June 30, 2001",congressional leaders continuation the national emergency with respect the 0,14
-SHC043,5659,emergency_action,emergency_action,letter,William J. Clinton,"January 19, 2001",congressional leaders continuation the national emergency with respect terrorists 0,8
-SHC044,4939,emergency_action,emergency_action,letter,Barack Obama,"November 09, 2016",congressional leaders continuation the national emergency with respect burundi,13
-SHC045,11373,emergency_action,emergency_action,memorandum,Jimmy Carter,"June 12, 1979",from the president the energy emergency florida 1,13
-SHC046,6509,emergency_action,emergency_action,letter,George Bush,"January 04, 1990",congressional leaders the continuation the national emergency with respect libya 1,8
-SHC047,6741,emergency_action,emergency_action,letter,Ronald Reagan,"November 07, 1984",the speaker the house and the president the senate the continuation the iran,21
-SHC048,9936,emergency_action,emergency_action,memorandum,George W. Bush,"December 05, 2003",transfer funds appropriated the president under the heading operating expenses,16
-SHC049,5163,emergency_action,emergency_action,letter,Barack Obama,"November 01, 2010",congressional leaders continuation the national emergency with respect sudan 7,9
-SHC050,5536,emergency_action,emergency_action,letter,George W. Bush,"July 30, 2002",congressional leaders continuation the national emergency with respect iraq 0,13
-SHC051,4881,emergency_action,emergency_action,letter,Donald J. Trump,"March 02, 2018",congressional leaders continuation the national emergency with respect venezuela 1,11
-SHC052,6337,emergency_action,emergency_action,letter,George Bush,"October 25, 1992",congressional leaders continuation the national emergency with respect iran,11
-SHC053,503,emergency_action,emergency_action,executive_order,Donald J. Trump,"April 18, 2020",national emergency authority temporarily extend deadlines for,15
-SHC054,314,emergency_action,emergency_action,executive_order,"Joseph R. Biden, Jr.","August 09, 2023",addressing united states investments certain national security,13
-SHC055,11348,emergency_action,emergency_action,memorandum,Jimmy Carter,"October 19, 1979",from the president the energy emergency florida,8
-SHC056,1462,emergency_action,emergency_action,executive_order,William J. Clinton,"March 15, 1995",prohibiting certain transactions with respect the development,12
-SHC057,1876,emergency_action,emergency_action,executive_order,Ronald Reagan,"January 07, 1986",prohibiting trade and certain transactions involving libya,9
-SHC058,460,emergency_action,emergency_action,executive_order,Donald J. Trump,"November 12, 2020",addressing the threat from securities investments that finance,15
-SHC059,4874,emergency_action,emergency_action,letter,Donald J. Trump,"March 27, 2018",congressional leaders continuation the national emergency with respect 9,12
-SHC060,4709,emergency_action,emergency_action,letter,"Joseph R. Biden, Jr.","February 24, 2021",congressional leaders the continuation the national emergency with respect cuba and,11
-SHC061,17699,national_monument_action,national_monument_action,proclamation,"Joseph R. Biden, Jr.","March 21, 2023",establishment the castner range national monument,12
-SHC062,17756,national_monument_action,national_monument_action,proclamation,"Joseph R. Biden, Jr.","October 12, 2022",establishment the camp hale continental divide national monument,10
-SHC063,19609,national_monument_action,national_monument_action,proclamation,Jimmy Carter,"December 01, 1978",noatak national monument,12
-SHC064,12745,national_monument_action,national_monument_action,proclamation,Barack Obama,"February 19, 2015",establishment the browns canyon national monument,9
-SHC065,14520,national_monument_action,national_monument_action,proclamation,John F. Kennedy,"March 27, 1962",redefining the external boundaries the timpanogos cave national monument,15
-SHC066,14438,national_monument_action,national_monument_action,proclamation,John F. Kennedy,"May 27, 1963",revising the boundaries the bandelier national monument new mexico,15
-SHC067,15896,national_monument_action,national_monument_action,proclamation,William J. Clinton,"June 09, 2000",establishment the hanford reach national monument,7
-SHC068,14670,national_monument_action,national_monument_action,proclamation,Dwight D. Eisenhower,"August 07, 1959",excluding certain lands from and adding certain lands the colorado,13
-SHC069,15054,national_monument_action,national_monument_action,proclamation,Harry S Truman,"April 26, 1951",enlarging hovenweep national monument colorado and utah,5
-SHC070,12888,national_monument_action,national_monument_action,proclamation,Barack Obama,"March 11, 2014",boundary enlargement the california coastal national monument,13
-SHC071,13651,national_monument_action,national_monument_action,proclamation,George W. Bush,"December 05, 2008",establishment the world war ii valor the pacific national monument,12
-SHC072,14617,national_monument_action,national_monument_action,proclamation,Dwight D. Eisenhower,"July 22, 1960",modifying the arches national monument utah,10
-SHC073,15192,national_monument_action,national_monument_action,proclamation,Harry S Truman,"May 27, 1948",extension time for renewing trademark registrations the philippines,9
-SHC074,14980,national_monument_action,national_monument_action,proclamation,Harry S Truman,"November 20, 1952",enlarging the hovenweep national monument colorado and utah,9
-SHC075,14634,national_monument_action,national_monument_action,proclamation,Dwight D. Eisenhower,"April 08, 1960",excluding lands from the black canyon the gunnison national monument,11
-SHC076,15953,national_monument_action,national_monument_action,proclamation,William J. Clinton,"January 11, 2000",boundary enlargement the pinnacles national monument,11
-SHC077,17351,national_monument_action,national_monument_action,proclamation,"Joseph R. Biden, Jr.","January 14, 2025",establishment the chuckwalla national monument,11
-SHC078,12413,national_monument_action,national_monument_action,proclamation,Barack Obama,"January 12, 2017",establishment the reconstruction era national monument,12
-SHC079,19607,national_monument_action,national_monument_action,proclamation,Jimmy Carter,"December 01, 1978",aniakchak national monument,11
-SHC080,19611,national_monument_action,national_monument_action,proclamation,Jimmy Carter,"December 01, 1978",enlarging the katmai national monument,12
-SHC081,12273,trade_proclamation,trade_proclamation,proclamation,Donald J. Trump,"March 08, 2018",adjusting imports aluminum into the united states,10
-SHC082,15094,trade_proclamation,trade_proclamation,proclamation,Harry S Truman,"April 27, 1950",supplementing proclamations no 2867 december 22 1949 and no 2764 january,8
-SHC083,15574,trade_proclamation,trade_proclamation,proclamation,George W. Bush,"January 17, 2003",modify rules origin under the north american free trade agreement,14
-SHC084,17129,trade_proclamation,trade_proclamation,proclamation,George Bush,"January 05, 1990",amend the generalized system preferences,10
-SHC085,14919,trade_proclamation,trade_proclamation,proclamation,Dwight D. Eisenhower,"June 30, 1954",modification trade agreement concession and adjustment duty alsike,12
-SHC086,13563,trade_proclamation,trade_proclamation,proclamation,Barack Obama,"September 11, 2009",address market disruption from imports certain passenger vehicle and,13
-SHC087,20003,trade_proclamation,trade_proclamation,proclamation,Richard Nixon,"July 18, 1973",proclamation amending part 3 the appendix the tariff schedules the,6
-SHC088,14905,trade_proclamation,trade_proclamation,proclamation,Dwight D. Eisenhower,"October 11, 1954",imposing import fees shelled and prepared almonds and shelled filberts,6
-SHC089,18753,trade_proclamation,trade_proclamation,proclamation,Ronald Reagan,"May 15, 1986",imposition quantitative restrictions imports certain articles from the,12
-SHC090,19790,trade_proclamation,trade_proclamation,proclamation,Gerald R. Ford,"May 27, 1976",modification the tariff rate quota brooms wholly or part broom corn,14
-SHC091,16208,trade_proclamation,trade_proclamation,proclamation,William J. Clinton,"May 30, 1997",modify duty free treatment under the generalized system preferences,9
-SHC092,12443,trade_proclamation,trade_proclamation,proclamation,Barack Obama,"October 31, 2016",national entrepreneurship month 2016,17
-SHC093,19633,trade_proclamation,trade_proclamation,proclamation,Jimmy Carter,"September 21, 1978",temporary staged reduction rates duty certain products,13
-SHC094,19822,trade_proclamation,trade_proclamation,proclamation,Gerald R. Ford,"December 31, 1975",termination temporary quantitative limitation the importation into the,14
-SHC095,14549,trade_proclamation,trade_proclamation,proclamation,John F. Kennedy,"September 11, 1961",imposing import restrictions certain cotton products,15
-SHC096,14234,trade_proclamation,trade_proclamation,proclamation,Lyndon B. Johnson,"September 08, 1966",further implementing the united states canadian agreement remove duties,14
-SHC097,17054,trade_proclamation,trade_proclamation,proclamation,George Bush,"July 23, 1990",modify duty free treatment under the generalized system preferences,8
-SHC098,15183,trade_proclamation,trade_proclamation,proclamation,Harry S Truman,"July 15, 1948",supplementing proclamations december 16 1947 and january 1 1948 carrying,7
-SHC099,13943,trade_proclamation,trade_proclamation,proclamation,George W. Bush,"June 30, 2006",implement the dominican republic central america united states free,10
-SHC100,18198,trade_proclamation,trade_proclamation,proclamation,Donald J. Trump,"May 15, 2020",world trade week 2020,13
+SHC001,693,ieepa_action,ieepa_action|property_blocking,executive_order,Barack Obama,"April 19, 2016",blocking property and suspending entry into the united states,25
+SHC002,222,ieepa_action,ieepa_action,executive_order,Donald J. Trump,"February 03, 2025",progress the situation our southern border,25
+SHC003,4859,ieepa_action,ieepa_action,letter,Donald J. Trump,"August 06, 2018",congressional leaders reimposing certain sanctions with respect iran,25
+SHC004,6561,ieepa_action,ieepa_action,letter,Ronald Reagan,"January 11, 1989",the speaker the house representatives and the president the senate reporting the 9,25
+SHC005,6044,ieepa_action,ieepa_action,letter,William J. Clinton,"October 12, 1996",congressional leaders transmitting executive order revise procedures for processing,25
+SHC006,5870,ieepa_action,ieepa_action,letter,William J. Clinton,"November 16, 1998",congressional leaders reporting the national emergency with respect iran 5,25
+SHC007,6460,ieepa_action,ieepa_action,letter,George Bush,"November 29, 1990",congressional leaders reporting the national emergency with respect iran 1,25
+SHC008,71,ieepa_action,ieepa_action,executive_order,Donald J. Trump,"September 05, 2025",strengthening efforts protect us nationals from wrongful detention,25
+SHC009,4721,ieepa_action,ieepa_action,letter,Donald J. Trump,"November 12, 2020",congressional leaders addressing the threat from securities investments that,25
+SHC010,6571,ieepa_action,ieepa_action,letter,Ronald Reagan,"November 09, 1988",the speaker the house representatives and the president the senate reporting the 7,25
+SHC011,6659,ieepa_action,ieepa_action,letter,Ronald Reagan,"November 10, 1986",the speaker the house and the president the senate reporting the nicaraguan,25
+SHC012,6162,ieepa_action,ieepa_action,letter,William J. Clinton,"November 18, 1994",congressional leaders reporting the national emergency with respect iran 2,25
+SHC013,4756,ieepa_action,ieepa_action,letter,Donald J. Trump,"May 01, 2020",congressional leaders securing the united states bulk power system,25
+SHC014,5968,ieepa_action,ieepa_action,letter,William J. Clinton,"November 25, 1997",congressional leaders reporting the national emergency with respect iran 4,25
+SHC015,4809,ieepa_action,ieepa_action,letter,Donald J. Trump,"March 15, 2019",congressional leaders taking additional steps address the national emergency with 0,25
+SHC016,5607,ieepa_action,ieepa_action,letter,George W. Bush,"August 17, 2001",congressional leaders continuation export control regulations 0,25
+SHC017,6425,ieepa_action,ieepa_action,letter,George Bush,"May 30, 1991",congressional leaders reporting the national emergency with respect iran 0,25
+SHC018,5143,ieepa_action,ieepa_action|property_blocking,letter,Barack Obama,"May 18, 2011",congressional leaders reporting the executive order blocking property senior,25
+SHC019,6036,ieepa_action,ieepa_action,letter,William J. Clinton,"November 15, 1996",congressional leaders encryption products export controls,25
+SHC020,6037,ieepa_action,ieepa_action,letter,William J. Clinton,"November 14, 1996",congressional leaders reporting the national emergency with respect iran 3,25
+SHC021,4928,property_blocking,property_blocking,letter,Barack Obama,"January 13, 2017",congressional leaders recognizing positive actions the government sudan and,25
+SHC022,829,property_blocking,property_blocking,executive_order,Barack Obama,"November 20, 2011",authorizing the imposition certain sanctions with respect the,25
+SHC023,348,property_blocking,property_blocking,executive_order,"Joseph R. Biden, Jr.","April 06, 2022",prohibiting new investment and certain services the russian,25
+SHC024,650,property_blocking,property_blocking,executive_order,Donald J. Trump,"January 27, 2017",protecting the nation from foreign terrorist entry into the united,25
+SHC025,1019,property_blocking,property_blocking,executive_order,George W. Bush,"April 26, 2006",blocking property persons connection with the conflict sudans darfur,25
+SHC026,5889,property_blocking,property_blocking,letter,William J. Clinton,"August 18, 1998",congressional leaders additional sanctions under the national emergency with,25
+SHC027,1547,property_blocking,property_blocking,executive_order,William J. Clinton,"October 18, 1993",blocking property persons obstructing democratization haiti,25
+SHC028,6742,property_blocking,property_blocking,letter,Ronald Reagan,"October 31, 1984",the speaker the house and the president the senate reporting the declaration,25
+SHC029,380,property_blocking,property_blocking,executive_order,"Joseph R. Biden, Jr.","August 20, 2021",blocking property with respect certain russian energy export,25
+SHC030,592,property_blocking,property_blocking,executive_order,Donald J. Trump,"March 19, 2018",taking additional steps address the situation venezuela,25
+SHC031,4657,property_blocking,property_blocking,letter,"Joseph R. Biden, Jr.","February 21, 2022",congressional leaders blocking property certain persons and prohibiting certain 0,25
+SHC032,4680,property_blocking,property_blocking,letter,"Joseph R. Biden, Jr.","August 09, 2021",congressional leaders blocking property additional persons contributing the 2,25
+SHC033,351,property_blocking,property_blocking,executive_order,"Joseph R. Biden, Jr.","March 11, 2022",prohibiting certain imports exports and new investment with respect,25
+SHC034,981,property_blocking,property_blocking,executive_order,George W. Bush,"July 17, 2007",blocking property certain persons who threaten stabilization efforts,25
+SHC035,584,property_blocking,property_blocking,executive_order,Donald J. Trump,"May 21, 2018",prohibiting certain additional transactions with respect venezuela,25
+SHC036,1206,property_blocking,property_blocking,executive_order,George W. Bush,"May 22, 2001",additional measures with respect prohibiting the importation rough,25
+SHC037,4715,property_blocking,property_blocking,letter,Donald J. Trump,"January 19, 2021",congressional leaders taking additional steps address the national emergency with 1,25
+SHC038,5323,property_blocking,property_blocking,letter,George W. Bush,"November 22, 2005",congressional leaders blocking property additional persons undermining democratic,25
+SHC039,5448,property_blocking,property_blocking,letter,George W. Bush,"July 01, 2003",congressional leaders reporting sanctions under the foreign narcotics kingpin 0,25
+SHC040,10318,property_blocking,property_blocking,memorandum,William J. Clinton,"October 21, 1998",blocked property terrorist list states,25
+SHC041,10008,emergency_action,emergency_action,memorandum,George W. Bush,"November 26, 2002",designation officers the federal emergency management agency act director the,25
+SHC042,5616,emergency_action,emergency_action,letter,George W. Bush,"June 30, 2001",congressional leaders continuation the national emergency with respect the 0,25
+SHC043,5659,emergency_action,emergency_action,letter,William J. Clinton,"January 19, 2001",congressional leaders continuation the national emergency with respect terrorists 0,25
+SHC044,4939,emergency_action,emergency_action,letter,Barack Obama,"November 09, 2016",congressional leaders continuation the national emergency with respect burundi,25
+SHC045,11373,emergency_action,emergency_action,memorandum,Jimmy Carter,"June 12, 1979",from the president the energy emergency florida 1,25
+SHC046,6509,emergency_action,emergency_action,letter,George Bush,"January 04, 1990",congressional leaders the continuation the national emergency with respect libya 1,25
+SHC047,6741,emergency_action,emergency_action,letter,Ronald Reagan,"November 07, 1984",the speaker the house and the president the senate the continuation the iran,25
+SHC048,9936,emergency_action,emergency_action,memorandum,George W. Bush,"December 05, 2003",transfer funds appropriated the president under the heading operating expenses,25
+SHC049,5163,emergency_action,emergency_action,letter,Barack Obama,"November 01, 2010",congressional leaders continuation the national emergency with respect sudan 7,25
+SHC050,5536,emergency_action,emergency_action,letter,George W. Bush,"July 30, 2002",congressional leaders continuation the national emergency with respect iraq 0,25
+SHC051,4881,emergency_action,emergency_action,letter,Donald J. Trump,"March 02, 2018",congressional leaders continuation the national emergency with respect venezuela 1,25
+SHC052,6337,emergency_action,emergency_action,letter,George Bush,"October 25, 1992",congressional leaders continuation the national emergency with respect iran,25
+SHC053,503,emergency_action,emergency_action,executive_order,Donald J. Trump,"April 18, 2020",national emergency authority temporarily extend deadlines for,25
+SHC054,314,emergency_action,emergency_action,executive_order,"Joseph R. Biden, Jr.","August 09, 2023",addressing united states investments certain national security,25
+SHC055,11348,emergency_action,emergency_action,memorandum,Jimmy Carter,"October 19, 1979",from the president the energy emergency florida,25
+SHC056,1462,emergency_action,emergency_action,executive_order,William J. Clinton,"March 15, 1995",prohibiting certain transactions with respect the development,25
+SHC057,1876,emergency_action,emergency_action,executive_order,Ronald Reagan,"January 07, 1986",prohibiting trade and certain transactions involving libya,25
+SHC058,460,emergency_action,emergency_action,executive_order,Donald J. Trump,"November 12, 2020",addressing the threat from securities investments that finance,25
+SHC059,4874,emergency_action,emergency_action,letter,Donald J. Trump,"March 27, 2018",congressional leaders continuation the national emergency with respect 9,25
+SHC060,4709,emergency_action,emergency_action,letter,"Joseph R. Biden, Jr.","February 24, 2021",congressional leaders the continuation the national emergency with respect cuba and,25
+SHC061,17699,national_monument_action,national_monument_action,proclamation,"Joseph R. Biden, Jr.","March 21, 2023",establishment the castner range national monument,25
+SHC062,17756,national_monument_action,national_monument_action,proclamation,"Joseph R. Biden, Jr.","October 12, 2022",establishment the camp hale continental divide national monument,25
+SHC063,19609,national_monument_action,national_monument_action,proclamation,Jimmy Carter,"December 01, 1978",noatak national monument,25
+SHC064,12745,national_monument_action,national_monument_action,proclamation,Barack Obama,"February 19, 2015",establishment the browns canyon national monument,25
+SHC065,14520,national_monument_action,national_monument_action,proclamation,John F. Kennedy,"March 27, 1962",redefining the external boundaries the timpanogos cave national monument,25
+SHC066,14438,national_monument_action,national_monument_action,proclamation,John F. Kennedy,"May 27, 1963",revising the boundaries the bandelier national monument new mexico,25
+SHC067,15896,national_monument_action,national_monument_action,proclamation,William J. Clinton,"June 09, 2000",establishment the hanford reach national monument,25
+SHC068,14670,national_monument_action,national_monument_action,proclamation,Dwight D. Eisenhower,"August 07, 1959",excluding certain lands from and adding certain lands the colorado,25
+SHC069,15054,national_monument_action,national_monument_action,proclamation,Harry S Truman,"April 26, 1951",enlarging hovenweep national monument colorado and utah,25
+SHC070,12888,national_monument_action,national_monument_action,proclamation,Barack Obama,"March 11, 2014",boundary enlargement the california coastal national monument,25
+SHC071,13651,national_monument_action,national_monument_action,proclamation,George W. Bush,"December 05, 2008",establishment the world war ii valor the pacific national monument,25
+SHC072,14617,national_monument_action,national_monument_action,proclamation,Dwight D. Eisenhower,"July 22, 1960",modifying the arches national monument utah,25
+SHC073,15192,national_monument_action,national_monument_action,proclamation,Harry S Truman,"May 27, 1948",extension time for renewing trademark registrations the philippines,25
+SHC074,14980,national_monument_action,national_monument_action,proclamation,Harry S Truman,"November 20, 1952",enlarging the hovenweep national monument colorado and utah,25
+SHC075,14634,national_monument_action,national_monument_action,proclamation,Dwight D. Eisenhower,"April 08, 1960",excluding lands from the black canyon the gunnison national monument,25
+SHC076,15953,national_monument_action,national_monument_action,proclamation,William J. Clinton,"January 11, 2000",boundary enlargement the pinnacles national monument,25
+SHC077,17351,national_monument_action,national_monument_action,proclamation,"Joseph R. Biden, Jr.","January 14, 2025",establishment the chuckwalla national monument,25
+SHC078,12413,national_monument_action,national_monument_action,proclamation,Barack Obama,"January 12, 2017",establishment the reconstruction era national monument,25
+SHC079,19607,national_monument_action,national_monument_action,proclamation,Jimmy Carter,"December 01, 1978",aniakchak national monument,25
+SHC080,19611,national_monument_action,national_monument_action,proclamation,Jimmy Carter,"December 01, 1978",enlarging the katmai national monument,25
+SHC081,12273,trade_proclamation,trade_proclamation,proclamation,Donald J. Trump,"March 08, 2018",adjusting imports aluminum into the united states,25
+SHC082,15094,trade_proclamation,trade_proclamation,proclamation,Harry S Truman,"April 27, 1950",supplementing proclamations no 2867 december 22 1949 and no 2764 january,25
+SHC083,15574,trade_proclamation,trade_proclamation,proclamation,George W. Bush,"January 17, 2003",modify rules origin under the north american free trade agreement,25
+SHC084,17129,trade_proclamation,trade_proclamation,proclamation,George Bush,"January 05, 1990",amend the generalized system preferences,25
+SHC085,14919,trade_proclamation,trade_proclamation,proclamation,Dwight D. Eisenhower,"June 30, 1954",modification trade agreement concession and adjustment duty alsike,25
+SHC086,13563,trade_proclamation,trade_proclamation,proclamation,Barack Obama,"September 11, 2009",address market disruption from imports certain passenger vehicle and,25
+SHC087,20003,trade_proclamation,trade_proclamation,proclamation,Richard Nixon,"July 18, 1973",proclamation amending part 3 the appendix the tariff schedules the,25
+SHC088,14905,trade_proclamation,trade_proclamation,proclamation,Dwight D. Eisenhower,"October 11, 1954",imposing import fees shelled and prepared almonds and shelled filberts,25
+SHC089,18753,trade_proclamation,trade_proclamation,proclamation,Ronald Reagan,"May 15, 1986",imposition quantitative restrictions imports certain articles from the,25
+SHC090,19790,trade_proclamation,trade_proclamation,proclamation,Gerald R. Ford,"May 27, 1976",modification the tariff rate quota brooms wholly or part broom corn,25
+SHC091,16208,trade_proclamation,trade_proclamation,proclamation,William J. Clinton,"May 30, 1997",modify duty free treatment under the generalized system preferences,25
+SHC092,12443,trade_proclamation,trade_proclamation,proclamation,Barack Obama,"October 31, 2016",national entrepreneurship month 2016,25
+SHC093,19633,trade_proclamation,trade_proclamation,proclamation,Jimmy Carter,"September 21, 1978",temporary staged reduction rates duty certain products,25
+SHC094,19822,trade_proclamation,trade_proclamation,proclamation,Gerald R. Ford,"December 31, 1975",termination temporary quantitative limitation the importation into the,25
+SHC095,14549,trade_proclamation,trade_proclamation,proclamation,John F. Kennedy,"September 11, 1961",imposing import restrictions certain cotton products,25
+SHC096,14234,trade_proclamation,trade_proclamation,proclamation,Lyndon B. Johnson,"September 08, 1966",further implementing the united states canadian agreement remove duties,25
+SHC097,17054,trade_proclamation,trade_proclamation,proclamation,George Bush,"July 23, 1990",modify duty free treatment under the generalized system preferences,25
+SHC098,15183,trade_proclamation,trade_proclamation,proclamation,Harry S Truman,"July 15, 1948",supplementing proclamations december 16 1947 and january 1 1948 carrying,25
+SHC099,13943,trade_proclamation,trade_proclamation,proclamation,George W. Bush,"June 30, 2006",implement the dominican republic central america united states free,25
+SHC100,18198,trade_proclamation,trade_proclamation,proclamation,Donald J. Trump,"May 15, 2020",world trade week 2020,25

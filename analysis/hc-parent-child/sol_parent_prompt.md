@@ -11,9 +11,11 @@ predicate do not necessarily defeat a relationship.
 
 Do not select a candidate based only on a shared broad topic, a generic governmental
 function, routine administrative clauses, boilerplate, or the fact that both implement a
-similar statutory duty. Choose the single strongest candidate if one qualifies. Choose
-`none` when no displayed candidate plausibly supplied a material drafting template. Choose
-`uncertain` only when the evidence is genuinely too close to resolve.
+similar statutory duty. Rank the three strongest displayed candidates from strongest to
+weakest in `candidate_ranking`; this ranking is required even if none ultimately qualifies.
+Choose the first-ranked candidate only if it plausibly supplied a material drafting
+template. Choose `none` when no displayed candidate qualifies. Choose `uncertain` only
+when the evidence is genuinely too close to resolve.
 
 Candidate labels and order are arbitrary. Category, retrieval method, scores, ranks, and
 document identifiers are intentionally hidden. Directive-number references have been

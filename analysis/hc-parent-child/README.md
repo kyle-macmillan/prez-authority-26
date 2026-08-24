@@ -3,8 +3,9 @@
 ## Next-session handoff: run the frozen Sol sample
 
 The immediate next step is to run the already-frozen 100-child balanced HC sample; do not
-rebuild or resample it. The package contains 20 children from each HC category and is
-documented in `SOL_HC_PARENT_100_RUNBOOK.md`. No model calls have been made yet.
+rebuild or resample it. The package contains 20 children from each HC category and exactly
+25 blinded parent candidates per child (2,500 pairs total). It is documented in
+`SOL_HC_PARENT_100_RUNBOOK.md`. No model calls have been made yet.
 
 On the run machine, use an authenticated `codex` CLI and run:
 
@@ -17,10 +18,12 @@ python3 analysis/hc-parent-child/score_sol_hc_parent_100.py --require-complete
 ```
 
 The runner is resumable and pins `gpt-5.6-sol` with low reasoning. Web search is disabled
-because this is a controlled comparison over the supplied, blinded candidate sets. Before
-running the remaining 99 cases, inspect the SHC001 response and logs as described in the
-runbook. Do not expose `sampled_children.csv`, `candidate_pool_key.csv`, or `manifest.json`
-to the model; those files restore hidden labels only during scoring.
+because this is a controlled comparison over the supplied, blinded candidate sets. Sol
+ranks the three strongest candidates and then selects the strongest only if it qualifies
+as a plausible drafting parent; it may instead return `none` or `uncertain`. Before running
+the remaining 99 cases, inspect the SHC001 response and logs as described in the runbook.
+Do not expose `sampled_children.csv`, `candidate_pool_key.csv`, or `manifest.json` to the
+model; those files restore hidden labels only during scoring.
 
 ## Executive summary: methods, work completed, and preliminary findings
 

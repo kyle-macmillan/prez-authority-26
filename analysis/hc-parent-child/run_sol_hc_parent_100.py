@@ -25,9 +25,16 @@ def validate_response(response: dict, request: dict) -> None:
     if decision not in {"candidate", "none", "uncertain"}:
         raise ValueError(f"invalid decision: {decision!r}")
     labels = {row["candidate_label"] for row in request["candidates"]}
+    ranking = response.get("candidate_ranking")
+    if not isinstance(ranking, list) or len(ranking) != 3:
+        raise ValueError("candidate_ranking must contain exactly three labels")
+    if len(set(ranking)) != 3 or any(label not in labels for label in ranking):
+        raise ValueError("candidate_ranking must contain three unique valid labels")
     selected = response.get("selected_candidate_label")
     if decision == "candidate" and selected not in labels:
         raise ValueError(f"candidate decision has invalid label: {selected!r}")
+    if decision == "candidate" and selected != ranking[0]:
+        raise ValueError("selected candidate must be first in candidate_ranking")
     if decision != "candidate" and selected is not None:
         raise ValueError("none/uncertain decision must use a null selected_candidate_label")
     confidence = response.get("confidence")

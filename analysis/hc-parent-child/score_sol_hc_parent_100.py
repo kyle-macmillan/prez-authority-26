@@ -54,6 +54,7 @@ def main() -> None:
     if args.require_complete and len(response_paths) != len(sample):
         raise SystemExit(f"expected {len(sample)} responses, found {len(response_paths)}")
     selections = []
+    top_rankings = []
     decisions = Counter()
     by_family = Counter()
     for path in response_paths:
@@ -70,7 +71,26 @@ def main() -> None:
             "confidence": response["confidence"],
             "relationship_type": response["relationship_type"],
             "rationale": response["rationale"],
+            "candidate_ranking": "|".join(response["candidate_ranking"]),
         }
+        for sol_rank, candidate_label in enumerate(response["candidate_ranking"], 1):
+            candidate = key[(case_id, candidate_label)]
+            top_rankings.append({
+                "case_id": case_id,
+                "child_id": sample[case_id]["document_id"],
+                "assigned_family": sample[case_id]["assigned_family"],
+                "decision": response["decision"],
+                "sol_rank": sol_rank,
+                "candidate_label": candidate_label,
+                "parent_id": candidate["parent_id"],
+                "retrieval_sources": candidate["retrieval_sources"],
+                **{
+                    field: candidate[field]
+                    for channel in CHANNELS for field in (f"{channel}_score", f"{channel}_rank")
+                },
+                "rrf_score": candidate["rrf_score"],
+                "rrf_rank": candidate["rrf_rank"],
+            })
         if response["decision"] == "candidate":
             candidate = key[(case_id, response["selected_candidate_label"])]
             row.update({
@@ -83,6 +103,7 @@ def main() -> None:
             })
         selections.append(row)
     write_csv(args.package_dir / "sol_parent_selections.csv", selections)
+    write_csv(args.package_dir / "sol_top3_rankings.csv", top_rankings)
     accepted = [row for row in selections if row["decision"] == "candidate"]
     summaries = [retrieval_summary(accepted, channel) for channel in CHANNELS]
     write_csv(args.package_dir / "metric_retrieval_summary.csv", summaries)

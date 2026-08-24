@@ -43,7 +43,8 @@ def main() -> None:
         assert "assigned_family" not in json.dumps(request)
         assert "document_id" not in json.dumps(request)
         labels = [row["candidate_label"] for row in request["candidates"]]
-        assert len(labels) == len(set(labels)) == len(key_by_case[case_id])
+        assert len(labels) == len(set(labels)) == len(key_by_case[case_id]) == 25
+        assert int(sample_by_case[case_id]["candidate_count"]) == 25
         assert set(labels) == {row["candidate_label"] for row in key_by_case[case_id]}
         child_date = parse_date(request["child"]["date"])
         assert all(parse_date(row["date"]) < child_date for row in request["candidates"])
