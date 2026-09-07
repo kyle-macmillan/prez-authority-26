@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["document_id", "citations", "unresolved_identity_links"],
+  "properties": {
+    "document_id": {"type": "string"},
+    "citations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["region", "segment_id", "evidence", "source_type", "instrument_label", "instrument_keys", "provision_keys", "generic", "excluded", "exclusion_reason"],
+        "properties": {
+          "region": {"type": "string", "enum": ["vesting", "body"]},
+          "segment_id": {"type": "string"},
+          "evidence": {"type": "string"},
+          "source_type": {"type": "string", "enum": ["constitution", "statute_or_code", "legislative_measure", "regulation", "judicial_decision", "treaty_or_agreement", "presidential_directive", "other_legal_instrument", "generic_laws"]},
+          "instrument_label": {"type": "string"},
+          "instrument_keys": {"type": "array", "items": {"type": "string"}},
+          "provision_keys": {"type": "array", "items": {"type": "string"}},
+          "generic": {"type": "boolean"},
+          "excluded": {"type": "boolean"},
+          "exclusion_reason": {"type": "string"}
+        }
+      }
+    },
+    "unresolved_identity_links": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["left_instrument_key", "right_instrument_key", "reason"],
+        "properties": {
+          "left_instrument_key": {"type": "string"},
+          "right_instrument_key": {"type": "string"},
+          "reason": {"type": "string"}
+        }
+      }
+    }
+  }
+}

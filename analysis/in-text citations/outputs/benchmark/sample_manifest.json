@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "seed": 260907,
+  "documents": 200,
+  "split_counts": {
+    "calibration": 100,
+    "evaluation": 100
+  },
+  "type_counts": {
+    "letter": 50,
+    "executive_order": 50,
+    "memorandum": 50,
+    "proclamation": 50
+  },
+  "preliminary_strata": {
+    "vesting_false__citation_false": 66,
+    "vesting_false__citation_true": 54,
+    "vesting_true__citation_false": 24,
+    "vesting_true__citation_true": 56
+  },
+  "development_count": 18418,
+  "development_id_sha256": "212ebe5d8f9b454aa31bbb1008cea8c2bf8d35f5c3a2025a59283b6eca515a07",
+  "expected_development_id_sha256": "212ebe5d8f9b454aa31bbb1008cea8c2bf8d35f5c3a2025a59283b6eca515a07",
+  "holdout_documents": 0
+}
