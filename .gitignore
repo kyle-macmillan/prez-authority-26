@@ -34,7 +34,9 @@ node_modules/
 
 # Reproducible presidential-action analysis outputs and human review queues.
 /analysis/recurring_functional_actions/outputs/
+# Legacy generated artifacts from the pre-100-day analysis name.
 /analysis/day_one_week_one/outputs/
+/analysis/first_100_days/outputs/
 
 __pycache__/
 *.py[cod]

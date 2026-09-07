@@ -81,13 +81,14 @@ def main() -> None:
     parser.add_argument("--method", required=True)
     parser.add_argument("--run-label", required=True)
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--allow-incomplete-profiles", action="store_true")
     parser.add_argument(
         "--last", type=int,
         help="Build requests for only the last N children in numeric child-ID order.",
     )
     args = parser.parse_args()
     manifest = json.loads((args.snapshot_dir / "snapshot_manifest.json").read_text())
-    if manifest.get("complete") is False:
+    if manifest.get("complete") is False and not args.allow_incomplete_profiles:
         raise RuntimeError("canonical profile snapshot is incomplete")
     profile_path = args.profiles or args.snapshot_dir / "profiles.jsonl"
     profiles = {str(row["document_id"]): row for row in _read_jsonl(profile_path)}

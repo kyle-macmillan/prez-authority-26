@@ -13,6 +13,8 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 DEFAULT_PACKAGE = HERE / "outputs/sol_hc_parent_100"
 CHANNELS = ("word5", "word10", "bm25", "function")
+HYBRID_CHANNELS = ("word5", "function")
+RANK_CUTOFFS = (1, 5, 10, 25)
 
 
 def retrieval_summary(rows: list[dict], channel: str) -> dict:
@@ -28,6 +30,52 @@ def retrieval_summary(rows: list[dict], channel: str) -> dict:
         "mean_reciprocal_rank": sum(1 / rank for rank in ranks) / len(rows) if rows else "",
         "interpretation": "retrieval_of_sol_accepted_silver_parent_not_ground_truth_accuracy",
     }
+
+
+def at_rank(row: dict, channel: str, cutoff: int) -> bool:
+    """Whether the Sol-selected parent is retrieved by one channel at a cutoff."""
+    rank = row.get(f"{channel}_rank")
+    return rank not in (None, "") and int(rank) <= cutoff
+
+
+def hybrid_retrieval_summary(rows: list[dict]) -> list[dict]:
+    """Describe complementary text/function retrieval of Sol silver parents.
+
+    This is a candidate-set retrieval diagnostic.  It does not use explicit
+    links and does not treat Sol selections as independent ground truth.
+    """
+    groups = [("all", rows)] + [
+        (family, [row for row in rows if row["assigned_family"] == family])
+        for family in sorted({row["assigned_family"] for row in rows})
+    ]
+    output = []
+    for family, group in groups:
+        for cutoff in RANK_CUTOFFS:
+            word5 = [at_rank(row, "word5", cutoff) for row in group]
+            function = [at_rank(row, "function", cutoff) for row in group]
+            both = [text and semantic for text, semantic in zip(word5, function)]
+            text_only = [text and not semantic for text, semantic in zip(word5, function)]
+            function_only = [semantic and not text for text, semantic in zip(word5, function)]
+            union = [text or semantic for text, semantic in zip(word5, function)]
+            output.append({
+                "sol_assigned_family": family,
+                "accepted_sol_parents": len(group),
+                "rank_cutoff": cutoff,
+                "word5_n": sum(word5),
+                "function_n": sum(function),
+                "both_n": sum(both),
+                "word5_only_n": sum(text_only),
+                "function_only_n": sum(function_only),
+                "word5_or_function_n": sum(union),
+                "word5_rate": sum(word5) / len(group) if group else "",
+                "function_rate": sum(function) / len(group) if group else "",
+                "word5_or_function_rate": sum(union) / len(group) if group else "",
+                "interpretation": (
+                    "retrieval_of_sol_accepted_silver_parent_not_ground_truth_accuracy; "
+                    "function_only_n_is_incremental_retrieval_beyond_word5"
+                ),
+            })
+    return output
 
 
 def write_csv(path: Path, rows: list[dict]) -> None:
@@ -107,6 +155,8 @@ def main() -> None:
     accepted = [row for row in selections if row["decision"] == "candidate"]
     summaries = [retrieval_summary(accepted, channel) for channel in CHANNELS]
     write_csv(args.package_dir / "metric_retrieval_summary.csv", summaries)
+    hybrid_summaries = hybrid_retrieval_summary(accepted)
+    write_csv(args.package_dir / "hybrid_retrieval_summary.csv", hybrid_summaries)
     family_rows = [
         {"assigned_family": family, "decision": decision, "count": count}
         for (family, decision), count in sorted(by_family.items())

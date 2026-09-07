@@ -1,13 +1,22 @@
 # High-confidence parent-child pilot
 
-## Next-session handoff: run the frozen Sol sample
+## Completed Sol silver-parent sample
 
-The immediate next step is to run the already-frozen 100-child balanced HC sample; do not
-rebuild or resample it. The package contains 20 children from each HC category and exactly
-25 blinded parent candidates per child (2,500 pairs total). It is documented in
-`SOL_HC_PARENT_100_RUNBOOK.md`. No model calls have been made yet.
+The frozen 100-child balanced HC sample is complete.  It contains 20 children from each HC
+category and exactly 25 blinded parent candidates per child (2,500 pairs total).  Every
+child is scoped, lacks a resolved explicit parent link, has a canonical operative profile,
+and was excluded from prior HC metric and parent-review samples.  The protocol is documented
+in `SOL_HC_PARENT_100_RUNBOOK.md`.
 
-On the run machine, use an authenticated `codex` CLI and run:
+The completed run used `gpt-5.6-sol` with low reasoning.  Web search was disabled because
+this was a controlled comparison over supplied, blinded candidate sets.  Sol ranked the
+three strongest candidates and selected the first only when it qualified as a plausible
+material drafting parent; it could instead return `none` or `uncertain`.  Requests hid HC
+category, document IDs, retrieval sources, scores, and ranks.  Vesting clauses, generic
+boilerplate, and directive-number references were absent.  Sol received none of the hidden
+key, sample manifest, or scoring files.
+
+Revalidate, resume, and score the frozen run with:
 
 ```bash
 python3 analysis/hc-parent-child/validate_sol_hc_parent_100.py
@@ -17,13 +26,10 @@ python3 analysis/hc-parent-child/run_sol_hc_parent_100.py
 python3 analysis/hc-parent-child/score_sol_hc_parent_100.py --require-complete
 ```
 
-The runner is resumable and pins `gpt-5.6-sol` with low reasoning. Web search is disabled
-because this is a controlled comparison over the supplied, blinded candidate sets. Sol
-ranks the three strongest candidates and then selects the strongest only if it qualifies
-as a plausible drafting parent; it may instead return `none` or `uncertain`. Before running
-the remaining 99 cases, inspect the SHC001 response and logs as described in the runbook.
-Do not expose `sampled_children.csv`, `candidate_pool_key.csv`, or `manifest.json` to the
-model; those files restore hidden labels only during scoring.
+The runner is resumable and skips all 100 validated responses.  Do not expose
+`sampled_children.csv`, `candidate_pool_key.csv`, or `manifest.json` to the model; those
+files restore hidden labels only during scoring.  Sol judgments are **silver labels**, not
+independent ground truth and not a population prevalence estimate.
 
 ## Executive summary: methods, work completed, and preliminary findings
 
@@ -63,6 +69,12 @@ evidence rather than independent validation.
 6. **Parent and method validation.** A preliminary parent-pair review, a 200-child masked
 known-edge retrieval benchmark, and a matched HC-versus-non-HC signal comparison test
 different parts of the design. They are not pooled or treated as interchangeable evidence.
+7. **No-explicit-link Sol validation.** A fresh, balanced set of 100 HC children was judged
+against diversified 25-candidate pools.  Sol's accepted parents replace explicit links as
+the substantive target in a separate silver-label retrieval analysis.
+8. **Text-OR-function analysis.** Five-word reuse and operative-function similarity remain
+separate branches.  A directive qualifies for the descriptive hybrid signal when either
+branch clears its HC-calibrated cutoff; the branches are not averaged.
 
 ### Work completed
 
@@ -78,6 +90,10 @@ authority.
 methods.
 - Benchmarked retrieval methods after masking directive identifiers and references:
 5-word distinctive reuse is the strongest tested standalone method.
+- Completed 100 blinded Sol parent judgments and restored hidden metric ranks only after
+the responses were frozen.
+- Measured the incremental retrieval supplied by function similarity beyond five-word
+reuse and applied the resulting descriptive HC-like thresholds outside the HC union.
 - Built machine-readable answers to the five research questions in
 `outputs/research_question_summary.csv` and a plain-language account in
 `RESEARCH_QUESTIONS.md`.
@@ -95,8 +111,11 @@ methods.
 | Pilot HC children with same-family candidate in top five | 213/236 (90.3%) | Candidate-set retrieval result, not confirmed parentage |
 | HC median 5-word reuse / matched-control median | 0.221 / 0.0966 | HC controls show moderate reuse enrichment (AUC 0.652) |
 | Masked known-edge retrieval with 5-word reuse | R@1 50%; R@5 70%; R@10 75% | Auxiliary retrieval benchmark, not a substantive HC benchmark |
+| Sol no-explicit-link HC decisions | 98 candidate; 2 none | Silver parent judgments from 100 fresh HC children; not independent ground truth |
+| Sol-parent retrieval, five-word / function / OR at rank 5 | 84/98; 59/98; 89/98 | Function adds 5 accepted parents beyond five-word retrieval |
 | Observed direct-transition children | 2,382 | 17.7% of full nonceremonial corpus; observed lineage lower bound only |
 | Outside-HC directives above HC-median 5-word reuse | 3,480/9,583 (36.3%) | Exact descriptive HC-like-reuse count; not a path-dependency estimate |
+| Outside-HC Sol-median text/function OR | 3,462/9,583 (36.1%) | Text 2,951; function-only addition 511; descriptive HC-like signal, not confirmed parentage |
 
 The reduced-review pilot does **not** yet support a high-confidence inferred numerator for
 path dependency outside observed links. A predeclared 90%-precision parent-selection rule
@@ -110,11 +129,11 @@ the HC median is evidence of HC-like reuse, not proof of path dependency.
 ```text
 HC positive-control categories → candidate-set and reuse validation
                                       ↓
-                       validate plausible drafting parents in HC cases
+                     Sol silver-parent validation in fresh HC cases
                                       ↓
-                 freeze a substantive path-dependency rule, if supported
+                    apply descriptive text/function OR outside HC
                                       ↓
-               apply it outside HC categories and estimate the final proportion
+             review function-only non-HC cases and freeze a rule, if supported
 ```
 
 Until the parent-validation gate is met, category coverage, observed links, and reuse
@@ -143,6 +162,108 @@ child's IDF-weighted unique 5-word phrases that occur in the best earlier candid
 neither a probability of path dependency nor a threshold learned from confirmed
 path-dependent cases; it is a descriptive reference point for asking whether an outside-HC
 directive has at least as much reuse as the typical HC pilot directive.
+
+### Sol silver-parent retrieval results
+
+The new Sol analysis does not use resolved explicit links as its outcome.  Its 100 children
+were drawn from the no-explicit-link HC population, balanced at 20 per assigned category,
+and excluded all prior metric and review children.  Candidate pools were the deduplicated
+union of the leading five-word, ten-word, BM25, and operative-function results; the two most
+recent same-family predecessors; and reciprocal-rank-fusion fill candidates up to 25.
+
+Sol selected a plausible material drafting parent for 98 children and returned `none` for
+two.  It labeled 97 accepted relationships `both` literal-language and
+structural-functional templates, and one relationship structural-functional only.  The
+98 accepted choices provide a consistent silver target for comparing retrieval channels:
+
+| Sol-selected parent retrieved | Rank 1 | Rank 5 | Rank 10 | Rank 25 |
+|---|---:|---:|---:|---:|
+| Five-word reuse | 70/98 (71.4%) | 84/98 (85.7%) | 87/98 (88.8%) | 92/98 (93.9%) |
+| Operative-function similarity | 35/98 (35.7%) | 59/98 (60.2%) | 69/98 (70.4%) | 79/98 (80.6%) |
+| Five-word OR function | 75/98 (76.5%) | 89/98 (90.8%) | 94/98 (95.9%) | 96/98 (98.0%) |
+| Function-only incremental retrieval | 5 | 5 | 7 | 4 |
+
+Five-word reuse remains the stronger standalone channel.  Function similarity is useful as
+a complementary retriever: at rank 5 it recovers five Sol-selected parents missed by
+five-word reuse, a 5.1-point gain among accepted relationships.  Those five cases have
+five-word ranks from 10 to 341 and function ranks from 1 to 4.  They include adapted
+emergency/IEEPA implementation, terrorist-entry, national-security waiver, investment
+restriction, and entrepreneurship-proclamation templates.  This is evidence for keeping
+separate text and function branches, not for averaging their scores or treating generic
+functional similarity as sufficient proof of parentage.
+
+The detailed judgments are in `outputs/sol_hc_parent_100/sol_parent_selections.csv`.
+`metric_retrieval_summary.csv` reports each individual channel, while
+`hybrid_retrieval_summary.csv` reports overlap and marginal OR retrieval overall and by HC
+category.  The results are conditional on a deliberately enriched 25-candidate pool and
+must not be read as the prevalence of parentage within HC categories.
+
+### Descriptive hybrid signal outside the HC union
+
+The corresponding outside-HC calculation covers 9,583 scoped directives with no resolved
+explicit parent.  All 9,583 have exact best-earlier five-word scores.  Operative-function
+rankings are available for 5,612 (58.6%); where they are unavailable, the hybrid can qualify
+a directive only through text.  Missing function profiles are therefore recorded as
+unavailable, not converted into negative functional evidence.
+
+For the primary updated descriptive comparison, branch thresholds are the medians of the
+best-earlier scores among the 98 HC children for which Sol accepted a parent:
+
+- five-word reuse: **0.30331**;
+- operative-function similarity: **0.74511**; and
+- hybrid: five-word score at least 0.30331 **OR** function score at least 0.74511.
+
+The function threshold is applied to each child's best strictly earlier profiled directive,
+not necessarily to the parent Sol selected.  This makes the HC and outside-HC quantities
+comparable as best-earlier signals.  The result is:
+
+| Outside-HC branch | Directives | Share of 9,583 |
+|---|---:|---:|
+| Five-word positive | 2,951 | 30.8% |
+| Function positive | 2,030 | 21.2% |
+| Positive on both branches | 1,519 | 15.9% |
+| Five-word only | 1,432 | 14.9% |
+| Function only | 511 | 5.3% |
+| Five-word OR function | 3,462 | 36.1% |
+
+Adding the function branch therefore contributes **511 directives, or 5.3 percentage
+points**, beyond text alone.  This is a 17.3% relative increase over the 2,951 text-positive
+directives.  Within the 5,612 directives that actually have function rankings, text alone
+qualifies 2,011 (35.8%) and the OR rule qualifies 2,522 (44.9%), so the function branch's
+coverage-conditional marginal contribution is 9.1 points.  The 5.3-point corpus result is
+coverage-limited and may change when the remaining function profiles are available.
+
+The earlier 236-child HC-pilot medians give a useful sensitivity specification: with text
+fixed at 0.22067 and function fixed at 0.71557, text qualifies 3,480/9,583 (36.3%), function
+adds 575, and the hybrid qualifies 4,055/9,583 (42.3%).  The marginal function contribution
+is therefore similar—5.3 to 6.0 corpus percentage points—under the two median calibrations,
+although the total level changes materially.
+
+The branch populations have different descriptive themes:
+
+- **Five-word reuse:** recurring congressional reports and transmittals; statutory waivers,
+  certifications, and presidential determinations; military-deployment reports; repeated
+  sanctions, tariff, trade-status, advisory-board, and administrative forms.  These often
+  update dates, quantities, countries, or named officials within inherited language.
+- **Function similarity:** succession orders; commissions, councils, boards, and task
+  forces; delegations; land reservations, restorations, and transfers; treaty or agency
+  implementation assignments; bill disapprovals; pay plans; budget requests; and recurring
+  operative proclamation structures.  Target and wording can differ while the governmental
+  operation remains similar.
+- **Both branches:** repeated delegations under the same statute, recurring certifications
+  and foreign-assistance determinations, emergency labor boards, sanctions and entry
+  restrictions, annual reports or observances, and trade or international-agreement
+  determinations.  These are the strongest proxy cases because language and machinery agree.
+- **Function-only marginal cases:** adaptations of the same succession, land-restoration,
+  agency-designation, commission/task-force, or transmittal machinery to a new object.  This
+  branch most closely captures the hypothesized structural path dependence, but it is also
+  most vulnerable to generic-function false positives.
+
+These counts describe an **HC-like parent signal**, not 3,462 confirmed parent
+relationships and not a path-dependency prevalence estimate.  The outside-HC directives
+have not received Sol pairwise adjudication.  Function-only candidates require targeted
+review, especially because the current whole-profile score can reward common administrative
+functions and can dilute the category-defining function across a long child profile.
 
 ## Research question
 
@@ -464,6 +585,14 @@ control in each split.  This baseline therefore does not justify a functional OR
 The next test should use structured action/mechanism/effect alignment and function rarity,
 then repeat branch-specific parent review.  No cutoff in this exploratory artifact is frozen
 for prevalence estimation.
+
+The later Sol analysis answers a different question and does not overturn this negative
+cutoff-validation result.  It treats Sol-accepted no-explicit-link HC parents as silver
+retrieval targets and shows that a separate function channel adds five parents beyond
+five-word reuse at rank 5.  Its median-based outside-HC OR calculation is therefore reported
+as a sensitivity and candidate-generation result.  It is not the failed margin rule above,
+is not a frozen high-confidence classifier, and cannot support a prevalence claim without
+review of the 511 function-only outside-HC candidates.
 
 Reproduce the calibration with:
 

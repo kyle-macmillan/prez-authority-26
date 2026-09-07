@@ -25,7 +25,7 @@ def category(*clauses: str) -> str:
 
 def test_analysis_prefilter_keeps_reviewed_ocr_vesting_clause():
     rows = [{
-        "": "10419",
+        "ucsb_identifier": "10419",
         "url": "https://example.test/10419",
         "date": "July 24, 1997",
         "president": "Example President",
@@ -38,6 +38,28 @@ def test_analysis_prefilter_keeps_reviewed_ocr_vesting_clause():
         "term": "1",
     }]
     output, _, _ = analyze(rows)
+    assert output[0]["category"] == "generic_constitution_and_specific_statute"
+    assert output[0]["ucsb_identifier"] == "10419"
+    assert "document_id" not in output[0]
+
+
+def test_eo_13477_uses_ucsb_identifier_and_specific_libyan_act():
+    rows = [{
+        "ucsb_identifier": "942",
+        "url": "https://www.presidency.ucsb.edu/documents/executive-order-13477-settlement-claims-against-libya",
+        "date": "October 31, 2008",
+        "president": "George W. Bush",
+        "doc_text": (
+            "By the authority vested in me as President by the Constitution and the laws "
+            "of the United States of America, and in recognition of the certification "
+            "pursuant to section 5(a)(2) of the Libyan Claims Resolution Act "
+            "(Public Law 110-301), it is hereby ordered as follows."
+        ),
+        "doc_type": "executive_order",
+        "term": "Second",
+    }]
+    output, _, _ = analyze(rows)
+    assert output[0]["ucsb_identifier"] == "942"
     assert output[0]["category"] == "generic_constitution_and_specific_statute"
 
 
@@ -303,6 +325,21 @@ def test_authority_spans_cut_all_reviewed_tail_connectors():
         "By authority vested in me by the Constitution and laws of the United States "
         "and in order to implement Public Law 1-2,"
     ]) == ["authority vested in me by the Constitution and laws of the United States"]
+
+
+def test_nested_pursuant_authority_survives_contextual_connector():
+    clause = (
+        "By the authority vested in me as President by the Constitution and the laws of "
+        "the United States of America, and in recognition of the October 31, 2008, "
+        "certification of the Secretary of State, pursuant to section 5(a)(2) of the "
+        "Libyan Claims Resolution Act (Public Law 110-301), and in order to continue "
+        "normalizing relations with Libya,"
+    )
+    assert extract_authority_spans([clause]) == [
+        "authority vested in me as President by the Constitution and the laws of the United States of America",
+        "pursuant to section 5(a)(2) of the Libyan Claims Resolution Act (Public Law 110-301)",
+    ]
+    assert category(clause) == "generic_constitution_and_specific_statute"
 
 
 def test_html_contains_every_category_and_count_column():

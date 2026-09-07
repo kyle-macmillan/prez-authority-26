@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["ranking"],
+  "additionalProperties": false,
+  "properties": {
+    "ranking": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["parent_id", "policy_score", "operative_score", "overall_score", "reason", "matched_child_function_ids", "matched_parent_function_ids"],
+        "additionalProperties": false,
+        "properties": {
+          "parent_id": {"type": "string"},
+          "policy_score": {"type": "number", "minimum": 0, "maximum": 1},
+          "operative_score": {"type": "number", "minimum": 0, "maximum": 1},
+          "overall_score": {"type": "number", "minimum": 0, "maximum": 1},
+          "reason": {"type": "string"},
+          "matched_child_function_ids": {"type": "array", "items": {"type": "string"}},
+          "matched_parent_function_ids": {"type": "array", "items": {"type": "string"}}
+        }
+      }
+    }
+  }
+}

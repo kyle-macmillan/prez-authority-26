@@ -143,12 +143,41 @@ def test_removes_vesting_clause_with_usc_of_the_wording():
     )
 
 
+def test_removes_vesting_clause_but_keeps_waiver_connector():
+    result = preprocess_for_similarity_detailed(
+        "By the authority vested in me by the Constitution and section 402(c)(2) of the "
+        "Trade Act of 1974, I hereby waive the application of the restriction."
+    )
+    assert result.text == "I hereby waive the application of the restriction."
+    assert len(result.removed_vesting_clauses) == 1
+
+
 def test_removes_vesting_clause_when_connector_starts_next_source_paragraph():
     result = preprocess_for_similarity_detailed(
         "By virtue of the authority vested in me by the Constitution,  "
         "I hereby proclaim that imports are restricted."
     )
     assert result.text == "I hereby proclaim that imports are restricted."
+    assert len(result.removed_vesting_clauses) == 1
+
+
+def test_removes_statutory_reporting_letter_leadin_but_keeps_report():
+    result = preprocess_for_similarity_detailed(
+        "Pursuant to the International Emergency Economic Powers Act (50 U.S.C. 1701), "
+        "the National Emergencies Act, and section 301 of title 3, United States Code, "
+        "I hereby report that I have issued an Executive Order."
+    )
+    assert result.text == "I hereby report that I have issued an Executive Order."
+    assert len(result.removed_vesting_clauses) == 1
+    assert "International Emergency Economic Powers Act" in result.removed_vesting_clauses[0]
+
+
+def test_removes_dated_statutory_reporting_leadin_but_keeps_date_and_report():
+    result = preprocess_for_similarity_detailed(
+        "On June 1, 1992, pursuant to section 204(b) of the International Emergency "
+        "Economic Powers Act (50 U.S.C. 1703(b)), I reported to the Congress."
+    )
+    assert result.text == "On June 1, 1992, I reported to the Congress."
     assert len(result.removed_vesting_clauses) == 1
 
 

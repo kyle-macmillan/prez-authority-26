@@ -21,9 +21,9 @@ def parsed(text:str):
         except json.JSONDecodeError as exc:error=exc
     raise error or ValueError("no JSON content")
 def main():
-    p=argparse.ArgumentParser(description=__doc__);p.add_argument("--snapshot-dir",type=Path,default=ROOT/"data/parent_analysis/canonical_profiles");p.add_argument("--candidates",type=Path);p.add_argument("--responses",type=Path,nargs="+");p.add_argument("--method",default="gemini_search");p.add_argument("--output-prefix",default="gemini");a=p.parse_args()
+    p=argparse.ArgumentParser(description=__doc__);p.add_argument("--snapshot-dir",type=Path,default=ROOT/"data/parent_analysis/canonical_profiles");p.add_argument("--candidates",type=Path);p.add_argument("--responses",type=Path,nargs="+");p.add_argument("--method",default="gemini_search");p.add_argument("--output-prefix",default="gemini");p.add_argument("--allow-incomplete-profiles",action="store_true");a=p.parse_args()
     responses=a.responses or [a.snapshot_dir/"gemini_rank_responses.jsonl"];manifest=json.loads((a.snapshot_dir/"snapshot_manifest.json").read_text())
-    if manifest.get("complete") is False: raise RuntimeError("canonical profile snapshot is incomplete")
+    if manifest.get("complete") is False and not a.allow_incomplete_profiles: raise RuntimeError("canonical profile snapshot is incomplete")
     expected=defaultdict(set)
     candidate_path=a.candidates or a.snapshot_dir/"candidate_pool.csv"
     with candidate_path.open(newline="",encoding="utf-8") as h:

@@ -1384,7 +1384,23 @@ def _segment_sentence(
             continue
         seg_type: "SegmentType | None" = "vesting_clause" if (has_vesting and i == 0) else "order_action"
         result.append((piece, seg_type))
-    return _carve_inline_pursuant(result, ordering_re)
+    result = _carve_inline_pursuant(result, ordering_re)
+    # ``including`` is also an ordering phrase, but immediately after a vesting
+    # invocation it commonly introduces the specific authorities supporting that
+    # invocation. Keep such citation-bearing continuations in the vesting clause.
+    merged: list[tuple[str, "SegmentType | None"]] = []
+    for piece, seg_type in result:
+        if (
+            merged
+            and merged[-1][1] == "vesting_clause"
+            and piece.lower().startswith("including ")
+            and _AUTHORITY_CITATION_RE.search(piece)
+        ):
+            previous, _ = merged[-1]
+            merged[-1] = (f"{previous} {piece}", "vesting_clause")
+        else:
+            merged.append((piece, seg_type))
+    return merged
 
 
 def _chunk_has_vesting(chunk: str, ordering_re: re.Pattern, opening_authority: bool = True,

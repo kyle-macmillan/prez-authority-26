@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Select the reproducible first 1,000 unresolved operative EO children."""
+"""Select a reproducible population of unresolved operative directive children."""
 
 from __future__ import annotations
 
@@ -8,6 +8,7 @@ import bisect
 import csv
 import json
 import random
+import numpy as np
 from collections import Counter
 from datetime import datetime
 from pathlib import Path
@@ -29,10 +30,17 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--input-dir", type=Path, default=DEFAULT_INPUT)
     parser.add_argument("--profile-dir", type=Path, default=DEFAULT_PROFILES)
+    parser.add_argument("--embeddings", type=Path, help="function embedding NPZ; defaults to profile-dir/function_embeddings.npz")
     parser.add_argument("--output-dir", type=Path, default=DEFAULT_OUTPUT)
     parser.add_argument("--holdout-ids", type=Path, default=ROOT / "data/holdout_ids.json")
     parser.add_argument("--sample-size", type=int, default=1_000)
     parser.add_argument("--seed", type=int, default=20260814)
+    parser.add_argument(
+        "--document-type",
+        default="executive_order",
+        choices=("all", "executive_order", "memorandum", "letter", "proclamation"),
+        help="directive type to include; use 'all' for the full unresolved population",
+    )
     parser.add_argument(
         "--allow-incomplete-profiles",
         action="store_true",
@@ -47,6 +55,13 @@ def main() -> None:
     profile_ids = {str(row["document_id"]) for row in profiles}
     if len(profile_ids) != len(profiles):
         raise ValueError("canonical registry contains duplicate profile IDs")
+    embedding_path = args.embeddings or args.profile_dir / "function_embeddings.npz"
+    with np.load(embedding_path) as embedding_data:
+        embedded_ids = set(embedding_data["document_ids"].astype(str))
+        if str(embedding_data["snapshot_hash"].item()) != snapshot["snapshot_hash"]:
+            raise ValueError("embedding snapshot mismatch")
+    if not embedded_ids <= profile_ids:
+        raise ValueError("embedding index contains IDs outside the canonical registry")
 
     documents = {
         str(row["document_id"]): row
@@ -64,15 +79,18 @@ def main() -> None:
     with (args.input_dir / "unresolved_children.csv").open(newline="", encoding="utf-8") as handle:
         unresolved = list(csv.DictReader(handle))
 
-    eligible_dates = sorted(parse_date(documents[document_id]["date"]) for document_id in profile_ids)
+    eligible_dates = sorted(parse_date(documents[document_id]["date"]) for document_id in embedded_ids)
     eligible = []
     excluded = Counter()
     for row in unresolved:
         document_id = row["document_id"]
-        if row["document_type"] != "executive_order":
+        if args.document_type != "all" and row["document_type"] != args.document_type:
             continue
         if document_id not in profile_ids:
             excluded["no_canonical_operative_profile"] += 1
+            continue
+        if document_id not in embedded_ids:
+            excluded["no_function_embeddings"] += 1
             continue
         earlier = bisect.bisect_left(eligible_dates, parse_date(row["date"]))
         if earlier < 25:
@@ -80,7 +98,7 @@ def main() -> None:
             continue
         eligible.append(row)
     if len(eligible) < args.sample_size:
-        raise ValueError(f"only {len(eligible)} executive orders are eligible")
+        raise ValueError(f"only {len(eligible)} {args.document_type} directives are eligible")
 
     rng = random.Random(args.seed)
     ordered = sorted(eligible, key=lambda row: int(row["document_id"]))
@@ -99,14 +117,16 @@ def main() -> None:
         writer.writerows(selected)
     manifest = {
         "schema_version": 1,
-        "purpose": "first production Gemini Flash no-thinking EO parent-identification batch",
+        "purpose": "production Gemini Flash no-thinking directive parent-identification batch",
+        "document_type": args.document_type,
         "seed": args.seed,
         "sample_size": len(selected),
         "canonical_snapshot_complete": bool(snapshot.get("complete")),
         "canonical_profile_count": len(profile_ids),
+        "embedded_directive_count": len(embedded_ids),
         "unresolved_profile_exclusions": len(unresolved_profile_ids),
         "allow_incomplete_profiles": args.allow_incomplete_profiles,
-        "eligible_executive_orders": len(eligible),
+        "eligible_directives": len(eligible),
         "excluded": dict(excluded),
         "partition_counts": dict(Counter(row["partition"] for row in selected)),
         "selection": "shuffle numeric-ID-sorted eligible population with random.Random(seed), take first N",

@@ -109,7 +109,7 @@ def operative_excerpt(doc_text: str, doc_type: str, limit: int = 6000) -> str:
 
 
 def materialize_sample(selected: list[dict], corpus_rows: list[dict]) -> list[dict]:
-    source = {row[""]: row for row in corpus_rows}
+    source = {row["ucsb_identifier"]: row for row in corpus_rows}
     records = []
     for sampled in selected:
         document_id = sampled["document_id"]

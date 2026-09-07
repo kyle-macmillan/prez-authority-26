@@ -269,13 +269,29 @@ def extract_authority_spans(
 
             start = marker.start() if marker else 0
             end = len(unit)
+            nested_authority_start = None
             if not include_compliance_language:
                 excluded = EXCLUDED_TAIL_RE.search(unit, start)
                 if excluded:
                     end = excluded.start()
+                    # A contextual connector can contain a new, explicit authority
+                    # assertion.  Preserve that nested assertion as its own span.
+                    # Example: "in recognition of [a certification], pursuant to
+                    # section 5(a)(2) of the Libyan Claims Resolution Act".
+                    nested = AUTHORITY_MARKER_RE.search(unit, excluded.end())
+                    if nested:
+                        nested_authority_start = nested.start()
             span = unit[start:end].strip(" ,;:")
             if span:
                 spans.append(span)
+            if nested_authority_start is not None:
+                nested_end = len(unit)
+                nested_excluded = EXCLUDED_TAIL_RE.search(unit, nested_authority_start)
+                if nested_excluded:
+                    nested_end = nested_excluded.start()
+                nested_span = unit[nested_authority_start:nested_end].strip(" ,;:")
+                if nested_span:
+                    spans.append(nested_span)
     return spans
 
 
@@ -371,7 +387,7 @@ def analyze(
         counts[("total", row["doc_type"], category)] += 1
         output.append(
             {
-                "document_id": row[""],
+                "ucsb_identifier": row["ucsb_identifier"],
                 "administration": administration,
                 "category": category,
                 "uses_compliance_language": (

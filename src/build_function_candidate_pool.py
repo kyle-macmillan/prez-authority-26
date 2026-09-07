@@ -8,12 +8,13 @@ import csv
 import json
 import math
 import re
+import time
 from collections import Counter, defaultdict
 from pathlib import Path
 
 import numpy as np
 
-from function_profile_pilot import child_coverage_score, parse_date, reciprocal_rank_fusion
+from function_profile_pilot import parse_date, reciprocal_rank_fusion
 from validate_function_profiles import _read_jsonl
 
 
@@ -43,6 +44,38 @@ def reuse_score(child: list[str], parent: list[str], size: int = 10) -> int:
     return sum(tuple(child[i:i + size]) in p for i in range(len(child) - size + 1))
 
 
+def shingles(tokens: list[str], size: int = 10) -> list[tuple[str, ...]]:
+    return [tuple(tokens[i:i + size]) for i in range(len(tokens) - size + 1)]
+
+
+def indexed_bm25_scores(
+    query: list[str], eligible: list[str], lengths: dict[str, int],
+    postings: dict[str, dict[str, int]],
+) -> dict[str, float]:
+    """Exact ``bm25_scores`` equivalent without rescanning every document's tokens."""
+    eligible_set = set(eligible); n = len(eligible); avg = sum(lengths[x] for x in eligible) / max(n, 1)
+    output = {did: 0.0 for did in eligible}
+    for token in set(query):
+        matches = {did: tf for did, tf in postings.get(token, {}).items() if did in eligible_set}
+        if not matches: continue
+        df = len(matches); idf = math.log(1 + (n - df + .5) / (df + .5))
+        for did, tf in matches.items():
+            output[did] += idf * tf * 2.2 / (tf + 1.2 * (.25 + .75 * lengths[did] / avg))
+    return output
+
+
+def indexed_reuse_scores(
+    child: list[str], eligible: list[str], shingle_postings: dict[tuple[str, ...], list[str]],
+) -> dict[str, float]:
+    counts = Counter(shingles(child))
+    eligible_set = set(eligible)
+    output = {did: 0.0 for did in eligible}
+    for gram, count in counts.items():
+        for did in shingle_postings.get(gram, []):
+            if did in eligible_set: output[did] += float(count)
+    return output
+
+
 def ranks(scores: dict[str, float]) -> dict[str, int]:
     return {did: i for i, did in enumerate(sorted(scores, key=lambda x: (-scores[x], int(x))), 1)}
 
@@ -58,7 +91,9 @@ def main() -> None:
     parser.add_argument("--fusion", choices=("rrf", "reserved"), default="rrf")
     parser.add_argument("--include-document-ablation", action="store_true")
     parser.add_argument("--allow-incomplete-profiles", action="store_true")
+    parser.add_argument("--progress-every", type=int, default=10, help="emit measured ETA every N children")
     args = parser.parse_args()
+    if args.progress_every < 1: parser.error("--progress-every must be positive")
     snapshot = json.loads((args.snapshot_dir / "snapshot_manifest.json").read_text())
     if snapshot.get("complete") is False and not args.allow_incomplete_profiles:
         raise RuntimeError("canonical profile snapshot is incomplete")
@@ -76,23 +111,47 @@ def main() -> None:
     segments=defaultdict(list)
     for x in _read_jsonl(args.input_dir / "directive_operative_segments.jsonl"): segments[str(x["document_id"])].append(x["text"])
     lexical={did:words(" ".join(segments.get(did,[]))) for did in by_kind}
+    lengths={did:len(tokens) for did,tokens in lexical.items()}
+    postings=defaultdict(dict)
+    shingle_postings=defaultdict(list)
+    for did,tokens in lexical.items():
+        postings_for_doc=Counter(tokens)
+        for token,tf in postings_for_doc.items(): postings[token][did]=tf
+        for gram in set(shingles(tokens)): shingle_postings[gram].append(did)
+
+    # Concatenate each kind's parent vectors by document so reduceat can score all
+    # parents in one matrix multiplication instead of thousands of tiny products.
+    vector_index={}
+    for kind in ("policy","operative"):
+        kind_dids=[did for did in sorted(by_kind,key=int) if by_kind[did][kind]]
+        grouped=[by_kind[did][kind] for did in kind_dids]
+        indices=np.asarray([i for group in grouped for i in group],dtype=np.int64)
+        starts=np.cumsum([0]+[len(group) for group in grouped[:-1]],dtype=np.int64)
+        vector_index[kind]=(kind_dids,indices,starts)
     children_path = args.children or args.snapshot_dir / "sampled_children.csv"
     with children_path.open(newline="",encoding="utf-8") as h: children=list(csv.DictReader(h))
+    missing=sorted({child["document_id"] for child in children}-set(by_kind),key=int)
+    if missing:
+        raise ValueError(f"{len(missing)} children have no function embeddings; examples: {missing[:10]}")
     doc_vectors=None
     if args.include_document_ablation:
         with np.load(args.input_dir / "embeddings/directive_document_embeddings.npz") as e:
             doc_vectors={str(x):(e["query_embeddings"][i],e["document_embeddings"][i]) for i,x in enumerate(e["ids"])}
-    output=[]
-    for child in children:
+    output=[]; started=time.monotonic(); total_children=len(children)
+    print(json.dumps({"event":"retrieval_started","children":total_children}),flush=True)
+    for child_number,child in enumerate(children,1):
         cid=child["document_id"]; eligible=[pid for pid in by_kind if dates[pid] < dates[cid]]
         channel_scores={"policy":{},"operative":{}}
-        for pid in eligible:
-            for kind in ("policy","operative"):
-                ci=by_kind[cid][kind]; pi=by_kind[pid][kind]
-                matrix=q[ci]@d[pi].T if ci and pi else np.empty((len(ci),len(pi)))
-                channel_scores[kind][pid]=child_coverage_score(matrix)
-        bm=bm25_scores(lexical[cid],{pid:lexical[pid] for pid in eligible})
-        reuse={pid:float(reuse_score(lexical[cid],lexical[pid])) for pid in eligible}
+        for kind in ("policy","operative"):
+            ci=by_kind[cid][kind]; kind_dids,indices,starts=vector_index[kind]
+            if ci and len(indices):
+                matrix=q[ci]@d[indices].T
+                scores=np.maximum.reduceat(matrix,starts,axis=1).mean(axis=0)
+                all_scores=dict(zip(kind_dids,map(float,scores),strict=True))
+                channel_scores[kind]={pid:all_scores.get(pid,0.0) for pid in eligible}
+            else: channel_scores[kind]={pid:0.0 for pid in eligible}
+        bm=indexed_bm25_scores(lexical[cid],eligible,lengths,postings)
+        reuse=indexed_reuse_scores(lexical[cid],eligible,shingle_postings)
         channel_scores.update({"bm25":bm,"text_reuse":reuse})
         if doc_vectors:
             channel_scores["document"]={pid:float(doc_vectors[cid][0]@doc_vectors[pid][1]) for pid in eligible}
@@ -111,6 +170,12 @@ def main() -> None:
             row={"child_id":cid,"parent_id":pid,"fusion_method":args.fusion,"fusion_rank":rank,"fusion_score":fused[pid],"snapshot_hash":snapshot["snapshot_hash"]}
             for name in channel_scores: row[f"{name}_score"]=channel_scores[name][pid];row[f"{name}_rank"]=channel_ranks[name][pid]
             output.append(row)
+        if child_number % args.progress_every == 0 or child_number == total_children:
+            elapsed=time.monotonic()-started; rate=child_number/elapsed
+            print(json.dumps({"event":"retrieval_progress","completed":child_number,"total":total_children,
+                              "percent":round(100*child_number/total_children,2),"elapsed_seconds":round(elapsed,1),
+                              "children_per_second":round(rate,4),
+                              "eta_seconds":round((total_children-child_number)/rate,1)}),flush=True)
     path=args.output or args.snapshot_dir/("candidate_pool_with_document_ablation.csv" if doc_vectors else "candidate_pool.csv")
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("w",newline="",encoding="utf-8") as h:

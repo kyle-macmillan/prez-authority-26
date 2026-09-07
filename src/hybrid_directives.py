@@ -280,7 +280,9 @@ def main() -> None:
     results = load_results()
     annotators = [name for name, _ in results]
     id_map: dict[str, int] = json.loads(DOC_ID_MAP.read_text())
-    corpus: dict[int, dict] = {int(r[""]): r for r in load_corpus([DEFAULT_DEV])}
+    corpus: dict[int, dict] = {
+        int(r["ucsb_identifier"]): r for r in load_corpus([DEFAULT_DEV])
+    }
     docs = build_payload(metadata, chunks, results, corpus, id_map)
     html_out = build_html(docs, len(metadata), annotators)
     OUTPUT.write_text(html_out)

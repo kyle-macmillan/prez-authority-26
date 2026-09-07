@@ -197,8 +197,22 @@ VESTING_START_RE = re.compile(
 )
 VESTING_CONNECTOR_RE = re.compile(
     r"\b(?:it\s+is\s+hereby\s+ordered|I\s+(?:do\s+)?hereby\s+"
-    r"(?:order|direct|determine|declare|proclaim|delegate|designate)|"
-    r"(?:do\s+)?hereby\s+(?:order|direct|determine|declare|proclaim|delegate|designate))\b",
+    r"(?:order|direct|determine|declare|proclaim|delegate|designate|waive)|"
+    r"(?:do\s+)?hereby\s+(?:order|direct|determine|declare|proclaim|delegate|designate|waive))\b",
+    re.I,
+)
+STATUTORY_LEADIN_START_RE = re.compile(
+    r"\b(?:pursuant\s+to|in\s+accordance\s+with|consistent\s+with|under)\b", re.I
+)
+STATUTORY_LEADIN_PERFORMATIVE_RE = re.compile(
+    r"\bI\s+(?:hereby\s+)?(?:report|transmit|submit|notify|inform|provide|certify|"
+    r"declare|proclaim|order|direct|determine|find|continue|extend|terminate|revoke|"
+    r"modify|amend|designate|reserve)\w*\b",
+    re.I,
+)
+STATUTORY_CITATION_RE = re.compile(
+    r"\b(?:\d+\s*U\.?S\.?C\.?|Public\s+Law|section\s+\d+|title\s+[IVX0-9]+|"
+    r"[A-Z][A-Za-z'’ -]{2,80}\s+Act|statutory\s+authorit(?:y|ies))\b",
     re.I,
 )
 
@@ -241,42 +255,67 @@ def mask_authorities(text: str) -> tuple[str, list[MaskedSpan]]:
     return "".join(pieces), spans
 
 
+def _remove_statutory_reporting_leadins(paragraph: str) -> tuple[str, list[str]]:
+    """Remove cited-authority lead-ins while retaining a reporting performative."""
+    removed: list[str] = []
+    search_from = 0
+    while True:
+        start = STATUTORY_LEADIN_START_RE.search(paragraph, search_from)
+        if not start:
+            break
+        connector = STATUTORY_LEADIN_PERFORMATIVE_RE.search(paragraph, start.end())
+        if not connector:
+            break
+        leadin = paragraph[start.start() : connector.start()]
+        # A statutory marker and same-paragraph performative distinguish a formal
+        # authority lead-in from ordinary prose such as "pursuant to this policy".
+        if len(leadin) <= 1400 and STATUTORY_CITATION_RE.search(leadin):
+            removed.append(leadin.strip(" ,;:"))
+            paragraph = paragraph[: start.start()] + paragraph[connector.start() :]
+            search_from = start.start()
+        else:
+            search_from = connector.end()
+    return paragraph, removed
+
+
 def remove_vesting_clauses(text: str) -> tuple[str, list[str]]:
     """Remove the full vesting clause while retaining its operative connector.
 
     Directive texts encode paragraphs with two or more spaces.  A vesting clause
     ordinarily begins with ``By the authority vested in me`` and ends immediately
     before ``it is hereby ordered`` (or the corresponding proclamation/directive
-    formula).  If a malformed source paragraph has no connector, the remainder of
-    that paragraph is removed rather than leaking cited authority into retrieval.
+    formula).  Congressional reporting letters also use a statutory lead-in such as
+    ``Pursuant to …, I hereby report``; that lead-in is removed while its reporting
+    performative remains.  If a malformed source paragraph has no connector, the
+    remainder of that paragraph is removed rather than leaking cited authority into
+    retrieval.
     """
     parts = re.split(r"( {2,})", text)
     removed: list[str] = []
     for index in range(0, len(parts), 2):
         paragraph = parts[index]
         start = VESTING_START_RE.search(paragraph)
-        if not start:
-            continue
-        connector = VESTING_CONNECTOR_RE.search(paragraph, start.end())
-        next_connector = (
-            VESTING_CONNECTOR_RE.match(parts[index + 2].lstrip())
-            if connector is None and index + 2 < len(parts) else None
-        )
-        prefix = paragraph[: start.start()].strip()
-        title_prefix = bool(prefix) and len(prefix) <= 200 and prefix.upper() == prefix
-        if (
-            connector is None and next_connector is None
-            and index != 0 and prefix and not title_prefix
-        ):
-            # This may be an incidental description of presidential authority
-            # rather than the document's formal vesting clause.
-            continue
-        end = connector.start() if connector else len(paragraph)
-        removed.append(paragraph[start.start() : end].strip(" ,;:"))
-        replacement = paragraph[: start.start()]
-        if connector:
-            replacement += paragraph[connector.start() :]
-        parts[index] = replacement.strip()
+        if start:
+            connector = VESTING_CONNECTOR_RE.search(paragraph, start.end())
+            next_connector = (
+                VESTING_CONNECTOR_RE.match(parts[index + 2].lstrip())
+                if connector is None and index + 2 < len(parts) else None
+            )
+            prefix = paragraph[: start.start()].strip()
+            title_prefix = bool(prefix) and len(prefix) <= 200 and prefix.upper() == prefix
+            if not (
+                connector is None and next_connector is None
+                and index != 0 and prefix and not title_prefix
+            ):
+                end = connector.start() if connector else len(paragraph)
+                removed.append(paragraph[start.start() : end].strip(" ,;:"))
+                replacement = paragraph[: start.start()]
+                if connector:
+                    replacement += paragraph[connector.start() :]
+                paragraph = replacement.strip()
+        paragraph, statutory_removed = _remove_statutory_reporting_leadins(paragraph)
+        removed.extend(statutory_removed)
+        parts[index] = paragraph
     return "".join(parts).strip(), removed
 
 

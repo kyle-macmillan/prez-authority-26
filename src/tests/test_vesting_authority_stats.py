@@ -113,6 +113,24 @@ def test_ocr_code_citation_does_not_truncate_vesting_clause():
     ]
 
 
+def test_eo_11519_including_citations_remain_in_vesting_clause():
+    clauses = extract_vesting_clauses(
+        "Now, THEREFORE, I, RICHARD NIXON, by virtue of the authority vested in me "
+        "by the Constitution and laws of the United States, including Sections 3500 "
+        "and 8500 of Title 10 of the United States Code and Section 301 of Title 3 of "
+        "the United States Code, do hereby order as follows: SECTION 1.",
+        "executive_order",
+    )
+    assert clauses == [
+        "by virtue of the authority vested in me by the Constitution and laws of the "
+        "United States, including Sections 3500 and 8500 of Title 10 of the United "
+        "States Code and Section 301 of Title 3 of the United States Code,"
+    ]
+    qualifies, _, specific = classify_vesting_clauses(clauses)
+    assert not qualifies
+    assert {match.rule for match in specific} >= {"legal_section", "legal_title"}
+
+
 def test_reviewed_historical_and_post_ordering_vesting_clauses():
     cases = [
         (

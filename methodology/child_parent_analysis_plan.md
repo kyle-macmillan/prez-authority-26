@@ -1,173 +1,199 @@
-# Child–Parent Directive Method (Pilot Specification)
+# Child–Parent Directive Method
 
-## Objective and definition
+**Status:** living methodology and run record, updated August 16, 2026. The
+relationship inferred here is a `plausible_precedent`: evidence that an earlier
+directive could have supplied useful substantive drafting material for a later one. It is
+not proof that the later drafter consulted, copied, or intended to follow the earlier
+directive.
 
-For a later presidential directive, identify the earlier directive(s) that an OLC lawyer
-or other drafter would most likely have treated as substantive drafting precedent. This
-is an expected-precedent relationship, not proof that the drafter actually consulted or
-copied the earlier document.
+The detailed execution/provenance record is
+`data/parent_analysis/FUNCTION_PROFILE_PARENT_PIPELINE.md`. This document states the
+current method, population transitions, completed runs, and interpretation rules in one
+place.
 
-A candidate parent must:
+## 1. Corpus and eligibility
 
-1. predate the child;
-2. address the same **specific policy problem**; and
-3. use a **materially similar operative action or mechanism**.
+The parent-analysis corpus contains 20,232 unique directives across executive orders,
+memoranda, proclamations, and letters. The segmentation/vesting holdout is retained for
+that separate task, but both physical corpus partitions are in scope for parent analysis.
 
-Shared subject words, actors, boilerplate, structure, or copied text are supporting
-signals, not sufficient conditions. A child may have several parents when different
-earlier directives supply precedent for different provisions.
+The successive eligibility filters were:
 
-## Eligibility and information separation
+| Stage | Directives | Rule |
+|---|---:|---|
+| Source corpus | 20,232 | Unique directives in the combined corpus |
+| Non-ceremonial analytic corpus | 13,461 | Exclude 6,771 codebook-defined ceremonial documents |
+| Unresolved children | 10,581 | Exclude 2,880 children with an automatic same-type parent edge from an explicit reference |
+| Flash/profile-retrieval eligible children | 7,036 | Exclude 3,446 without a canonical operative profile, 75 without function embeddings, and 24 with fewer than 25 earlier profiled directives |
 
-- Analyze executive orders, memoranda, proclamations, and letters together.
-- Exclude codebook-defined ceremonial directives.
-- Similarity-retrieval targets are directives that contain no reference to another
-  directive of any type. Referencing documents remain eligible as parents.
-- Any non-ceremonial earlier directive type may be a parent; same-type matching is not
-  required.
-- Require a strictly earlier date. Same-day documents are excluded because their true
-  drafting order is not reliably observed across directive types.
-- Remove the complete vesting clause and mask residual legal-authority citations before
-  synthesis, embeddings, lexical retrieval, reuse detection, reranking, or review.
-- Do not compare vesting-clause authorities until parent judgments and the graph are
-  frozen.
+The explicit-reference stage generated 7,523 edge records for 2,880 unique children. A
+child with at least one qualifying edge was resolved by that stage and did not enter
+similarity retrieval. Ambiguous, cross-type, outside-corpus, and non-earlier references
+are retained for audit rather than silently treated as parent edges.
 
-## Representations
+Candidate parents must be strictly earlier than the child. Same-day documents are
+excluded because chronological drafting order is not observable reliably. In the current
+function-profile retrieval, any earlier profiled directive can be a candidate parent;
+document type is recorded but is not a retrieval requirement.
 
-Each directive has three linked, authority-blind representations:
+## 2. Authority-blind source preparation
 
-1. cleaned full text;
-2. stable operative-action segments; and
-3. a grounded LLM synthesis containing a policy card and action records.
+Before similarity, profile extraction, retrieval, reranking, or review, the pipeline:
 
-The policy card records the specific problem, subject matter, affected entities,
-geographic scope, triggers, programs, and institutional actors. Each action record
-describes actor, action, object, mechanism, conditions, timing, and intended effect.
-Every synthesis claim must cite a supplied operative segment ID. The synthesis model is
-not asked to identify a parent.
+1. preserves unmasked text only long enough to resolve explicit directive references;
+2. removes the complete vesting clause and masks residual authority citations;
+3. creates stable operative-action segments from the masked text; and
+4. keeps the original authority spans separately for the later authority-divergence study.
 
-Syntheses are cached with the document ID, source hash, prompt version, schema version,
-and model. During development, synthesize only the 20 pilot children and the deduplicated
-parents returned by the initial authority-blind retrieval. After prompts and schema are
-frozen, synthesize every non-ceremonial directive once to build the evaluation index.
+Parent inference therefore cannot be driven by a shared legal-authority citation. Parent
+judgments and the later authority analysis remain separate until the graph is frozen.
 
-## Hybrid retrieval and ranking
+## 3. Flash function profiles
 
-For every child, retrieve the top four eligible earlier documents independently from:
+Gemini Flash receives an authority-masked full directive and its operative segments. It
+does **not** decide parenthood. Instead, it produces an auditable profile containing:
 
-- cleaned-text embeddings;
-- synthesis embeddings;
-- word/bigram TF–IDF (the lexical/word-importance channel); and
-- distinctive exact ten-word reuse, ignoring phrases appearing in more than 25
-  documents.
+- zero or more **policy functions**, representing the directive's specific policy purpose;
+- zero or more **operative functions**, representing a directed legal or administrative
+  action and linked to its operative segment; and
+- for each function: actor, action, target, mechanism, effect, condition, timing,
+  exact evidence, offsets, and confidence.
 
-Deduplicate the union (normally at most 16; hard cap 20). The existing provision-level
-pipeline then scores operative embeddings, word 3-grams, and sustained text reuse and
-combines those rankings with unweighted RRF (`k=20`). Preserve all component ranks,
-scores, and segment alignments.
+Profiles are locally validated: the schema must be valid; IDs and segment links must be
+valid; and evidence must be present in the supplied masked source text. Accepted profiles
+are retained in an append-only, versioned canonical cache. Every downstream artifact
+records its frozen profile-snapshot hash. Flash evidence excerpts are audit evidence, not
+embedding input.
 
-The resulting candidate set is reranked four ways on identical, authority-blind inputs:
+## 4. Candidate-pair retrieval
 
-1. no LLM (RRF baseline);
-2. Qwen3-Reranker 0.6B;
-3. Qwen3-Reranker 4B; and
-4. one selected frontier model.
+Each policy and operative function is embedded with Qwen3-Embedding-0.6B. Policy and
+operative functions use different retrieval instructions, respectively targeting the
+same specific policy problem and a materially similar legal or administrative mechanism.
 
-The rubric is conjunctive: same specific policy problem **and** materially similar
-operative mechanism. Frontier and general instruct-model responses separately score
-policy match, mechanism match, and expected precedent from 0–3 and cite segment IDs.
-The smaller Qwen rerankers use the same conjunctive language in their binary scoring
-instruction. The comparison determines whether the frontier reranker adds enough value
-to justify its cost. TopicGPT or a refinement may be added only as a retrieval ablation;
-it is not required by the main method.
+For each unresolved child, all strictly earlier profiled directives are ranked in four
+independent channels:
 
-## Pilot and validation
+1. policy-function semantic similarity;
+2. operative-function semantic similarity;
+3. BM25 over the original operative segments; and
+4. exact reuse of 10-word operative-text shingles.
 
-Freeze two deterministic samples:
+For either semantic channel, every child function receives the cosine similarity of its
+best matching parent function; those per-child-function maxima are averaged to produce
+the document-pair score. The lexical channels operate on source operative text. The four
+channel ranks are fused using unweighted Reciprocal Rank Fusion with `k = 60`, and the
+top 25 fused candidates are retained. All raw scores, channel ranks, fusion ranks, and
+snapshot provenance remain in the candidate-pool artifact.
 
-- **Development (20 children):** four random eligible children per directive type plus
-  four additional trade proclamations.
-- **Evaluation (40 untouched children):** eight random eligible existing-holdout
-  children per type plus eight trade proclamations reserved from the non-holdout frame
-  before development begins. (The existing holdout has only eight eligible
-  proclamations total, so it cannot supply both strata.)
+Being in the top 25 is only a retrieval result. It is not a parent finding.
 
-Trade proclamations are a known-parent genre and therefore a diagnostic stratum, not a
-positive parent label. Trade-to-trade similarity is never automatically parenthood.
+## 5. Post-retrieval parent decision
 
-Reviewers see cleaned text and operative segments, but no authority text, retrieval
-scores, method labels, or candidate ranks. Candidate display order is deterministically
-randomized. For every pair they assign `no`, `plausible`, or `strong` separately to:
+For each child, Gemini 3.6 Flash jointly reranks its frozen 25-candidate pool. The model
+must return every candidate exactly once, in descending overall score, along with policy
+and operative scores, a reason, and supporting function IDs.
 
-- the policy-problem match;
-- the operative-mechanism match; and
-- the overall expected-precedent relationship.
+The top-ranked candidate is then evaluated in a separate **candidate-or-none** call. The
+model asks whether a drafter could have reused concrete language, organization, legal
+machinery, institutional pathway, or sequence of actions from the earlier directive. It
+recognizes three possible relationship scopes:
 
-They also record supporting segment IDs and a short explanation. Formal earlier-
-directive references form a separate hidden benchmark; they are not tuning examples.
+1. whole-document parent;
+2. structural-framework parent; or
+3. material-provision parent.
 
-Report nDCG@10, precision@5 and @10, MRR, and Success@5/@10/@20 for every reranker,
-overall and for the trade-proclamation stratum. Also audit cross-type parents, policy-
-only false positives, mechanism-only false positives, generic-language matches,
-left-censoring, and failures where no retrieved candidate is adequate.
+Generic topical overlap, common actors, boilerplate, ordinary executive-order form, and
+routine administrative clauses are insufficient. A `candidate` requires a self-reported
+plausibility score of at least 0.50; a lower score is `none`. `None` means the rank-1
+candidate was not plausible, not that no possible parent exists outside the reviewed pool.
 
-## Implemented workflow
+Gemini outputs are provisional model judgments. A final parent edge requires blinded human
+review or another expressly documented validation rule.
 
-The implementation reuses the existing segmenter, embedding cache, segment-level
-ranking, Qwen runner, and HTML-review conventions.
+## 6. Completed pilots
 
-```bash
-# Rebuild eligibility and authority-blind source artifacts.
-python3 src/parent_analysis.py
+### Second EO-only pilot
 
-# Freeze the development and evaluation samples.
-python3 src/build_parent_method_pilot.py
+The second pilot used 20 executive orders with no overlap with the original pilot. Both
+thinking-off and thinking-medium Gemini variants used the same frozen snapshot, the same
+top-25 retrieval procedure, and the drafter-centered v2 prompts. All 1,000 ranking rows
+and all 40 acceptance calls validated.
 
-# Initial development retrieval without synthesis, then synthesize only its union.
-python3 src/hybrid_candidate_pool.py \
-  --children data/parent_analysis/method_pilot/development_children.csv
-python3 src/synthesize_directives.py --scope pilot \
-  --pilot-manifest data/parent_analysis/method_pilot/pilot_manifest.json \
-  --candidates data/parent_analysis/hybrid_candidate_pool.csv
+The variants chose the same rank-1 candidate for 17 of 20 children and agreed on the
+candidate-or-none decision for 15 of 20. Thinking-off accepted 15 children; thinking
+medium accepted 10.
 
-# Run the frozen requests through candidate synthesis models, then validate/import the
-# selected model's JSONL responses and embed the resulting cards.
-python3 src/synthesize_directives.py --scope pilot \
-  --pilot-manifest data/parent_analysis/method_pilot/pilot_manifest.json \
-  --candidates data/parent_analysis/hybrid_candidate_pool.csv \
-  --responses RESPONSES.jsonl
-python3 src/embeddings/embed_parent_analysis.py --artifact syntheses
+The blinded review export dated August 16, 2026 judged 13 children to have a plausible
+parent among the displayed winners and 7 to have none. Against that review, the
+thinking-off model agreed on the parent/not-parent decision in 16 of 20 cases:
 
-# Rebuild the union and apply the existing provision-level ranker.
-python3 src/hybrid_candidate_pool.py \
-  --children data/parent_analysis/method_pilot/development_children.csv
-python3 src/rank_candidate_pool.py \
-  --candidate-pool data/parent_analysis/hybrid_candidate_pool.csv \
-  --output data/parent_analysis/ranked_hybrid_candidates.csv
+| Thinking-off versus reviewer | Cases |
+|---|---:|
+| Both: plausible parent | 12 |
+| Both: no plausible parent | 4 |
+| Model parent; reviewer none | 3 |
+| Reviewer parent; model none | 1 |
 
-# Run Qwen twice by changing model path/label; generate/import frontier pair requests
-# with parent_reranker_protocol.py. Repeated imports accumulate in one comparison CSV.
-python3 src/rerank_qwen_candidates.py \
-  --candidates data/parent_analysis/ranked_hybrid_candidates.csv \
-  --model-path PATH_TO_QWEN_0.6B --model-label qwen3-reranker-0.6b \
-  --output data/parent_analysis/qwen_0.6b.csv
-python3 src/rerank_qwen_candidates.py \
-  --candidates data/parent_analysis/ranked_hybrid_candidates.csv \
-  --model-path PATH_TO_QWEN_4B --model-label qwen3-reranker-4b \
-  --output data/parent_analysis/qwen_4b.csv
-python3 src/parent_reranker_protocol.py \
-  --candidates data/parent_analysis/ranked_hybrid_candidates.csv
+Thinking-medium was more conservative and slightly more aligned with the review: 17/20
+parent/not-parent agreement and 16/20 exact outcome agreement, compared with 16/20 and
+15/20 for thinking-off. These results are small-sample pilot evidence, not a final method
+selection.
 
-# Build blinded review material and evaluate exported judgments.
-python3 src/build_parent_method_viewer.py \
-  --sample data/parent_analysis/method_pilot/development_children.csv \
-  --candidates data/parent_analysis/ranked_hybrid_candidates.csv \
-  --output data/parent_analysis/method_pilot/development_viewer.html
-python3 src/evaluate_parent_retrieval.py \
-  --rankings data/parent_analysis/reranker_comparison.csv \
-  --judgments JUDGMENTS.json --output RESULTS.json
-```
+## 7. Completed all-directives Gemini run
 
-After development choices are frozen, repeat synthesis with `--scope all`, rebuild the
-full synthesis embedding index, and run only the untouched evaluation children. Parent
-edges and authority divergence are joined only after that evaluation graph is fixed.
+The completed non-thinking Gemini work comprises two non-overlapping batches drawn from
+the 7,036-child eligible population: an initial 1,000-child batch and the next 1,500
+children.
+
+| Stage | Count | Rate of 2,500 targeted children |
+|---|---:|---:|
+| Targeted children | 2,500 | 100.0% |
+| Valid complete 25-candidate rankings | 2,439 | 97.6% |
+| Valid rank-1 acceptance decisions | 2,436 | 97.4% |
+
+Of the 2,436 completed acceptance decisions, Gemini returned 1,808 `candidate` decisions
+(74.2%) and 628 `none` decisions (25.8%). The mean acceptance score was 0.656 and the
+median was 0.82. These numbers describe model output, not confirmed parent edges.
+
+| Directive type | Completed decisions | Candidate | None |
+|---|---:|---:|---:|
+| Executive order | 661 | 499 | 162 |
+| Letter | 521 | 352 | 169 |
+| Memorandum | 920 | 700 | 220 |
+| Proclamation | 334 | 257 | 77 |
+| **Total** | **2,436** | **1,808** | **628** |
+
+The initial 1,000-child batch completed without validation errors. In the next 1,500,
+61 rankings failed validation (52 omitted or duplicated a frozen candidate; 9 were
+malformed or schema-invalid). Of the 1,439 valid rerankings, three acceptance responses
+omitted the required best-candidate ID. These failures are retained in error logs and are
+not counted as decisions.
+
+## 8. Provenance and current limitations
+
+- The all-directives run uses an incomplete canonical snapshot and is provisional. It
+  must not be merged with a final snapshot or presented as a finalized parent graph.
+- Profile requests, raw responses, validation outcomes, attempt logs, prompts, model
+  settings, response IDs, and snapshot hashes are retained so every profile and decision
+  can be traced.
+- Candidate generation, relative ranking, absolute acceptance, and human review are
+  reported separately. Good ranking does not establish a parent relationship.
+- Before production-edge release: complete profile recovery; rebuild the final snapshot;
+  rerun retrieval/ranking under that snapshot; and perform the specified blinded review
+  and method evaluation.
+
+## 9. Primary artifacts
+
+- Eligibility, references, and operative segments:
+  `data/parent_analysis_all_corpus/`
+- Canonical profiles and snapshot metadata:
+  `data/parent_analysis/canonical_profiles/`
+- Full function-profile pipeline record:
+  `data/parent_analysis/FUNCTION_PROFILE_PARENT_PIPELINE.md`
+- Second EO pilot and blinded review export:
+  `data/parent_analysis/function_parent_pilot/eo_pilot_20_v2/`
+- Completed 1,000-child run:
+  `data/parent_analysis/gemini_flash_no_thinking_all_directives_1000/`
+- Completed next-1,500-child run:
+  `data/parent_analysis/gemini_flash_no_thinking_all_directives_next_1500/`

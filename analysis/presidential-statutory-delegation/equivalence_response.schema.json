@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["pair_id", "left_authority_id", "right_authority_id", "relationship", "preferred_authority_id", "rationale", "official_sources"],
+  "properties": {
+    "pair_id": {"type": "string"},
+    "left_authority_id": {"type": "string"},
+    "right_authority_id": {"type": "string"},
+    "relationship": {"enum": ["equivalent", "not_equivalent", "partial_or_scope_mismatch", "cannot_verify"]},
+    "preferred_authority_id": {"type": ["string", "null"]},
+    "rationale": {"type": "string"},
+    "official_sources": {"type": "array", "items": {"type": "string"}}
+  }
+}

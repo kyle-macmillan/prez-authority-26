@@ -334,16 +334,20 @@ def load_corpus(paths: list[Path]) -> list[dict]:
         with open(path, newline="", encoding="utf-8-sig") as handle:
             source_rows = list(csv.DictReader(handle))
         for row in source_rows:
-            doc_id = row[""]
+            ucsb_identifier = row.pop("")
             url = row["url"]
-            if doc_id in seen_ids:
-                raise ValueError(f"duplicate document ID across corpus: {doc_id}")
+            if ucsb_identifier in seen_ids:
+                raise ValueError(f"duplicate UCSB identifier across corpus: {ucsb_identifier}")
             if url in seen_urls:
                 raise ValueError(f"duplicate document URL across corpus: {url}")
             if row["doc_type"] not in DOC_TYPES:
-                raise ValueError(f"unexpected document type {row['doc_type']!r} for ID {doc_id}")
-            seen_ids.add(doc_id)
+                raise ValueError(
+                    f"unexpected document type {row['doc_type']!r} for UCSB identifier "
+                    f"{ucsb_identifier}"
+                )
+            seen_ids.add(ucsb_identifier)
             seen_urls.add(url)
+            row["ucsb_identifier"] = ucsb_identifier
             row["source_file"] = path.name
             rows.append(row)
     return rows
@@ -372,7 +376,7 @@ def analyze(rows: list[dict]) -> tuple[list[dict], Counter, Counter]:
             qualifying[row["doc_type"]] += 1
         audit_rows.append(
             {
-                "document_id": row[""],
+                "ucsb_identifier": row["ucsb_identifier"],
                 "url": row["url"],
                 "doc_type": row["doc_type"],
                 "source_file": row["source_file"],
@@ -389,7 +393,7 @@ def analyze(rows: list[dict]) -> tuple[list[dict], Counter, Counter]:
 def write_audit(path: Path, rows: list[dict]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     fieldnames = [
-        "document_id", "url", "doc_type", "source_file", "qualifies", "reason",
+        "ucsb_identifier", "url", "doc_type", "source_file", "qualifies", "reason",
         "generic_authority_matches", "specific_authority_matches", "vesting_clauses",
     ]
     with open(path, "w", newline="", encoding="utf-8") as handle:

@@ -38,9 +38,9 @@ def compact(profile: dict) -> dict:
             for kind in ("policy","operative")}
 
 def main() -> None:
-    p=argparse.ArgumentParser(description=__doc__);p.add_argument("--snapshot-dir",type=Path,default=ROOT/"data/parent_analysis/canonical_profiles");p.add_argument("--profiles",type=Path);p.add_argument("--candidates",type=Path);p.add_argument("--run-label",default="thinking-off");p.add_argument("--output",type=Path);a=p.parse_args()
+    p=argparse.ArgumentParser(description=__doc__);p.add_argument("--snapshot-dir",type=Path,default=ROOT/"data/parent_analysis/canonical_profiles");p.add_argument("--profiles",type=Path);p.add_argument("--candidates",type=Path);p.add_argument("--run-label",default="thinking-off");p.add_argument("--output",type=Path);p.add_argument("--allow-incomplete-profiles",action="store_true");a=p.parse_args()
     manifest=json.loads((a.snapshot_dir/"snapshot_manifest.json").read_text())
-    if manifest.get("complete") is False: raise RuntimeError("canonical profile snapshot is incomplete")
+    if manifest.get("complete") is False and not a.allow_incomplete_profiles: raise RuntimeError("canonical profile snapshot is incomplete")
     profile_path=a.profiles or a.snapshot_dir/"profiles.jsonl"
     candidate_path=a.candidates or a.snapshot_dir/"candidate_pool.csv"
     profiles={str(x["document_id"]):x for x in _read_jsonl(profile_path)}

@@ -55,7 +55,7 @@ def build(worksheet_path: Path) -> None:
     """Build empty-coded worksheet for 75 in-scope sample-100 documents."""
     id_map: dict[str, int] = json.loads(DOC_ID_MAP.read_text())
     corpus_rows = load_corpus([DEFAULT_DEV])
-    corpus: dict[int, dict] = {int(row[""]): row for row in corpus_rows}
+    corpus: dict[int, dict] = {int(row["ucsb_identifier"]): row for row in corpus_rows}
 
     rows = []
     for label in sorted(id_map, key=lambda k: (_label_prefix(k), int(k[len(_label_prefix(k)):]))):

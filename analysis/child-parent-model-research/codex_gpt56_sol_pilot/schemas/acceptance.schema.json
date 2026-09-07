@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["best_candidate_id", "best_candidate_is_plausible", "plausibility_score", "reason", "matched_child_function_ids", "matched_parent_function_ids"],
+  "additionalProperties": false,
+  "properties": {
+    "best_candidate_id": {"type": "string"},
+    "best_candidate_is_plausible": {"type": "boolean"},
+    "plausibility_score": {"type": "number", "minimum": 0, "maximum": 1},
+    "reason": {"type": "string"},
+    "matched_child_function_ids": {"type": "array", "items": {"type": "string"}},
+    "matched_parent_function_ids": {"type": "array", "items": {"type": "string"}}
+  }
+}

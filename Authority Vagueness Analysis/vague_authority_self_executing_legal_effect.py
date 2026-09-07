@@ -256,7 +256,11 @@ def analyze(breakdown_path: Path, corpus_paths: list[Path]) -> tuple[list[dict],
         for row in csv.DictReader(handle):
             if row["authority_category"] != TARGET_AUTHORITY_CATEGORY:
                 continue
-            corpus_row = corpus[row["document_id"]]
+            identifier_field = (
+                "ucsb_identifier" if "ucsb_identifier" in row else "document_id"
+            )
+            ucsb_identifier = row[identifier_field]
+            corpus_row = corpus[ucsb_identifier]
             category, rationale, evidence, excerpt = classify_self_executing_legal_effect(
                 corpus_row["doc_text"], row["doc_type"]
             )
@@ -264,7 +268,7 @@ def analyze(breakdown_path: Path, corpus_paths: list[Path]) -> tuple[list[dict],
             counts[(row["doc_type"], category)] += 1
             output.append(
                 {
-                    "document_id": row["document_id"],
+                    "ucsb_identifier": ucsb_identifier,
                     "url": row["url"],
                     "date": row["date"],
                     "president": row["president"],
@@ -286,7 +290,7 @@ def analyze(breakdown_path: Path, corpus_paths: list[Path]) -> tuple[list[dict],
 def write_rows(path: Path, rows: list[dict]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     fieldnames = [
-        "document_id",
+        "ucsb_identifier",
         "url",
         "date",
         "president",

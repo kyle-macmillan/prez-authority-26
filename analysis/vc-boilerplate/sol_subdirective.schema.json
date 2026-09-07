@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["code", "rationale", "evidence"],
+  "additionalProperties": false,
+  "properties": {
+    "code": {"type": "integer", "minimum": 0, "maximum": 4},
+    "rationale": {"type": "string", "minLength": 1, "maxLength": 800},
+    "evidence": {"type": "string", "minLength": 1, "maxLength": 1200}
+  }
+}

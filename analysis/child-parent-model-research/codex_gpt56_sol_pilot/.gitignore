@@ -1,0 +1,5 @@
+# All results remain local until the pilot is intentionally reviewed.
+logs/*
+outputs/*
+!logs/.gitkeep
+!outputs/.gitkeep
