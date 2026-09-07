@@ -12,7 +12,7 @@ has been submitted.
 - The analysis loader rejects a wrong development count/hash or any protected holdout ID.
 - The 200-document benchmark, review page, regex predictions, and medium-reasoning Terra/Sol
   request files have been generated.
-- Six local analysis tests pass. Python compilation, request dry runs, the embedded review-page
+- Ten local analysis tests pass. Python compilation, request dry runs, the embedded review-page
   JavaScript syntax check, and a field-level corpus reconstruction check also pass.
 
 The remaining work begins with human review. Production is intentionally blocked until the
@@ -43,7 +43,7 @@ locked benchmark passes the agreed 90% precision-and-recall gates.
 - Locked evaluation: 100 documents, 25 of each directive type.
 - The sample covers nine decades.
 - Ninety-nine sampled documents contain structural vesting segments.
-- The current regex baseline proposes 468 included citation records. These are starting
+- The current regex baseline proposes 477 citation records. These are starting
   annotations, not findings.
 
 ## Next step: human gold labels
@@ -56,6 +56,10 @@ Open `outputs/benchmark/review.html` in a browser. For every document:
 4. Check the certification box and save.
 5. Export after all 200 documents are certified, then place the export at
    `outputs/benchmark/gold.jsonl`.
+
+The review page has separate editors for citations and unresolved identity links and refuses
+to export a partial certification set. Server-side validation also checks identity-link
+references, excluded-record keys, and optional evidence offsets.
 
 Validate it before any model scoring:
 

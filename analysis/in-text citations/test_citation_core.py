@@ -55,6 +55,43 @@ class CitationCoreTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "verbatim"):
             validate_citations(response, request)
 
+    def test_offsets_must_locate_verbatim_evidence(self):
+        request = {"document_id": "9", "segments": [{
+            "segment_id": "B001", "region": "body", "text": "Executive Order 12345 applies.",
+        }]}
+        response = {
+            "document_id": "9", "unresolved_identity_links": [],
+            "citations": [{
+                "region": "body", "segment_id": "B001", "evidence": "Executive Order 12345",
+                "start": 1, "end": 22, "source_type": "presidential_directive",
+                "instrument_label": "Executive Order 12345", "instrument_keys": ["eo:12345"],
+                "provision_keys": [], "generic": False, "excluded": False,
+                "exclusion_reason": "",
+            }],
+        }
+        with self.assertRaisesRegex(ValueError, "offsets"):
+            validate_citations(response, request)
+
+    def test_unresolved_links_must_connect_cited_keys(self):
+        request = {"document_id": "9", "segments": [{
+            "segment_id": "B001", "region": "body", "text": "Executive Order 12345 applies.",
+        }]}
+        response = {
+            "document_id": "9",
+            "citations": [{
+                "region": "body", "segment_id": "B001", "evidence": "Executive Order 12345",
+                "source_type": "presidential_directive", "instrument_label": "Executive Order 12345",
+                "instrument_keys": ["eo:12345"], "provision_keys": [], "generic": False,
+                "excluded": False, "exclusion_reason": "",
+            }],
+            "unresolved_identity_links": [{
+                "left_instrument_key": "eo:12345", "right_instrument_key": "eo:99999",
+                "reason": "The text does not establish whether these labels are equivalent.",
+            }],
+        }
+        with self.assertRaisesRegex(ValueError, "distinct cited instrument keys"):
+            validate_citations(response, request)
+
 
 if __name__ == "__main__":
     unittest.main()

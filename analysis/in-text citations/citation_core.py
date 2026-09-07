@@ -231,6 +231,7 @@ def validate_citations(response: dict, request: dict) -> None:
     citations = response.get("citations")
     if not isinstance(citations, list):
         raise ValueError("citations must be a list")
+    known_instrument_keys: set[str] = set()
     for index, citation in enumerate(citations):
         missing = {
             "region", "segment_id", "evidence", "source_type", "instrument_label",
@@ -245,11 +246,50 @@ def validate_citations(response: dict, request: dict) -> None:
             raise ValueError(f"citation {index} evidence is not verbatim source text")
         if citation["source_type"] not in SOURCE_TYPES:
             raise ValueError(f"citation {index} has an invalid source type")
-        if not all(isinstance(value, str) and value for value in citation["instrument_keys"]):
-            if not citation["excluded"]:
-                raise ValueError(f"included citation {index} needs an instrument key")
+        if not isinstance(citation["generic"], bool) or not isinstance(citation["excluded"], bool):
+            raise ValueError(f"citation {index} flags must be booleans")
+        for field in ("instrument_keys", "provision_keys"):
+            values = citation[field]
+            if not isinstance(values, list) or not all(isinstance(value, str) and value for value in values):
+                raise ValueError(f"citation {index} has invalid {field}")
+            if len(values) != len(set(values)):
+                raise ValueError(f"citation {index} has duplicate {field}")
+        if citation["excluded"]:
+            if citation["instrument_keys"] or citation["provision_keys"]:
+                raise ValueError(f"excluded citation {index} cannot have identity keys")
+            if not citation["exclusion_reason"].strip():
+                raise ValueError(f"excluded citation {index} needs an exclusion reason")
+        elif not citation["instrument_keys"]:
+            raise ValueError(f"included citation {index} needs an instrument key")
         if not citation["excluded"] and not citation["instrument_label"]:
             raise ValueError(f"included citation {index} needs an instrument label")
+        if "start" in citation or "end" in citation:
+            start, end = citation.get("start"), citation.get("end")
+            if not isinstance(start, int) or not isinstance(end, int):
+                raise ValueError(f"citation {index} offsets must be integers")
+            if start < 0 or end <= start or segment["text"][start:end] != citation["evidence"]:
+                raise ValueError(f"citation {index} offsets do not locate its evidence")
+        known_instrument_keys.update(citation["instrument_keys"])
+
+    links = response.get("unresolved_identity_links")
+    if not isinstance(links, list):
+        raise ValueError("unresolved_identity_links must be a list")
+    seen_links: set[tuple[str, str]] = set()
+    for index, link in enumerate(links):
+        if not isinstance(link, dict):
+            raise ValueError(f"identity link {index} must be an object")
+        missing = {"left_instrument_key", "right_instrument_key", "reason"} - set(link)
+        if missing:
+            raise ValueError(f"identity link {index} missing fields: {sorted(missing)}")
+        left, right = link["left_instrument_key"], link["right_instrument_key"]
+        if not all(isinstance(value, str) and value for value in (left, right, link["reason"])):
+            raise ValueError(f"identity link {index} fields must be nonempty strings")
+        if left == right or left not in known_instrument_keys or right not in known_instrument_keys:
+            raise ValueError(f"identity link {index} must connect two distinct cited instrument keys")
+        pair = tuple(sorted((left, right)))
+        if pair in seen_links:
+            raise ValueError(f"duplicate unresolved identity link at index {index}")
+        seen_links.add(pair)
 
 
 def entity_set(citations: list[dict], level: str) -> set[tuple[str, str]]:

@@ -8,7 +8,7 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
-from pipeline import build_requests, score, write_jsonl
+from pipeline import build_requests, score, validate_responses, write_jsonl
 from run_models import attempted_ids
 
 
@@ -59,6 +59,23 @@ class PipelineTests(unittest.TestCase):
             }])
             with self.assertRaisesRegex(ValueError, "benchmark-score"):
                 build_requests(root / "documents.jsonl", "terra", root / "requests.jsonl")
+
+    def test_response_validation_rejects_an_incomplete_batch(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            requests = [{
+                "document_id": value,
+                "segments": [{"segment_id": "B001", "region": "body", "text": "No citation."}],
+            } for value in ("1", "2")]
+            write_jsonl(root / "requests.jsonl", requests)
+            write_jsonl(root / "responses.jsonl", [{
+                "document_id": "1", "citations": [], "unresolved_identity_links": [],
+            }])
+            with self.assertRaisesRegex(ValueError, "lack 1 requested documents"):
+                validate_responses(
+                    root / "requests.jsonl", root / "responses.jsonl",
+                    root / "validated.jsonl", "terra",
+                )
 
 
 if __name__ == "__main__":

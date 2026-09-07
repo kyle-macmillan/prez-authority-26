@@ -23,7 +23,8 @@ python3 "analysis/in-text citations/pipeline.py" build-benchmark
 ```
 
 Open `outputs/benchmark/review.html`, inspect every substantive segment, edit the JSON
-records, certify documents, and export `gold.jsonl`. One hundred records are calibration
+records and unresolved identity links, certify documents, and export `gold.jsonl`. The page
+blocks export until all 200 documents are certified. One hundred records are calibration
 documents and 100 are the locked evaluation set.
 
 Prepare direct model requests without submitting them:
@@ -52,6 +53,9 @@ python3 "analysis/in-text citations/pipeline.py" validate-responses \
   --requests "analysis/in-text citations/outputs/benchmark/terra_requests.jsonl" \
   --responses terra_raw_responses.jsonl --method terra --output terra_validated.jsonl
 ```
+
+Validation rejects malformed identity links, excluded records with identity keys, invalid
+optional evidence offsets, and incomplete model-response batches.
 
 After direct responses are validated, use `build-hybrid-requests` to prepare high-reasoning
 Sol adjudication only for regex/Terra disagreements, then use `combine-hybrid`. Score the four
