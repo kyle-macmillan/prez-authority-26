@@ -1,0 +1,51 @@
+{
+  "document_id": "9488",
+  "request_hash": "18d31165aab8e1694edceddf26f97a58f694fb5d7462137dc729991908172150",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 13.22,
+  "usage": {
+    "input_tokens": 16791,
+    "cached_input_tokens": 0,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 393,
+    "reasoning_output_tokens": 62
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 1,
+        "rationale": "The President immediately assigns specified presidential functions to the Secretary of State, subject to consultation; this is an internal delegation, while any legal consequences arise only from later exercise of those functions.",
+        "evidence": "I hereby delegate to the Secretary of State the functions vested in the President"
+      },
+      {
+        "segment_id": "2",
+        "code": 1,
+        "rationale": "The President immediately delegates specified statutory functions to the Secretary of State without directing any particular later legal outcome.",
+        "evidence": "I hereby delegate to the Secretary of State the functions vested in the President"
+      },
+      {
+        "segment_id": "3",
+        "code": 1,
+        "rationale": "The President immediately assigns Treasury authority to exercise specified sanctions-related functions when the stated prerequisite is met, but does not itself select or impose a sanction.",
+        "evidence": "I hereby delegate to the Secretary of the Treasury, in consultation with the Secretary of State, the functions vested in the President"
+      },
+      {
+        "segment_id": "4",
+        "code": 1,
+        "rationale": "The President preserves an earlier internal delegation arrangement for implementing the prior statutory provisions; the segment does not itself impose a substantive legal consequence.",
+        "evidence": "shall remain in effect with regard to implementation under section 102(h)(2) of CISADA"
+      },
+      {
+        "segment_id": "5",
+        "code": 1,
+        "rationale": "The President immediately distributes statutory functions among executive officials and defines the memorandum’s future statutory references, without compelling a specified exercise of those functions or itself granting waivers, imposing sanctions, or applying prohibitions.",
+        "evidence": "I hereby delegate functions vested in the President by CISADA"
+      }
+    ]
+  },
+  "returncode": 0
+}

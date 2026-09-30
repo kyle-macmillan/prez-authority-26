@@ -1,0 +1,33 @@
+{
+  "document_id": "9595",
+  "request_hash": "072dd645b7faf908f57ae7795fa3ed0a6ab8cc26c9c125325a72da122567fe64",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 8.55,
+  "usage": {
+    "input_tokens": 15679,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 249,
+    "reasoning_output_tokens": 104
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 0,
+        "rationale": "This is background describing congressional directions, litigation, a consent decree, and existing DOE deadlines; it contains no presidential command or present legal act.",
+        "evidence": "The DOE remains subject to outstanding deadlines"
+      },
+      {
+        "segment_id": "2",
+        "code": 1,
+        "rationale": "The President requests that DOE expedite and prioritize its rulemaking, quantify expected savings, and comply with existing deadlines; DOE will finalize the standards later, and the segment does not dictate their substantive legal terms.",
+        "evidence": "the DOE work to complete prior to the applicable deadline those standards that will result in the greatest energy savings"
+      }
+    ]
+  },
+  "returncode": 0
+}

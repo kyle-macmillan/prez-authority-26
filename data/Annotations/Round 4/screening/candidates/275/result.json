@@ -1,0 +1,51 @@
+{
+  "document_id": "275",
+  "request_hash": "36a8c334ab7eae297e0d571538533bc0d2e63f179ba22e878a1ce02d948e5997",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 15.48,
+  "usage": {
+    "input_tokens": 17217,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 605,
+    "reasoning_output_tokens": 225
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 0,
+        "rationale": "The President states policy and supporting findings but directs no actor and creates no legal consequence in this segment.",
+        "evidence": "The Federal Government benefits from a workforce that can be recruited from the broadest and deepest pools of qualified candidates for merit-based positions."
+      },
+      {
+        "segment_id": "2",
+        "code": 3,
+        "rationale": "The President presently determines that an exception to competitive-hiring rules is necessary and establishes agencies’ authority to appoint certified, qualified individuals noncompetitively; the legal exception and hiring eligibility arise from this segment itself.",
+        "evidence": "I find that conditions of good administration make necessary an exception to the competitive hiring rules for certain positions in the Federal civil service."
+      },
+      {
+        "segment_id": "3",
+        "code": 2,
+        "rationale": "The AmeriCorps CEO or designee is mandatorily directed to issue legally consequential eligibility certificates later to persons deemed to satisfy the specified service criteria.",
+        "evidence": "shall issue certificates to persons whom the CEO or designee deems to have satisfactorily completed"
+      },
+      {
+        "segment_id": "4",
+        "code": 3,
+        "rationale": "The order itself imposes binding appointment timing and disqualification conditions, while allowing appointing authorities limited extensions; those eligibility consequences apply directly rather than awaiting a dictated agency rule.",
+        "evidence": "Any law, Executive Order, or regulation that would disqualify an applicant for appointment in the competitive service shall also disqualify an applicant for appointment under this order."
+      },
+      {
+        "segment_id": "5",
+        "code": 3,
+        "rationale": "Although the OPM Director receives discretionary regulatory authority, the segment itself immediately declares qualifying individuals eligible for noncompetitive hiring, independently of later regulations.",
+        "evidence": "Any individual who meets the terms of this order, however, is eligible for noncompetitive hiring with or without additional regulations."
+      }
+    ]
+  },
+  "returncode": 0
+}

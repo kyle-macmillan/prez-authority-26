@@ -1,0 +1,33 @@
+{
+  "document_id": "9018",
+  "request_hash": "e75654ef9f9fb37ad9910810e544aa6d3fb1e728c967bd690bf4b28ee270ec9e",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 10.07,
+  "usage": {
+    "input_tokens": 15126,
+    "cached_input_tokens": 0,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 310,
+    "reasoning_output_tokens": 123
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 3,
+        "rationale": "The President presently makes a statutory determination under section 1245(d)(4)(B) and (C); the determination's legally operative consequence occurs upon the presidential finding, with its substantive object completed in segment 2.",
+        "evidence": "I determine, pursuant to section 1245(d)(4)(B) and (C) of the National Defense Authorization Act for Fiscal Year 2012"
+      },
+      {
+        "segment_id": "2",
+        "code": 3,
+        "rationale": "This segment supplies the substantive finding of the President's present statutory determination—that alternative petroleum supplies are sufficient to permit a significant reduction in Iranian purchases. The additional statement about continued monitoring does not postpone that legal consequence.",
+        "evidence": "that there is a sufficient supply of petroleum and petroleum products from countries other than Iran to permit a significant reduction"
+      }
+    ]
+  },
+  "returncode": 0
+}

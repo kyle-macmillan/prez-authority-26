@@ -1,0 +1,27 @@
+{
+  "document_id": "8863",
+  "request_hash": "33ee69d73011bafb4ea8f800ad7b43b17684d5b34722395b08f064d6c416a44c",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 8.03,
+  "usage": {
+    "input_tokens": 15218,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 88,
+    "reasoning_output_tokens": 0
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 1,
+        "rationale": "The President directs relevant agencies to cooperate, provide resources and support, and operate under DHS coordination. This assigns internal executive-branch leadership and coordination responsibilities without itself changing legal rights or dictating a later legally consequential agency outcome.",
+        "evidence": "the Department of Homeland Security shall serve as the lead Federal agency"
+      }
+    ]
+  },
+  "returncode": 0
+}

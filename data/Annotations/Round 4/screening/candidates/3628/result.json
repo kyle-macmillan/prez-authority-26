@@ -1,0 +1,27 @@
+{
+  "document_id": "3628",
+  "request_hash": "df389937485c3b6bb470b108d90a573f9b14b2127519bffa825dfe496de72379",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 6.44,
+  "usage": {
+    "input_tokens": 15293,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 98,
+    "reasoning_output_tokens": 0
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 3,
+        "rationale": "The President presently excuses covered federal employees from duty on a specified date and makes that date a holiday for purposes of federal compensation and leave statutes. Those immediate legal consequences predominate; the accompanying leave-policy direction and exceptions define implementation and scope.",
+        "evidence": "shall be excused from duty all day on Friday, December 26, 1958"
+      }
+    ]
+  },
+  "returncode": 0
+}

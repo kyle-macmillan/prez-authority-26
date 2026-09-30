@@ -1,0 +1,27 @@
+{
+  "document_id": "2722",
+  "request_hash": "301e3c7f5569ce5d8583a51f880b73b48bd830482733e7413f72b0b0016c7537",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 6.23,
+  "usage": {
+    "input_tokens": 15366,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 130,
+    "reasoning_output_tokens": 34
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 3,
+        "rationale": "The President presently makes specified tax returns available for Department of Agriculture inspection, thereby changing their disclosure status; any subsequent inspection merely implements that immediate legal authorization under Treasury rules.",
+        "evidence": "income tax returns made for taxable years beginning on or after January 1, 1967, of persons having farm operations shall be open to inspection"
+      }
+    ]
+  },
+  "returncode": 0
+}

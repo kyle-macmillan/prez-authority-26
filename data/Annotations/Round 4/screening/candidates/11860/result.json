@@ -1,0 +1,39 @@
+{
+  "document_id": "11860",
+  "request_hash": "731c5f85bbab827b231cf91fac42417dc6b5bca9a9cac0b240d636d1be9ad067",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 10.28,
+  "usage": {
+    "input_tokens": 15371,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 370,
+    "reasoning_output_tokens": 158
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 3,
+        "rationale": "The President presently makes the statutory national-security determination that legally authorizes use of the cited funds; later administration merely implements that determination.",
+        "evidence": "it is hereby determined that the use of funds, available under said Act, for the purpose of carrying out the program of asylum for refugees from Hungary"
+      },
+      {
+        "segment_id": "2",
+        "code": 1,
+        "rationale": "Executive agencies are assigned implementation, expenditure, and reimbursement-coordination responsibilities, with the particular actions and amounts left to later requests, interagency agreement, and budget approval.",
+        "evidence": "are authorized and directed to take such action and make such expenditures as may be necessary"
+      },
+      {
+        "segment_id": "3",
+        "code": 0,
+        "rationale": "The first sentence expresses a nonbinding desire, while the second requests that an official transmit statutory notices to congressional committee chairs; neither governs agencies in a legally consequential way.",
+        "evidence": "is requested on my behalf to give appropriate notices"
+      }
+    ]
+  },
+  "returncode": 0
+}

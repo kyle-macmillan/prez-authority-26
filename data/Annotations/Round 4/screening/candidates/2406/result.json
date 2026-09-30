@@ -1,0 +1,87 @@
+{
+  "document_id": "2406",
+  "request_hash": "eb0ebdfae9aac5e3fdde32a37e69b84a17489db3e808beae293275d620770912",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 17.74,
+  "usage": {
+    "input_tokens": 17649,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 790,
+    "reasoning_output_tokens": 127
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 1,
+        "rationale": "The President immediately terminates a prior delegation to the OMB Director as of October 9, 1977; this is an internal reassignment of executive functions rather than a change in legal rights.",
+        "evidence": "The delegation to the Director of the Office of Management and Budget"
+      },
+      {
+        "segment_id": "2",
+        "code": 1,
+        "rationale": "The President amends an earlier order to replace the Budget Director and Bureau with the Commerce Secretary and Department, immediately reorganizing internal responsibility.",
+        "evidence": "\"Secretary of Commerce\" is substituted"
+      },
+      {
+        "segment_id": "3",
+        "code": 1,
+        "rationale": "The President makes the Secretary's performance subordinate to OMB authority and reassigns functions from the Budget Director to the Commerce Secretary; these are internal authority arrangements.",
+        "evidence": "shall be subject to any authority or responsibility vested in the Director of the Office of Management and Budget"
+      },
+      {
+        "segment_id": "4",
+        "code": 1,
+        "rationale": "The President immediately defines the relationship between the Secretary's assigned functions and the OMB Director's existing authority, an internal management limitation.",
+        "evidence": "shall be subject to any authority or responsibility vested in the 'Director of the Office of Management and Budget"
+      },
+      {
+        "segment_id": "5",
+        "code": 1,
+        "rationale": "The President amends a prior executive order as part of an internal reassignment of governmental functions; the operative substitution is completed by the adjoining supplied segments.",
+        "evidence": "Section 4 of Executive Order No. 11961 of January 19, 1977, is amended"
+      },
+      {
+        "segment_id": "6",
+        "code": 1,
+        "rationale": "The President deletes a prior internal assignment requiring the Council to make congressional reports, with the replacement assignment supplied in the next segment.",
+        "evidence": "the Council on International Economic Policy shall perform the function of making periodic reports"
+      },
+      {
+        "segment_id": "7",
+        "code": 1,
+        "rationale": "The President assigns specified statutory functions to the Commerce Secretary through an amendment, an internal allocation of executive responsibility.",
+        "evidence": "the Secretary of Commerce shall perform the functions"
+      },
+      {
+        "segment_id": "8",
+        "code": 1,
+        "rationale": "The President presently transfers records, property, personnel, and appropriated balances between executive officials to support the internal transfer of functions.",
+        "evidence": "are hereby transferred to the Secretary of Commerce"
+      },
+      {
+        "segment_id": "9",
+        "code": 1,
+        "rationale": "The President directs the OMB Director to take necessary or appropriate implementation steps to carry out the internal transfers, without dictating an external legal outcome.",
+        "evidence": "shall make such determinations, issue such orders, and take all steps necessary or appropriate"
+      },
+      {
+        "segment_id": "10",
+        "code": 1,
+        "rationale": "The President requires the Commerce Secretary to advise the OMB Director during internal budget review and preparation.",
+        "evidence": "shall provide advice to the Director of the Office of Management and Budget"
+      },
+      {
+        "segment_id": "11",
+        "code": 1,
+        "rationale": "The President establishes and staffs an advisory committee, prescribes internal support and coordination duties, preserves existing administrative actions during the reassignment, and sets the order's effective date; these are inseparable components of internal executive organization and continuity.",
+        "evidence": "There is hereby established the Statistical Policy Coordination Committee"
+      }
+    ]
+  },
+  "returncode": 0
+}

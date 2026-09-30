@@ -1,0 +1,33 @@
+{
+  "document_id": "5795",
+  "request_hash": "e1edffa651a33f0e8fe39188445c07c77f409f958652c34bb8b587408f27bf4a",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 13.42,
+  "usage": {
+    "input_tokens": 15519,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 262,
+    "reasoning_output_tokens": 88
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 1,
+        "rationale": "The President directed military forces to undertake an operational deployment and specified the support mission; this is discretionary executive and Commander-in-Chief management, not a self-executing change in legal rights or a mandated later agency legal outcome.",
+        "evidence": "I directed a limited number of U.S. military forces to deploy to East Timor"
+      },
+      {
+        "segment_id": "2",
+        "code": 1,
+        "rationale": "The President authorized deployment of military assets and described their operational scope and anticipated duration. The consequence is executive military management, while the accompanying congressional report does not create a legal-rights consequence.",
+        "evidence": "I authorized the deployment of the amphibious ship, USS BELLEAU WOOD (LHA 3), and her embarked helicopters"
+      }
+    ]
+  },
+  "returncode": 0
+}

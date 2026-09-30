@@ -1,0 +1,135 @@
+{
+  "document_id": "2063",
+  "request_hash": "be7fdca1d3718b33636d04375c99bbea1c629327001364dd614e34fdb146bdea",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 37.94,
+  "usage": {
+    "input_tokens": 26806,
+    "cached_input_tokens": 0,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 1913,
+    "reasoning_output_tokens": 754
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 3,
+        "rationale": "The President presently establishes the exclusive classification levels and the substantive standards governing which level applies; classifiers implement those already-binding legal statuses later.",
+        "evidence": "National security information (hereinafter \"classified information\") shall be classified at one of the following three levels"
+      },
+      {
+        "segment_id": "2",
+        "code": 3,
+        "rationale": "The provision itself immediately requires doubtful information to receive classified safeguards until the classification authority decides its status within 30 days.",
+        "evidence": "it shall be safeguarded as if it were classified pending a determination"
+      },
+      {
+        "segment_id": "3",
+        "code": 4,
+        "rationale": "This inseparably combines an immediate higher-level safeguarding requirement with internal allocations and delegation limits for classification authority.",
+        "evidence": "it shall be safeguarded at the higher level of classification pending a determination by an original classification authority"
+      },
+      {
+        "segment_id": "4",
+        "code": 4,
+        "rationale": "The segment combines internal delegation documentation and referral procedures with an immediate duty to protect information as classified while an agency later makes a discretionary classification determination.",
+        "evidence": "the information shall be protected in a manner consistent with this Order and its implementing directives"
+      },
+      {
+        "segment_id": "5",
+        "code": 3,
+        "rationale": "The provision presently defines classification criteria, presumptions, duration, continuing classification status, and document-marking duties; later officials apply those binding rules to particular information.",
+        "evidence": "Information that is determined to concern one or more of the categories in Section 1.3(a) shall be classified"
+      },
+      {
+        "segment_id": "6",
+        "code": 3,
+        "rationale": "The provision presently preserves or assigns classification status, prohibits classifications for specified purposes, and establishes binding conditions on reclassification and derivative classification.",
+        "evidence": "Information assigned a level of classification under predecessor orders shall be considered as classified at that level of classification"
+      },
+      {
+        "segment_id": "7",
+        "code": 4,
+        "rationale": "The segment combines internal preparation and approval of classification guides with a mandate that officials later produce the legally consequential result of declassification or downgrading when national-security considerations permit.",
+        "evidence": "Information shall be declassified or downgraded as soon as national security considerations permit."
+      },
+      {
+        "segment_id": "8",
+        "code": 4,
+        "rationale": "The segment inseparably combines review and coordination assignments with present originating-agency status rules and mandates governing later declassification decisions.",
+        "evidence": "the receiving agency shall be deemed to be the originating agency for purposes of this Order"
+      },
+      {
+        "segment_id": "9",
+        "code": 3,
+        "rationale": "The provision presently makes qualifying information subject to mandatory review, exempts presidential materials, and grants the Archivist authority over specified records.",
+        "evidence": "all information classified under this Order or predecessor orders shall be subject to a review for declassification by the originating agency"
+      },
+      {
+        "segment_id": "10",
+        "code": 4,
+        "rationale": "The segment combines internal review and appeal procedures with a present continuation of classified status and mandates agencies to produce later declassification and release outcomes after review.",
+        "evidence": "Agencies conducting a mandatory review for declassification shall declassify information no longer requiring protection under this Order."
+      },
+      {
+        "segment_id": "11",
+        "code": 1,
+        "rationale": "Agency heads must later develop internal procedures for processing and administratively appealing mandatory-review requests, without a dictated outcome on any information.",
+        "evidence": "Agency heads shall develop procedures to process requests for the mandatory review of classified information."
+      },
+      {
+        "segment_id": "12",
+        "code": 1,
+        "rationale": "The Secretary of Defense is assigned the internal task of developing review procedures, with no specified classification or disclosure outcome.",
+        "evidence": "The Secretary of Defense shall develop special procedures for the review of cryptologic information"
+      },
+      {
+        "segment_id": "13",
+        "code": 1,
+        "rationale": "The Director of Central Intelligence must develop internal review procedures after agency consultation, but the provision does not dictate results in particular reviews.",
+        "evidence": "the Director of Central Intelligence shall develop special procedures for the review of information"
+      },
+      {
+        "segment_id": "14",
+        "code": 4,
+        "rationale": "The segment inseparably combines internal review and referral procedures, mandated later responses to requesters, and present substantive rules governing eligibility for access and dissemination of classified information.",
+        "evidence": "A person is eligible for access to classified information provided that a determination of trustworthiness has been made"
+      },
+      {
+        "segment_id": "15",
+        "code": 1,
+        "rationale": "Agency heads must maintain an internal accounting system, while the remaining provisions authorize—but do not require—agencies to grant access waivers under prescribed safeguards.",
+        "evidence": "Each agency head shall establish and maintain a system of accounting for special access programs."
+      },
+      {
+        "segment_id": "16",
+        "code": 1,
+        "rationale": "The provision organizes and assigns executive-branch policy, implementation, staffing, oversight, review, reporting, and coordination responsibilities; any later directives remain part of internal administration.",
+        "evidence": "The National Security Council shall provide overall policy direction for the information security program."
+      },
+      {
+        "segment_id": "17",
+        "code": 1,
+        "rationale": "The Director must make an internal report when a possible violation is found so that the agency may consider discretionary corrective steps later.",
+        "evidence": "the Director shall make a report to the head of the agency"
+      },
+      {
+        "segment_id": "18",
+        "code": 3,
+        "rationale": "The provision itself makes covered government personnel and affiliated persons subject to sanctions upon specified violations, while agency heads later select and implement appropriate corrective action.",
+        "evidence": "shall be subject to appropriate sanctions if they"
+      },
+      {
+        "segment_id": "19",
+        "code": 1,
+        "rationale": "The operative actor must provide an internal violation notification promptly; the rest supplies definitions for administering the order rather than independently changing a person's legal status.",
+        "evidence": "Either shall ensure that the Director of the Information Security Oversight Office is promptly notified"
+      }
+    ]
+  },
+  "returncode": 0
+}

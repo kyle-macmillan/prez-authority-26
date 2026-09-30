@@ -1,0 +1,45 @@
+{
+  "document_id": "3098",
+  "request_hash": "21f381ab1eed4ba97f6ef42882a48eb5b431b77c80a22df463720d138dcfb131",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 15.65,
+  "usage": {
+    "input_tokens": 17109,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 688,
+    "reasoning_output_tokens": 416
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 3,
+        "rationale": "The President immediately prohibits specified imports, dealings, shipments, and supply activities by persons and carriers subject to U.S. jurisdiction; the legal consequence occurs upon the order itself, while the accompanying enforcement delegations are administrative.",
+        "evidence": "The following are prohibited effective immediately"
+      },
+      {
+        "segment_id": "2",
+        "code": 1,
+        "rationale": "The Secretaries of the Treasury and Commerce must consult with the Secretary of State while administering their assigned functions; this is mandatory internal executive coordination with no independent legal consequence for regulated parties.",
+        "evidence": "shall consult with the Secretary of State"
+      },
+      {
+        "segment_id": "3",
+        "code": 1,
+        "rationale": "The relevant Secretaries are directed to undertake consultation, as appropriate, with agencies and private persons; this is administrative coordination rather than a dictated or presently imposed legal outcome.",
+        "evidence": "shall consult, as appropriate, with other government agencies and private persons"
+      },
+      {
+        "segment_id": "4",
+        "code": 1,
+        "rationale": "Each relevant Secretary receives discretion to issue implementing regulations, licenses, or authorizations deemed necessary, without a prescribed later outcome; the accompanying definitions clarify the order's terms rather than independently imposing a new consequence.",
+        "evidence": "as he considers necessary to carry out the purposes of this Order"
+      }
+    ]
+  },
+  "returncode": 0
+}

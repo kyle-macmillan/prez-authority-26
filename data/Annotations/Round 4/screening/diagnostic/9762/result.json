@@ -1,0 +1,27 @@
+{
+  "document_id": "9762",
+  "request_hash": "d287df134f493b5e021421df14175b373d7632aeda02f2b4a25f71fdb432e12a",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 5.12,
+  "usage": {
+    "input_tokens": 14874,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 87,
+    "reasoning_output_tokens": 0
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 1,
+        "rationale": "The President immediately delegates presidential functions to the Secretary of Defense. This is an internal assignment of authority, not itself a transfer of stockpile items or another substantive legal consequence.",
+        "evidence": "I hereby assign to you the functions of the President under section 1 of Public Law 109-159"
+      }
+    ]
+  },
+  "returncode": 0
+}

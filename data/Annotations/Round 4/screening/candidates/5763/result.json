@@ -1,0 +1,33 @@
+{
+  "document_id": "5763",
+  "request_hash": "7a7a7d64aeb3a8e4964689f13e901578102eb9db1a3ef413913dca9c1b91e3e7",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 9.17,
+  "usage": {
+    "input_tokens": 15862,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 275,
+    "reasoning_output_tokens": 99
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 3,
+        "rationale": "The President makes a statutory determination establishing the new computer-export notification threshold; the legal consequence occurs after the Act’s prescribed congressional-notification period, despite being announced here.",
+        "evidence": "The new level will be 12,500 millions of theoretical operations per second (MTOPS)."
+      },
+      {
+        "segment_id": "2",
+        "code": 4,
+        "rationale": "This segment inseparably combines materially different postures: the President decides to remove Romania with delayed statutory effect, directs the Secretary of Commerce to impose specified licensing thresholds through agency administration, orders an internal review, and appeals for congressional cooperation.",
+        "evidence": "I have directed the Secretary of Commerce to adjust the level at which an individual license is required for computer exports to Tier 3 countries."
+      }
+    ]
+  },
+  "returncode": 0
+}

@@ -1,0 +1,27 @@
+{
+  "document_id": "7315",
+  "request_hash": "f95e1a3d1efddc2810daca8719cd7dfff2e012f1d8f6c77abbb87ca73d8d97f7",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 8.87,
+  "usage": {
+    "input_tokens": 15211,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 252,
+    "reasoning_output_tokens": 108
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 1,
+        "rationale": "The President mandates that the Attorney General file a federal-court petition seeking an injunction against the strikes, while leaving additional requested relief to the Attorney General’s judgment. This directs executive litigation activity; any binding injunction or other legal consequence occurs later only if ordered by the court, rather than being imposed by this segment or dictated for agency issuance.",
+        "evidence": "I direct you, at this time, pursuant to the provisions of Section 208 of the Labor Management Act, 1947 (29 U.S.C. 178), to petition in the name of the United States"
+      }
+    ]
+  },
+  "returncode": 0
+}

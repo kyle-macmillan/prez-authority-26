@@ -1,0 +1,27 @@
+{
+  "document_id": "7139",
+  "request_hash": "63e3399fea841f4be5980d17641aecb3236aa4fe3f9e007a1a1c0227dea44db0",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 6.0,
+  "usage": {
+    "input_tokens": 14992,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 102,
+    "reasoning_output_tokens": 0
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 1,
+        "rationale": "The President directs the Federal Energy Administrator to seek legislative or other required authority for a proposed extension; the segment does not itself extend the agency or mandate that the Administrator impose a specified legal consequence. Any legal consequence would occur only after the requested authority is obtained.",
+        "evidence": "I have directed Federal Energy Administrator Zarb to seek the authority required to carry out this proposal."
+      }
+    ]
+  },
+  "returncode": 0
+}

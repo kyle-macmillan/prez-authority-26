@@ -1,0 +1,69 @@
+{
+  "document_id": "2657",
+  "request_hash": "8d1afc719b22673bb3d7d149467b130370abf4ce1e77a84a8f02e325157581fc",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 15.26,
+  "usage": {
+    "input_tokens": 16539,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 681,
+    "reasoning_output_tokens": 188
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 1,
+        "rationale": "The President immediately creates an advisory commission and directs its presidentially appointed composition; this is internal executive organization, not a change in external legal rights.",
+        "evidence": "There is hereby established a National Commission for the Observance of World Population Year, 1974."
+      },
+      {
+        "segment_id": "2",
+        "code": 4,
+        "rationale": "The segment inseparably combines internal leadership designation and promotional duties (Code 1) with a present statutory travel-expense entitlement for commission members (Code 3).",
+        "evidence": "The members shall serve without compensation, but shall be entitled to receive travel expenses"
+      },
+      {
+        "segment_id": "3",
+        "code": 1,
+        "rationale": "The Commission must pursue public understanding of population issues, a promotional and informational assignment with no prescribed legal consequence.",
+        "evidence": "the Commission shall seek to create within the United States a better understanding"
+      },
+      {
+        "segment_id": "4",
+        "code": 1,
+        "rationale": "The Commission is directed or authorized to monitor, consult, meet, publish, conduct activities, and organize working groups; these are discretionary operational and internal-management functions.",
+        "evidence": "The Commission shall keep itself informed of activities undertaken or planned"
+      },
+      {
+        "segment_id": "5",
+        "code": 1,
+        "rationale": "The Commission must finish and report by specified dates and then terminates; these are reporting and internal organizational housekeeping consequences.",
+        "evidence": "shall make a report to the President on its work within thirty days thereafter"
+      },
+      {
+        "segment_id": "6",
+        "code": 1,
+        "rationale": "The Commission receives discretionary authority to request useful information, advice, and services from executive agencies, an internal coordination mechanism without a dictated legal outcome.",
+        "evidence": "The Commission is authorized to request any agency of the executive branch"
+      },
+      {
+        "segment_id": "7",
+        "code": 1,
+        "rationale": "The Commission and departments receive or assume authority and duties concerning expert procurement and administrative support, all within legal and funding limits; these are internal implementation arrangements.",
+        "evidence": "provide the Commission with administrative services, facilities, and funds necessary for its activities"
+      },
+      {
+        "segment_id": "8",
+        "code": 1,
+        "rationale": "The State Department and cabinet secretaries must staff and coordinate with the Commission, while congressional leaders are invited to participate; the segment principally establishes internal staffing and coordination rather than changing legal rights.",
+        "evidence": "The Department of State shall provide an Executive Secretary for the Commission."
+      }
+    ]
+  },
+  "returncode": 0
+}

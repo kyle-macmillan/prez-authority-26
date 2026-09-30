@@ -1,0 +1,39 @@
+{
+  "document_id": "14496",
+  "request_hash": "f40a4ee26c6b78b4146cf6a3a097297fe30a67e59f46d70d6ecf3db387adc70f",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 9.58,
+  "usage": {
+    "input_tokens": 15627,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 357,
+    "reasoning_output_tokens": 123
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 0,
+        "rationale": "The President makes a commemorative proclamation and urges voluntary public, state, local, and civic participation; it neither governs federal agencies nor changes legal rights.",
+        "evidence": "I urge the people of the United States to commemorate the significance of the Medal of Honor during this centennial period"
+      },
+      {
+        "segment_id": "2",
+        "code": 1,
+        "rationale": "The President directs the Secretary of the Army to arrange commemorative ceremonies on specified dates and at Army commands, an internal executive operational assignment with no legal consequence for rights or status.",
+        "evidence": "I direct the Secretary of the Army, acting under the direction of the Secretary of Defense, to insure that appropriate commemorative ceremonies of national interest are conducted"
+      },
+      {
+        "segment_id": "3",
+        "code": 1,
+        "rationale": "The President directs the Secretary of the Army to provide operational assistance for ceremonial activities; the action is internal executive implementation and produces no legal consequence.",
+        "evidence": "to lend the greatest possible assistance to the various State Governors, other State and municipal officials, and civic and patriotic organizations"
+      }
+    ]
+  },
+  "returncode": 0
+}

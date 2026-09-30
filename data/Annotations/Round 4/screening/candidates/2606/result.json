@@ -1,0 +1,45 @@
+{
+  "document_id": "2606",
+  "request_hash": "a03de8defad8d052f4b1914d759d5fe37e19ff64e1d7da05bc796e74223f6066",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 12.1,
+  "usage": {
+    "input_tokens": 15569,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 453,
+    "reasoning_output_tokens": 139
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 3,
+        "rationale": "The President presently authorizes noncompetitive conversion of qualifying cooperative education students' Schedule B appointments, thereby changing their eligibility for career or career-conditional appointment; agencies implement any actual conversion later.",
+        "evidence": "the appointment of a cooperative education student under Schedule B of the civil service rules may be converted noncompetitively to a career-conditional or career appointment"
+      },
+      {
+        "segment_id": "2",
+        "code": 1,
+        "rationale": "The Civil Service Commission must issue implementing and coordinating regulations, but the segment leaves their substantive content to what the Commission considers necessary and dictates no specific legal outcome.",
+        "evidence": "shall prescribe such regulations as may be necessary to carry out the provisions of this order"
+      },
+      {
+        "segment_id": "3",
+        "code": 2,
+        "rationale": "The segment mandates that the Commission's later regulations condition each student's continuation in the program on a satisfactory-performance finding, dictating a legally consequential eligibility condition to be imposed through agency rulemaking.",
+        "evidence": "shall require that continuation in the program be dependent upon a finding of satisfactory performance"
+      },
+      {
+        "segment_id": "4",
+        "code": 1,
+        "rationale": "The President immediately revokes a prior executive order and sets this order's effective date; under the codebook, revocation of a prior order governing administration is internal executive housekeeping rather than a self-executing change to legal rights.",
+        "evidence": "Executive Order No. 11202 of March 5, 1965, iv hereby revoked."
+      }
+    ]
+  },
+  "returncode": 0
+}

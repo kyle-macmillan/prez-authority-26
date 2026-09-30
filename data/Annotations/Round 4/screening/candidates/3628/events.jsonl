@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a0db5f-f32e-77d3-8f1b-a1b0d305da82"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"classifications\":[{\"segment_id\":\"1\",\"code\":3,\"rationale\":\"The President presently excuses covered federal employees from duty on a specified date and makes that date a holiday for purposes of federal compensation and leave statutes. Those immediate legal consequences predominate; the accompanying leave-policy direction and exceptions define implementation and scope.\",\"evidence\":\"shall be excused from duty all day on Friday, December 26, 1958\"}]}"}}
+{"type":"turn.completed","usage":{"input_tokens":15293,"cached_input_tokens":11264,"cache_write_input_tokens":0,"output_tokens":98,"reasoning_output_tokens":0}}

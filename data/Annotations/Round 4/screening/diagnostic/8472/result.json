@@ -1,0 +1,27 @@
+{
+  "document_id": "8472",
+  "request_hash": "eb4c24ee36d17160d3a3e4737cc9c07e44276470990d64ba0edadef05bd3019d",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 5.28,
+  "usage": {
+    "input_tokens": 15193,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 86,
+    "reasoning_output_tokens": 0
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 0,
+        "rationale": "The President transmits proposed legislation to Congress and urges its enactment; the segment neither governs executive agencies nor itself changes legal rights or duties.",
+        "evidence": "I attach for the consideration of the Senate (House of Representatives) a draft of legislation to establish a commission on the coal industry."
+      }
+    ]
+  },
+  "returncode": 0
+}

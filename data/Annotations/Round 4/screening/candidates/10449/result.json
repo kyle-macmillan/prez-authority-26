@@ -1,0 +1,33 @@
+{
+  "document_id": "10449",
+  "request_hash": "4e1f11781ad61946e4f37527c941802fbbc8841273694d5a35a0c91a1b09ef1f",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 10.59,
+  "usage": {
+    "input_tokens": 15119,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 272,
+    "reasoning_output_tokens": 87
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 0,
+        "rationale": "The President recounts prior executive and congressional actions and states a policy commitment, but this segment does not itself direct a new agency action or alter legal rights or funding. The actor is the President, the present expression is hortatory, the object is federal funding for human cloning, and no legal consequence occurs through this segment.",
+        "evidence": "I want to make it absolutely clear that no Federal funds will be used for human cloning."
+      },
+      {
+        "segment_id": "2",
+        "code": 2,
+        "rationale": "The President mandatorily directs federal funding officials and agencies not to allocate funds for human cloning. The specified legal consequence—the denial of federal funding—occurs through subsequent agency funding administration.",
+        "evidence": "I hereby direct that no Federal funds shall be allocated for cloning of human beings."
+      }
+    ]
+  },
+  "returncode": 0
+}

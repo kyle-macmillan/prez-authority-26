@@ -1,0 +1,27 @@
+{
+  "document_id": "10614",
+  "request_hash": "1015a1ae0cd15d7cc24850241e9ce8ece3c707a82840583f6f37531332766610",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 6.76,
+  "usage": {
+    "input_tokens": 14966,
+    "cached_input_tokens": 0,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 100,
+    "reasoning_output_tokens": 0
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 1,
+        "rationale": "The President delegates statutory presidential functions to the USAID Administrator and permits their internal redelegation. This is an internal assignment of executive authority, not a dictated substantive legal outcome or a self-executing change to private legal rights.",
+        "evidence": "I hereby delegate the authorities vested in the President under sections 8 and 9 of the African Conflict Resolution Act"
+      }
+    ]
+  },
+  "returncode": 0
+}

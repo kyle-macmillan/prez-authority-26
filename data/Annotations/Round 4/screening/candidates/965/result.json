@@ -1,0 +1,33 @@
+{
+  "document_id": "965",
+  "request_hash": "ddfa06ba4604d65893145cfa7334c1fa999fbf85e376df7dc1717e75e6c127c7",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 9.35,
+  "usage": {
+    "input_tokens": 16240,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 322,
+    "reasoning_output_tokens": 121
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 3,
+        "rationale": "The President presently sets binding basic-pay rates and locality payments through schedules incorporated into the order; those compensation consequences occur on the schedules’ specified effective dates, with later administration merely implementing them.",
+        "evidence": "locality-based comparability payments shall be paid in accordance with Schedule 9 attached hereto and made a part hereof"
+      },
+      {
+        "segment_id": "2",
+        "code": 4,
+        "rationale": "This segment inseparably combines materially different postures: the OPM Director must perform later ministerial implementation and publication, the President presently sets administrative-law-judge pay and effective dates, and the President immediately supersedes a prior order.",
+        "evidence": "The rates of basic pay for administrative law judges, as adjusted under 5 U.S.C. 5372(b)(4), are set forth on Schedule 10 attached hereto and made a part hereof."
+      }
+    ]
+  },
+  "returncode": 0
+}

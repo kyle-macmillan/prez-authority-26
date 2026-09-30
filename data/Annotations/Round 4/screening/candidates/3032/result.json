@@ -1,0 +1,45 @@
+{
+  "document_id": "3032",
+  "request_hash": "37f88e700fd88139f5b474fb27c481cfc7c92c7b519059669530119a189d6452",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 13.93,
+  "usage": {
+    "input_tokens": 16609,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 512,
+    "reasoning_output_tokens": 242
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 3,
+        "rationale": "The President itself immediately prohibits covered persons from making specified foreign capital transfers on and after the order’s effective date, subject to Commerce authorization; the legal consequence occurs by operation of this segment.",
+        "evidence": "is prohibited on or after the effective date of this Order"
+      },
+      {
+        "segment_id": "2",
+        "code": 2,
+        "rationale": "Although Commerce has discretion over repatriation requirements, the segment also mandates that the Secretary grant a specified exemption to institutions certified by the Board; that legal exemption is to be produced through later agency action.",
+        "evidence": "The Secretary of Commerce shall exempt from the provisions of this section 1"
+      },
+      {
+        "segment_id": "3",
+        "code": 1,
+        "rationale": "The segment authorizes the Board and Commerce to decide whether and how to regulate, require repatriation, issue implementing instruments, redelegate authority, and coordinate; it does not itself select a particular later legal outcome.",
+        "evidence": "as each of them determines to be necessary or appropriate"
+      },
+      {
+        "segment_id": "4",
+        "code": 1,
+        "rationale": "The segment requires interagency consultation and preserves existing delegations, both forms of internal executive coordination and authority management without changing private legal rights.",
+        "evidence": "shall consult as necessary and appropriate"
+      }
+    ]
+  },
+  "returncode": 0
+}

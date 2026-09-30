@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a0d9f7-3383-7b32-9f83-1501c3f1555a"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"classifications\":[{\"segment_id\":\"1\",\"code\":1,\"rationale\":\"The President requests that the Commission conduct fact-finding investigations and submit reports by specified deadlines. The actor is the Commission; the action is an investigative and reporting assignment concerning GSP impacts; and the segment neither presently changes GSP treatment nor dictates a later legal outcome.\",\"evidence\":\"I hereby request the Commission, pursuant to section 332(g) of the Tariff Act of 1930 to conduct investigations and report the results\"}]}"}}
+{"type":"turn.completed","usage":{"input_tokens":15906,"cached_input_tokens":11264,"cache_write_input_tokens":0,"output_tokens":114,"reasoning_output_tokens":0}}

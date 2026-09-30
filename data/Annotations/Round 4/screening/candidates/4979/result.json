@@ -1,0 +1,27 @@
+{
+  "document_id": "4979",
+  "request_hash": "9ca842c9f4fdf4bf17999fea2f88effc45ecfb07ade08a598259bdf8288d248a",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 6.07,
+  "usage": {
+    "input_tokens": 14987,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 80,
+    "reasoning_output_tokens": 0
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 3,
+        "rationale": "The President presently makes the statutory emergency-requirement designation for specified funding accounts; the legal consequence occurs upon this designation rather than through a later dictated agency decision.",
+        "evidence": "I hereby designate as emergency requirements all funding so designated by the Congress in the Act"
+      }
+    ]
+  },
+  "returncode": 0
+}

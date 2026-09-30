@@ -1,0 +1,39 @@
+{
+  "document_id": "2560",
+  "request_hash": "f0090ba51c61834d1f28cf523ff2720ebd35632a9dc6480f70e4ef7ccd34c2bb",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 10.44,
+  "usage": {
+    "input_tokens": 16447,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 317,
+    "reasoning_output_tokens": 45
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 1,
+        "rationale": "The President immediately establishes and staffs an executive committee, while assigning it ongoing monitoring, coordination, review, advisory, and reporting duties; these are internal organizational and policy-management functions, not prescribed legal outcomes for regulated parties.",
+        "evidence": "There is hereby established the Committee on Foreign Investment in the United States"
+      },
+      {
+        "segment_id": "2",
+        "code": 1,
+        "rationale": "The Secretary of Commerce must conduct ongoing information collection, analysis, procedural improvement, observation, evaluation, and reporting; these administrative activities do not themselves alter legal rights or compel a later specified legal consequence.",
+        "evidence": "The Secretary of Commerce, with respect to the collection and use of data on foreign investment in the United States, shall provide, in particular, for the performance of the following activities"
+      },
+      {
+        "segment_id": "3",
+        "code": 1,
+        "rationale": "The segment authorizes the Treasury Secretary's discretionary internal use of fund resources for administrative expenses, requires agencies to provide support, controls executive handling of confidential information, and preserves existing authority; no specified external legal consequence is imposed.",
+        "evidence": "All departments and agencies are directed to provide, to the extent permitted by law, such information and assistance as may be requested by the Committee or the Secretary of Commerce"
+      }
+    ]
+  },
+  "returncode": 0
+}

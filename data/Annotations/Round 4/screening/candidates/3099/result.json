@@ -1,0 +1,39 @@
+{
+  "document_id": "3099",
+  "request_hash": "30f1bd7b175fe1d6ce7db2e482a74022c1230792efe9b37fc1732c629bb8d699",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 9.04,
+  "usage": {
+    "input_tokens": 15236,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 188,
+    "reasoning_output_tokens": 0
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 1,
+        "rationale": "The President immediately establishes and partially staffs an internal investigatory board; this is executive organization rather than a change to legal rights.",
+        "evidence": "I hereby create a Board of Inquiry"
+      },
+      {
+        "segment_id": "2",
+        "code": 1,
+        "rationale": "The segment appoints a board member, assigns an investigative task, and incorporates the board's statutory powers and duties; these are internal staffing and authority assignments, not a dictated legal outcome.",
+        "evidence": "whom I appoint to inquire into the issues involved in this dispute"
+      },
+      {
+        "segment_id": "3",
+        "code": 1,
+        "rationale": "The Board must submit a report by a deadline and remain available for statutory functions; the required actions are reporting and administrative continuity, with no substantive legal consequence imposed by this segment.",
+        "evidence": "The Board shall report to the President"
+      }
+    ]
+  },
+  "returncode": 0
+}

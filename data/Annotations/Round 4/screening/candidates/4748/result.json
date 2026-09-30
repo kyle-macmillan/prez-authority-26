@@ -1,0 +1,33 @@
+{
+  "document_id": "4748",
+  "request_hash": "f73fb377c41d7ce7f9ed966462f952de0fd383c1fbede06e1f1d49c6a34db1a3",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 8.66,
+  "usage": {
+    "input_tokens": 15668,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 190,
+    "reasoning_output_tokens": 61
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 0,
+        "rationale": "The President reports to Congress that a separate executive order was issued and summarizes its legal effects and delegated implementation authority; this segment does not itself impose those effects.",
+        "evidence": "I hereby report I have issued an Executive Order"
+      },
+      {
+        "segment_id": "2",
+        "code": 0,
+        "rationale": "The President describes the separate order’s entry suspension and transmits a copy to Congress; the segment itself is a report and enclosure communication.",
+        "evidence": "I am enclosing a copy of the order I have issued."
+      }
+    ]
+  },
+  "returncode": 0
+}

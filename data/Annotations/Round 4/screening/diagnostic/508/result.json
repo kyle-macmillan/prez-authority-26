@@ -1,0 +1,27 @@
+{
+  "document_id": "508",
+  "request_hash": "0cab5b50519385de442664da57ca5b5ba639ba4cf491937487a1132aa45de5f8",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 12.36,
+  "usage": {
+    "input_tokens": 15720,
+    "cached_input_tokens": 0,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 243,
+    "reasoning_output_tokens": 112
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 3,
+        "rationale": "The President presently invokes specified statutory emergency authorities and makes them available to the Secretaries of Defense and Homeland Security, immediately activating legal authority; the Secretaries’ later decisions to order reservists to active duty remain discretionary implementation.",
+        "evidence": "the authorities under section 12302 of title 10, United States Code, and sections 2127, 2308, 2314, and 3735 of title 14, United States Code, are invoked and made available, according to their terms"
+      }
+    ]
+  },
+  "returncode": 0
+}

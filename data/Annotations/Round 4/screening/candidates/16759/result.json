@@ -1,0 +1,39 @@
+{
+  "document_id": "16759",
+  "request_hash": "c49a1dd0e759a3dd52df91c055daaab63e9d2a68d5bb6440d13d9115dfd07102",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 11.25,
+  "usage": {
+    "input_tokens": 15803,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 441,
+    "reasoning_output_tokens": 186
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 1,
+        "rationale": "The President directs the Secretary of Agriculture and Forest Service to manage, protect, restore, delineate, and report the boundaries of the groves; these are ongoing administrative and land-management actions, with no substantive legal consequence performed by this segment itself.",
+        "evidence": "The Secretary of Agriculture is directed to delineate the location of such Giant Sequoia groves"
+      },
+      {
+        "segment_id": "2",
+        "code": 4,
+        "rationale": "This segment inseparably combines a mandated later agency legal outcome—Interior must withdraw the groves from mineral-location and leasing regimes—with present, self-executing prohibitions on timber management and inclusion in the allowable-sale land base.",
+        "evidence": "The designated Giant Sequoia groves shall not be managed for timber production"
+      },
+      {
+        "segment_id": "3",
+        "code": 1,
+        "rationale": "The President assigns the Secretary of Agriculture ongoing management duties concerning proposed development and the Converse Basin Grove; any implementation occurs through later agency management, while the final sentence disclaims enforceable private rights.",
+        "evidence": "the Secretary of Agriculture shall assure that any proposed development shall provide for aesthetic, recreational, ecological, and scientific value"
+      }
+    ]
+  },
+  "returncode": 0
+}

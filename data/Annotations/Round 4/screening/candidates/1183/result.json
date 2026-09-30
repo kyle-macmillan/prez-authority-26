@@ -1,0 +1,27 @@
+{
+  "document_id": "1183",
+  "request_hash": "12dd8ab0f933bafd537e4612197260673e32325222ae35817866c2cf390745e1",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 7.2,
+  "usage": {
+    "input_tokens": 15255,
+    "cached_input_tokens": 0,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 213,
+    "reasoning_output_tokens": 102
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 3,
+        "rationale": "The President presently imposes a binding restriction on affected employees: those receiving both salary and annuity under the granted waiver authority cannot accrue additional retirement benefits during that employment. The consequence arises directly from this provision, even though the Director's exercise of waiver authority is discretionary.",
+        "evidence": "Employees who receive both salary and annuity pursuant to this authority may not earn additional retirement benefits during this period of employment."
+      }
+    ]
+  },
+  "returncode": 0
+}

@@ -1,0 +1,3496 @@
+{
+  "documents": [
+    {
+      "document_id": "9421",
+      "doc_type": "memorandum",
+      "president": "Barack Obama",
+      "signals": {
+        "2_contract_conditions": {
+          "segment_id": "3",
+          "evidence": "shall ensure that 95 percent of applicable new contract actions for products and services advance sustainable acquisition, including biobased acquisition, where such products and services meet agency performance requirements"
+        },
+        "2_implementation": {
+          "segment_id": "3",
+          "evidence": "shall ensure"
+        },
+        "2_funding_eligibility": {
+          "segment_id": "4",
+          "evidence": "direct the Secretary of Agriculture to: (a) increase both the number of categories of biobased products designated and individual products eligible"
+        }
+      },
+      "segment_count": 11,
+      "family": "2_contract_conditions",
+      "pool": "2",
+      "triggers": [
+        {
+          "segment_id": "3",
+          "code": 2,
+          "rationale": "Agencies must ensure that a specified proportion of later contract actions advances sustainable acquisition, producing the prescribed consequence through subsequent procurement administration.",
+          "evidence": "agencies shall ensure that 95 percent of applicable new contract actions for products and services advance sustainable acquisition"
+        },
+        {
+          "segment_id": "4",
+          "code": 2,
+          "rationale": "The Secretary must later expand product-category designations and individual-product eligibility by a specified amount, thereby dictating future procurement-preference eligibility outcomes.",
+          "evidence": "increase both the number of categories of biobased products designated and individual products eligible for preferred purchasing by 50 percent"
+        },
+        {
+          "segment_id": "6",
+          "code": 2,
+          "rationale": "Agency officials must later revise procurement specifications so that they require sustainable products and remove prohibitory language, dictating consequences in subsequent solicitations and contracts.",
+          "evidence": "review and revise all specifications under their control to assure that, wherever possible and appropriate, such specifications require the use of sustainable products"
+        }
+      ],
+      "word_count": 1820
+    },
+    {
+      "document_id": "129",
+      "doc_type": "executive_order",
+      "president": "Donald J. Trump",
+      "signals": {
+        "2_contract_conditions": {
+          "segment_id": "1",
+          "evidence": "shall cancel existing direct funding to the maximum extent allowed by law and shall decline to provide future funding. (b) The CPB Board shall cease indirect funding to NPR and PBS, including by ensuring that licensees and permittees of public radio and television stations, as well as any other recipients of CPB funds, do not use Federal funds for NPR and PBS. To effectuate this directive, the CPB Board shall, before June 30, 2025, revise the 2025 Television Community Service Grants General Provisions"
+        },
+        "2_funding_eligibility": {
+          "segment_id": "1",
+          "evidence": "shall cease direct funding to NPR and PBS, consistent with my Administration's policy to ensure that Federal funding does not support biased and partisan news coverage. The CPB Board shall cancel existing direct funding to the maximum extent allowed by law and shall decline to provide future funding. (b) The CPB Board shall cease indirect funding"
+        },
+        "2_enforcement": {
+          "segment_id": "1",
+          "evidence": "shall cease direct funding to NPR and PBS, consistent with my Administration's policy to ensure that Federal funding does not support biased and partisan news coverage. The CPB Board shall cancel"
+        },
+        "2_implementation": {
+          "segment_id": "1",
+          "evidence": "shall cease direct funding to NPR and PBS, consistent with my Administration's policy to ensure"
+        }
+      },
+      "segment_count": 9,
+      "family": "2_contract_conditions",
+      "pool": "2",
+      "triggers": [
+        {
+          "segment_id": "1",
+          "code": 2,
+          "rationale": "The CPB Board and agency heads are mandatorily directed to cancel existing funding, deny future funding, and revise grant terms to prohibit NPR/PBS funding; the legal consequences occur through those later administrative and grant actions.",
+          "evidence": "The CPB Board shall cancel existing direct funding to the maximum extent allowed by law and shall decline to provide future funding."
+        },
+        {
+          "segment_id": "2",
+          "code": 2,
+          "rationale": "The CPB Board must take further administrative steps whose specified result is minimizing or eliminating indirect federal funding of NPR and PBS.",
+          "evidence": "the CPB Board shall take all other necessary steps to minimize or eliminate its indirect funding of NPR and PBS"
+        },
+        {
+          "segment_id": "3",
+          "code": 2,
+          "rationale": "All agency heads must identify and later terminate direct or indirect funding of NPR and PBS, producing a dictated funding consequence through agency action.",
+          "evidence": "The heads of all agencies shall identify and terminate, to the maximum extent consistent with applicable law, any direct or indirect funding of NPR and PBS."
+        }
+      ],
+      "word_count": 821
+    },
+    {
+      "document_id": "13176",
+      "doc_type": "proclamation",
+      "president": "Barack Obama",
+      "signals": {
+        "2_implementation": {
+          "segment_id": "2",
+          "evidence": "shall manage that portion of the monument under the Secretary's administrative jurisdiction, pursuant to applicable legal authorities and the MOU, to implement"
+        },
+        "3_land": {
+          "segment_id": "2",
+          "evidence": "hereby set apart and reserved as the Fort Ord National Monument (monument) for the purpose of protecting and restoring the objects identified above. The reserved Federal lands and interests in lands consist of approximately 14,651 acres, which is the smallest area compatible with the proper care and management of the objects to be protected and restored. All Federal lands"
+        }
+      },
+      "segment_count": 3,
+      "family": "2_implementation",
+      "pool": "2",
+      "triggers": [
+        {
+          "segment_id": "3",
+          "code": 2,
+          "rationale": "The Secretary of the Interior must later prepare and maintain a transportation plan whose required designations impose specified limits on motorized and mechanized vehicle use.",
+          "evidence": "motorized vehicle use shall be permitted only on designated roads"
+        }
+      ],
+      "word_count": 1698
+    },
+    {
+      "document_id": "11048",
+      "doc_type": "memorandum",
+      "president": "George Bush",
+      "signals": {
+        "2_enforcement": {
+          "segment_id": "1",
+          "evidence": "direct you to lift the economic sanctions"
+        },
+        "2_implementation": {
+          "segment_id": "2",
+          "evidence": "directed to take steps to ensure"
+        }
+      },
+      "segment_count": 2,
+      "family": "2_enforcement",
+      "pool": "2",
+      "triggers": [
+        {
+          "segment_id": "2",
+          "code": 2,
+          "rationale": "The segment directs executive officials to take later steps producing specified legal consequences: nonapplication of prohibitions and unblocking government assets.",
+          "evidence": "take steps to ensure that the prohibitions will not be applied to that government of Panama"
+        }
+      ],
+      "word_count": 104
+    },
+    {
+      "document_id": "275",
+      "doc_type": "executive_order",
+      "president": "Joseph R. Biden, Jr.",
+      "signals": {
+        "2_contract_conditions": {
+          "segment_id": "4",
+          "evidence": "shall also disqualify an applicant for appointment under this order. Examples of disqualifying criteria include"
+        }
+      },
+      "segment_count": 5,
+      "family": "2_contract_conditions",
+      "pool": "2",
+      "triggers": [
+        {
+          "segment_id": "3",
+          "code": 2,
+          "rationale": "The AmeriCorps CEO or designee is mandatorily directed to issue legally consequential eligibility certificates later to persons deemed to satisfy the specified service criteria.",
+          "evidence": "shall issue certificates to persons whom the CEO or designee deems to have satisfactorily completed"
+        }
+      ],
+      "word_count": 911
+    },
+    {
+      "document_id": "14284",
+      "doc_type": "proclamation",
+      "president": "Lyndon B. Johnson",
+      "signals": {
+        "2_enforcement": {
+          "segment_id": "5",
+          "evidence": "shall not be required to have such a license"
+        }
+      },
+      "segment_count": 11,
+      "family": "2_enforcement",
+      "pool": "2",
+      "triggers": [
+        {
+          "segment_id": "6",
+          "code": 2,
+          "rationale": "The provision requires the Secretary to establish legally controlling import maximums for later allocation periods and constrains the finished-products maximum by a specified benchmark.",
+          "evidence": "The Secretary, having taken into account the standards prescribed for allocation of imports of crude oil and unfinished oils into Puerto Rico, any actions taken pursuant to section 4, and shipments from Puerto Rico into Districts I—IV, shall establish for each allocation period a maximum level of imports into Puerto Rico"
+        },
+        {
+          "segment_id": "7",
+          "code": 2,
+          "rationale": "The provision mandates regulations governing distribution and requiring specified reductions in import allocations, producing later legal consequences through agency rulemaking and administration.",
+          "evidence": "Provision shall be made in the regulations for the gradual reduction of allocations"
+        },
+        {
+          "segment_id": "8",
+          "code": 2,
+          "rationale": "The provision requires agency regulations to allocate import rights among a specified class according to stated requirements.",
+          "evidence": "Such regulations shall provide for the allocation of imports of crude oil and unfinished oils into Puerto Rico among persons having refinery capacity in Puerto Rico"
+        },
+        {
+          "segment_id": "9",
+          "code": 2,
+          "rationale": "The provision mandates regulations that require a specified future reduction in a person's import allocation when the stated shipment condition occurs.",
+          "evidence": "the person's allocation for the next allocation period shall be reduced by the amount of the excess"
+        },
+        {
+          "segment_id": "10",
+          "code": 2,
+          "rationale": "Although it also gives the Secretary discretionary allocation authority, the segment mandates that agency regulations impose conditions on allocations and require licensees to process imported materials in specified facilities.",
+          "evidence": "such regulations shall require that imported crude oil and unfinished oils be processed in the licensee's refinery or petrochemical plant"
+        }
+      ],
+      "word_count": 1810
+    },
+    {
+      "document_id": "729",
+      "doc_type": "executive_order",
+      "president": "Barack Obama",
+      "signals": {
+        "2_implementation": {
+          "segment_id": "1",
+          "evidence": "direct or indirect support of floodplain development wherever there is a practicable alternative. The Federal Government has developed processes for evaluating the impacts of Federal actions in or affecting floodplains to implement"
+        },
+        "2_rules": {
+          "segment_id": "13",
+          "evidence": "shall issue amended Guidelines to provide guidance to agencies on the implementation of Executive Order 11988, as amended, consistent with the Standard"
+        }
+      },
+      "segment_count": 17,
+      "family": "2_implementation",
+      "pool": "2",
+      "triggers": [
+        {
+          "segment_id": "8",
+          "code": 2,
+          "rationale": "The President requires agencies' later regulations and procedures to achieve the specified legal result of consistency with the FFRMS.",
+          "evidence": "The regulations and procedures must also be consistent with the Federal Flood Risk Management Standard (FFRMS)."
+        },
+        {
+          "segment_id": "9",
+          "code": 2,
+          "rationale": "The President immediately amends the governing instruction so that agencies must incorporate the FFRMS into later regulations and procedures, dictating their required legal content.",
+          "evidence": "Section 3(a) is further amended by inserting \"and FFRMS\""
+        },
+        {
+          "segment_id": "13",
+          "code": 2,
+          "rationale": "The Water Resources Council and each agency must later issue or amend guidance, regulations, and procedures to achieve the specified result of compliance with the order and Standard.",
+          "evidence": "each agency shall, in consultation with the Water Resources Council, Federal Interagency Floodplain Management Task Force, Federal Emergency Management Agency, and Council on Environmental Quality, issue or amend existing regulations and procedures to comply with this order"
+        }
+      ],
+      "word_count": 1725
+    },
+    {
+      "document_id": "4169",
+      "doc_type": "executive_order",
+      "president": "Harry S Truman",
+      "signals": {
+        "2_funding_eligibility": {
+          "segment_id": "5",
+          "evidence": "shall be paid, to the extent permitted and in the manner prescribed by law, from funds or property or interests vested in or transferred to the Attorney General by or pursuant to the authority contained in this order, so as to prevent diminution of funds otherwise available for the War Claims Fund"
+        }
+      },
+      "segment_count": 5,
+      "family": "2_funding_eligibility",
+      "pool": "2",
+      "triggers": [
+        {
+          "segment_id": "5",
+          "code": 2,
+          "rationale": "The President mandates that later administrative expenses be paid from specified funds or property; the segment also supplies the order's effective date and supersession mechanics.",
+          "evidence": "shall be paid, to the extent permitted and in the manner prescribed by law, from funds or property or interests vested in or transferred to the Attorney General"
+        }
+      ],
+      "word_count": 416
+    },
+    {
+      "document_id": "7476",
+      "doc_type": "letter",
+      "president": "Lyndon B. Johnson",
+      "signals": {
+        "2_enforcement": {
+          "segment_id": "1",
+          "evidence": "direct you, pursuant to the provisions of Section 208 of the Labor Management Relations Act, 1947, to petition in the name of the United States any district court of the United States having jurisdiction of the parties to enjoin"
+        }
+      },
+      "segment_count": 1,
+      "family": "2_enforcement",
+      "pool": "2",
+      "triggers": [
+        {
+          "segment_id": "1",
+          "code": 2,
+          "rationale": "The President mandatorily directs the Acting Attorney General to seek a court injunction against the strike. The legally consequential restraint would occur later if the district court grants the requested injunction; discretion extends only to any additional relief sought.",
+          "evidence": "I direct you, pursuant to the provisions of Section 208 of the Labor Management Relations Act, 1947, to petition in the name of the United States any district court of the United States having jurisdiction of the parties to enjoin the continuance of such strike"
+        }
+      ],
+      "word_count": 306
+    },
+    {
+      "document_id": "8997",
+      "doc_type": "memorandum",
+      "president": "Donald J. Trump",
+      "signals": {
+        "2_funding_eligibility": {
+          "segment_id": "2",
+          "evidence": "shall be the policy of the United States to make trade more free, fair, and reciprocal by devoting all necessary resources toward changing the WTO approach to developing-country status such that advanced economies can no longer avail themselves of unwarranted benefits"
+        }
+      },
+      "segment_count": 3,
+      "family": "2_funding_eligibility",
+      "pool": "2",
+      "triggers": [
+        {
+          "segment_id": "2",
+          "code": 2,
+          "rationale": "The USTR is conditionally required, after a 90-day assessment and specified consultations, to impose a later consequential treatment decision by no longer treating certain WTO Members as developing countries; the accompanying negotiation, reporting, consultation, and publication duties do not displace that dictated outcome.",
+          "evidence": "no longer treat as a developing country for the purposes of the WTO any WTO Member that in the USTR's judgment is improperly declaring itself a developing country"
+        }
+      ],
+      "word_count": 1213
+    },
+    {
+      "document_id": "18613",
+      "doc_type": "proclamation",
+      "president": "Ronald Reagan",
+      "signals": {
+        "2_implementation": {
+          "segment_id": "1",
+          "evidence": "shall be transferred to the European Economic Community. 4. I have also determined that it is appropriate to modify the quantitative limitations in the TSUS in order to implement"
+        },
+        "3_pay_tariffs": {
+          "segment_id": "2",
+          "evidence": "Tariff Schedules of the United States is modified as follows: 1. TSUS Item 950.10 is modified"
+        }
+      },
+      "segment_count": 2,
+      "family": "2_implementation",
+      "pool": "2",
+      "triggers": [
+        {
+          "segment_id": "1",
+          "code": 2,
+          "rationale": "The President specifies that the existing Portugal quota allocation must later be transferred to the European Economic Community and increased by a fixed amount; the operative legal modification is subsequently made to the tariff schedules rather than performed by this segment itself.",
+          "evidence": "The quota allocations previously made to Portugal shall be transferred to the European Economic Community."
+        }
+      ],
+      "word_count": 504
+    },
+    {
+      "document_id": "11876",
+      "doc_type": "memorandum",
+      "president": "Dwight D. Eisenhower",
+      "signals": {
+        "2_enforcement": {
+          "segment_id": "1",
+          "evidence": "shall be given to the leasing of such land for family-size farm operations. 6. As used in this memorandum: (a) The term \"lease\" shall include permits and licenses"
+        }
+      },
+      "segment_count": 2,
+      "family": "2_enforcement",
+      "pool": "2",
+      "triggers": [
+        {
+          "segment_id": "1",
+          "code": 2,
+          "rationale": "The President directs federal departments and agencies to impose specified conditions on future federal land leases, including mandatory prohibitions on cultivating certain crops. The legally consequential lease restrictions arise through later agency leasing actions, while the segment’s related determinations, definitions, and coordination provisions implement that mandated outcome.",
+          "evidence": "leases of farm lands made by the Federal Government on or after the effective date of this memorandum shall prohibit the cultivation of price-supported crops in surplus supply"
+        }
+      ],
+      "word_count": 623
+    },
+    {
+      "document_id": "15687",
+      "doc_type": "proclamation",
+      "president": "George W. Bush",
+      "signals": {
+        "3_pay_tariffs": {
+          "segment_id": "1",
+          "evidence": "Tariff Act of 1930, as amended"
+        },
+        "2_enforcement": {
+          "segment_id": "7",
+          "evidence": "shall reduce, modify, or terminate"
+        }
+      },
+      "segment_count": 12,
+      "family": "2_enforcement",
+      "pool": "2",
+      "triggers": [
+        {
+          "segment_id": "7",
+          "code": 2,
+          "rationale": "Upon a future presidential determination, the President is required to produce the specified later legal result by reducing, modifying, or terminating the safeguard action.",
+          "evidence": "I shall reduce, modify, or terminate the action established in this proclamation accordingly."
+        },
+        {
+          "segment_id": "8",
+          "code": 2,
+          "rationale": "If the President makes the specified determination within 30 days, the segment requires him to proclaim a corresponding later alteration of the safeguard measure within 40 days; the remainder merely recites statutory authority.",
+          "evidence": "I shall proclaim the corresponding reduction, modification, or termination of the safeguard measure within 40 days."
+        }
+      ],
+      "word_count": 2678
+    },
+    {
+      "document_id": "2143",
+      "doc_type": "executive_order",
+      "president": "Jimmy Carter",
+      "signals": {
+        "2_rules": {
+          "segment_id": "1",
+          "evidence": "shall promulgate regulations"
+        }
+      },
+      "segment_count": 2,
+      "family": "2_rules",
+      "pool": "2",
+      "triggers": [
+        {
+          "segment_id": "1",
+          "code": 2,
+          "rationale": "The President mandates that the Secretary of the Treasury later promulgate regulations imposing specified prohibitions and terminating covered judicial proceedings; the legally consequential restrictions arise through those required regulations.",
+          "evidence": "The Secretary of the Treasury shall promulgate regulations"
+        }
+      ],
+      "word_count": 490
+    },
+    {
+      "document_id": "11498",
+      "doc_type": "memorandum",
+      "president": "Jimmy Carter",
+      "signals": {
+        "3_pay_tariffs": {
+          "segment_id": "2",
+          "evidence": "Tariff Act of 1930, as amended"
+        }
+      },
+      "segment_count": 5,
+      "family": "2_other",
+      "pool": "2",
+      "triggers": [
+        {
+          "segment_id": "5",
+          "code": 2,
+          "rationale": "The President mandates the Special Representative to negotiate and conclude a specified three-year orderly marketing agreement, with the legally consequential agreement arising later through that official’s action.",
+          "evidence": "directing you to negotiate and conclude all orderly marketing agreement"
+        }
+      ],
+      "word_count": 382
+    },
+    {
+      "document_id": "20058",
+      "doc_type": "proclamation",
+      "president": "Richard Nixon",
+      "signals": {
+        "2_funding_eligibility": {
+          "segment_id": "3",
+          "evidence": "shall exceed the like allocation held in such preceding allocation period by such person. However, the Secretary may adjust the allocation to any person limited by the previous sentence if such person would have been eligible"
+        }
+      },
+      "segment_count": 3,
+      "family": "2_funding_eligibility",
+      "pool": "2",
+      "triggers": [
+        {
+          "segment_id": "3",
+          "code": 2,
+          "rationale": "Although much of the segment authorizes discretionary interim allocations, it also requires the Secretary to impose a specified later reduction on any subsequent allocation received by an interim-allocation recipient.",
+          "evidence": "shall be reduced by an amount equal to the interim allocation"
+        }
+      ],
+      "word_count": 653
+    },
+    {
+      "document_id": "9066",
+      "doc_type": "memorandum",
+      "president": "Donald J. Trump",
+      "signals": {
+        "3_waivers": {
+          "segment_id": "2",
+          "evidence": "I have determined that it is in the national interest of the United States to re-impose sanctions lifted or waived"
+        },
+        "2_enforcement": {
+          "segment_id": "3",
+          "evidence": "shall, in consultation with the Secretary of the Treasury and the Secretary of Energy, take all appropriate steps to cease the participation of the United States in the JCPOA. Sec. 3. Restoring United States Sanctions"
+        },
+        "2_implementation": {
+          "segment_id": "6",
+          "evidence": "shall ensure"
+        }
+      },
+      "segment_count": 7,
+      "family": "2_enforcement",
+      "pool": "2",
+      "triggers": [
+        {
+          "segment_id": "3",
+          "code": 2,
+          "rationale": "The Secretaries are mandatorily directed to produce later consequential outcomes—ending participation and reimposing all covered sanctions—within a specified period.",
+          "evidence": "The Secretary of State and the Secretary of the Treasury shall immediately begin taking steps to re-impose all United States sanctions lifted or waived in connection with the JCPOA"
+        }
+      ],
+      "word_count": 1364
+    },
+    {
+      "document_id": "10062",
+      "doc_type": "memorandum",
+      "president": "George W. Bush",
+      "signals": {
+        "3_pay_tariffs": {
+          "segment_id": "1",
+          "evidence": "Tariff Act of 1930, as amended"
+        },
+        "3_status_funding": {
+          "segment_id": "4",
+          "evidence": "I determine that the beneficiary"
+        },
+        "2_enforcement": {
+          "segment_id": "8",
+          "evidence": "shall reduce, modify, or terminate"
+        }
+      },
+      "segment_count": 8,
+      "family": "2_enforcement",
+      "pool": "2",
+      "triggers": [
+        {
+          "segment_id": "8",
+          "code": 2,
+          "rationale": "The provision requires the President, upon a future statutory determination, to produce a specified later legal consequence by reducing, modifying, or terminating the safeguards; it also prescribes factors for that determination.",
+          "evidence": "I shall reduce, modify, or terminate the safeguard measures"
+        }
+      ],
+      "word_count": 2487
+    },
+    {
+      "document_id": "426",
+      "doc_type": "executive_order",
+      "president": "Joseph R. Biden, Jr.",
+      "signals": {
+        "2_funding_eligibility": {
+          "segment_id": "8",
+          "evidence": "shall provide funding"
+        },
+        "2_implementation": {
+          "segment_id": "12",
+          "evidence": "shall assess the availability of Federal research grants to study best practices for implementing, and innovations to better implement"
+        }
+      },
+      "segment_count": 14,
+      "family": "2_funding_eligibility",
+      "pool": "2",
+      "triggers": [
+        {
+          "segment_id": "2",
+          "code": 2,
+          "rationale": "Agency heads must take later implementing action that requires covered employees, contractors, and persons on federal property to comply with CDC public-health guidelines.",
+          "evidence": "shall immediately take action, as appropriate and consistent with applicable law, to require compliance with CDC guidelines"
+        },
+        {
+          "segment_id": "3",
+          "code": 2,
+          "rationale": "Officials must issue implementation guidance and consult, while agency heads choosing exceptions must later impose specified alternative safeguards and document them; the legally consequential requirements arise through agency implementation.",
+          "evidence": "they shall require appropriate alternative safeguards"
+        }
+      ],
+      "word_count": 1621
+    },
+    {
+      "document_id": "17325",
+      "doc_type": "proclamation",
+      "president": "Donald J. Trump",
+      "signals": {
+        "2_rules": {
+          "segment_id": "10",
+          "evidence": "shall be available with respect to the duties imposed pursuant to this proclamation. (11) The Secretary may issue regulations"
+        },
+        "2_funding_eligibility": {
+          "segment_id": "10",
+          "evidence": "shall be so included on or after 12:01 a.m. eastern daylight time the day after a notice in the Federal Register describing the determination of the Secretary. The notice in the Federal Register shall be made as soon as practicable but no later than 14 days after the Secretary's determination. (8) Any automobile or automobile part, except those eligible"
+        }
+      },
+      "segment_count": 10,
+      "family": "2_rules",
+      "pool": "2",
+      "triggers": [
+        {
+          "segment_id": "7",
+          "code": 2,
+          "rationale": "The Secretary is required to produce later legally operative HTSUS modifications through Federal Register notice.",
+          "evidence": "shall make such modifications to the HTSUS through notice in the Federal Register"
+        },
+        {
+          "segment_id": "9",
+          "code": 2,
+          "rationale": "The required agency process must provide for the later inclusion of additional articles within the tariff scope when a qualifying request establishes the stated conditions.",
+          "evidence": "this process shall provide for including additional automobile parts articles"
+        }
+      ],
+      "word_count": 1977
+    },
+    {
+      "document_id": "3032",
+      "doc_type": "executive_order",
+      "president": "Lyndon B. Johnson",
+      "signals": {
+        "3_prohibition": {
+          "segment_id": "1",
+          "evidence": "is prohibited"
+        }
+      },
+      "segment_count": 4,
+      "family": "2_other",
+      "pool": "2",
+      "triggers": [
+        {
+          "segment_id": "2",
+          "code": 2,
+          "rationale": "Although Commerce has discretion over repatriation requirements, the segment also mandates that the Secretary grant a specified exemption to institutions certified by the Board; that legal exemption is to be produced through later agency action.",
+          "evidence": "The Secretary of Commerce shall exempt from the provisions of this section 1"
+        }
+      ],
+      "word_count": 790
+    },
+    {
+      "document_id": "18168",
+      "doc_type": "proclamation",
+      "president": "Donald J. Trump",
+      "signals": {
+        "3_pay_tariffs": {
+          "segment_id": "2",
+          "evidence": "tariff proclaimed in Proclamation 9705, as amended"
+        },
+        "2_contract_conditions": {
+          "segment_id": "8",
+          "evidence": "shall grant relief under clause 2 of this proclamation only upon receipt of a sworn statement signed by the chief executive officer and the chief legal officer of the party requesting relief, attesting that (i) the steel article for which relief is sought and the associated contract or other written agreement meet the criteria for relief set forth in clause"
+        },
+        "2_funding_eligibility": {
+          "segment_id": "8",
+          "evidence": "shall revert to the aggregate limit for Brazil set forth in the Annex to Proclamation 9759, unless that limit is further modified or terminated. (2) The Secretary shall, on an expedited basis, grant"
+        },
+        "2_rules": {
+          "segment_id": "9",
+          "evidence": "shall issue procedures for the requests for relief described in clauses 2 and 3 of this proclamation. The issuance of such procedures is exempt from Executive Order 13771 of January 30, 2017 (Reducing Regulation"
+        },
+        "2_implementation": {
+          "segment_id": "10",
+          "evidence": "shall implement"
+        }
+      },
+      "segment_count": 15,
+      "family": "2_contract_conditions",
+      "pool": "2",
+      "triggers": [
+        {
+          "segment_id": "4",
+          "code": 2,
+          "rationale": "The United States is committed to producing a specified later reduction in an existing quantitative import limitation for the remainder of 2020.",
+          "evidence": "the United States will lower, for the remainder of 2020, one of the quantitative limitations"
+        },
+        {
+          "segment_id": "6",
+          "code": 2,
+          "rationale": "The President states a determination to direct the Secretary to grant specified relief later under conditions supplied below; the legal relief occurs through the Secretary's subsequent grants.",
+          "evidence": "I have determined to direct the Secretary to provide relief from the quantitative limitation"
+        }
+      ],
+      "word_count": 2291
+    },
+    {
+      "document_id": "1450",
+      "doc_type": "executive_order",
+      "president": "William J. Clinton",
+      "signals": {
+        "2_contract_conditions": {
+          "segment_id": "1",
+          "evidence": "shall, to the maximum extent practicable, include in contract solicitations as an eligibility criterion for the award of competitive acquisition contracts expected to equal or exceed $100,000 with the Federal contractors described in subsection 3-302, the requirement"
+        },
+        "2_funding_eligibility": {
+          "segment_id": "1",
+          "evidence": "shall, to the maximum extent practicable, include in contract solicitations as an eligibility"
+        },
+        "2_enforcement": {
+          "segment_id": "3",
+          "evidence": "shall transmit that recommendation to the head of the contracting agency, and that agency shall consider the recommendation and determine whether to terminate"
+        }
+      },
+      "segment_count": 6,
+      "family": "2_contract_conditions",
+      "pool": "2",
+      "triggers": [
+        {
+          "segment_id": "1",
+          "code": 2,
+          "rationale": "Federal agencies are mandated to impose a specified eligibility and reporting condition through later solicitations, contract awards, and implementing provisions; the definitions and policy language support that dictated procurement outcome.",
+          "evidence": "Each Federal agency shall, to the maximum extent practicable, include in contract solicitations as an eligibility criterion for the award of competitive acquisition contracts expected to equal or exceed $100,000"
+        },
+        {
+          "segment_id": "2",
+          "code": 2,
+          "rationale": "Federal agencies must later impose specified certification and filing obligations on covered contractors through procurement administration.",
+          "evidence": "Each Federal agency shall require each Federal contractor designated in subsection 3-302 above to"
+        },
+        {
+          "segment_id": "3",
+          "code": 2,
+          "rationale": "The segment dictates how EPA and contracting agencies must later administer confidentiality, public disclosure, compliance review, and termination consideration, while leaving the ultimate termination decision to the agency.",
+          "evidence": "Information that is not trade secret shall be made available to the public"
+        },
+        {
+          "segment_id": "6",
+          "code": 2,
+          "rationale": "Executive officials must incorporate the order's specified procurement requirements into binding acquisition regulations within a fixed period; the disclaimer and effective-date clauses do not independently create substantive private rights.",
+          "evidence": "The requirements of this order shall be implemented and incorporated in acquisition regulations"
+        }
+      ],
+      "word_count": 1700
+    },
+    {
+      "document_id": "10139",
+      "doc_type": "memorandum",
+      "president": "William J. Clinton",
+      "signals": {
+        "2_implementation": {
+          "segment_id": "2",
+          "evidence": "direct you to ensure"
+        }
+      },
+      "segment_count": 3,
+      "family": "2_implementation",
+      "pool": "2",
+      "triggers": [
+        {
+          "segment_id": "2",
+          "code": 2,
+          "rationale": "The President requires the Secretary to make a specified opt-out right a term of any later-administered pilot program, dictating the legal consequence the agency must provide to participating complainants.",
+          "evidence": "the pilot programs provide that complaining parties may opt out of participation in the pilot programs at any time"
+        }
+      ],
+      "word_count": 325
+    },
+    {
+      "document_id": "3016",
+      "doc_type": "executive_order",
+      "president": "Lyndon B. Johnson",
+      "signals": {
+        "2_implementation": {
+          "segment_id": "3",
+          "evidence": "directed to call into the active military service of the United States, as he may deem appropriate to carry out"
+        }
+      },
+      "segment_count": 6,
+      "family": "2_implementation",
+      "pool": "2",
+      "triggers": [
+        {
+          "segment_id": "3",
+          "code": 2,
+          "rationale": "The segment directs the Secretary to produce a later, specified legally consequential result by calling National Guard units or members into active federal military service, while leaving selection and timing discretion.",
+          "evidence": "authorized and directed to call into the active military service of the United States"
+        }
+      ],
+      "word_count": 491
+    },
+    {
+      "document_id": "11332",
+      "doc_type": "memorandum",
+      "president": "Jimmy Carter",
+      "signals": {
+        "2_enforcement": {
+          "segment_id": "1",
+          "evidence": "direct that you, in consultation with the Secretary of Agriculture and other appropriate officials, take immediate action under the Export Administration Act to terminate"
+        }
+      },
+      "segment_count": 3,
+      "family": "2_enforcement",
+      "pool": "2",
+      "triggers": [
+        {
+          "segment_id": "1",
+          "code": 2,
+          "rationale": "The President mandates that the Secretary of Commerce later use export-control administration to terminate covered shipments while allowing licenses up to a specified limit; the legal consequences occur through subsequent agency controls and licensing.",
+          "evidence": "take immediate action under the Export Administration Act to terminate shipments of agricultural commodities and products"
+        },
+        {
+          "segment_id": "3",
+          "code": 2,
+          "rationale": "The President mandates that the Secretary of Agriculture later undertake commodity purchases and use price-support and grain-reserve programs, producing the specified consequences through subsequent agency administration.",
+          "evidence": "take the necessary actions, through commodity purchases, and through the price support and grain reserve programs"
+        }
+      ],
+      "word_count": 316
+    },
+    {
+      "document_id": "429",
+      "doc_type": "executive_order",
+      "president": "Joseph R. Biden, Jr.",
+      "signals": {
+        "2_rules": {
+          "segment_id": "3",
+          "evidence": "shall promptly take steps to rescind any orders, rules, regulations, guidelines, or policies"
+        }
+      },
+      "segment_count": 4,
+      "family": "2_rules",
+      "pool": "2",
+      "triggers": [
+        {
+          "segment_id": "3",
+          "code": 2,
+          "rationale": "The OMB Director and agency heads are mandatorily directed to pursue later rescission of implementing rules and policies; the legally consequential rescissions occur through subsequent agency action under applicable law.",
+          "evidence": "shall promptly take steps to rescind any orders, rules, regulations, guidelines, or policies"
+        }
+      ],
+      "word_count": 513
+    },
+    {
+      "document_id": "2507",
+      "doc_type": "executive_order",
+      "president": "Gerald R. Ford",
+      "signals": {
+        "2_funding_eligibility": {
+          "segment_id": "8",
+          "evidence": "shall prepare, with the assistance"
+        },
+        "2_rules": {
+          "segment_id": "10",
+          "evidence": "shall consult with the Secretary of Commerce with respect to the international allocation of petroleum products which are within the territorial jurisdiction of the United States; and provided that the Secretary of Commerce shall promulgate rules"
+        },
+        "2_contract_conditions": {
+          "segment_id": "12",
+          "evidence": "shall be deemed or construed to limit the provisions of Executive Order No. 11790 of June 25, 1974, except that any action taken pursuant to the Defense Production Act of 1950 as amended, requiring the allocation of, or priority performance under contracts or orders relating to, supplies of materials and equipment in order to maximize domestic energy supplies shall be taken in accordance with the provisions"
+        }
+      },
+      "segment_count": 12,
+      "family": "2_funding_eligibility",
+      "pool": "2",
+      "triggers": [
+        {
+          "segment_id": "10",
+          "code": 2,
+          "rationale": "The Secretary of Commerce is required to promulgate rules authorizing specified petroleum exports when necessary to implement international obligations; the legally consequential authorization will arise through the mandated later rules.",
+          "evidence": "the Secretary of Commerce shall promulgate rules, pursuant to the procedures established by the Export Administration Act of 1969, as amended, to authorize the export of petroleum and petroleum products"
+        }
+      ],
+      "word_count": 1383
+    },
+    {
+      "document_id": "1971",
+      "doc_type": "executive_order",
+      "president": "Ronald Reagan",
+      "signals": {
+        "2_rules": {
+          "segment_id": "3",
+          "evidence": "shall issue government-wide implementing regulations related to voiding or rescission of contracts. Sec. 3. Implementing regulations"
+        },
+        "2_funding_eligibility": {
+          "segment_id": "5",
+          "evidence": "shall take into consideration the fair value of any tangible benefits"
+        }
+      },
+      "segment_count": 5,
+      "family": "2_rules",
+      "pool": "2",
+      "triggers": [
+        {
+          "segment_id": "3",
+          "code": 2,
+          "rationale": "The named administrators must later issue government-wide regulations containing specified, binding procedural protections for affected persons or entities.",
+          "evidence": "shall issue government-wide implementing regulations related to voiding or rescission of contracts"
+        }
+      ],
+      "word_count": 364
+    },
+    {
+      "document_id": "474",
+      "doc_type": "executive_order",
+      "president": "Donald J. Trump",
+      "signals": {
+        "2_implementation": {
+          "segment_id": "3",
+          "evidence": "shall, in consultation with the FDA Commissioner, develop and implement"
+        },
+        "2_funding_eligibility": {
+          "segment_id": "5",
+          "evidence": "shall apply; (ii) with respect to the procurement of items that are necessary to respond to any public health emergency declared under section 319 of the Public Health Service Act (42 U.S.C. 247d), any major disaster or emergency declared under the Stafford Disaster Relief and Emergency Assistance"
+        }
+      },
+      "segment_count": 12,
+      "family": "2_implementation",
+      "pool": "2",
+      "triggers": [
+        {
+          "segment_id": "2",
+          "code": 2,
+          "rationale": "Agencies must later conduct covered procurements using procedures that restrict competition to domestically produced products; the procurement consequence arises through agency implementation.",
+          "evidence": "using procedures to limit competition to only those Essential Medicines, Medical Countermeasures, and Critical Inputs that are produced in the United States"
+        },
+        {
+          "segment_id": "4",
+          "code": 2,
+          "rationale": "The Trade Representative must later modify federal procurement coverage to produce the specified exclusion for the listed products.",
+          "evidence": "modify United States Federal procurement product coverage under all relevant Free Trade Agreements and the World Trade Organization Agreement on Government Procurement to exclude coverage"
+        },
+        {
+          "segment_id": "5",
+          "code": 2,
+          "rationale": "The Trade Representative and Defense Secretary must later implement specified waiver modifications and procurement restrictions; the segment's exceptions delimit those mandated administrative outcomes.",
+          "evidence": "restrict the procurement of Essential Medicines, Medical Countermeasures, and Critical Inputs to domestic sources"
+        },
+        {
+          "segment_id": "8",
+          "code": 2,
+          "rationale": "HHS and FDA are directed to produce later legally consequential regulatory outcomes, including accelerated approvals or clearances and refusal of admission for qualifying imports.",
+          "evidence": "refuse admission, as appropriate, to imports of Essential Medicines, Medical Countermeasures, and Critical Inputs"
+        }
+      ],
+      "word_count": 2957
+    },
+    {
+      "document_id": "14530",
+      "doc_type": "proclamation",
+      "president": "John F. Kennedy",
+      "signals": {
+        "2_enforcement": {
+          "segment_id": "3",
+          "evidence": "direct the Secretary of the Treasury to carry out such prohibition, to make such exceptions thereto, by license"
+        },
+        "2_implementation": {
+          "segment_id": "3",
+          "evidence": "direct the Secretary of the Treasury to carry out"
+        }
+      },
+      "segment_count": 6,
+      "family": "2_enforcement",
+      "pool": "2",
+      "triggers": [
+        {
+          "segment_id": "5",
+          "code": 2,
+          "rationale": "The President mandates the Secretary of Commerce to maintain through agency administration the specified legally consequential ban on all exports to Cuba.",
+          "evidence": "direct the Secretary of Commerce, under the provisions of the Export Control Act of 1949, as amended"
+        }
+      ],
+      "word_count": 454
+    },
+    {
+      "document_id": "832",
+      "doc_type": "executive_order",
+      "president": "Barack Obama",
+      "signals": {
+        "2_rules": {
+          "segment_id": "1",
+          "evidence": "shall be consistent with appropriate protections for privacy and civil liberties. Agencies bear the primary responsibility for meeting these twin goals. These structural reforms will ensure coordinated interagency development and reliable implementation of policies and minimum standards"
+        },
+        "2_implementation": {
+          "segment_id": "1",
+          "evidence": "shall be consistent with appropriate protections for privacy and civil liberties. Agencies bear the primary responsibility for meeting these twin goals. These structural reforms will ensure"
+        }
+      },
+      "segment_count": 3,
+      "family": "2_rules",
+      "pool": "2",
+      "triggers": [
+        {
+          "segment_id": "3",
+          "code": 2,
+          "rationale": "The Task Force must develop and, within one year, issue minimum standards and guidance that will become binding on the executive branch upon that later issuance, so the segment dictates a legally consequential agency outcome to be produced later.",
+          "evidence": "issuing those minimum standards and guidance, which shall be binding on the executive branch"
+        }
+      ],
+      "word_count": 2244
+    },
+    {
+      "document_id": "13946",
+      "doc_type": "proclamation",
+      "president": "George W. Bush",
+      "signals": {
+        "3_land": {
+          "segment_id": "1",
+          "evidence": "hereby set apart and reserved as the Northwestern Hawaiian Islands Marine National Monument (the \"monument\" or \"national monument\") for the purpose of protecting the objects described above, all lands and interests in lands"
+        },
+        "2_rules": {
+          "segment_id": "2",
+          "evidence": "shall promulgate any additional regulations"
+        },
+        "2_implementation": {
+          "segment_id": "6",
+          "evidence": "shall ensure"
+        },
+        "3_prohibition": {
+          "segment_id": "8",
+          "evidence": "is prohibited"
+        },
+        "2_funding_eligibility": {
+          "segment_id": "11",
+          "evidence": "direct personal consumption while in the monument. Ocean-Based Ecotourism means a class of fee-for-service activities that involves visiting the monument for study, enjoyment, or volunteer assistance"
+        }
+      },
+      "segment_count": 11,
+      "family": "2_rules",
+      "pool": "2",
+      "triggers": [
+        {
+          "segment_id": "6",
+          "code": 2,
+          "rationale": "The Secretaries are mandatorily directed to ensure that commercial lobster permits receive the specified condition completed in the adjoining segment, so the legal consequence occurs through later permit administration.",
+          "evidence": "The Secretaries shall ensure that any commercial lobster fishing permit"
+        },
+        {
+          "segment_id": "7",
+          "code": 2,
+          "rationale": "This completes the mandate that the Secretaries impose a zero annual harvest limit on commercial lobster permits, producing the specified legal consequence through permit administration.",
+          "evidence": "shall be subject to a zero annual harvest limit."
+        },
+        {
+          "segment_id": "8",
+          "code": 2,
+          "rationale": "The Secretaries must administer commercial-fishing permits and activity to produce specified temporal, permit, landing-limit, and eventual prohibition outcomes.",
+          "evidence": "The Secretaries shall ensure that:"
+        },
+        {
+          "segment_id": "9",
+          "code": 2,
+          "rationale": "The Secretaries must impose specified commercial-fishing conditions and mandatory terms on special-ocean-use permits; the legal consequences arise through later permit issuance and administration.",
+          "evidence": "Shall require the permittee to purchase and maintain comprehensive general liability insurance, or post an equivalent bond"
+        }
+      ],
+      "word_count": 4898
+    },
+    {
+      "document_id": "1981",
+      "doc_type": "executive_order",
+      "president": "Ronald Reagan",
+      "signals": {
+        "2_implementation": {
+          "segment_id": "2",
+          "evidence": "shall provide to the Director of the Office of Personnel Management such information as the Director may request in order to carry out"
+        }
+      },
+      "segment_count": 3,
+      "family": "2_implementation",
+      "pool": "2",
+      "triggers": [
+        {
+          "segment_id": "1",
+          "code": 2,
+          "rationale": "The President delegates review authority to the OPM Director and then mandates substantive limits the Director must enforce when reviewing proposed pay increases; the legally consequential pay outcome occurs later through the Director's review or disapproval.",
+          "evidence": "the Director of the Office of Personnel Management shall assure that any increases in basic pay proposed by the Administrator of Veterans' Affairs are in the best interest of the Federal government; do not exceed the amounts authorized by Section 112; and are made only to:"
+        }
+      ],
+      "word_count": 341
+    },
+    {
+      "document_id": "19915",
+      "doc_type": "proclamation",
+      "president": "Gerald R. Ford",
+      "signals": {
+        "2_enforcement": {
+          "segment_id": "5",
+          "evidence": "shall, by regulation, establish a system of fees for licenses"
+        }
+      },
+      "segment_count": 8,
+      "family": "2_enforcement",
+      "pool": "2",
+      "triggers": [
+        {
+          "segment_id": "3",
+          "code": 2,
+          "rationale": "The President requires future agency regulations to impose specified processing and exchange restrictions on licensees; the binding consequence occurs through those regulations.",
+          "evidence": "such regulations shall require that imported crude oil and unfinished oils be processed in the licensee's refinery or petrochemical plant"
+        },
+        {
+          "segment_id": "4",
+          "code": 2,
+          "rationale": "The President amends the cited provision to incorporate the following requirement that the Administrator establish a specified license-fee system by regulation; the consequential result is to be produced through later agency regulation.",
+          "evidence": "Subparagraph (1) (i) of paragraph (a) of section 3 is amended to read as follows"
+        },
+        {
+          "segment_id": "5",
+          "code": 2,
+          "rationale": "The Administrator is mandatorily directed to establish by regulation a fee system for specified import licenses, so the legally consequential fees arise through later agency action.",
+          "evidence": "the Administrator shall, by regulation, establish a system of fees for licenses"
+        },
+        {
+          "segment_id": "6",
+          "code": 2,
+          "rationale": "The President mandates that the Administrator later revoke all affected licenses upon the stated bond event, dictating a specified legally consequential agency outcome.",
+          "evidence": "the Administrator shall immediately revoke all licenses issued pursuant to the bond"
+        }
+      ],
+      "word_count": 1144
+    },
+    {
+      "document_id": "754",
+      "doc_type": "executive_order",
+      "president": "Barack Obama",
+      "signals": {
+        "3_prohibition": {
+          "segment_id": "1",
+          "evidence": "are prohibited"
+        },
+        "2_contract_conditions": {
+          "segment_id": "2",
+          "evidence": "shall not be affected thereby. Sec. 5. General Provisions. (a) Nothing in this order shall be construed to limit the rights of an employee or applicant for employment provided under any provision"
+        },
+        "2_implementation": {
+          "segment_id": "2",
+          "evidence": "shall propose regulations to implement"
+        }
+      },
+      "segment_count": 2,
+      "family": "2_contract_conditions",
+      "pool": "2",
+      "triggers": [
+        {
+          "segment_id": "2",
+          "code": 2,
+          "rationale": "The President amends the prior contracting order to require a specified nondiscrimination clause, with the legally consequential obligation arising later through agency regulations and covered federal contracts; the accompanying regulatory instruction and savings provisions do not alter that controlling posture.",
+          "evidence": "The contractor will not discharge or in any other manner discriminate against any employee or applicant for employment"
+        }
+      ],
+      "word_count": 765
+    },
+    {
+      "document_id": "14698",
+      "doc_type": "proclamation",
+      "president": "Dwight D. Eisenhower",
+      "signals": {
+        "2_enforcement": {
+          "segment_id": "4",
+          "evidence": "shall not be required to have such a license but which shall be subject to the provisions of paragraph (c) of this section. (b) Until the Secretary of the Interior is able to make allocations and issue licenses"
+        },
+        "3_pay_tariffs": {
+          "segment_id": "4",
+          "evidence": "Tariff Act of 1930, as amended"
+        }
+      },
+      "segment_count": 13,
+      "family": "2_enforcement",
+      "pool": "2",
+      "triggers": [
+        {
+          "segment_id": "6",
+          "code": 2,
+          "rationale": "The President requires the Secretary's later regulations to establish an allocation and licensing system, so the specified legal regime will be produced through agency rulemaking.",
+          "evidence": "shall provide for a system of allocation of the authorized imports"
+        },
+        {
+          "segment_id": "7",
+          "code": 2,
+          "rationale": "The President requires later regulations to distribute import allocations under specified substantive criteria, with the legal allocations arising through agency administration.",
+          "evidence": "such regulations shall provide, to the extent possible, for a fair and equitable distribution"
+        },
+        {
+          "segment_id": "8",
+          "code": 2,
+          "rationale": "The President mandates that later regulations award allocations to a specified class of refiners and pipeline operators, dictating a legally consequential agency outcome.",
+          "evidence": "Such regulations also shall provide for allocations of crude oil"
+        },
+        {
+          "segment_id": "9",
+          "code": 2,
+          "rationale": "The President requires later regulations to establish allocations and binding processing and exchange conditions, while also authorizing agency suspension or revocation provisions; the legal consequences are to be produced through those regulations and ensuing administration.",
+          "evidence": "Such regulations shall require that imported crude oil and unfinished oils be processed in the licensee's refinery"
+        }
+      ],
+      "word_count": 2619
+    },
+    {
+      "document_id": "333",
+      "doc_type": "executive_order",
+      "president": "Joseph R. Biden, Jr.",
+      "signals": {
+        "2_implementation": {
+          "segment_id": "4",
+          "evidence": "shall ensure"
+        },
+        "2_rules": {
+          "segment_id": "12",
+          "evidence": "shall maintain appropriate training requirements to ensure that all employees with access to signals intelligence know and understand the requirements of this order and the policies"
+        },
+        "2_funding_eligibility": {
+          "segment_id": "18",
+          "evidence": "shall comply with any determination by the CLPO to undertake appropriate remediation pursuant to subsection (c)(i)(C) of this section, subject to any contrary determination by the Data Protection Review Court. (iii) Assistance"
+        }
+      },
+      "segment_count": 21,
+      "family": "2_implementation",
+      "pool": "2",
+      "triggers": [
+        {
+          "segment_id": "15",
+          "code": 2,
+          "rationale": "The Director must later establish a specified complaint-submission process through which qualifying complaints can invoke review.",
+          "evidence": "shall establish a process for the submission of qualifying complaints"
+        },
+        {
+          "segment_id": "16",
+          "code": 2,
+          "rationale": "The Director must later create a process empowering the CLPO to investigate complaints and order remediation.",
+          "evidence": "shall establish a process that authorizes the CLPO to investigate, review, and, as necessary, order appropriate remediation"
+        },
+        {
+          "segment_id": "17",
+          "code": 2,
+          "rationale": "The mandated process must require the CLPO to make later violation and remediation determinations for each qualifying complaint.",
+          "evidence": "determine the appropriate remediation for any covered violation"
+        },
+        {
+          "segment_id": "18",
+          "code": 2,
+          "rationale": "The provision mandates later complaint decisions, review notices, and agency compliance with CLPO remediation determinations unless reversed by the Review Court.",
+          "evidence": "shall comply with any determination by the CLPO to undertake appropriate remediation"
+        },
+        {
+          "segment_id": "21",
+          "code": 2,
+          "rationale": "The Attorney General must later promulgate regulations creating a specified adjudicative body and prescribing binding institutional features.",
+          "evidence": "shall, within 60 days of the date of this order, promulgate regulations establishing a Data Protection Review Court"
+        }
+      ],
+      "word_count": 4699
+    },
+    {
+      "document_id": "10426",
+      "doc_type": "memorandum",
+      "president": "William J. Clinton",
+      "signals": {
+        "2_contract_conditions": {
+          "segment_id": "1",
+          "evidence": "shall bind all contractors and subcontractors on the construction project through the inclusion of appropriate clauses in all relevant solicitation provisions"
+        },
+        "2_funding_eligibility": {
+          "segment_id": "3",
+          "evidence": "shall establish, within 120 days of the date of this memorandum, appropriate written procedures and criteria for the determinations set forth in section 1. Section 6. This memorandum is not intended to create any right or benefit"
+        }
+      },
+      "segment_count": 3,
+      "family": "2_contract_conditions",
+      "pool": "2",
+      "triggers": [
+        {
+          "segment_id": "1",
+          "code": 2,
+          "rationale": "Executive departments and agencies retain discretion whether to require a project labor agreement, but any agreement reached under the memorandum must later bind contractors through specified solicitation and contract clauses and contain prescribed labor terms; those legally consequential contractual results arise through subsequent agency contracting.",
+          "evidence": "shall bind all contractors and subcontractors on the construction project through the inclusion of appropriate clauses in all relevant solicitation provisions and contract documents"
+        },
+        {
+          "segment_id": "2",
+          "code": 2,
+          "rationale": "For any project labor agreement used under the memorandum, the segment mandates prescribed agreement content and legal compliance, which agencies must implement later through procurement and contracting; the accompanying limitations do not alter that dictated contractual outcome.",
+          "evidence": "shall provide other mechanisms for labormanagement cooperation on matters of mutual interest and concern"
+        }
+      ],
+      "word_count": 741
+    },
+    {
+      "document_id": "4769",
+      "doc_type": "letter",
+      "president": "Donald J. Trump",
+      "signals": {
+        "3_status_funding": {
+          "segment_id": "2",
+          "evidence": "I hereby determine, under section 501(b) of the Stafford Act, that an emergency exists nationwide. In accordance with this determination, the Federal Emergency Management Agency may provide, as appropriate, assistance"
+        },
+        "2_funding_eligibility": {
+          "segment_id": "3",
+          "evidence": "shall coordinate and direct other Federal agencies in providing needed assistance"
+        }
+      },
+      "segment_count": 6,
+      "family": "2_funding_eligibility",
+      "pool": "2",
+      "triggers": [
+        {
+          "segment_id": "5",
+          "code": 2,
+          "rationale": "The President directs the Treasury Secretary to grant affected Americans a specified later legal consequence—relief from tax deadlines—through statutory administration.",
+          "evidence": "instructing Secretary Mnuchin to provide relief from tax deadlines to Americans who have been adversely affected"
+        }
+      ],
+      "word_count": 708
+    },
+    {
+      "document_id": "1684",
+      "doc_type": "executive_order",
+      "president": "George Bush",
+      "signals": {
+        "2_implementation": {
+          "segment_id": "3",
+          "evidence": "shall accordingly ensure"
+        },
+        "2_enforcement": {
+          "segment_id": "5",
+          "evidence": "shall require validated licenses to implement this order and shall coordinate any license applications with the Secretary of State and the Secretary of Defense. Sec. 4 Sanctions Against Foreign Persons. (a) Sanctions"
+        },
+        "2_funding_eligibility": {
+          "segment_id": "6",
+          "evidence": "shall be imposed with the concurrence of the Secretary of the Treasury. (1) Foreign Assistance. No assistance shall be provided to that country under the Foreign Assistance Act of 1961 or the Arms Export Control Act other than assistance that is intended to benefit"
+        }
+      },
+      "segment_count": 7,
+      "family": "2_implementation",
+      "pool": "2",
+      "triggers": [
+        {
+          "segment_id": "3",
+          "code": 2,
+          "rationale": "The President directs the Secretaries, principally Commerce following joint determinations and regulations, to impose a specified later export prohibition; the segment also assigns diplomatic priorities and negotiations.",
+          "evidence": "The Secretary of Commerce shall prohibit the export of any goods, technology, or services subject to his export jurisdiction"
+        }
+      ],
+      "word_count": 1529
+    },
+    {
+      "document_id": "2514",
+      "doc_type": "executive_order",
+      "president": "Gerald R. Ford",
+      "signals": {
+        "2_rules": {
+          "segment_id": "5",
+          "evidence": "shall (i) control budget preparation and resource allocation for the National Foreign Intelligence Program. (A) The CFI shall, prior to submission to the Office of Management and Budget, review, and amend as it deems appropriate, the budget for the National Foreign Intelligence Program. (B) The CFI shall also adopt rules governing the reprogramming of funds within this budget. Such rules"
+        },
+        "2_implementation": {
+          "segment_id": "5",
+          "evidence": "shall have responsibility for tactical intelligence. (v) Provide continuing guidance to the Intelligence Community in order to ensure"
+        },
+        "2_funding_eligibility": {
+          "segment_id": "7",
+          "evidence": "shall be limited to: (A) Protection by lawful means against disclosure by present or former employees of the Central Intelligence Agency or persons, or employees of persons or organizations, presently or formerly under contract with the Agency; (B) providing leadership, guidance and technical assistance"
+        },
+        "3_pay_tariffs": {
+          "segment_id": "11",
+          "evidence": "duties and responsibilities of the Central Intelligence Agency shall be related to the foreign intelligence functions outlined below. As authorized by the National Security Act of 1947, as amended, the CIA Act of 1949, as amended"
+        }
+      },
+      "segment_count": 13,
+      "family": "2_rules",
+      "pool": "2",
+      "triggers": [
+        {
+          "segment_id": "11",
+          "code": 2,
+          "rationale": "Although most duties concern internal intelligence administration, senior officials are also required later to declassify qualifying material, a specified legally consequential information-status result produced through agency action.",
+          "evidence": "promptly declassifying such material consistent with Executive Order No. 11652, as amended"
+        }
+      ],
+      "word_count": 4611
+    },
+    {
+      "document_id": "17298",
+      "doc_type": "proclamation",
+      "president": "Donald J. Trump",
+      "signals": {
+        "2_enforcement": {
+          "segment_id": "4",
+          "evidence": "shall provide financial incentives in the form of an \"exit bonus\" for each illegal alien who voluntarily and permanently departs the United States. Sec. 3. Penalties"
+        }
+      },
+      "segment_count": 5,
+      "family": "2_enforcement",
+      "pool": "2",
+      "triggers": [
+        {
+          "segment_id": "4",
+          "code": 2,
+          "rationale": "The segment mandates the Secretaries to produce a specified later financial benefit—an exit bonus—for every qualifying departing alien.",
+          "evidence": "shall provide financial incentives in the form of an \"exit bonus\""
+        }
+      ],
+      "word_count": 882
+    },
+    {
+      "document_id": "17224",
+      "doc_type": "proclamation",
+      "president": "Donald J. Trump",
+      "signals": {
+        "2_implementation": {
+          "segment_id": "9",
+          "evidence": "shall take all appropriate measures within its authority to implement"
+        }
+      },
+      "segment_count": 9,
+      "family": "2_implementation",
+      "pool": "2",
+      "triggers": [
+        {
+          "segment_id": "6",
+          "code": 2,
+          "rationale": "The Trade Representative must later make the HTSUS modifications found necessary through Federal Register notice, producing the consequential tariff-schedule changes through later official action; the segment also assigns Agriculture monitoring and advisory duties.",
+          "evidence": "shall make such modifications to the HTSUS through notice in the Federal Register"
+        }
+      ],
+      "word_count": 1557
+    },
+    {
+      "document_id": "6833",
+      "doc_type": "letter",
+      "president": "Ronald Reagan",
+      "signals": {
+        "3_pay_tariffs": {
+          "segment_id": "1",
+          "evidence": "Tariff Act of 1930, as amended"
+        }
+      },
+      "segment_count": 1,
+      "family": "2_other",
+      "pool": "2",
+      "triggers": [
+        {
+          "segment_id": "1",
+          "code": 2,
+          "rationale": "The President directs the Secretary of the Treasury to monitor and enforce the export arrangements and, when necessary, later condition entry of covered steel products on presentation of specified documentation. The legal consequence occurs through subsequent agency administration at entry.",
+          "evidence": "requiring when necessary the presentation of valid export certificates or other documents issued by appropriate authorities within the European Communities or their member states as a condition for entry into the United States"
+        }
+      ],
+      "word_count": 165
+    },
+    {
+      "document_id": "9215",
+      "doc_type": "memorandum",
+      "president": "Barack Obama",
+      "signals": {
+        "2_implementation": {
+          "segment_id": "4",
+          "evidence": "shall develop and implement"
+        }
+      },
+      "segment_count": 4,
+      "family": "2_implementation",
+      "pool": "2",
+      "triggers": [
+        {
+          "segment_id": "4",
+          "code": 2,
+          "rationale": "The named departments and agencies must later issue and implement guidance, policies, and a binding mitigation regulation, including a specified mechanism for recognizing and crediting advance species-conservation actions; those legally consequential results occur through the required later agency instruments.",
+          "evidence": "The U.S. Forest Service shall finalize a mitigation regulation within 2 years of the date of this memorandum."
+        }
+      ],
+      "word_count": 2349
+    },
+    {
+      "document_id": "10449",
+      "doc_type": "memorandum",
+      "president": "William J. Clinton",
+      "signals": {
+        "2_funding_eligibility": {
+          "segment_id": "1",
+          "evidence": "directed the National Institutes of Health not to fund"
+        }
+      },
+      "segment_count": 2,
+      "family": "2_funding_eligibility",
+      "pool": "2",
+      "triggers": [
+        {
+          "segment_id": "2",
+          "code": 2,
+          "rationale": "The President mandatorily directs federal funding officials and agencies not to allocate funds for human cloning. The specified legal consequence—the denial of federal funding—occurs through subsequent agency funding administration.",
+          "evidence": "I hereby direct that no Federal funds shall be allocated for cloning of human beings."
+        }
+      ],
+      "word_count": 243
+    },
+    {
+      "document_id": "19069",
+      "doc_type": "proclamation",
+      "president": "Ronald Reagan",
+      "signals": {
+        "2_contract_conditions": {
+          "segment_id": "2",
+          "evidence": "shall be the amount of interest, as determined or estimated by the Secretary, that would be required to be paid by a recipient of a price support loan for raw cane sugar upon repayment of the loan at full maturity. Interest costs shall only be applicable if a price support loan recipient is not required to pay interest upon forfeiture of the loan collateral. (iv) Notwithstanding the provisions"
+        },
+        "2_enforcement": {
+          "segment_id": "6",
+          "evidence": "shall submit to me any recommendations for any changes determined to be necessary or appropriate. D. The provisions of this proclamation shall terminate"
+        }
+      },
+      "segment_count": 7,
+      "family": "2_contract_conditions",
+      "pool": "2",
+      "triggers": [
+        {
+          "segment_id": "3",
+          "code": 2,
+          "rationale": "The segment requires the Secretary to determine, announce, certify, and publish the quarterly fees later, at which point the applicable fee amounts are administratively produced.",
+          "evidence": "The Secretary shall determine the amount of the quarterly fees"
+        }
+      ],
+      "word_count": 1728
+    },
+    {
+      "document_id": "2606",
+      "doc_type": "executive_order",
+      "president": "Gerald R. Ford",
+      "signals": {
+        "2_implementation": {
+          "segment_id": "2",
+          "evidence": "shall prescribe such regulations as may be necessary to carry out"
+        }
+      },
+      "segment_count": 4,
+      "family": "2_implementation",
+      "pool": "2",
+      "triggers": [
+        {
+          "segment_id": "3",
+          "code": 2,
+          "rationale": "The segment mandates that the Commission's later regulations condition each student's continuation in the program on a satisfactory-performance finding, dictating a legally consequential eligibility condition to be imposed through agency rulemaking.",
+          "evidence": "shall require that continuation in the program be dependent upon a finding of satisfactory performance"
+        }
+      ],
+      "word_count": 332
+    },
+    {
+      "document_id": "10781",
+      "doc_type": "memorandum",
+      "president": "William J. Clinton",
+      "signals": {
+        "2_rules": {
+          "segment_id": "1",
+          "evidence": "shall make such determinations and issue orders, regulations"
+        }
+      },
+      "segment_count": 1,
+      "family": "2_rules",
+      "pool": "2",
+      "triggers": [
+        {
+          "segment_id": "1",
+          "code": 2,
+          "rationale": "The President mandates the Secretary of the Treasury to use statutory authority to make determinations and issue legally consequential orders, regulations, and rulings later, with initiation and reporting deadlines; although the precise instruments are qualified by “as appropriate,” the required result is agency action achieving the memorandum’s specified licensing objectives.",
+          "evidence": "you shall make such determinations and issue orders, regulations and rulings, as appropriate, to achieve the objectives stated in this memorandum"
+        }
+      ],
+      "word_count": 937
+    },
+    {
+      "document_id": "1618",
+      "doc_type": "executive_order",
+      "president": "George Bush",
+      "signals": {
+        "3_prohibition": {
+          "segment_id": "1",
+          "evidence": "is hereby prohibited"
+        },
+        "2_enforcement": {
+          "segment_id": "2",
+          "evidence": "directed to consult as appropriate on the implementation of this order and to take all necessary measures within their authority to carry out the provisions of this order, including the suspension or termination of licenses"
+        },
+        "2_implementation": {
+          "segment_id": "2",
+          "evidence": "directed to consult as appropriate on the implementation of this order and to take all necessary measures within their authority to carry out"
+        }
+      },
+      "segment_count": 2,
+      "family": "2_enforcement",
+      "pool": "2",
+      "triggers": [
+        {
+          "segment_id": "2",
+          "code": 2,
+          "rationale": "Affected executive agencies are mandatorily directed to implement the prohibition through necessary later measures, expressly including legally consequential suspension or termination of existing licenses or authorizations.",
+          "evidence": "including the suspension or termination of licenses or other authorizations in effect as of the date of this order"
+        }
+      ],
+      "word_count": 462
+    },
+    {
+      "document_id": "20023",
+      "doc_type": "proclamation",
+      "president": "Richard Nixon",
+      "signals": {
+        "2_enforcement": {
+          "segment_id": "2",
+          "evidence": "shall not be required to have such a license"
+        },
+        "3_pay_tariffs": {
+          "segment_id": "2",
+          "evidence": "Tariff Act of 1930, as amended"
+        },
+        "2_funding_eligibility": {
+          "segment_id": "5",
+          "evidence": "shall provide for a fair and equitable distribution of allocations of imports for which license fees are not applicable among eligible"
+        },
+        "2_rules": {
+          "segment_id": "11",
+          "evidence": "shall be extended to April 30, 1974, and the Secretary shall issue appropriate regulations"
+        }
+      },
+      "segment_count": 12,
+      "family": "2_enforcement",
+      "pool": "2",
+      "triggers": [
+        {
+          "segment_id": "3",
+          "code": 2,
+          "rationale": "The President mandates that the Secretary establish a license-fee system by regulation effective May 1, 1973, with specified refund and application consequences arising through that later administrative system.",
+          "evidence": "the Secretary shall, by regulation, establish a system of fees for licenses"
+        },
+        {
+          "segment_id": "5",
+          "code": 2,
+          "rationale": "The President requires the Secretary’s regulations to impose specified allocation distributions, processing conditions, and related eligibility rules, with those legal consequences produced through later regulations and allocations.",
+          "evidence": "such regulations shall require that imported crude oil and unfinished oils be processed in the licensee's refinery or petrochemical plant"
+        }
+      ],
+      "word_count": 5293
+    },
+    {
+      "document_id": "18554",
+      "doc_type": "proclamation",
+      "president": "Ronald Reagan",
+      "signals": {
+        "2_implementation": {
+          "segment_id": "2",
+          "evidence": "directed the United States Trade Representative (USTR) to take such actions and perform such functions for the United States as may be necessary to administer and implement"
+        }
+      },
+      "segment_count": 8,
+      "family": "2_implementation",
+      "pool": "2",
+      "triggers": [
+        {
+          "segment_id": "7",
+          "code": 2,
+          "rationale": "The President mandatorily directs the Treasury Secretary to take later implementation actions selected by the USTR, requiring agency execution of the import-relief regime.",
+          "evidence": "The Secretary of the Treasury shall take such actions as the USTR"
+        }
+      ],
+      "word_count": 908
+    },
+    {
+      "document_id": "1461",
+      "doc_type": "executive_order",
+      "president": "William J. Clinton",
+      "signals": {
+        "2_contract_conditions": {
+          "segment_id": "2",
+          "evidence": "shall identify the official by name or position title. (d) Original classification authorities must receive training in original classification as provided in this order and its implementing directives. (e) Exceptional cases. When an employee, contractor, licensee, certificate holder, or grantee of an agency that does not have original classification authority originates information believed by that person to require"
+        }
+      },
+      "segment_count": 10,
+      "family": "2_contract_conditions",
+      "pool": "2",
+      "triggers": [
+        {
+          "segment_id": "9",
+          "code": 2,
+          "rationale": "The President requires agency plans to mandate a specified later declassification result—at least 15 percent of affected records within one year—so the legally consequential status change must be produced later by agency action.",
+          "evidence": "the agency declassify at least 15 percent of the records affected by this section no later than 1 year from the effective date of this order"
+        }
+      ],
+      "word_count": 4772
+    },
+    {
+      "document_id": "11331",
+      "doc_type": "memorandum",
+      "president": "Jimmy Carter",
+      "signals": {
+        "2_enforcement": {
+          "segment_id": "1",
+          "evidence": "direct that you, in consultation with the Secretary of Defense and other appropriate officials, review and revise our policy with respect to the export of high technology and other strategic items to the Soviet Union. Pending review, no validated export licenses"
+        },
+        "3_sanctions_entry": {
+          "segment_id": "2",
+          "evidence": "transactions for which validated licenses have already been issued but export has not occurred to determine whether any such licenses should be suspended"
+        }
+      },
+      "segment_count": 3,
+      "family": "2_enforcement",
+      "pool": "2",
+      "triggers": [
+        {
+          "segment_id": "1",
+          "code": 2,
+          "rationale": "The President directs the Secretary of Commerce to review and revise export policy and, pending that review, mandates a specified later agency licensing outcome: approval of validated export licenses must be withheld.",
+          "evidence": "Pending review, no validated export licenses for shipment of goods or technical data to the Soviet Union are to be approved."
+        }
+      ],
+      "word_count": 332
+    },
+    {
+      "document_id": "302",
+      "doc_type": "executive_order",
+      "president": "Joseph R. Biden, Jr.",
+      "signals": {
+        "2_rules": {
+          "segment_id": "2",
+          "evidence": "shall issue, subject to public notice and comment, regulations"
+        },
+        "2_implementation": {
+          "segment_id": "3",
+          "evidence": "directed to take all appropriate measures within their authority to implement"
+        },
+        "3_sanctions_entry": {
+          "segment_id": "3",
+          "evidence": "transactions that meet the criteria specified in subsection (a)(ii) of this section that are to be prohibited (prohibited"
+        },
+        "2_funding_eligibility": {
+          "segment_id": "4",
+          "evidence": "shall consider taking steps, including issuing regulations, guidance, or orders, as appropriate and consistent with the legal authorities authorizing relevant Federal assistance programs, to prohibit the provision of assistance"
+        },
+        "2_enforcement": {
+          "segment_id": "4",
+          "evidence": "shall, to the extent consistent with its existing authority and applicable law: (i) prioritize, for purposes of and in reliance on the process set forth in section 6 of Executive Order 13913, the initiation of reviews of existing licenses"
+        },
+        "3_prohibition": {
+          "segment_id": "4",
+          "evidence": "is prohibited"
+        }
+      },
+      "segment_count": 9,
+      "family": "2_rules",
+      "pool": "2",
+      "triggers": [
+        {
+          "segment_id": "2",
+          "code": 2,
+          "rationale": "The Attorney General must later issue regulations imposing specified prohibitions or restrictions on covered transactions; the legal consequences arise when those regulations take effect.",
+          "evidence": "shall issue, subject to public notice and comment, regulations that prohibit or otherwise restrict United States persons"
+        },
+        {
+          "segment_id": "3",
+          "code": 2,
+          "rationale": "The Attorney General and Homeland Security Secretary must publish a proposed rule, security requirements, and guidance producing specified later regulatory constraints, notwithstanding accompanying implementation authority.",
+          "evidence": "shall, in coordination with the Attorney General and in consultation with the heads of relevant agencies, propose, seek public comment on, and publish security requirements"
+        }
+      ],
+      "word_count": 4866
+    },
+    {
+      "document_id": "15159",
+      "doc_type": "proclamation",
+      "president": "Harry S Truman",
+      "signals": {
+        "2_funding_eligibility": {
+          "segment_id": "1",
+          "evidence": "shall be entitled to all the benefits of the said Title 17 except those conferred by the provisions embodied in the second paragraph of section 9(b) thereof regarding the extension of time for fulfilling copyright conditions and formalities. Provided, that the enjoyment by any work of the rights and benefits"
+        }
+      },
+      "segment_count": 1,
+      "family": "3_other",
+      "pool": "3",
+      "triggers": [
+        {
+          "segment_id": "1",
+          "code": 3,
+          "rationale": "The President presently makes the statutory reciprocity determination and thereby establishes Philippine citizens’ copyright entitlement, subject to stated exceptions and conditions, effective on the specified date; the legal consequence arises from the proclamation itself rather than a later agency action.",
+          "evidence": "citizens of the Republic of the Philippines shall be entitled to all the benefits of the said Title 17"
+        }
+      ],
+      "word_count": 992
+    },
+    {
+      "document_id": "959",
+      "doc_type": "executive_order",
+      "president": "George W. Bush",
+      "signals": {
+        "3_sanctions_entry": {
+          "segment_id": "1",
+          "evidence": "property that are in the United States, that hereafter come within the United States, or that are or hereafter come within the possession or control of any United States person, including any overseas branch, of the following persons are blocked"
+        },
+        "3_prohibition": {
+          "segment_id": "2",
+          "evidence": "is prohibited"
+        },
+        "2_implementation": {
+          "segment_id": "8",
+          "evidence": "directed to take all appropriate measures within their authority to carry out"
+        }
+      },
+      "segment_count": 8,
+      "family": "3_sanctions_entry",
+      "pool": "3",
+      "triggers": [
+        {
+          "segment_id": "1",
+          "code": 3,
+          "rationale": "The President presently blocks covered property and prohibits dealings involving persons later identified by Treasury; the legal consequence follows directly from this provision upon identification.",
+          "evidence": "all property and interests in property that are in the United States, that hereafter come within the United States, or that are or hereafter come within the possession or control of any United States person, including any overseas branch, of the following persons are blocked"
+        },
+        {
+          "segment_id": "2",
+          "code": 3,
+          "rationale": "The President presently amends an existing sanctions criterion and directly prohibits evasion transactions and conspiracies, immediately imposing substantive legal duties.",
+          "evidence": "Any transaction by a United States person or within the United States that evades or avoids, has the purpose of evading or avoiding, or attempts to violate any of the prohibitions set forth in this order is prohibited."
+        },
+        {
+          "segment_id": "3",
+          "code": 3,
+          "rationale": "The President makes the statutory impairment determination that supplies the present legal predicate for restricting IEEPA-covered donations.",
+          "evidence": "I hereby determine that the making of donations of the type specified in section 203(b)(2) of IEEPA"
+        },
+        {
+          "segment_id": "4",
+          "code": 3,
+          "rationale": "The President directly and presently prohibits the specified donations; no later agency action is needed to create the prohibition.",
+          "evidence": "I hereby prohibit such donations as provided by section 1 of this order."
+        },
+        {
+          "segment_id": "6",
+          "code": 3,
+          "rationale": "The President presently determines that covered persons need receive no prior notice, directly establishing the notice consequence for future determinations.",
+          "evidence": "there need be no prior notice of a determination made pursuant to this order."
+        }
+      ],
+      "word_count": 1063
+    },
+    {
+      "document_id": "1895",
+      "doc_type": "executive_order",
+      "president": "Ronald Reagan",
+      "signals": {
+        "2_funding_eligibility": {
+          "segment_id": "1",
+          "evidence": "shall be entitled to receive the duty-free treatment provided for in subdivision (c)(ii) of this headnote without regard to the limitations on preferential treatment of eligible"
+        },
+        "3_status_funding": {
+          "segment_id": "1",
+          "evidence": "hereby ordered as follows: Section 1. In order to designate the countries that will be considered to be least developed beneficiary developing countries, general headnote 3(c) of the Tariff Schedules of the United States (TSUS) (19 U.S.C. 1202) is modified by adding the following new paragraph 3(cxiv): \"(iv) The following beneficiary"
+        },
+        "3_pay_tariffs": {
+          "segment_id": "1",
+          "evidence": "Tariff Schedules of the United States (TSUS) (19 U.S.C. 1202) is modified"
+        }
+      },
+      "segment_count": 3,
+      "family": "3_status_funding",
+      "pool": "3",
+      "triggers": [
+        {
+          "segment_id": "1",
+          "code": 3,
+          "rationale": "The President presently modifies the tariff schedule, designates listed countries, and grants qualifying imports duty-free treatment; the legal consequence occurs under the provision itself when the stated import conditions are met.",
+          "evidence": "The following beneficiary countries are designated as least-developed beneficiary developing countries"
+        },
+        {
+          "segment_id": "2",
+          "code": 3,
+          "rationale": "The President presently amends the governing GSP annex to add article 734.56, directly changing its eligibility for preferential treatment.",
+          "evidence": "is further amended by inserting in numerical sequence \"734.56\""
+        },
+        {
+          "segment_id": "3",
+          "code": 3,
+          "rationale": "The President presently amends the GSP annex and tariff schedule and prescribes when those substantive eligibility changes take effect.",
+          "evidence": "The amendments made by this Order shall be effective with respect to articles"
+        }
+      ],
+      "word_count": 538
+    },
+    {
+      "document_id": "4414",
+      "doc_type": "executive_order",
+      "president": "Harry S Truman",
+      "signals": {
+        "2_rules": {
+          "segment_id": "2",
+          "evidence": "directed, with the approval of the Attorney General, to take such action and to issue such rules and regulations"
+        }
+      },
+      "segment_count": 2,
+      "family": "3_other",
+      "pool": "3",
+      "triggers": [
+        {
+          "segment_id": "1",
+          "code": 3,
+          "rationale": "The President presently and directly revokes the cited executive orders as applied to the specified Japanese and Korean persons, removing the executive-order basis that precluded their lawful entry or remaining; the legal consequence occurs in this segment itself.",
+          "evidence": "I hereby revoke the said Executive Orders No. 589 of March 14, 1907, and No. 1712 of February 24, 1913"
+        }
+      ],
+      "word_count": 396
+    },
+    {
+      "document_id": "2836",
+      "doc_type": "executive_order",
+      "president": "Richard Nixon",
+      "signals": {
+        "2_implementation": {
+          "segment_id": "3",
+          "evidence": "shall take all actions as may be necessary to organize the Office so as to carry out"
+        },
+        "2_rules": {
+          "segment_id": "4",
+          "evidence": "shall be entitled to receive compensation and travel expenses as authorized by law for persons serving intermittently; (2) promulgate such rules, regulations"
+        }
+      },
+      "segment_count": 6,
+      "family": "3_other",
+      "pool": "3",
+      "triggers": [
+        {
+          "segment_id": "4",
+          "code": 3,
+          "rationale": "Although most provisions concern internal authority and coordination, the segment itself presently grants qualifying advisory-committee members a compensation and travel-expense entitlement authorized by law.",
+          "evidence": "shall be entitled to receive compensation and travel expenses as authorized by law for persons serving intermittently"
+        }
+      ],
+      "word_count": 1576
+    },
+    {
+      "document_id": "12165",
+      "doc_type": "proclamation",
+      "president": "Donald J. Trump",
+      "signals": {
+        "3_waivers": {
+          "segment_id": "3",
+          "evidence": "I have received the advice of the United States International Trade Commission on whether any industry in the United States is likely to be adversely affected by such waivers"
+        },
+        "2_funding_eligibility": {
+          "segment_id": "7",
+          "evidence": "shall apply to the eligible"
+        }
+      },
+      "segment_count": 7,
+      "family": "3_waivers",
+      "pool": "3",
+      "triggers": [
+        {
+          "segment_id": "1",
+          "code": 3,
+          "rationale": "The President makes a present statutory determination withdrawing duty-free treatment from an article; the legal consequence is established by that presidential determination, even though the article is identified elsewhere.",
+          "evidence": "I have determined to withdraw the application of the duty-free treatment accorded to a certain article."
+        },
+        {
+          "segment_id": "2",
+          "code": 3,
+          "rationale": "The President makes the statutory competitive-need determination that specified exports exceeded applicable limits, presently establishing the condition that removes preferential treatment under the governing scheme.",
+          "evidence": "I have determined that in 2017 certain beneficiary developing countries exported eligible articles in quantities exceeding the applicable competitive-need limitations."
+        },
+        {
+          "segment_id": "3",
+          "code": 3,
+          "rationale": "The President expressly and presently terminates duty-free treatment; the surrounding statutory explanation and receipt of agency advice do not defer that legal consequence.",
+          "evidence": "I hereby terminate the duty-free treatment for such articles from such beneficiary developing countries."
+        },
+        {
+          "segment_id": "5",
+          "code": 3,
+          "rationale": "The President makes the statutory determination that competitive-need limitations should be waived for specified articles and countries, establishing the waiver decision whose particulars are supplied elsewhere.",
+          "evidence": "I have determined that the competitive-need limitations of section 503(c)(2) of the 1974 Act should be waived"
+        },
+        {
+          "segment_id": "6",
+          "code": 3,
+          "rationale": "The President makes a statutory redesignation determination that changes a country's beneficiary status for an eligible article; the legal consequence arises from that presidential act.",
+          "evidence": "I have determined to redesignate a certain country as a beneficiary developing country with respect to a certain eligible article"
+        },
+        {
+          "segment_id": "7",
+          "code": 3,
+          "rationale": "The President directly modifies the tariff schedule, applies a statutory waiver, fixes the effective date for covered imports, and supersedes inconsistent prior provisions; these are present self-executing legal acts rather than commands for later agency decision-making.",
+          "evidence": "the Rates of Duty 1-Special subcolumn for the corresponding HTS subheadings and general note 4(d) to the HTS are modified"
+        }
+      ],
+      "word_count": 906
+    },
+    {
+      "document_id": "16907",
+      "doc_type": "proclamation",
+      "president": "George Bush",
+      "signals": {
+        "3_waivers": {
+          "segment_id": "1",
+          "evidence": "I have determined that it is appropriate to waive"
+        },
+        "2_funding_eligibility": {
+          "segment_id": "6",
+          "evidence": "shall apply to the eligible articles in the HTS subheadings and the beneficiary developing countries opposite such HTS subheadings set forth in Annex I(a). (2) In order to provide in the nomenclature of the HTS for a waiver under the GSP for a specified designated eligible"
+        }
+      },
+      "segment_count": 7,
+      "family": "3_waivers",
+      "pool": "3",
+      "triggers": [
+        {
+          "segment_id": "1",
+          "code": 3,
+          "rationale": "The President makes the statutory determination supporting a waiver for specified GSP articles and countries; that legally consequential determination occurs in the segment itself.",
+          "evidence": "I have determined that it is appropriate to waive the application of section 504(c)"
+        },
+        {
+          "segment_id": "2",
+          "code": 3,
+          "rationale": "The President presently makes the statutorily required national-economic-interest determination after receiving USITC advice; the determination occurs immediately rather than being assigned to an agency.",
+          "evidence": "I have determined, based on that advice and on the considerations described in sections 501 and 502(c) of the 1974 Act, as amended and 2462(c)), that such waivers are in the national economic interest of the United States."
+        },
+        {
+          "segment_id": "6",
+          "code": 3,
+          "rationale": "The President directly applies statutory waivers and modifies tariff classifications, eligibility designations, and duty rates through the proclamation itself, with the legal consequences attaching under the stated provisions and dates.",
+          "evidence": "The waivers of the application of section 504(c) of the 1974 Act shall apply"
+        },
+        {
+          "segment_id": "7",
+          "code": 3,
+          "rationale": "The President directly supersedes inconsistent prior directives and establishes when the proclamation's waivers and tariff amendments legally take effect; those consequences arise by force of this segment.",
+          "evidence": "Any provisions of previous proclamations and Executive orders inconsistent with the provisions of this proclamation are hereby superseded"
+        }
+      ],
+      "word_count": 1186
+    },
+    {
+      "document_id": "20135",
+      "doc_type": "proclamation",
+      "president": "Richard Nixon",
+      "signals": {
+        "2_enforcement": {
+          "segment_id": "2",
+          "evidence": "shall not exceed an average of 540,000 barrels per day. Entries for consumption of crude oil or unfinished oils transported by pipeline may be made until midnight January 15, 1973 under any license"
+        }
+      },
+      "segment_count": 3,
+      "family": "3_other",
+      "pool": "3",
+      "triggers": [
+        {
+          "segment_id": "1",
+          "code": 3,
+          "rationale": "The President presently proclaims an amendment to the existing import-control proclamation effective immediately; the legal change occurs on the proclamation date.",
+          "evidence": "effective as of this date"
+        },
+        {
+          "segment_id": "2",
+          "code": 3,
+          "rationale": "The President directly amends the import regime by extending its duration, imposing a Canadian-import ceiling, and authorizing specified entry periods; those legal limits and permissions arise from the segment itself, with later regulations implementing allocations.",
+          "evidence": "Canadian imports under allocations made pursuant to this subparagraph (2) into Districts I–IV shall not exceed an average of 540,000 barrels per day"
+        }
+      ],
+      "word_count": 509
+    },
+    {
+      "document_id": "10841",
+      "doc_type": "memorandum",
+      "president": "George Bush",
+      "signals": {
+        "3_status_funding": {
+          "segment_id": "1",
+          "evidence": "I hereby determine that it is in the national interest of the United States to drawdown defense articles from the stocks of the Department of Defense, defense services of the Department of Defense, and military education and training for the purpose of providing counternarcotics assistance"
+        },
+        "2_funding_eligibility": {
+          "segment_id": "2",
+          "evidence": "direct the drawdown"
+        }
+      },
+      "segment_count": 2,
+      "family": "3_status_funding",
+      "pool": "3",
+      "triggers": [
+        {
+          "segment_id": "1",
+          "code": 3,
+          "rationale": "The President presently makes the mandatory statutory national-interest determination authorizing the drawdown of specified defense assistance for Colombia; the legally consequential determination occurs in this segment itself.",
+          "evidence": "I hereby determine that it is in the national interest of the United States to drawdown defense articles"
+        },
+        {
+          "segment_id": "2",
+          "code": 3,
+          "rationale": "The President presently directs and authorizes the drawdown of up to $7 million in specified defense articles, services, and training; any later delivery is ministerial implementation of this immediate legally consequential act.",
+          "evidence": "I hereby direct the drawdown of up to $7 million of such defense articles"
+        }
+      ],
+      "word_count": 185
+    },
+    {
+      "document_id": "8501",
+      "doc_type": "letter",
+      "president": "Harry S Truman",
+      "signals": {
+        "2_implementation": {
+          "segment_id": "2",
+          "evidence": "shall prescribe such regulations as may be necessary to implement"
+        }
+      },
+      "segment_count": 4,
+      "family": "3_other",
+      "pool": "3",
+      "triggers": [
+        {
+          "segment_id": "4",
+          "code": 3,
+          "rationale": "The segment itself immediately prohibits executive agencies from exercising the statutory exchange-and-sale authority beyond the limits of preexisting statutes until regulations issue; later regulatory and administrative directions do not negate that present legal restriction.",
+          "evidence": "pending the issuance of such regulations, no Executive agency shall exercise this authority except to the extent permitted by, and in accordance with the provisions of, statutes in force prior to the taking effect of this Act"
+        }
+      ],
+      "word_count": 600
+    },
+    {
+      "document_id": "321",
+      "doc_type": "executive_order",
+      "president": "Joseph R. Biden, Jr.",
+      "signals": {
+        "3_sanctions_entry": {
+          "segment_id": "1",
+          "evidence": "property and interests in property that are in the United States, that hereafter come within the United States, or that are or hereafter come within the possession or control of any United States person of the following persons are blocked"
+        },
+        "2_implementation": {
+          "segment_id": "2",
+          "evidence": "shall coordinate, through the interagency process identified in National Security Memorandum 2 of February 4, 2021 (Renewing the National Security Council System), or any successor memorandum, the executive branch actions necessary to implement"
+        },
+        "3_prohibition": {
+          "segment_id": "4",
+          "evidence": "is prohibited"
+        }
+      },
+      "segment_count": 11,
+      "family": "3_sanctions_entry",
+      "pool": "3",
+      "triggers": [
+        {
+          "segment_id": "1",
+          "code": 3,
+          "rationale": "The President presently blocks the property and property interests of foreign persons who are later determined by Treasury, in consultation with State, to satisfy the stated criteria; the legal consequence attaches upon such a determination by operation of this segment.",
+          "evidence": "All property and interests in property that are in the United States, that hereafter come within the United States, or that are or hereafter come within the possession or control of any United States person of the following persons are blocked"
+        },
+        {
+          "segment_id": "3",
+          "code": 3,
+          "rationale": "The President presently makes the statutory impairment determination concerning specified donations, which is a legally consequential predicate under IEEPA rather than a direction for an agency to reach a later outcome.",
+          "evidence": "I hereby determine that the making of donations of the types of articles specified in section 203(b)(2) of IEEPA"
+        },
+        {
+          "segment_id": "4",
+          "code": 3,
+          "rationale": "The President presently prohibits the specified donations, evasion transactions, attempted violations, and conspiracies; those legal prohibitions arise from the segment itself.",
+          "evidence": "Any conspiracy formed to violate any of the prohibitions set forth in this order is prohibited."
+        },
+        {
+          "segment_id": "5",
+          "code": 3,
+          "rationale": "The President presently suspends immigrant and nonimmigrant entry for persons meeting the incorporated criteria, subject to specified exceptions determined by State or Homeland Security.",
+          "evidence": "the entry of such persons into the United States, as immigrants or nonimmigrants, is hereby suspended"
+        },
+        {
+          "segment_id": "8",
+          "code": 3,
+          "rationale": "The President presently determines that no advance notice is required for section 1 listings or determinations, immediately altering the applicable procedural duty.",
+          "evidence": "there need be no prior notice of a listing or determination made pursuant to section 1 of this order"
+        }
+      ],
+      "word_count": 2037
+    },
+    {
+      "document_id": "6950",
+      "doc_type": "letter",
+      "president": "Jimmy Carter",
+      "signals": {
+        "2_enforcement": {
+          "segment_id": "2",
+          "evidence": "directed will also consider what our policy should be on future applications for licenses, whether existing special licenses should be amended or revoked, and whether validated licenses"
+        },
+        "2_implementation": {
+          "segment_id": "3",
+          "evidence": "directed to take a number of actions, using authorities already available under current law, to ensure"
+        }
+      },
+      "segment_count": 3,
+      "family": "3_other",
+      "pool": "3",
+      "triggers": [
+        {
+          "segment_id": "1",
+          "code": 3,
+          "rationale": "The President presently makes the statutory determination supporting the export controls; the legal consequence occurs upon that determination, rather than through a later mandated agency decision.",
+          "evidence": "I have determined pursuant to Section 4(c) of the Act that the absence of such controls would prove detrimental to the foreign policy and national security interests of the United States."
+        },
+        {
+          "segment_id": "3",
+          "code": 3,
+          "rationale": "The President presently makes the national-security finding legally supporting the export curtailment; the consequence attaches to that finding, while the remainder principally reports impacts and completed or ongoing agency measures.",
+          "evidence": "I find that the exports being curtailed by this action make a significant contribution to the military potential of the Soviet Union that is detrimental to the national security of the United States."
+        }
+      ],
+      "word_count": 2395
+    },
+    {
+      "document_id": "15950",
+      "doc_type": "proclamation",
+      "president": "William J. Clinton",
+      "signals": {
+        "3_land": {
+          "segment_id": "1",
+          "evidence": "hereby set apart and reserved as the Grand Canyon-Parashant National Monument, for the purpose of protecting the objects identified above, all lands and interests in lands"
+        },
+        "2_rules": {
+          "segment_id": "2",
+          "evidence": "shall have primary management authority over the remaining portion of the monument. The Bureau of Land Management shall continue to issue and administer grazing leases within the portion of the monument within the Lake Mead National Recreation Area, consistent with the Lake Mead National Recreation Area authorizing legislation. Laws, regulations"
+        }
+      },
+      "segment_count": 2,
+      "family": "3_land",
+      "pool": "3",
+      "triggers": [
+        {
+          "segment_id": "1",
+          "code": 3,
+          "rationale": "The President presently sets apart and reserves specified federal lands as a national monument and imposes an off-road vehicle prohibition; those legal consequences arise from the proclamation itself.",
+          "evidence": "there are hereby set apart and reserved as the Grand Canyon-Parashant National Monument"
+        }
+      ],
+      "word_count": 2103
+    },
+    {
+      "document_id": "2414",
+      "doc_type": "executive_order",
+      "president": "Jimmy Carter",
+      "signals": {
+        "3_pay_tariffs": {
+          "segment_id": "1",
+          "evidence": "Tariff Schedules of the United States (TSUS) are modified"
+        }
+      },
+      "segment_count": 1,
+      "family": "3_pay_tariffs",
+      "pool": "3",
+      "triggers": [
+        {
+          "segment_id": "1",
+          "code": 3,
+          "rationale": "The President directly modifies the tariff schedule’s GSP description and specifies the articles to which that amendment applies. The legal consequence occurs by operation of this provision itself, rather than through a later agency decision.",
+          "evidence": "the Tariff Schedules of the United States (TSUS) are modified by deleting from item 791.74, TSUS, the description"
+        }
+      ],
+      "word_count": 227
+    },
+    {
+      "document_id": "4891",
+      "doc_type": "letter",
+      "president": "Donald J. Trump",
+      "signals": {
+        "3_status_funding": {
+          "segment_id": "1",
+          "evidence": "I hereby designate as emergency requirements all funding (including the repurposing of funds"
+        }
+      },
+      "segment_count": 1,
+      "family": "3_status_funding",
+      "pool": "3",
+      "triggers": [
+        {
+          "segment_id": "1",
+          "code": 3,
+          "rationale": "The President presently makes the statutory emergency-requirement designation for the specified funding, producing the legally consequential budgetary treatment immediately; the OMB memorandum merely supplies details of that completed action.",
+          "evidence": "I hereby designate as emergency requirements all funding"
+        }
+      ],
+      "word_count": 103
+    },
+    {
+      "document_id": "18810",
+      "doc_type": "proclamation",
+      "president": "Ronald Reagan",
+      "signals": {
+        "2_funding_eligibility": {
+          "segment_id": "2",
+          "evidence": "shall be eligible"
+        },
+        "3_pay_tariffs": {
+          "segment_id": "2",
+          "evidence": "Tariff Schedules of the United States (TSUS), listing those countries whose products are eligible for benefits of the GSP, is amended by striking out \"Portugal.\" (2) No article the product of Portugal and imported into the United States after the effective"
+        }
+      },
+      "segment_count": 2,
+      "family": "3_pay_tariffs",
+      "pool": "3",
+      "triggers": [
+        {
+          "segment_id": "1",
+          "code": 3,
+          "rationale": "The President makes a statutory determination to terminate GSP preferential treatment for eligible articles imported from Portugal; the legal consequence is established by this presidential determination, with the proclamation supplying its effective operation.",
+          "evidence": "I have determined that it is appropriate to provide for the termination of preferential treatment under the Generalized System of Preferences (GSP)"
+        },
+        {
+          "segment_id": "2",
+          "code": 3,
+          "rationale": "The provision itself amends the tariff schedules, removes Portugal from GSP eligibility, and fixes when that substantive change applies, rather than directing an agency to create the result later.",
+          "evidence": "General headnote 3(e)(v)(A) to the Tariff Schedules of the United States (TSUS), listing those countries whose products are eligible for benefits of the GSP, is amended by striking out \"Portugal.\""
+        }
+      ],
+      "word_count": 306
+    },
+    {
+      "document_id": "11496",
+      "doc_type": "memorandum",
+      "president": "Jimmy Carter",
+      "signals": {
+        "3_waivers": {
+          "segment_id": "1",
+          "evidence": "I hereby determine, pursuant to section 402(d)(5) of the Act, that the further extension of the waiver"
+        }
+      },
+      "segment_count": 2,
+      "family": "3_waivers",
+      "pool": "3",
+      "triggers": [
+        {
+          "segment_id": "1",
+          "code": 3,
+          "rationale": "The President presently makes the statutory determination required to extend waiver authority under the Trade Act; the legally consequential determination occurs in this segment itself.",
+          "evidence": "I hereby determine, pursuant to section 402(d)(5) of the Act"
+        },
+        {
+          "segment_id": "2",
+          "code": 3,
+          "rationale": "The President presently makes the country-specific statutory determination supporting continuation of Romania's existing waiver, rather than directing an agency to reach that result later.",
+          "evidence": "continuation of the waiver applicable to the Socialist Republic of Romania will substantially promote the objectives of section 402"
+        }
+      ],
+      "word_count": 127
+    },
+    {
+      "document_id": "17361",
+      "doc_type": "proclamation",
+      "president": "Joseph R. Biden, Jr.",
+      "signals": {
+        "3_land": {
+          "segment_id": "3",
+          "evidence": "hereby appropriated and withdrawn from all forms of entry, location, selection, sale, or other disposition under the public land laws or laws applicable to the Army, including withdrawal from location, entry, and patent under the mining laws, and from disposition under all laws relating to mineral, solar, and geothermal leasing. The establishment of the monument"
+        },
+        "2_funding_eligibility": {
+          "segment_id": "6",
+          "evidence": "shall ensure the monument fulfills the following purposes for the benefit"
+        },
+        "2_implementation": {
+          "segment_id": "6",
+          "evidence": "shall ensure"
+        }
+      },
+      "segment_count": 7,
+      "family": "3_land",
+      "pool": "3",
+      "triggers": [
+        {
+          "segment_id": "1",
+          "code": 3,
+          "rationale": "The President presently makes the Antiquities Act determination that the identified objects are historically significant and need protection; the legally relevant finding occurs in the proclamation itself.",
+          "evidence": "I find that all the objects identified above, and objects of the type identified above within the area described herein, are objects of historic interest in need of protection"
+        },
+        {
+          "segment_id": "2",
+          "code": 3,
+          "rationale": "The President presently makes the statutorily required determination that the monument's boundaries are the smallest compatible area; the finding occurs in the proclamation itself rather than through later agency action.",
+          "evidence": "I find that the boundaries of the monument reserved by this proclamation represent the smallest area compatible with the proper care and management of the objects of historic interest identified above"
+        },
+        {
+          "segment_id": "3",
+          "code": 3,
+          "rationale": "The President immediately designates the objects and lands as a national monument, reserves the lands, and withdraws them from entry and disposition, subject to existing rights.",
+          "evidence": "All Federal lands and interests in lands within the boundaries of the monument are hereby appropriated and withdrawn from all forms of entry, location, selection, sale, or other disposition"
+        }
+      ],
+      "word_count": 4332
+    },
+    {
+      "document_id": "17235",
+      "doc_type": "proclamation",
+      "president": "Donald J. Trump",
+      "signals": {
+        "3_sanctions_entry": {
+          "segment_id": "9",
+          "evidence": "Entry for Nationals of Countries of Identified Concern. The entry into the United States of nationals of the following countries continues to be suspended"
+        },
+        "3_waivers": {
+          "segment_id": "10",
+          "evidence": "hereby suspended and limited, as follows, subject to the categorical exceptions and case-by-case waivers"
+        }
+      },
+      "segment_count": 22,
+      "family": "3_sanctions_entry",
+      "pool": "3",
+      "triggers": [
+        {
+          "segment_id": "2",
+          "code": 3,
+          "rationale": "The President presently decides to continue and modify legally consequential entry limitations for specified classes, with the incorporated sections defining their operation.",
+          "evidence": "I have decided—as described in sections 2 and 3 of this proclamation—to continue to impose and modify the limitations"
+        },
+        {
+          "segment_id": "3",
+          "code": 3,
+          "rationale": "The President presently decides to impose legally consequential entry limitations on additional classes of foreign nationals, with the referenced sections supplying their details.",
+          "evidence": "I have decided—as described in sections 4 and 5 of this proclamation—to impose the limitations"
+        },
+        {
+          "segment_id": "4",
+          "code": 3,
+          "rationale": "Acting under the INA, the President makes the statutory detrimental-entry finding that legally grounds the proclamation's entry restrictions.",
+          "evidence": "hereby find that, absent the measures set forth in this proclamation, the immigrant and nonimmigrant entry into the United States of persons described in sections 2, 3, 4, and 5 of this proclamation would be detrimental to the interests of the United States"
+        },
+        {
+          "segment_id": "7",
+          "code": 3,
+          "rationale": "The President presently determines that full entry restrictions continue for nationals of the twelve listed countries, directly affecting immigrant and nonimmigrant entry.",
+          "evidence": "I have determined to continue to fully restrict and limit the entry of nationals of the following 12 countries"
+        },
+        {
+          "segment_id": "8",
+          "code": 3,
+          "rationale": "The President presently determines full or partial entry restrictions for the listed nationalities and Palestinian Authority document holders, directly defining their entry treatment.",
+          "evidence": "I have determined to fully restrict and limit the entry of nationals of 7 additional countries"
+        },
+        {
+          "segment_id": "9",
+          "code": 3,
+          "rationale": "The segment both determines additional partial restrictions and expressly continues full and partial suspensions of entry for listed nationals, producing present legal consequences subject to stated exceptions and waivers.",
+          "evidence": "The entry into the United States of nationals of the following countries continues to be suspended and limited"
+        },
+        {
+          "segment_id": "10",
+          "code": 3,
+          "rationale": "The proclamation itself fully suspends immigrant and nonimmigrant entry for the listed nationalities and Palestinian Authority document holders, subject to specified exceptions and waivers.",
+          "evidence": "The entry into the United States of nationals of the following countries is hereby suspended and limited"
+        },
+        {
+          "segment_id": "11",
+          "code": 3,
+          "rationale": "The proclamation itself suspends and limits entry for the covered countries, including Angola, subject to the referenced exceptions and waivers.",
+          "evidence": "The entry into the United States of nationals of the following countries is hereby suspended and limited"
+        }
+      ],
+      "word_count": 4964
+    },
+    {
+      "document_id": "16273",
+      "doc_type": "proclamation",
+      "president": "William J. Clinton",
+      "signals": {
+        "2_enforcement": {
+          "segment_id": "1",
+          "evidence": "shall terminate"
+        },
+        "3_pay_tariffs": {
+          "segment_id": "9",
+          "evidence": "tariff treatment under the GSP with respect to certain eligible articles effective"
+        }
+      },
+      "segment_count": 14,
+      "family": "3_pay_tariffs",
+      "pool": "3",
+      "triggers": [
+        {
+          "segment_id": "3",
+          "code": 3,
+          "rationale": "The President makes the substantive statutory determination that Malaysia no longer warrants GSP treatment and fixes the termination's effective date; the legal consequence follows from this present presidential determination.",
+          "evidence": "it is appropriate to terminate the designation of Malaysia as a beneficiary developing country for purposes of the GSP effective January 1, 1997"
+        },
+        {
+          "segment_id": "4",
+          "code": 3,
+          "rationale": "The President determines the termination of Malaysia's ASEAN designation and competitive-need waivers, substantive changes to its GSP treatment, with later tariff-schedule modifications reflecting those acts.",
+          "evidence": "to terminate any waivers of the competitive need limits granted to Malaysia"
+        },
+        {
+          "segment_id": "6",
+          "code": 3,
+          "rationale": "The President makes the statutory high-income determination that, under the cited statute, triggers termination of the countries' beneficiary designations at the prescribed later date.",
+          "evidence": "I have determined that Cyprus, Aruba, Macau, the Netherlands Antilles, Greenland, and the Cayman Islands meet the definition of a \"high income\" country"
+        },
+        {
+          "segment_id": "7",
+          "code": 3,
+          "rationale": "The President directly terminates specified countries' preferential GSP treatment effective on a stated date; later implementation is ministerial.",
+          "evidence": "I am terminating the preferential treatment under the GSP"
+        },
+        {
+          "segment_id": "8",
+          "code": 3,
+          "rationale": "The President makes the substantive determination to suspend part of Pakistan's GSP benefits under the cited statutory authority, with the affected articles implemented through the tariff schedule.",
+          "evidence": "I have determined that it is appropriate to suspend some of Pakistan's GSP benefits"
+        },
+        {
+          "segment_id": "9",
+          "code": 3,
+          "rationale": "The President determines that Pakistan will lose preferential tariff treatment for specified articles on a fixed date and also acts to correct beneficiary-country names in the tariff schedule.",
+          "evidence": "Pakistan will no longer receive preferential tariff treatment under the GSP with respect to certain eligible articles effective July 1, 1996"
+        },
+        {
+          "segment_id": "10",
+          "code": 3,
+          "rationale": "The President makes the substantive statutory determination to disregard competitive-need limitations and restore GSP treatment to qualifying articles; later schedule changes implement that determination.",
+          "evidence": "to disregard section 503(c)(2)(A)(i)(II) of the Trade Act with respect to certain eligible articles"
+        },
+        {
+          "segment_id": "11",
+          "code": 3,
+          "rationale": "The President determines which countries are to lose or receive least-developed beneficiary status, a substantive eligibility designation implemented in the ensuing tariff-schedule modification.",
+          "evidence": "Botswana and Western Samoa should be deleted from the list of least-developed beneficiary developing countries and Angola, Ethiopia, Madagascar, Zaire, and Zambia should be added"
+        },
+        {
+          "segment_id": "12",
+          "code": 3,
+          "rationale": "The President presently modifies the Harmonized Tariff Schedule through incorporated annexes, thereby changing beneficiary designations and preferential tariff treatment.",
+          "evidence": "the HTS is modified as provided in Annex I to this proclamation"
+        }
+      ],
+      "word_count": 1445
+    },
+    {
+      "document_id": "14818",
+      "doc_type": "proclamation",
+      "president": "Dwight D. Eisenhower",
+      "signals": {
+        "3_pay_tariffs": {
+          "segment_id": "1",
+          "evidence": "Tariff Act of 1930, as amended"
+        },
+        "2_implementation": {
+          "segment_id": "3",
+          "evidence": "shall be suspended to the extent necessary to give effect"
+        }
+      },
+      "segment_count": 4,
+      "family": "3_pay_tariffs",
+      "pool": "3",
+      "triggers": [
+        {
+          "segment_id": "1",
+          "code": 3,
+          "rationale": "The President presently makes the statutory finding that a specified 45-percent tariff rate is appropriate upon invocation of the reservation; the finding is part of the presidential act establishing the legally consequential tariff treatment, rather than a direction for an agency to decide the outcome later.",
+          "evidence": "I find that upon invocation of the said reservation set forth in the second recital of this proclamation, effective October 1, 1956, it will be appropriate"
+        },
+        {
+          "segment_id": "2",
+          "code": 3,
+          "rationale": "As a continuation of the presidential finding, this segment presently establishes the initial quota threshold and finds that it satisfies the legally required production percentage; the tariff consequence applies upon entries exceeding that threshold.",
+          "evidence": "which quantity I find to be not less than 1 1/4 per centum of the average annual production in the United States"
+        },
+        {
+          "segment_id": "3",
+          "code": 3,
+          "rationale": "The proclamation itself fixes the binding tariff rate at 45 percent and suspends prior proclamations as necessary to give that rate effect, producing immediate substantive legal consequences subject to the stated quantity triggers.",
+          "evidence": "shall be 45 per centum ad valorem"
+        },
+        {
+          "segment_id": "4",
+          "code": 3,
+          "rationale": "The President directly amends an operative tariff-related list by deleting the specified line; the legal amendment occurs through this segment itself rather than through a later agency decision.",
+          "evidence": "is hereby further amended by deleting the last line in item 1406 of such list"
+        }
+      ],
+      "word_count": 1275
+    },
+    {
+      "document_id": "16010",
+      "doc_type": "proclamation",
+      "president": "William J. Clinton",
+      "signals": {
+        "3_waivers": {
+          "segment_id": "6",
+          "evidence": "I have determined that the competitive need limitation provided in section 503(c)(2)(A)(i)(II) should be waived"
+        },
+        "2_funding_eligibility": {
+          "segment_id": "10",
+          "evidence": "shall apply to the eligible"
+        }
+      },
+      "segment_count": 10,
+      "family": "3_waivers",
+      "pool": "3",
+      "triggers": [
+        {
+          "segment_id": "8",
+          "code": 3,
+          "rationale": "The President presently makes the statutorily relevant national-economic-interest determination supporting the waivers; that legal finding occurs in this segment.",
+          "evidence": "I have determined, based on that advice and on the considerations described in sections 501 and 502(c) of the 1974 Act, that such waivers are in the national economic interest of the United States."
+        },
+        {
+          "segment_id": "10",
+          "code": 3,
+          "rationale": "The President directly modifies the HTS, applies a statutory waiver, supersedes inconsistent prior provisions, and specifies effective dates; those legal consequences arise from the segment itself.",
+          "evidence": "A waiver of the application of section 503(c)(2)(A) of the 1974 Act shall apply to the eligible articles in the HTS subheadings and to the beneficiary developing countries set forth in Annex II to this proclamation."
+        }
+      ],
+      "word_count": 1340
+    },
+    {
+      "document_id": "5374",
+      "doc_type": "letter",
+      "president": "George W. Bush",
+      "signals": {
+        "2_funding_eligibility": {
+          "segment_id": "5",
+          "evidence": "shall freeze the assets of the former Iraqi regime, Saddam Hussein, and other senior officials of the former Iraqi regime, and their immediate family members, among others, and cause the transfer of certain of those assets to the Development Fund"
+        },
+        "3_sanctions_entry": {
+          "segment_id": "5",
+          "evidence": "property previously blocked"
+        },
+        "2_implementation": {
+          "segment_id": "8",
+          "evidence": "directed all agencies of the United States Government to take all appropriate measures within their authority to carry out"
+        }
+      },
+      "segment_count": 8,
+      "family": "3_sanctions_entry",
+      "pool": "3",
+      "triggers": [
+        {
+          "segment_id": "4",
+          "code": 3,
+          "rationale": "The President states that he is presently terminating the declared national emergency, directly changing its legal status.",
+          "evidence": "I am terminating the national emergency declared in Executive Order 12722"
+        },
+        {
+          "segment_id": "5",
+          "code": 3,
+          "rationale": "The President presently continues property prohibitions and amends the sanctions annex to include additional persons, directly preserving and extending legal sanctions.",
+          "evidence": "I am continuing for the near future certain prohibitions with respect to property previously blocked"
+        }
+      ],
+      "word_count": 919
+    },
+    {
+      "document_id": "1392",
+      "doc_type": "executive_order",
+      "president": "William J. Clinton",
+      "signals": {
+        "2_funding_eligibility": {
+          "segment_id": "4",
+          "evidence": "shall take such actions, including the promulgation of rules, regulations, and amendments thereto, as may be necessary to control the export of assistance (including training) to foreign persons in the same manner and to the same extent as the export of such assistance"
+        },
+        "2_enforcement": {
+          "segment_id": "4",
+          "evidence": "shall have the opportunity to review any export license"
+        }
+      },
+      "segment_count": 6,
+      "family": "3_other",
+      "pool": "3",
+      "triggers": [
+        {
+          "segment_id": "2",
+          "code": 3,
+          "rationale": "The President makes the specified conditions legally applicable to covered products when they are later placed on the Commerce Control List; the placement is the triggering event, not a later agency choice about the conditions.",
+          "evidence": "shall be subject to the following conditions"
+        },
+        {
+          "segment_id": "3",
+          "code": 3,
+          "rationale": "The President presently makes statutory and regulatory foreign-availability provisions inapplicable to the covered export controls, while leaving particular licensing decisions to the Secretary's discretion.",
+          "evidence": "shall not be applicable with respect to export controls on such encryption products"
+        },
+        {
+          "segment_id": "6",
+          "code": 3,
+          "rationale": "The President sets the event upon which section 1's substantive provisions become effective; placement on the Commerce Control List triggers their legal operation without another presidential decision.",
+          "evidence": "shall take effect as soon as any encryption products described in section 1 are placed on the Commerce Control List"
+        }
+      ],
+      "word_count": 1018
+    },
+    {
+      "document_id": "18397",
+      "doc_type": "proclamation",
+      "president": "Ronald Reagan",
+      "signals": {
+        "3_waivers": {
+          "segment_id": "1",
+          "evidence": "I have decided to allow the waiver"
+        },
+        "2_funding_eligibility": {
+          "segment_id": "2",
+          "evidence": "shall be subject to the customs duties set forth in the Rates of Duty column 2 of the Tariff Schedules of the United States (TSUS) (19 U.S.C. 1202). Furthermore, effective as of that date, Romania shall no longer be eligible"
+        },
+        "3_pay_tariffs": {
+          "segment_id": "2",
+          "evidence": "duties set forth in the Rates of Duty column 2 of the Tariff Schedules of the United States (TSUS) (19 U.S.C. 1202). Furthermore, effective"
+        }
+      },
+      "segment_count": 3,
+      "family": "3_waivers",
+      "pool": "3",
+      "triggers": [
+        {
+          "segment_id": "1",
+          "code": 3,
+          "rationale": "The President presently determines that Romania’s statutory waiver will expire without renewal at the close of July 2, 1988; the resulting legal consequence occurs upon that expiration, while the report to Congress merely records the action.",
+          "evidence": "allow the waiver for Romania under section 402 of the Act (19 U.S.C. 2432) to expire as scheduled at the close of July 2, 1988, without renewal at that time"
+        },
+        {
+          "segment_id": "2",
+          "code": 3,
+          "rationale": "The provision itself prescribes column-2 customs duties for Romanian articles and ends Romania’s eligibility for federal credits and guarantees, effective July 3, 1988; the accompanying statutory-authority statements do not defer those consequences to later agency action.",
+          "evidence": "Romania shall no longer be eligible to receive credits or guarantees under any program of the U.S. Government"
+        },
+        {
+          "segment_id": "3",
+          "code": 3,
+          "rationale": "The President directly imposes column-2 duties, modifies the tariff schedule, and terminates Romania’s program eligibility, with those legal effects taking effect July 3, 1988.",
+          "evidence": "General Headnote 3(d) to the TSUS, setting forth those countries whose products, whether imported directly or indirectly, shall be dutied at the rates of duty shown in the column numbered 2 of such schedules, is modified by inserting in alphabetical sequence \"Socialist Republic of Romania\""
+        }
+      ],
+      "word_count": 655
+    },
+    {
+      "document_id": "3427",
+      "doc_type": "executive_order",
+      "president": "John F. Kennedy",
+      "signals": {
+        "3_land": {
+          "segment_id": "1",
+          "evidence": "hereby ordered as follows: The exterior boundaries of the Caribbean National Forest in Puerto Rico, established as the Luquillo Forest Reserve by Proclamation Number 41 of January 17, 1903 (32 Stat. 2029), and renamed the Caribbean National Forest"
+        }
+      },
+      "segment_count": 2,
+      "family": "3_land",
+      "pool": "3",
+      "triggers": [
+        {
+          "segment_id": "1",
+          "code": 3,
+          "rationale": "The President presently relocates and redefines the National Forest’s legal boundaries; the consequence occurs upon issuance rather than through a later agency action.",
+          "evidence": "The exterior boundaries of the Caribbean National Forest in Puerto Rico, established as the Luquillo Forest Reserve by Proclamation Number 41 of January 17, 1903 (32 Stat. 2029), and renamed the Caribbean National Forest by Executive Order Number 7059-A of June 4, 1935, are hereby relocated and redefined as follows:"
+        },
+        {
+          "segment_id": "2",
+          "code": 3,
+          "rationale": "The President presently reserves the specified federal lands as parts of the National Forest, immediately changing their designated legal status.",
+          "evidence": "All lands of the United States within those exterior boundaries are hereby reserved as parts of the Caribbean National Forest."
+        }
+      ],
+      "word_count": 295
+    },
+    {
+      "document_id": "12501",
+      "doc_type": "proclamation",
+      "president": "Barack Obama",
+      "signals": {
+        "3_land": {
+          "segment_id": "1",
+          "evidence": "hereby appropriated and withdrawn from all forms of entry, location, selection, sale, or other disposition under the public land"
+        },
+        "2_implementation": {
+          "segment_id": "2",
+          "evidence": "shall prepare a management plan to implement"
+        }
+      },
+      "segment_count": 2,
+      "family": "3_land",
+      "pool": "3",
+      "triggers": [
+        {
+          "segment_id": "1",
+          "code": 3,
+          "rationale": "The President presently designates the monument, reserves and withdraws federal lands, and establishes their legal status; those consequences occur through the proclamation itself, notwithstanding accompanying management directions to the Secretary.",
+          "evidence": "All Federal lands and interests in lands within the boundaries described on the accompanying map are hereby appropriated and withdrawn from all forms of entry, location, selection, sale, or other disposition under the public land laws"
+        }
+      ],
+      "word_count": 3898
+    },
+    {
+      "document_id": "18083",
+      "doc_type": "proclamation",
+      "president": "Joseph R. Biden, Jr.",
+      "signals": {
+        "2_rules": {
+          "segment_id": "3",
+          "evidence": "shall review any regulations, orders, guidance documents, policies, and any other similar agency actions developed pursuant to Proclamation 10014 and, as appropriate, issue revised guidance consistent with the policy"
+        }
+      },
+      "segment_count": 3,
+      "family": "3_other",
+      "pool": "3",
+      "triggers": [
+        {
+          "segment_id": "1",
+          "code": 3,
+          "rationale": "The President presently makes the statutory determination that the covered persons’ unrestricted entry is not detrimental, producing the operative legal predicate immediately rather than directing a later agency outcome.",
+          "evidence": "hereby find that the unrestricted entry into the United States of persons described in section 1 of Proclamation 10014 is not detrimental to the interests of the United States"
+        },
+        {
+          "segment_id": "2",
+          "code": 3,
+          "rationale": "The President immediately revokes the cited proclamations and provisions, thereby removing their entry suspension without requiring a later agency decision.",
+          "evidence": "Proclamation 10014, section 1 of Proclamation 10052, and section 1 of Proclamation 10131 are revoked."
+        }
+      ],
+      "word_count": 558
+    },
+    {
+      "document_id": "11860",
+      "doc_type": "memorandum",
+      "president": "Dwight D. Eisenhower",
+      "signals": {
+        "2_implementation": {
+          "segment_id": "2",
+          "evidence": "directed to take such action and make such expenditures as may be necessary to perform such services and carry out"
+        }
+      },
+      "segment_count": 3,
+      "family": "3_other",
+      "pool": "3",
+      "triggers": [
+        {
+          "segment_id": "1",
+          "code": 3,
+          "rationale": "The President presently makes the statutory national-security determination that legally authorizes use of the cited funds; later administration merely implements that determination.",
+          "evidence": "it is hereby determined that the use of funds, available under said Act, for the purpose of carrying out the program of asylum for refugees from Hungary"
+        }
+      ],
+      "word_count": 283
+    },
+    {
+      "document_id": "857",
+      "doc_type": "executive_order",
+      "president": "Barack Obama",
+      "signals": {
+        "2_rules": {
+          "segment_id": "4",
+          "evidence": "direct the Director of the Office of Personnel Management (OPM) to issue regulations"
+        },
+        "2_funding_eligibility": {
+          "segment_id": "8",
+          "evidence": "shall be eligible"
+        },
+        "2_implementation": {
+          "segment_id": "14",
+          "evidence": "shall: (i) promulgate such regulations as the Director determines may be necessary to implement"
+        }
+      },
+      "segment_count": 15,
+      "family": "3_other",
+      "pool": "3",
+      "triggers": [
+        {
+          "segment_id": "2",
+          "code": 3,
+          "rationale": "The President presently makes the statutory good-administration finding necessary to except covered civil-service positions from competitive hiring rules; the legally consequential determination occurs in this segment.",
+          "evidence": "I find that conditions of good administration (specifically, the need to promote employment opportunities for students and recent graduates in the Federal workforce) make necessary an exception to the competitive hiring rules"
+        },
+        {
+          "segment_id": "6",
+          "code": 3,
+          "rationale": "The segment presently defines the Internship Program's paid-opportunity function and who qualifies for participant status, subject only to OPM determining qualifying institutions and programs.",
+          "evidence": "Participants in the program shall be referred to as \"Interns\" and shall be students enrolled, or accepted for enrollment, in qualifying educational institutions and programs"
+        },
+        {
+          "segment_id": "8",
+          "code": 3,
+          "rationale": "The segment itself establishes binding participant eligibility periods, including an extended eligibility window for qualifying veterans, and prescribes assignment standards.",
+          "evidence": "shall be eligible to participate in the Program within 6 years of obtaining a qualifying degree or completing a qualifying program"
+        },
+        {
+          "segment_id": "13",
+          "code": 3,
+          "rationale": "The segment immediately amends the governing rule so that civil-service removal rules no longer apply to specified positions, directly changing the legal regime governing removals.",
+          "evidence": "the Civil Service Rules and Regulations shall not apply to removals from positions listed in Schedules A, C, or D"
+        }
+      ],
+      "word_count": 2159
+    },
+    {
+      "document_id": "5763",
+      "doc_type": "letter",
+      "president": "William J. Clinton",
+      "signals": {
+        "2_enforcement": {
+          "segment_id": "2",
+          "evidence": "directed the Secretary of Commerce to adjust the level at which an individual license"
+        }
+      },
+      "segment_count": 2,
+      "family": "3_other",
+      "pool": "3",
+      "triggers": [
+        {
+          "segment_id": "1",
+          "code": 3,
+          "rationale": "The President makes a statutory determination establishing the new computer-export notification threshold; the legal consequence occurs after the Act’s prescribed congressional-notification period, despite being announced here.",
+          "evidence": "The new level will be 12,500 millions of theoretical operations per second (MTOPS)."
+        }
+      ],
+      "word_count": 445
+    },
+    {
+      "document_id": "17442",
+      "doc_type": "proclamation",
+      "president": "Joseph R. Biden, Jr.",
+      "signals": {
+        "2_enforcement": {
+          "segment_id": "2",
+          "evidence": "require domestic module producers to rely on imports in the near term, in excess of the current 5 GW within-quota TRQ amount. 8. Section 204(b)(1)(B) of the Trade Act (19 U.S.C. 2254(b)(1)(B)) authorizes the President, upon submission of a petition"
+        },
+        "2_implementation": {
+          "segment_id": "6",
+          "evidence": "shall take such actions as are necessary to ensure"
+        },
+        "3_pay_tariffs": {
+          "segment_id": "6",
+          "evidence": "tariff provisions established"
+        }
+      },
+      "segment_count": 6,
+      "family": "3_pay_tariffs",
+      "pool": "3",
+      "triggers": [
+        {
+          "segment_id": "3",
+          "code": 3,
+          "rationale": "The President presently makes the statutory positive-adjustment determination that supports modification of the safeguard action; the legally consequential determination occurs in this segment itself.",
+          "evidence": "I have determined that the domestic industry has been making and is continuing to make a positive adjustment to import competition"
+        },
+        {
+          "segment_id": "4",
+          "code": 3,
+          "rationale": "The President determines and specifies the expansion of the tariff-rate quota to 12.5 GW, while the segment itself also establishes how the annual in-quota quantity is allocated; the trade-law consequences arise from the presidential act itself.",
+          "evidence": "by expanding the TRQ to unchanging within-quota quantities of 12.5 GW"
+        },
+        {
+          "segment_id": "5",
+          "code": 3,
+          "rationale": "The President directly modifies the HTS, establishes its effective period, and exempts qualifying imports up to the new 12.5 GW limit from safeguard tariffs; these legal consequences occur by operation of the proclamation.",
+          "evidence": "subchapter III of chapter 99 of the HTS is modified as set forth in Annex I to this proclamation"
+        }
+      ],
+      "word_count": 1764
+    },
+    {
+      "document_id": "15113",
+      "doc_type": "proclamation",
+      "president": "Harry S Truman",
+      "signals": {
+        "3_pay_tariffs": {
+          "segment_id": "1",
+          "evidence": "Tariff Act of 1930, as amended (U.S. Code, 1946, title 19, sec. 1351(b)), is amended"
+        },
+        "2_enforcement": {
+          "segment_id": "5",
+          "evidence": "shall be: Milk, condensed or evaporated:; 11. AND Whereas the final sentence of subsection (a) of the said section 350, as amended, authorizes the President to terminate"
+        }
+      },
+      "segment_count": 8,
+      "family": "3_pay_tariffs",
+      "pool": "3",
+      "triggers": [
+        {
+          "segment_id": "2",
+          "code": 3,
+          "rationale": "The President presently makes the statutory determination that deleting specified tariff-list items is required or appropriate; the resulting deletion is designated to operate on the thirtieth day after the proclamation.",
+          "evidence": "I determine that"
+        },
+        {
+          "segment_id": "3",
+          "code": 3,
+          "rationale": "The President presently makes determinations concerning the required deletion and unnecessary continuance of specified tariff items, with the contemplated tariff consequences beginning on the thirtieth day after the proclamation.",
+          "evidence": "the deletion from the list set forth in the seventh recital"
+        },
+        {
+          "segment_id": "4",
+          "code": 3,
+          "rationale": "The President presently makes the statutory determination supporting addition of a specified tariff item and its 44-percent ad valorem rate, to operate after thirty days.",
+          "evidence": "the addition of the following item to the list"
+        },
+        {
+          "segment_id": "5",
+          "code": 3,
+          "rationale": "The President presently determines that a specified treaty-schedule item must be corrected; the same segment also recites existing termination authority, but does not direct a later agency decision.",
+          "evidence": "I determine that it is required or appropriate"
+        },
+        {
+          "segment_id": "6",
+          "code": 3,
+          "rationale": "The proclamation itself prospectively deletes a tariff-list item, makes the applicable concession rate govern covered articles, and rectifies a schedule description; these legal effects arise automatically on the specified date or through the provision itself.",
+          "evidence": "the rate of duty representing each concession provided for in the second item 718(a) in Part I of Schedule XX of the said general agreement shall be applied"
+        },
+        {
+          "segment_id": "7",
+          "code": 3,
+          "rationale": "The proclamation itself prospectively amends the incorporated tariff list by deleting the items identified in recital six, effective on the thirtieth day after the proclamation.",
+          "evidence": "shall on and after the thirtieth day following the date of this proclamation be further amended"
+        },
+        {
+          "segment_id": "8",
+          "code": 3,
+          "rationale": "The proclamation itself prospectively amends one tariff list to add the item and rate identified in recital nine and terminates the legal effect of portions of an earlier proclamation after the twenty-ninth day.",
+          "evidence": "shall not be in effect after the twenty-ninth day following the date of this proclamation"
+        }
+      ],
+      "word_count": 1970
+    },
+    {
+      "document_id": "1188",
+      "doc_type": "executive_order",
+      "president": "George W. Bush",
+      "signals": {
+        "2_rules": {
+          "segment_id": "3",
+          "evidence": "shall have responsibility to oversee, develop, and ensure implementation of policies, principles, standards"
+        },
+        "2_implementation": {
+          "segment_id": "3",
+          "evidence": "shall have responsibility to oversee, develop, and ensure"
+        },
+        "2_funding_eligibility": {
+          "segment_id": "5",
+          "evidence": "shall ensure the development and, within available appropriations, funding"
+        },
+        "2_enforcement": {
+          "segment_id": "26",
+          "evidence": "shall be performed by the Department of Commerce in accordance with the guidelines and procedures established by the Administrator of General Services. (ii) The Council shall terminate"
+        }
+      },
+      "segment_count": 29,
+      "family": "3_other",
+      "pool": "3",
+      "triggers": [
+        {
+          "segment_id": "25",
+          "code": 3,
+          "rationale": "The segment itself fixes council members' compensation status immediately, while permitting legally authorized travel reimbursement; the no-compensation rule is a present substantive compensation consequence.",
+          "evidence": "Members shall serve without compensation for their work on the Council."
+        }
+      ],
+      "word_count": 3993
+    },
+    {
+      "document_id": "965",
+      "doc_type": "executive_order",
+      "president": "George W. Bush",
+      "signals": {
+        "3_pay_tariffs": {
+          "segment_id": "1",
+          "evidence": "rates of basic pay or salaries of the statutory pay systems (as defined in 5 U.S.C. 5302(1)), as adjusted under 5 U.S.C. 5303(a), are set forth"
+        },
+        "2_implementation": {
+          "segment_id": "2",
+          "evidence": "shall take such actions as may be necessary to implement"
+        }
+      },
+      "segment_count": 2,
+      "family": "3_pay_tariffs",
+      "pool": "3",
+      "triggers": [
+        {
+          "segment_id": "1",
+          "code": 3,
+          "rationale": "The President presently sets binding basic-pay rates and locality payments through schedules incorporated into the order; those compensation consequences occur on the schedules’ specified effective dates, with later administration merely implementing them.",
+          "evidence": "locality-based comparability payments shall be paid in accordance with Schedule 9 attached hereto and made a part hereof"
+        }
+      ],
+      "word_count": 477
+    },
+    {
+      "document_id": "3628",
+      "doc_type": "executive_order",
+      "president": "Dwight D. Eisenhower",
+      "signals": {
+        "2_rules": {
+          "segment_id": "1",
+          "evidence": "shall, to the extent consistent with the needs of the service, adopt a liberal policy"
+        }
+      },
+      "segment_count": 1,
+      "family": "3_other",
+      "pool": "3",
+      "triggers": [
+        {
+          "segment_id": "1",
+          "code": 3,
+          "rationale": "The President presently excuses covered federal employees from duty on a specified date and makes that date a holiday for purposes of federal compensation and leave statutes. Those immediate legal consequences predominate; the accompanying leave-policy direction and exceptions define implementation and scope.",
+          "evidence": "shall be excused from duty all day on Friday, December 26, 1958"
+        }
+      ],
+      "word_count": 253
+    },
+    {
+      "document_id": "11203",
+      "doc_type": "memorandum",
+      "president": "Ronald Reagan",
+      "signals": {
+        "2_enforcement": {
+          "segment_id": "3",
+          "evidence": "direct the United States Trade Representative and the Secretary of Commerce to take any further action that may become appropriate to implement the Agreement. Finally, the Section 301 proceeding"
+        },
+        "2_implementation": {
+          "segment_id": "3",
+          "evidence": "direct the United States Trade Representative and the Secretary of Commerce to take any further action that may become appropriate to implement"
+        }
+      },
+      "segment_count": 3,
+      "family": "3_other",
+      "pool": "3",
+      "triggers": [
+        {
+          "segment_id": "1",
+          "code": 3,
+          "rationale": "The President presently makes the statutory Section 301 determination that the agreement is an appropriate and feasible response; the legal consequence occurs upon this determination, while the remaining text explains its basis and anticipated effects.",
+          "evidence": "I have determined that the Agreement between the Governments of Japan and the United States of America Regarding Trade in Semiconductors, to be implemented by an exchange of letters, is an appropriate and feasible response"
+        },
+        {
+          "segment_id": "2",
+          "code": 3,
+          "rationale": "The President presently determines the legal character of any future Japanese noncompliance under Section 301; the reporting instruction is internal executive oversight ancillary to that determination.",
+          "evidence": "I hereby determine that any future failure by the Government of Japan to meet the commitments and objectives of the Agreement would be inconsistent with a trade agreement or an unjustifiable act that would burden or restrict U.S. commerce"
+        },
+        {
+          "segment_id": "3",
+          "code": 3,
+          "rationale": "Although the first sentence directs discretionary implementation by the Trade Representative and Commerce Secretary, the President himself immediately suspends the Section 301 proceeding, with continuation conditioned on fulfillment of the agreement.",
+          "evidence": "the Section 301 proceeding on semiconductors shall be suspended and shall remain suspended as long as the objectives and commitments of the Agreement are fulfilled"
+        }
+      ],
+      "word_count": 358
+    },
+    {
+      "document_id": "1824",
+      "doc_type": "executive_order",
+      "president": "Ronald Reagan",
+      "signals": {
+        "2_funding_eligibility": {
+          "segment_id": "2",
+          "evidence": "require reorganization or reform in order to better use the available resources and to ensure greater coordination among such programs; (4) the impact of current laws on efforts to control international and domestic trafficking of illicit drugs; (5) the extent to which the sanctions in Section 481 of the Foreign Assistance"
+        },
+        "2_implementation": {
+          "segment_id": "3",
+          "evidence": "shall prepare and transmit a report to the President and the Congress. The report shall include the findings and recommendations of the Conference as well as proposals for any legislative action necessary to implement"
+        }
+      },
+      "segment_count": 5,
+      "family": "3_other",
+      "pool": "3",
+      "triggers": [
+        {
+          "segment_id": "2",
+          "code": 3,
+          "rationale": "Although the segment also assigns internal management and review functions, it itself prescribes binding compensation ceilings for the Conference's directors, creating a present legal consequence.",
+          "evidence": "The Executive Director of the Conference shall be compensated at a rate not to exceed the rate of basic pay then currently paid for level III of the Executive Schedule"
+        }
+      ],
+      "word_count": 1045
+    },
+    {
+      "document_id": "14438",
+      "doc_type": "proclamation",
+      "president": "John F. Kennedy",
+      "signals": {
+        "3_land": {
+          "segment_id": "1",
+          "evidence": "hereby added to and reserved as a part of the Bandelier National Monument; and the boundaries of such monument"
+        }
+      },
+      "segment_count": 4,
+      "family": "3_land",
+      "pool": "3",
+      "triggers": [
+        {
+          "segment_id": "1",
+          "code": 3,
+          "rationale": "The President presently adds the described parcel to the monument, reserves it, and extends the monument’s boundaries; the land designation and reservation occur through the proclamation itself.",
+          "evidence": "the following described parcel of land is hereby added to and reserved as a part of the Bandelier National Monument"
+        },
+        {
+          "segment_id": "2",
+          "code": 3,
+          "rationale": "The President presently removes the described land and its interests from the monument and restores them to the public domain; those land-status changes occur through this segment itself.",
+          "evidence": "is hereby excluded from the Bandelier National Monument and restored to the public domain"
+        },
+        {
+          "segment_id": "3",
+          "code": 3,
+          "rationale": "The President immediately subjects the added lands to the monument’s governing laws and regulations and imposes a substantive restriction on activities there, with the Commission determining which activities are noninterfering.",
+          "evidence": "shall be subject to all the laws and regulations applicable to such monument"
+        },
+        {
+          "segment_id": "4",
+          "code": 3,
+          "rationale": "The President presently transfers the specified federal lands and interests to the Atomic Energy Commission’s administrative control; the transfer occurs through the proclamation itself.",
+          "evidence": "are hereby transferred to the administrative control of the Atomic Energy Commission"
+        }
+      ],
+      "word_count": 1544
+    },
+    {
+      "document_id": "15891",
+      "doc_type": "proclamation",
+      "president": "William J. Clinton",
+      "signals": {
+        "3_status_funding": {
+          "segment_id": "1",
+          "evidence": "I have determined to designate certain articles, previously designated under section 503(a)(1)(B), as eligible articles when imported from any beneficiary"
+        },
+        "3_waivers": {
+          "segment_id": "5",
+          "evidence": "I have determined that the competitive need limitation provided in section 503(c)(2)(A)(i)(II) should be waived"
+        },
+        "2_funding_eligibility": {
+          "segment_id": "9",
+          "evidence": "shall apply to the eligible"
+        }
+      },
+      "segment_count": 9,
+      "family": "3_status_funding",
+      "pool": "3",
+      "triggers": [
+        {
+          "segment_id": "1",
+          "code": 3,
+          "rationale": "The President makes a statutory eligibility designation for specified imported articles; that presidential determination itself establishes their GSP eligibility, with tariff implementation reflected later in the proclamation.",
+          "evidence": "I have determined to designate certain articles, previously designated under section 503(a)(1)(B), as eligible articles when imported from any beneficiary developing country."
+        },
+        {
+          "segment_id": "2",
+          "code": 3,
+          "rationale": "The President makes a statutory determination limiting duty-free treatment for specified articles and countries; the legal consequence arises from the determination itself.",
+          "evidence": "I have determined to limit the application of duty-free treatment accorded to certain articles from certain beneficiary developing countries."
+        },
+        {
+          "segment_id": "3",
+          "code": 3,
+          "rationale": "The President determines that specified countries lose preferential tariff treatment for articles exceeding competitive-need limits, presently establishing the loss of eligibility rather than directing a later agency choice.",
+          "evidence": "I have determined that certain beneficiary countries should no longer receive preferential tariff treatment under the GSP"
+        },
+        {
+          "segment_id": "4",
+          "code": 3,
+          "rationale": "The President makes the statutory redesignation of specified countries for specified eligible articles, thereby restoring their GSP status as to those articles.",
+          "evidence": "I have determined that certain countries should be redesignated as beneficiary developing countries with respect to certain eligible articles"
+        },
+        {
+          "segment_id": "5",
+          "code": 3,
+          "rationale": "The President makes a statutory determination to waive the competitive-need limitation for specified articles and countries; the waiver is a presidential legal consequence, not a dictated later agency outcome.",
+          "evidence": "I have determined that the competitive need limitation provided in section 503(c)(2)(A)(i)(II) should be waived"
+        },
+        {
+          "segment_id": "6",
+          "code": 3,
+          "rationale": "The President makes the statutory waiver determination for specified articles and beneficiary countries, directly removing otherwise applicable competitive-need limitations.",
+          "evidence": "I have determined that the competitive need limitations of section 503(c)(2)(A) should be waived"
+        },
+        {
+          "segment_id": "7",
+          "code": 3,
+          "rationale": "The President makes the statutorily relevant national-economic-interest determination supporting the waivers; it is a substantive presidential legal finding made after receiving agency advice.",
+          "evidence": "I have determined, based on that advice and on the considerations described in sections 501 and 502(c), that such waivers are in the national economic interest of the United States."
+        },
+        {
+          "segment_id": "8",
+          "code": 3,
+          "rationale": "The President determines that a statutory competitive-need limitation does not apply to a specified tariff subheading, directly changing the governing tariff eligibility rule.",
+          "evidence": "I have determined that the limitation provided for in section 503(c)(2)(A)(i)(II) shall not apply with respect to HTS subheading 3817.10.50"
+        },
+        {
+          "segment_id": "9",
+          "code": 3,
+          "rationale": "The President directly modifies the HTS, applies a statutory waiver, supersedes inconsistent prior provisions, and fixes effective dates; these acts themselves alter tariff treatment and related legal status without requiring a later agency decision.",
+          "evidence": "A waiver of the application of section 503(c)(2)(A) of the 1974 Act shall apply to the eligible articles in the HTS subheadings and to the beneficiary developing countries set forth in Annex II to this proclamation."
+        }
+      ],
+      "word_count": 1238
+    },
+    {
+      "document_id": "5152",
+      "doc_type": "letter",
+      "president": "Barack Obama",
+      "signals": {
+        "2_enforcement": {
+          "segment_id": "3",
+          "evidence": "directed to take all appropriate measures within their authority to carry out the provisions of the order. Additionally, the Secretary of State is suspending all existing licenses"
+        },
+        "2_implementation": {
+          "segment_id": "3",
+          "evidence": "directed to take all appropriate measures within their authority to carry out"
+        },
+        "3_sanctions_entry": {
+          "segment_id": "3",
+          "evidence": "property and interests in property are blocked pursuant to the order;to be owned or controlled by, or to have acted or purported to act for or on behalf of, any person whose property and interests in property are blocked"
+        }
+      },
+      "segment_count": 3,
+      "family": "3_sanctions_entry",
+      "pool": "3",
+      "triggers": [
+        {
+          "segment_id": "2",
+          "code": 3,
+          "rationale": "The President makes the substantive statutory threat determination underlying the national emergency, producing the present legal predicate rather than merely directing a later agency outcome.",
+          "evidence": "I have determined that the actions of Colonel Muammar Qadhafi, his government, and close associates, including extreme measures against the people of Libya, constitute an unusual and extraordinary threat to the national security and foreign policy of the United States."
+        }
+      ],
+      "word_count": 430
+    },
+    {
+      "document_id": "12134",
+      "doc_type": "proclamation",
+      "president": "Donald J. Trump",
+      "signals": {
+        "2_funding_eligibility": {
+          "segment_id": "4",
+          "evidence": "shall take all appropriate actions, consistent with applicable law, to use or support the use of the authorities herein invoked, including, if necessary, the transfer and acceptance of jurisdiction over border lands. Sec. 3. This proclamation is not intended to, and does not, create any right or benefit"
+        }
+      },
+      "segment_count": 4,
+      "family": "3_other",
+      "pool": "3",
+      "triggers": [
+        {
+          "segment_id": "1",
+          "code": 3,
+          "rationale": "The President presently declares a national emergency and invokes statutory Ready Reserve authority, making that authority immediately available to specified military officials according to its terms.",
+          "evidence": "hereby declare that a national emergency exists at the southern border of the United States"
+        },
+        {
+          "segment_id": "2",
+          "code": 3,
+          "rationale": "The President presently makes the statutory determination that the emergency requires the Armed Forces and invokes section 2808 construction authority; the legal consequence occurs in the proclamation itself.",
+          "evidence": "the construction authority provided in section 2808 of title 10, United States Code, is invoked and made available"
+        }
+      ],
+      "word_count": 643
+    },
+    {
+      "document_id": "12682",
+      "pool": "random"
+    },
+    {
+      "document_id": "5026",
+      "pool": "random"
+    },
+    {
+      "document_id": "19494",
+      "pool": "random"
+    },
+    {
+      "document_id": "4528",
+      "pool": "random"
+    },
+    {
+      "document_id": "16512",
+      "pool": "random"
+    },
+    {
+      "document_id": "9070",
+      "pool": "random"
+    },
+    {
+      "document_id": "18603",
+      "pool": "random"
+    },
+    {
+      "document_id": "15078",
+      "pool": "random"
+    },
+    {
+      "document_id": "3254",
+      "pool": "random"
+    },
+    {
+      "document_id": "19775",
+      "pool": "random"
+    },
+    {
+      "document_id": "10185",
+      "pool": "random"
+    },
+    {
+      "document_id": "350",
+      "pool": "random"
+    },
+    {
+      "document_id": "11343",
+      "pool": "random"
+    },
+    {
+      "document_id": "389",
+      "pool": "random"
+    },
+    {
+      "document_id": "13202",
+      "pool": "random"
+    },
+    {
+      "document_id": "9147",
+      "pool": "random"
+    },
+    {
+      "document_id": "8633",
+      "pool": "random"
+    },
+    {
+      "document_id": "17527",
+      "pool": "random"
+    },
+    {
+      "document_id": "198",
+      "pool": "random"
+    },
+    {
+      "document_id": "4278",
+      "pool": "random"
+    },
+    {
+      "document_id": "7334",
+      "pool": "random"
+    },
+    {
+      "document_id": "19190",
+      "pool": "random"
+    },
+    {
+      "document_id": "9818",
+      "pool": "random"
+    },
+    {
+      "document_id": "16020",
+      "pool": "random"
+    },
+    {
+      "document_id": "12490",
+      "pool": "random"
+    },
+    {
+      "document_id": "7813",
+      "pool": "random"
+    },
+    {
+      "document_id": "8944",
+      "pool": "random"
+    },
+    {
+      "document_id": "8967",
+      "pool": "random"
+    },
+    {
+      "document_id": "16312",
+      "pool": "random"
+    },
+    {
+      "document_id": "18979",
+      "pool": "random"
+    },
+    {
+      "document_id": "17133",
+      "pool": "random"
+    },
+    {
+      "document_id": "1186",
+      "pool": "random"
+    },
+    {
+      "document_id": "2979",
+      "pool": "random"
+    },
+    {
+      "document_id": "3441",
+      "pool": "random"
+    },
+    {
+      "document_id": "11046",
+      "pool": "random"
+    },
+    {
+      "document_id": "17595",
+      "pool": "random"
+    },
+    {
+      "document_id": "5952",
+      "pool": "random"
+    },
+    {
+      "document_id": "10820",
+      "pool": "random"
+    },
+    {
+      "document_id": "7157",
+      "pool": "random"
+    },
+    {
+      "document_id": "17593",
+      "pool": "random"
+    },
+    {
+      "document_id": "16233",
+      "pool": "random"
+    }
+  ],
+  "summary": {
+    "available": {
+      "2": 61,
+      "3": 145
+    },
+    "selected": {
+      "2": 56,
+      "3": 42
+    },
+    "rejected": [],
+    "template_groups": []
+  }
+}

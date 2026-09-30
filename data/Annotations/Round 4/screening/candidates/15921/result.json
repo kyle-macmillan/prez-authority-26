@@ -1,0 +1,33 @@
+{
+  "document_id": "15921",
+  "request_hash": "8382cd5620188f906ad6de8441aac5abe21c8c7bb658383af86fa28b45deed53",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 10.23,
+  "usage": {
+    "input_tokens": 18523,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 320,
+    "reasoning_output_tokens": 127
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 3,
+        "rationale": "The President presently reserves the identified federal lands as a national monument and withdraws them from entry and disposition, immediately changing their legal status; subsequent Forest Service management implements those already-effective consequences.",
+        "evidence": "All Federal lands and interests in lands within the boundaries of this monument are hereby appropriated and withdrawn from entry, location, selection, sale, leasing, or other disposition under the public land laws"
+      },
+      {
+        "segment_id": "2",
+        "code": 3,
+        "rationale": "The President directly imposes current land-use restrictions within the monument, including limiting motorized and mechanized vehicle use to designated routes; agency planning and administration implement these restrictions rather than create them later.",
+        "evidence": "motorized vehicle use will be permitted only on designated roads, and nonmotorized mechanized vehicle use will be permitted only on designated roads and trails"
+      }
+    ]
+  },
+  "returncode": 0
+}

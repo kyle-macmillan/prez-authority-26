@@ -1,0 +1,27 @@
+{
+  "document_id": "8218",
+  "request_hash": "b91f236bfc6329f2f84a8f6f1476a8afe601d870ac3b626bd071ce9ac663be26",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 8.06,
+  "usage": {
+    "input_tokens": 15297,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 219,
+    "reasoning_output_tokens": 112
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 1,
+        "rationale": "The President directs the Attorney General to undertake litigation by petitioning a court for an injunction, while leaving necessity and additional relief to executive judgment. The segment does not itself enjoin the strike, and any binding legal consequence occurs later only if the court grants relief.",
+        "evidence": "to petition in the name of the United States any District Court of the United States having jurisdiction of the parties"
+      }
+    ]
+  },
+  "returncode": 0
+}

@@ -1,0 +1,45 @@
+{
+  "document_id": "8501",
+  "request_hash": "9d1c64c03856446cceb7211098049322a2a21ad8985bf001d7b67b153bb7e378",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 13.8,
+  "usage": {
+    "input_tokens": 16172,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 532,
+    "reasoning_output_tokens": 235
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 1,
+        "rationale": "The President directs the Administrator, with other agencies, to conduct studies and surveys concerning possible future policy changes and administrative centralization; no specified legal consequence occurs in this segment.",
+        "evidence": "the Administrator of General Services shall institute studies and surveys"
+      },
+      {
+        "segment_id": "2",
+        "code": 1,
+        "rationale": "After completing studies and consultation, the Administrator must issue whatever regulations are necessary to implement determinations not specified here, leaving the substantive outcome to later administrative judgment.",
+        "evidence": "the Administrator shall prescribe such regulations as may be necessary to implement the determinations resulting from such studies and surveys"
+      },
+      {
+        "segment_id": "3",
+        "code": 1,
+        "rationale": "The Administrator and executive agencies are directed to establish administrative guidance, conduct and report surveys, and plan procurement operations; these are internal management measures rather than dictated legal outcomes.",
+        "evidence": "each Executive agency shall promptly institute surveys"
+      },
+      {
+        "segment_id": "4",
+        "code": 3,
+        "rationale": "The segment itself immediately prohibits executive agencies from exercising the statutory exchange-and-sale authority beyond the limits of preexisting statutes until regulations issue; later regulatory and administrative directions do not negate that present legal restriction.",
+        "evidence": "pending the issuance of such regulations, no Executive agency shall exercise this authority except to the extent permitted by, and in accordance with the provisions of, statutes in force prior to the taking effect of this Act"
+      }
+    ]
+  },
+  "returncode": 0
+}

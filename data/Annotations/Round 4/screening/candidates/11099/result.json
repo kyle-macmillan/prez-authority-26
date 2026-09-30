@@ -1,0 +1,33 @@
+{
+  "document_id": "11099",
+  "request_hash": "f135a4ee7454c65ab78af9b2a68575ecd7106cdcfe28a8faeb6bc5085c2e9645",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 6.46,
+  "usage": {
+    "input_tokens": 15262,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 161,
+    "reasoning_output_tokens": 0
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 1,
+        "rationale": "The President delegates an existing presidential function concerning covered foreign mergers, acquisitions, and takeovers to the Secretary of the Treasury. This is an internal assignment of authority and does not itself dictate or impose a particular legal outcome on any transaction.",
+        "evidence": "the Secretary of the Treasury is hereby designated and empowered to perform the following-described functions of the President"
+      },
+      {
+        "segment_id": "2",
+        "code": 1,
+        "rationale": "The segment directs executive-branch consultation and assistance and sets the automatic expiration of the internal delegation when the implementing executive order takes effect. These are coordination and administrative housekeeping measures, not substantive changes to private legal rights.",
+        "evidence": "The delegation provided herein shall terminate"
+      }
+    ]
+  },
+  "returncode": 0
+}

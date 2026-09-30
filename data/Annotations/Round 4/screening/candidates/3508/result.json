@@ -1,0 +1,27 @@
+{
+  "document_id": "3508",
+  "request_hash": "1d6eb06bf15de85bd3a9e99282cd319ddf879ba57e38803f66d1f58e54b6f214",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 7.94,
+  "usage": {
+    "input_tokens": 15905,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 152,
+    "reasoning_output_tokens": 39
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 1,
+        "rationale": "The President immediately amends an executive order to reassign statutory functions, authorize the USIA Director to allocate available funds at the Director’s discretion, and make related administrative and technical revisions. These are internal delegations and management changes; the segment does not itself release funds or dictate a later legally consequential allocation outcome.",
+        "evidence": "The Director of the United States Information Agency shall allocate funds appropriated or otherwise made available"
+      }
+    ]
+  },
+  "returncode": 0
+}

@@ -1,0 +1,39 @@
+{
+  "document_id": "11670",
+  "request_hash": "c1cb482ded4d846fdfd24699370f60160833de5999f390dd2d9d05e47503a16a",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 10.51,
+  "usage": {
+    "input_tokens": 15439,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 217,
+    "reasoning_output_tokens": 0
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 1,
+        "rationale": "The President asks the Secretary of Commerce to coordinate executive-branch participation, provide a consultation forum, and prepare an annual proposed plan. These are internal coordination and planning actions; no legal consequence is imposed by the segment.",
+        "evidence": "continue to coordinate our national efforts in this program"
+      },
+      {
+        "segment_id": "2",
+        "code": 1,
+        "rationale": "The Secretary of State is asked to promote development of international arrangements with agency assistance. This is discretionary coordination and diplomacy, not a presently effective legal act or a mandate for a specified later legal outcome.",
+        "evidence": "promote, with the assistance of the participating agencies, the development of appropriate bilateral and multilateral arrangements"
+      },
+      {
+        "segment_id": "3",
+        "code": 1,
+        "rationale": "The participating agencies are urged to cooperate with the two Secretaries in administering the program. This is internal executive coordination without a change to legal rights or status.",
+        "evidence": "cooperate fully with the Secretaries of Commerce and State"
+      }
+    ]
+  },
+  "returncode": 0
+}

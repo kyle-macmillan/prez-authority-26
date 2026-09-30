@@ -1,0 +1,45 @@
+{
+  "document_id": "4181",
+  "request_hash": "330c2d8bade57bec70d40bb539d28c33b4d673a6ca2974e1fe0279e13edd803e",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 21.09,
+  "usage": {
+    "input_tokens": 18253,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 643,
+    "reasoning_output_tokens": 334
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 1,
+        "rationale": "The President directs the Administrator’s future exercise of personnel-management authority, including limits and policies for appointments; any appointment occurs later through agency action, and the provision chiefly governs internal staffing.",
+        "evidence": "shall be exercised by the Administrator in accordance with the regulations set forth in this part"
+      },
+      {
+        "segment_id": "2",
+        "code": 1,
+        "rationale": "The President prescribes internal appointment procedures, certification, disclosure, delegation, and treatment of agency personnel actions; the Administrator and related officials implement these requirements as executive-branch housekeeping.",
+        "evidence": "shall be supported by written certification by the Administrator"
+      },
+      {
+        "segment_id": "3",
+        "code": 1,
+        "rationale": "The Civil Service Commission Chairman must periodically review appointments, report findings, and make recommendations; this creates an internal oversight and reporting process without itself changing legal rights.",
+        "evidence": "shall survey appointments made under this part and shall report his findings to the President"
+      },
+      {
+        "segment_id": "4",
+        "code": 3,
+        "rationale": "The President presently exempts covered appointees from specified federal statutory provisions, subject to stated exceptions; that exemption immediately changes their legal obligations, while the later discretionary authority provisions do not displace this self-executing effect.",
+        "evidence": "is hereby exempted, with respect to such employment, from the operation of sections 281, 283, 284, 434, and 1914 of Title 18, United States Code"
+      }
+    ]
+  },
+  "returncode": 0
+}

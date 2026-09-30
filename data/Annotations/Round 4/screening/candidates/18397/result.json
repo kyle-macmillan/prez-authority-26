@@ -1,0 +1,39 @@
+{
+  "document_id": "18397",
+  "request_hash": "623d7302cfd340b00b5c7302aedefa232befcb153264667773f1e3a3eab378b9",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 11.34,
+  "usage": {
+    "input_tokens": 16168,
+    "cached_input_tokens": 0,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 418,
+    "reasoning_output_tokens": 99
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 3,
+        "rationale": "The President presently determines that Romania’s statutory waiver will expire without renewal at the close of July 2, 1988; the resulting legal consequence occurs upon that expiration, while the report to Congress merely records the action.",
+        "evidence": "allow the waiver for Romania under section 402 of the Act (19 U.S.C. 2432) to expire as scheduled at the close of July 2, 1988, without renewal at that time"
+      },
+      {
+        "segment_id": "2",
+        "code": 3,
+        "rationale": "The provision itself prescribes column-2 customs duties for Romanian articles and ends Romania’s eligibility for federal credits and guarantees, effective July 3, 1988; the accompanying statutory-authority statements do not defer those consequences to later agency action.",
+        "evidence": "Romania shall no longer be eligible to receive credits or guarantees under any program of the U.S. Government"
+      },
+      {
+        "segment_id": "3",
+        "code": 3,
+        "rationale": "The President directly imposes column-2 duties, modifies the tariff schedule, and terminates Romania’s program eligibility, with those legal effects taking effect July 3, 1988.",
+        "evidence": "General Headnote 3(d) to the TSUS, setting forth those countries whose products, whether imported directly or indirectly, shall be dutied at the rates of duty shown in the column numbered 2 of such schedules, is modified by inserting in alphabetical sequence \"Socialist Republic of Romania\""
+      }
+    ]
+  },
+  "returncode": 0
+}

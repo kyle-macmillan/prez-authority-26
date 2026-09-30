@@ -1,0 +1,27 @@
+{
+  "document_id": "19092",
+  "request_hash": "51959ddbd291f1aa7088c44f358fec6195d6242ea0c6c17b9fd84248082772d8",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 6.24,
+  "usage": {
+    "input_tokens": 15749,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 159,
+    "reasoning_output_tokens": 36
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 4,
+        "rationale": "The President presently revokes an earlier proclamation and prohibits Libyan crude-oil imports, while also directing executive monitoring, reporting, discretionary regulations, and refund administration. These materially different self-executing and internal-management postures are inseparably combined in one supplied segment; the import prohibition and revocation take effect immediately, while agency actions occur later.",
+        "evidence": "No crude oil produced in Libya may be imported into the United States, its territories or possessions."
+      }
+    ]
+  },
+  "returncode": 0
+}

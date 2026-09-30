@@ -1,0 +1,27 @@
+{
+  "document_id": "4156",
+  "request_hash": "4380fc3961b9b9575099843fb10d1a3afbc5e0fbb9af502ee9dfb6aab3fb1a7b",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 4.93,
+  "usage": {
+    "input_tokens": 15703,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 85,
+    "reasoning_output_tokens": 0
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 3,
+        "rationale": "The President presently includes and reserves the described land as part of the Nantahala National Forest, immediately changing its federal land designation; any later administration is merely implementing that completed designation.",
+        "evidence": "I hereby include in and reserve as part of the Nantahala National Forest the following-described lands"
+      }
+    ]
+  },
+  "returncode": 0
+}

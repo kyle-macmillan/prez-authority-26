@@ -1,0 +1,39 @@
+{
+  "document_id": "16495",
+  "request_hash": "7295a9aae659f6effbc1b47da0e5de6f6c167127029ac0f4d8341bc2664ded50",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 9.69,
+  "usage": {
+    "input_tokens": 15399,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 256,
+    "reasoning_output_tokens": 51
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 0,
+        "rationale": "The President ceremonially proclaims a commemorative week; the segment does not govern agencies or alter legal rights, duties, or status.",
+        "evidence": "do hereby proclaim the week of September 18–24, 1994,"
+      },
+      {
+        "segment_id": "2",
+        "code": 0,
+        "rationale": "The President completes the ceremonial designation and makes a nonbinding appeal to agencies and private organizations to promote farm-safety programs, without mandating agency action or legal consequences.",
+        "evidence": "I call upon the agencies, organizations, and businesses that serve America's agricultural workers to strengthen their commitment"
+      },
+      {
+        "segment_id": "3",
+        "code": 0,
+        "rationale": "The President makes a hortatory appeal to citizens to reflect and prioritize agricultural-worker safety; no governmental or legal action is required.",
+        "evidence": "I further call upon all citizens of our great Nation to reflect on the importance of our agricultural heritage"
+      }
+    ]
+  },
+  "returncode": 0
+}

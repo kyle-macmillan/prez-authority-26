@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a0d9f7-4959-77a1-a0ae-05b36942d651"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"classifications\":[{\"segment_id\":\"1\",\"code\":0,\"rationale\":\"This is a funding request and exhortation directed to Congress, coupled with a promise to keep Congress informed; it does not govern an executive agency or itself alter legal rights or funding.\",\"evidence\":\"The Congress must act to restore this funding.\"}]}"}}
+{"type":"turn.completed","usage":{"input_tokens":16442,"cached_input_tokens":11264,"cache_write_input_tokens":0,"output_tokens":77,"reasoning_output_tokens":0}}

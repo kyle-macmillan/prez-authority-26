@@ -1,0 +1,27 @@
+{
+  "document_id": "2414",
+  "request_hash": "879d0135a97a4f60499df126102a2fbe336dd1c69cab7e881ef16d32013e029d",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 5.96,
+  "usage": {
+    "input_tokens": 15331,
+    "cached_input_tokens": 0,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 101,
+    "reasoning_output_tokens": 0
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 3,
+        "rationale": "The President directly modifies the tariff schedule’s GSP description and specifies the articles to which that amendment applies. The legal consequence occurs by operation of this provision itself, rather than through a later agency decision.",
+        "evidence": "the Tariff Schedules of the United States (TSUS) are modified by deleting from item 791.74, TSUS, the description"
+      }
+    ]
+  },
+  "returncode": 0
+}

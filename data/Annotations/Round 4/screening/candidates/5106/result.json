@@ -1,0 +1,33 @@
+{
+  "document_id": "5106",
+  "request_hash": "1a11744449722447be75bc18347aa355878a445bc1fcdbc3a80cbe094dbd76b2",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 9.48,
+  "usage": {
+    "input_tokens": 19758,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 342,
+    "reasoning_output_tokens": 189
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 0,
+        "rationale": "The President is reporting to Congress that he issued an executive order and summarizing prior actions; this segment itself neither directs an agency nor changes legal rights. Any legal consequences occur under the separately issued orders, not through this report.",
+        "evidence": "I hereby report that I have issued an Executive Order"
+      },
+      {
+        "segment_id": "2",
+        "code": 0,
+        "rationale": "This segment continues the presidential report to Congress by describing what the enclosed order directs and effects. The reporting text itself imposes no agency command or legal consequence; those arise from the separately issued order.",
+        "evidence": "The order states that the Secretary of the Treasury"
+      }
+    ]
+  },
+  "returncode": 0
+}

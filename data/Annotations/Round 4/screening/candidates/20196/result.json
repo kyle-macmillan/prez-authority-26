@@ -1,0 +1,39 @@
+{
+  "document_id": "20196",
+  "request_hash": "3d716b1b666ca719685f3782b6df4e7483b136d79ec6cafdd8e78f20c5609320",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 8.51,
+  "usage": {
+    "input_tokens": 15991,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 261,
+    "reasoning_output_tokens": 62
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 3,
+        "rationale": "The President presently imposes a binding quantitative limit on meat that may be entered or withdrawn for consumption in 1971; the legal restriction occurs through this proclamation itself.",
+        "evidence": "is limited to 1,025.0 million pounds"
+      },
+      {
+        "segment_id": "2",
+        "code": 3,
+        "rationale": "The President makes the statutory determination and presently suspends the proclaimed import limitation for 1971, directly altering the otherwise applicable legal restriction.",
+        "evidence": "The limitation proclaimed in paragraph (1) is suspended during the calendar year 1971"
+      },
+      {
+        "segment_id": "3",
+        "code": 3,
+        "rationale": "The President presently makes the statutory determination fixing the necessary duration of the suspension, completing the legal basis and period for that suspension rather than directing a later agency outcome.",
+        "evidence": "It is hereby determined necessary that such suspension shall be for such period"
+      }
+    ]
+  },
+  "returncode": 0
+}

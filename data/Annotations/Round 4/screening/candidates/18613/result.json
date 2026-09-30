@@ -1,0 +1,33 @@
+{
+  "document_id": "18613",
+  "request_hash": "a58e0073098d87a67f630a7da5d18a5f3185d94b6915db93c6d1bc2a0b4747e2",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 8.17,
+  "usage": {
+    "input_tokens": 15873,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 267,
+    "reasoning_output_tokens": 93
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 2,
+        "rationale": "The President specifies that the existing Portugal quota allocation must later be transferred to the European Economic Community and increased by a fixed amount; the operative legal modification is subsequently made to the tariff schedules rather than performed by this segment itself.",
+        "evidence": "The quota allocations previously made to Portugal shall be transferred to the European Economic Community."
+      },
+      {
+        "segment_id": "2",
+        "code": 3,
+        "rationale": "The President directly modifies specified tariff-schedule quota entries effective January 1, 1987, thereby changing binding import limitations through the proclamation itself; later administration is ministerial.",
+        "evidence": "effective January 1, 1987, part 3 of the Appendix to the Tariff Schedules of the United States is modified as follows"
+      }
+    ]
+  },
+  "returncode": 0
+}

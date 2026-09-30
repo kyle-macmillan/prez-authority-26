@@ -1,0 +1,27 @@
+{
+  "document_id": "10781",
+  "request_hash": "7129abe4493c6efbc130dcacf43eab563847654ae76b48bb39e248da4eac2405",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 7.83,
+  "usage": {
+    "input_tokens": 15993,
+    "cached_input_tokens": 0,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 188,
+    "reasoning_output_tokens": 68
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 2,
+        "rationale": "The President mandates the Secretary of the Treasury to use statutory authority to make determinations and issue legally consequential orders, regulations, and rulings later, with initiation and reporting deadlines; although the precise instruments are qualified by “as appropriate,” the required result is agency action achieving the memorandum’s specified licensing objectives.",
+        "evidence": "you shall make such determinations and issue orders, regulations and rulings, as appropriate, to achieve the objectives stated in this memorandum"
+      }
+    ]
+  },
+  "returncode": 0
+}

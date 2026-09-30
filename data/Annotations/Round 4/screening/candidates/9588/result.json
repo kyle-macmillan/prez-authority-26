@@ -1,0 +1,39 @@
+{
+  "document_id": "9588",
+  "request_hash": "b049495b90b640bd52eec630aa48916738ca1bf791ff5a700d1accecd715bdbf",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 10.35,
+  "usage": {
+    "input_tokens": 15622,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 321,
+    "reasoning_output_tokens": 103
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 1,
+        "rationale": "The President makes a foreign-policy finding supporting an extension, but this segment does not itself grant DED or mandate a specified later agency legal outcome.",
+        "evidence": "I have determined that there are compelling foreign policy reasons to extend DED"
+      },
+      {
+        "segment_id": "2",
+        "code": 3,
+        "rationale": "The President presently defers removal for a defined class for 12 months and establishes the grant's eligibility limits and exceptions; implementation follows an already-completed legal act.",
+        "evidence": "I have determined that it is in the foreign policy interest of the United States to defer for 12 months the removal"
+      },
+      {
+        "segment_id": "3",
+        "code": 1,
+        "rationale": "The President directs the Secretary of Homeland Security to take implementing steps for the DED and employment authorization already established by the directive, making this an implementation instruction rather than the source of the legal effect.",
+        "evidence": "I direct you to take the necessary steps to implement for eligible Liberians"
+      }
+    ]
+  },
+  "returncode": 0
+}

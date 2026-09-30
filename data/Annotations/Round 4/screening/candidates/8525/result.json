@@ -1,0 +1,27 @@
+{
+  "document_id": "8525",
+  "request_hash": "0e3b05016ed51edeaf426e93443f7cd11d078f2733dd73bb7057c3de7b3030c5",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 9.58,
+  "usage": {
+    "input_tokens": 15203,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 194,
+    "reasoning_output_tokens": 94
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 1,
+        "rationale": "The President directs the Attorney General to file petitions seeking judicial relief. The filing is mandatory, but any injunction or other legal consequence occurs later through a court order, and additional requested relief remains subject to the Attorney General’s judgment.",
+        "evidence": "to petition in the name of the United States any district courts of the United States having jurisdiction of the parties"
+      }
+    ]
+  },
+  "returncode": 0
+}

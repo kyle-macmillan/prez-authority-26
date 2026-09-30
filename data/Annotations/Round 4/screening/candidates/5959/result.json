@@ -1,0 +1,27 @@
+{
+  "document_id": "5959",
+  "request_hash": "bf99810f5946ea06fe1dfed4ebd1a4cca732490b0370331623c31e61407f54ce",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 4.78,
+  "usage": {
+    "input_tokens": 16437,
+    "cached_input_tokens": 0,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 99,
+    "reasoning_output_tokens": 0
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 0,
+        "rationale": "The President is reporting to Congress under a statutory reporting requirement and describing legally consequential sanctions imposed through a separately issued executive order. This segment does not itself impose those sanctions; its operative act is the congressional communication, which the codebook expressly places outside scope.",
+        "evidence": "I hereby report to the Congress that I have exercised my statutory authority to take additional steps"
+      }
+    ]
+  },
+  "returncode": 0
+}

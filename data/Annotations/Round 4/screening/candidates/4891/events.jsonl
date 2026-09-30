@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a0d9f3-921b-7d11-8c90-04c36ae678e2"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"classifications\":[{\"segment_id\":\"1\",\"code\":3,\"rationale\":\"The President presently makes the statutory emergency-requirement designation for the specified funding, producing the legally consequential budgetary treatment immediately; the OMB memorandum merely supplies details of that completed action.\",\"evidence\":\"I hereby designate as emergency requirements all funding\"}]}"}}
+{"type":"turn.completed","usage":{"input_tokens":14970,"cached_input_tokens":11264,"cache_write_input_tokens":0,"output_tokens":77,"reasoning_output_tokens":0}}

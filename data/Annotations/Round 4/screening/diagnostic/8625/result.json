@@ -1,0 +1,33 @@
+{
+  "document_id": "8625",
+  "request_hash": "0a6aab153c74aa9c755577237253abe16df5372b1e8b9919bdb3f404aa63acb4",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 8.91,
+  "usage": {
+    "input_tokens": 15362,
+    "cached_input_tokens": 0,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 269,
+    "reasoning_output_tokens": 120
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 2,
+        "rationale": "The President mandates reinstatement of a policy whose requirements are to be imposed through later agency administration of foreign assistance; the segment does not itself apply an individual funding consequence.",
+        "evidence": "reinstate the Presidential Memorandum of January 23, 2017"
+      },
+      {
+        "segment_id": "2",
+        "code": 2,
+        "rationale": "The President directs the Secretary of State to implement specified funding restrictions through later executive-agency action.",
+        "evidence": "to ensure that U.S. taxpayer dollars do not fund organizations or programs that support or participate in the management of a program of coercive abortion or involuntary sterilization"
+      }
+    ]
+  },
+  "returncode": 0
+}

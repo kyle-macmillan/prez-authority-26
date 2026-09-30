@@ -1,0 +1,27 @@
+{
+  "document_id": "9777",
+  "request_hash": "da25c7bb9d16006262ab6e134fa546f85e20c18e7d200d85bd5e5b66f8daeb36",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 7.29,
+  "usage": {
+    "input_tokens": 15060,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 165,
+    "reasoning_output_tokens": 77
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 3,
+        "rationale": "The President presently directs a statutorily authorized drawdown and amends the amount in a prior presidential determination; the legal authorization and funding consequence occur in this determination, with any later transfer being implementation.",
+        "evidence": "I hereby direct the drawdown of up to $16.998 million"
+      }
+    ]
+  },
+  "returncode": 0
+}

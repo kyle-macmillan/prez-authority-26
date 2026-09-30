@@ -1,0 +1,33 @@
+{
+  "document_id": "1705",
+  "request_hash": "5334ced5c4526b82afadf2e6f876d9f313da49be94a72c33e7dcb327c6d5363d",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 11.91,
+  "usage": {
+    "input_tokens": 14941,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 202,
+    "reasoning_output_tokens": 56
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 3,
+        "rationale": "The President presently makes the statutory determination that the authorized cooperation and assistance is necessary, thereby satisfying the legal predicate for providing that support; the legal consequence occurs in this segment upon the determination.",
+        "evidence": "I hereby determine that the cooperation and assistance authorized by section 2606(a) of that title is necessary"
+      },
+      {
+        "segment_id": "2",
+        "code": 1,
+        "rationale": "The Secretary of Defense or designee must later issue implementing regulations concerning the support, but the segment does not dictate a particular legally consequential regulatory outcome.",
+        "evidence": "shall issue regulations concerning such co-operation and support"
+      }
+    ]
+  },
+  "returncode": 0
+}

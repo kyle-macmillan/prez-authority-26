@@ -1,0 +1,27 @@
+{
+  "document_id": "4891",
+  "request_hash": "bb5f4a2bee446fdf81a7df4c34a06133efca386c939e0906e39dbdf52d2a0ca4",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 4.11,
+  "usage": {
+    "input_tokens": 14970,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 77,
+    "reasoning_output_tokens": 0
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 3,
+        "rationale": "The President presently makes the statutory emergency-requirement designation for the specified funding, producing the legally consequential budgetary treatment immediately; the OMB memorandum merely supplies details of that completed action.",
+        "evidence": "I hereby designate as emergency requirements all funding"
+      }
+    ]
+  },
+  "returncode": 0
+}

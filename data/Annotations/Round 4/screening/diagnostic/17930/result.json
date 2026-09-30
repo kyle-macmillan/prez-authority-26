@@ -1,0 +1,33 @@
+{
+  "document_id": "17930",
+  "request_hash": "f26d191e1d1b84dab8cbc9429cec38423cfb339d1fa2b790d6677ed043fddc00",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 6.28,
+  "usage": {
+    "input_tokens": 15623,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 124,
+    "reasoning_output_tokens": 0
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 0,
+        "rationale": "The President ceremonially proclaims a commemorative month; this does not govern agencies or alter legal rights or duties.",
+        "evidence": "do hereby proclaim November 2021 as National Veterans and Military Families Month"
+      },
+      {
+        "segment_id": "2",
+        "code": 0,
+        "rationale": "The President makes a hortatory appeal to the public, not a binding direction to an agency or an alteration of legal rights.",
+        "evidence": "call upon the people of the United States to honor veterans and military families"
+      }
+    ]
+  },
+  "returncode": 0
+}

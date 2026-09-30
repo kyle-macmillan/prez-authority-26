@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a0d8fd-bb56-7d72-a9de-8e4eef0c6963"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"classifications\":[{\"segment_id\":\"1\",\"code\":1,\"rationale\":\"The President immediately delegates presidential functions to the Secretary of Defense. This is an internal assignment of authority, not itself a transfer of stockpile items or another substantive legal consequence.\",\"evidence\":\"I hereby assign to you the functions of the President under section 1 of Public Law 109-159\"}]}"}}
+{"type":"turn.completed","usage":{"input_tokens":14874,"cached_input_tokens":11264,"cache_write_input_tokens":0,"output_tokens":87,"reasoning_output_tokens":0}}

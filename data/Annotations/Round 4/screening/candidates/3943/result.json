@@ -1,0 +1,87 @@
+{
+  "document_id": "3943",
+  "request_hash": "d974d52022c5db0ab67503f8b6cc5c6425a939eae21a0b68a31b065d294ef88f",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 19.54,
+  "usage": {
+    "input_tokens": 16647,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 798,
+    "reasoning_output_tokens": 136
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 1,
+        "rationale": "Agency heads must pursue contractor compliance through appropriate measures; this assigns enforcement responsibility and discretion without itself changing contractual rights or dictating a particular later sanction.",
+        "evidence": "shall take appropriate measures to bring about the said compliance"
+      },
+      {
+        "segment_id": "2",
+        "code": 1,
+        "rationale": "Agency heads must establish procedures or take other appropriate measures to carry out an assigned internal responsibility, with no specified legal outcome.",
+        "evidence": "shall take appropriate measures, including but not limited to the establishment of compliance procedures"
+      },
+      {
+        "segment_id": "3",
+        "code": 1,
+        "rationale": "The President immediately creates and prescribes the staffing of an executive committee, an internal organizational action expressly covered by Code 1.",
+        "evidence": "There is hereby established the Government Contract Committee"
+      },
+      {
+        "segment_id": "4",
+        "code": 1,
+        "rationale": "The Committee must recommend improvements, while agencies must cooperate and provide information and assistance; these are internal advisory and coordination duties.",
+        "evidence": "All contracting agencies of the Government are directed and authorized to cooperate with the Committee"
+      },
+      {
+        "segment_id": "5",
+        "code": 1,
+        "rationale": "The Committee is directed to adopt procedural rules for performing its own functions, an internal housekeeping authority rather than a rule imposing external legal consequences.",
+        "evidence": "The Committee shall establish such rules as may be necessary for the performance of its functions"
+      },
+      {
+        "segment_id": "6",
+        "code": 1,
+        "rationale": "The Committee must report, may receive complaints, and must route received complaints for agency processing; these are administrative reporting and workflow functions.",
+        "evidence": "Complaints received shall be transmitted by the Committee to the appropriate contracting agencies"
+      },
+      {
+        "segment_id": "7",
+        "code": 1,
+        "rationale": "Contracting agencies must report their complaint-handling actions to the Committee, creating an internal reporting duty with no direct legal consequence for complainants or contractors.",
+        "evidence": "Each contracting agency shall report to the Committee the action taken"
+      },
+      {
+        "segment_id": "8",
+        "code": 1,
+        "rationale": "The Committee must review agency reports and encourage nongovernmental educational activity, which are analytical and hortatory implementation functions rather than legally consequential acts.",
+        "evidence": "The Committee shall review and analyze the reports submitted to it"
+      },
+      {
+        "segment_id": "9",
+        "code": 1,
+        "rationale": "The Committee may form cooperative relationships, and named agencies must support its authorized operating expenses subject to an internal allocation cap; these concern coordination and executive administration.",
+        "evidence": "no agency shall supply more than 50% of the funds necessary to carry out the purposes of this order"
+      },
+      {
+        "segment_id": "10",
+        "code": 1,
+        "rationale": "The Labor and Justice Departments receive specified internal support assignments for the Committee, involving facilities and legal services rather than external legal rights.",
+        "evidence": "The Department of Labor shall provide necessary space and facilities for the Committee"
+      },
+      {
+        "segment_id": "11",
+        "code": 1,
+        "rationale": "The provision immediately revokes a prior order, abolishes its committee, transfers administrative assets, and assigns wind-up work; under the codebook, this executive reorganization is Code 1.",
+        "evidence": "Executive Order No. 10308 of December 5, 1951 (16 P. R. 12303) is hereby revoked"
+      }
+    ]
+  },
+  "returncode": 0
+}

@@ -1,0 +1,33 @@
+{
+  "document_id": "12501",
+  "request_hash": "938c481a36f5f53b7a82cb7e4fd5696b7c5726c3996e692f84021ec98c4ae607",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 12.02,
+  "usage": {
+    "input_tokens": 20483,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 317,
+    "reasoning_output_tokens": 141
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 3,
+        "rationale": "The President presently designates the monument, reserves and withdraws federal lands, and establishes their legal status; those consequences occur through the proclamation itself, notwithstanding accompanying management directions to the Secretary.",
+        "evidence": "All Federal lands and interests in lands within the boundaries described on the accompanying map are hereby appropriated and withdrawn from all forms of entry, location, selection, sale, or other disposition under the public land laws"
+      },
+      {
+        "segment_id": "2",
+        "code": 1,
+        "rationale": "The Secretary must prepare an internal management plan and may use existing authority to enter cooperative agreements; the segment directs implementation and administration without dictating a later legal-rights outcome.",
+        "evidence": "The Secretary shall prepare a management plan to implement the purposes of this proclamation"
+      }
+    ]
+  },
+  "returncode": 0
+}

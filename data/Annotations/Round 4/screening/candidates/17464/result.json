@@ -1,0 +1,81 @@
+{
+  "document_id": "17464",
+  "request_hash": "6cc61461e30fb7cd33075c7e6d36a9928a97ac17d79ecd3cf71385d6f2890f39",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 19.25,
+  "usage": {
+    "input_tokens": 22614,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 871,
+    "reasoning_output_tokens": 209
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 3,
+        "rationale": "The President presently determines that the existing tariff level for products of other countries will continue, preserving a legally binding import duty without requiring a later agency decision.",
+        "evidence": "I have determined that it is necessary and appropriate, at this time, to maintain the current tariff level"
+      },
+      {
+        "segment_id": "2",
+        "code": 3,
+        "rationale": "The President immediately amends the HTSUS and a prior proclamation to establish duty-free treatment and modified duty rates; subsequent customs administration is ministerial.",
+        "evidence": "U.S. Note 16 of subchapter III of chapter 99 of the HTSUS is amended"
+      },
+      {
+        "segment_id": "3",
+        "code": 3,
+        "rationale": "The provision itself imposes a binding 25 percent additional duty on specified steel imports according to stated dates and country exceptions.",
+        "evidence": "shall be subject to an additional 25 percent ad valorem rate of duty"
+      },
+      {
+        "segment_id": "4",
+        "code": 3,
+        "rationale": "The provision itself imposes a 50 percent duty on covered Turkish steel imports during the specified period.",
+        "evidence": "shall be subject to a 50 percent ad valorem rate of duty"
+      },
+      {
+        "segment_id": "5",
+        "code": 3,
+        "rationale": "The provision itself applies a binding 25 percent duty to covered imports upon the specified triggering date and modifies the HTSUS through the incorporated annexes.",
+        "evidence": "shall be subject to the additional 25 percent ad valorem rate of duty established herein"
+      },
+      {
+        "segment_id": "6",
+        "code": 3,
+        "rationale": "The provision itself imposes an additional 10 percent duty on the derivative aluminum imports identified in Annex I.",
+        "evidence": "shall be subject to an additional 10 percent ad valorem rate of duty"
+      },
+      {
+        "segment_id": "7",
+        "code": 3,
+        "rationale": "The provision itself imposes an additional 25 percent duty on specified derivative steel imports and fixes the countries and dates to which the prescribed rates apply.",
+        "evidence": "shall be subject to an additional 25 percent ad valorem rate of duty"
+      },
+      {
+        "segment_id": "8",
+        "code": 3,
+        "rationale": "The President directly subjects qualifying Ukrainian steel already admitted to a foreign trade zone to a 25 percent duty upon later entry for consumption; customs merely applies that fixed consequence.",
+        "evidence": "shall be subject upon entry for consumption made on or after 12:01 a.m. eastern daylight time on June 1, 2022, to the 25 percent rate of duty"
+      },
+      {
+        "segment_id": "9",
+        "code": 3,
+        "rationale": "The provision itself imposes a duty, excludes specified articles from tariff-rate-quota eligibility, and conditions duty-free eligibility on a certificate of origin, all as binding legal consequences.",
+        "evidence": "are not eligible for, and shall not count against, the in-quota volume of the tariff-rate quota"
+      },
+      {
+        "segment_id": "10",
+        "code": 1,
+        "rationale": "The President authorizes, but does not compel a specified result from, executive officials implementing the certificate requirement and makes a housekeeping supersession of inconsistent prior directives; possible remedies remain discretionary and governed by existing law.",
+        "evidence": "is authorized to take such actions as are necessary to ensure compliance with this requirement"
+      }
+    ]
+  },
+  "returncode": 0
+}

@@ -1,0 +1,39 @@
+{
+  "document_id": "9967",
+  "request_hash": "86ed5be97b021bc53f902a4cd63c42c21afa1bcfa72361ee2f7bf61a153c3d8c",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 7.77,
+  "usage": {
+    "input_tokens": 15236,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 256,
+    "reasoning_output_tokens": 27
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 1,
+        "rationale": "The President immediately delegates an executive function to the OPM Director; this is an internal assignment of authority, not a substantive determination of legal rights or a dictated later legal outcome.",
+        "evidence": "I hereby delegate to the Director of the Office of Personnel Management (OPM) the authority vested in the President"
+      },
+      {
+        "segment_id": "2",
+        "code": 1,
+        "rationale": "The OPM Director must account for executive agencies’ mission needs when later issuing rules, regulations, and guidelines, but the segment does not dictate a specific legally consequential result.",
+        "evidence": "shall ensure that rules, regulations, and guidelines issued in the exercise of such authority take appropriate account of the needs of executive agencies"
+      },
+      {
+        "segment_id": "3",
+        "code": 1,
+        "rationale": "The OPM Director must consult specified and discretionary executive-branch officers while exercising the delegated authority; this is an internal procedural requirement without an independently prescribed legal consequence.",
+        "evidence": "The Director shall consult the Attorney General and such other officers of the executive branch"
+      }
+    ]
+  },
+  "returncode": 0
+}

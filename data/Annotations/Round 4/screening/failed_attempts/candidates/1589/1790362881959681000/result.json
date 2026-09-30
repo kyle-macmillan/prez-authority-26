@@ -1,0 +1,15 @@
+{
+  "document_id": "1589",
+  "request_hash": "7d5ea8a42f8e8b7959637236ca2c1bd972a9fa0772b6fb58268bca5fb3047f9d",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 2.35,
+  "usage": {},
+  "ok": false,
+  "errors": [
+    "invalid answer JSON: [Errno 2] No such file or directory: '/Users/kylemacmillan/Projects/prez-authority-26/data/Annotations/Round 4/screening/candidates/1589/answer.json'",
+    "process exit 1"
+  ],
+  "answer": null,
+  "returncode": 1
+}

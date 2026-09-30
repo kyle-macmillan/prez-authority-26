@@ -1,0 +1,99 @@
+{
+  "document_id": "12023",
+  "request_hash": "93261dae1ae869e5c96a2a6ed2ab6aad8f0be478b3160fdd09160e1a2376b1a2",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 33.68,
+  "usage": {
+    "input_tokens": 20742,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 1384,
+    "reasoning_output_tokens": 450
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 1,
+        "rationale": "The President makes a policy finding about Ukraine and states that termination is appropriate, but this segment does not itself terminate the suspension; the legal consequence is separately proclaimed later.",
+        "evidence": "I have determined that Ukraine has made progress in providing adequate and effective protection of intellectual property rights."
+      },
+      {
+        "segment_id": "2",
+        "code": 0,
+        "rationale": "This segment only recites a statutory consideration governing presidential designation decisions; it contains no presidential direction or legally consequential act.",
+        "evidence": "Section 502(c)(7) of the 1974 Act (19 U.S.C. 2462(c)(7)) provides that"
+      },
+      {
+        "segment_id": "3",
+        "code": 3,
+        "rationale": "The President makes the statutory worker-rights determination concerning Thailand that supports suspension of its GSP treatment; the stated consequence is to take effect six months later.",
+        "evidence": "I have determined that Thailand is not taking steps to afford to workers in Thailand internationally recognized worker rights."
+      },
+      {
+        "segment_id": "4",
+        "code": 3,
+        "rationale": "The President presently makes the statutory determination that specified exports exceeded competitive-need limits, establishing the relevant trade-treatment consequence.",
+        "evidence": "I have determined that in 2018 certain beneficiary developing countries exported eligible articles in quantities exceeding the applicable competitive need limitations."
+      },
+      {
+        "segment_id": "5",
+        "code": 3,
+        "rationale": "The President directly terminates duty-free treatment for the covered articles; implementation follows from this present legal act.",
+        "evidence": "I hereby terminate the duty-free treatment for such articles from such beneficiary developing countries."
+      },
+      {
+        "segment_id": "6",
+        "code": 3,
+        "rationale": "The President makes the statutory determination that a competitive-need limitation should be disregarded for specified articles and countries, thereby establishing their preferential-treatment disposition.",
+        "evidence": "I have determined that the competitive need limitation provided in section 503(c)(2)(A)(i)(II) of the 1974 Act should be disregarded"
+      },
+      {
+        "segment_id": "7",
+        "code": 3,
+        "rationale": "The President makes the statutorily required national-economic-interest determination supporting competitive-need waivers; this is a present statutory finding rather than an instruction to an agency.",
+        "evidence": "I have determined, based on that advice and the considerations described in sections 501 and 502(c) of the 1974 Act"
+      },
+      {
+        "segment_id": "8",
+        "code": 3,
+        "rationale": "The President makes the statutory waiver determination for a covered article and country, with the legal consequence arising from the presidential determination rather than later agency discretion.",
+        "evidence": "I have determined that the competitive need limitations of section 503(c)(2) of the 1974 Act should be waived"
+      },
+      {
+        "segment_id": "9",
+        "code": 3,
+        "rationale": "The President presently determines to redesignate specified countries as beneficiary developing countries for specified articles, changing their GSP status.",
+        "evidence": "I have determined to redesignate certain countries as beneficiary developing countries with respect to certain eligible articles"
+      },
+      {
+        "segment_id": "10",
+        "code": 3,
+        "rationale": "The President determines that the statutory competitive-need limitation does not apply to the specified article and country, presently establishing its exemption.",
+        "evidence": "I have determined that the competitive need limitation provided in section 503(c)(2)(A)(i)(II) of the 1974 Act does not apply"
+      },
+      {
+        "segment_id": "11",
+        "code": 3,
+        "rationale": "The President makes the statutory eligibility determination that Mali meets the criterion for lesser-developed beneficiary treatment.",
+        "evidence": "I have determined that Mali satisfies the criterion for treatment as a \"lesser developed beneficiary sub-Saharan African country\" under section 112(c) of the AGOA."
+      },
+      {
+        "segment_id": "12",
+        "code": 1,
+        "rationale": "The President concludes that specified tariff-schedule notes should later be modified to reflect a country-name change; this segment does not itself make those modifications.",
+        "evidence": "I have determined that general note 4(a) and Chapter 99, Subchapter III, U.S. notes 17(b)(2) and 18(b), to the HTS should be modified"
+      },
+      {
+        "segment_id": "13",
+        "code": 3,
+        "rationale": "The President directly terminates and suspends tariff preferences, modifies the HTS, grants exceptions and a waiver, designates Mali's status, prescribes effective dates, and supersedes inconsistent prior provisions; these legal effects arise from the proclamation itself.",
+        "evidence": "The suspension of the duty-free treatment accorded under the GSP to certain eligible articles that are the product of Ukraine is terminated"
+      }
+    ]
+  },
+  "returncode": 0
+}

@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a0db60-40b0-7ab1-b6fc-932f96ddaafe"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"classifications\":[{\"segment_id\":\"1\",\"code\":1,\"rationale\":\"The President delegates statutory authority to the Secretary of State to direct a potential drawdown and make the required determinations. This is an internal assignment of presidential functions; the segment does not itself order or effect the drawdown.\",\"evidence\":\"I hereby delegate to the Secretary of State the authority under section 506(a)(1) of the FAA\"}]}"}}
+{"type":"turn.completed","usage":{"input_tokens":14972,"cached_input_tokens":11264,"cache_write_input_tokens":0,"output_tokens":97,"reasoning_output_tokens":0}}

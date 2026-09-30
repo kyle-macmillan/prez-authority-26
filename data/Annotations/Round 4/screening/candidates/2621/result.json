@@ -1,0 +1,27 @@
+{
+  "document_id": "2621",
+  "request_hash": "7e9c15de964c3f341adc4e06fe8a8c8cac99a61ad7ecbac35789ff570afb514c",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 13.73,
+  "usage": {
+    "input_tokens": 15180,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 380,
+    "reasoning_output_tokens": 271
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 3,
+        "rationale": "The President presently revokes one executive order while preserving past violations and, effective on a specified date, directly continues another order and its existing rules, licenses, and administrative actions in full force. These legal effects occur through the segment itself rather than through a required later agency decision.",
+        "evidence": "are continued and shall be in full force and effect until amended, modified, or terminated by proper authority"
+      }
+    ]
+  },
+  "returncode": 0
+}

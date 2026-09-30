@@ -1,0 +1,33 @@
+{
+  "document_id": "1589",
+  "request_hash": "7d5ea8a42f8e8b7959637236ca2c1bd972a9fa0772b6fb58268bca5fb3047f9d",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 9.99,
+  "usage": {
+    "input_tokens": 15369,
+    "cached_input_tokens": 0,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 334,
+    "reasoning_output_tokens": 139
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 3,
+        "rationale": "The President presently establishes the medal and makes qualifying Armed Forces members eligible for it; those legal consequences occur in the segment itself, while the Secretary’s later design approval is ministerial implementation.",
+        "evidence": "Members of the Armed Forces of the United States (including Reserve components) who perform outstanding volunteer service to the civilian community of a sustained, direct, and consequential nature are eligible for the medal."
+      },
+      {
+        "segment_id": "2",
+        "code": 4,
+        "rationale": "The segment inseparably combines a mandate that the Secretary later prescribe regulations producing a specified order of precedence with present presidential rules limiting awards and authorizing posthumous awards; these are materially different Code 2 and Code 3 postures.",
+        "evidence": "The regulations shall place the Military Outstanding Volunteer Service Medal in order of precedence immediately after the Humanitarian Service Medal."
+      }
+    ]
+  },
+  "returncode": 0
+}

@@ -1,0 +1,45 @@
+{
+  "document_id": "10006",
+  "request_hash": "088af9a8038fb70a1afbe6f77d47d8c257ddb4f0f9d4737547480ab51b4455c2",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 12.37,
+  "usage": {
+    "input_tokens": 15808,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 425,
+    "reasoning_output_tokens": 169
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 3,
+        "rationale": "The President presently determines and modifies the statutory moratorium, allowing specified Mexican-domiciled carriers to seek operating authority while retaining the domestic-service restriction; the legal change occurs on the memorandum's date.",
+        "evidence": "These modifications shall be effective on the date of this memorandum."
+      },
+      {
+        "segment_id": "2",
+        "code": 3,
+        "rationale": "The President makes the statutory determination that expedited action is required, thereby presently exercising the determination authority under 49 U.S.C. 13902(c)(5).",
+        "evidence": "I hereby determine that expeditious action is required"
+      },
+      {
+        "segment_id": "3",
+        "code": 1,
+        "rationale": "The President authorizes the Department of Transportation to process covered applications immediately but does not dictate whether any application must be granted or denied.",
+        "evidence": "the Department of Transportation is authorized to act on applications"
+      },
+      {
+        "segment_id": "4",
+        "code": 1,
+        "rationale": "The Department must coordinate with other federal entities during application review; the remainder states that carriers remain governed by existing generally applicable laws rather than creating a new legal consequence.",
+        "evidence": "the Department shall continue to work closely with the Department of Justice"
+      }
+    ]
+  },
+  "returncode": 0
+}

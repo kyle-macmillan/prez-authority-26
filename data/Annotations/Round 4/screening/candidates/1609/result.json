@@ -1,0 +1,39 @@
+{
+  "document_id": "1609",
+  "request_hash": "0b2ec290d551b938eff7382989af0f2cf407643363a4be4da6d666b0c2695142",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 13.97,
+  "usage": {
+    "input_tokens": 18509,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 586,
+    "reasoning_output_tokens": 249
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 3,
+        "rationale": "The President immediately blocks specified government property and directly prohibits enumerated transactions by United States persons, thereby presently changing property rights and legal duties, subject to stated exceptions.",
+        "evidence": "all property and interests in property of the Government of the Federal Republic of Yugoslavia (Serbia and Montenegro), and property and interests in property held in the name of the Government of the Federal Republic of Yugoslavia or of the former Government of the Socialist Federal Republic of Yugoslavia, that are in the United States, that hereafter come within the United States, or that are or hereafter come within the possession or control of United States persons, including their overseas branches, are blocked."
+      },
+      {
+        "segment_id": "2",
+        "code": 1,
+        "rationale": "The President authorizes, but does not require, the Treasury Secretary to exercise delegated powers and potentially issue later regulations or prohibitions; the authorization itself does not dictate a particular legal outcome.",
+        "evidence": "The Secretary of the Treasury, in consultation with the Secretary of State, is hereby authorized to take such actions"
+      },
+      {
+        "segment_id": "3",
+        "code": 4,
+        "rationale": "The segment inseparably combines internal delegation and implementation directions with a mandate potentially requiring later license suspensions or terminations and a present continuation of existing administrative actions in full force and effect.",
+        "evidence": "all agencies of which are hereby directed to take all appropriate measures within their authority to carry out the provisions of this order, including suspension or termination of licenses or other authorizations in effect as of the date of this order."
+      }
+    ]
+  },
+  "returncode": 0
+}

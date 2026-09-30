@@ -1,0 +1,105 @@
+{
+  "document_id": "19525",
+  "request_hash": "daade18ab0cdd136b440c75a10b78d23bbac684bbe30d601084241e41162ee1c",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 31.99,
+  "usage": {
+    "input_tokens": 23273,
+    "cached_input_tokens": 0,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 1508,
+    "reasoning_output_tokens": 392
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 3,
+        "rationale": "The President makes the statutory determination that existing trade barriers unduly burden foreign trade and that specified statutory purposes would be promoted; that determination is made presently, while the referenced agreements were entered earlier.",
+        "evidence": "I determined that certain existing duties and other import restrictions of the United States and of foreign countries were unduly burdening and restricting the foreign trade of the United States"
+      },
+      {
+        "segment_id": "2",
+        "code": 3,
+        "rationale": "The President presently makes the statutory finding that international-trade barriers unduly burden U.S. foreign trade; the remaining actions are completed consultations and congressional transmissions.",
+        "evidence": "I have determined that barriers to (and other distortions of) international trade were unduly burdening and restricting the foreign trade of the United States"
+      },
+      {
+        "segment_id": "3",
+        "code": 3,
+        "rationale": "The President presently makes the statutory reciprocal-concessions determination concerning covered foreign trade agreements.",
+        "evidence": "I have determined that appropriate concessions have been received from foreign countries"
+      },
+      {
+        "segment_id": "4",
+        "code": 3,
+        "rationale": "The President presently makes the statutory comparability determination required for duty-free treatment of the identified articles.",
+        "evidence": "I have determined that duty-free treatment for certain articles now classified in the items of the Tariff Schedules of the United States"
+      },
+      {
+        "segment_id": "5",
+        "code": 3,
+        "rationale": "The President presently designates each identified article as not import sensitive through a statutory determination following public comment.",
+        "evidence": "I have determined, after providing interested parties an opportunity to comment, that each article identified in Annex IV to this proclamation (see note below) is not import sensitive"
+      },
+      {
+        "segment_id": "6",
+        "code": 3,
+        "rationale": "The President presently makes the statutory reciprocal-concessions determination supporting application of specified duty rates to covered alcoholic beverages.",
+        "evidence": "I have determined that adequate reciprocal concessions have been received"
+      },
+      {
+        "segment_id": "7",
+        "code": 3,
+        "rationale": "The President presently makes the statutory determination that the specified developing-country obligations will be observed in Taiwan.",
+        "evidence": "I have determined that obligations substantially the same as those applicable to developing countries set forth in the agreements listed in Section 2(c)(1), (2), (3), (4), and (5) of that Act (93 Stat. 148) (19 U.S.C. 2503(c)(1), (2), (3), (4), and (5)) will be observed in Taiwan"
+      },
+      {
+        "segment_id": "8",
+        "code": 0,
+        "rationale": "This recital only identifies statutory authority for duty and tariff modifications proclaimed elsewhere; it neither directs an official nor itself modifies a tariff or legal status.",
+        "evidence": "is authorized by one or more of the following provisions or statutes"
+      },
+      {
+        "segment_id": "9",
+        "code": 3,
+        "rationale": "The President presently makes the statutory determination that the authorized decrease will simplify computation of the duty; the rest explains related statutory authority.",
+        "evidence": "I have determined, pursuant to that section, that the decrease authorized by that section will simplify the computation of the amount of duty imposed with respect to the article"
+      },
+      {
+        "segment_id": "10",
+        "code": 3,
+        "rationale": "The President makes the statutory finding that effectiveness of the marking proviso is required or appropriate; the segment also recounts a completed Trade Commission valuation determination made at his direction.",
+        "evidence": "I have found that the effectiveness of the proviso to Section 304(a)(3)(J) (19 U.S.C. 1304(a)(3)(J)) with respect to the marking of articles provided for in headnote 2 of part 1 of schedule 2 of the TSUS (see Publication of Tariff Schedules note under section 1202 of this title) is required or appropriate"
+      },
+      {
+        "segment_id": "11",
+        "code": 3,
+        "rationale": "The President presently makes the statutory required-or-appropriate determination for the tariff modifications and continuances proclaimed later.",
+        "evidence": "I determine that the modification or continuance of existing duties or other import restrictions or the continuance of existing duty-free or excise treatment hereinafter proclaimed is required or appropriate"
+      },
+      {
+        "segment_id": "12",
+        "code": 3,
+        "rationale": "The President presently makes the statutory determination that most of the prior tariff-concession suspension must be terminated to carry out the agreement; the actual termination is separately proclaimed.",
+        "evidence": "I determine that the termination of such suspension of tariff concessions contained in Proclamation 3564"
+      },
+      {
+        "segment_id": "13",
+        "code": 3,
+        "rationale": "The President directly terminates tariff suspensions, fixes applicable duty rates, and makes tariff modifications effective on specified dates or upon a later presidential designation; these legal consequences arise from the proclamation itself.",
+        "evidence": "At the close of December 31, 1979, the suspension of tariff concessions contained in Proclamation 3564 (except those applicable to automobile trucks valued at $1,000 or more (provided for in TSUS item 692.02) (see Publication of Tariff Schedules note under section 1202 of this title)) shall terminate."
+      },
+      {
+        "segment_id": "14",
+        "code": 4,
+        "rationale": "The segment inseparably combines a mandate that the Trade Representative later determine and publish effective dates with self-executing tariff modifications, automatic deletions, and a fixed effective date.",
+        "evidence": "The Special Representative (now Trade Representative) shall make any determinations relevant to the designation of the effective dates"
+      }
+    ]
+  },
+  "returncode": 0
+}

@@ -1,0 +1,45 @@
+{
+  "document_id": "9073",
+  "request_hash": "475f49ac30c2f3fb5f40d4adb0810a9e9f373c424b66eac3230caec6247dda13",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 10.51,
+  "usage": {
+    "input_tokens": 16971,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 390,
+    "reasoning_output_tokens": 116
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 0,
+        "rationale": "The President recounts an earlier direction to DHS and subsequent agency action, but this segment imposes no present command or legal consequence.",
+        "evidence": "I directed the Secretary of Homeland Security to issue new policy guidance"
+      },
+      {
+        "segment_id": "2",
+        "code": 1,
+        "rationale": "Within 45 days, the Secretary of Homeland Security, coordinating with specified officials, must provide the President a report about agency measures; the required consequence is internal reporting, not a dictated legal outcome.",
+        "evidence": "shall submit a report to the President detailing all measures"
+      },
+      {
+        "segment_id": "3",
+        "code": 1,
+        "rationale": "Within 75 days, the Attorney General and Secretary of Homeland Security, after consultation, must report to the President on potentially needed resources or authority; this is an internal review and reporting requirement.",
+        "evidence": "shall submit a report to the President identifying any additional resources or authorities"
+      },
+      {
+        "segment_id": "4",
+        "code": 1,
+        "rationale": "Within 60 days, the Secretaries of State and Homeland Security must report on measures and sanctions implementation, while the savings clause preserves existing agency and OMB authority; neither provision itself imposes sanctions or changes legal rights.",
+        "evidence": "shall submit a report to the President detailing all measures"
+      }
+    ]
+  },
+  "returncode": 0
+}

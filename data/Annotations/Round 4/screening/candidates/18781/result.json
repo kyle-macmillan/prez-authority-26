@@ -1,0 +1,51 @@
+{
+  "document_id": "18781",
+  "request_hash": "d538dff74f4b23a40ab4e77d6ae1fac610ee6b07eabdba2f0fb8171b97ed036f",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 16.67,
+  "usage": {
+    "input_tokens": 16977,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 608,
+    "reasoning_output_tokens": 218
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 3,
+        "rationale": "The President directly designated specified articles as eligible for preferential tariff treatment, creating the legal eligibility at the time of designation.",
+        "evidence": "I designated specified articles provided for in the Tariff Schedules of the United States (TSUS) (19 U.S.C. 1202) as eligible for preferential tariff treatment"
+      },
+      {
+        "segment_id": "2",
+        "code": 3,
+        "rationale": "The President directly designated countries as least-developed beneficiaries, presently conferring a status that removes specified tariff limitations; the remaining text explains statutory consequences.",
+        "evidence": "I also designated certain such countries as least-developed beneficiary developing countries"
+      },
+      {
+        "segment_id": "3",
+        "code": 3,
+        "rationale": "The President made statutory determinations governing countries’ loss or restoration of preferential tariff treatment; these are present presidential legal determinations, not instructions for a later agency decision.",
+        "evidence": "I have determined, pursuant to section 504(a) and (c)(1) of the Trade Act, that certain beneficiary developing countries should no longer receive preferential tariff treatment"
+      },
+      {
+        "segment_id": "4",
+        "code": 3,
+        "rationale": "The President made the statutory determination that a tariff limitation should not apply to specified articles, presently supplying the legally consequential basis for that exemption; the rest is an authority recital.",
+        "evidence": "I have determined that section 504(c)(1)(B) of the Trade Act should not apply with respect to certain eligible articles"
+      },
+      {
+        "segment_id": "5",
+        "code": 3,
+        "rationale": "The President directly modified the tariff schedule, established exclusions from statutory limitations, superseded inconsistent prior provisions, and prescribed the modifications’ applicability, with legal effect under the stated effective conditions rather than through a later agency decision.",
+        "evidence": "the Rates of Duty Special column for each of the TSUS items enumerated in Annex I to this proclamation is modified"
+      }
+    ]
+  },
+  "returncode": 0
+}

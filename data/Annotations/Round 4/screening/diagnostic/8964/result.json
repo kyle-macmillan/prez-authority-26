@@ -1,0 +1,27 @@
+{
+  "document_id": "8964",
+  "request_hash": "8944073cee3fa5dd5bdb7bf60d98eb8b330b516fecbbf5fc040283ae51c315a9",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 4.96,
+  "usage": {
+    "input_tokens": 15379,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 118,
+    "reasoning_output_tokens": 0
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 1,
+        "rationale": "The President immediately revokes a prior memorandum governing internal executive succession, while preserving existing agency and OMB authorities. This is an internal administrative reorganization rather than a change to private legal rights or a mandated later agency legal outcome.",
+        "evidence": "The Presidential Memorandum of February 1, 2013 (Designation of Officers of the Pension Benefit Guaranty Corporation to Act as Director of the Pension Benefit Guaranty Corporation), is hereby revoked."
+      }
+    ]
+  },
+  "returncode": 0
+}

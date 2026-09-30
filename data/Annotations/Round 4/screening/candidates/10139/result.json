@@ -1,0 +1,39 @@
+{
+  "document_id": "10139",
+  "request_hash": "0ee82fa8175ba3a79aa8bc89c9c18f80f6980913e0dc1cf3bb7b282a7df5497f",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 10.56,
+  "usage": {
+    "input_tokens": 15320,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 313,
+    "reasoning_output_tokens": 76
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 1,
+        "rationale": "The President assigns the Secretary a personal approval role and limits the pilot's organizational deployment; this is internal executive supervision of a discretionary program, not a present change in legal rights or a command to impose a specified later legal consequence.",
+        "evidence": "you must personally approve the creation and implementation of any pilot program"
+      },
+      {
+        "segment_id": "2",
+        "code": 2,
+        "rationale": "The President requires the Secretary to make a specified opt-out right a term of any later-administered pilot program, dictating the legal consequence the agency must provide to participating complainants.",
+        "evidence": "the pilot programs provide that complaining parties may opt out of participation in the pilot programs at any time"
+      },
+      {
+        "segment_id": "3",
+        "code": 1,
+        "rationale": "The President directs the Secretary to report an assessment and supporting data to the EEOC after the pilot period; this is an internal reporting requirement, while the remaining sentence merely explains the directive's purpose.",
+        "evidence": "submit an assessment of the pilot programs, together with the relevant underlying data, to the EEOC"
+      }
+    ]
+  },
+  "returncode": 0
+}

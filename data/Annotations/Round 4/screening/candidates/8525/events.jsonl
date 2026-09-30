@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a0d9f7-9434-7b73-859e-7f55f1591c2c"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"classifications\":[{\"segment_id\":\"1\",\"code\":1,\"rationale\":\"The President directs the Attorney General to file petitions seeking judicial relief. The filing is mandatory, but any injunction or other legal consequence occurs later through a court order, and additional requested relief remains subject to the Attorney General’s judgment.\",\"evidence\":\"to petition in the name of the United States any district courts of the United States having jurisdiction of the parties\"}]}"}}
+{"type":"turn.completed","usage":{"input_tokens":15203,"cached_input_tokens":11264,"cache_write_input_tokens":0,"output_tokens":194,"reasoning_output_tokens":94}}

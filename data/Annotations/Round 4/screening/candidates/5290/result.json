@@ -1,0 +1,33 @@
+{
+  "document_id": "5290",
+  "request_hash": "789ddb3a69ddf42ebfb7cba376ed50b1b2ede270683704252fac5db9fa411c03",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 10.24,
+  "usage": {
+    "input_tokens": 16669,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 253,
+    "reasoning_output_tokens": 81
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 0,
+        "rationale": "The President is reporting to Congress that he previously issued an executive order declaring an emergency and establishing property-blocking and designation authorities; this segment does not itself impose those legal consequences, which arose under the earlier order.",
+        "evidence": "I hereby report that I have issued an Executive Order"
+      },
+      {
+        "segment_id": "2",
+        "code": 0,
+        "rationale": "The President is reporting a prior delegation to the Treasury Secretary, implementation direction to agencies, and the earlier order’s effective time; the segment itself neither makes a new delegation nor changes legal rights.",
+        "evidence": "The order, a copy of which is enclosed, became effective at 12:01 a.m. eastern standard time on October 30, 2006."
+      }
+    ]
+  },
+  "returncode": 0
+}

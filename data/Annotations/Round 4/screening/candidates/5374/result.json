@@ -1,0 +1,69 @@
+{
+  "document_id": "5374",
+  "request_hash": "20675f06a0b6186caf3b7a10a775e5cacf37abc6f73c020578ca69fe8401e0f6",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 22.3,
+  "usage": {
+    "input_tokens": 17243,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 983,
+    "reasoning_output_tokens": 516
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 0,
+        "rationale": "The President is reporting to Congress that a separate executive order has been issued; the quoted segment does not itself effect the referenced changes.",
+        "evidence": "I hereby report that I have issued an Executive Order"
+      },
+      {
+        "segment_id": "2",
+        "code": 1,
+        "rationale": "The President makes a factual assessment of changed circumstances, but this segment neither imposes a legal consequence nor dictates a later agency outcome.",
+        "evidence": "I have determined that the situations that gave rise to these national emergencies have been significantly altered"
+      },
+      {
+        "segment_id": "3",
+        "code": 1,
+        "rationale": "The President determines that termination is warranted, but the segment does not itself terminate the emergency or command an official to do so later.",
+        "evidence": "I have determined that the removal of the regime of Saddam Hussein warrants the termination altogether"
+      },
+      {
+        "segment_id": "4",
+        "code": 3,
+        "rationale": "The President states that he is presently terminating the declared national emergency, directly changing its legal status.",
+        "evidence": "I am terminating the national emergency declared in Executive Order 12722"
+      },
+      {
+        "segment_id": "5",
+        "code": 3,
+        "rationale": "The President presently continues property prohibitions and amends the sanctions annex to include additional persons, directly preserving and extending legal sanctions.",
+        "evidence": "I am continuing for the near future certain prohibitions with respect to property previously blocked"
+      },
+      {
+        "segment_id": "6",
+        "code": 1,
+        "rationale": "The President makes a predicate factual determination about the identified persons, while this segment stops before imposing sanctions or another legal consequence.",
+        "evidence": "I have determined that these persons present an obstacle to the orderly reconstruction of Iraq"
+      },
+      {
+        "segment_id": "7",
+        "code": 1,
+        "rationale": "The President states a policy determination that the persons should face sanctions, but this segment does not itself impose them or direct an agency to impose a specified later result.",
+        "evidence": "such persons should be subject to sanctions under Executive Order 13315"
+      },
+      {
+        "segment_id": "8",
+        "code": 4,
+        "rationale": "The segment inseparably combines implementation of a legal prohibition with internal delegation, permissive redelegation, discretionary agency implementation, and transmittal language.",
+        "evidence": "This order, among other actions, implements this international legal obligation"
+      }
+    ]
+  },
+  "returncode": 0
+}

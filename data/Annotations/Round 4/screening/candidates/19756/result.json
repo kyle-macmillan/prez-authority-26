@@ -1,0 +1,45 @@
+{
+  "document_id": "19756",
+  "request_hash": "445b1e3fdb256c2ce0d3f7457e4afeedb2ea77e44d9fe71cba2c2c8fe4555154",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 14.17,
+  "usage": {
+    "input_tokens": 18677,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 573,
+    "reasoning_output_tokens": 200
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 0,
+        "rationale": "The President recounts earlier proclamations, prior quota effects, and a historical data problem; this segment itself neither directs an agency nor presently changes legal rights or duties.",
+        "evidence": "Subsequent to the issuance of that proclamation I have ascertained that certain alloy tool steel"
+      },
+      {
+        "segment_id": "2",
+        "code": 1,
+        "rationale": "The President makes a present evaluative determination that the existing quota treatment would fall below the statutory benchmark, but this recital itself does not alter the quota or mandate a specified later agency outcome; any legal consequence occurs through the ensuing proclamation provisions.",
+        "evidence": "I have determined that the inclusion of the steel described in new headnote 2(a) (iv) proclaimed below in the quantitative limitation for item 923.24 would result"
+      },
+      {
+        "segment_id": "3",
+        "code": 1,
+        "rationale": "The President states his determination and intended approach—to delete one tariff item, create two replacements, and proclaim separate limits—but this recital does not itself execute those legal changes; they occur in the subsequent operative modification.",
+        "evidence": "I have determined to delete item 923.24 and to include alloy tool steel formerly provided for in item 923.24 separately in new items 923.25 and 923.26"
+      },
+      {
+        "segment_id": "4",
+        "code": 3,
+        "rationale": "The President directly modifies the Tariff Schedules, defines covered steel, establishes binding quota quantities and adjustment conditions, and specifies their effective date; the proclamation itself supplies the legal consequence, with later administration being ministerial.",
+        "evidence": "Subpart A, part 2, of the Appendix to the Tariff Schedules of the United States (19 U.S.C. 1202) is modified as follows"
+      }
+    ]
+  },
+  "returncode": 0
+}

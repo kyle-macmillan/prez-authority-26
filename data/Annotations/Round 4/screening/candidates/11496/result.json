@@ -1,0 +1,33 @@
+{
+  "document_id": "11496",
+  "request_hash": "23576cc8dd360d3a86e64fa6d11c87036dbd4d325a9a7db8e1f4ed10dd376eb0",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 7.22,
+  "usage": {
+    "input_tokens": 15027,
+    "cached_input_tokens": 0,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 171,
+    "reasoning_output_tokens": 29
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 3,
+        "rationale": "The President presently makes the statutory determination required to extend waiver authority under the Trade Act; the legally consequential determination occurs in this segment itself.",
+        "evidence": "I hereby determine, pursuant to section 402(d)(5) of the Act"
+      },
+      {
+        "segment_id": "2",
+        "code": 3,
+        "rationale": "The President presently makes the country-specific statutory determination supporting continuation of Romania's existing waiver, rather than directing an agency to reach that result later.",
+        "evidence": "continuation of the waiver applicable to the Socialist Republic of Romania will substantially promote the objectives of section 402"
+      }
+    ]
+  },
+  "returncode": 0
+}

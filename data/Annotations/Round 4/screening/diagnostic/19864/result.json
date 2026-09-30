@@ -1,0 +1,33 @@
+{
+  "document_id": "19864",
+  "request_hash": "0060f1b25065d6aeae27d190ae1b92aac75b6f35340eb6bdbef3e477b3765a33",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 7.42,
+  "usage": {
+    "input_tokens": 15853,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 199,
+    "reasoning_output_tokens": 52
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 0,
+        "rationale": "This is a recital describing a statutory prerequisite imposed by Congress; it does not itself direct an agency or alter legal rights.",
+        "evidence": "shall take effect only if approved by the Congress by the adoption of a concurrent resolution of approval"
+      },
+      {
+        "segment_id": "2",
+        "code": 3,
+        "rationale": "The President conditionally gives the proclamation and trade agreement legal effect and extends nondiscriminatory treatment once the specified congressional approval and exchange of notices occur; no later agency determination is required.",
+        "evidence": "nondiscriminatory treatment shall be extended to the products of the Socialist Republic of Romania"
+      }
+    ]
+  },
+  "returncode": 0
+}

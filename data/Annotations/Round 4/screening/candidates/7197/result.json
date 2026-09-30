@@ -1,0 +1,33 @@
+{
+  "document_id": "7197",
+  "request_hash": "26730b45ddea7c6630a5ea0856a3630ee40044c084fbf61cb183ee06dcba7152",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 7.41,
+  "usage": {
+    "input_tokens": 15876,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 148,
+    "reasoning_output_tokens": 0
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 0,
+        "rationale": "The President describes proposed legislation and offers a hortatory appeal to private labor and management; any legal consequences would arise only if Congress enacts the proposals, not from this segment itself.",
+        "evidence": "I urge the private sector--labor and management alike--to follow this example and minimize wage and price increases."
+      },
+      {
+        "segment_id": "2",
+        "code": 0,
+        "rationale": "This is a request that Congress consider and enact proposed legislation, not presidential governance of agencies or a provision independently changing legal rights.",
+        "evidence": "I hope the Congress will consider these proposals and act on them promptly and favorably."
+      }
+    ]
+  },
+  "returncode": 0
+}

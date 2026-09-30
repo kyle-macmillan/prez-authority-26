@@ -1,0 +1,93 @@
+{
+  "document_id": "2507",
+  "request_hash": "850ed9503203104b65486d0b0a5822ea60a0b0e1768f4b8a347989d9cd8f5ff3",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 24.32,
+  "usage": {
+    "input_tokens": 18704,
+    "cached_input_tokens": 0,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 1069,
+    "reasoning_output_tokens": 259
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 1,
+        "rationale": "The President immediately delegates presidential statutory functions to the Administrator of General Services; this is an internal assignment of authority, not a prescribed substantive legal outcome.",
+        "evidence": "The Administrator of General Services is designated and empowered to perform without approval, ratification, or other action by the President"
+      },
+      {
+        "segment_id": "2",
+        "code": 1,
+        "rationale": "The Administrator must consult specified executive officials while performing delegated functions; this is an internal coordination requirement without an independent legal consequence.",
+        "evidence": "shall consult with the Secretary of Transportation and the Administrator of the Federal Energy Administration"
+      },
+      {
+        "segment_id": "3",
+        "code": 1,
+        "rationale": "The Administrator must coordinate development of an internal government plan and consult another official about its standards; any consequential implementation would occur later.",
+        "evidence": "shall coordinate the overall development of the 10-year plan for energy conservation with respect to Government buildings"
+      },
+      {
+        "segment_id": "4",
+        "code": 1,
+        "rationale": "Agency heads must prepare plans concerning federal buildings under their control, an internal planning obligation that does not itself alter legal rights or dictate a later legal consequence.",
+        "evidence": "shall prepare plans for buildings under the custody and control of, or leased by, such agencies"
+      },
+      {
+        "segment_id": "5",
+        "code": 1,
+        "rationale": "The segment requires submission of a plan for presidential consideration and delegates presidential statutory functions to the Secretary of Commerce, both internal executive-management actions.",
+        "evidence": "The Secretary of Commerce is designated and empowered to perform without approval, ratification, or other action by the President"
+      },
+      {
+        "segment_id": "6",
+        "code": 1,
+        "rationale": "The officials must consult and provide procurement-policy guidance only to the extent considered appropriate; this coordinates discretionary executive implementation without prescribing a binding outcome.",
+        "evidence": "to the extent he considers appropriate and with due regard to the program activities of the Executive agencies, provide policy guidance"
+      },
+      {
+        "segment_id": "7",
+        "code": 1,
+        "rationale": "The Administrator is directed to develop contingency plans for the President's consideration, so the mandated act is preparatory planning rather than imposition of the plans' potential legal consequences.",
+        "evidence": "authorized and directed to develop for the President's consideration"
+      },
+      {
+        "segment_id": "8",
+        "code": 1,
+        "rationale": "The Administrator must prepare statutory annual reports for presidential consideration, which is an internal reporting function.",
+        "evidence": "shall prepare, with the assistance of the heads of appropriate agencies, for the President's consideration, the annual reports"
+      },
+      {
+        "segment_id": "9",
+        "code": 1,
+        "rationale": "The President delegates specified statutory authorities to the Secretary of State and the Federal Energy Administrator; the segment assigns authority without itself exercising it to determine a substantive outcome.",
+        "evidence": "The Secretary of State is hereby delegated the authority vested in the President"
+      },
+      {
+        "segment_id": "10",
+        "code": 2,
+        "rationale": "The Secretary of Commerce is required to promulgate rules authorizing specified petroleum exports when necessary to implement international obligations; the legally consequential authorization will arise through the mandated later rules.",
+        "evidence": "the Secretary of Commerce shall promulgate rules, pursuant to the procedures established by the Export Administration Act of 1969, as amended, to authorize the export of petroleum and petroleum products"
+      },
+      {
+        "segment_id": "11",
+        "code": 1,
+        "rationale": "The segment imposes consultation requirements and delegates or requires redelegation of statutory functions among executive officials, all forms of internal authority assignment.",
+        "evidence": "The Administrator of General Services shall redelegate the functions provided by section 101(c) (1) of the Defense Production Act of 1950, as amended, to the Secretary of Commerce."
+      },
+      {
+        "segment_id": "12",
+        "code": 4,
+        "rationale": "The segment inseparably combines internal coordination and procedural routing requirements with a present ratification that validates prior directives and actions, so it contains both Code 1 and Code 3 postures.",
+        "evidence": "are hereby confirmed and ratified and shall be deemed to have been issued under this order"
+      }
+    ]
+  },
+  "returncode": 0
+}

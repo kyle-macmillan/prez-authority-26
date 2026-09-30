@@ -1,0 +1,45 @@
+{
+  "document_id": "8961",
+  "request_hash": "8fceb24f7d330308de1ee6c9fa495cb79238db7a810266e73aabd38029645432",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 14.86,
+  "usage": {
+    "input_tokens": 16706,
+    "cached_input_tokens": 0,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 637,
+    "reasoning_output_tokens": 282
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 1,
+        "rationale": "The President states an executive policy of assisting Governors and previews later actions; the segment itself does not presently alter funding or legal rights.",
+        "evidence": "It is the policy of the United States to take measures to assist State Governors under the Stafford Act"
+      },
+      {
+        "segment_id": "2",
+        "code": 2,
+        "rationale": "The President mandates that FEMA later provide a specified legally consequential funding result: a 100 percent Federal share for defined National Guard emergency activities.",
+        "evidence": "I am directing the Federal Emergency Management Agency (FEMA) of the Department of Homeland Security to fund 100 percent of the emergency assistance activities"
+      },
+      {
+        "segment_id": "3",
+        "code": 1,
+        "rationale": "The President directs the Secretary of Defense, subject to feasibility and mission requirements, to make requests to Governors; this is an executive implementation assignment rather than a present legal consequence.",
+        "evidence": "I am directing the Secretary of Defense, to the maximum extent feasible and consistent with mission requirements"
+      },
+      {
+        "segment_id": "4",
+        "code": 3,
+        "rationale": "The President presently defines the legal availability and duration of the 100 percent Federal cost share for qualifying National Guard duty orders, while the remaining language preserves existing agency authority and OMB functions.",
+        "evidence": "The 100 percent Federal cost share for National Guard forces pursuant to this memorandum, and in my prior memoranda dated March 22, 28, and 30, 2020, and April 2, 2020, each titled \"Providing Federal Support for Governors' Use of the National Guard to Respond to COVID–19,\" is effective for orders of duty of a duration of 31 days or fewer."
+      }
+    ]
+  },
+  "returncode": 0
+}

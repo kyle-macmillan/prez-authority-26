@@ -1,0 +1,33 @@
+{
+  "document_id": "7940",
+  "request_hash": "eab43dbee9c2f210341d10b309f5cc9ab73c36b895f1ffe5c6753e7207cb2335",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 8.92,
+  "usage": {
+    "input_tokens": 15264,
+    "cached_input_tokens": 0,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 316,
+    "reasoning_output_tokens": 154
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 1,
+        "rationale": "The President directs the Attorney General to undertake an executive-branch litigation action under section 208; the segment does not itself alter legal rights or guarantee a judicial result.",
+        "evidence": "I direct you, pursuant to the provisions of Section 208 of the Labor Management Relations Act, 1947,"
+      },
+      {
+        "segment_id": "2",
+        "code": 1,
+        "rationale": "The Attorney General must petition a court, but the court—not the directed official—decides whether to issue the injunction; additional requested relief remains within the Attorney General's judgment.",
+        "evidence": "to petition in the name of the United States any District Court of the United States having jurisdiction of the parties"
+      }
+    ]
+  },
+  "returncode": 0
+}

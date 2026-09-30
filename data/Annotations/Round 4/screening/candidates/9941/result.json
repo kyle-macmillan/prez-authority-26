@@ -1,0 +1,39 @@
+{
+  "document_id": "9941",
+  "request_hash": "1054b684f5a07b75d0697d193f566535568e8de837e0178db5b77bbd3695bbd9",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 10.44,
+  "usage": {
+    "input_tokens": 16275,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 348,
+    "reasoning_output_tokens": 82
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 3,
+        "rationale": "The President presently determines the FY 2004 refugee-admissions ceiling and fixes regional allocations, thereby establishing legally consequential admission numbers; agencies implement those already-set limits later.",
+        "evidence": "The admission of up to 70,000 refugees to the United States during FY 2004 is justified by humanitarian concerns or is otherwise in the national interest"
+      },
+      {
+        "segment_id": "2",
+        "code": 1,
+        "rationale": "The President authorizes the Secretary of State, after congressional notification, to exercise discretion later over using and transferring admission numbers based on regional need; the segment does not dictate a particular transfer.",
+        "evidence": "you are further authorized to transfer unused admission numbers allocated to a particular region to one or more other regions"
+      },
+      {
+        "segment_id": "3",
+        "code": 3,
+        "rationale": "The President presently makes a statutory foreign-policy determination and designation, makes additional adjustment numbers available, and specifies which in-country groups may qualify for refugee consideration during FY 2004.",
+        "evidence": "I hereby determine that assistance to or on behalf of persons applying for admission to the United States as part of the overseas refugee admissions program will contribute to the foreign policy interests of the United States and designate such persons for this purpose"
+      }
+    ]
+  },
+  "returncode": 0
+}

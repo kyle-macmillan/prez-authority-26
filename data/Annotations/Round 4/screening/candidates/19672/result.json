@@ -1,0 +1,45 @@
+{
+  "document_id": "19672",
+  "request_hash": "b0e7f1896e3e6d5992c73189d2158a3a4d44151ea3803460c2ed512fc18b09c6",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 12.73,
+  "usage": {
+    "input_tokens": 16780,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 498,
+    "reasoning_output_tokens": 145
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 3,
+        "rationale": "The President presently provides import relief by increasing duties and removing GSP duty-free eligibility; the legal consequences attach through the proclamation, rather than awaiting a later agency decision.",
+        "evidence": "I am providing import relief through the temporary increase of import duty on, and the removal from eligibility for duty free entry under the GSP of, certain Citizens Band (CB) radio transceivers"
+      },
+      {
+        "segment_id": "2",
+        "code": 3,
+        "rationale": "The President directly modifies the governing GATT schedule and Tariff Schedules, presently changing the applicable tariff framework as set forth in the incorporated Annex.",
+        "evidence": "General Headnote 3(c)(iii), part 5 of schedule 6, and subpart A, part 2 of the Appendix to the TSUS are modified as set forth in the Annex to this proclamation."
+      },
+      {
+        "segment_id": "3",
+        "code": 3,
+        "rationale": "The President directly amends the operative GSP eligibility list by adding an article, producing a present eligibility consequence rather than directing a later agency outcome.",
+        "evidence": "is further amended by adding item 685.29 (as added by the Annex to this proclamation), in numerical sequence."
+      },
+      {
+        "segment_id": "4",
+        "code": 3,
+        "rationale": "The President directly removes an item from a GSP eligibility list and establishes when the proclamation and increased duty rates apply, creating self-executing eligibility and tariff consequences.",
+        "evidence": "The increased rates of duty provided for in the Annex to this proclamation shall apply only with respect to articles entered, or withdrawn from warehouse, for consumption before the close of April 10, 1981"
+      }
+    ]
+  },
+  "returncode": 0
+}

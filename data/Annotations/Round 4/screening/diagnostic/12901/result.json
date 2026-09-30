@@ -1,0 +1,27 @@
+{
+  "document_id": "12901",
+  "request_hash": "d9f07e79f9021c5f167079a6e059e1ada3bc8c3d56e13f9a48d5833d66553470",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 4.84,
+  "usage": {
+    "input_tokens": 15625,
+    "cached_input_tokens": 0,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 91,
+    "reasoning_output_tokens": 0
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 3,
+        "rationale": "The President presently exercises statutory authority to except the specified submerged lands from an otherwise required transfer, immediately determining their property-transfer status; any subsequent administration is merely implementational.",
+        "evidence": "do hereby proclaim that the lands hereinafter described are excepted from transfer to the Government of the Commonwealth of the Northern Mariana Islands"
+      }
+    ]
+  },
+  "returncode": 0
+}

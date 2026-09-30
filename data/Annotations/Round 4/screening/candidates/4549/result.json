@@ -1,0 +1,75 @@
+{
+  "document_id": "4549",
+  "request_hash": "5615ffc21467b487172032c5ea954ae11263c4e8f3591a40556bd8aa63fc56fe",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 18.08,
+  "usage": {
+    "input_tokens": 19263,
+    "cached_input_tokens": 0,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 804,
+    "reasoning_output_tokens": 210
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 1,
+        "rationale": "The President directed U.S. forces to carry out specified military operations, an exercise of discretionary executive command; the strikes occurred later on the stated date and are not a legal-rights consequence.",
+        "evidence": "I directed United States forces to conduct discrete strikes"
+      },
+      {
+        "segment_id": "2",
+        "code": 1,
+        "rationale": "The President directed U.S. forces to conduct military strikes against identified facilities; this is operational command implemented on the stated later date, not a change in legal rights or status.",
+        "evidence": "I directed United States forces to conduct discrete strikes"
+      },
+      {
+        "segment_id": "3",
+        "code": 1,
+        "rationale": "The President directed U.S. forces to conduct military strikes against specified facilities, while the remaining text explains their factual basis; this is discretionary military direction rather than a legally consequential act.",
+        "evidence": "I directed United States forces to conduct discrete strikes against facilities in Syria and Iraq"
+      },
+      {
+        "segment_id": "4",
+        "code": 1,
+        "rationale": "The President states that he directed military actions under his constitutional and statutory authority; the operative object is executive military activity, with consequences occurring through forces' operations rather than through a present legal-status change.",
+        "evidence": "I directed these discrete military actions"
+      },
+      {
+        "segment_id": "5",
+        "code": 0,
+        "rationale": "This is only a geographic heading and contains no actor, action, or legal consequence.",
+        "evidence": "Arabian Peninsula Region."
+      },
+      {
+        "segment_id": "6",
+        "code": 1,
+        "rationale": "U.S. military actors continue operational cooperation, advice, deployments, and defensive support; these are ongoing discretionary military-management activities, not prescribed legal outcomes or self-executing legal consequences.",
+        "evidence": "The United States military continues to work closely with the Republic of Yemen government and regional partner forces"
+      },
+      {
+        "segment_id": "7",
+        "code": 1,
+        "rationale": "The President directed U.S. forces to carry out specified strikes on stated dates; this is discretionary operational command, with the physical operations occurring through later military execution rather than a legal consequence.",
+        "evidence": "I directed United States forces, as part of a multinational operation, to conduct discrete strikes"
+      },
+      {
+        "segment_id": "8",
+        "code": 1,
+        "rationale": "The segment describes presidential military direction and ongoing or planned deployments, support, withdrawal, detention, and allied operations by executive personnel; these are operational and managerial activities without a mandated legal-rights outcome.",
+        "evidence": "I directed the strikes in order to protect and defend United States personnel and assets"
+      },
+      {
+        "segment_id": "9",
+        "code": 1,
+        "rationale": "The President directed military deployment and participation in described operations, and executive officials continue related congressional communications; these are discretionary command and coordination activities, with implementation occurring through military deployment rather than a self-executing legal consequence.",
+        "evidence": "I have directed the participation of United States Armed Forces in all of the above-described operations"
+      }
+    ]
+  },
+  "returncode": 0
+}

@@ -1,0 +1,33 @@
+{
+  "document_id": "9574",
+  "request_hash": "0efd869f75868dd6311da537dd3f447a3301d48b467d480984208f45005ae863",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 6.78,
+  "usage": {
+    "input_tokens": 16261,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 152,
+    "reasoning_output_tokens": 0
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 1,
+        "rationale": "The Task Force must develop recommendations, review the existing coordination framework, coordinate policy work, and identify implementation priorities. These are internal study, planning, and coordination activities; the segment does not itself change legal rights or dictate a later legally consequential agency result.",
+        "evidence": "the Task Force shall develop recommendations"
+      },
+      {
+        "segment_id": "2",
+        "code": 1,
+        "rationale": "The Task Force must develop a recommended planning framework with public input and then terminate after completing its duties. These are advisory planning and internal organizational actions, not substantive legal consequences.",
+        "evidence": "the Task Force shall develop, with appropriate public input, a recommended framework"
+      }
+    ]
+  },
+  "returncode": 0
+}

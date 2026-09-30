@@ -1,0 +1,105 @@
+{
+  "document_id": "11530",
+  "request_hash": "e4689cfa2cfd163520bc7bfec9de17815d352f5f69cf63838f26e39c59f853fc",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 22.22,
+  "usage": {
+    "input_tokens": 17393,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 1018,
+    "reasoning_output_tokens": 129
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 1,
+        "rationale": "The President expresses expectations for government decision-makers to balance interests, involve consumers, and act on complaints during policymaking; this guides discretionary agency process rather than itself changing legal rights.",
+        "evidence": "I expect government decision-makers to balance the effect government policy will have"
+      },
+      {
+        "segment_id": "2",
+        "code": 1,
+        "rationale": "The President assigns the Special Assistant an ongoing monitoring responsibility over agency implementation; the consequence is an immediate internal management assignment, not a substantive legal outcome.",
+        "evidence": "shall have continuing responsibility to monitor the extent and effectiveness"
+      },
+      {
+        "segment_id": "3",
+        "code": 1,
+        "rationale": "OMB must evaluate the plans during its annual internal budget process, with no specified legally consequential result dictated by the segment.",
+        "evidence": "shall assess during the annual budget process the effectiveness of the Consumer Representation Plans"
+      },
+      {
+        "segment_id": "4",
+        "code": 1,
+        "rationale": "Executive officials and agencies must report, train employees, monitor and evaluate programs, strengthen plans as needed, and provide procedural notice; these are administrative implementation and oversight duties rather than dictated substantive legal outcomes.",
+        "evidence": "shall maintain internal monitoring and evaluation systems"
+      },
+      {
+        "segment_id": "5",
+        "code": 1,
+        "rationale": "Agencies must publish contact information and support consumer-education activities, while the liaison provides technical support; these are administrative communication and program-participation directions without a change in legal rights.",
+        "evidence": "shall provide in a manner and format determined by the General Services Administration the name, address, and telephone number"
+      },
+      {
+        "segment_id": "6",
+        "code": 1,
+        "rationale": "The President directs the Special Assistant to coordinate an executive activity and encourage voluntary participation by independent agencies, which is internal coordination rather than a prescribed legal consequence.",
+        "evidence": "to coordinate this activity, encourage the participation of independent agencies"
+      },
+      {
+        "segment_id": "7",
+        "code": 1,
+        "rationale": "The Special Assistant must report to the President, and agencies must make efforts to provide bilingual personnel; both are administrative reporting and service-delivery directions without a specified legal-rights outcome.",
+        "evidence": "each Department and Agency shall cooperatively make every effort in regional and field offices to have available bilingual personnel"
+      },
+      {
+        "segment_id": "8",
+        "code": 1,
+        "rationale": "Agency headquarters must make context-dependent efforts to provide multilingual outreach when relevant policies are proposed; this governs discretionary administrative communication rather than imposing a legal consequence.",
+        "evidence": "Departments and Agencies shall make extra effort to reach these citizens through multi-lingual notices"
+      },
+      {
+        "segment_id": "9",
+        "code": 1,
+        "rationale": "Federal boards and councils are directed, as appropriate, to establish liaison programs, an internal programmatic and organizational measure with no dictated legal outcome.",
+        "evidence": "shall establish, as appropriate, programs to help assure Federal liaison"
+      },
+      {
+        "segment_id": "10",
+        "code": 1,
+        "rationale": "The President assigns the Special Assistant, in coordination with OMB, to develop guidelines within thirty days; this is an internal planning and coordination task.",
+        "evidence": "to develop guidelines for this effort within thirty days"
+      },
+      {
+        "segment_id": "11",
+        "code": 0,
+        "rationale": "The President states his evaluative conclusion that consolidation would enhance two offices, but this segment neither directs an official action nor itself changes their organization or any legal right.",
+        "evidence": "I have decided each of their strengths in serving the consumer interest would be enhanced by a more consolidated approach"
+      },
+      {
+        "segment_id": "12",
+        "code": 1,
+        "rationale": "The President directs staff to explore methods and seek to accommodate an administrative consolidation; the segment orders internal study and organizational work without itself completing the consolidation.",
+        "evidence": "I am directing my staff to seek methods that will strengthen that relationship"
+      },
+      {
+        "segment_id": "13",
+        "code": 1,
+        "rationale": "Departments and agencies must implement identified policy statements immediately, but the segment does not specify a binding legal consequence or prescribed legal outcome.",
+        "evidence": "I am instructing each Department and Agency, where they have not done so, to implement them at once"
+      },
+      {
+        "segment_id": "14",
+        "code": 1,
+        "rationale": "Agencies and the Special Assistant must disseminate information, report expected improvements, and pursue broad regulatory-process goals; these are administrative communication, reporting, and discretionary policy directions rather than specified legal consequences.",
+        "evidence": "shall ensure that there is wide public dissemination of information about the availability of procedures embodied in these Plans"
+      }
+    ]
+  },
+  "returncode": 0
+}

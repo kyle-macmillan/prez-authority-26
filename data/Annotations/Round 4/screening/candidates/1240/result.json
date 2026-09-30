@@ -1,0 +1,51 @@
+{
+  "document_id": "1240",
+  "request_hash": "28e1508c0e0ce508e968211a69ad41d7e6e7abd3d660ec7a187f4e5801e035fc",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 13.46,
+  "usage": {
+    "input_tokens": 16966,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 459,
+    "reasoning_output_tokens": 68
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 1,
+        "rationale": "The Secretary must move to establish an internal FAA organization, while the Administrator determines its components and may delegate operational responsibilities; these are present organizational and management directions, not changes to external legal rights.",
+        "evidence": "The Secretary of Transportation (Secretary) shall, consistent with his legal authorities, move to establish within the Federal Aviation Administration (FAA) a performancebased organization"
+      },
+      {
+        "segment_id": "2",
+        "code": 1,
+        "rationale": "The COO is assigned an internal leadership and reporting role and must later negotiate a performance agreement; the possible bonus remains contingent on a future performance evaluation rather than being presently awarded or mandated.",
+        "evidence": "The COO, in consultation with the Air Traffic Control Subcommittee of the Aviation Management Advisory Committee, shall enter into an annual performance agreement with the Administrator"
+      },
+      {
+        "segment_id": "3",
+        "code": 1,
+        "rationale": "The COO and ATO are directed to plan, coordinate, consult, operate, develop agreements and methods, create managerial incentives, and recommend changes; these are internal management and discretionary implementation activities without a dictated legal outcome.",
+        "evidence": "The COO shall develop a 5-year strategic plan for the air traffic control system"
+      },
+      {
+        "segment_id": "4",
+        "code": 1,
+        "rationale": "The Air Traffic Control Subcommittee must provide ongoing internal oversight of the ATO's administration and operations, an executive-management function rather than a substantive legal consequence.",
+        "evidence": "shall provide, consistent with its responsibilities under Air-21, general oversight to ATO"
+      },
+      {
+        "segment_id": "5",
+        "code": 1,
+        "rationale": "The Committee must submit an internal evaluative report within five years; the accompanying definition and judicial-review disclaimer do not themselves impose a substantive legal consequence or direct a later one.",
+        "evidence": "shall provide to the Secretary and the Administrator a report on the operation and effectiveness of the ATO"
+      }
+    ]
+  },
+  "returncode": 0
+}

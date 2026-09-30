@@ -1,0 +1,45 @@
+{
+  "document_id": "5248",
+  "request_hash": "5c588d6e6f4f0fa589e1c6948a32ad637341df51a9cc5cb66bdcb29ab4bd4bcb",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 11.42,
+  "usage": {
+    "input_tokens": 15408,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 475,
+    "reasoning_output_tokens": 189
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 0,
+        "rationale": "The President only recounts a past designation and historical events; the segment contains no present operative action or legal consequence.",
+        "evidence": "I designated Serbia and Montenegro as a beneficiary developing country for purposes of the GSP."
+      },
+      {
+        "segment_id": "2",
+        "code": 3,
+        "rationale": "The President presently makes the statutory determination that Serbia and Montenegro should separately receive GSP designations; the determination occurs in this segment, although designation follows separately.",
+        "evidence": "I have determined that, in light of the separation of Serbia and Montenegro into two countries, the Republic of Serbia and the Republic of Montenegro should each be designated as beneficiary developing countries for purposes of the GSP."
+      },
+      {
+        "segment_id": "3",
+        "code": 3,
+        "rationale": "The President presently makes the statutory high-income determination concerning Trinidad and Tobago, which triggers the legally prescribed termination consequence.",
+        "evidence": "I have determined that Trinidad and Tobago has become a \"high income\" country"
+      },
+      {
+        "segment_id": "4",
+        "code": 3,
+        "rationale": "The President himself terminates Trinidad and Tobago's GSP beneficiary designation, with the legal consequence taking effect on the specified date.",
+        "evidence": "I am terminating the designation of that country as a beneficiary developing country for purposes of the GSP, effective January 1, 2010."
+      }
+    ]
+  },
+  "returncode": 0
+}

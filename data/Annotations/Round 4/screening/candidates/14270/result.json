@@ -1,0 +1,27 @@
+{
+  "document_id": "14270",
+  "request_hash": "610850ce22da8377d81bed744a4ec7aa03ee3b8f1051a52d16afc932da5b7e46",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 9.5,
+  "usage": {
+    "input_tokens": 15213,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 287,
+    "reasoning_output_tokens": 179
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 1,
+        "rationale": "The President directs executive offices and agencies to assist the Social Security Administration with enrollment outreach, an internal implementation and coordination function that does not itself alter eligibility or require a specified later legal outcome. The surrounding proclamation and public appeals are ceremonial or hortatory and do not change that administrative posture.",
+        "evidence": "I urge and direct all offices and agencies of the Executive Department to assist the Social Security Administration"
+      }
+    ]
+  },
+  "returncode": 0
+}

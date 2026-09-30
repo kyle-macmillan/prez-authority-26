@@ -1,0 +1,27 @@
+{
+  "document_id": "11819",
+  "request_hash": "dab8a769fbc7639016ff0176d4e74b82c6618425ff446e5c244686dbe95370ca",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 5.26,
+  "usage": {
+    "input_tokens": 16193,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 76,
+    "reasoning_output_tokens": 0
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 0,
+        "rationale": "This is a presidential veto communication explaining disapproval of proposed legislation and expressing an intention to request different legislation from Congress. It does not govern agencies or itself alter legal rights.",
+        "evidence": "I find myself unable to approve the present bill."
+      }
+    ]
+  },
+  "returncode": 0
+}

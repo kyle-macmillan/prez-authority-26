@@ -1,0 +1,39 @@
+{
+  "document_id": "16296",
+  "request_hash": "de2c2981b60326a354cb3e0d4fe6dab30a63857f4a26c0e580f43fcd4f22ec0c",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 13.28,
+  "usage": {
+    "input_tokens": 17455,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 509,
+    "reasoning_output_tokens": 270
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 3,
+        "rationale": "The President presently reserves federally owned or controlled lands as a national monument and withdraws them from disposition under the public-land laws; the legal consequence occurs upon issuance of the proclamation, subject to existing rights.",
+        "evidence": "there are hereby set apart and reserved as the Grand Staircase-Escalante National Monument"
+      },
+      {
+        "segment_id": "2",
+        "code": 1,
+        "rationale": "The Secretary must prepare a management plan and may later issue regulations deemed appropriate; this directs planning and discretionary implementation rather than dictating a particular later legal outcome. The water sentence limits the proclamation's effect rather than reserving water.",
+        "evidence": "shall promulgate such regulations for its management as he deems appropriate"
+      },
+      {
+        "segment_id": "3",
+        "code": 1,
+        "rationale": "The President directs the Secretary to evaluate water needs and possible future action in the management plan; no specified legal consequence is mandated. The accompanying warning does not itself impose a new sanction or alter legal status.",
+        "evidence": "I direct the Secretary to address in the management plan the extent to which water is necessary"
+      }
+    ]
+  },
+  "returncode": 0
+}

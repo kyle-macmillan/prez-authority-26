@@ -1,0 +1,27 @@
+{
+  "document_id": "8839",
+  "request_hash": "4b780f852b9f43736b792a5792339811b9264980af3d6535a6c98152953450b8",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 4.73,
+  "usage": {
+    "input_tokens": 14984,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 98,
+    "reasoning_output_tokens": 0
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 1,
+        "rationale": "The President delegates an existing statutory function to the Secretary of State, assigning internal executive authority without itself directing the drawdown or making the required statutory determinations. Any legal consequence would occur later if the Secretary exercises the delegated authority.",
+        "evidence": "I hereby delegate to the Secretary of State the authority under section 506(a)(1) of the FAA"
+      }
+    ]
+  },
+  "returncode": 0
+}

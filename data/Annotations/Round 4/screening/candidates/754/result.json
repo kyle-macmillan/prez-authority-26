@@ -1,0 +1,33 @@
+{
+  "document_id": "754",
+  "request_hash": "59593a114aab3778c46d96bfcda9435c84606d6ffb5e02621788c00361ddaf9e",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 11.22,
+  "usage": {
+    "input_tokens": 16480,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 303,
+    "reasoning_output_tokens": 140
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 1,
+        "rationale": "The President states an executive-branch enforcement policy and procurement objective, directing discretionary implementation rather than itself changing legal rights or requiring a specified later legal outcome.",
+        "evidence": "It is the policy of the executive branch to enforce vigorously the civil rights laws of the United States"
+      },
+      {
+        "segment_id": "2",
+        "code": 2,
+        "rationale": "The President amends the prior contracting order to require a specified nondiscrimination clause, with the legally consequential obligation arising later through agency regulations and covered federal contracts; the accompanying regulatory instruction and savings provisions do not alter that controlling posture.",
+        "evidence": "The contractor will not discharge or in any other manner discriminate against any employee or applicant for employment"
+      }
+    ]
+  },
+  "returncode": 0
+}

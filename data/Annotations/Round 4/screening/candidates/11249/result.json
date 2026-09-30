@@ -1,0 +1,39 @@
+{
+  "document_id": "11249",
+  "request_hash": "024ecb8d245fa74835c7f811cdc8af4a149d835d2dbaf5b39594dd74a3a01bb0",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 9.06,
+  "usage": {
+    "input_tokens": 15614,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 315,
+    "reasoning_output_tokens": 115
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 1,
+        "rationale": "The President identifies his completion of a statutory decision process but does not specify or itself impose the legal outcome in this segment.",
+        "evidence": "I have determined the action I will take with respect to the report of the United States International Trade Commission"
+      },
+      {
+        "segment_id": "2",
+        "code": 3,
+        "rationale": "The President presently makes the statutory national-economic-interest determination that denies the requested copper import relief; any later administrative steps are merely consequential.",
+        "evidence": "I have determined that granting import relief is not consistent with our national economic interest."
+      },
+      {
+        "segment_id": "3",
+        "code": 1,
+        "rationale": "The segment directs executive officials to develop an assistance plan and monitor industry conditions, without prescribing a later binding legal consequence.",
+        "evidence": "I have directed the Secretary of Labor to work with State and local officials to develop a plan of job retraining and relocation assistance"
+      }
+    ]
+  },
+  "returncode": 0
+}

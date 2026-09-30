@@ -1,0 +1,27 @@
+{
+  "document_id": "6983",
+  "request_hash": "183687e2a29646870873a367302c31b828d36e7746e828b58163c53c487f3a1a",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 5.95,
+  "usage": {
+    "input_tokens": 15746,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 89,
+    "reasoning_output_tokens": 0
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 0,
+        "rationale": "The actor is the resigning Secretary, who promises transitional support and assistance; the remainder recounts policy developments and expresses concerns and good wishes. It contains no presidential direction to an agency and itself creates no legal consequence.",
+        "evidence": "You shall have whatever assistance I can provide-as well as my best wishes"
+      }
+    ]
+  },
+  "returncode": 0
+}

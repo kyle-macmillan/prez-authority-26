@@ -1,0 +1,33 @@
+{
+  "document_id": "3108",
+  "request_hash": "cf5592e80b3ee27088cc958c399d5a4cfa78f0507cfb4028dbde9b40af57d040",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 7.15,
+  "usage": {
+    "input_tokens": 15207,
+    "cached_input_tokens": 0,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 208,
+    "reasoning_output_tokens": 51
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 3,
+        "rationale": "The President presently establishes when the tariff amendments apply to covered articles, directly determining their legal applicability beginning January 1, 1967.",
+        "evidence": "the amendments to the Tariff Schedules of the United States made by section 3 (a) of the Joint Resolution shall apply"
+      },
+      {
+        "segment_id": "2",
+        "code": 1,
+        "rationale": "The President designates the United States Information Agency to administer the agreement and assigns it authority to make required determinations and regulations, without dictating their substantive outcomes.",
+        "evidence": "the United States Information Agency is hereby designated as the agency to carry out the provisions of the Agreement and related protocol"
+      }
+    ]
+  },
+  "returncode": 0
+}

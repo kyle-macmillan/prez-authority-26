@@ -1,0 +1,51 @@
+{
+  "document_id": "19024",
+  "request_hash": "c8a37fbcf0bdbdd2a78bd05f9c0abdf30a42c39cf67d9324e9b440567374cd38",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 9.79,
+  "usage": {
+    "input_tokens": 15450,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 347,
+    "reasoning_output_tokens": 30
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 0,
+        "rationale": "The actor is the general public, and the provision merely urges voluntary family contact and reconciliation; it imposes no governmental mandate or legal consequence.",
+        "evidence": "All Americans should encourage families and missing family members to get in touch with each other"
+      },
+      {
+        "segment_id": "2",
+        "code": 0,
+        "rationale": "The provision hortatorily encourages missing family members to contact families or support organizations, with no mandatory government action or legal consequence.",
+        "evidence": "We should encourage missing family members to make direct contact with their families"
+      },
+      {
+        "segment_id": "3",
+        "code": 0,
+        "rationale": "The segment combines a voluntary appeal to families with a recital of Congress's request for a commemorative proclamation; neither governs agencies nor alters legal rights.",
+        "evidence": "We also should encourage families whose ties are weak to seek out the programs which offer counseling and support to keep families together."
+      },
+      {
+        "segment_id": "4",
+        "code": 0,
+        "rationale": "The President ceremonially designates a commemorative month, which the codebook treats as outside agency governance and legal-rights consequences.",
+        "evidence": "do hereby proclaim the period between May 13 and June 17, 1984, as Family Reunion Month."
+      },
+      {
+        "segment_id": "5",
+        "code": 0,
+        "rationale": "The President makes a hortatory appeal for voluntary public celebration, creating no mandatory action or legal consequence.",
+        "evidence": "I call upon all Americans to celebrate this month with appropriate ceremonies and activities."
+      }
+    ]
+  },
+  "returncode": 0
+}

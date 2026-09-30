@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a0d9f5-1322-7120-b8e0-a464f18fe84c"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"classifications\":[{\"segment_id\":\"1\",\"code\":0,\"rationale\":\"The President ceremonially designates commemorative days; this does not govern agencies or alter legal rights.\",\"evidence\":\"do hereby proclaim December 10, 1963, as Human Rights Day\"},{\"segment_id\":\"2\",\"code\":0,\"rationale\":\"The segment completes a ceremonial designation and makes hortatory appeals to the public, without directing agency governance or changing legal rights.\",\"evidence\":\"call upon the people of the United States to observe the week December 10-17 as Human Rights Week\"}]}"}}
+{"type":"turn.completed","usage":{"input_tokens":15572,"cached_input_tokens":11264,"cache_write_input_tokens":0,"output_tokens":128,"reasoning_output_tokens":0}}

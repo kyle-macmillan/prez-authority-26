@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a0d9f3-bb59-7c93-b835-23607c8c43ca"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"classifications\":[{\"segment_id\":\"1\",\"code\":0,\"rationale\":\"The President is urging Congress and offering Administration cooperation in developing banking legislation; the segment neither governs executive agencies nor itself changes legal rights or mandates a later agency legal outcome.\",\"evidence\":\"Let us now work together to craft the broad banking reform legislation that this country needs.\"}]}"}}
+{"type":"turn.completed","usage":{"input_tokens":15295,"cached_input_tokens":11264,"cache_write_input_tokens":0,"output_tokens":82,"reasoning_output_tokens":0}}

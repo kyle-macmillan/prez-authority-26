@@ -1,0 +1,51 @@
+{
+  "document_id": "17298",
+  "request_hash": "aa632776245b2c490a3160248e20c807706b6de155c1b552e60e1165bc3aed26",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 13.93,
+  "usage": {
+    "input_tokens": 16558,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 566,
+    "reasoning_output_tokens": 264
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 0,
+        "rationale": "The segment is an introductory authority clause and section heading; it identifies the President and announces that operative directions follow but itself directs no agency action or legal consequence.",
+        "evidence": "hereby proclaim and direct as follows"
+      },
+      {
+        "segment_id": "2",
+        "code": 3,
+        "rationale": "Although subsection (a) directs executive process creation, subsection (b) itself mandates Federal funding for qualifying flights, presently establishing a substantive funding obligation when such flights are provided.",
+        "evidence": "shall be funded by the Federal Government"
+      },
+      {
+        "segment_id": "3",
+        "code": 1,
+        "rationale": "The Secretaries are directed to take appropriate implementation actions and establish an administrative concierge service; the segment does not itself award the referenced bonus or independently alter immigration status.",
+        "evidence": "shall create a concierge service"
+      },
+      {
+        "segment_id": "4",
+        "code": 2,
+        "rationale": "The segment mandates the Secretaries to produce a specified later financial benefit—an exit bonus—for every qualifying departing alien.",
+        "evidence": "shall provide financial incentives in the form of an \"exit bonus\""
+      },
+      {
+        "segment_id": "5",
+        "code": 1,
+        "rationale": "The segment mandates an informational campaign and expansion of the Department's enforcement workforce through deputizing and contracting, which are executive communications, staffing, and operational-management measures rather than themselves removals or confiscations.",
+        "evidence": "shall supplement existing enforcement and removal operations by deputizing and contracting"
+      }
+    ]
+  },
+  "returncode": 0
+}

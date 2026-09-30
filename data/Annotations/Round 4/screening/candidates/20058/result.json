@@ -1,0 +1,39 @@
+{
+  "document_id": "20058",
+  "request_hash": "65f2015d496a7104947d7e11862247230ecc578b08b762b9f47ae71422241eab",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 10.17,
+  "usage": {
+    "input_tokens": 15966,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 372,
+    "reasoning_output_tokens": 191
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 1,
+        "rationale": "The President announces an immediately effective amendment to an existing proclamation, but this introductory segment does not itself specify a substantive change in legal rights or duties.",
+        "evidence": "effective as of the date of this Proclamation"
+      },
+      {
+        "segment_id": "2",
+        "code": 1,
+        "rationale": "The amendment gives the Secretary discretionary authority to permit excess imports after specified findings; it does not require a particular allocation or itself grant one.",
+        "evidence": "the Secretary may allocate imports"
+      },
+      {
+        "segment_id": "3",
+        "code": 2,
+        "rationale": "Although much of the segment authorizes discretionary interim allocations, it also requires the Secretary to impose a specified later reduction on any subsequent allocation received by an interim-allocation recipient.",
+        "evidence": "shall be reduced by an amount equal to the interim allocation"
+      }
+    ]
+  },
+  "returncode": 0
+}

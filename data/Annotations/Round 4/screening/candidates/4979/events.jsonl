@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a0d9f6-a5e8-7330-b438-78a16c3012f8"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"classifications\":[{\"segment_id\":\"1\",\"code\":3,\"rationale\":\"The President presently makes the statutory emergency-requirement designation for specified funding accounts; the legal consequence occurs upon this designation rather than through a later dictated agency decision.\",\"evidence\":\"I hereby designate as emergency requirements all funding so designated by the Congress in the Act\"}]}"}}
+{"type":"turn.completed","usage":{"input_tokens":14987,"cached_input_tokens":11264,"cache_write_input_tokens":0,"output_tokens":80,"reasoning_output_tokens":0}}

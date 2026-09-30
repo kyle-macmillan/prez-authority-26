@@ -1,0 +1,75 @@
+{
+  "document_id": "15891",
+  "request_hash": "d10fc00ec55f14a99c56f86fd4d0fae5d784610e426a2f14f0c46563912e64f6",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 19.74,
+  "usage": {
+    "input_tokens": 17830,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 898,
+    "reasoning_output_tokens": 203
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 3,
+        "rationale": "The President makes a statutory eligibility designation for specified imported articles; that presidential determination itself establishes their GSP eligibility, with tariff implementation reflected later in the proclamation.",
+        "evidence": "I have determined to designate certain articles, previously designated under section 503(a)(1)(B), as eligible articles when imported from any beneficiary developing country."
+      },
+      {
+        "segment_id": "2",
+        "code": 3,
+        "rationale": "The President makes a statutory determination limiting duty-free treatment for specified articles and countries; the legal consequence arises from the determination itself.",
+        "evidence": "I have determined to limit the application of duty-free treatment accorded to certain articles from certain beneficiary developing countries."
+      },
+      {
+        "segment_id": "3",
+        "code": 3,
+        "rationale": "The President determines that specified countries lose preferential tariff treatment for articles exceeding competitive-need limits, presently establishing the loss of eligibility rather than directing a later agency choice.",
+        "evidence": "I have determined that certain beneficiary countries should no longer receive preferential tariff treatment under the GSP"
+      },
+      {
+        "segment_id": "4",
+        "code": 3,
+        "rationale": "The President makes the statutory redesignation of specified countries for specified eligible articles, thereby restoring their GSP status as to those articles.",
+        "evidence": "I have determined that certain countries should be redesignated as beneficiary developing countries with respect to certain eligible articles"
+      },
+      {
+        "segment_id": "5",
+        "code": 3,
+        "rationale": "The President makes a statutory determination to waive the competitive-need limitation for specified articles and countries; the waiver is a presidential legal consequence, not a dictated later agency outcome.",
+        "evidence": "I have determined that the competitive need limitation provided in section 503(c)(2)(A)(i)(II) should be waived"
+      },
+      {
+        "segment_id": "6",
+        "code": 3,
+        "rationale": "The President makes the statutory waiver determination for specified articles and beneficiary countries, directly removing otherwise applicable competitive-need limitations.",
+        "evidence": "I have determined that the competitive need limitations of section 503(c)(2)(A) should be waived"
+      },
+      {
+        "segment_id": "7",
+        "code": 3,
+        "rationale": "The President makes the statutorily relevant national-economic-interest determination supporting the waivers; it is a substantive presidential legal finding made after receiving agency advice.",
+        "evidence": "I have determined, based on that advice and on the considerations described in sections 501 and 502(c), that such waivers are in the national economic interest of the United States."
+      },
+      {
+        "segment_id": "8",
+        "code": 3,
+        "rationale": "The President determines that a statutory competitive-need limitation does not apply to a specified tariff subheading, directly changing the governing tariff eligibility rule.",
+        "evidence": "I have determined that the limitation provided for in section 503(c)(2)(A)(i)(II) shall not apply with respect to HTS subheading 3817.10.50"
+      },
+      {
+        "segment_id": "9",
+        "code": 3,
+        "rationale": "The President directly modifies the HTS, applies a statutory waiver, supersedes inconsistent prior provisions, and fixes effective dates; these acts themselves alter tariff treatment and related legal status without requiring a later agency decision.",
+        "evidence": "A waiver of the application of section 503(c)(2)(A) of the 1974 Act shall apply to the eligible articles in the HTS subheadings and to the beneficiary developing countries set forth in Annex II to this proclamation."
+      }
+    ]
+  },
+  "returncode": 0
+}

@@ -1,0 +1,39 @@
+{
+  "document_id": "1058",
+  "request_hash": "008f80f6f58f6b03c47281f9550f25f6e8110eae83b042257a8ca7e40be43265",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 10.02,
+  "usage": {
+    "input_tokens": 15799,
+    "cached_input_tokens": 0,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 301,
+    "reasoning_output_tokens": 48
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 1,
+        "rationale": "The President immediately amends the structure of a prior executive order by directing textual insertions; this is internal administrative housekeeping and does not itself alter legal rights or dictate a later agency legal outcome.",
+        "evidence": "Executive Order 12163 of September 29, 1979, as amended, is further amended as follows"
+      },
+      {
+        "segment_id": "2",
+        "code": 1,
+        "rationale": "The President assigns specified statutory functions to executive officials through amendments to the prior order, including a consultation requirement; this is an internal delegation of authority, with any substantive consequences arising only from later exercises of those functions.",
+        "evidence": "which the Secretary shall perform, in the case of section 304, after consultation with the Secretary of Health and Human Services"
+      },
+      {
+        "segment_id": "3",
+        "code": 1,
+        "rationale": "Federal officers must administer the order consistently with reserved presidential authorities, while the provision preserves OMB functions and disclaims enforceable rights; these are internal implementation and savings rules, not substantive legal consequences.",
+        "evidence": "officers of the United States shall ensure that all actions taken by them are consistent with the President's constitutional authority"
+      }
+    ]
+  },
+  "returncode": 0
+}

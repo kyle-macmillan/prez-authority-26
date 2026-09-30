@@ -1,0 +1,63 @@
+{
+  "document_id": "9066",
+  "request_hash": "dcfd624c668462eac110fbc13a1819e6b2a654b76938395f80ad6ad896e5828c",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 17.98,
+  "usage": {
+    "input_tokens": 17506,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 688,
+    "reasoning_output_tokens": 223
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 3,
+        "rationale": "The President presently ends United States participation in the JCPOA; the consequence occurs in this segment, with subsequent agency steps implementing that decision.",
+        "evidence": "I am today making good on my pledge to end the participation of the United States in the JCPOA."
+      },
+      {
+        "segment_id": "2",
+        "code": 1,
+        "rationale": "The President states a national-interest conclusion and establishes policy objectives, while leaving the means of pursuing them adjustable rather than itself reimposing sanctions.",
+        "evidence": "The United States will continue to pursue these aims and the objectives contained in the Iran strategy"
+      },
+      {
+        "segment_id": "3",
+        "code": 2,
+        "rationale": "The Secretaries are mandatorily directed to produce later consequential outcomes—ending participation and reimposing all covered sanctions—within a specified period.",
+        "evidence": "The Secretary of State and the Secretary of the Treasury shall immediately begin taking steps to re-impose all United States sanctions lifted or waived in connection with the JCPOA"
+      },
+      {
+        "segment_id": "4",
+        "code": 1,
+        "rationale": "The Secretaries must coordinate and prepare possible executive, regulatory, waiver, listing, and guidance measures, but the segment preserves discretion and does not dictate those later legal results.",
+        "evidence": "The Secretary of State and the Secretary of the Treasury shall coordinate, as appropriate, on steps needed to achieve this aim."
+      },
+      {
+        "segment_id": "5",
+        "code": 1,
+        "rationale": "Defense and other agency heads are directed to undertake contingency preparation, an internal operational and planning function without a specified legal consequence.",
+        "evidence": "shall prepare to meet, swiftly and decisively, all possible modes of Iranian aggression"
+      },
+      {
+        "segment_id": "6",
+        "code": 1,
+        "rationale": "The Department of Defense must develop and retain national-security capabilities; this is internal operational direction rather than a present or dictated later legal consequence.",
+        "evidence": "shall ensure that the United States develops and retains the means"
+      },
+      {
+        "segment_id": "7",
+        "code": 1,
+        "rationale": "Agencies must conduct monitoring and advisory work, while the remaining language preserves existing executive authorities and functions; these are internal management provisions.",
+        "evidence": "the heads of agencies shall advise me, as appropriate, regarding opportunities for such consultations"
+      }
+    ]
+  },
+  "returncode": 0
+}

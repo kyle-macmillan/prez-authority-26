@@ -1,0 +1,39 @@
+{
+  "document_id": "1895",
+  "request_hash": "cd513221df806a85f1aaa0752293d7bf54bda3a8abe30b03a9be5c74c6e6728a",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 9.14,
+  "usage": {
+    "input_tokens": 16313,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 246,
+    "reasoning_output_tokens": 56
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 3,
+        "rationale": "The President presently modifies the tariff schedule, designates listed countries, and grants qualifying imports duty-free treatment; the legal consequence occurs under the provision itself when the stated import conditions are met.",
+        "evidence": "The following beneficiary countries are designated as least-developed beneficiary developing countries"
+      },
+      {
+        "segment_id": "2",
+        "code": 3,
+        "rationale": "The President presently amends the governing GSP annex to add article 734.56, directly changing its eligibility for preferential treatment.",
+        "evidence": "is further amended by inserting in numerical sequence \"734.56\""
+      },
+      {
+        "segment_id": "3",
+        "code": 3,
+        "rationale": "The President presently amends the GSP annex and tariff schedule and prescribes when those substantive eligibility changes take effect.",
+        "evidence": "The amendments made by this Order shall be effective with respect to articles"
+      }
+    ]
+  },
+  "returncode": 0
+}

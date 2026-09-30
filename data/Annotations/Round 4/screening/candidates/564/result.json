@@ -1,0 +1,51 @@
+{
+  "document_id": "564",
+  "request_hash": "89a85df641cabc63874c0e088b5e86fb8f5c52797f207c77bd34e18cd75fe97a",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 15.75,
+  "usage": {
+    "input_tokens": 19455,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 561,
+    "reasoning_output_tokens": 207
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 1,
+        "rationale": "The President presently establishes an executive-branch policy of active Federal-land management; it guides later agency action but itself changes no legal rights or status.",
+        "evidence": "It is the policy of the United States to protect people, communities, and watersheds"
+      },
+      {
+        "segment_id": "2",
+        "code": 1,
+        "rationale": "The Secretaries must implement management policies and later develop departmental goals and implementation plans; these are planning, coordination, and prioritization duties without a dictated legal consequence.",
+        "evidence": "the Secretaries shall each develop goals and implementation plans for wildfire prevention activities and programs in their respective departments"
+      },
+      {
+        "segment_id": "3",
+        "code": 1,
+        "rationale": "The Interior Secretary must review budget justifications and consider possible 2019 operational objectives, expressly retaining feasibility and appropriateness discretion; any implementation occurs later.",
+        "evidence": "shall review the Secretary's 2019 budget justifications and give all due consideration to establishing the following objectives"
+      },
+      {
+        "segment_id": "4",
+        "code": 1,
+        "rationale": "The Agriculture Secretary and both Secretaries must review, consider objectives, and develop performance metrics; these are discretionary program-management and measurement tasks rather than specified legal outcomes.",
+        "evidence": "The Secretaries shall also refine and develop performance metrics"
+      },
+      {
+        "segment_id": "5",
+        "code": 1,
+        "rationale": "The Secretaries must conduct reviews, coordination, prioritization, strategy development, procedural streamlining, and discretionary program implementation; later projects, agreements, and contracts remain subject to agency administration and applicable law rather than a presently imposed legal consequence.",
+        "evidence": "the Secretaries shall jointly develop, by December 31, 2020, a strategy"
+      }
+    ]
+  },
+  "returncode": 0
+}

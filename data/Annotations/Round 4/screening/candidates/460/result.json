@@ -1,0 +1,57 @@
+{
+  "document_id": "460",
+  "request_hash": "a0506e94b08a3bf84fbb5dd5bc7bbc8e5dd645f2284c9a246344db1eb6f7b46d",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 23.72,
+  "usage": {
+    "input_tokens": 18299,
+    "cached_input_tokens": 0,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 898,
+    "reasoning_output_tokens": 516
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 3,
+        "rationale": "The President presently declares a national emergency concerning the identified threat; the legally consequential emergency status arises from this declaration itself.",
+        "evidence": "I hereby declare a national emergency with respect to this threat."
+      },
+      {
+        "segment_id": "2",
+        "code": 3,
+        "rationale": "The President directly prohibits specified securities transactions by United States persons, permits limited divestment transactions, and prohibits evasion and conspiracy; these legal duties and exceptions arise from the segment itself on the stated dates.",
+        "evidence": "The following actions are prohibited:"
+      },
+      {
+        "segment_id": "3",
+        "code": 1,
+        "rationale": "The President authorizes the Secretary of the Treasury to implement the order and permits internal redelegation, without dictating a particular later rule or legal outcome.",
+        "evidence": "is hereby authorized to take such actions, including the promulgation of rules and regulations"
+      },
+      {
+        "segment_id": "4",
+        "code": 1,
+        "rationale": "Agencies must implement the order through appropriate measures within their existing authority, while any licensing procedures remain permissive rather than outcome-dictated.",
+        "evidence": "All agencies shall take all appropriate measures within their authority to carry out the provisions of this order."
+      },
+      {
+        "segment_id": "5",
+        "code": 3,
+        "rationale": "Although it includes a consultation requirement and future designation authority, the segment itself establishes the operative definitions determining which persons, entities, securities, and transactions are subject to the order's prohibitions.",
+        "evidence": "the term \"Communist Chinese military company\" means"
+      },
+      {
+        "segment_id": "6",
+        "code": 1,
+        "rationale": "The segment authorizes executive officials to transmit reports and preserves existing agency and OMB functions; it concerns internal authority and administrative housekeeping rather than changing private legal rights.",
+        "evidence": "Nothing in this order shall be construed to impair or otherwise affect:"
+      }
+    ]
+  },
+  "returncode": 0
+}

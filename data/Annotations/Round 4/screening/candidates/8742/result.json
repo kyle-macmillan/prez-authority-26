@@ -1,0 +1,27 @@
+{
+  "document_id": "8742",
+  "request_hash": "a603f7a64eb7e4eafaf117ebf3932f9bb4a3349025a25affcd32ba4a23b435d1",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 8.89,
+  "usage": {
+    "input_tokens": 14972,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 97,
+    "reasoning_output_tokens": 0
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 1,
+        "rationale": "The President delegates statutory authority to the Secretary of State to direct a potential drawdown and make the required determinations. This is an internal assignment of presidential functions; the segment does not itself order or effect the drawdown.",
+        "evidence": "I hereby delegate to the Secretary of State the authority under section 506(a)(1) of the FAA"
+      }
+    ]
+  },
+  "returncode": 0
+}

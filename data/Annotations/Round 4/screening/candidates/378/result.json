@@ -1,0 +1,63 @@
+{
+  "document_id": "378",
+  "request_hash": "2e4f2ab2e4945a843dca8b279dee65192e4e071dafbdb2ace5be38285023855c",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 30.1,
+  "usage": {
+    "input_tokens": 20550,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 826,
+    "reasoning_output_tokens": 244
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 1,
+        "rationale": "The President establishes an Education Department initiative and directs its Executive Director and other officials to manage, coordinate, and advise; these are immediate internal organizational and policy-management actions, not changes to legal rights or eligibility.",
+        "evidence": "there is established in the Department of Education (Department), the White House Initiative on Advancing Educational Equity, Excellence, and Economic Opportunity through Historically Black Colleges and Universities"
+      },
+      {
+        "segment_id": "2",
+        "code": 1,
+        "rationale": "The Initiative, agency heads, Executive Director, and interagency group must advise, coordinate, plan, report, monitor, and collaborate; any programmatic consequences would arise only through later discretionary agency action, and no specified legal outcome is dictated here.",
+        "evidence": "The Initiative's recommendations shall include advice on advancing policies, programs, and initiatives that further the policy set out in section 1 of this order."
+      },
+      {
+        "segment_id": "3",
+        "code": 1,
+        "rationale": "The Department must furnish internal administrative support, agencies may detail personnel, and the Initiative must coordinate with related initiatives; these are ongoing management and staffing directions within existing legal and appropriations limits.",
+        "evidence": "The Department shall provide funding and administrative support for the Initiative and the Interagency Working Group"
+      },
+      {
+        "segment_id": "4",
+        "code": 1,
+        "rationale": "The Executive Director must submit an annual internal report, while the President establishes and assigns functions and membership characteristics to an advisory board; these are reporting and organizational measures.",
+        "evidence": "There is established in the Department the President's Board of Advisors on Historically Black Colleges and Universities (Board)."
+      },
+      {
+        "segment_id": "5",
+        "code": 1,
+        "rationale": "The President must select a Board Chair and may select a Vice Chair; this is an internal assignment of leadership roles whose consequence occurs through presidential designation, not a substantive legal-rights determination.",
+        "evidence": "The President shall designate one member of the Board to serve as its Chair"
+      },
+      {
+        "segment_id": "6",
+        "code": 1,
+        "rationale": "The President directs the Board's support, composition, ex officio membership, and delegation of presidential advisory-committee functions; the travel-expense clause merely permits reimbursement as already authorized by law, so the segment remains administrative housekeeping.",
+        "evidence": "any functions of the President under that Act, except that of reporting to the Congress, shall be performed by the Chair"
+      },
+      {
+        "segment_id": "7",
+        "code": 1,
+        "rationale": "The President revokes and supersedes prior administrative orders, defines terminology for this order, and assigns agencies support and expense-bearing duties; these changes immediately reorganize internal executive administration without themselves altering external legal rights.",
+        "evidence": "Executive Order 13779 of February 28, 2017 (White House Initiative To Promote Excellence and Innovation at Historically Black Colleges and Universities), which is hereby revoked."
+      }
+    ]
+  },
+  "returncode": 0
+}

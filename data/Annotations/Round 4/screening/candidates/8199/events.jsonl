@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a0db62-46df-7260-8078-e8b846b5b3b0"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"classifications\":[{\"segment_id\":\"1\",\"code\":1,\"rationale\":\"The President appoints and assigns an immediate staff official to provide advice, review and develop interagency methods and programs, and attend specified executive meetings. These are internal staffing, advisory, review, and coordination actions; the segment does not itself alter substantive legal rights or dictate a later agency legal outcome.\",\"evidence\":\"I hereby appoint you as Special Assistant to the President.\"}]}"}}
+{"type":"turn.completed","usage":{"input_tokens":15206,"cached_input_tokens":11264,"cache_write_input_tokens":0,"output_tokens":102,"reasoning_output_tokens":0}}

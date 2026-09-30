@@ -1,0 +1,33 @@
+{
+  "document_id": "11082",
+  "request_hash": "ca5027cdaeb9a524ce9cfe06578e5e7b8dd1e482ff7ab18431e50b3176ddbae1",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 7.97,
+  "usage": {
+    "input_tokens": 15049,
+    "cached_input_tokens": 0,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 268,
+    "reasoning_output_tokens": 90
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 3,
+        "rationale": "The President presently makes the statutorily relevant determination that Canada has taken the measures necessary to comply with the Agreement; the legal consequence occurs upon this determination, notwithstanding any subsequent implementation.",
+        "evidence": "I have determined that Canada has taken measures necessary to comply with the obligations of the United States-Canada Free-Trade Agreement"
+      },
+      {
+        "segment_id": "2",
+        "code": 2,
+        "rationale": "The President mandates the Secretary of State to take a later diplomatic act—exchanging notes—that will provide for the Agreement’s legally consequential entry into force on the specified date.",
+        "evidence": "I hereby direct the Secretary of State to exchange notes with the Government of Canada providing for the entry into force, on January 1, 1989, of the Agreement"
+      }
+    ]
+  },
+  "returncode": 0
+}

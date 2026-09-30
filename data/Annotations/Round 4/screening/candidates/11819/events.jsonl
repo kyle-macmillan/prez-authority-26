@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a0db62-5555-7581-bcb1-0e2d25801816"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"classifications\":[{\"segment_id\":\"1\",\"code\":0,\"rationale\":\"This is a presidential veto communication explaining disapproval of proposed legislation and expressing an intention to request different legislation from Congress. It does not govern agencies or itself alter legal rights.\",\"evidence\":\"I find myself unable to approve the present bill.\"}]}"}}
+{"type":"turn.completed","usage":{"input_tokens":16193,"cached_input_tokens":11264,"cache_write_input_tokens":0,"output_tokens":76,"reasoning_output_tokens":0}}

@@ -1,0 +1,39 @@
+{
+  "document_id": "20119",
+  "request_hash": "fe374c2de2e6923947615d7f80aac7ecbc82252c34faab71c131268a4e03f11b",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 8.31,
+  "usage": {
+    "input_tokens": 15986,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 261,
+    "reasoning_output_tokens": 65
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 3,
+        "rationale": "The President presently imposes a binding 1972 import quota of 1,042.4 million pounds; the legal limitation occurs through this proclamation itself.",
+        "evidence": "the total quantity of the articles specified in item 106.10"
+      },
+      {
+        "segment_id": "2",
+        "code": 3,
+        "rationale": "The President makes the statutory economic-interest determination and presently suspends the proclaimed import limitation for 1972, directly altering the quota's legal operation.",
+        "evidence": "The limitation proclaimed in paragraph (1) is suspended during the calendar year 1972"
+      },
+      {
+        "segment_id": "3",
+        "code": 3,
+        "rationale": "The President presently makes the statutory necessity determination fixing the suspension's period, thereby supplying a legally consequential determination under section 2(d).",
+        "evidence": "It is hereby determined necessary that such suspension shall be for such period"
+      }
+    ]
+  },
+  "returncode": 0
+}

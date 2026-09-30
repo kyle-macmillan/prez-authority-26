@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a0d8fd-be0b-7c43-bb34-2acf10e481e7"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"classifications\":[{\"segment_id\":\"1\",\"code\":1,\"rationale\":\"The President immediately revokes a prior memorandum governing internal executive succession, while preserving existing agency and OMB authorities. This is an internal administrative reorganization rather than a change to private legal rights or a mandated later agency legal outcome.\",\"evidence\":\"The Presidential Memorandum of February 1, 2013 (Designation of Officers of the Pension Benefit Guaranty Corporation to Act as Director of the Pension Benefit Guaranty Corporation), is hereby revoked.\"}]}"}}
+{"type":"turn.completed","usage":{"input_tokens":15379,"cached_input_tokens":11264,"cache_write_input_tokens":0,"output_tokens":118,"reasoning_output_tokens":0}}

@@ -1,0 +1,27 @@
+{
+  "document_id": "6167",
+  "request_hash": "19534c37851b9709923006432b7b59206e07c51daef2d18b651ee4cf90608ee8",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 7.66,
+  "usage": {
+    "input_tokens": 15037,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 192,
+    "reasoning_output_tokens": 104
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 1,
+        "rationale": "The President states a determination about the necessity of retaining executive authorities, but this segment does not itself continue the emergency or otherwise alter legal rights or status; the legally operative continuation appears elsewhere in the notice.",
+        "evidence": "I have determined that it is necessary to maintain in force the broad authorities"
+      }
+    ]
+  },
+  "returncode": 0
+}

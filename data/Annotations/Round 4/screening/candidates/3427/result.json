@@ -1,0 +1,33 @@
+{
+  "document_id": "3427",
+  "request_hash": "5f0f35ef1c0e38d076fd048ddb4783f0f4ed38e04aa93ebb8eb92ef27abf850a",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 8.62,
+  "usage": {
+    "input_tokens": 15787,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 193,
+    "reasoning_output_tokens": 0
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 3,
+        "rationale": "The President presently relocates and redefines the National Forest’s legal boundaries; the consequence occurs upon issuance rather than through a later agency action.",
+        "evidence": "The exterior boundaries of the Caribbean National Forest in Puerto Rico, established as the Luquillo Forest Reserve by Proclamation Number 41 of January 17, 1903 (32 Stat. 2029), and renamed the Caribbean National Forest by Executive Order Number 7059-A of June 4, 1935, are hereby relocated and redefined as follows:"
+      },
+      {
+        "segment_id": "2",
+        "code": 3,
+        "rationale": "The President presently reserves the specified federal lands as parts of the National Forest, immediately changing their designated legal status.",
+        "evidence": "All lands of the United States within those exterior boundaries are hereby reserved as parts of the Caribbean National Forest."
+      }
+    ]
+  },
+  "returncode": 0
+}

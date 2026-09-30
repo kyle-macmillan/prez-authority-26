@@ -1,0 +1,27 @@
+{
+  "document_id": "282",
+  "request_hash": "165de03c6bfba504183eaea8e56764f61ad0c6609987b8351e7b556a3a92eacb",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 6.57,
+  "usage": {
+    "input_tokens": 15641,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 128,
+    "reasoning_output_tokens": 0
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 1,
+        "rationale": "The President establishes an internal order of succession for officials who will perform the National Cyber Director’s functions during a vacancy, subject to statutory eligibility and retained presidential discretion. This is an internal authority assignment and succession arrangement, not a substantive change to legal rights or a mandate that an agency later produce a specified legal consequence.",
+        "evidence": "the following officials of the Office of the National Cyber Director, in the order listed, shall act as and perform the functions and duties of the office of the National Cyber Director"
+      }
+    ]
+  },
+  "returncode": 0
+}

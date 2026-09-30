@@ -1,0 +1,33 @@
+{
+  "document_id": "10312",
+  "request_hash": "246d06ed7154ca8c2caab430ed1594192d3931d21016e7b684cdb5f3fcb9fe70",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 11.7,
+  "usage": {
+    "input_tokens": 15136,
+    "cached_input_tokens": 0,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 243,
+    "reasoning_output_tokens": 90
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 3,
+        "rationale": "The President presently makes the statutory national-interest determination authorizing the specified drawdown; the legally consequential determination occurs in this segment, with later execution being ministerial implementation.",
+        "evidence": "I hereby determine that it is in the national interest of the United States to draw down articles and services"
+      },
+      {
+        "segment_id": "2",
+        "code": 3,
+        "rationale": "The President presently orders and authorizes the release of up to $45 million in Defense Department articles and services to the named governments; the legal commitment occurs through this directive itself.",
+        "evidence": "I direct the drawdown of up to $45 million of articles and services"
+      }
+    ]
+  },
+  "returncode": 0
+}

@@ -1,0 +1,27 @@
+{
+  "document_id": "11552",
+  "request_hash": "bb3ea5f06d60e89eb5abe2b9f5468aa7cae80870565c0c3961bbbfff8a18e69e",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 7.13,
+  "usage": {
+    "input_tokens": 15564,
+    "cached_input_tokens": 0,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 194,
+    "reasoning_output_tokens": 66
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 1,
+        "rationale": "Federal agencies, the Department of State, and the Civil Service Commission are directed to change internal vacancy-listing practices, report visa refusals, pursue diplomatic action, oversee compliance, review selection processes, and issue guidance. These are executive-branch personnel-management and compliance measures; the segment does not itself alter legal rights or require an agency to impose a specified later legal consequence.",
+        "evidence": "each agency having positions overseas must: (1) review its process for selection of persons for overseas assignments"
+      }
+    ]
+  },
+  "returncode": 0
+}

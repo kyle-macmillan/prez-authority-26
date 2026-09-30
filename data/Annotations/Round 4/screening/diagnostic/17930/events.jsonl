@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a0d8fd-a585-7dc1-9c29-7d9a76365020"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"classifications\":[{\"segment_id\":\"1\",\"code\":0,\"rationale\":\"The President ceremonially proclaims a commemorative month; this does not govern agencies or alter legal rights or duties.\",\"evidence\":\"do hereby proclaim November 2021 as National Veterans and Military Families Month\"},{\"segment_id\":\"2\",\"code\":0,\"rationale\":\"The President makes a hortatory appeal to the public, not a binding direction to an agency or an alteration of legal rights.\",\"evidence\":\"call upon the people of the United States to honor veterans and military families\"}]}"}}
+{"type":"turn.completed","usage":{"input_tokens":15623,"cached_input_tokens":11264,"cache_write_input_tokens":0,"output_tokens":124,"reasoning_output_tokens":0}}

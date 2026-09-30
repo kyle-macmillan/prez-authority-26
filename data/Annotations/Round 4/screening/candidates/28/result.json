@@ -1,0 +1,39 @@
+{
+  "document_id": "28",
+  "request_hash": "efa42bbc0a43660e4d8f243f2908e69d2b2ce4b343784697186d8c91d6baf05c",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 10.56,
+  "usage": {
+    "input_tokens": 15769,
+    "cached_input_tokens": 0,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 315,
+    "reasoning_output_tokens": 115
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 1,
+        "rationale": "The President establishes an internal executive board, assigns it policy-guidance, coordination, evaluation, and reporting functions, and specifies its membership; these are administrative organization duties rather than changes to legal rights.",
+        "evidence": "There is hereby established a Psychological Strategy Board"
+      },
+      {
+        "segment_id": "2",
+        "code": 4,
+        "rationale": "The segment inseparably combines internal organization and staffing directions with a presently fixed compensation entitlement for the Director, which is a distinct self-executing legal consequence.",
+        "evidence": "who shall receive compensation of $16,000 per year"
+      },
+      {
+        "segment_id": "3",
+        "code": 1,
+        "rationale": "The segment assigns internal staffing control, interagency assistance, information access, administrative review, and resource-use responsibilities, without dictating a later legally consequential outcome.",
+        "evidence": "The heads of the departments and agencies concerned shall examine into present arrangements"
+      }
+    ]
+  },
+  "returncode": 0
+}

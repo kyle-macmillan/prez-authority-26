@@ -1,0 +1,45 @@
+{
+  "document_id": "429",
+  "request_hash": "f6a2d58c79718ce30b662458bc223603813c4d5c241356ac45e53a8cd65dc38d",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 12.51,
+  "usage": {
+    "input_tokens": 16046,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 485,
+    "reasoning_output_tokens": 212
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 1,
+        "rationale": "The President states an Administration policy directing agencies toward flexible use of regulatory tools; it guides future discretionary implementation without itself changing legal rights or requiring a specified legal outcome.",
+        "evidence": "It is the policy of my Administration to use available tools to confront the urgent challenges facing the Nation"
+      },
+      {
+        "segment_id": "2",
+        "code": 1,
+        "rationale": "The President immediately revokes prior executive orders governing internal regulatory administration, a form of executive-branch reorganization expressly treated as internal management under the codebook.",
+        "evidence": "are hereby revoked"
+      },
+      {
+        "segment_id": "3",
+        "code": 2,
+        "rationale": "The OMB Director and agency heads are mandatorily directed to pursue later rescission of implementing rules and policies; the legally consequential rescissions occur through subsequent agency action under applicable law.",
+        "evidence": "shall promptly take steps to rescind any orders, rules, regulations, guidelines, or policies"
+      },
+      {
+        "segment_id": "4",
+        "code": 4,
+        "rationale": "The segment inseparably combines a mandate for officials to provide later exemptions, which is a dictated legal outcome, with the immediate abolition of internal executive positions and entities, which is administrative housekeeping, plus savings provisions.",
+        "evidence": "shall promptly take steps to provide all available exemptions"
+      }
+    ]
+  },
+  "returncode": 0
+}

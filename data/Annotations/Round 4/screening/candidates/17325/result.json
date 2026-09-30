@@ -1,0 +1,81 @@
+{
+  "document_id": "17325",
+  "request_hash": "8a84b37f2b87f8be5d6663fa375ba486f30bf640ccd3202f9c364d145e671124",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 20.34,
+  "usage": {
+    "input_tokens": 19414,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 927,
+    "reasoning_output_tokens": 361
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 1,
+        "rationale": "The President directed the Trade Representative to pursue negotiations, an executive coordination activity that did not itself alter legal rights or require a specified agreement.",
+        "evidence": "to pursue negotiation of agreements"
+      },
+      {
+        "segment_id": "2",
+        "code": 1,
+        "rationale": "The segment describes a monitoring and reporting assignment to the Secretary; any later presidential action remained contingent.",
+        "evidence": "directed the Secretary to monitor imports of automobiles and certain automobile parts and inform me"
+      },
+      {
+        "segment_id": "3",
+        "code": 3,
+        "rationale": "The President presently makes the statutory national-security finding and necessity determination that supplies the legal predicate for the section 232 action.",
+        "evidence": "I find that imports of automobiles and certain automobile parts continue to threaten to impair the national security of the United States"
+      },
+      {
+        "segment_id": "4",
+        "code": 0,
+        "rationale": "This segment only recites statutory authorities and does not itself direct an agency or change a legal consequence.",
+        "evidence": "Section 604 of the Trade Act of 1974, as amended (19 U.S.C. 2483), authorizes the President"
+      },
+      {
+        "segment_id": "5",
+        "code": 3,
+        "rationale": "The segment itself imposes a binding tariff, defines its application, establishes consequences for inaccurate content declarations, and creates a temporary USMCA-parts exception.",
+        "evidence": "shall be subject to a 25 percent tariff"
+      },
+      {
+        "segment_id": "6",
+        "code": 1,
+        "rationale": "The Secretary is assigned to determine which administrative tariff-schedule modifications are necessary, without this fragment itself making those modifications.",
+        "evidence": "shall determine the modifications necessary to the HTSUS"
+      },
+      {
+        "segment_id": "7",
+        "code": 2,
+        "rationale": "The Secretary is required to produce later legally operative HTSUS modifications through Federal Register notice.",
+        "evidence": "shall make such modifications to the HTSUS through notice in the Federal Register"
+      },
+      {
+        "segment_id": "8",
+        "code": 1,
+        "rationale": "The Secretary must establish an administrative process for possible later additions, but this segment specifies no article that must receive tariff treatment.",
+        "evidence": "shall establish a process for including additional automobile parts articles"
+      },
+      {
+        "segment_id": "9",
+        "code": 2,
+        "rationale": "The required agency process must provide for the later inclusion of additional articles within the tariff scope when a qualifying request establishes the stated conditions.",
+        "evidence": "this process shall provide for including additional automobile parts articles"
+      },
+      {
+        "segment_id": "10",
+        "code": 4,
+        "rationale": "This single segment inseparably combines agency determinations and administrative monitoring with self-executing foreign-trade-zone status, drawback consequences, and supersession of prior presidential provisions.",
+        "evidence": "No drawback shall be available with respect to the duties imposed pursuant to this proclamation."
+      }
+    ]
+  },
+  "returncode": 0
+}

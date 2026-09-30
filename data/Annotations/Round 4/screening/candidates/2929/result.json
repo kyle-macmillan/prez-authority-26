@@ -1,0 +1,105 @@
+{
+  "document_id": "2929",
+  "request_hash": "e757a55e55bd71202643844941dc7d1f7e5c01a604de190762980bd7604cf036",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 21.2,
+  "usage": {
+    "input_tokens": 26629,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 920,
+    "reasoning_output_tokens": 93
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 1,
+        "rationale": "The President presently assigns departments and agencies an internal continuity-of-government duty; the segment does not itself alter external legal rights or dictate a later legal outcome.",
+        "evidence": "The departments and agencies of the Federal Government are hereby severally charged with the duty of assuring the continuity of the Federal Government"
+      },
+      {
+        "segment_id": "2",
+        "code": 1,
+        "rationale": "Departments, agency heads, and the OEP Director must plan, prepare, coordinate, and maintain readiness; implementation of those plans expressly requires separate future legal authority.",
+        "evidence": "shall develop such plans and take such actions"
+      },
+      {
+        "segment_id": "3",
+        "code": 1,
+        "rationale": "The Secretary of State must prepare internal emergency plans and preparedness programs for possible future conditions, without imposing a specified legal consequence.",
+        "evidence": "shall prepare national emergency plans and develop preparedness programs"
+      },
+      {
+        "segment_id": "4",
+        "code": 1,
+        "rationale": "The Secretary of State must direct, coordinate, and supervise other agencies' emergency-preparedness work, an internal executive-management assignment.",
+        "evidence": "shall provide to all other departments and agencies overall foreign policy direction, coordination, and supervision"
+      },
+      {
+        "segment_id": "5",
+        "code": 1,
+        "rationale": "The Secretary of State must develop policies, plans, and procedures for future emergency foreign-relations functions; the segment assigns broad administrative responsibility without presently producing or dictating a specific legal result.",
+        "evidence": "shall develop policies, plans, and procedures for carrying out his responsibilities"
+      },
+      {
+        "segment_id": "6",
+        "code": 1,
+        "rationale": "The Treasury Secretary must develop emergency policies, plans, procedures, and coordination arrangements; no particular loan, regulation, payment, or other legally consequential outcome is mandated.",
+        "evidence": "shall develop policies, plans and procedures for the performance of emergency functions"
+      },
+      {
+        "segment_id": "7",
+        "code": 1,
+        "rationale": "The Defense Secretary receives broad planning, guidance, assistance, administration, and preparedness duties, but the segment neither presently changes legal rights nor mandates a specified later legal outcome.",
+        "evidence": "the Secretary of Defense shall perform the following emergency preparedness functions"
+      },
+      {
+        "segment_id": "8",
+        "code": 1,
+        "rationale": "The Attorney General must advise, review, coordinate, and develop emergency plans and procedures; contemplated detention, seizure, and other measures are subjects of planning rather than legal consequences imposed by this segment.",
+        "evidence": "Develop emergency plans for the control of alien enemies and other aliens within the United States"
+      },
+      {
+        "segment_id": "9",
+        "code": 1,
+        "rationale": "The Postmaster General must prepare plans and programs for future emergency mail service, which is an internal preparedness function.",
+        "evidence": "shall prepare plans and programs for emergency mail service"
+      },
+      {
+        "segment_id": "10",
+        "code": 1,
+        "rationale": "The Postmaster General must cooperate with agencies on planning and administering emergency programs; the segment does not itself impose censorship, registration, or another legal consequence.",
+        "evidence": "shall cooperate with indicated Federal agencies"
+      },
+      {
+        "segment_id": "11",
+        "code": 1,
+        "rationale": "The Interior Secretary must prepare plans, programs, guidance, and interagency assistance concerning emergency resources; the definitions and planning assignments do not themselves alter legal rights.",
+        "evidence": "shall prepare national emergency plans and develop preparedness programs"
+      },
+      {
+        "segment_id": "12",
+        "code": 1,
+        "rationale": "The Federal Power Commission must assist the Interior Secretary with preparedness planning, an internal interagency-support assignment.",
+        "evidence": "the Federal Power Commission shall assist the Secretary of the Interior"
+      },
+      {
+        "segment_id": "13",
+        "code": 1,
+        "rationale": "The Agriculture Secretary must prepare plans and preparedness programs and administer inventories to assure emergency availability, without a specified allocation or other binding legal outcome.",
+        "evidence": "shall prepare national emergency plans and develop preparedness programs"
+      },
+      {
+        "segment_id": "14",
+        "code": 1,
+        "rationale": "The Agriculture Secretary must develop plans, direct preparedness activities, and furnish guidance concerning lands and civil defense; these are internal planning and implementation assignments rather than specified legal consequences.",
+        "evidence": "develop plans for a national program, direct Federal activities, and furnish technical guidance"
+      }
+    ]
+  },
+  "returncode": 0
+}

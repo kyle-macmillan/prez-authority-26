@@ -1,0 +1,39 @@
+{
+  "document_id": "10072",
+  "request_hash": "834cb5a9733904fd3f55bc50cbb00af5bd36ab143bce21c94ea6e0ef881c3280",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 10.05,
+  "usage": {
+    "input_tokens": 16199,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 337,
+    "reasoning_output_tokens": 62
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 3,
+        "rationale": "The President presently makes the statutory humanitarian/national-interest determination, establishes the FY 2002 refugee-admission ceiling and regional allocations, and permits transfers of unused numbers; these legal consequences occur in the segment itself, with agencies later administering them.",
+        "evidence": "The admission of up to 70,000 refugees to the United States during FY 2002 is justified by humanitarian concerns or is otherwise in the national interest"
+      },
+      {
+        "segment_id": "2",
+        "code": 1,
+        "rationale": "The President directs the Secretary of State to undertake a consultation with congressional committees before any regional reallocation; this is a procedural executive-management requirement and does not itself reallocate admissions or alter eligibility.",
+        "evidence": "consult with the Judiciary Committees of the Congress prior to reallocation of numbers from one region to another"
+      },
+      {
+        "segment_id": "3",
+        "code": 3,
+        "rationale": "The President presently makes a statutory foreign-policy determination and designation, makes 10,000 admissions numbers available for adjustment cases, and specifies categories eligible for in-country refugee consideration; these consequences arise from the segment itself rather than a commanded later agency decision.",
+        "evidence": "I also specify that, for FY 2002, the following persons may, if otherwise qualified, be considered refugees"
+      }
+    ]
+  },
+  "returncode": 0
+}

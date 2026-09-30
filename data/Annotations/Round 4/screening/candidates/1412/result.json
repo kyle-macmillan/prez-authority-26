@@ -1,0 +1,33 @@
+{
+  "document_id": "1412",
+  "request_hash": "84ef468ec99fc4737eb973529be60adfb2cd05c68cc79caaee946776bc0fb703",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 8.14,
+  "usage": {
+    "input_tokens": 16312,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 267,
+    "reasoning_output_tokens": 52
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 1,
+        "rationale": "Executive agencies managing Federal lands are directed, subject to practicability, law, agency functions, and appropriateness, to accommodate sacred-site use, avoid adverse effects, preserve confidentiality, and implement procedures. These are ongoing, qualified land-management and implementation directions rather than a presently self-executing change in legal rights or a dictated later legal outcome.",
+        "evidence": "Each executive branch agency with statutory or administrative responsibility for the management of Federal lands shall, as appropriate, promptly implement procedures"
+      },
+      {
+        "segment_id": "2",
+        "code": 1,
+        "rationale": "Agency heads must report to the President within one year about implementation and possible changes; the remaining provisions constrain construction of the order and expressly characterize it as internal management without creating enforceable rights. No specified legal consequence is imposed now or mandated for later agency production.",
+        "evidence": "the head of each executive branch agency with statutory or administrative responsibility for the management of Federal lands shall report to the President"
+      }
+    ]
+  },
+  "returncode": 0
+}

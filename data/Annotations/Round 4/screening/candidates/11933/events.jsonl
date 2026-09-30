@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a0d9f0-fe4e-71f3-a1e8-a90f72716cac"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"classifications\":[{\"segment_id\":\"1\",\"code\":3,\"rationale\":\"The President presently makes a statutory determination committing up to $5 million in specified federal commodities for transfer to Bolivia; the Director’s arrangements and the Secretary’s bilateral agreement implement that already-made legal determination.\",\"evidence\":\"I hereby determine that up to $5,000,000 worth of agricultural commodities shall be made available out of the stocks of the Commodity Credit Corporation and transferred to meet the urgent relief requirements of Bolivia.\"}]}"}}
+{"type":"turn.completed","usage":{"input_tokens":15173,"cached_input_tokens":11264,"cache_write_input_tokens":0,"output_tokens":177,"reasoning_output_tokens":64}}

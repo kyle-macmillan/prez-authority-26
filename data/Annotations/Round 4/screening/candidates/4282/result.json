@@ -1,0 +1,45 @@
+{
+  "document_id": "4282",
+  "request_hash": "f36c247a941102de840ceb8fa21ad37a1b9114b3960862cce60369ec6f60ba23",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 17.25,
+  "usage": {
+    "input_tokens": 16780,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 717,
+    "reasoning_output_tokens": 400
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 3,
+        "rationale": "The President presently makes the statutory necessity finding concerning federal possession of the railroad system; the legally significant determination occurs in this segment, before the subsequent taking.",
+        "evidence": "I find that as a result of a labor disturbance there are interruptions, and threatened interruptions"
+      },
+      {
+        "segment_id": "2",
+        "code": 4,
+        "rationale": "This segment inseparably combines the President’s present taking of possession and control, a self-executing legal consequence, with directions and discretionary implementation authority assigned to the Secretary.",
+        "evidence": "Possession, control, and operation of the transportation system owned or operated by the Chicago, Rock Island & Pacific Railroad Company (hereinafter referred to as the company) are hereby taken and assumed"
+      },
+      {
+        "segment_id": "3",
+        "code": 1,
+        "rationale": "The President directs federal agencies, the Secretary, and company management concerning cooperation and continued operation of the federally controlled system; these are implementation and internal-management arrangements rather than a new legal-rights disposition.",
+        "evidence": "All Federal agencies shall comply with the orders of the Secretary issued pursuant to this order"
+      },
+      {
+        "segment_id": "4",
+        "code": 4,
+        "rationale": "This segment combines discretionary implementation authority for the Secretary, a present conclusive legal designation of federal possession, and a mandated later termination by the Secretary upon his determination.",
+        "evidence": "all properties taken under this order shall be conclusively deemed to be within the possession and control of the United States without further act or notice"
+      }
+    ]
+  },
+  "returncode": 0
+}

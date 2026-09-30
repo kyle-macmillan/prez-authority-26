@@ -1,0 +1,39 @@
+{
+  "document_id": "10426",
+  "request_hash": "a396a5474c208927259fa193c279db6674a9f23e2d103dbb300ad756c656ab27",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 15.41,
+  "usage": {
+    "input_tokens": 16476,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 451,
+    "reasoning_output_tokens": 191
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 2,
+        "rationale": "Executive departments and agencies retain discretion whether to require a project labor agreement, but any agreement reached under the memorandum must later bind contractors through specified solicitation and contract clauses and contain prescribed labor terms; those legally consequential contractual results arise through subsequent agency contracting.",
+        "evidence": "shall bind all contractors and subcontractors on the construction project through the inclusion of appropriate clauses in all relevant solicitation provisions and contract documents"
+      },
+      {
+        "segment_id": "2",
+        "code": 2,
+        "rationale": "For any project labor agreement used under the memorandum, the segment mandates prescribed agreement content and legal compliance, which agencies must implement later through procurement and contracting; the accompanying limitations do not alter that dictated contractual outcome.",
+        "evidence": "shall provide other mechanisms for labormanagement cooperation on matters of mutual interest and concern"
+      },
+      {
+        "segment_id": "3",
+        "code": 1,
+        "rationale": "Agency heads must establish internal written procedures and criteria, in consultation with the Federal Acquisition Regulatory Council, within 120 days; the segment organizes future discretionary procurement administration rather than itself dictating a particular contract or legal-rights outcome.",
+        "evidence": "shall establish, within 120 days of the date of this memorandum, appropriate written procedures and criteria"
+      }
+    ]
+  },
+  "returncode": 0
+}

@@ -1,0 +1,33 @@
+{
+  "document_id": "1618",
+  "request_hash": "f6218ce3c62329e7eda66fc9fe70d8d2aa90e7434ecdd93129c8ca9db5a732d0",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 10.77,
+  "usage": {
+    "input_tokens": 15691,
+    "cached_input_tokens": 0,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 365,
+    "reasoning_output_tokens": 179
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 3,
+        "rationale": "The President presently prohibits permission for covered aircraft operations involving Libya; the legal consequence occurs when the order takes effect, subject to later exceptions.",
+        "evidence": "the granting of permission to any aircraft to take off from, land in, or overfly the United States, if the aircraft, as part of the same flight or as a continuation of that flight, is destined to land in or has taken off from the territory of Libya, is hereby prohibited"
+      },
+      {
+        "segment_id": "2",
+        "code": 2,
+        "rationale": "Affected executive agencies are mandatorily directed to implement the prohibition through necessary later measures, expressly including legally consequential suspension or termination of existing licenses or authorizations.",
+        "evidence": "including the suspension or termination of licenses or other authorizations in effect as of the date of this order"
+      }
+    ]
+  },
+  "returncode": 0
+}

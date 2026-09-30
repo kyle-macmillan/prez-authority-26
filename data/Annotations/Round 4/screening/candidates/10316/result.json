@@ -1,0 +1,27 @@
+{
+  "document_id": "10316",
+  "request_hash": "b288e3e72ee469f6828ecb9c3bd1935f75bce5b63c7d86962be74356568bb999",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 7.26,
+  "usage": {
+    "input_tokens": 15635,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 90,
+    "reasoning_output_tokens": 0
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 1,
+        "rationale": "The President directs the OPM Director to prepare an informational guidebook and consult interested parties within 120 days. This is mandatory internal executive management, but it does not itself alter legal rights or require a later legally consequential outcome.",
+        "evidence": "I accordingly direct you to prepare within 120 days a guidebook"
+      }
+    ]
+  },
+  "returncode": 0
+}

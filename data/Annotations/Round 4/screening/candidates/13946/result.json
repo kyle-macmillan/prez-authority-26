@@ -1,0 +1,87 @@
+{
+  "document_id": "13946",
+  "request_hash": "c2a3a453be741804bf0db4173aac04a46e4bec5fe3e60dd8a3d6b427c5c7ef53",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 33.05,
+  "usage": {
+    "input_tokens": 25074,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 1299,
+    "reasoning_output_tokens": 506
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 4,
+        "rationale": "The President presently reserves and withdraws federal lands, creating immediate legal effects, while also assigning internal management responsibilities to Commerce and Interior; those materially different postures are combined in one segment.",
+        "evidence": "All Federal lands and interests in lands within the boundaries of this monument are hereby appropriated and withdrawn from all forms of entry, location, selection, sale, or leasing or other disposition under the public land laws"
+      },
+      {
+        "segment_id": "2",
+        "code": 1,
+        "rationale": "The Secretaries must review and potentially modify interagency management instruments and may promulgate additional regulations as needed; this directs review, planning, and discretionary implementation without dictating particular regulatory outcomes.",
+        "evidence": "shall review and, as appropriate, modify the interagency agreement developed for coordinated management"
+      },
+      {
+        "segment_id": "3",
+        "code": 1,
+        "rationale": "The Secretary of State must pursue negotiations and arrangements with foreign governments, an executive coordination and implementation function that does not itself alter legal rights.",
+        "evidence": "shall take appropriate action to enter into negotiations with other governments"
+      },
+      {
+        "segment_id": "4",
+        "code": 4,
+        "rationale": "The segment combines discretionary diplomatic coordination by the Secretary of State with a presently operative limitation on applying or enforcing restrictions against specified foreign persons and vessels.",
+        "evidence": "No restrictions shall apply to or be enforced against a person who is not a citizen, national, or resident alien of the United States (including foreign flag vessels) unless in accordance with international law."
+      },
+      {
+        "segment_id": "5",
+        "code": 1,
+        "rationale": "The Armed Forces and responsible Defense or Coast Guard component are directed to minimize impacts and coordinate responsive, mitigating, and possible restorative actions; these are operational and interagency-management duties rather than prescribed legal outcomes.",
+        "evidence": "the cognizant component shall promptly coordinate with the Secretaries for the purpose of taking appropriate actions to respond to and mitigate the harm"
+      },
+      {
+        "segment_id": "6",
+        "code": 2,
+        "rationale": "The Secretaries are mandatorily directed to ensure that commercial lobster permits receive the specified condition completed in the adjoining segment, so the legal consequence occurs through later permit administration.",
+        "evidence": "The Secretaries shall ensure that any commercial lobster fishing permit"
+      },
+      {
+        "segment_id": "7",
+        "code": 2,
+        "rationale": "This completes the mandate that the Secretaries impose a zero annual harvest limit on commercial lobster permits, producing the specified legal consequence through permit administration.",
+        "evidence": "shall be subject to a zero annual harvest limit."
+      },
+      {
+        "segment_id": "8",
+        "code": 2,
+        "rationale": "The Secretaries must administer commercial-fishing permits and activity to produce specified temporal, permit, landing-limit, and eventual prohibition outcomes.",
+        "evidence": "The Secretaries shall ensure that:"
+      },
+      {
+        "segment_id": "9",
+        "code": 2,
+        "rationale": "The Secretaries must impose specified commercial-fishing conditions and mandatory terms on special-ocean-use permits; the legal consequences arise through later permit issuance and administration.",
+        "evidence": "Shall require the permittee to purchase and maintain comprehensive general liability insurance, or post an equivalent bond"
+      },
+      {
+        "segment_id": "10",
+        "code": 3,
+        "rationale": "The proclamation itself imposes an annual reporting duty on every special-ocean-use permittee and directly restricts permit eligibility and duration, with the duties and limitations applying by force of this provision.",
+        "evidence": "Each person issued a permit for a special ocean use under this section shall submit an annual report to the Secretaries not later than December 31 of each year"
+      },
+      {
+        "segment_id": "11",
+        "code": 3,
+        "rationale": "The provision directly establishes permit eligibility limits, prerequisites, geographic restrictions, and conduct requirements governing special ocean uses, recreation, and sustenance fishing; later permitting applies this presently binding legal framework.",
+        "evidence": "The Secretaries may issue a permit only for recreational activities to be conducted within the Midway Atoll Special Management Area."
+      }
+    ]
+  },
+  "returncode": 0
+}

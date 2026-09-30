@@ -1,0 +1,93 @@
+{
+  "document_id": "20023",
+  "request_hash": "323aa82aaaa86a50a79899444e3932b84a0bbfd6e7871f323914f9a34f6c559e",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 32.12,
+  "usage": {
+    "input_tokens": 27635,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 1578,
+    "reasoning_output_tokens": 714
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 4,
+        "rationale": "The President invokes statutory authority and announces an immediate proclamation concerning part of Proclamation 3279, but this truncated segment omits the operative verb specifying what happens to that text, so its posture cannot be determined reliably from the segment itself.",
+        "evidence": "do hereby proclaim that, effective as of this date, that portion of Proclamation 3279, as amended, beginning with section 1 thereof,"
+      },
+      {
+        "segment_id": "2",
+        "code": 3,
+        "rationale": "The President presently restricts petroleum entry and withdrawal, fixes fee-free import levels and exemptions, and thereby immediately determines importers’ legal permissions and obligations; later licensing and regulatory administration implements that regime.",
+        "evidence": "no crude oil, unfinished oils, or finished products may be entered for consumption or withdrawn from warehouse for consumption, except"
+      },
+      {
+        "segment_id": "3",
+        "code": 2,
+        "rationale": "The President mandates that the Secretary establish a license-fee system by regulation effective May 1, 1973, with specified refund and application consequences arising through that later administrative system.",
+        "evidence": "the Secretary shall, by regulation, establish a system of fees for licenses"
+      },
+      {
+        "segment_id": "4",
+        "code": 1,
+        "rationale": "The President gives the Secretary discretionary implementing-rule authority without dictating a particular regulatory outcome or itself changing regulated parties’ rights.",
+        "evidence": "The Secretary of the Interior is hereby authorized to issue regulations"
+      },
+      {
+        "segment_id": "5",
+        "code": 2,
+        "rationale": "The President requires the Secretary’s regulations to impose specified allocation distributions, processing conditions, and related eligibility rules, with those legal consequences produced through later regulations and allocations.",
+        "evidence": "such regulations shall require that imported crude oil and unfinished oils be processed in the licensee's refinery or petrochemical plant"
+      },
+      {
+        "segment_id": "6",
+        "code": 1,
+        "rationale": "The President authorizes and structures an internal appeals body, assigns it potential authority, and sets the expiration of its jurisdiction; these are executive organizational and authority-allocation provisions rather than prescribed outcomes on particular petitions.",
+        "evidence": "The Secretary of the Interior is authorized to provide for the establishment and operation of an Appeals Board"
+      },
+      {
+        "segment_id": "7",
+        "code": 1,
+        "rationale": "The President authorizes the Secretary to determine later what information and reports regulated persons must provide; the segment does not prescribe the content of those future requirements.",
+        "evidence": "shall furnish to the Secretary of the Interior such information and shall make such reports as he may require"
+      },
+      {
+        "segment_id": "8",
+        "code": 1,
+        "rationale": "The President assigns the Committee Chairman internal policy-direction, coordination, surveillance, and regulatory-approval functions over the program.",
+        "evidence": "shall provide policy direction, coordination, and surveillance of the oil import control program"
+      },
+      {
+        "segment_id": "9",
+        "code": 1,
+        "rationale": "The President prescribes internal consultation, committee membership, designation authority, and subcommittee organization, without directly changing private legal rights.",
+        "evidence": "The Oil Policy Committee shall consist of the Deputy Secretary of the Treasury, as Chairman"
+      },
+      {
+        "segment_id": "10",
+        "code": 4,
+        "rationale": "This segment inseparably combines internal consultation, review, and reporting duties with self-executing scheduled reductions of fee-free import levels and abolition of the allocation-and-license system on a fixed date.",
+        "evidence": "Effective April 30, 1980, the system of issuing allocations and licenses not subject to license fee shall be abolished;"
+      },
+      {
+        "segment_id": "11",
+        "code": 4,
+        "rationale": "This segment combines present legal effects extending existing allocations and preserving specified commitments with a ministerial licensing mandate and an internal delegation authorization, yielding materially different postures in one segment.",
+        "evidence": "such allocation period shall be extended to April 30, 1974"
+      },
+      {
+        "segment_id": "12",
+        "code": 1,
+        "rationale": "The operative portions direct interagency cooperation and revoke a prior executive order, both internal executive-management actions; the remaining text supplies definitions for the proclamation rather than independently imposing a new legal consequence.",
+        "evidence": "Executive Order 10761 of March 27, 1958, entitled \"Government Purchases of Crude Petroleum and Petroleum Products\" (23 F.R. 2067) is revoked."
+      }
+    ]
+  },
+  "returncode": 0
+}

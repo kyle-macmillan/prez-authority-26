@@ -1,0 +1,33 @@
+{
+  "document_id": "19461",
+  "request_hash": "b8101c3ba076552a853ed80a084e31e0df5d908da297dc0c09f5ab942062da84",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 8.72,
+  "usage": {
+    "input_tokens": 16921,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 212,
+    "reasoning_output_tokens": 0
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 3,
+        "rationale": "The President directly imposes present registration, timing, location, procedural, identification, and address-update duties on covered persons; subsequent compliance implements those self-executing legal obligations.",
+        "evidence": "Male citizens of the United States and other males residing in the United States, unless exempted by the Military Selective Service Act, as amended, who were born on or after January 1, 1960, and who have attained their eighteenth birthday, shall present themselves for registration in the manner and at the time and places as hereinafter provided."
+      },
+      {
+        "segment_id": "2",
+        "code": 1,
+        "rationale": "The President directs executive-agency heads to provide conditional interagency cooperation and assistance, an internal coordination measure that does not dictate a later legal consequence.",
+        "evidence": "I direct the heads of Executive agencies, when requested by the Director of Selective Service and to the extent permitted by law, to cooperate and assist"
+      }
+    ]
+  },
+  "returncode": 0
+}

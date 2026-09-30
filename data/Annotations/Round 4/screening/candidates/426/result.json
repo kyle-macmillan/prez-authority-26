@@ -1,0 +1,105 @@
+{
+  "document_id": "426",
+  "request_hash": "ed8623341b3da83b42a7d25f96a27badcf59baeb763c485993b1e4c422b1ccf4",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 21.71,
+  "usage": {
+    "input_tokens": 19081,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 1001,
+    "reasoning_output_tokens": 182
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 1,
+        "rationale": "The President states an Administration policy and recommends conduct by federal personnel, contractors, and visitors; it guides executive implementation without itself imposing a binding legal consequence.",
+        "evidence": "It is the policy of my Administration to halt the spread of coronavirus disease 2019 (COVID-19)"
+      },
+      {
+        "segment_id": "2",
+        "code": 2,
+        "rationale": "Agency heads must take later implementing action that requires covered employees, contractors, and persons on federal property to comply with CDC public-health guidelines.",
+        "evidence": "shall immediately take action, as appropriate and consistent with applicable law, to require compliance with CDC guidelines"
+      },
+      {
+        "segment_id": "3",
+        "code": 2,
+        "rationale": "Officials must issue implementation guidance and consult, while agency heads choosing exceptions must later impose specified alternative safeguards and document them; the legally consequential requirements arise through agency implementation.",
+        "evidence": "they shall require appropriate alternative safeguards"
+      },
+      {
+        "segment_id": "4",
+        "code": 1,
+        "rationale": "Agency heads must review existing authority and seek, conditionally, to provide masks; this is discretionary administrative implementation rather than a mandated funding or entitlement outcome.",
+        "evidence": "shall review their existing authorities"
+      },
+      {
+        "segment_id": "5",
+        "code": 1,
+        "rationale": "The Coordinator and agency heads must coordinate, report, and engage stakeholders to encourage compliance; these are internal management and outreach activities without a prescribed legal consequence.",
+        "evidence": "The COVID-19 Response Coordinator shall coordinate the implementation of this section."
+      },
+      {
+        "segment_id": "6",
+        "code": 1,
+        "rationale": "The Coordinator and collaborating officials must identify and communicate possible incentives and support, but the segment does not require adoption of any particular option or legal outcome.",
+        "evidence": "shall promptly identify and inform agencies of options"
+      },
+      {
+        "segment_id": "7",
+        "code": 1,
+        "rationale": "The President immediately establishes and organizes an internal executive task force, assigns its membership, and permits delegations and subgroups; this is executive organization and housekeeping.",
+        "evidence": "There is hereby established the Safer Federal Workforce Task Force"
+      },
+      {
+        "segment_id": "8",
+        "code": 1,
+        "rationale": "GSA must supply internal funding and administrative support to the Task Force within existing appropriations, an executive housekeeping assignment rather than a substantive funding release or entitlement.",
+        "evidence": "shall provide funding and administrative support for the Task Force"
+      },
+      {
+        "segment_id": "9",
+        "code": 1,
+        "rationale": "The Co-Chairs must manage the Task Force by holding meetings, setting its agenda, and directing its work; these are internal organizational duties.",
+        "evidence": "shall convene regular meetings of the Task Force"
+      },
+      {
+        "segment_id": "10",
+        "code": 1,
+        "rationale": "The Task Force must develop ongoing operational guidance, and agency heads must report information to it; both are internal guidance and reporting functions, not prescribed binding legal outcomes.",
+        "evidence": "The Task Force shall provide ongoing guidance to heads of agencies"
+      },
+      {
+        "segment_id": "11",
+        "code": 1,
+        "rationale": "HHS, acting through CDC, must develop and submit an internal federal-workforce testing plan; the segment orders planning but does not itself require testing or dictate a binding implementation result.",
+        "evidence": "shall promptly develop and submit to the COVID-19 Response Coordinator a testing plan"
+      },
+      {
+        "segment_id": "12",
+        "code": 1,
+        "rationale": "The OSTP Director must assess grant availability, and the segment defines terms governing this order's internal scope; it neither awards grants nor independently changes substantive legal rights.",
+        "evidence": "shall assess the availability of Federal research grants"
+      },
+      {
+        "segment_id": "13",
+        "code": 1,
+        "rationale": "OPM and GSA officials must seek consultation with legislative and judicial officials to promote public-health practices; this is interbranch outreach without a binding legal consequence.",
+        "evidence": "shall seek to consult"
+      },
+      {
+        "segment_id": "14",
+        "code": 1,
+        "rationale": "The officials must provide requested technical assistance, while the savings clause preserves existing agency and OMB authority; these are implementation support and internal legal housekeeping.",
+        "evidence": "shall provide requested technical assistance as needed"
+      }
+    ]
+  },
+  "returncode": 0
+}

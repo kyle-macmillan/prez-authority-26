@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a0d9f9-c96d-7ca0-8428-eebce1abf2fc"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"classifications\":[{\"segment_id\":\"1\",\"code\":1,\"rationale\":\"The President directs the OPM Director to prepare an informational guidebook and consult interested parties within 120 days. This is mandatory internal executive management, but it does not itself alter legal rights or require a later legally consequential outcome.\",\"evidence\":\"I accordingly direct you to prepare within 120 days a guidebook\"}]}"}}
+{"type":"turn.completed","usage":{"input_tokens":15635,"cached_input_tokens":11264,"cache_write_input_tokens":0,"output_tokens":90,"reasoning_output_tokens":0}}

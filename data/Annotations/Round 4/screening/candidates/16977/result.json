@@ -1,0 +1,33 @@
+{
+  "document_id": "16977",
+  "request_hash": "099b6a5d2ee21dfcd1235fef6480c771dba48eef931cc1b0ccdcd97f96f3fbd2",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 5.62,
+  "usage": {
+    "input_tokens": 15827,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 125,
+    "reasoning_output_tokens": 0
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 0,
+        "rationale": "The segment describes and salutes the activities of a private humanitarian organization; it does not direct an agency or alter legal rights.",
+        "evidence": "This month we gratefully salute its dedicated staff and volunteers."
+      },
+      {
+        "segment_id": "2",
+        "code": 0,
+        "rationale": "The President makes a ceremonial monthly observance and a hortatory appeal to the public, with no agency governance or legal consequence.",
+        "evidence": "do hereby proclaim the month of March 1991 as American Red Cross Month"
+      }
+    ]
+  },
+  "returncode": 0
+}

@@ -1,0 +1,39 @@
+{
+  "document_id": "5152",
+  "request_hash": "1aa50f3adcae6c85498b0e275e83c444d30d3bf96c08558b6e4863441fa630ba",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 12.99,
+  "usage": {
+    "input_tokens": 15768,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 501,
+    "reasoning_output_tokens": 274
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 0,
+        "rationale": "The President is reporting to Congress that an executive order has been issued; this segment does not itself govern an agency or alter legal rights.",
+        "evidence": "I hereby report that I have issued an Executive Order"
+      },
+      {
+        "segment_id": "2",
+        "code": 3,
+        "rationale": "The President makes the substantive statutory threat determination underlying the national emergency, producing the present legal predicate rather than merely directing a later agency outcome.",
+        "evidence": "I have determined that the actions of Colonel Muammar Qadhafi, his government, and close associates, including extreme measures against the people of Libya, constitute an unusual and extraordinary threat to the national security and foreign policy of the United States."
+      },
+      {
+        "segment_id": "3",
+        "code": 4,
+        "rationale": "The segment inseparably combines self-executing property blocks and a license suspension, criteria for later Treasury designations, and internal delegation and implementation directions.",
+        "evidence": "The order blocks the property and interests in property of persons listed in the Annex to the order"
+      }
+    ]
+  },
+  "returncode": 0
+}

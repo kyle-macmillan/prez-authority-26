@@ -1,0 +1,27 @@
+{
+  "document_id": "4834",
+  "request_hash": "1243dca7c66cf0d94744f9022dd4148f2f48d71523a219cd64130c5824bbb08a",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 6.86,
+  "usage": {
+    "input_tokens": 17608,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 174,
+    "reasoning_output_tokens": 63
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 1,
+        "rationale": "The President has directed the Armed Forces to participate in the described ongoing military operations, while the Administration continues related congressional communications. This is discretionary Commander-in-Chief operational direction and internal executive management, not a self-executing change in legal rights or a mandate that an agency later impose a specified legal consequence.",
+        "evidence": "I have directed the participation of United States Armed Forces in all of the above-described operations"
+      }
+    ]
+  },
+  "returncode": 0
+}

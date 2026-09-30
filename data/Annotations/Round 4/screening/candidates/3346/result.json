@@ -1,0 +1,51 @@
+{
+  "document_id": "3346",
+  "request_hash": "abc42d2795acd5c9ec5ca84cbfa3974d148086486aef03eea49581c377055c5b",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 9.92,
+  "usage": {
+    "input_tokens": 15954,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 403,
+    "reasoning_output_tokens": 81
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 1,
+        "rationale": "The President issues an executive directive introducing an internal governmental council provision; the segment itself does not alter substantive legal rights or dictate a later legal outcome.",
+        "evidence": "it is hereby ordered as follows"
+      },
+      {
+        "segment_id": "2",
+        "code": 1,
+        "rationale": "The President immediately establishes and staffs an advisory council and directs it to promote improvements in physical-fitness programs, all matters of executive organization and discretionary coordination without a substantive legal consequence.",
+        "evidence": "There is hereby established the President's Council on Physical Fitness"
+      },
+      {
+        "segment_id": "3",
+        "code": 1,
+        "rationale": "The President assigns the Council coordination and outreach duties, directs departments to provide assistance as necessary, preserves existing legal functions, and declares administrative continuity; these are internal organizational and implementation measures rather than changes to legal rights.",
+        "evidence": "The Council shall seek to coordinate, stimulate, and improve the functions of Federal agencies"
+      },
+      {
+        "segment_id": "4",
+        "code": 1,
+        "rationale": "The President immediately makes a housekeeping amendment to the name appearing on an executive council's seal; the amendment reorganizes administrative identification without creating a substantive legal consequence.",
+        "evidence": "is hereby amended by substituting the word \"Physical\" wherever the word \"Youth\" appears"
+      },
+      {
+        "segment_id": "5",
+        "code": 1,
+        "rationale": "The President immediately revokes earlier executive orders as an internal administrative reorganization, which the codebook expressly treats as internal management rather than a substantive legal-rights change.",
+        "evidence": "are hereby revoked"
+      }
+    ]
+  },
+  "returncode": 0
+}

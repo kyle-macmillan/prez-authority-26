@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a0d9f6-4f9c-7031-a1ad-3973d47e7fa2"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"classifications\":[{\"segment_id\":\"1\",\"code\":1,\"rationale\":\"The President directs the Attorney General to undertake litigation by petitioning a court for an injunction, while leaving necessity and additional relief to executive judgment. The segment does not itself enjoin the strike, and any binding legal consequence occurs later only if the court grants relief.\",\"evidence\":\"to petition in the name of the United States any District Court of the United States having jurisdiction of the parties\"}]}"}}
+{"type":"turn.completed","usage":{"input_tokens":15297,"cached_input_tokens":11264,"cache_write_input_tokens":0,"output_tokens":219,"reasoning_output_tokens":112}}

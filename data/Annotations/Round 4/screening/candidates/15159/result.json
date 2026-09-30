@@ -1,0 +1,27 @@
+{
+  "document_id": "15159",
+  "request_hash": "7c5566481f3d682d8c650da38c3e4b9166c8046b6630d40cdf7300bad568bc4d",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 7.19,
+  "usage": {
+    "input_tokens": 16178,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 99,
+    "reasoning_output_tokens": 0
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 3,
+        "rationale": "The President presently makes the statutory reciprocity determination and thereby establishes Philippine citizens’ copyright entitlement, subject to stated exceptions and conditions, effective on the specified date; the legal consequence arises from the proclamation itself rather than a later agency action.",
+        "evidence": "citizens of the Republic of the Philippines shall be entitled to all the benefits of the said Title 17"
+      }
+    ]
+  },
+  "returncode": 0
+}

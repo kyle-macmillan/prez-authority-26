@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a0d8fd-96a0-7e81-87f8-a7f6a2b598ac"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"classifications\":[{\"segment_id\":\"1\",\"code\":3,\"rationale\":\"The President presently directs a statutorily authorized drawdown and amends the amount in a prior presidential determination; the legal authorization and funding consequence occur in this determination, with any later transfer being implementation.\",\"evidence\":\"I hereby direct the drawdown of up to $16.998 million\"}]}"}}
+{"type":"turn.completed","usage":{"input_tokens":15060,"cached_input_tokens":11264,"cache_write_input_tokens":0,"output_tokens":165,"reasoning_output_tokens":77}}

@@ -1,0 +1,57 @@
+{
+  "document_id": "4520",
+  "request_hash": "14c00c93041fbad0bae1b2e8ddc1790a4a105f861a569fd1a5628fa49e2f0582",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 14.35,
+  "usage": {
+    "input_tokens": 18506,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 562,
+    "reasoning_output_tokens": 158
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 1,
+        "rationale": "The President directed military forces to carry out specified operational actions, an exercise of discretionary executive and Commander-in-Chief management; the segment does not itself alter legal rights or require an agency-administered legal outcome.",
+        "evidence": "I directed United States forces to conduct discrete strikes on November 11, 2024, and on November 26, 2024"
+      },
+      {
+        "segment_id": "2",
+        "code": 1,
+        "rationale": "The President states that he directed military actions under his executive and Commander-in-Chief authority, which is discretionary operational direction rather than a legal-status change.",
+        "evidence": "I directed these discrete military actions"
+      },
+      {
+        "segment_id": "3",
+        "code": 0,
+        "rationale": "This is only a geographic heading and contains no presidential direction, agency governance, or legal consequence.",
+        "evidence": "Arabian Peninsula Region."
+      },
+      {
+        "segment_id": "4",
+        "code": 1,
+        "rationale": "The segment reports and describes ongoing military operations, deployments, partnerships, and force posture, all involving discretionary executive implementation without itself changing legal rights or mandating a later agency legal outcome.",
+        "evidence": "United States Armed Forces remain prepared to conduct airstrikes in Somalia against ISIS and al-Shabaab terrorists."
+      },
+      {
+        "segment_id": "5",
+        "code": 1,
+        "rationale": "The President directed deployment of military personnel and equipment, an operational Commander-in-Chief decision rather than a substantive act changing legal rights or status.",
+        "evidence": "I directed the deployment of a Terminal High Altitude Air Defense (THAAD) system and United States forces capable of operating this system to Israel."
+      },
+      {
+        "segment_id": "6",
+        "code": 1,
+        "rationale": "The segment principally reports and directs military deployments and participation in operations, with related congressional communications; these are discretionary executive operations and reporting rather than legal consequences imposed by the segment.",
+        "evidence": "I have directed the participation of United States Armed Forces in all of the above-described operations"
+      }
+    ]
+  },
+  "returncode": 0
+}

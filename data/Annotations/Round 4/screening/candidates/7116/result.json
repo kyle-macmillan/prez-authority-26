@@ -1,0 +1,27 @@
+{
+  "document_id": "7116",
+  "request_hash": "cef6ecf2dded52608ae7e83f05773fdbd6c21e1cc57af005c4a1fd08811f82ae",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 5.58,
+  "usage": {
+    "input_tokens": 15906,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 114,
+    "reasoning_output_tokens": 0
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 1,
+        "rationale": "The President requests that the Commission conduct fact-finding investigations and submit reports by specified deadlines. The actor is the Commission; the action is an investigative and reporting assignment concerning GSP impacts; and the segment neither presently changes GSP treatment nor dictates a later legal outcome.",
+        "evidence": "I hereby request the Commission, pursuant to section 332(g) of the Tariff Act of 1930 to conduct investigations and report the results"
+      }
+    ]
+  },
+  "returncode": 0
+}

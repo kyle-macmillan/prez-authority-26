@@ -1,0 +1,27 @@
+{
+  "document_id": "8199",
+  "request_hash": "af3c0ef7f578848c18f2e63adbfa8fd218985fa6e04d1c1dcaa743d5fea20118",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 5.27,
+  "usage": {
+    "input_tokens": 15206,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 102,
+    "reasoning_output_tokens": 0
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 1,
+        "rationale": "The President appoints and assigns an immediate staff official to provide advice, review and develop interagency methods and programs, and attend specified executive meetings. These are internal staffing, advisory, review, and coordination actions; the segment does not itself alter substantive legal rights or dictate a later agency legal outcome.",
+        "evidence": "I hereby appoint you as Special Assistant to the President."
+      }
+    ]
+  },
+  "returncode": 0
+}

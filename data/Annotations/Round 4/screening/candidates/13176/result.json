@@ -1,0 +1,39 @@
+{
+  "document_id": "13176",
+  "request_hash": "fc57b79f5fdf36de9ce82e0e42b51193ebcc3742fd09d9b89a05f7853856a38b",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 14.63,
+  "usage": {
+    "input_tokens": 17457,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 640,
+    "reasoning_output_tokens": 421
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 4,
+        "rationale": "The President uses mandatory, present-tense proclamation language concerning specified federal lands, but this syntactically incomplete segment does not state what legal status or consequence is being proclaimed; that consequence appears only in segment 2.",
+        "evidence": "hereby proclaim that all lands and interests in lands owned or controlled by the Government of the United States"
+      },
+      {
+        "segment_id": "2",
+        "code": 3,
+        "rationale": "The provision itself immediately reserves the federal lands as a national monument and withdraws them from entry, sale, leasing, and other disposition; the accompanying agency-management instructions implement that present legal designation.",
+        "evidence": "are hereby set apart and reserved as the Fort Ord National Monument"
+      },
+      {
+        "segment_id": "3",
+        "code": 2,
+        "rationale": "The Secretary of the Interior must later prepare and maintain a transportation plan whose required designations impose specified limits on motorized and mechanized vehicle use.",
+        "evidence": "motorized vehicle use shall be permitted only on designated roads"
+      }
+    ]
+  },
+  "returncode": 0
+}

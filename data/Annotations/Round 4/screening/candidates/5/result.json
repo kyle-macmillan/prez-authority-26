@@ -1,0 +1,39 @@
+{
+  "document_id": "5",
+  "request_hash": "b043b616d75cae9a3ffa5744487de2b4cfb843bea69474bf2821767fc3d6ec32",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 9.86,
+  "usage": {
+    "input_tokens": 18422,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 303,
+    "reasoning_output_tokens": 37
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 1,
+        "rationale": "The President assigns the Cyber Response Group an internal policy-coordination role and supersedes a prior coordination arrangement; no legal consequence for outside parties is imposed.",
+        "evidence": "The Cyber Response Group (CRG), in support of the National Security Council (NSC) Deputies and Principals Committees, and accountable through the Assistant to the President for Homeland Security and Counterterrorism (APHSCT) to the NSC chaired by the President, shall coordinate the development and implementation of United States Government policy and strategy"
+      },
+      {
+        "segment_id": "2",
+        "code": 1,
+        "rationale": "The segment organizes the executive branch's cyber-incident response by prescribing coordination procedures, group formation, staffing, lead-agency assignments, and operational responsibilities; these are internal management measures rather than dictated legal outcomes.",
+        "evidence": "the following agencies shall serve as Federal lead agencies for the specified line of effort"
+      },
+      {
+        "segment_id": "3",
+        "code": 1,
+        "rationale": "Federal representatives and departments are directed to coordinate response activities and maintain public contact information, both discretionary implementation and administrative coordination without changing legal rights or status.",
+        "evidence": "The Departments of Homeland Security and Justice shall maintain and update as necessary a fact sheet"
+      }
+    ]
+  },
+  "returncode": 0
+}

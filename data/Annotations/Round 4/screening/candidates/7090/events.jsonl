@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a0d9f7-8d78-77f1-a853-26c8df97a246"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"classifications\":[{\"segment_id\":\"1\",\"code\":0,\"rationale\":\"The President communicates with Congress about past budget decisions and proposes future consultation, hearings, review, and recommendations; the segment itself neither governs agency action nor changes funding or other legal rights.\",\"evidence\":\"Toward this end I will arrange a meeting with Congressional leaders from all relevant committees to meet personally with me in order to establish a dialogue and close cooperation on this issue.\"}]}"}}
+{"type":"turn.completed","usage":{"input_tokens":16487,"cached_input_tokens":11264,"cache_write_input_tokens":0,"output_tokens":158,"reasoning_output_tokens":54}}

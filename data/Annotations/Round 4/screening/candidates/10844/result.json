@@ -1,0 +1,33 @@
+{
+  "document_id": "10844",
+  "request_hash": "131e0aadcb65399fb2552540d2ad2511d48281456f1c69a620dfdef2bd99b7df",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 8.03,
+  "usage": {
+    "input_tokens": 15151,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 197,
+    "reasoning_output_tokens": 71
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 3,
+        "rationale": "The President makes the statutory emergency and national-interest determinations that presently activate authority to provide assistance beyond otherwise available funds; subsequent implementation is ministerial.",
+        "evidence": "I hereby determine that"
+      },
+      {
+        "segment_id": "2",
+        "code": 3,
+        "rationale": "The President presently orders a legally consequential drawdown of Defense Department commodities and services, capped at $2 million, rather than directing an agency to decide the outcome later.",
+        "evidence": "I therefore direct the drawdown of commodities and services"
+      }
+    ]
+  },
+  "returncode": 0
+}

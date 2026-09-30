@@ -1,0 +1,45 @@
+{
+  "document_id": "1631",
+  "request_hash": "e03d2f0dc1d17f5b4e9288407ccdb164697beabdee51fa50954ace0bcd819d07",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 12.27,
+  "usage": {
+    "input_tokens": 17794,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 357,
+    "reasoning_output_tokens": 70
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 1,
+        "rationale": "The President directs the Secretary of Defense, acting through the Committee, to design and establish an administrative program; no legal entitlement or specified later legal consequence is imposed.",
+        "evidence": "The Secretary of Defense shall, through the Economic Adjustment Committee, design and establish a Defense Economic Adjustment Program."
+      },
+      {
+        "segment_id": "2",
+        "code": 1,
+        "rationale": "The program and its officials are assigned ongoing analytical, coordinating, assistance, and internal organizational functions, without presently changing legal rights or mandating a specified legally consequential agency outcome.",
+        "evidence": "The Defense Economic Adjustment Program shall assist in the alleviation of serious community socioeconomic effects"
+      },
+      {
+        "segment_id": "3",
+        "code": 1,
+        "rationale": "Defense and Committee officials must provide administrative support, coordinate the program, develop notification procedures, and report; these are internal management and reporting duties rather than legal consequences.",
+        "evidence": "shall provide all necessary policy and administrative support for the Committee"
+      },
+      {
+        "segment_id": "4",
+        "code": 1,
+        "rationale": "Agency heads and agencies receive liaison, coordination, support, and priority-consideration duties, while the remaining clauses provide internal construction, review, effectiveness, and supersession housekeeping; none grants assistance or property or otherwise dictates a legally consequential outcome.",
+        "evidence": "Afford priority consideration to requests from Defense-affected communities"
+      }
+    ]
+  },
+  "returncode": 0
+}

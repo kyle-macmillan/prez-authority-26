@@ -1,0 +1,39 @@
+{
+  "document_id": "18083",
+  "request_hash": "10b120ff658b5cd792110d0e414a25efeac1c735f7460cf1b41a620ebc0fa5d3",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 16.04,
+  "usage": {
+    "input_tokens": 15784,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 328,
+    "reasoning_output_tokens": 81
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 3,
+        "rationale": "The President presently makes the statutory determination that the covered persons’ unrestricted entry is not detrimental, producing the operative legal predicate immediately rather than directing a later agency outcome.",
+        "evidence": "hereby find that the unrestricted entry into the United States of persons described in section 1 of Proclamation 10014 is not detrimental to the interests of the United States"
+      },
+      {
+        "segment_id": "2",
+        "code": 3,
+        "rationale": "The President immediately revokes the cited proclamations and provisions, thereby removing their entry suspension without requiring a later agency decision.",
+        "evidence": "Proclamation 10014, section 1 of Proclamation 10052, and section 1 of Proclamation 10131 are revoked."
+      },
+      {
+        "segment_id": "3",
+        "code": 1,
+        "rationale": "The named Secretaries must conduct an internal review and may revise agency guidance as appropriate; no specified later legal outcome is dictated, while the remaining language preserves existing executive authorities and functions.",
+        "evidence": "shall review any regulations, orders, guidance documents, policies, and any other similar agency actions developed pursuant to Proclamation 10014"
+      }
+    ]
+  },
+  "returncode": 0
+}

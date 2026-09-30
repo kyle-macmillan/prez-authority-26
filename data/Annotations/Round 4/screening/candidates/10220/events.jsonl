@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a0d9f5-716d-7230-bd36-d5530debe3ad"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"classifications\":[{\"segment_id\":\"1\",\"code\":3,\"rationale\":\"The President presently exercises statutory drawdown authority to make specified defense assistance, services, and training available to the Iraqi National Congress; the legal authorization occurs in this segment, with later furnishing constituting implementation.\",\"evidence\":\"I hereby direct the furnishing of up to $5 million in defense articles\"}]}"}}
+{"type":"turn.completed","usage":{"input_tokens":15016,"cached_input_tokens":11264,"cache_write_input_tokens":0,"output_tokens":162,"reasoning_output_tokens":74}}

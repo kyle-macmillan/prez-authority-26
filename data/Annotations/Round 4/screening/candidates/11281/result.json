@@ -1,0 +1,27 @@
+{
+  "document_id": "11281",
+  "request_hash": "6220cfde09872ed7c40a15174053429d38a6fe030627d34a2e6f5d580f6b313a",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 7.83,
+  "usage": {
+    "input_tokens": 15602,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 147,
+    "reasoning_output_tokens": 34
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 1,
+        "rationale": "The President directs federal agency heads and White House and Education staff to prioritize, coordinate, and report on discretionary efforts supporting Historically Black Colleges and Universities. The segment prescribes internal executive implementation and reporting practices, but neither presently changes legal rights nor mandates a specified later legally consequential outcome.",
+        "evidence": "The Secretary of Education shall use these policies in developing the Annual Federal Performance Report on Executive Agency Actions to Assist Historically Black Colleges"
+      }
+    ]
+  },
+  "returncode": 0
+}

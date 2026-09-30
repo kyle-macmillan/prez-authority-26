@@ -1,0 +1,39 @@
+{
+  "document_id": "4424",
+  "request_hash": "c8d5bc12772d7127cc453a3103aec636b9c0ec21fac3f580505e1974ef3d6d00",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 16.01,
+  "usage": {
+    "input_tokens": 23390,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 481,
+    "reasoning_output_tokens": 226
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 4,
+        "rationale": "The segment inseparably combines presidential rules that presently define eligibility and payment consequences, agency mandates to pay later based on rates fixed by the Secretary, and discretionary authority for the Secretary to designate places and set rates.",
+        "evidence": "every executive department, independent establishment, and wholly owned Government corporation shall pay a foreign post differential fixed under section 102 hereof"
+      },
+      {
+        "segment_id": "2",
+        "code": 4,
+        "rationale": "The segment inseparably combines immediate eligibility and compensation rules, mandatory later agency payments, and discretionary Civil Service Commission authority to designate places, fix rates, and regulate compensation.",
+        "evidence": "every Executive department, independent establishment, and wholly owned Government corporation shall pay"
+      },
+      {
+        "segment_id": "3",
+        "code": 4,
+        "rationale": "The segment inseparably combines an internal revocation with present statutory findings, compensation rights, effective and termination dates, and immediate additions to and removals from legally consequential post designations.",
+        "evidence": "the following places at which diplomatic or consular offices were formerly or are now maintained are hereby added as of January 1, 1942, to the list of unhealthful posts"
+      }
+    ]
+  },
+  "returncode": 0
+}

@@ -1,0 +1,45 @@
+{
+  "document_id": "12279",
+  "request_hash": "b3c1dbb7c2f8dcc2a9fbaf1018ae3d000d436a43c768bcc4fcbe2a50c408ea27",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 11.42,
+  "usage": {
+    "input_tokens": 16645,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 437,
+    "reasoning_output_tokens": 120
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 4,
+        "rationale": "The President presently continues the national emergency, a self-executing legal consequence, while also assigning discretionary rulemaking and approval authority to the Secretary; these materially different postures are inseparable within the segment.",
+        "evidence": "hereby continue the national emergency declared in Proclamations 6867, 7757, and 9398, and authorize and direct the Secretary of Homeland Security"
+      },
+      {
+        "segment_id": "2",
+        "code": 1,
+        "rationale": "The Secretary is permitted, but not required, to issue future vessel regulations and may determine their contents and immediate effective date; the segment itself imposes no vessel rule.",
+        "evidence": "The Secretary may make rules and regulations governing the anchorage and movement of any vessel"
+      },
+      {
+        "segment_id": "3",
+        "code": 1,
+        "rationale": "The President grants the Secretary discretionary enforcement authority to inspect vessels and place guards; any effect on a particular vessel occurs only if the Secretary later exercises that authority.",
+        "evidence": "The Secretary is authorized, to the extent consistent with international law, to inspect any vessel"
+      },
+      {
+        "segment_id": "4",
+        "code": 1,
+        "rationale": "The segment assigns discretionary vessel-control, assistance, and redelegation authority, directs internal interagency cooperation, supersedes inconsistent prior administrative provisions, and requires transmission and publication; it does not dictate a particular later seizure or other legal outcome.",
+        "evidence": "All powers and authorities delegated by this proclamation to the Secretary may be delegated by the Secretary"
+      }
+    ]
+  },
+  "returncode": 0
+}

@@ -1,0 +1,147 @@
+{
+  "document_id": "333",
+  "request_hash": "d0694a8970e4bda428b2535482c3a0c8917d949f1e252cfec6cf7fe951f6de17",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 45.38,
+  "usage": {
+    "input_tokens": 26640,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 2110,
+    "reasoning_output_tokens": 1001
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 0,
+        "rationale": "The President supplies background and purpose but directs no agency action and changes no legal relationship.",
+        "evidence": "The United States collects signals intelligence so that its national security decisionmakers have access to the timely, accurate, and insightful information necessary"
+      },
+      {
+        "segment_id": "2",
+        "code": 3,
+        "rationale": "The order presently imposes governing authorization and legality requirements on signals-intelligence activities.",
+        "evidence": "Signals intelligence activities shall be authorized by statute or by Executive Order, proclamation, or other Presidential directive"
+      },
+      {
+        "segment_id": "3",
+        "code": 3,
+        "rationale": "The provision presently subjects signals-intelligence activities to a mandatory safeguard requirement.",
+        "evidence": "Signals intelligence activities shall be subject to appropriate safeguards"
+      },
+      {
+        "segment_id": "4",
+        "code": 3,
+        "rationale": "The provision itself presently restricts when and how signals-intelligence activities may be conducted.",
+        "evidence": "signals intelligence activities shall be conducted only following a determination"
+      },
+      {
+        "segment_id": "5",
+        "code": 3,
+        "rationale": "The provision presently limits collection to enumerated legitimate objectives and prohibits collection for specified discriminatory or rights-burdening purposes.",
+        "evidence": "Signals intelligence collection activities shall not be conducted for the purpose of"
+      },
+      {
+        "segment_id": "6",
+        "code": 4,
+        "rationale": "The segment inseparably combines a present substantive restriction on collection with internal assessment and presidential-reporting procedures.",
+        "evidence": "The collection of such information is authorized only to protect the national security of the United States or of its allies or partners."
+      },
+      {
+        "segment_id": "7",
+        "code": 3,
+        "rationale": "The provision itself presently imposes necessity, proportionality, minimization, permitted-use, and deletion constraints on intelligence collection and data use.",
+        "evidence": "The bulk collection of signals intelligence shall be authorized only based on a determination"
+      },
+      {
+        "segment_id": "8",
+        "code": 3,
+        "rationale": "Intelligence elements are presently bound by substantive dissemination restrictions governing personal information.",
+        "evidence": "shall not disseminate personal information collected through signals intelligence solely because of a person's nationality or country of residence"
+      },
+      {
+        "segment_id": "9",
+        "code": 3,
+        "rationale": "The provision presently imposes substantive retention, deletion, security, and access duties for personal information.",
+        "evidence": "shall delete non-United States persons' personal information collected through signals intelligence that may no longer be retained"
+      },
+      {
+        "segment_id": "10",
+        "code": 4,
+        "rationale": "The segment combines present substantive access and use restrictions with internal documentation, policy-update, publication, and review directions.",
+        "evidence": "is accessed only in order to make or support such a determination or to conduct authorized administrative, testing, development, security, or oversight functions"
+      },
+      {
+        "segment_id": "11",
+        "code": 1,
+        "rationale": "The provision directs agency heads to address recommendations and maintain internal oversight staffing; these are executive management and oversight arrangements.",
+        "evidence": "shall have in place senior-level legal, oversight, and compliance officials"
+      },
+      {
+        "segment_id": "12",
+        "code": 1,
+        "rationale": "The provision assigns internal access, noninterference, and employee-training responsibilities to Intelligence Community elements.",
+        "evidence": "Each element of the Intelligence Community shall maintain appropriate training requirements"
+      },
+      {
+        "segment_id": "13",
+        "code": 1,
+        "rationale": "The provision establishes an internal reporting chain for significant compliance incidents.",
+        "evidence": "the incident is reported promptly to the head of the element of the Intelligence Community"
+      },
+      {
+        "segment_id": "14",
+        "code": 1,
+        "rationale": "The provision directs internal remediation and prevention, preserves existing collection authority, and describes the redress mechanism without itself deciding a complaint.",
+        "evidence": "shall ensure that any necessary actions are taken to remediate and prevent the recurrence"
+      },
+      {
+        "segment_id": "15",
+        "code": 2,
+        "rationale": "The Director must later establish a specified complaint-submission process through which qualifying complaints can invoke review.",
+        "evidence": "shall establish a process for the submission of qualifying complaints"
+      },
+      {
+        "segment_id": "16",
+        "code": 2,
+        "rationale": "The Director must later create a process empowering the CLPO to investigate complaints and order remediation.",
+        "evidence": "shall establish a process that authorizes the CLPO to investigate, review, and, as necessary, order appropriate remediation"
+      },
+      {
+        "segment_id": "17",
+        "code": 2,
+        "rationale": "The mandated process must require the CLPO to make later violation and remediation determinations for each qualifying complaint.",
+        "evidence": "determine the appropriate remediation for any covered violation"
+      },
+      {
+        "segment_id": "18",
+        "code": 2,
+        "rationale": "The provision mandates later complaint decisions, review notices, and agency compliance with CLPO remediation determinations unless reversed by the Review Court.",
+        "evidence": "shall comply with any determination by the CLPO to undertake appropriate remediation"
+      },
+      {
+        "segment_id": "19",
+        "code": 1,
+        "rationale": "The provision supplies internal access, support, independence, and removal protections for the CLPO review function.",
+        "evidence": "The Director shall not interfere with a review by the CLPO"
+      },
+      {
+        "segment_id": "20",
+        "code": 1,
+        "rationale": "Read with the immediately continuing text, this clause grants the Attorney General authority to establish an internal review process; the authorization itself does not dictate a legal outcome.",
+        "evidence": "The Attorney General is authorized to and"
+      },
+      {
+        "segment_id": "21",
+        "code": 2,
+        "rationale": "The Attorney General must later promulgate regulations creating a specified adjudicative body and prescribing binding institutional features.",
+        "evidence": "shall, within 60 days of the date of this order, promulgate regulations establishing a Data Protection Review Court"
+      }
+    ]
+  },
+  "returncode": 0
+}

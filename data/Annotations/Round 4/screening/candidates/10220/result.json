@@ -1,0 +1,27 @@
+{
+  "document_id": "10220",
+  "request_hash": "d2de67a8916c5911625e779249f16bda8f4b559ab0574e1b1718925e99f62086",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 7.04,
+  "usage": {
+    "input_tokens": 15016,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 162,
+    "reasoning_output_tokens": 74
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 3,
+        "rationale": "The President presently exercises statutory drawdown authority to make specified defense assistance, services, and training available to the Iraqi National Congress; the legal authorization occurs in this segment, with later furnishing constituting implementation.",
+        "evidence": "I hereby direct the furnishing of up to $5 million in defense articles"
+      }
+    ]
+  },
+  "returncode": 0
+}

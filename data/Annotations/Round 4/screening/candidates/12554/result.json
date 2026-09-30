@@ -1,0 +1,39 @@
+{
+  "document_id": "12554",
+  "request_hash": "a6ca398a7d4691cda75787a8463faf1833f96abdd8e6e2c578113dc01a01a6d2",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 11.35,
+  "usage": {
+    "input_tokens": 17905,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 406,
+    "reasoning_output_tokens": 163
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 3,
+        "rationale": "The President presently designates the national monument, reserves the covered federal lands, and withdraws them from specified forms of entry and disposition; these legal consequences occur through the segment itself. The concluding management instruction is ancillary implementation.",
+        "evidence": "All Federal lands and interests in lands within the boundaries described on the accompanying map are hereby appropriated and withdrawn from all forms of entry, location, selection, sale, or other disposition under the public land laws"
+      },
+      {
+        "segment_id": "2",
+        "code": 1,
+        "rationale": "The Secretary must prepare a management plan within a deadline, an internal planning and administrative duty that does not itself alter legal rights or dictate a later legal consequence.",
+        "evidence": "The Secretary shall prepare a management plan"
+      },
+      {
+        "segment_id": "3",
+        "code": 1,
+        "rationale": "The segment directs the contents and purposes of an internal management plan and instructs the National Park Service to seek cooperative agreements using existing authority, without mandating a specified legally consequential outcome.",
+        "evidence": "The National Park Service is directed to use applicable authorities to seek to enter into agreements with others"
+      }
+    ]
+  },
+  "returncode": 0
+}

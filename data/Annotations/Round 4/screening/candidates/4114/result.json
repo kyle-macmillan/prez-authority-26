@@ -1,0 +1,51 @@
+{
+  "document_id": "4114",
+  "request_hash": "163ff208955337714d0b479c79106918304e86d8d3b84ac04917a2266ede5e0c",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 11.14,
+  "usage": {
+    "input_tokens": 15992,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 365,
+    "reasoning_output_tokens": 64
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 1,
+        "rationale": "Contracting-agency heads must administer existing nondiscrimination provisions and take unspecified appropriate compliance measures; the segment does not itself alter contractor rights or dictate a particular later sanction.",
+        "evidence": "shall take appropriate measures to bring about the said compliance"
+      },
+      {
+        "segment_id": "2",
+        "code": 1,
+        "rationale": "The President establishes and specifies the membership and leadership of an internal executive committee, an organizational measure effective immediately but not a substantive legal-rights change.",
+        "evidence": "There is hereby established the Committee on Government Contract Compliance"
+      },
+      {
+        "segment_id": "3",
+        "code": 1,
+        "rationale": "The Committee is assigned study, consultation, recommendation, and reporting functions, with resulting recommendations and presidential forwarding left discretionary.",
+        "evidence": "The Committee is authorized on behalf of the President to examine and study the rules, procedures, and practices"
+      },
+      {
+        "segment_id": "4",
+        "code": 1,
+        "rationale": "The Committee may establish internal procedural rules needed to perform its assigned functions, without a dictated substantive legal outcome.",
+        "evidence": "The Committee shall establish such rules as may be necessary for the performance of its functions under this order."
+      },
+      {
+        "segment_id": "5",
+        "code": 1,
+        "rationale": "The agencies must provide lawful interagency cooperation, information, assistance, and administrative funding for the Committee; these are internal support and housekeeping duties.",
+        "evidence": "authorized and directed to cooperate with the Committee"
+      }
+    ]
+  },
+  "returncode": 0
+}

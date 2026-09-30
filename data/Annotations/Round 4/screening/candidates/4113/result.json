@@ -1,0 +1,45 @@
+{
+  "document_id": "4113",
+  "request_hash": "422094842bc8f03ef888be96ddac85d9ef513f6e93606bd094a43e3e3589b8e9",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 11.24,
+  "usage": {
+    "input_tokens": 17026,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 441,
+    "reasoning_output_tokens": 142
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 1,
+        "rationale": "The President presently delegates authority to the FCC to prepare and implement contingency plans, an internal assignment of executive authority; any operational restrictions would occur later under those plans.",
+        "evidence": "is hereby delegated to the Federal Communications Commission"
+      },
+      {
+        "segment_id": "2",
+        "code": 1,
+        "rationale": "Agency heads must prepare and implement security plans for government-operated stations, subject to executive concurrence, and affected stations must resume operations when security permits; these are internal operational and coordination directions rather than a present legal consequence.",
+        "evidence": "the head of each government department or agency the stations of which are involved shall, pursuant to the authority vested in the President by section 305 of the Communications Act of 1934, as amended, prepare and put into effect such plans as may be necessary"
+      },
+      {
+        "segment_id": "3",
+        "code": 1,
+        "rationale": "The segment assigns implementation, rulemaking, designation, definitional, and interagency-cooperation authority without dictating a particular later rule or presently changing substantive legal rights.",
+        "evidence": "are hereby authorized to issue appropriate rules, regulations, orders, and instructions"
+      },
+      {
+        "segment_id": "4",
+        "code": 1,
+        "rationale": "The FCC receives discretionary authority to establish advisory committees for assistance with its assigned duties, which is internal administrative organization.",
+        "evidence": "is hereby authorized to appoint such advisory committees as it may consider necessary or desirable"
+      }
+    ]
+  },
+  "returncode": 0
+}

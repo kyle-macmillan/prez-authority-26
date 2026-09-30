@@ -1,0 +1,45 @@
+{
+  "document_id": "1061",
+  "request_hash": "afb92e22c01fec24eb026ea66968ad0a79c4c4ab581100503a5f61e0a1b7c9fb",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 11.31,
+  "usage": {
+    "input_tokens": 16006,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 378,
+    "reasoning_output_tokens": 108
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 1,
+        "rationale": "The President introduces an internal assignment of executive functions to the Secretary of Defense; the heading itself does not alter substantive legal rights, and the assignment is specified in the following segment.",
+        "evidence": "Section 1. Assignment of Functions to the Secretary of Defense."
+      },
+      {
+        "segment_id": "2",
+        "code": 1,
+        "rationale": "The President directs the Secretary of Defense to perform specified presidential functions, subject to stated exceptions; this is an immediate internal delegation of authority rather than a dictated substantive legal outcome.",
+        "evidence": "The Secretary of Defense shall perform"
+      },
+      {
+        "segment_id": "3",
+        "code": 1,
+        "rationale": "The President assigns functions to the Secretary of Homeland Security and permits the two Secretaries to reassign certain functions within their departments; these are internal delegations and authority-allocation rules effective under the order.",
+        "evidence": "may reassign the functions assigned to them by this order to civilian officers"
+      },
+      {
+        "segment_id": "4",
+        "code": 1,
+        "rationale": "The President sets the date when the order's internal delegations and organizational provisions become effective; the clause does not itself create a substantive legal consequence for regulated parties.",
+        "evidence": "This order shall take effect on October 1, 2004."
+      }
+    ]
+  },
+  "returncode": 0
+}

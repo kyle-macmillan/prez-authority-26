@@ -1,0 +1,57 @@
+{
+  "document_id": "1392",
+  "request_hash": "f139345bcd5f6dae05944e2efdafe869bc92f654b98236b7f90339e67c1a07d9",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 21.22,
+  "usage": {
+    "input_tokens": 17264,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 754,
+    "reasoning_output_tokens": 362
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 1,
+        "rationale": "The President introduces and defines the category of export controls governed by the ensuing executive directions; this segment does not itself change a legal right or dictate a particular agency outcome.",
+        "evidence": "In order to provide for appropriate controls on the export and foreign dissemination of encryption products"
+      },
+      {
+        "segment_id": "2",
+        "code": 3,
+        "rationale": "The President makes the specified conditions legally applicable to covered products when they are later placed on the Commerce Control List; the placement is the triggering event, not a later agency choice about the conditions.",
+        "evidence": "shall be subject to the following conditions"
+      },
+      {
+        "segment_id": "3",
+        "code": 3,
+        "rationale": "The President presently makes statutory and regulatory foreign-availability provisions inapplicable to the covered export controls, while leaving particular licensing decisions to the Secretary's discretion.",
+        "evidence": "shall not be applicable with respect to export controls on such encryption products"
+      },
+      {
+        "segment_id": "4",
+        "code": 4,
+        "rationale": "This inseparable segment combines internal review-body organization, a self-executing legal classification of encryption software, and a mandate that the Secretary later impose specified export controls through agency action.",
+        "evidence": "the Secretary shall take such actions, including the promulgation of rules, regulations, and amendments thereto"
+      },
+      {
+        "segment_id": "5",
+        "code": 1,
+        "rationale": "The President reserves authority to prescribe additional conditions later; the segment does not specify or presently impose those conditions.",
+        "evidence": "shall be subject to such further conditions as the President may direct"
+      },
+      {
+        "segment_id": "6",
+        "code": 3,
+        "rationale": "The President sets the event upon which section 1's substantive provisions become effective; placement on the Commerce Control List triggers their legal operation without another presidential decision.",
+        "evidence": "shall take effect as soon as any encryption products described in section 1 are placed on the Commerce Control List"
+      }
+    ]
+  },
+  "returncode": 0
+}

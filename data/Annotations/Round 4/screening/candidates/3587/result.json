@@ -1,0 +1,69 @@
+{
+  "document_id": "3587",
+  "request_hash": "9c548d798511a94c3731701703e7b6fd8400f752a8b68808d7a8739a636e4107",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 13.44,
+  "usage": {
+    "input_tokens": 17779,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 518,
+    "reasoning_output_tokens": 76
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 3,
+        "rationale": "The President presently transfers title and improvements to the Territory of Hawaii; the legal consequence occurs through this provision itself.",
+        "evidence": "title to the following-described tract of land at Sand Island"
+      },
+      {
+        "segment_id": "2",
+        "code": 3,
+        "rationale": "The provision itself encumbers the transfer with reserved federal easements and imposes a relocation duty on the Territory, with termination tied to future abandonment.",
+        "evidence": "A reservation of easements and improvements appurtenant thereto, in favor of the United States of America"
+      },
+      {
+        "segment_id": "3",
+        "code": 3,
+        "rationale": "The President presently reserves portions of the transferred land to the United States until relocation is completed.",
+        "evidence": "there are hereby reserved to the United States all such portions of the land hereinabove described"
+      },
+      {
+        "segment_id": "4",
+        "code": 3,
+        "rationale": "The provision itself subjects the transferred land to present and future airport-zoning laws, rules, and regulations.",
+        "evidence": "shall be subject to all the laws, rules and regulations with respect to airport zoning"
+      },
+      {
+        "segment_id": "5",
+        "code": 3,
+        "rationale": "The provision directly imposes on the Territory a legal duty to provide necessary access rights and utility easements to serve retained federal land.",
+        "evidence": "The Territory of Hawaii shall provide such rights of access and utility easements"
+      },
+      {
+        "segment_id": "6",
+        "code": 3,
+        "rationale": "The provision itself legally conditions any sale, lease, or other disposition of the transferred lands on the cited statute.",
+        "evidence": "shall be subject to the provisions of the act of August 25, 1958"
+      },
+      {
+        "segment_id": "7",
+        "code": 3,
+        "rationale": "The provision itself makes the transferred land subject to the statute's other provisions.",
+        "evidence": "The land transferred by this order shall be subject to such other provisions"
+      },
+      {
+        "segment_id": "8",
+        "code": 3,
+        "rationale": "The President presently withdraws the transferred lands from prior executive-order reservations and federal jurisdiction and control.",
+        "evidence": "are hereby withdrawn from the application of any such orders or from such jurisdiction and control"
+      }
+    ]
+  },
+  "returncode": 0
+}

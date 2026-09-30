@@ -1,0 +1,33 @@
+{
+  "document_id": "18810",
+  "request_hash": "648d8cbaf63bcfebfa90cf595aaf0503907af9c602a5aa3d789821a840cfc22d",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 7.76,
+  "usage": {
+    "input_tokens": 15374,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 193,
+    "reasoning_output_tokens": 0
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 3,
+        "rationale": "The President makes a statutory determination to terminate GSP preferential treatment for eligible articles imported from Portugal; the legal consequence is established by this presidential determination, with the proclamation supplying its effective operation.",
+        "evidence": "I have determined that it is appropriate to provide for the termination of preferential treatment under the Generalized System of Preferences (GSP)"
+      },
+      {
+        "segment_id": "2",
+        "code": 3,
+        "rationale": "The provision itself amends the tariff schedules, removes Portugal from GSP eligibility, and fixes when that substantive change applies, rather than directing an agency to create the result later.",
+        "evidence": "General headnote 3(e)(v)(A) to the Tariff Schedules of the United States (TSUS), listing those countries whose products are eligible for benefits of the GSP, is amended by striking out \"Portugal.\""
+      }
+    ]
+  },
+  "returncode": 0
+}

@@ -1,0 +1,33 @@
+{
+  "document_id": "4071",
+  "request_hash": "ab7a84eb757050cd16cdbc5a0edea39801cdd1d202fde8b8bfef8353fbd51959",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 11.15,
+  "usage": {
+    "input_tokens": 15276,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 291,
+    "reasoning_output_tokens": 118
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 3,
+        "rationale": "The President presently prescribes an amendment to codified federal regulations; the substantive legal amendment takes effect through this directive itself, rather than through a later agency decision.",
+        "evidence": "I hereby prescribe the following amendment of the regulations"
+      },
+      {
+        "segment_id": "2",
+        "code": 3,
+        "rationale": "The President presently amends the regulation to impose a security-based condition on eligibility for merchant-vessel documentation and employment, while authorizing the Commandant to exempt vessel categories; the legal rule is established by this segment itself.",
+        "evidence": "No person shall be issued a document required for employment on a merchant vessel of the United States nor shall any person be employed on a merchant vessel of the United States unless the Commandant is satisfied"
+      }
+    ]
+  },
+  "returncode": 0
+}

@@ -1,0 +1,99 @@
+{
+  "document_id": "14698",
+  "request_hash": "db1c7084bdb5d8ab4ace01e1f68e2ef341a7388222dc5695029fa41c171dffaa",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 26.96,
+  "usage": {
+    "input_tokens": 21026,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 1320,
+    "reasoning_output_tokens": 462
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 3,
+        "rationale": "The President presently makes the statutory national-security determination that import adjustments are necessary; the legally consequential determination occurs in this segment, even though specific restrictions follow later.",
+        "evidence": "I find and declare that adjustments must be made in the imports of crude oil, unfinished oils, and finished products"
+      },
+      {
+        "segment_id": "2",
+        "code": 1,
+        "rationale": "The President makes supporting factual and policy findings about regional market conditions and the need for differentiated treatment, but this segment itself imposes no import restriction or other legal consequence.",
+        "evidence": "imports into such areas must be treated differently"
+      },
+      {
+        "segment_id": "3",
+        "code": 1,
+        "rationale": "The President makes a supporting factual finding and states how a future adjustment system should accommodate Puerto Rico; the segment does not itself authorize imports or establish binding levels.",
+        "evidence": "any system for the adjustment of imports of such commodities should permit imports into Puerto Rico"
+      },
+      {
+        "segment_id": "4",
+        "code": 3,
+        "rationale": "The President directly prohibits specified imports without a license, fixes binding import ceilings, and establishes exceptions; those legal consequences arise from the proclamation itself on the stated dates.",
+        "evidence": "no crude oil or unfinished oils may be entered for consumption or withdrawn from warehouse for consumption"
+      },
+      {
+        "segment_id": "5",
+        "code": 1,
+        "rationale": "The President authorizes the Secretary of the Interior to issue implementing regulations without this segment prescribing a particular regulatory result.",
+        "evidence": "The Secretary of the Interior is hereby authorized to issue regulations"
+      },
+      {
+        "segment_id": "6",
+        "code": 2,
+        "rationale": "The President requires the Secretary's later regulations to establish an allocation and licensing system, so the specified legal regime will be produced through agency rulemaking.",
+        "evidence": "shall provide for a system of allocation of the authorized imports"
+      },
+      {
+        "segment_id": "7",
+        "code": 2,
+        "rationale": "The President requires later regulations to distribute import allocations under specified substantive criteria, with the legal allocations arising through agency administration.",
+        "evidence": "such regulations shall provide, to the extent possible, for a fair and equitable distribution"
+      },
+      {
+        "segment_id": "8",
+        "code": 2,
+        "rationale": "The President mandates that later regulations award allocations to a specified class of refiners and pipeline operators, dictating a legally consequential agency outcome.",
+        "evidence": "Such regulations also shall provide for allocations of crude oil"
+      },
+      {
+        "segment_id": "9",
+        "code": 2,
+        "rationale": "The President requires later regulations to establish allocations and binding processing and exchange conditions, while also authorizing agency suspension or revocation provisions; the legal consequences are to be produced through those regulations and ensuing administration.",
+        "evidence": "Such regulations shall require that imported crude oil and unfinished oils be processed in the licensee's refinery"
+      },
+      {
+        "segment_id": "10",
+        "code": 1,
+        "rationale": "The President authorizes the Secretary to create and structure an internal Appeal Board and permits, but does not require, delegation of specified decisional powers to it.",
+        "evidence": "he is authorized to provide for the establishment and operation of an Appeal Board"
+      },
+      {
+        "segment_id": "11",
+        "code": 4,
+        "rationale": "This segment inseparably combines a present reporting duty imposed on regulated persons with internal surveillance, reporting, committee-discharge, and delegation provisions, which carry materially different legal postures.",
+        "evidence": "Persons who apply for allocations of crude oil, unfinished oils, or finished products and persons to whom such allocations have been made shall furnish to the Secretary of the Interior such information"
+      },
+      {
+        "segment_id": "12",
+        "code": 1,
+        "rationale": "The President directs executive departments and agencies to cooperate with and assist the Secretary, an internal coordination requirement without an external legal consequence.",
+        "evidence": "shall cooperate with and assist the Secretary of the Interior"
+      },
+      {
+        "segment_id": "13",
+        "code": 1,
+        "rationale": "The President revokes a prior executive order governing federal purchasing and supplies definitions for administration of this proclamation; this is internal executive housekeeping rather than a direct alteration of private legal rights.",
+        "evidence": "Executive Order 10761 of March 27, 1958, entitled \"Government Purchases of Crude Petroleum and Petroleum Products\" (23 F.R. 2067) is hereby revoked as of April 1, 1959."
+      }
+    ]
+  },
+  "returncode": 0
+}

@@ -1,0 +1,33 @@
+{
+  "document_id": "11876",
+  "request_hash": "b3820848968adcc3d61560931a321eae2b0af8001fd981ec3baabf1027124ebf",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 9.55,
+  "usage": {
+    "input_tokens": 16162,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 294,
+    "reasoning_output_tokens": 92
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 2,
+        "rationale": "The President directs federal departments and agencies to impose specified conditions on future federal land leases, including mandatory prohibitions on cultivating certain crops. The legally consequential lease restrictions arise through later agency leasing actions, while the segment’s related determinations, definitions, and coordination provisions implement that mandated outcome.",
+        "evidence": "leases of farm lands made by the Federal Government on or after the effective date of this memorandum shall prohibit the cultivation of price-supported crops in surplus supply"
+      },
+      {
+        "segment_id": "2",
+        "code": 1,
+        "rationale": "The segment imposes an internal reporting requirement on departments and agencies and sets the memorandum’s effective date; it does not itself alter substantive legal rights or dictate a separate agency legal outcome.",
+        "evidence": "All departments and agencies concerned shall submit to the Bureau of the Budget within sixty days from the date of this memorandum copies of implementing instructions to their operating organizations."
+      }
+    ]
+  },
+  "returncode": 0
+}

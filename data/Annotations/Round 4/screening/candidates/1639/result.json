@@ -1,0 +1,75 @@
+{
+  "document_id": "1639",
+  "request_hash": "cb5b505f2be79e340214164add8a98886ac45918e7d30083be6448091fd2227e",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 17.77,
+  "usage": {
+    "input_tokens": 19024,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 758,
+    "reasoning_output_tokens": 186
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 4,
+        "rationale": "The President combines internal agency program and operational directions with a mandate that future covered contracts contain provisions legally obligating contractors; these materially different postures cannot be separated at the supplied segment level.",
+        "evidence": "Every contract that provides for contractor operation of a Government-owned or leased facility, awarded more than 210 days after the effective date of this Executive order, shall include provisions that obligate the contractor to comply with the requirements of this Part"
+      },
+      {
+        "segment_id": "2",
+        "code": 1,
+        "rationale": "Each Federal agency must submit an administrative report to EPA within 180 days; the segment does not itself alter procurement rights or dictate a new legal consequence.",
+        "evidence": "each Federal agency shall provide a report to the Administrator of the Environmental Protection Agency"
+      },
+      {
+        "segment_id": "3",
+        "code": 1,
+        "rationale": "The EPA Administrator must report to the President within one year concerning agency compliance, an internal oversight function without a specified legal outcome.",
+        "evidence": "the Administrator of the Environmental Protection Agency shall report to the President regarding the compliance of each Federal agency"
+      },
+      {
+        "segment_id": "4",
+        "code": 1,
+        "rationale": "Each Federal agency must annually review its own procurement program's effectiveness; this is internal administrative oversight rather than a prescribed legal consequence.",
+        "evidence": "each Federal agency shall review annually the effectiveness of its affirmative procurement program"
+      },
+      {
+        "segment_id": "5",
+        "code": 1,
+        "rationale": "Federal agencies must transmit findings reports to executive offices annually and make them public; these are reporting and transparency requirements, not substantive legal outcomes.",
+        "evidence": "shall provide a report regarding its findings to the Environmental Protection Agency and to the Office of Federal Procurement Policy"
+      },
+      {
+        "segment_id": "6",
+        "code": 1,
+        "rationale": "The EPA Administrator must designate an agency official within 90 days to perform an internal coordinating role.",
+        "evidence": "shall designate a senior official of that Agency to serve as the Federal Recycling Coordinator"
+      },
+      {
+        "segment_id": "7",
+        "code": 1,
+        "rationale": "The Federal Recycling Coordinator must conduct annual internal review and reporting to OMB at budget-submission time.",
+        "evidence": "shall review and report annually to OMB"
+      },
+      {
+        "segment_id": "8",
+        "code": 1,
+        "rationale": "Agency heads must designate internal coordinators within 90 days, whose assigned duties concern program coordination, data development, and reporting.",
+        "evidence": "the head of each Federal agency shall designate an agency employee to serve as Agency Recycling Coordinator"
+      },
+      {
+        "segment_id": "9",
+        "code": 1,
+        "rationale": "The President immediately establishes and staffs an internal executive council, assigns it advisory and coordinating duties, disclaims enforceable private rights, and sets the duration and effective date of these internal arrangements.",
+        "evidence": "A Council on Federal Recycling and Procurement Policy is hereby established."
+      }
+    ]
+  },
+  "returncode": 0
+}

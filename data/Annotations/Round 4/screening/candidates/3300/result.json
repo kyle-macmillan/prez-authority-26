@@ -1,0 +1,69 @@
+{
+  "document_id": "3300",
+  "request_hash": "efef8a322677c1a29ac30083772c96557c82aab4e7bacec40967c753e116a3ba",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 17.65,
+  "usage": {
+    "input_tokens": 17642,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 676,
+    "reasoning_output_tokens": 195
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 1,
+        "rationale": "The President immediately amends the structure of an earlier executive order, while this segment itself specifies no substantive legal outcome affecting rights or benefits.",
+        "evidence": "is further amended as follows:"
+      },
+      {
+        "segment_id": "2",
+        "code": 3,
+        "rationale": "The President presently establishes service members’ entitlement to incentive pay for specified submarine and submersible duties; the legal entitlement arises from the amended provision itself.",
+        "evidence": "shall be entitled to receive incentive pay for the performance of submarine duty"
+      },
+      {
+        "segment_id": "3",
+        "code": 3,
+        "rationale": "The President presently defines qualifying hazardous duties, deems incapacitated members to have fulfilled duty requirements, and establishes authorization and limits for incentive-pay eligibility; these legal consequences arise from the amendments themselves.",
+        "evidence": "shall be deemed to have fulfilled all of the requirements for the performance of all hazardous duties"
+      },
+      {
+        "segment_id": "4",
+        "code": 1,
+        "rationale": "The President amends an earlier executive order, but this introductory segment itself only performs administrative restructuring and specifies no substantive legal outcome.",
+        "evidence": "is further amended as follows:"
+      },
+      {
+        "segment_id": "5",
+        "code": 1,
+        "rationale": "The President changes only the title of an earlier executive order, an immediate housekeeping amendment with no substantive effect on legal rights or benefits.",
+        "evidence": "The title is amended to read as follows"
+      },
+      {
+        "segment_id": "6",
+        "code": 3,
+        "rationale": "The President presently establishes and limits enlisted members’ entitlement to special pay based on duty, location, duration, and overlapping benefits; those consequences arise from the amended provisions themselves.",
+        "evidence": "Enlisted members entitled to receive basic pay shall be entitled to receive additionally, pay"
+      },
+      {
+        "segment_id": "7",
+        "code": 1,
+        "rationale": "The President administratively amends an earlier executive order by adding a section, but this fragment contains none of the new section’s substantive rule.",
+        "evidence": "is amended by adding the following new section"
+      },
+      {
+        "segment_id": "8",
+        "code": 3,
+        "rationale": "The President presently grants qualifying commissioned officers an election to decline government quarters and receive a statutory allowance, subject to an operational-conditions determination, and makes the amendments effective on a specified date.",
+        "evidence": "may elect not to occupy those quarters and instead to receive the basic allowance for quarters"
+      }
+    ]
+  },
+  "returncode": 0
+}

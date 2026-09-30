@@ -1,0 +1,45 @@
+{
+  "document_id": "8320",
+  "request_hash": "8bf2d70cb93e968b4de9c4fae98a31bdeaa9001365c7c5affbed64e9d3939e55",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 10.09,
+  "usage": {
+    "input_tokens": 16129,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 349,
+    "reasoning_output_tokens": 80
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 1,
+        "rationale": "The President recounts directing the National Security Council to investigate federal employee-security program administration; the consequence is an internal study and report, not a change in employment rights or status.",
+        "evidence": "I requested the National Security Council to make an investigation of the administration of Federal employee security programs"
+      },
+      {
+        "segment_id": "2",
+        "code": 1,
+        "rationale": "The President asks the Civil Service Commission to prepare and provide a future consolidation plan; this is planning and internal program development, with no dictated legal outcome.",
+        "evidence": "provide me with a plan for combining the three existing programs into one"
+      },
+      {
+        "segment_id": "3",
+        "code": 1,
+        "rationale": "The President directs executive departments and agencies to support the Commission with cooperation, personnel, and assistance while expressly deferring any legally consequential executive order; this is internal coordination and resource assignment.",
+        "evidence": "I am directing all Executive departments and agencies to cooperate fully with the Commission"
+      },
+      {
+        "segment_id": "4",
+        "code": 1,
+        "rationale": "The President advises departments and agencies to review their existing procedures against committee recommendations; this is an internal administrative review whose future results remain unspecified.",
+        "evidence": "departments and agencies having employee security programs should reexamine their procedures"
+      }
+    ]
+  },
+  "returncode": 0
+}

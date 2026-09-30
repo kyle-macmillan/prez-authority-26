@@ -1,0 +1,57 @@
+{
+  "document_id": "2836",
+  "request_hash": "cc9b98cf82ddb7be36f8dc15d2703e30a9eefddd1d2b1cd918cba90054f679ce",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 16.41,
+  "usage": {
+    "input_tokens": 18388,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 563,
+    "reasoning_output_tokens": 168
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 1,
+        "rationale": "The President immediately establishes and staffs an office within the Executive Office, an internal organizational action rather than a change to private legal rights.",
+        "evidence": "The Office of Consumer Affairs (hereinafter referred to as the \"Office\") is hereby established in the Executive Office of the President."
+      },
+      {
+        "segment_id": "2",
+        "code": 1,
+        "rationale": "This assigns duties, succession, supervisory authority, and future presidential rate-setting within the executive branch; it does not presently fix compensation or dictate an external legal outcome.",
+        "evidence": "The Director and Deputy Director shall receive compensation at such rates as the President, consonant with law, may hereafter determine."
+      },
+      {
+        "segment_id": "3",
+        "code": 1,
+        "rationale": "The Director is instructed to organize the Office for its assigned functions, which is internal executive management.",
+        "evidence": "The Director shall take all actions as may be necessary to organize the Office"
+      },
+      {
+        "segment_id": "4",
+        "code": 3,
+        "rationale": "Although most provisions concern internal authority and coordination, the segment itself presently grants qualifying advisory-committee members a compensation and travel-expense entitlement authorized by law.",
+        "evidence": "shall be entitled to receive compensation and travel expenses as authorized by law for persons serving intermittently"
+      },
+      {
+        "segment_id": "5",
+        "code": 1,
+        "rationale": "The segment establishes and structures an advisory council, directs agencies to consider consumer interests without prescribing a particular legal result, and abolishes predecessor advisory bodies; these are internal organizational and procedural measures.",
+        "evidence": "Every Federal agency in taking any action of a nature which can reasonably be construed as substantially affecting the interests of consumers of products and services"
+      },
+      {
+        "segment_id": "6",
+        "code": 1,
+        "rationale": "The provision supersedes prior executive orders governing internal administrative organization, an internal housekeeping change expressly covered by Code 1.",
+        "evidence": "are hereby superseded"
+      }
+    ]
+  },
+  "returncode": 0
+}

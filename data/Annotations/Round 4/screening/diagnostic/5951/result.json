@@ -1,0 +1,27 @@
+{
+  "document_id": "5951",
+  "request_hash": "bd6392f1437cd50b75b8eadae65a6a4eb2be88d476a08f6dd7ae3e67a96ebad2",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 7.03,
+  "usage": {
+    "input_tokens": 15028,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 201,
+    "reasoning_output_tokens": 109
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 0,
+        "rationale": "The President states a policy determination in a transmittal message to Congress, but this segment itself neither continues the emergency nor directs an agency to impose a legal consequence; the legally operative continuation occurs through the separate statutory notice.",
+        "evidence": "I have determined that it is necessary to maintain in force the broad authorities"
+      }
+    ]
+  },
+  "returncode": 0
+}

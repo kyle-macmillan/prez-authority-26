@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a0d9f2-5d36-7042-a7fe-d8b680065256"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"classifications\":[{\"segment_id\":\"1\",\"code\":4,\"rationale\":\"The President presently revokes an earlier proclamation and prohibits Libyan crude-oil imports, while also directing executive monitoring, reporting, discretionary regulations, and refund administration. These materially different self-executing and internal-management postures are inseparably combined in one supplied segment; the import prohibition and revocation take effect immediately, while agency actions occur later.\",\"evidence\":\"No crude oil produced in Libya may be imported into the United States, its territories or possessions.\"}]}"}}
+{"type":"turn.completed","usage":{"input_tokens":15749,"cached_input_tokens":11264,"cache_write_input_tokens":0,"output_tokens":159,"reasoning_output_tokens":36}}

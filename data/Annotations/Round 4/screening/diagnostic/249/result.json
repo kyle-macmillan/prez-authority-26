@@ -1,0 +1,45 @@
+{
+  "document_id": "249",
+  "request_hash": "b9bcb16998d09b863ec0c1cbddbb6cdcff9511fd23d15190d23c31f735189cfe",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 12.86,
+  "usage": {
+    "input_tokens": 16640,
+    "cached_input_tokens": 0,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 410,
+    "reasoning_output_tokens": 135
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 3,
+        "rationale": "The President presently declares that specified U.S.-born persons are outside birthright citizenship, directly determining their citizenship status rather than merely directing a later agency determination.",
+        "evidence": "the privilege of United States citizenship does not automatically extend to persons born in the United States"
+      },
+      {
+        "segment_id": "2",
+        "code": 2,
+        "rationale": "The provision mandates that departments and agencies later deny or refuse citizenship documentation for the specified persons, producing the legally consequential outcome through agency administration.",
+        "evidence": "no department or agency of the United States government shall issue documents recognizing United States citizenship"
+      },
+      {
+        "segment_id": "3",
+        "code": 1,
+        "rationale": "Named officials must take appropriate implementation measures and align agency regulations, policies, and conduct with the order; the segment does not itself impose a distinct legal consequence.",
+        "evidence": "shall take all appropriate measures to ensure that the regulations and policies of their respective departments and agencies are consistent with this order"
+      },
+      {
+        "segment_id": "4",
+        "code": 1,
+        "rationale": "The segment directs agencies to issue implementation guidance, supplies definitions, and preserves existing executive authority and OMB functions; these are implementation and housekeeping provisions rather than substantive legal outcomes.",
+        "evidence": "shall issue public guidance within 30 days of the date of this order"
+      }
+    ]
+  },
+  "returncode": 0
+}

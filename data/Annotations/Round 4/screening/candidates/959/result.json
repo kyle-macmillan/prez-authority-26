@@ -1,0 +1,69 @@
+{
+  "document_id": "959",
+  "request_hash": "0f6033de8b711676e298d99d1a998a952b17c94f9e86475e0ce15220087644fa",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 21.19,
+  "usage": {
+    "input_tokens": 17345,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 940,
+    "reasoning_output_tokens": 371
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 3,
+        "rationale": "The President presently blocks covered property and prohibits dealings involving persons later identified by Treasury; the legal consequence follows directly from this provision upon identification.",
+        "evidence": "all property and interests in property that are in the United States, that hereafter come within the United States, or that are or hereafter come within the possession or control of any United States person, including any overseas branch, of the following persons are blocked"
+      },
+      {
+        "segment_id": "2",
+        "code": 3,
+        "rationale": "The President presently amends an existing sanctions criterion and directly prohibits evasion transactions and conspiracies, immediately imposing substantive legal duties.",
+        "evidence": "Any transaction by a United States person or within the United States that evades or avoids, has the purpose of evading or avoiding, or attempts to violate any of the prohibitions set forth in this order is prohibited."
+      },
+      {
+        "segment_id": "3",
+        "code": 3,
+        "rationale": "The President makes the statutory impairment determination that supplies the present legal predicate for restricting IEEPA-covered donations.",
+        "evidence": "I hereby determine that the making of donations of the type specified in section 203(b)(2) of IEEPA"
+      },
+      {
+        "segment_id": "4",
+        "code": 3,
+        "rationale": "The President directly and presently prohibits the specified donations; no later agency action is needed to create the prohibition.",
+        "evidence": "I hereby prohibit such donations as provided by section 1 of this order."
+      },
+      {
+        "segment_id": "5",
+        "code": 1,
+        "rationale": "The President makes a supporting factual finding about advance notice, but this segment itself neither eliminates notice nor otherwise changes legal rights; that consequence occurs in the following segment.",
+        "evidence": "prior notice to such persons of measures to be taken pursuant to this order would render these measures ineffectual."
+      },
+      {
+        "segment_id": "6",
+        "code": 3,
+        "rationale": "The President presently determines that covered persons need receive no prior notice, directly establishing the notice consequence for future determinations.",
+        "evidence": "there need be no prior notice of a determination made pursuant to this order."
+      },
+      {
+        "segment_id": "7",
+        "code": 1,
+        "rationale": "The President authorizes Treasury to implement the order and permits internal redelegation without dictating a particular later rule or legally consequential outcome.",
+        "evidence": "The Secretary of the Treasury may redelegate any of these functions to other officers and agencies of the United States Government"
+      },
+      {
+        "segment_id": "8",
+        "code": 1,
+        "rationale": "The President directs agency implementation and supplies housekeeping savings and no-private-right clauses; these provisions organize execution without themselves imposing a new substantive outcome.",
+        "evidence": "All executive agencies of the United States Government are hereby directed to take all appropriate measures within their authority to carry out the provisions of this order"
+      }
+    ]
+  },
+  "returncode": 0
+}

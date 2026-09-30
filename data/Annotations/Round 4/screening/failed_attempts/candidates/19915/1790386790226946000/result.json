@@ -1,0 +1,16 @@
+{
+  "document_id": "19915",
+  "request_hash": "f5a6c4ef4a04d2b6db0244c9bcd5fdd2beaca5c76092e44c46a72011f06cc010",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 2.54,
+  "usage": {},
+  "ok": false,
+  "errors": [
+    "invalid answer JSON: [Errno 2] No such file or directory: '/Users/kylemacmillan/Projects/prez-authority-26/data/Annotations/Round 4/screening/candidates/19915/answer.json'",
+    "process exit 1",
+    "You’ve hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 6:51 PM."
+  ],
+  "answer": null,
+  "returncode": 1
+}

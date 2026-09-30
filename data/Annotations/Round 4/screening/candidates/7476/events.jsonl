@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a0db61-35eb-7b30-83e7-deab47bd4b64"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"classifications\":[{\"segment_id\":\"1\",\"code\":2,\"rationale\":\"The President mandatorily directs the Acting Attorney General to seek a court injunction against the strike. The legally consequential restraint would occur later if the district court grants the requested injunction; discretion extends only to any additional relief sought.\",\"evidence\":\"I direct you, pursuant to the provisions of Section 208 of the Labor Management Relations Act, 1947, to petition in the name of the United States any district court of the United States having jurisdiction of the parties to enjoin the continuance of such strike\"}]}"}}
+{"type":"turn.completed","usage":{"input_tokens":15215,"cached_input_tokens":11264,"cache_write_input_tokens":0,"output_tokens":129,"reasoning_output_tokens":0}}

@@ -1,0 +1,45 @@
+{
+  "document_id": "12134",
+  "request_hash": "57a73f865377ef7d8097ad60f88e067aac2a141c6e11d57e2d9ba5312f964dca",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 11.31,
+  "usage": {
+    "input_tokens": 16000,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 447,
+    "reasoning_output_tokens": 149
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 3,
+        "rationale": "The President presently declares a national emergency and invokes statutory Ready Reserve authority, making that authority immediately available to specified military officials according to its terms.",
+        "evidence": "hereby declare that a national emergency exists at the southern border of the United States"
+      },
+      {
+        "segment_id": "2",
+        "code": 3,
+        "rationale": "The President presently makes the statutory determination that the emergency requires the Armed Forces and invokes section 2808 construction authority; the legal consequence occurs in the proclamation itself.",
+        "evidence": "the construction authority provided in section 2808 of title 10, United States Code, is invoked and made available"
+      },
+      {
+        "segment_id": "3",
+        "code": 1,
+        "rationale": "The President directs the relevant military secretaries to decide, within their discretion and applicable law, how many Ready Reserve personnel should be activated to support border activities; the segment does not dictate a particular activation result.",
+        "evidence": "as the Secretary concerned, in the Secretary's discretion, determines to be appropriate"
+      },
+      {
+        "segment_id": "4",
+        "code": 1,
+        "rationale": "The named secretaries must take appropriate implementing actions, but whether and how to act—including any jurisdictional transfer—remains conditional and discretionary; the accompanying disclaimer creates no enforceable right or benefit.",
+        "evidence": "shall take all appropriate actions, consistent with applicable law, to use or support the use of the authorities herein invoked"
+      }
+    ]
+  },
+  "returncode": 0
+}

@@ -1,0 +1,27 @@
+{
+  "document_id": "19471",
+  "request_hash": "e705d6c832019955d516274353e20684b6fff003124cc75be13a1e6111433bd8",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 9.02,
+  "usage": {
+    "input_tokens": 15051,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 113,
+    "reasoning_output_tokens": 0
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 3,
+        "rationale": "The President immediately extends the legal validity of qualifying import licenses until a specified date, directly affecting import authorization without requiring a later agency decision.",
+        "evidence": "Any license for the importation of crude oil or gasoline as defined in Proclamation 4744 and issued thereunder shall remain valid, for purposes of Proclamation 3279, as amended, until 12:01 a.m. September 1, 1980"
+      }
+    ]
+  },
+  "returncode": 0
+}

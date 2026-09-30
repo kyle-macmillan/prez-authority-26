@@ -1,0 +1,63 @@
+{
+  "document_id": "12165",
+  "request_hash": "535bd43debba58cdd87727e9fd487135a5ae0ead778aba0819c91b86796207db",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 20.08,
+  "usage": {
+    "input_tokens": 17279,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 815,
+    "reasoning_output_tokens": 307
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 3,
+        "rationale": "The President makes a present statutory determination withdrawing duty-free treatment from an article; the legal consequence is established by that presidential determination, even though the article is identified elsewhere.",
+        "evidence": "I have determined to withdraw the application of the duty-free treatment accorded to a certain article."
+      },
+      {
+        "segment_id": "2",
+        "code": 3,
+        "rationale": "The President makes the statutory competitive-need determination that specified exports exceeded applicable limits, presently establishing the condition that removes preferential treatment under the governing scheme.",
+        "evidence": "I have determined that in 2017 certain beneficiary developing countries exported eligible articles in quantities exceeding the applicable competitive-need limitations."
+      },
+      {
+        "segment_id": "3",
+        "code": 3,
+        "rationale": "The President expressly and presently terminates duty-free treatment; the surrounding statutory explanation and receipt of agency advice do not defer that legal consequence.",
+        "evidence": "I hereby terminate the duty-free treatment for such articles from such beneficiary developing countries."
+      },
+      {
+        "segment_id": "4",
+        "code": 1,
+        "rationale": "The President makes a predicate policy finding concerning the national economic interest, but this segment neither grants the waivers nor directs an agency to impose a specified legal outcome later.",
+        "evidence": "such waivers are in the national economic interest of the United States."
+      },
+      {
+        "segment_id": "5",
+        "code": 3,
+        "rationale": "The President makes the statutory determination that competitive-need limitations should be waived for specified articles and countries, establishing the waiver decision whose particulars are supplied elsewhere.",
+        "evidence": "I have determined that the competitive-need limitations of section 503(c)(2) of the 1974 Act should be waived"
+      },
+      {
+        "segment_id": "6",
+        "code": 3,
+        "rationale": "The President makes a statutory redesignation determination that changes a country's beneficiary status for an eligible article; the legal consequence arises from that presidential act.",
+        "evidence": "I have determined to redesignate a certain country as a beneficiary developing country with respect to a certain eligible article"
+      },
+      {
+        "segment_id": "7",
+        "code": 3,
+        "rationale": "The President directly modifies the tariff schedule, applies a statutory waiver, fixes the effective date for covered imports, and supersedes inconsistent prior provisions; these are present self-executing legal acts rather than commands for later agency decision-making.",
+        "evidence": "the Rates of Duty 1-Special subcolumn for the corresponding HTS subheadings and general note 4(d) to the HTS are modified"
+      }
+    ]
+  },
+  "returncode": 0
+}

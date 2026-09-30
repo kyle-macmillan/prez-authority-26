@@ -1,0 +1,33 @@
+{
+  "document_id": "2139",
+  "request_hash": "1e541bd51f1cfc5fc764aef30972f6535c4cb7d0e18092e36d8019d50158fca0",
+  "model": "gpt-5.6-sol",
+  "prompt_hash": "7897f40f97462385916b55fa97515ac4a5d23d0a498c66bf7b8d385eb77f85a5",
+  "elapsed_seconds": 9.48,
+  "usage": {
+    "input_tokens": 16508,
+    "cached_input_tokens": 11264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 358,
+    "reasoning_output_tokens": 56
+  },
+  "ok": true,
+  "errors": [],
+  "answer": {
+    "classifications": [
+      {
+        "segment_id": "1",
+        "code": 3,
+        "rationale": "The President presently compels covered non-bank holders to transfer Iranian assets, revokes existing licenses, nullifies attachment-derived rights, prohibits acquisition or exercise of rights in the property, and creates discharge and immunity upon compliance. These legal consequences arise from the Order itself as of its effective date, with transfer administration handled afterward.",
+        "evidence": "All rights, powers, and privileges relating to the properties described in section 1-101 of this Order and which derive from any attachment, injunction, other like proceedings or process, or other action in any litigation after November 14, 1979, at 8:10 a.m. EST, including those derived from Section 535.504 of the Iranian Assets Control Regulations, other than rights, powers, and privileges of the Government of Iran and its agencies, instrumentalities, and controlled entities, whether acquired by court order or otherwise, are nullified"
+      },
+      {
+        "segment_id": "2",
+        "code": 1,
+        "rationale": "The President directs the Attorney General's litigation conduct, delegates presidential statutory functions to the Treasury Secretary, and specifies the Order's effective timing. These are internal executive assignments and housekeeping rather than a dictated later agency legal outcome or an independently stated substantive change in private legal rights.",
+        "evidence": "The Secretary of the Treasury is delegated and authorized to exercise all functions vested in the President by the International Emergency Economic Powers Act"
+      }
+    ]
+  },
+  "returncode": 0
+}
