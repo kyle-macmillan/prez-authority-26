@@ -181,6 +181,27 @@ does not infer presidential authority solely from `consistent with`, `in accorda
 that merely report an action taken in another directive, and reviewed memoranda that only carry
 out a statutory duty without invoking presidential authority, remain outside the matched forms.
 
+### Document-level vesting selection
+
+The rules above find vesting *candidates*. For the vesting-authority analyses,
+`extract_vesting_clauses()` (always) and `segment_ordering(..., select_vesting=True)`
+keep only the document's own authority invocation (`_vesting_kind` / `_select_vesting`):
+
+| Candidate | Kept? |
+|-----------|-------|
+| Formal invocation: `By the authority vested in me…`, `Now, Therefore, I…`, other strong markers | Always |
+| Proclamation recital citing a joint resolution / Public Law that requests or authorizes the President to issue a proclamation or to proclaim | Always (proclamations only) |
+| Any other candidate before `Now, Therefore, I…` in a proclamation | No — recital |
+| Bare `Pursuant to section X…`, inline citations, other Public Law / joint resolution recitals | Only the first, and only when the document has no formal invocation |
+| `The authority vested in me by section X … is delegated to…` | No — an order action |
+
+`select_vesting` is off by default: `segment_ordering()` returns the original splits, which
+the annotation viewers and legal-effect coding use. With it on, rejected candidates are
+folded into the neighboring segment from the same source chunk
+(`_demote_rejected_vesting`), using the same placement as the viewer's
+`_merge_vesting_for_display`. The Section/Paragraph strategy (`segment()`) does not apply
+this selection.
+
 ---
 
 ## Pipeline

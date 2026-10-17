@@ -34,6 +34,36 @@ def test_combined_generic_authorities_qualify():
     assert classify("By the Constitution and the laws of the United States, I hereby order")
 
 
+def test_joint_resolution_requesting_proclamation_is_vesting():
+    text = (
+        "By the President of the United States of America  A Proclamation  "
+        "Mammography saves lives.  "
+        "The Congress, by House Joint Resolution 265, has designated October 19, 1993, as "
+        "\"National Mammography Day\" and has authorized and requested the President to "
+        "issue a proclamation in observance of this day.  "
+        "Now, Therefore, I, William J. Clinton, President of the United States of America, "
+        "do hereby proclaim October 19, 1993, as National Mammography Day."
+    )
+    clauses = extract_vesting_clauses(text, "proclamation")
+
+    assert any("Joint Resolution 265" in clause for clause in clauses)
+    assert not classify_vesting_clauses(clauses)[0]
+
+
+def test_joint_resolution_mention_without_request_is_not_vesting():
+    text = (
+        "By the President of the United States of America  A Proclamation  "
+        "The Congress, by Senate Joint Resolution 161, has given official recognition to "
+        "this tradition.  "
+        "Now, Therefore, I, Ronald Reagan, President of the United States of America, by "
+        "virtue of the authority vested in me by the Constitution and laws of the United "
+        "States, do hereby proclaim May 1986 as National School Library Month."
+    )
+    clauses = extract_vesting_clauses(text, "proclamation")
+
+    assert not any("Joint Resolution 161" in clause for clause in clauses)
+
+
 def test_statutes_alone_do_not_qualify():
     assert not classify("By the authority vested in me by the statutes of the United States")
 

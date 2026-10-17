@@ -27,8 +27,10 @@ from segmenter import (
     _PURSUANT_RE,
     _REVIEWED_COMMANDER_AUTHORITY_RE,
     _segment_sentence,
+    _select_vesting,
     _split_sentences,
     _STRONG_VESTING_RE,
+    _vesting_kind,
     segment_ordering,
 )
 
@@ -202,6 +204,7 @@ def extract_vesting_clauses(doc_text: str, doc_type: str) -> list[str]:
     ordering_re = _get_ordering_re(extended=False)
     is_proclamation = doc_type == "proclamation"
     clauses = []
+    kinds = []
     for sentence in _split_sentences(normalized_text) or [normalized_text]:
         title_invocation = PRESIDENTIAL_TITLE_INVOCATION_RE.search(sentence)
         could_be_vesting = bool(
@@ -225,6 +228,7 @@ def extract_vesting_clauses(doc_text: str, doc_type: str) -> list[str]:
             continue
         sentence_authority_action_start = _pursuant_authority_action_start(sentence, ordering_re)
         sentence_clauses = []
+        sentence_kinds = []
         for text, start_type in _segment_sentence(
                 sentence,
                 ordering_re,
@@ -295,6 +299,12 @@ def extract_vesting_clauses(doc_text: str, doc_type: str) -> list[str]:
                 flags=re.I,
             )
             sentence_clauses.append(clause)
+            # Classify the untrimmed piece: trimming can drop the "The authority …"
+            # subject that marks a delegation.
+            kind = _vesting_kind(text)
+            if kind in ("fallback", "delegation") and PRESIDENTIAL_TITLE_INVOCATION_RE.search(clause):
+                kind = "formal"
+            sentence_kinds.append(kind)
 
         # The formal "I, [name], President ..." formula is itself a generic
         # invocation even when no other vesting marker occurs.  Retain legal
@@ -310,8 +320,15 @@ def extract_vesting_clauses(doc_text: str, doc_type: str) -> list[str]:
             following_order = ordering_re.search(sentence, title_invocation.end())
             end = following_order.start() if following_order else title_invocation.end()
             sentence_clauses.append(sentence[start:end].strip().rstrip(" ,;:"))
+            sentence_kinds.append("proclaiming" if preceding_now else "formal")
 
         clauses.extend(sentence_clauses)
+        kinds.extend(sentence_kinds)
+
+    # Apply the segmenter's document-level rule: formal invocations only, or the
+    # first fallback citation when the document has no formal invocation.
+    keep = _select_vesting(kinds, is_proclamation=is_proclamation)
+    clauses = [clause for clause, kept in zip(clauses, keep) if kept]
 
     # The normalized-text pass above handles citations split across scraper paragraph
     # boundaries and proclamation-specific formulas.  If it found nothing, fall back to
@@ -320,7 +337,7 @@ def extract_vesting_clauses(doc_text: str, doc_type: str) -> list[str]:
     if not clauses:
         clauses = [
             segment.text
-            for segment in segment_ordering(doc_text, doc_type)
+            for segment in segment_ordering(doc_text, doc_type, select_vesting=True)
             if segment.seg_type == "vesting_clause"
         ]
     return clauses

@@ -1278,6 +1278,97 @@ def _opening_authority_cut(sent: str) -> int | None:
     return None
 
 
+# Words that introduce the President's own invocation of authority before
+# "vested in me" ("By the authority vested in me", "acting under the authority…").
+_VESTING_INVOCATION_RE = re.compile(
+    r"\b(?:by|under|pursuant\s+to|virtue\s+of|acting|exercis\w*"
+    r"|consistent\s+with|in\s+accordance\s+with)\b",
+    re.IGNORECASE,
+)
+
+# A clause whose grammatical subject is the vested authority itself ("The authority
+# and duties vested in me by section 81 … are delegated to the Secretary").
+_VESTED_SUBJECT_START_RE = re.compile(
+    r"^\W*(?:(?:\([\w.]+\)|[\d-]+\.)\s*)*(?:all\s+|any\s+|such\s+)?(?:of\s+)?the\s+",
+    re.IGNORECASE,
+)
+
+
+# A recital in which Congress asks or authorizes the President to issue the proclamation
+# ("…by House Joint Resolution 265, has authorized and requested the President to issue a
+# proclamation…").  Combined with _PROC_VESTING_RE, this is the proclamation's authority.
+_CONGRESSIONAL_REQUEST_RE = re.compile(
+    r"\b(?:request\w*|authoriz\w*|direct\w*|call\w*\s+upon)\b[^.;]{0,80}?\bthe\s+President\b"
+    r"[^.;]{0,40}?\bto\s+(?:issue\s+a\s+proclamation|proclaim)\b",
+    re.IGNORECASE,
+)
+
+
+def _vesting_kind(text: str) -> str:
+    """Classify a vesting-clause candidate.
+
+    Returns 'proclaiming' for the proclamation formula ("Now, Therefore, I …"),
+    'formal' for the other strong markers ("By the authority vested in me …"),
+    'delegation' when "vested in me" is the subject being handed to an official
+    (a directive, not an invocation), 'congressional_request' for a joint resolution
+    or Public Law that asks or authorizes the President to issue the proclamation,
+    and 'fallback' for everything else (bare "Pursuant to section X", other
+    Public Law / joint resolution recitals, mid-sentence citations).
+    """
+    if _CONDITIONAL_VESTING_RE.search(text):
+        return "proclaiming"
+    strong = _STRONG_VESTING_RE.search(text)
+    if not strong:
+        if _PROC_VESTING_RE.search(text) and _CONGRESSIONAL_REQUEST_RE.search(text):
+            return "congressional_request"
+        return "fallback"
+    # Judge only the clause containing the marker; a carved piece can run across a
+    # list-item boundary ("… section 81(c)(2). (2) The authority vested in me …").
+    clause_start = max(
+        (match.end() for match in re.finditer(r"[.;:]\s+", text[:strong.start()])), default=0
+    )
+    preceding = text[clause_start:strong.start()]
+    if (
+        strong.group(0).lower().startswith("vested")
+        and _VESTED_SUBJECT_START_RE.match(text[clause_start:])
+        and not _VESTING_INVOCATION_RE.search(preceding)
+    ):
+        return "delegation"
+    return "formal"
+
+
+def _select_vesting(kinds: list[str], is_proclamation: bool = False) -> list[bool]:
+    """Return which vesting candidates (in document order) remain vesting clauses.
+
+    Every formal invocation is kept.  A document with no formal invocation keeps only
+    its first fallback citation; delegations are never kept.  In a proclamation with
+    a "Now, Therefore, I" invocation, candidates before it are recitals and dropped,
+    except a congressional request to issue the proclamation, which is always kept in
+    a proclamation (elsewhere it is an ordinary fallback).
+    """
+    if not is_proclamation:
+        kinds = ["fallback" if kind == "congressional_request" else kind for kind in kinds]
+    first = 0
+    if is_proclamation and "proclaiming" in kinds:
+        first = kinds.index("proclaiming")
+    has_formal = "formal" in kinds or "proclaiming" in kinds
+    keep = []
+    fallback_used = False
+    for index, kind in enumerate(kinds):
+        if kind == "congressional_request":
+            keep.append(True)
+        elif index < first:
+            keep.append(False)
+        elif kind in ("formal", "proclaiming"):
+            keep.append(True)
+        elif kind == "fallback" and not has_formal and not fallback_used:
+            keep.append(True)
+            fallback_used = True
+        else:
+            keep.append(False)
+    return keep
+
+
 def _segment_sentence(
     sent: str, ordering_re: re.Pattern, opening_authority: bool = True,
     is_proclamation: bool = False,
@@ -1769,7 +1860,9 @@ def _relabel_interrupted_determination_connectors(
     return result
 
 
-def segment_ordering(doc_text: str, doc_type: str = "", strict_wp: bool = False) -> list[Segment]:
+def segment_ordering(
+    doc_text: str, doc_type: str = "", strict_wp: bool = False, select_vesting: bool = False
+) -> list[Segment]:
     """Segment a document using the Woolley & Peters ordering-phrase strategy.
 
     Each ordering phrase starts a new 'directive' segment.  When a sentence contains
@@ -1792,6 +1885,11 @@ def segment_ordering(doc_text: str, doc_type: str = "", strict_wp: bool = False)
 
     strict_wp=True disables all extensions (allowlisted shall verbs, opening-authority vesting)
     and uses only the original W&P phrase list.
+
+    select_vesting=True keeps only the document's own authority invocation as
+    vesting_clause (see _select_vesting) and folds rejected candidates into their
+    neighbors.  It is off by default so viewers and legal-effect coding keep the
+    splits annotators coded against.
 
     Returns a list of Segment objects with seg_type in
     {'preamble', 'order_action', 'metadata', 'boilerplate', 'vesting_clause'}.
@@ -1869,4 +1967,78 @@ def segment_ordering(doc_text: str, doc_type: str = "", strict_wp: bool = False)
     segments = _merge_short_fragments(
         _merge_sublists(_split_colon_lists(segments, ordering_re))
     )
-    return _relabel_interrupted_determination_connectors(segments)
+    segments = _relabel_interrupted_determination_connectors(segments)
+    if not select_vesting:
+        return segments
+    return _demote_rejected_vesting(segments, ordering_re, is_proclamation=is_proclamation)
+
+
+def _demote_rejected_vesting(
+    segments: list[Segment], ordering_re: re.Pattern, is_proclamation: bool = False
+) -> list[Segment]:
+    """Fold vesting candidates rejected by _select_vesting() into neighboring segments.
+
+    Rejected citations join the preceding segment from the same source chunk (and a
+    following continuation without its own ordering phrase), else the following
+    segment, else stand alone as preamble -- the placement the annotation viewers use
+    when displaying vesting clauses -- so classifiable segment numbering is unchanged.
+    Rejected delegations ("The authority vested in me … is delegated …") become
+    order actions unless an order action from the same chunk can absorb them.
+    """
+    vesting = [segment for segment in segments if segment.seg_type == "vesting_clause"]
+    kinds = [_vesting_kind(segment.text) for segment in vesting]
+    keep = _select_vesting(kinds, is_proclamation)
+    rejected = {id(seg): kind for seg, kind, kept in zip(vesting, kinds, keep) if not kept}
+    if not rejected:
+        return segments
+
+    def shares(a: Segment, b: Segment) -> bool:
+        return bool(set(a.chunk_indices) & set(b.chunk_indices))
+
+    def join(first: Segment, second: Segment, seg_type: SegmentType) -> Segment:
+        return Segment(
+            f"{first.text} {second.text}",
+            seg_type,
+            sorted(set(first.chunk_indices + second.chunk_indices)),
+        )
+
+    result: list[Segment] = []
+    pending: Segment | None = None
+    absorbed = False  # result[-1] just absorbed a rejected citation
+    for segment in segments:
+        kind = rejected.get(id(segment))
+        if kind is not None:
+            previous = result[-1] if result else None
+            absorbing_types = ("order_action",) if kind == "delegation" else ("order_action", "preamble", "ordering_phrase")
+            if pending is None and previous and previous.seg_type in absorbing_types and shares(previous, segment):
+                result[-1] = join(previous, segment, previous.seg_type)
+                absorbed = True
+            else:
+                pending_type = "order_action" if kind == "delegation" else "preamble"
+                pending = join(pending, segment, pending.seg_type) if pending else Segment(
+                    segment.text, pending_type, segment.chunk_indices[:]
+                )
+            continue
+        if pending is not None:
+            if (
+                segment.seg_type not in ("vesting_clause", "metadata", "boilerplate")
+                and shares(pending, segment)
+            ):
+                seg_type = "order_action" if pending.seg_type == "order_action" else segment.seg_type
+                segment = join(pending, segment, seg_type)
+            else:
+                result.append(pending)
+            pending = None
+        elif (
+            absorbed
+            and result[-1].seg_type == segment.seg_type == "order_action"
+            and shares(result[-1], segment)
+            and not ordering_re.search(segment.text)
+        ):
+            result[-1] = join(result[-1], segment, "order_action")
+            continue
+        absorbed = False
+        result.append(segment)
+    if pending is not None:
+        result.append(pending)
+    return result

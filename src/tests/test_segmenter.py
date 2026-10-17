@@ -325,6 +325,142 @@ def test_vesting_interrupted_i_determine_is_not_an_independent_action():
     ]
 
 
+def test_vesting_selection_is_off_by_default():
+    text = (
+        "By the President of the United States of America  A Proclamation  "
+        "1. Pursuant to section 503(c)(1) of the 1974 Act, I have determined to limit "
+        "the application of duty-free treatment.  "
+        "Now, Therefore, I, William J. Clinton, President of the United States of America, "
+        "acting under the authority vested in me by the Constitution and the laws of the "
+        "United States of America, do proclaim that:  (1) The HTS is modified."
+    )
+    default = segment_ordering(text, "proclamation")
+    selected = segment_ordering(text, "proclamation", select_vesting=True)
+
+    assert sum(segment.seg_type == "vesting_clause" for segment in default) == 2
+    assert sum(segment.seg_type == "vesting_clause" for segment in selected) == 1
+
+
+def test_inline_citation_after_formal_invocation_is_not_vesting():
+    text = (
+        "Pursuant to the authority vested in me under the Trade Act of 1974, "
+        "I determine, pursuant to section 402(d)(1) of the Act (19 U.S.C. 2432(d)(1)), "
+        "that extending the waiver will promote the objectives of the Act."
+    )
+    segments = segment_ordering(text, "memorandum", select_vesting=True)
+
+    assert [(segment.seg_type, segment.text) for segment in segments] == [
+        (
+            "vesting_clause",
+            "Pursuant to the authority vested in me under the Trade Act of 1974,",
+        ),
+        (
+            "ordering_phrase",
+            "I determine, pursuant to section 402(d)(1) of the Act (19 U.S.C. 2432(d)(1)),",
+        ),
+        (
+            "order_action",
+            "that extending the waiver will promote the objectives of the Act.",
+        ),
+    ]
+
+
+def test_proclamation_recitals_before_now_therefore_are_not_vesting():
+    text = (
+        "By the President of the United States of America  A Proclamation  "
+        "1. Pursuant to section 503(c)(2)(A) of the Trade Act of 1974 (19 U.S.C. 2463(c)(2)(A)), "
+        "beneficiary developing countries are subject to competitive need limitations.  "
+        "2. Pursuant to section 503(c)(1) of the 1974 Act, I have determined to limit "
+        "the application of duty-free treatment.  "
+        "Now, Therefore, I, William J. Clinton, President of the United States of America, "
+        "acting under the authority vested in me by the Constitution and the laws of the "
+        "United States of America, including title V of the 1974 Act, do proclaim that:  "
+        "(1) The HTS is modified as provided in Annex I to this proclamation."
+    )
+    vesting = [
+        segment.text
+        for segment in segment_ordering(text, "proclamation", select_vesting=True)
+        if segment.seg_type == "vesting_clause"
+    ]
+
+    assert len(vesting) == 1
+    assert vesting[0].startswith("Now, Therefore, I, William J. Clinton")
+
+
+def test_section_level_pursuant_after_formal_invocation_is_not_vesting():
+    text = (
+        "By the authority vested in me as President by Sections 102 and 104 of the "
+        "Foreign Intelligence Surveillance Act of 1978 (50 U.S.C. 1802 and 1804), "
+        "it is hereby ordered as follows:  "
+        "1-101. Pursuant to Section 102(a)(1) of the Foreign Intelligence Surveillance "
+        "Act of 1978 (50 U.S.C. 1802(a)), the Attorney General is authorized to approve "
+        "electronic surveillance without a court order."
+    )
+    vesting = [
+        segment.text
+        for segment in segment_ordering(text, "executive_order", select_vesting=True)
+        if segment.seg_type == "vesting_clause"
+    ]
+
+    assert len(vesting) == 1
+    assert vesting[0].startswith("By the authority vested in me as President")
+
+
+def test_delegation_of_vested_authority_is_an_action():
+    text = (
+        "By the authority vested in me as President by the Constitution and the laws "
+        "of the United States of America, it is hereby ordered as follows:  "
+        "Section 1. The authority and duties vested in me by section 81 of the Arms "
+        "Export Control Act (22 U.S.C. 2798) are delegated to the Secretary of State."
+    )
+    segments = segment_ordering(text, "executive_order", select_vesting=True)
+    vesting = [segment.text for segment in segments if segment.seg_type == "vesting_clause"]
+
+    assert len(vesting) == 1
+    assert vesting[0].startswith("By the authority vested in me as President")
+    assert any(
+        segment.seg_type == "order_action" and "are delegated to the Secretary" in segment.text
+        for segment in segments
+    )
+
+
+def test_first_inline_citation_is_kept_when_later_one_in_sentence_is_dropped():
+    text = (
+        "Dear Mr. Chairman:  I hereby report pursuant to section 804(b) of the Foreign "
+        "Narcotics Kingpin Act, 21 U.S.C. 1901-1908, that I have designated the following "
+        "foreign persons for sanctions, and that I am imposing sanctions upon them "
+        "pursuant to that Act: Ismael Zambada Garcia"
+    )
+    vesting = [
+        segment.text
+        for segment in segment_ordering(text, "letter", select_vesting=True)
+        if segment.seg_type == "vesting_clause"
+    ]
+
+    assert len(vesting) == 1
+    assert vesting[0].startswith("pursuant to section 804(b)")
+
+
+def test_first_pursuant_citation_is_vesting_without_formal_invocation():
+    text = (
+        "Memorandum for the Secretary of State  "
+        "Pursuant to section 404 of the Child Soldiers Prevention Act of 2008 "
+        "(22 U.S.C. 2370c-1), I hereby waive the application of the prohibition.  "
+        "Pursuant to section 404(c) of the Act, I hereby determine that it is in the "
+        "national interest to do so."
+    )
+    vesting = [
+        segment.text
+        for segment in segment_ordering(text, "memorandum", select_vesting=True)
+        if segment.seg_type == "vesting_clause"
+    ]
+
+    assert vesting == [
+        "Pursuant to section 404 of the Child Soldiers Prevention Act of 2008 "
+        "(22 U.S.C. 2370c-1),"
+    ]
+
+
 def test_standalone_i_determine_remains_an_action():
     segments = segment_ordering(
         "I determine that extending the waiver will promote the objectives of the Act.",
