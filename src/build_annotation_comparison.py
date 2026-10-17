@@ -102,15 +102,15 @@ DATASETS = {
         "chunk_strategy": None,
     },
     "round2": {
-        "label": "Sample 100 round 2",
+        "label": "Round 2",
         "schema": "round2",
-        "source_viewer": ANNOTATIONS_DIR / "Sandbox 2" / "sample_100_v2.html",
-        "results_dir": ANNOTATIONS_DIR / "Sandbox 2",
-        "output": ANNOTATIONS_DIR / "Sandbox 2" / "annotation-comparison.html",
+        "source_viewer": ANNOTATIONS_DIR / "Round 2" / "round_2.html",
+        "results_dir": ANNOTATIONS_DIR / "Round 2",
+        "output": ANNOTATIONS_DIR / "Round 2" / "annotation-comparison.html",
         "result_files": (
-            "7.16.2026 Tweil_annotations.json",
-            "CM-annotations-part2.json",
-            "annotations-viewer2-kylem-2026-07-17.json",
+            "annotations-viewer2-claire-2026-08-05-2.json",
+            "annotations-viewer2-kylem-2026-08-05.json",
+            "Update annotations-viewer2-thomas_weil-2026-08-05 .json",
         ),
         "fields": {
             "directive": ("code", "diplomacy", "military_ops"),
@@ -286,6 +286,10 @@ def compute_alphas(results: list[dict], metadata: dict, chunks: dict, config: di
 
 
 def build_html(metadata: dict, chunks: dict, doc_texts: dict, results: list[dict], config: dict) -> str:
+    document_metadata = next(
+        (result.get("document_metadata", {}) for result in results if result.get("document_metadata")),
+        {},
+    )
     payload = compact_json(
         {
             "config": {
@@ -297,6 +301,7 @@ def build_html(metadata: dict, chunks: dict, doc_texts: dict, results: list[dict
                 "fieldOptions": config["field_options"],
             },
             "metadata": metadata,
+            "documentMetadata": document_metadata,
             "chunks": chunks,
             "docTexts": doc_texts,
             "results": results,
@@ -314,7 +319,7 @@ TEMPLATE = r'''<!doctype html>
 <title>Annotation agreement</title>
 <style>
 :root{--ink:#172033;--muted:#64748b;--line:#d9e1ea;--paper:#fff;--bg:#f4f6f8;--blue:#174ea6;--blue-soft:#e8f0fe;--good:#17643a;--good-bg:#e8f5ec;--bad:#a02727;--bad-bg:#fff0f0;--warn:#8a5a00;--warn-bg:#fff7df}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.45 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button{font:inherit}.shell{max-width:1500px;margin:auto;padding:22px}.top{position:sticky;top:0;z-index:5;background:rgba(244,246,248,.97);padding:0 0 12px;border-bottom:1px solid var(--line)}h1{font-size:24px;margin:0 0 3px}.subtitle{color:var(--muted);margin:0 0 14px}.toolbar{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.toggle{display:inline-flex;border:1px solid #b8c4d1;border-radius:7px;overflow:hidden;background:white}.toggle button{border:0;border-right:1px solid #b8c4d1;background:white;padding:7px 13px;cursor:pointer}.toggle button:last-child{border-right:0}.toggle button.active{background:var(--blue);color:white}.check{display:flex;align-items:center;gap:7px;font-weight:650;margin-left:5px}.count{margin-left:auto;color:var(--muted);font-variant-numeric:tabular-nums}.stats{background:var(--paper);border:1px solid var(--line);border-radius:9px;margin:16px 0;padding:14px 16px}.stats summary{cursor:pointer;font-weight:750;font-size:15px}.stat-note{color:var(--muted);font-size:12px;margin:8px 0 10px}.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));gap:10px}.stat-card{border:1px solid var(--line);border-radius:7px;padding:10px}.stat-card h3{font-size:13px;margin:0 0 7px}.stat-line{display:flex;justify-content:space-between;gap:12px;border-top:1px solid #edf1f5;padding:4px 0}.stat-line:first-of-type{border-top:0}.metric{font-variant-numeric:tabular-nums;font-weight:700}.documents{display:grid;gap:12px}.doc{background:var(--paper);border:1px solid var(--line);border-radius:9px;overflow:hidden}.doc>summary{cursor:pointer;list-style:none;padding:13px 15px;display:flex;gap:12px;align-items:baseline}.doc>summary::-webkit-details-marker{display:none}.doc-id{font-size:17px;font-weight:850;color:var(--blue);min-width:43px}.doc-title{font-weight:750}.doc-meta{color:var(--muted)}.status{margin-left:auto;border-radius:999px;padding:2px 9px;font-size:11px;font-weight:800;white-space:nowrap}.status.agree{color:var(--good);background:var(--good-bg)}.status.disagree{color:var(--bad);background:var(--bad-bg)}.status.incomplete,.status.custom{color:var(--warn);background:var(--warn-bg)}.doc-body{padding:0 15px 15px}.source{margin:0 0 12px;border-top:1px solid var(--line);padding-top:9px}.source summary{cursor:pointer;color:var(--blue);font-size:12px;font-weight:700}.source-text{white-space:pre-wrap;max-height:330px;overflow:auto;background:#f8fafc;border:1px solid var(--line);border-radius:6px;padding:10px;margin-top:7px;font:12px/1.55 ui-monospace,SFMono-Regular,Menlo,monospace}.comparison{border:1px solid var(--line);border-radius:7px;overflow:auto}.chunk+.chunk{margin-top:10px}.chunk-head{display:flex;gap:10px;align-items:center;margin-bottom:5px}.chunk-number{font-weight:800;color:var(--blue)}.chunk-text{background:#f8fafc;border-left:3px solid #a7b8cb;padding:8px 10px;margin-bottom:6px;white-space:pre-wrap}.annotation-grid{display:grid;min-width:920px}.cell{padding:7px 9px;border-top:1px solid var(--line);border-left:1px solid var(--line)}.cell.head{border-top:0}.cell.field{border-left:0;background:#f8fafc;font-weight:700;color:#475569}.head{font-weight:800;background:#eef3f8}.value{display:block;padding:2px 5px;border-radius:4px;min-height:24px}.value.same{background:var(--good-bg);color:var(--good)}.value.diff{background:var(--bad-bg);color:var(--bad);font-weight:700}.value.missing{background:var(--warn-bg);color:var(--warn);font-style:italic}.value.na{color:#94a3b8}.custom-note{font-size:12px;color:var(--warn);font-weight:700}.empty{text-align:center;color:var(--muted);padding:50px 15px;background:white;border:1px solid var(--line);border-radius:9px}@media(max-width:750px){.shell{padding:12px}.count{width:100%;margin-left:0}.doc-meta{display:none}}.cell.gt{background:#f0f4ff}.head.gt{background:#dce8fb}.na-cell{opacity:.5}.gt-select{width:100%;font:inherit;font-size:13px;border:1px solid #b8c4d1;border-radius:4px;padding:3px 5px;background:white;cursor:pointer;color:inherit}.gt-select:disabled{background:#f1f5f9;color:var(--muted)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.45 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button{font:inherit}.shell{max-width:1500px;margin:auto;padding:22px}.top{position:sticky;top:0;z-index:5;background:rgba(244,246,248,.97);padding:0 0 12px;border-bottom:1px solid var(--line)}h1{font-size:24px;margin:0 0 3px}.subtitle{color:var(--muted);margin:0 0 14px}.toolbar{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.toggle{display:inline-flex;border:1px solid #b8c4d1;border-radius:7px;overflow:hidden;background:white}.toggle button{border:0;border-right:1px solid #b8c4d1;background:white;padding:7px 13px;cursor:pointer}.toggle button:last-child{border-right:0}.toggle button.active{background:var(--blue);color:white}.action{border:1px solid var(--blue);border-radius:7px;background:var(--blue);color:white;padding:7px 12px;cursor:pointer}.action.secondary{background:white;color:var(--blue)}.check{display:flex;align-items:center;gap:7px;font-weight:650;margin-left:5px}.count{margin-left:auto;color:var(--muted);font-variant-numeric:tabular-nums}.stats{background:var(--paper);border:1px solid var(--line);border-radius:9px;margin:16px 0;padding:14px 16px}.stats summary{cursor:pointer;font-weight:750;font-size:15px}.stat-note{color:var(--muted);font-size:12px;margin:8px 0 10px}.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));gap:10px}.stat-card{border:1px solid var(--line);border-radius:7px;padding:10px}.stat-card h3{font-size:13px;margin:0 0 7px}.stat-line{display:flex;justify-content:space-between;gap:12px;border-top:1px solid #edf1f5;padding:4px 0}.stat-line:first-of-type{border-top:0}.metric{font-variant-numeric:tabular-nums;font-weight:700}.documents{display:grid;gap:12px}.doc{background:var(--paper);border:1px solid var(--line);border-radius:9px;overflow:hidden}.doc>summary{cursor:pointer;list-style:none;padding:13px 15px;display:flex;gap:12px;align-items:baseline}.doc>summary::-webkit-details-marker{display:none}.doc-id{font-size:17px;font-weight:850;color:var(--blue);min-width:43px}.doc-title{font-weight:750}.doc-meta{color:var(--muted)}.status{margin-left:auto;border-radius:999px;padding:2px 9px;font-size:11px;font-weight:800;white-space:nowrap}.status.agree{color:var(--good);background:var(--good-bg)}.status.disagree{color:var(--bad);background:var(--bad-bg)}.status.incomplete,.status.custom{color:var(--warn);background:var(--warn-bg)}.doc-body{padding:0 15px 15px}.source{margin:0 0 12px;border-top:1px solid var(--line);padding-top:9px}.source summary{cursor:pointer;color:var(--blue);font-size:12px;font-weight:700}.source-text{white-space:pre-wrap;max-height:330px;overflow:auto;background:#f8fafc;border:1px solid var(--line);border-radius:6px;padding:10px;margin-top:7px;font:12px/1.55 ui-monospace,SFMono-Regular,Menlo,monospace}.comparison{border:1px solid var(--line);border-radius:7px;overflow:auto}.chunk+.chunk{margin-top:10px}.chunk-head{display:flex;gap:10px;align-items:center;margin-bottom:5px}.chunk-number{font-weight:800;color:var(--blue)}.chunk-text{background:#f8fafc;border-left:3px solid #a7b8cb;padding:8px 10px;margin-bottom:6px;white-space:pre-wrap}.annotation-grid{display:grid;min-width:920px}.cell{padding:7px 9px;border-top:1px solid var(--line);border-left:1px solid var(--line)}.cell.head{border-top:0}.cell.field{border-left:0;background:#f8fafc;font-weight:700;color:#475569}.head{font-weight:800;background:#eef3f8}.value{display:block;padding:2px 5px;border-radius:4px;min-height:24px}.value.same{background:var(--good-bg);color:var(--good)}.value.diff{background:var(--bad-bg);color:var(--bad);font-weight:700}.value.missing{background:var(--warn-bg);color:var(--warn);font-style:italic}.value.na{color:#94a3b8}.custom-note{font-size:12px;color:var(--warn);font-weight:700}.empty{text-align:center;color:var(--muted);padding:50px 15px;background:white;border:1px solid var(--line);border-radius:9px}@media(max-width:750px){.shell{padding:12px}.count{width:100%;margin-left:0}.doc-meta{display:none}}.cell.gt{background:#f0f4ff}.head.gt{background:#dce8fb}.na-cell{opacity:.5}.gt-select{width:100%;font:inherit;font-size:13px;border:1px solid #b8c4d1;border-radius:4px;padding:3px 5px;background:white;cursor:pointer;color:inherit}.gt-select:disabled{background:#f1f5f9;color:var(--muted)}
 </style>
 </head>
 <body>
@@ -328,6 +333,9 @@ TEMPLATE = r'''<!doctype html>
         <button id="chunk-mode" type="button">Sub-directive level</button>
       </div>
       <label class="check"><input id="hide-agreements" type="checkbox"> Hide agreements</label>
+      <button id="export-final" class="action" type="button">Export finalized JSON</button>
+      <button id="import-json" class="action secondary" type="button">Import JSON</button>
+      <input id="import-file" type="file" accept="application/json,.json" hidden>
       <span class="count" id="visible-count"></span>
     </div>
   </section>
@@ -352,7 +360,7 @@ var FIELD_LABELS=config.fieldLabels||{};
 var VALUE_LABELS=config.valueLabels||{};
 var FIELD_OPTIONS=config.fieldOptions||{};
 var SCHEMA=config.schema||'policy';
-var GT_KEY='annotation-comparison-gt-'+SCHEMA+'-v1';
+var GT_KEY='annotation-comparison-gt-'+(config.label||SCHEMA).toLowerCase().replace(/[^a-z0-9]+/g,'-')+'-v2';
 var groundTruth={};try{groundTruth=JSON.parse(localStorage.getItem(GT_KEY)||'{}');}catch(e){}
 function gtKey(docId,chunkN){return chunkN==null||chunkN===''?docId:docId+'#'+chunkN;}
 function gtEligible(docId,chunkN,field,currentMode){if(SCHEMA==='round2')return true;if(field==='category'||field==='scope')return true;if(field==='emergency')return currentMode==='directive';var gt=groundTruth[gtKey(docId,chunkN)]||{};if(field==='legal_effect')return gt.category==='policy';if(field==='national_security')return gt.scope==='foreign';return true;}
@@ -381,6 +389,41 @@ function fieldEligible(raw,field,currentMode){
   return true;
 }
 function fieldValue(raw,field,currentMode){return fieldEligible(raw,field,currentMode)&&raw&&raw[field]!=null?raw[field]:null;}
+function prefillUnanimousDirectiveLabels(){
+  Object.keys(payload.metadata).forEach(function(docId){
+    var key=gtKey(docId,null),gt=groundTruth[key]||(groundTruth[key]={});
+    fieldsFor('directive').forEach(function(field){
+      if(gt[field]!=null)return;
+      var values=results.map(function(_,i){return fieldValue(rawRating(docId,null,i),field,'directive');});
+      if(values.every(function(value){return value!=null&&value===values[0];}))gt[field]=values[0];
+    });
+  });
+  localStorage.setItem(GT_KEY,JSON.stringify(groundTruth));
+}
+function finalizedRecords(){
+  return Object.keys(payload.metadata).sort(docSort).map(function(docId){
+    var source=payload.documentMetadata[docId]||{},labels=groundTruth[gtKey(docId,null)]||{};
+    return {global_dev_id:String(source.global_dev_id||''),round_id:docId,url:source.url||'',date:source.date||'',president:source.president||'',doc_type:source.doc_type||(payload.metadata[docId]||{}).type||'',labels:Object.assign({},labels)};
+  });
+}
+function exportFinalized(){
+  var fields=fieldsFor('directive'),records=finalizedRecords();
+  var incomplete=records.filter(function(record){return !record.global_dev_id||fields.some(function(field){return record.labels[field]==null||record.labels[field]==='';});});
+  if(incomplete.length){alert('Cannot finalize yet: '+incomplete.length+' directives still have missing ground-truth labels or dev-set IDs.');return;}
+  var output={schema:'presidential-directive-validation-labels',schema_version:1,finalized:true,finalized_at:new Date().toISOString(),source:{annotation_round:config.label,dev_set:'data/4_28_2026_build_dev.csv',annotators:annotators.slice()},label_fields:fields,records:records};
+  var blob=new Blob([JSON.stringify(output,null,2)+'\n'],{type:'application/json'}),link=document.createElement('a');
+  link.href=URL.createObjectURL(blob);link.download='round-2-finalized-validation-labels.json';link.click();URL.revokeObjectURL(link.href);
+}
+function importFinalized(file){
+  var reader=new FileReader();reader.onload=function(){try{
+    var parsed=JSON.parse(reader.result),records=Array.isArray(parsed.records)?parsed.records:[];
+    if(!records.length)throw new Error('No records found');
+    var known=new Set(Object.keys(payload.metadata)),imported=0;
+    records.forEach(function(record){if(!known.has(record.round_id)||!record.labels)return;groundTruth[gtKey(record.round_id,null)]=Object.assign({},record.labels);imported++;});
+    if(!imported)throw new Error('No Round 2 records matched');
+    localStorage.setItem(GT_KEY,JSON.stringify(groundTruth));render();alert('Imported ground-truth labels for '+imported+' directives.');
+  }catch(error){alert('Import failed: '+error.message);}};reader.readAsText(file);
+}
 function complete(raw,currentMode){
   if(SCHEMA==='round2')return !!raw&&fieldsFor(currentMode).every(function(field){return raw[field]!=null&&raw[field]!=='';});
   if(!raw||!raw.category||!raw.scope)return false;
@@ -449,10 +492,14 @@ function render(){
 document.getElementById('directive-mode').addEventListener('click',function(){mode='directive';render();});
 document.getElementById('chunk-mode').addEventListener('click',function(){mode='chunk';render();});
 document.getElementById('hide-agreements').addEventListener('change',function(e){hideAgreements=e.target.checked;render();});
+document.getElementById('export-final').addEventListener('click',exportFinalized);
+document.getElementById('import-json').addEventListener('click',function(){document.getElementById('import-file').click();});
+document.getElementById('import-file').addEventListener('change',function(e){if(e.target.files[0])importFinalized(e.target.files[0]);e.target.value='';});
 document.addEventListener('change',function(e){if(e.target.classList.contains('gt-select'))handleGTChange(e.target);});
 window.__comparison={calculateStats:calculateStats,statusFor:statusFor,normalized:normalized};
 document.getElementById('sample-label').textContent=config.label||'Sample';
 document.getElementById('annotator-count').textContent=annotators.length+' annotators';
+prefillUnanimousDirectiveLabels();
 render();
 })();
 </script>

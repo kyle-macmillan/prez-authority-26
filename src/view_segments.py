@@ -234,11 +234,25 @@ def _merge_vesting_for_display(segments: list[Segment]) -> list[RenderSegment]:
         if (rendered
                 and rendered[-1]["seg_type"] in ("section", "paragraph", "order_action")
                 and seg.seg_type in ("paragraph", "order_action")
-                and not (
-                    rendered[-1]["seg_type"] == "order_action"
-                    and seg.seg_type == "order_action"
-                )
                 and _shares_chunk(rendered[-1], seg)):
+            # An inline vesting citation can split one action into an action prefix,
+            # the citation, and a continuation.  Keep that continuation in the same
+            # display chunk unless it begins another ordering phrase.
+            consecutive_actions = (
+                rendered[-1]["seg_type"] == "order_action"
+                and seg.seg_type == "order_action"
+            )
+            has_trailing_vesting = rendered[-1]["parts"][-1][1]
+            if consecutive_actions and not (
+                has_trailing_vesting
+                and not _get_ordering_re(extended=True).search(seg.text)
+            ):
+                rendered.append({
+                    "seg_type": seg.seg_type,
+                    "parts": parts,
+                    "chunk_indices": indices,
+                })
+                continue
             if parts and not parts[0][0].startswith(" "):
                 parts[0] = (" " + parts[0][0], parts[0][1])
             rendered[-1]["parts"].extend(parts)
@@ -404,7 +418,10 @@ def build_doc_block(row: dict, doc_id: str, wp_only: bool = False) -> str:
 
     # Woolley & Peters segmentation (always ordering-phrase based)
     wp_segs = segment_ordering(row["doc_text"], row["doc_type"])
-    wp_directives = [s for s in wp_segs if s.seg_type == "order_action"]
+    wp_directives = [
+        s for s in _merge_vesting_for_display(wp_segs)
+        if s["seg_type"] == "order_action"
+    ]
     wp_html = render_wp_segments(wp_segs, doc_id=doc_id)
     wp_label = f"{len(wp_directives)} directives"
 

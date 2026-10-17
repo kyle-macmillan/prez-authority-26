@@ -1,0 +1,161 @@
+{
+  "schema": "round3-minority-subdirective-review",
+  "schema_version": 1,
+  "exported_at": "2026-09-24T02:53:59.885Z",
+  "annotator": "Thomas Weil",
+  "records": [
+    {
+      "annotator": "Thomas Weil",
+      "round_id": "EO3",
+      "chunk_number": "1",
+      "original_code": "1",
+      "majority_code": "3",
+      "reviewed_code": "3",
+      "reviewed_at": "2026-09-24T02:45:20.041Z"
+    },
+    {
+      "annotator": "Thomas Weil",
+      "round_id": "EO6",
+      "chunk_number": "1",
+      "original_code": "3",
+      "majority_code": "0",
+      "reviewed_code": "0",
+      "reviewed_at": "2026-09-24T02:45:39.037Z"
+    },
+    {
+      "annotator": "Thomas Weil",
+      "round_id": "EO6",
+      "chunk_number": "2",
+      "original_code": "3",
+      "majority_code": "1",
+      "reviewed_code": "3",
+      "reviewed_at": "2026-09-24T02:46:00.617Z"
+    },
+    {
+      "annotator": "Thomas Weil",
+      "round_id": "EO15",
+      "chunk_number": "1",
+      "original_code": "1",
+      "majority_code": "0",
+      "reviewed_code": "0",
+      "reviewed_at": "2026-09-24T02:46:11.493Z"
+    },
+    {
+      "annotator": "Thomas Weil",
+      "round_id": "EO17",
+      "chunk_number": "1",
+      "original_code": "3",
+      "majority_code": "1",
+      "reviewed_code": "3",
+      "reviewed_at": "2026-09-24T02:46:54.912Z"
+    },
+    {
+      "annotator": "Thomas Weil",
+      "round_id": "EO30",
+      "chunk_number": "1",
+      "original_code": "0",
+      "majority_code": "1",
+      "reviewed_code": "0",
+      "reviewed_at": "2026-09-24T02:48:29.437Z"
+    },
+    {
+      "annotator": "Thomas Weil",
+      "round_id": "EO30",
+      "chunk_number": "2",
+      "original_code": "3",
+      "majority_code": "1",
+      "reviewed_code": "1",
+      "reviewed_at": "2026-09-24T02:49:20.401Z"
+    },
+    {
+      "annotator": "Thomas Weil",
+      "round_id": "EO30",
+      "chunk_number": "3",
+      "original_code": "3",
+      "majority_code": "1",
+      "reviewed_code": "1",
+      "reviewed_at": "2026-09-24T02:49:33.164Z"
+    },
+    {
+      "annotator": "Thomas Weil",
+      "round_id": "EO30",
+      "chunk_number": "4",
+      "original_code": "3",
+      "majority_code": "1",
+      "reviewed_code": "1",
+      "reviewed_at": "2026-09-24T02:49:40.411Z"
+    },
+    {
+      "annotator": "Thomas Weil",
+      "round_id": "M6",
+      "chunk_number": "1",
+      "original_code": "2",
+      "majority_code": "3",
+      "reviewed_code": "2",
+      "reviewed_at": "2026-09-24T02:51:00.817Z"
+    },
+    {
+      "annotator": "Thomas Weil",
+      "round_id": "M14",
+      "chunk_number": "2",
+      "original_code": "2",
+      "majority_code": "1",
+      "reviewed_code": "1",
+      "reviewed_at": "2026-09-24T02:51:28.669Z"
+    },
+    {
+      "annotator": "Thomas Weil",
+      "round_id": "L1",
+      "chunk_number": "1",
+      "original_code": "3",
+      "majority_code": "0",
+      "reviewed_code": "0",
+      "reviewed_at": "2026-09-24T02:52:08.094Z"
+    },
+    {
+      "annotator": "Thomas Weil",
+      "round_id": "L6",
+      "chunk_number": "1",
+      "original_code": "3",
+      "majority_code": "0",
+      "reviewed_code": "0",
+      "reviewed_at": "2026-09-24T02:53:50.125Z"
+    },
+    {
+      "annotator": "Thomas Weil",
+      "round_id": "L6",
+      "chunk_number": "2",
+      "original_code": "3",
+      "majority_code": "0",
+      "reviewed_code": "0",
+      "reviewed_at": "2026-09-24T02:52:23.045Z"
+    },
+    {
+      "annotator": "Thomas Weil",
+      "round_id": "L12",
+      "chunk_number": "1",
+      "original_code": "3",
+      "majority_code": "0",
+      "reviewed_code": "0",
+      "reviewed_at": "2026-09-24T02:52:30.865Z"
+    },
+    {
+      "annotator": "Thomas Weil",
+      "round_id": "P37",
+      "chunk_number": "1",
+      "original_code": "3",
+      "majority_code": "0",
+      "reviewed_code": "0",
+      "reviewed_at": "2026-09-24T02:52:47.705Z"
+    },
+    {
+      "annotator": "Thomas Weil",
+      "round_id": "P47",
+      "chunk_number": "1",
+      "original_code": "3",
+      "majority_code": "0",
+      "reviewed_code": "3",
+      "reviewed_at": "2026-09-24T02:53:09.304Z"
+    }
+  ]
+}

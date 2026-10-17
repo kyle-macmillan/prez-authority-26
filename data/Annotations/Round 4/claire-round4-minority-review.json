@@ -1,0 +1,692 @@
+{
+  "schema": "round4-minority-subdirective-review",
+  "schema_version": 1,
+  "exported_at": "2026-10-08T15:47:13.436Z",
+  "annotator": "Claire",
+  "records": [
+    {
+      "annotator": "Claire",
+      "round_id": "EO2",
+      "chunk_number": "2",
+      "original_code": "3",
+      "majority_code": "1",
+      "reviewed_code": "1",
+      "reviewed_at": "2026-10-08T01:23:12.704Z"
+    },
+    {
+      "annotator": "Claire",
+      "round_id": "EO2",
+      "chunk_number": "4",
+      "original_code": "2",
+      "majority_code": "1",
+      "reviewed_code": "1",
+      "reviewed_at": "2026-10-08T01:23:32.501Z"
+    },
+    {
+      "annotator": "Claire",
+      "round_id": "EO4",
+      "chunk_number": "2",
+      "original_code": "1",
+      "majority_code": "2",
+      "reviewed_code": "2",
+      "reviewed_at": "2026-10-08T01:23:46.933Z"
+    },
+    {
+      "annotator": "Claire",
+      "round_id": "EO8",
+      "chunk_number": "11",
+      "original_code": "2",
+      "majority_code": "1",
+      "reviewed_code": "1",
+      "reviewed_at": "2026-10-08T01:35:05.667Z"
+    },
+    {
+      "annotator": "Claire",
+      "round_id": "EO8",
+      "chunk_number": "21",
+      "original_code": "2",
+      "majority_code": "1",
+      "reviewed_code": "2",
+      "reviewed_at": "2026-10-08T01:35:01.531Z"
+    },
+    {
+      "annotator": "Claire",
+      "round_id": "EO14",
+      "chunk_number": "1",
+      "original_code": "0",
+      "majority_code": "1",
+      "reviewed_code": "1",
+      "reviewed_at": "2026-10-08T01:43:49.600Z"
+    },
+    {
+      "annotator": "Claire",
+      "round_id": "EO15",
+      "chunk_number": "2",
+      "original_code": "2",
+      "majority_code": "1",
+      "reviewed_code": "1",
+      "reviewed_at": "2026-10-08T01:46:46.794Z"
+    },
+    {
+      "annotator": "Claire",
+      "round_id": "EO15",
+      "chunk_number": "6",
+      "original_code": "3",
+      "majority_code": "1",
+      "reviewed_code": "2",
+      "reviewed_at": "2026-10-08T02:05:43.294Z"
+    },
+    {
+      "annotator": "Claire",
+      "round_id": "EO16",
+      "chunk_number": "3",
+      "original_code": "1",
+      "majority_code": "3",
+      "reviewed_code": "3",
+      "reviewed_at": "2026-10-08T02:06:38.605Z"
+    },
+    {
+      "annotator": "Claire",
+      "round_id": "EO16",
+      "chunk_number": "5",
+      "original_code": "1",
+      "majority_code": "0",
+      "reviewed_code": "0",
+      "reviewed_at": "2026-10-08T02:06:45.191Z"
+    },
+    {
+      "annotator": "Claire",
+      "round_id": "EO16",
+      "chunk_number": "6",
+      "original_code": "1",
+      "majority_code": "3",
+      "reviewed_code": "3",
+      "reviewed_at": "2026-10-08T02:07:03.298Z"
+    },
+    {
+      "annotator": "Claire",
+      "round_id": "EO24",
+      "chunk_number": "6",
+      "original_code": "1",
+      "majority_code": "2",
+      "reviewed_code": "2",
+      "reviewed_at": "2026-10-08T14:31:40.874Z"
+    },
+    {
+      "annotator": "Claire",
+      "round_id": "EO24",
+      "chunk_number": "8",
+      "original_code": "0",
+      "majority_code": "3",
+      "reviewed_code": "3",
+      "reviewed_at": "2026-10-08T14:31:44.493Z"
+    },
+    {
+      "annotator": "Claire",
+      "round_id": "EO26",
+      "chunk_number": "1",
+      "original_code": "0",
+      "majority_code": "1",
+      "reviewed_code": "0",
+      "reviewed_at": "2026-10-08T14:32:48.304Z"
+    },
+    {
+      "annotator": "Claire",
+      "round_id": "EO29",
+      "chunk_number": "2",
+      "original_code": "0",
+      "majority_code": "1",
+      "reviewed_code": "1",
+      "reviewed_at": "2026-10-08T14:33:53.863Z"
+    },
+    {
+      "annotator": "Claire",
+      "round_id": "EO33",
+      "chunk_number": "5",
+      "original_code": "0",
+      "majority_code": "3",
+      "reviewed_code": "3",
+      "reviewed_at": "2026-10-08T14:34:07.517Z"
+    },
+    {
+      "annotator": "Claire",
+      "round_id": "EO34",
+      "chunk_number": "3",
+      "original_code": "2",
+      "majority_code": "1",
+      "reviewed_code": "1",
+      "reviewed_at": "2026-10-08T14:34:33.198Z"
+    },
+    {
+      "annotator": "Claire",
+      "round_id": "EO35",
+      "chunk_number": "10",
+      "original_code": "0",
+      "majority_code": "1",
+      "reviewed_code": "1",
+      "reviewed_at": "2026-10-08T14:44:39.419Z"
+    },
+    {
+      "annotator": "Claire",
+      "round_id": "EO41",
+      "chunk_number": "4",
+      "original_code": "2",
+      "majority_code": "1",
+      "reviewed_code": "1",
+      "reviewed_at": "2026-10-08T14:35:51.967Z"
+    },
+    {
+      "annotator": "Claire",
+      "round_id": "M4",
+      "chunk_number": "1",
+      "original_code": "0",
+      "majority_code": "3",
+      "reviewed_code": "3",
+      "reviewed_at": "2026-10-08T14:36:01.749Z"
+    },
+    {
+      "annotator": "Claire",
+      "round_id": "M7",
+      "chunk_number": "4",
+      "original_code": "2",
+      "majority_code": "1",
+      "reviewed_code": "1",
+      "reviewed_at": "2026-10-08T14:45:38.637Z"
+    },
+    {
+      "annotator": "Claire",
+      "round_id": "M7",
+      "chunk_number": "5",
+      "original_code": "0",
+      "majority_code": "1",
+      "reviewed_code": "1",
+      "reviewed_at": "2026-10-08T14:46:10.277Z"
+    },
+    {
+      "annotator": "Claire",
+      "round_id": "M8",
+      "chunk_number": "1",
+      "original_code": "2",
+      "majority_code": "1",
+      "reviewed_code": "2",
+      "reviewed_at": "2026-10-08T15:46:30.096Z"
+    },
+    {
+      "annotator": "Claire",
+      "round_id": "M8",
+      "chunk_number": "3",
+      "original_code": "2",
+      "majority_code": "1",
+      "reviewed_code": "1",
+      "reviewed_at": "2026-10-08T14:47:27.935Z"
+    },
+    {
+      "annotator": "Claire",
+      "round_id": "M14",
+      "chunk_number": "1",
+      "original_code": "0",
+      "majority_code": "3",
+      "reviewed_code": "3",
+      "reviewed_at": "2026-10-08T14:52:28.342Z"
+    },
+    {
+      "annotator": "Claire",
+      "round_id": "M14",
+      "chunk_number": "3",
+      "original_code": "3",
+      "majority_code": "1",
+      "reviewed_code": "3",
+      "reviewed_at": "2026-10-08T15:03:39.534Z"
+    },
+    {
+      "annotator": "Claire",
+      "round_id": "M15",
+      "chunk_number": "1",
+      "original_code": "2",
+      "majority_code": "1",
+      "reviewed_code": "1",
+      "reviewed_at": "2026-10-08T15:03:58.672Z"
+    },
+    {
+      "annotator": "Claire",
+      "round_id": "M15",
+      "chunk_number": "2",
+      "original_code": "2",
+      "majority_code": "1",
+      "reviewed_code": "1",
+      "reviewed_at": "2026-10-08T15:04:11.256Z"
+    },
+    {
+      "annotator": "Claire",
+      "round_id": "M19",
+      "chunk_number": "1",
+      "original_code": "2",
+      "majority_code": "1",
+      "reviewed_code": "2",
+      "reviewed_at": "2026-10-08T15:04:30.436Z"
+    },
+    {
+      "annotator": "Claire",
+      "round_id": "M19",
+      "chunk_number": "2",
+      "original_code": "2",
+      "majority_code": "1",
+      "reviewed_code": "1",
+      "reviewed_at": "2026-10-08T15:12:39.866Z"
+    },
+    {
+      "annotator": "Claire",
+      "round_id": "M19",
+      "chunk_number": "3",
+      "original_code": "2",
+      "majority_code": "1",
+      "reviewed_code": "1",
+      "reviewed_at": "2026-10-08T15:12:51.216Z"
+    },
+    {
+      "annotator": "Claire",
+      "round_id": "M21",
+      "chunk_number": "2",
+      "original_code": "0",
+      "majority_code": "3",
+      "reviewed_code": "3",
+      "reviewed_at": "2026-10-08T15:13:52.010Z"
+    },
+    {
+      "annotator": "Claire",
+      "round_id": "M22",
+      "chunk_number": "1",
+      "original_code": "0",
+      "majority_code": "3",
+      "reviewed_code": "3",
+      "reviewed_at": "2026-10-08T15:14:28.823Z"
+    },
+    {
+      "annotator": "Claire",
+      "round_id": "M24",
+      "chunk_number": "3",
+      "original_code": "2",
+      "majority_code": "1",
+      "reviewed_code": "2",
+      "reviewed_at": "2026-10-08T15:17:06.145Z"
+    },
+    {
+      "annotator": "Claire",
+      "round_id": "M24",
+      "chunk_number": "5",
+      "original_code": "2",
+      "majority_code": "1",
+      "reviewed_code": "2",
+      "reviewed_at": "2026-10-08T15:22:24.532Z"
+    },
+    {
+      "annotator": "Claire",
+      "round_id": "M25",
+      "chunk_number": "2",
+      "original_code": "0",
+      "majority_code": "1",
+      "reviewed_code": "1",
+      "reviewed_at": "2026-10-08T15:22:32.400Z"
+    },
+    {
+      "annotator": "Claire",
+      "round_id": "L9",
+      "chunk_number": "3",
+      "original_code": "2",
+      "majority_code": "1",
+      "reviewed_code": "2",
+      "reviewed_at": "2026-10-08T15:24:00.179Z"
+    },
+    {
+      "annotator": "Claire",
+      "round_id": "L14",
+      "chunk_number": "2",
+      "original_code": "3",
+      "majority_code": "0",
+      "reviewed_code": "3",
+      "reviewed_at": "2026-10-08T15:24:17.208Z"
+    },
+    {
+      "annotator": "Claire",
+      "round_id": "L14",
+      "chunk_number": "3",
+      "original_code": "3",
+      "majority_code": "0",
+      "reviewed_code": "3",
+      "reviewed_at": "2026-10-08T15:24:48.833Z"
+    },
+    {
+      "annotator": "Claire",
+      "round_id": "L14",
+      "chunk_number": "5",
+      "original_code": "3",
+      "majority_code": "0",
+      "reviewed_code": "3",
+      "reviewed_at": "2026-10-08T15:26:34.338Z"
+    },
+    {
+      "annotator": "Claire",
+      "round_id": "L14",
+      "chunk_number": "7",
+      "original_code": "3",
+      "majority_code": "0",
+      "reviewed_code": "3",
+      "reviewed_at": "2026-10-08T15:28:06.566Z"
+    },
+    {
+      "annotator": "Claire",
+      "round_id": "L15",
+      "chunk_number": "3",
+      "original_code": "3",
+      "majority_code": "0",
+      "reviewed_code": "3",
+      "reviewed_at": "2026-10-08T15:28:45.267Z"
+    },
+    {
+      "annotator": "Claire",
+      "round_id": "P9",
+      "chunk_number": "8",
+      "original_code": "3",
+      "majority_code": "1",
+      "reviewed_code": "3",
+      "reviewed_at": "2026-10-08T15:30:52.394Z"
+    },
+    {
+      "annotator": "Claire",
+      "round_id": "P18",
+      "chunk_number": "12",
+      "original_code": "3",
+      "majority_code": "1",
+      "reviewed_code": "1",
+      "reviewed_at": "2026-10-08T15:34:11.939Z"
+    },
+    {
+      "annotator": "Claire",
+      "round_id": "P20",
+      "chunk_number": "3",
+      "original_code": "2",
+      "majority_code": "1",
+      "reviewed_code": "2",
+      "reviewed_at": "2026-10-08T15:34:53.156Z"
+    },
+    {
+      "annotator": "Claire",
+      "round_id": "P20",
+      "chunk_number": "4",
+      "original_code": "2",
+      "majority_code": "1",
+      "reviewed_code": "2",
+      "reviewed_at": "2026-10-08T15:37:13.923Z"
+    },
+    {
+      "annotator": "Claire",
+      "round_id": "P20",
+      "chunk_number": "5",
+      "original_code": "2",
+      "majority_code": "1",
+      "reviewed_code": "2",
+      "reviewed_at": "2026-10-08T15:47:04.803Z"
+    },
+    {
+      "annotator": "Claire",
+      "round_id": "P25",
+      "chunk_number": "3",
+      "original_code": "0",
+      "majority_code": "3",
+      "reviewed_code": "3",
+      "reviewed_at": "2026-10-08T15:38:54.491Z"
+    },
+    {
+      "annotator": "Claire",
+      "round_id": "P25",
+      "chunk_number": "6",
+      "original_code": "3",
+      "majority_code": "1",
+      "reviewed_code": "3",
+      "reviewed_at": "2026-10-08T15:39:37.121Z"
+    },
+    {
+      "annotator": "Claire",
+      "round_id": "P26",
+      "chunk_number": "1",
+      "original_code": "0",
+      "majority_code": "3",
+      "reviewed_code": "3",
+      "reviewed_at": "2026-10-08T15:40:24.963Z"
+    },
+    {
+      "annotator": "Claire",
+      "round_id": "P30",
+      "chunk_number": "1",
+      "original_code": "0",
+      "majority_code": "3",
+      "reviewed_code": "3",
+      "reviewed_at": "2026-10-08T15:40:54.300Z"
+    },
+    {
+      "annotator": "Claire",
+      "round_id": "P30",
+      "chunk_number": "2",
+      "original_code": "0",
+      "majority_code": "3",
+      "reviewed_code": "3",
+      "reviewed_at": "2026-10-08T15:41:58.640Z"
+    },
+    {
+      "annotator": "Claire",
+      "round_id": "P30",
+      "chunk_number": "3",
+      "original_code": "0",
+      "majority_code": "3",
+      "reviewed_code": "3",
+      "reviewed_at": "2026-10-08T15:42:14.827Z"
+    },
+    {
+      "annotator": "Claire",
+      "round_id": "P34",
+      "chunk_number": "4",
+      "original_code": "3",
+      "majority_code": "1",
+      "reviewed_code": "1",
+      "reviewed_at": "2026-10-08T15:42:23.763Z"
+    },
+    {
+      "annotator": "Claire",
+      "round_id": "P34",
+      "chunk_number": "5",
+      "original_code": "3",
+      "majority_code": "2",
+      "reviewed_code": "2",
+      "reviewed_at": "2026-10-08T15:43:01.463Z"
+    },
+    {
+      "annotator": "Claire",
+      "round_id": "P34",
+      "chunk_number": "6",
+      "original_code": "3",
+      "majority_code": "1",
+      "reviewed_code": "1",
+      "reviewed_at": "2026-10-08T15:43:07.007Z"
+    },
+    {
+      "annotator": "Claire",
+      "round_id": "P34",
+      "chunk_number": "7",
+      "original_code": "3",
+      "majority_code": "1",
+      "reviewed_code": "1",
+      "reviewed_at": "2026-10-08T15:43:26.911Z"
+    },
+    {
+      "annotator": "Claire",
+      "round_id": "P34",
+      "chunk_number": "8",
+      "original_code": "3",
+      "majority_code": "1",
+      "reviewed_code": "1",
+      "reviewed_at": "2026-10-08T15:43:32.011Z"
+    },
+    {
+      "annotator": "Claire",
+      "round_id": "P34",
+      "chunk_number": "9",
+      "original_code": "3",
+      "majority_code": "1",
+      "reviewed_code": "1",
+      "reviewed_at": "2026-10-08T15:43:49.589Z"
+    },
+    {
+      "annotator": "Claire",
+      "round_id": "P34",
+      "chunk_number": "10",
+      "original_code": "3",
+      "majority_code": "1",
+      "reviewed_code": "1",
+      "reviewed_at": "2026-10-08T15:43:54.277Z"
+    },
+    {
+      "annotator": "Claire",
+      "round_id": "P34",
+      "chunk_number": "11",
+      "original_code": "3",
+      "majority_code": "2",
+      "reviewed_code": "3",
+      "reviewed_at": "2026-10-08T15:44:01.411Z"
+    },
+    {
+      "annotator": "Claire",
+      "round_id": "P35",
+      "chunk_number": "3",
+      "original_code": "0",
+      "majority_code": "3",
+      "reviewed_code": "3",
+      "reviewed_at": "2026-10-08T15:44:09.589Z"
+    },
+    {
+      "annotator": "Claire",
+      "round_id": "P35",
+      "chunk_number": "10",
+      "original_code": "2",
+      "majority_code": "1",
+      "reviewed_code": "2",
+      "reviewed_at": "2026-10-08T15:44:21.746Z"
+    },
+    {
+      "annotator": "Claire",
+      "round_id": "P36",
+      "chunk_number": "1",
+      "original_code": "0",
+      "majority_code": "3",
+      "reviewed_code": "3",
+      "reviewed_at": "2026-10-08T15:45:31.655Z"
+    },
+    {
+      "annotator": "Claire",
+      "round_id": "P36",
+      "chunk_number": "2",
+      "original_code": "0",
+      "majority_code": "3",
+      "reviewed_code": "3",
+      "reviewed_at": "2026-10-08T15:45:43.911Z"
+    },
+    {
+      "annotator": "Claire",
+      "round_id": "P36",
+      "chunk_number": "3",
+      "original_code": "0",
+      "majority_code": "3",
+      "reviewed_code": "3",
+      "reviewed_at": "2026-10-08T15:45:52.229Z"
+    },
+    {
+      "annotator": "Claire",
+      "round_id": "P37",
+      "chunk_number": "3",
+      "original_code": "3",
+      "majority_code": "2",
+      "reviewed_code": "2",
+      "reviewed_at": "2026-10-08T02:46:44.041Z"
+    },
+    {
+      "annotator": "Claire",
+      "round_id": "P40",
+      "chunk_number": "1",
+      "original_code": "0",
+      "majority_code": "3",
+      "reviewed_code": "3",
+      "reviewed_at": "2026-10-08T02:46:32.713Z"
+    },
+    {
+      "annotator": "Claire",
+      "round_id": "P40",
+      "chunk_number": "2",
+      "original_code": "0",
+      "majority_code": "3",
+      "reviewed_code": "3",
+      "reviewed_at": "2026-10-08T02:38:14.155Z"
+    },
+    {
+      "annotator": "Claire",
+      "round_id": "P41",
+      "chunk_number": "9",
+      "original_code": "1",
+      "majority_code": "2",
+      "reviewed_code": "2",
+      "reviewed_at": "2026-10-08T02:38:05.864Z"
+    },
+    {
+      "annotator": "Claire",
+      "round_id": "P43",
+      "chunk_number": "1",
+      "original_code": "0",
+      "majority_code": "3",
+      "reviewed_code": "3",
+      "reviewed_at": "2026-10-08T02:18:43.453Z"
+    },
+    {
+      "annotator": "Claire",
+      "round_id": "P43",
+      "chunk_number": "5",
+      "original_code": "0",
+      "majority_code": "3",
+      "reviewed_code": "0",
+      "reviewed_at": "2026-10-08T02:17:36.888Z"
+    },
+    {
+      "annotator": "Claire",
+      "round_id": "P46",
+      "chunk_number": "1",
+      "original_code": "0",
+      "majority_code": "3",
+      "reviewed_code": "3",
+      "reviewed_at": "2026-10-08T02:10:33.737Z"
+    },
+    {
+      "annotator": "Claire",
+      "round_id": "P46",
+      "chunk_number": "2",
+      "original_code": "0",
+      "majority_code": "3",
+      "reviewed_code": "3",
+      "reviewed_at": "2026-10-08T02:10:41.179Z"
+    },
+    {
+      "annotator": "Claire",
+      "round_id": "P48",
+      "chunk_number": "5",
+      "original_code": "3",
+      "majority_code": "0",
+      "reviewed_code": "0",
+      "reviewed_at": "2026-10-08T02:11:20.853Z"
+    },
+    {
+      "annotator": "Claire",
+      "round_id": "P50",
+      "chunk_number": "1",
+      "original_code": "0",
+      "majority_code": "3",
+      "reviewed_code": "0",
+      "reviewed_at": "2026-10-08T02:13:32.515Z"
+    }
+  ]
+}

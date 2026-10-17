@@ -1,25 +1,21 @@
 #!/usr/bin/env python3
-"""Build disagreement review viewer - six discussion groups for round-2 annotations."""
+"""Build a focused disagreement review viewer for Round 2 annotations."""
 
 from __future__ import annotations
 import html as html_lib, json, re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-SANDBOX_DIR = ROOT / "data" / "Annotations" / "Sandbox 2"
-
-GROUPS = [
-    {"label": "Slate", "docs": ["EO9", "EO19", "EO20", "P6", "EO7", "M3", "M22"]},
-]
+ROUND2_DIR = ROOT / "data" / "Annotations" / "Round 2"
 
 RESULT_FILES = [
-    SANDBOX_DIR / "7.16.2026 Tweil_annotations.json",
-    SANDBOX_DIR / "annotations-viewer2-claire-2026-07-17.json",
-    SANDBOX_DIR / "annotations-viewer2-kylem-2026-07-17.json",
+    ROUND2_DIR / "annotations-viewer2-claire-2026-08-05-2.json",
+    ROUND2_DIR / "annotations-viewer2-kylem-2026-08-05.json",
+    ROUND2_DIR / "Update annotations-viewer2-thomas_weil-2026-08-05 .json",
 ]
 
-SOURCE_VIEWER = SANDBOX_DIR / "sample_100_v2.html"
-OUTPUT = SANDBOX_DIR / "disagreement-review.html"
+SOURCE_VIEWER = ROUND2_DIR / "round_2.html"
+OUTPUT = ROUND2_DIR / "disagreement-review.html"
 
 VALUE_LABELS = {
     "0": "0 – Outside scope",
@@ -110,11 +106,38 @@ def extract_source_data(source: str) -> tuple[dict, dict, dict]:
 # Build
 # ---------------------------------------------------------------------------
 
+def has_disagreement(doc_id: str, chunks: dict, results: list[dict]) -> bool:
+    """Return whether any Round 2 directive or sub-directive value differs."""
+    fields = FIELDS
+
+    directive_values = [
+        tuple((result.get(doc_id, {}).get("classification") or {}).get(field)
+              for field in fields)
+        for result in results
+    ]
+    if len(set(directive_values)) > 1:
+        return True
+
+    for chunk_number in chunks:
+        chunk_values = [
+            tuple((result.get(doc_id, {}).get("wp_chunks", {}).get(chunk_number) or {}).get(field)
+                  for field in fields)
+            for result in results
+        ]
+        if len(set(chunk_values)) > 1:
+            return True
+    return False
+
+
 def build_html(metadata: dict, chunks: dict, doc_texts: dict, results: list[dict]) -> str:
     annotators = [r.get("annotator", f"Annotator {i + 1}") for i, r in enumerate(results)]
 
-    # Collect unique doc IDs across all groups
-    all_doc_ids: set[str] = {doc_id for g in GROUPS for doc_id in g["docs"]}
+    # Limit the viewer to documents with at least one disagreement in either mode.
+    all_doc_ids = [
+        doc_id for doc_id in metadata
+        if has_disagreement(doc_id, chunks.get(doc_id, {}), results)
+    ]
+    groups = [{"label": "Disagreements", "docs": all_doc_ids}]
 
     docs_data: dict = {}
     for doc_id in all_doc_ids:
@@ -134,7 +157,7 @@ def build_html(metadata: dict, chunks: dict, doc_texts: dict, results: list[dict
 
     payload = json.dumps(
         {
-            "groups": GROUPS,
+            "groups": groups,
             "annotators": annotators,
             "docs": docs_data,
             "fields": FIELDS,

@@ -1,0 +1,629 @@
+{
+  "schema": "round4-minority-subdirective-review",
+  "schema_version": 1,
+  "exported_at": "2026-10-08T17:54:06.033Z",
+  "annotator": "KyleM",
+  "records": [
+    {
+      "annotator": "KyleM",
+      "round_id": "EO1",
+      "chunk_number": "1",
+      "original_code": "1",
+      "majority_code": "0",
+      "reviewed_code": "1",
+      "reviewed_at": "2026-10-08T13:21:20.955Z"
+    },
+    {
+      "annotator": "KyleM",
+      "round_id": "EO3",
+      "chunk_number": "1",
+      "original_code": "3",
+      "majority_code": "0",
+      "reviewed_code": "3",
+      "reviewed_at": "2026-10-08T13:20:55.572Z"
+    },
+    {
+      "annotator": "KyleM",
+      "round_id": "EO4",
+      "chunk_number": "3",
+      "original_code": "1",
+      "majority_code": "2",
+      "reviewed_code": "2",
+      "reviewed_at": "2026-10-08T13:21:33.856Z"
+    },
+    {
+      "annotator": "KyleM",
+      "round_id": "EO4",
+      "chunk_number": "4",
+      "original_code": "1",
+      "majority_code": "3",
+      "reviewed_code": "3",
+      "reviewed_at": "2026-10-08T13:21:39.982Z"
+    },
+    {
+      "annotator": "KyleM",
+      "round_id": "EO6",
+      "chunk_number": "2",
+      "original_code": "2",
+      "majority_code": "1",
+      "reviewed_code": "2",
+      "reviewed_at": "2026-10-08T13:21:52.388Z"
+    },
+    {
+      "annotator": "KyleM",
+      "round_id": "EO8",
+      "chunk_number": "1",
+      "original_code": "1",
+      "majority_code": "0",
+      "reviewed_code": "0",
+      "reviewed_at": "2026-10-08T13:22:03.761Z"
+    },
+    {
+      "annotator": "KyleM",
+      "round_id": "EO15",
+      "chunk_number": "1",
+      "original_code": "1",
+      "majority_code": "2",
+      "reviewed_code": "1",
+      "reviewed_at": "2026-10-08T13:22:54.928Z"
+    },
+    {
+      "annotator": "KyleM",
+      "round_id": "EO15",
+      "chunk_number": "3",
+      "original_code": "1",
+      "majority_code": "3",
+      "reviewed_code": "3",
+      "reviewed_at": "2026-10-08T13:23:05.728Z"
+    },
+    {
+      "annotator": "KyleM",
+      "round_id": "EO16",
+      "chunk_number": "4",
+      "original_code": "2",
+      "majority_code": "1",
+      "reviewed_code": "1",
+      "reviewed_at": "2026-10-08T13:25:04.630Z"
+    },
+    {
+      "annotator": "KyleM",
+      "round_id": "EO17",
+      "chunk_number": "1",
+      "original_code": "1",
+      "majority_code": "0",
+      "reviewed_code": "1",
+      "reviewed_at": "2026-10-08T13:28:30.581Z"
+    },
+    {
+      "annotator": "KyleM",
+      "round_id": "EO20",
+      "chunk_number": "2",
+      "original_code": "1",
+      "majority_code": "0",
+      "reviewed_code": "1",
+      "reviewed_at": "2026-10-08T13:28:43.340Z"
+    },
+    {
+      "annotator": "KyleM",
+      "round_id": "EO21",
+      "chunk_number": "1",
+      "original_code": "1",
+      "majority_code": "0",
+      "reviewed_code": "1",
+      "reviewed_at": "2026-10-08T13:28:54.993Z"
+    },
+    {
+      "annotator": "KyleM",
+      "round_id": "EO24",
+      "chunk_number": "10",
+      "original_code": "2",
+      "majority_code": "1",
+      "reviewed_code": "2",
+      "reviewed_at": "2026-10-08T13:29:01.656Z"
+    },
+    {
+      "annotator": "KyleM",
+      "round_id": "EO25",
+      "chunk_number": "1",
+      "original_code": "1",
+      "majority_code": "0",
+      "reviewed_code": "0",
+      "reviewed_at": "2026-10-08T13:30:50.036Z"
+    },
+    {
+      "annotator": "KyleM",
+      "round_id": "EO25",
+      "chunk_number": "5",
+      "original_code": "2",
+      "majority_code": "1",
+      "reviewed_code": "1",
+      "reviewed_at": "2026-10-08T13:29:52.499Z"
+    },
+    {
+      "annotator": "KyleM",
+      "round_id": "EO28",
+      "chunk_number": "1",
+      "original_code": "1",
+      "majority_code": "0",
+      "reviewed_code": "1",
+      "reviewed_at": "2026-10-08T13:30:03.602Z"
+    },
+    {
+      "annotator": "KyleM",
+      "round_id": "EO28",
+      "chunk_number": "4",
+      "original_code": "2",
+      "majority_code": "1",
+      "reviewed_code": "2",
+      "reviewed_at": "2026-10-08T13:30:40.829Z"
+    },
+    {
+      "annotator": "KyleM",
+      "round_id": "EO29",
+      "chunk_number": "1",
+      "original_code": "1",
+      "majority_code": "0",
+      "reviewed_code": "0",
+      "reviewed_at": "2026-10-08T13:31:09.580Z"
+    },
+    {
+      "annotator": "KyleM",
+      "round_id": "EO30",
+      "chunk_number": "1",
+      "original_code": "1",
+      "majority_code": "0",
+      "reviewed_code": "0",
+      "reviewed_at": "2026-10-08T13:31:20.656Z"
+    },
+    {
+      "annotator": "KyleM",
+      "round_id": "EO30",
+      "chunk_number": "10",
+      "original_code": "3",
+      "majority_code": "1",
+      "reviewed_code": "3",
+      "reviewed_at": "2026-10-08T13:31:50.235Z"
+    },
+    {
+      "annotator": "KyleM",
+      "round_id": "EO30",
+      "chunk_number": "11",
+      "original_code": "3",
+      "majority_code": "1",
+      "reviewed_code": "3",
+      "reviewed_at": "2026-10-08T13:31:52.163Z"
+    },
+    {
+      "annotator": "KyleM",
+      "round_id": "EO30",
+      "chunk_number": "12",
+      "original_code": "3",
+      "majority_code": "1",
+      "reviewed_code": "3",
+      "reviewed_at": "2026-10-08T13:31:59.676Z"
+    },
+    {
+      "annotator": "KyleM",
+      "round_id": "EO30",
+      "chunk_number": "13",
+      "original_code": "3",
+      "majority_code": "1",
+      "reviewed_code": "3",
+      "reviewed_at": "2026-10-08T13:32:01.836Z"
+    },
+    {
+      "annotator": "KyleM",
+      "round_id": "EO30",
+      "chunk_number": "14",
+      "original_code": "3",
+      "majority_code": "1",
+      "reviewed_code": "3",
+      "reviewed_at": "2026-10-08T13:32:05.161Z"
+    },
+    {
+      "annotator": "KyleM",
+      "round_id": "EO33",
+      "chunk_number": "7",
+      "original_code": "2",
+      "majority_code": "1",
+      "reviewed_code": "2",
+      "reviewed_at": "2026-10-08T17:44:39.650Z"
+    },
+    {
+      "annotator": "KyleM",
+      "round_id": "EO34",
+      "chunk_number": "1",
+      "original_code": "1",
+      "majority_code": "0",
+      "reviewed_code": "0",
+      "reviewed_at": "2026-10-08T17:44:44.321Z"
+    },
+    {
+      "annotator": "KyleM",
+      "round_id": "EO34",
+      "chunk_number": "4",
+      "original_code": "1",
+      "majority_code": "2",
+      "reviewed_code": "1",
+      "reviewed_at": "2026-10-08T17:45:32.527Z"
+    },
+    {
+      "annotator": "KyleM",
+      "round_id": "EO34",
+      "chunk_number": "5",
+      "original_code": "1",
+      "majority_code": "2",
+      "reviewed_code": "2",
+      "reviewed_at": "2026-10-08T17:45:40.715Z"
+    },
+    {
+      "annotator": "KyleM",
+      "round_id": "EO35",
+      "chunk_number": "1",
+      "original_code": "1",
+      "majority_code": "0",
+      "reviewed_code": "0",
+      "reviewed_at": "2026-10-08T17:45:44.571Z"
+    },
+    {
+      "annotator": "KyleM",
+      "round_id": "EO38",
+      "chunk_number": "1",
+      "original_code": "1",
+      "majority_code": "0",
+      "reviewed_code": "0",
+      "reviewed_at": "2026-10-08T17:45:52.230Z"
+    },
+    {
+      "annotator": "KyleM",
+      "round_id": "EO41",
+      "chunk_number": "3",
+      "original_code": "1",
+      "majority_code": "2",
+      "reviewed_code": "2",
+      "reviewed_at": "2026-10-08T17:46:01.831Z"
+    },
+    {
+      "annotator": "KyleM",
+      "round_id": "EO43",
+      "chunk_number": "1",
+      "original_code": "0",
+      "majority_code": "1",
+      "reviewed_code": "1",
+      "reviewed_at": "2026-10-08T17:46:08.321Z"
+    },
+    {
+      "annotator": "KyleM",
+      "round_id": "M7",
+      "chunk_number": "2",
+      "original_code": "3",
+      "majority_code": "0",
+      "reviewed_code": "3",
+      "reviewed_at": "2026-10-08T17:46:18.280Z"
+    },
+    {
+      "annotator": "KyleM",
+      "round_id": "M10",
+      "chunk_number": "3",
+      "original_code": "1",
+      "majority_code": "0",
+      "reviewed_code": "0",
+      "reviewed_at": "2026-10-08T17:46:23.810Z"
+    },
+    {
+      "annotator": "KyleM",
+      "round_id": "M12",
+      "chunk_number": "6",
+      "original_code": "3",
+      "majority_code": "0",
+      "reviewed_code": "3",
+      "reviewed_at": "2026-10-08T17:46:31.491Z"
+    },
+    {
+      "annotator": "KyleM",
+      "round_id": "M22",
+      "chunk_number": "2",
+      "original_code": "3",
+      "majority_code": "2",
+      "reviewed_code": "2",
+      "reviewed_at": "2026-10-08T17:46:34.755Z"
+    },
+    {
+      "annotator": "KyleM",
+      "round_id": "M24",
+      "chunk_number": "1",
+      "original_code": "1",
+      "majority_code": "0",
+      "reviewed_code": "0",
+      "reviewed_at": "2026-10-08T17:46:37.973Z"
+    },
+    {
+      "annotator": "KyleM",
+      "round_id": "M24",
+      "chunk_number": "4",
+      "original_code": "1",
+      "majority_code": "2",
+      "reviewed_code": "1",
+      "reviewed_at": "2026-10-08T17:47:18.443Z"
+    },
+    {
+      "annotator": "KyleM",
+      "round_id": "M24",
+      "chunk_number": "8",
+      "original_code": "1",
+      "majority_code": "2",
+      "reviewed_code": "1",
+      "reviewed_at": "2026-10-08T17:47:23.856Z"
+    },
+    {
+      "annotator": "KyleM",
+      "round_id": "M28",
+      "chunk_number": "2",
+      "original_code": "1",
+      "majority_code": "2",
+      "reviewed_code": "1",
+      "reviewed_at": "2026-10-08T17:47:33.526Z"
+    },
+    {
+      "annotator": "KyleM",
+      "round_id": "L3",
+      "chunk_number": "1",
+      "original_code": "1",
+      "majority_code": "2",
+      "reviewed_code": "2",
+      "reviewed_at": "2026-10-08T17:47:44.134Z"
+    },
+    {
+      "annotator": "KyleM",
+      "round_id": "L4",
+      "chunk_number": "1",
+      "original_code": "1",
+      "majority_code": "2",
+      "reviewed_code": "1",
+      "reviewed_at": "2026-10-08T17:48:00.079Z"
+    },
+    {
+      "annotator": "KyleM",
+      "round_id": "L15",
+      "chunk_number": "2",
+      "original_code": "3",
+      "majority_code": "0",
+      "reviewed_code": "3",
+      "reviewed_at": "2026-10-08T17:48:05.739Z"
+    },
+    {
+      "annotator": "KyleM",
+      "round_id": "P5",
+      "chunk_number": "4",
+      "original_code": "3",
+      "majority_code": "0",
+      "reviewed_code": "3",
+      "reviewed_at": "2026-10-08T17:48:10.586Z"
+    },
+    {
+      "annotator": "KyleM",
+      "round_id": "P9",
+      "chunk_number": "1",
+      "original_code": "3",
+      "majority_code": "0",
+      "reviewed_code": "0",
+      "reviewed_at": "2026-10-08T17:48:18.406Z"
+    },
+    {
+      "annotator": "KyleM",
+      "round_id": "P9",
+      "chunk_number": "5",
+      "original_code": "1",
+      "majority_code": "2",
+      "reviewed_code": "2",
+      "reviewed_at": "2026-10-08T17:48:28.436Z"
+    },
+    {
+      "annotator": "KyleM",
+      "round_id": "P15",
+      "chunk_number": "6",
+      "original_code": "1",
+      "majority_code": "3",
+      "reviewed_code": "3",
+      "reviewed_at": "2026-10-08T17:48:40.612Z"
+    },
+    {
+      "annotator": "KyleM",
+      "round_id": "P18",
+      "chunk_number": "1",
+      "original_code": "1",
+      "majority_code": "3",
+      "reviewed_code": "3",
+      "reviewed_at": "2026-10-08T17:48:49.570Z"
+    },
+    {
+      "annotator": "KyleM",
+      "round_id": "P18",
+      "chunk_number": "5",
+      "original_code": "4",
+      "majority_code": "3",
+      "reviewed_code": "3",
+      "reviewed_at": "2026-10-08T17:48:59.794Z"
+    },
+    {
+      "annotator": "KyleM",
+      "round_id": "P20",
+      "chunk_number": "1",
+      "original_code": "1",
+      "majority_code": "0",
+      "reviewed_code": "0",
+      "reviewed_at": "2026-10-08T17:49:02.639Z"
+    },
+    {
+      "annotator": "KyleM",
+      "round_id": "P31",
+      "chunk_number": "2",
+      "original_code": "1",
+      "majority_code": "3",
+      "reviewed_code": "1",
+      "reviewed_at": "2026-10-08T17:49:24.129Z"
+    },
+    {
+      "annotator": "KyleM",
+      "round_id": "P31",
+      "chunk_number": "3",
+      "original_code": "1",
+      "majority_code": "3",
+      "reviewed_code": "1",
+      "reviewed_at": "2026-10-08T17:49:45.071Z"
+    },
+    {
+      "annotator": "KyleM",
+      "round_id": "P34",
+      "chunk_number": "3",
+      "original_code": "2",
+      "majority_code": "3",
+      "reviewed_code": "2",
+      "reviewed_at": "2026-10-08T17:49:54.455Z"
+    },
+    {
+      "annotator": "KyleM",
+      "round_id": "P35",
+      "chunk_number": "6",
+      "original_code": "2",
+      "majority_code": "1",
+      "reviewed_code": "1",
+      "reviewed_at": "2026-10-08T17:50:25.635Z"
+    },
+    {
+      "annotator": "KyleM",
+      "round_id": "P35",
+      "chunk_number": "7",
+      "original_code": "2",
+      "majority_code": "1",
+      "reviewed_code": "1",
+      "reviewed_at": "2026-10-08T17:50:29.838Z"
+    },
+    {
+      "annotator": "KyleM",
+      "round_id": "P36",
+      "chunk_number": "5",
+      "original_code": "2",
+      "majority_code": "1",
+      "reviewed_code": "2",
+      "reviewed_at": "2026-10-08T17:50:42.517Z"
+    },
+    {
+      "annotator": "KyleM",
+      "round_id": "P37",
+      "chunk_number": "1",
+      "original_code": "3",
+      "majority_code": "0",
+      "reviewed_code": "0",
+      "reviewed_at": "2026-10-08T17:50:47.099Z"
+    },
+    {
+      "annotator": "KyleM",
+      "round_id": "P41",
+      "chunk_number": "6",
+      "original_code": "2",
+      "majority_code": "1",
+      "reviewed_code": "0",
+      "reviewed_at": "2026-10-08T17:51:08.319Z"
+    },
+    {
+      "annotator": "KyleM",
+      "round_id": "P41",
+      "chunk_number": "7",
+      "original_code": "2",
+      "majority_code": "1",
+      "reviewed_code": "2",
+      "reviewed_at": "2026-10-08T17:51:11.290Z"
+    },
+    {
+      "annotator": "KyleM",
+      "round_id": "P41",
+      "chunk_number": "10",
+      "original_code": "1",
+      "majority_code": "3",
+      "reviewed_code": "3",
+      "reviewed_at": "2026-10-08T17:51:22.556Z"
+    },
+    {
+      "annotator": "KyleM",
+      "round_id": "P41",
+      "chunk_number": "11",
+      "original_code": "1",
+      "majority_code": "2",
+      "reviewed_code": "1",
+      "reviewed_at": "2026-10-08T17:51:41.214Z"
+    },
+    {
+      "annotator": "KyleM",
+      "round_id": "P43",
+      "chunk_number": "6",
+      "original_code": "1",
+      "majority_code": "0",
+      "reviewed_code": "0",
+      "reviewed_at": "2026-10-08T17:52:30.901Z"
+    },
+    {
+      "annotator": "KyleM",
+      "round_id": "P46",
+      "chunk_number": "8",
+      "original_code": "2",
+      "majority_code": "1",
+      "reviewed_code": "0",
+      "reviewed_at": "2026-10-08T17:52:37.423Z"
+    },
+    {
+      "annotator": "KyleM",
+      "round_id": "P46",
+      "chunk_number": "9",
+      "original_code": "2",
+      "majority_code": "1",
+      "reviewed_code": "1",
+      "reviewed_at": "2026-10-08T17:52:46.435Z"
+    },
+    {
+      "annotator": "KyleM",
+      "round_id": "P49",
+      "chunk_number": "3",
+      "original_code": "1",
+      "majority_code": "3",
+      "reviewed_code": "1",
+      "reviewed_at": "2026-10-08T17:53:29.232Z"
+    },
+    {
+      "annotator": "KyleM",
+      "round_id": "P50",
+      "chunk_number": "2",
+      "original_code": "3",
+      "majority_code": "0",
+      "reviewed_code": "3",
+      "reviewed_at": "2026-10-08T17:53:35.730Z"
+    },
+    {
+      "annotator": "KyleM",
+      "round_id": "P50",
+      "chunk_number": "3",
+      "original_code": "3",
+      "majority_code": "0",
+      "reviewed_code": "0",
+      "reviewed_at": "2026-10-08T17:53:47.642Z"
+    },
+    {
+      "annotator": "KyleM",
+      "round_id": "P52",
+      "chunk_number": "3",
+      "original_code": "2",
+      "majority_code": "3",
+      "reviewed_code": "2",
+      "reviewed_at": "2026-10-08T17:53:58.313Z"
+    },
+    {
+      "annotator": "KyleM",
+      "round_id": "P52",
+      "chunk_number": "4",
+      "original_code": "2",
+      "majority_code": "3",
+      "reviewed_code": "2",
+      "reviewed_at": "2026-10-08T17:54:04.990Z"
+    }
+  ]
+}

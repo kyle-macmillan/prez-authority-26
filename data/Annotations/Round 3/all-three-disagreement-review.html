@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>All-three Disagreement Review — Round 3</title>
+<style>
+body{font-family:system-ui,sans-serif;font-size:13px;margin:0;padding:0;background:#f9fafb;color:#111}
+*{box-sizing:border-box}
+/* Sticky top bar */
+.top-bar{position:sticky;top:0;z-index:10;background:#f9fafb;border-bottom:1px solid #e5e7eb;padding:10px 16px 0}
+h1{font-size:1.1rem;margin:0 0 8px;font-weight:800}
+/* Mode toggle */
+.mode-row{display:flex;gap:16px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.mode-toggle{display:flex;gap:4px}
+.mode-btn{padding:4px 12px;font-size:12px;font-weight:600;cursor:pointer;background:#e5e7eb;border:1px solid #d1d5db;border-radius:4px;color:#374151}
+.mode-btn.active{background:#1d4ed8;color:white;border-color:#1d4ed8}
+/* Legend */
+.legend{display:flex;gap:10px;font-size:11px;align-items:center}
+.leg{padding:2px 8px;border-radius:3px;font-weight:700}
+.leg-agree{background:#d1fae5;color:#065f46}
+.leg-disagree{background:#fee2e2;color:#b91c1c}
+.leg-missing{background:#fef3c7;color:#92400e}
+/* Tab bar */
+.tab-bar{display:flex;gap:2px;overflow-x:auto;border-bottom:2px solid #e5e7eb}
+.tab-btn{padding:6px 12px;font-size:12px;font-weight:600;cursor:pointer;background:none;border:none;border-bottom:3px solid transparent;margin-bottom:-2px;color:#6b7280;white-space:nowrap;flex-shrink:0}
+.tab-btn:hover{color:#1d4ed8}
+.tab-btn.active{color:#1d4ed8;border-bottom-color:#1d4ed8}
+.tab-count{font-weight:400;color:#9ca3af}
+/* Content */
+.content{padding:14px 16px}
+/* Doc card */
+.doc-card{background:white;border:1px solid #e5e7eb;border-radius:6px;margin-bottom:12px;overflow:hidden}
+.doc-card>summary{cursor:pointer;list-style:none;padding:11px 16px;display:flex;gap:10px;align-items:baseline;border-bottom:1px solid #f3f4f6}
+.doc-card>summary::-webkit-details-marker{display:none}
+.doc-id{font-weight:800;font-size:17px;color:#1d4ed8;min-width:3.4em;flex-shrink:0}
+.doc-prez{font-weight:700;font-size:14px}
+.doc-date{color:#6b7280;font-size:13px}
+.doc-type{font-style:italic;color:#6b7280;font-size:13px}
+.doc-badge{margin-left:auto;padding:2px 9px;border-radius:999px;font-size:11px;font-weight:700;white-space:nowrap;flex-shrink:0}
+.doc-badge.agree{background:#d1fae5;color:#065f46}
+.doc-badge.disagree{background:#fee2e2;color:#b91c1c}
+.doc-badge.missing{background:#fef3c7;color:#92400e}
+/* Two-column body */
+.doc-body{display:grid;grid-template-columns:1fr 1fr;align-items:start}
+.col{padding:12px 14px;min-width:0}
+.col+.col{border-left:1px solid #e5e7eb;position:sticky;top:var(--bar-height,120px);align-self:start}
+.col-heading{font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:#9ca3af;margin:0 0 8px;font-weight:600}
+/* Doc text */
+.doc-text{white-space:pre-wrap;font-size:12px;line-height:1.65;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:#1f2937;background:#f8fafc;border:1px solid #e5e7eb;border-radius:4px;padding:8px 10px}
+/* Annotation table */
+.ann-table{border-collapse:collapse;width:100%;font-size:12px}
+.ann-table th{text-align:left;padding:4px 8px;background:#f3f4f6;color:#6b7280;font-weight:600;border:1px solid #e5e7eb;font-size:11px}
+.ann-table td{padding:5px 8px;border:1px solid #e5e7eb;vertical-align:middle}
+.ann-table td.field-label{font-weight:700;color:#374151;background:#f9fafb;white-space:nowrap}
+.ann-table tr.row-agree td.val-cell:not(.val-missing){background:#d1fae5;color:#065f46}
+.ann-table tr.row-disagree td.val-cell:not(.val-missing){background:#fee2e2;color:#b91c1c}
+.ann-table td.val-missing{background:#fef3c7;color:#92400e;font-style:italic}
+/* Chunks */
+.chunk-block{margin-bottom:12px}
+.chunk-label{font-size:11px;font-weight:700;color:#1d4ed8;margin-bottom:4px}
+.chunk-text{font-size:12px;background:#f8fafc;border-left:3px solid #93c5fd;padding:6px 10px;margin-bottom:6px;white-space:pre-wrap;line-height:1.55;color:#1f2937;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+.no-chunks{font-size:12px;color:#9ca3af;font-style:italic;margin-bottom:10px}
+/* WP comments */
+.comments{margin-top:10px;background:#fffbeb;border:1px solid #fde68a;border-radius:4px;padding:8px 10px;font-size:12px}
+.comment-heading{font-weight:700;color:#92400e;font-size:11px;margin-bottom:5px}
+.comment-item{margin-bottom:3px;line-height:1.5}
+.comment-who{font-weight:700;color:#374151}
+@media(max-width:700px){.doc-body{grid-template-columns:1fr}.col+.col{border-left:none;border-top:1px solid #e5e7eb}}
+</style>
+</head>
+<body>
+<div class="top-bar">
+  <h1>All-three Disagreement Review — Round 3</h1>
+  <div class="mode-row">
+    <div class="mode-toggle">
+      <button class="mode-btn" id="btn-directive" type="button">Directive</button>
+      <button class="mode-btn active" id="btn-subdirective" type="button">Sub-directive</button>
+    </div>
+    <div class="legend">
+      <span class="leg leg-agree">Agreement</span>
+      <span class="leg leg-disagree">Disagreement</span>
+      <span class="leg leg-missing">Missing</span>
+    </div>
+  </div>
+  <div class="tab-bar" id="tab-bar"></div>
+</div>
+<div class="content" id="content"></div>
+<script id="payload-data" type="application/json">{"groups":[{"label":"Disagreements","docs":["EO6","EO25","M20","L16","L24","P12"]}],"annotators":["Claire","KyleM","Thomas Weil"],"docs":{"EO6":{"metadata":{"president":"Harry S Truman","date":"May 19, 1952","type":"executive_order"},"text":"By virtue of the authority vested in me by the act of August 9, 1950, 64 Stat. 427, which amended section 1, Title II of the act of June 15, 1917, 40 Stat. 220 (50 U.S.C. 191), and as President of the United States, I hereby prescribe the following amendment of the regulations prescribed by Executive Order No. 10173 of October 18, 1950, as amended by Executive Order No. 10277 of August 1, 1951, which regulations constitute Part 6, Subchapter A, Chapter I, Title 33 of the Code of Federal Regulations:\n\nSection 6.10-1 is amended to read as follows:\n\n§ 6.10-1 Issuance of documents and employment of persons aboard vessels. No person shall be issued a document required for employment on a merchant vessel of the United States nor shall any person be employed on a merchant vessel of the United States unless the Commandant is satisfied that the character and habits of life of such person are such as to authorize the belief that the presence of the individual on board would not be inimical to the security of the United States: Provided, that the Commandant may designate categories of merchant vessels to which the foregoing shall not apply.\n\nHARRY S. TRUMAN\n\nTHE WHITE HOUSE,\n\nMay 19, 1952","chunks":{},"annotations":[{"directive":{"code":"4","diplomacy":"no","military_ops":"no"},"chunks":{},"wp_comment":null},{"directive":{"code":"1","diplomacy":"no","military_ops":"no"},"chunks":{},"wp_comment":null},{"directive":{"code":"3","diplomacy":"no","military_ops":"no"},"chunks":{},"wp_comment":null}]},"EO25":{"metadata":{"president":"Donald J. Trump","date":"January 20, 2025","type":"executive_order"},"text":"By the authority vested in me as President by the Constitution and the laws of the United States of America, it is hereby ordered:\n\nSection 1. Purpose. The privilege of United States citizenship is a priceless and profound gift. The Fourteenth Amendment states: \"All persons born or naturalized in the United States, and subject to the jurisdiction thereof, are citizens of the United States and of the State wherein they reside.\" That provision rightly repudiated the Supreme Court of the United States's shameful decision in Dred Scott v. Sandford, 60 U.S. (19 How.) 393 (1857), which misinterpreted the Constitution as permanently excluding people of African descent from eligibility for United States citizenship solely based on their race.\n\nBut the Fourteenth Amendment has never been interpreted to extend citizenship universally to everyone born within the United States. The Fourteenth Amendment has always excluded from birthright citizenship persons who were born in the United States but not \"subject to the jurisdiction thereof.\" Consistent with this understanding, the Congress has further specified through legislation that \"a person born in the United States, and subject to the jurisdiction thereof\" is a national and citizen of the United States at birth, 8 U.S.C. 1401, generally mirroring the Fourteenth Amendment's text.\n\nAmong the categories of individuals born in the United States and not subject to the jurisdiction thereof, the privilege of United States citizenship does not automatically extend to persons born in the United States: (1) when that person's mother was unlawfully present in the United States and the father was not a United States citizen or lawful permanent resident at the time of said person's birth, or (2) when that person's mother's presence in the United States at the time of said person's birth was lawful but temporary (such as, but not limited to, visiting the United States under the auspices of the Visa Waiver Program or visiting on a student, work, or tourist visa) and the father was not a United States citizen or lawful permanent resident at the time of said person's birth.\n\nSec. 2. Policy. (a) It is the policy of the United States that no department or agency of the United States government shall issue documents recognizing United States citizenship, or accept documents issued by State, local, or other governments or authorities purporting to recognize United States citizenship, to persons: (1) when that person's mother was unlawfully present in the United States and the person's father was not a United States citizen or lawful permanent resident at the time of said person's birth, or (2) when that person's mother's presence in the United States was lawful but temporary, and the person's father was not a United States citizen or lawful permanent resident at the time of said person's birth.\n\n(b) Subsection (a) of this section shall apply only to persons who are born within the United States after 30 days from the date of this order.\n\n(c) Nothing in this order shall be construed to affect the entitlement of other individuals, including children of lawful permanent residents, to obtain documentation of their United States citizenship.\n\nSec. 3. Enforcement. (a) The Secretary of State, the Attorney General, the Secretary of Homeland Security, and the Commissioner of Social Security shall take all appropriate measures to ensure that the regulations and policies of their respective departments and agencies are consistent with this order, and that no officers, employees, or agents of their respective departments and agencies act, or forbear from acting, in any manner inconsistent with this order.\n\n(b) The heads of all executive departments and agencies shall issue public guidance within 30 days of the date of this order regarding this order's implementation with respect to their operations and activities.\n\nSec. 4. Definitions. As used in this order:\n\n(a) \"Mother\" means the immediate female biological progenitor.\n\n(b) \"Father\" means the immediate male biological progenitor.\n\nSec. 5. General Provisions. (a) Nothing in this order shall be construed to impair or otherwise affect:\n\n(i) the authority granted by law to an executive department or agency, or the head thereof; or\n\n(ii) the functions of the Director of the Office of Management and Budget relating to budgetary, administrative, or legislative proposals.\n\n(b) This order shall be implemented consistent with applicable law and subject to the availability of appropriations.\n\n(c) This order is not intended to, and does not, create any right or benefit, substantive or procedural, enforceable at law or in equity by any party against the United States, its departments, agencies, or entities, its officers, employees, or agents, or any other person.\n\nDONALD J. TRUMP\n\nThe White House,\n\nJanuary 20, 2025.","chunks":{"2":"(a) It is the policy of the United States that no department or agency of the United States government shall issue documents recognizing United States citizenship, or accept documents issued by State, local, or other governments or authorities purporting to recognize United States citizenship, to persons: (1) when that person's mother was unlawfully present in the United States and the person's father was not a United States citizen or lawful permanent resident at the time of said person's birth, or (2) when that person's mother's presence in the United States was lawful but temporary, and the person's father was not a United States citizen or lawful permanent resident at the time of said person's birth. (b) Subsection (a) of this section shall apply only to persons who are born within the United States after 30 days from the date of this order."},"annotations":[{"directive":null,"chunks":{"2":{"code":"1","diplomacy":"no","military_ops":"no"}},"wp_comment":null},{"directive":null,"chunks":{"2":{"code":"0","diplomacy":"no","military_ops":"no"}},"wp_comment":null},{"directive":null,"chunks":{"2":{"code":"2","diplomacy":"no","military_ops":"no"}},"wp_comment":null}]},"M20":{"metadata":{"president":"Ronald Reagan","date":"December 31, 1988","type":"memorandum"},"text":"Memorandum for the Secretary of State and the United States Trade Representative Subject: Proposed United States-Canada Free-Trade Agreement\n\nHaving considered the relevant measures taken by Canada, along with the unanimous views and recommendations of the United States Trade Representative and interested United States Government agencies, I have determined that Canada has taken measures necessary to comply with the obligations of the United States-Canada Free-Trade Agreement (Agreement). The United States has completed necessary legal procedures in accordance with Article 2105 of the Agreement.\n\nPursuant to section 101(b) of the United States-Canada Free-Trade Agreement Implementation Act of 1988 (Public Law 100449), I hereby direct the Secretary of State to exchange notes with the Government of Canada providing for the entry into force, on January 1, 1989, of the Agreement, in accordance with Article 2105 thereof.\n\nRONALD REAGAN","chunks":{"2":"Pursuant to section 101(b) of the United States-Canada Free-Trade Agreement Implementation Act of 1988 (Public Law 100449), I hereby direct the Secretary of State to exchange notes with the Government of Canada providing for the entry into force, on January 1, 1989, of the Agreement, in accordance with Article 2105 thereof."},"annotations":[{"directive":null,"chunks":{"2":{"code":"1","diplomacy":"no","military_ops":"no"}},"wp_comment":null},{"directive":null,"chunks":{"2":{"code":"3","diplomacy":"no","military_ops":"no"}},"wp_comment":null},{"directive":null,"chunks":{"2":{"code":"2","diplomacy":"no","military_ops":"no"}},"wp_comment":null}]},"L16":{"metadata":{"president":"Dwight D. Eisenhower","date":"September 22, 1959","type":"letter"},"text":"Dear Mr. Secretary:\n\nIn accordance with legislation signed into law earlier today, I am returning with my approval your proposal to increase the interest return on all United States Series E and H Savings Bonds.\n\nIn approving your recommendation, I take this opportunity to reaffirm my enthusiastic support of the Savings Bonds Program. This is one of our country's finest and most worthwhile activities. It contributes to the sound management of the Nation's finances. It gives millions of American families the opportunity to save safely and regularly--while investing in their Nation's future.\n\nTo my mind there is no better way of saving, no more effective way of strengthening our power for peace, than to own United States Savings Bonds. To buy these bonds is to express faith in America. It helps provide the economic strength in both our Government and in individual families on which our freedom depends. I hope that the making of both old and new Savings Bonds even more attractive will serve as a renewed invitation to every citizen to buy and hold these \"Shares in America.\"\n\nSincerely,\n\nDWIGHT D. EISENHOWER","chunks":{},"annotations":[{"directive":{"code":"4","diplomacy":"no","military_ops":"no"},"chunks":{},"wp_comment":null},{"directive":{"code":"3","diplomacy":"no","military_ops":"no"},"chunks":{},"wp_comment":null},{"directive":{"code":"0","diplomacy":"no","military_ops":"no"},"chunks":{},"wp_comment":null}]},"L24":{"metadata":{"president":"Donald J. Trump","date":"October 05, 2018","type":"letter"},"text":"Dear Mr. Chairman:\n\nIn accordance with section 303(a)(6)(A) of the Defense Production Act of 1950, as amended (the \"Act\") (50 U.S.C. 4533(a)(6)(A)), I transmit herewith notice of a shortfall in the defense industrial base relating to alane fuel cells and of actions to remedy that shortfall. The Department of Defense will take actions to develop and purchase equipment and materials needed for pilot production of alane fuel cells for military usage.\n\nI have also included my determination required pursuant to section 303(a)(5) of the Act. These proposed initiatives are essential to the national defense.\n\nSincerely,\n\nDONALD J. TRUMP","chunks":{},"annotations":[{"directive":{"code":"0","diplomacy":"no","military_ops":"no"},"chunks":{},"wp_comment":null},{"directive":{"code":"1","diplomacy":"no","military_ops":"no"},"chunks":{},"wp_comment":null},{"directive":{"code":"3","diplomacy":"no","military_ops":"no"},"chunks":{},"wp_comment":null}]},"P12":{"metadata":{"president":"Jimmy Carter","date":"April 07, 1978","type":"proclamation"},"text":"By the President of the United States of America\n\nA Proclamation\n\nAs President of the United States of America, acting through my representatives, I entered into the negotiation of an agreement on trade relations between the United States of America and the Hungarian People's Republic with representatives of the Hungarian People's Republic;\n\nThe negotiations were conducted in accordance with the requirements of the Trade Act of 1974 (P.L. 93-618, January 3, 1975; 88 Stat. 1978) (\"the Act\");\n\nAn \"Agreement on Trade Relations between the United States of America and the Hungarian People's Republic,\" in English and Hungarian, was signed on March 17, 1978, by representatives of the two Governments, and is annexed to this Proclamation;\n\nThe Agreement conforms to the requirements relating to bilateral commercial agreements specified in Section 405 (b) of the Act;\n\nArticle XI of the Agreement provides that it shall enter into force on the date of exchange of written notices of acceptance by the Governments of the United States of America and the Hungarian People's Republic; and\n\nSection 405 (c) of the Act provides that a bilateral commercial agreement and a proclamation implementing such agreement shall take effect only if approved by the Congress;\n\nNow, Therefore, I, Jimmy Carter, President of the United States of America, proclaim as follows:\n\n(1) This Proclamation shall become effective, said Agreement shall enter into force according to its terms, and nondiscriminatory treatment shall be extended to the products of the Hungarian People's Republic in accordance with the terms of the said Agreement, on the date of exchange of written notices of acceptance in accordance with Article XI of the said Agreement; and\n\n(2) General Headnote 3(e) of the Tariff Schedules of the United States is amended by deleting therefrom \"Hungary\" as of the effective date of this proclamation and a notice thereof shall be published in the FEDERAL REGISTER promptly thereafter.\n\nIn Witness Whereof, I have signed this Proclamation this seventh day of April, in the year of our Lord one thousand nine hundred seventy-eight, and of the Independence of the United States of America the two hundred second.\n\nJIMMY CARTER","chunks":{},"annotations":[{"directive":{"code":"0","diplomacy":"no","military_ops":"no"},"chunks":{},"wp_comment":null},{"directive":{"code":"3","diplomacy":"no","military_ops":"no"},"chunks":{},"wp_comment":null},{"directive":{"code":"3","diplomacy":"no","military_ops":"yes"},"chunks":{},"wp_comment":null}]}},"fields":["code","diplomacy","military_ops"],"fieldLabels":{"code":"Code","diplomacy":"Diplomacy","military_ops":"Mil / ops"},"valueLabels":{"0":"0 – Outside scope","1":"1 – Discretionary / internal","2":"2 – Dictated agency outcome","3":"3 – Self-executing","4":"4 – Unclear / mixed","yes":"Yes","no":"No"}}</script>
+<script>
+(function(){
+'use strict';
+var P=JSON.parse(document.getElementById('payload-data').textContent);
+var groups=P.groups,annotators=P.annotators,docs=P.docs;
+var fields=P.fields,fieldLabels=P.fieldLabels,valueLabels=P.valueLabels;
+var mode='subdirective',activeTab=0;
+
+function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+function label(v){return v==null?null:(valueLabels[v]||v);}
+
+function rowAgreement(vals){
+  var nn=vals.filter(function(v){return v!=null;});
+  if(!nn.length)return 'missing';
+  return(new Set(nn)).size>1?'disagree':(nn.length<vals.length?'missing':'agree');
+}
+
+function docAgreement(docId){
+  var d=docs[docId];if(!d)return 'missing';
+  var ann=d.annotations;
+  var hasMissing=false;
+  for(var fi=0;fi<fields.length;fi++){
+    var f=fields[fi];
+    var vals=ann.map(function(a){return a.directive?(a.directive[f]!=null?a.directive[f]:null):null;});
+    var ag=rowAgreement(vals);
+    if(ag==='disagree')return 'disagree';
+    if(ag==='missing')hasMissing=true;
+  }
+  return hasMissing?'missing':'agree';
+}
+
+function annTable(rowData){
+  var out='<table class="ann-table"><thead><tr><th>Field</th>';
+  annotators.forEach(function(n){out+='<th>'+esc(n)+'</th>';});
+  out+='</tr></thead><tbody>';
+  rowData.forEach(function(row){
+    var ag=rowAgreement(row.vals);
+    out+='<tr class="row-'+ag+'"><td class="field-label">'+esc(row.label)+'</td>';
+    row.vals.forEach(function(v){
+      var cls='val-cell'+(v==null?' val-missing':'');
+      out+='<td class="'+cls+'">'+(v==null?'—':esc(label(v)))+'</td>';
+    });
+    out+='</tr>';
+  });
+  return out+'</tbody></table>';
+}
+
+function makeRowData(getVal){
+  return fields.map(function(f){
+    return{field:f,label:fieldLabels[f],vals:annotators.map(function(_,i){return getVal(i,f);})};
+  });
+}
+
+function directiveTable(ann){
+  return annTable(makeRowData(function(i,f){
+    var d=ann[i].directive;return d?(d[f]!=null?d[f]:null):null;
+  }));
+}
+
+function chunkTable(chunkN,ann){
+  return annTable(makeRowData(function(i,f){
+    var c=ann[i].chunks?ann[i].chunks[chunkN]:null;return c?(c[f]!=null?c[f]:null):null;
+  }));
+}
+
+function wpComments(ann){
+  var items=ann.map(function(a,i){return{who:annotators[i],txt:a.wp_comment};}).filter(function(x){return x.txt;});
+  if(!items.length)return '';
+  var out='<div class="comments"><div class="comment-heading">Discussion notes</div>';
+  items.forEach(function(x){out+='<div class="comment-item"><span class="comment-who">'+esc(x.who)+':</span> '+esc(x.txt)+'</div>';});
+  return out+'</div>';
+}
+
+function rightCol(docId){
+  var d=docs[docId];if(!d)return '<div class="no-chunks">No data.</div>';
+  var ann=d.annotations;
+  if(mode==='directive')return directiveTable(ann)+wpComments(ann);
+  // subdirective
+  var ckKeys=Object.keys(d.chunks||{}).sort(function(a,b){return+a-+b;});
+  var out='';
+  if(!ckKeys.length)out+='<div class="no-chunks">No sub-directive chunks — showing directive-level.</div>';
+  else{
+    ckKeys.forEach(function(n){
+      out+='<div class="chunk-block"><div class="chunk-label">Chunk '+esc(n)+'</div>';
+      out+='<div class="chunk-text">'+esc(d.chunks[n])+'</div>';
+      out+=chunkTable(n,ann)+'</div>';
+    });
+  }
+  out+=wpComments(ann);
+  if(!ckKeys.length)out+=directiveTable(ann);
+  return out;
+}
+
+function renderDoc(docId){
+  var d=docs[docId];if(!d)return '';
+  var m=d.metadata||{};
+  var ag=docAgreement(docId);
+  var badgeText=ag==='agree'?'Agreement':ag==='disagree'?'Disagreement':'Incomplete';
+  var colHead=mode==='directive'?'Directive annotation':'Sub-directive annotation';
+  return '<details class="doc-card" open>'
+    +'<summary>'
+    +'<span class="doc-id">'+esc(docId)+'</span>'
+    +'<span class="doc-prez">'+esc(m.president||'')+'</span>'
+    +'<span class="doc-date">'+esc(m.date||'')+'</span>'
+    +'<span class="doc-type">'+esc((m.type||'').replace(/_/g,' '))+'</span>'
+    +'<span class="doc-badge '+ag+'">'+badgeText+'</span>'
+    +'</summary>'
+    +'<div class="doc-body">'
+    +'<div class="col"><p class="col-heading">Document text</p><div class="doc-text">'+esc(d.text||'(text not found)')+'</div></div>'
+    +'<div class="col"><p class="col-heading">'+esc(colHead)+'</p>'+rightCol(docId)+'</div>'
+    +'</div></details>';
+}
+
+function renderPanel(){
+  var g=groups[activeTab];
+  var seen=new Set();
+  return g.docs.map(function(id){
+    if(seen.has(id))return '';seen.add(id);return renderDoc(id);
+  }).join('');
+}
+
+function renderTabs(){
+  document.getElementById('tab-bar').innerHTML=groups.map(function(g,i){
+    return'<button class="tab-btn'+(i===activeTab?' active':'')+'" data-idx="'+i+'" type="button">'
+      +esc(g.label)+' <span class="tab-count">('+g.docs.length+')</span></button>';
+  }).join('');
+}
+
+function render(){renderTabs();document.getElementById('content').innerHTML=renderPanel();}
+
+document.getElementById('tab-bar').addEventListener('click',function(e){
+  var btn=e.target.closest('.tab-btn');if(!btn)return;
+  activeTab=+btn.dataset.idx;render();
+});
+document.getElementById('btn-directive').addEventListener('click',function(){
+  mode='directive';
+  document.getElementById('btn-directive').classList.add('active');
+  document.getElementById('btn-subdirective').classList.remove('active');
+  document.getElementById('content').innerHTML=renderPanel();
+});
+document.getElementById('btn-subdirective').addEventListener('click',function(){
+  mode='subdirective';
+  document.getElementById('btn-directive').classList.remove('active');
+  document.getElementById('btn-subdirective').classList.add('active');
+  document.getElementById('content').innerHTML=renderPanel();
+});
+
+render();
+
+function setBarHeight(){
+  var h=document.getElementById('tab-bar').getBoundingClientRect().bottom;
+  document.documentElement.style.setProperty('--bar-height',h+'px');
+}
+setBarHeight();
+window.addEventListener('resize',setBarHeight);
+})();
+</script>
+</body>
+</html>
