@@ -1,0 +1,1101 @@
+administration_order,administration,plot_label,president,term,partial_administration,directive_type,category,category_label,count,global_mean_per_administration,retained_at_50
+1,Harry S Truman (First),Truman,Harry S Truman,First,false,all,generic_constitution_only,Generic Constitution only,0,4.454545,false
+1,Harry S Truman (First),Truman,Harry S Truman,First,false,all,specific_constitution_only,Specific Constitution only,8,4.181818,false
+1,Harry S Truman (First),Truman,Harry S Truman,First,false,all,generic_statute_only,Generic Statute only,0,0.045455,false
+1,Harry S Truman (First),Truman,Harry S Truman,First,false,all,specific_statute_only,Specific Statute only,454,144.318182,true
+1,Harry S Truman (First),Truman,Harry S Truman,First,false,all,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,11,65.636364,true
+1,Harry S Truman (First),Truman,Harry S Truman,First,false,all,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,43,124.681818,true
+1,Harry S Truman (First),Truman,Harry S Truman,First,false,all,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,9,1.318182,false
+1,Harry S Truman (First),Truman,Harry S Truman,First,false,all,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,43,5.545455,false
+1,Harry S Truman (First),Truman,Harry S Truman,First,false,all,no_vesting_clause,No vesting clause,298,227.090909,false
+1,Harry S Truman (First),Truman,Harry S Truman,First,false,all,other_vesting_authority,Other/unclassified vesting authority,88,34.590909,false
+1,Harry S Truman (First),Truman,Harry S Truman,First,false,executive_order,generic_constitution_only,Generic Constitution only,0,4.454545,false
+1,Harry S Truman (First),Truman,Harry S Truman,First,false,executive_order,specific_constitution_only,Specific Constitution only,7,4.181818,false
+1,Harry S Truman (First),Truman,Harry S Truman,First,false,executive_order,generic_statute_only,Generic Statute only,0,0.045455,false
+1,Harry S Truman (First),Truman,Harry S Truman,First,false,executive_order,specific_statute_only,Specific Statute only,366,144.318182,true
+1,Harry S Truman (First),Truman,Harry S Truman,First,false,executive_order,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,11,65.636364,true
+1,Harry S Truman (First),Truman,Harry S Truman,First,false,executive_order,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,22,124.681818,true
+1,Harry S Truman (First),Truman,Harry S Truman,First,false,executive_order,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,9,1.318182,false
+1,Harry S Truman (First),Truman,Harry S Truman,First,false,executive_order,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,43,5.545455,false
+1,Harry S Truman (First),Truman,Harry S Truman,First,false,executive_order,no_vesting_clause,No vesting clause,11,227.090909,false
+1,Harry S Truman (First),Truman,Harry S Truman,First,false,executive_order,other_vesting_authority,Other/unclassified vesting authority,38,34.590909,false
+1,Harry S Truman (First),Truman,Harry S Truman,First,false,memorandum,generic_constitution_only,Generic Constitution only,0,4.454545,false
+1,Harry S Truman (First),Truman,Harry S Truman,First,false,memorandum,specific_constitution_only,Specific Constitution only,0,4.181818,false
+1,Harry S Truman (First),Truman,Harry S Truman,First,false,memorandum,generic_statute_only,Generic Statute only,0,0.045455,false
+1,Harry S Truman (First),Truman,Harry S Truman,First,false,memorandum,specific_statute_only,Specific Statute only,0,144.318182,true
+1,Harry S Truman (First),Truman,Harry S Truman,First,false,memorandum,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,0,65.636364,true
+1,Harry S Truman (First),Truman,Harry S Truman,First,false,memorandum,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,1,124.681818,true
+1,Harry S Truman (First),Truman,Harry S Truman,First,false,memorandum,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,0,1.318182,false
+1,Harry S Truman (First),Truman,Harry S Truman,First,false,memorandum,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,0,5.545455,false
+1,Harry S Truman (First),Truman,Harry S Truman,First,false,memorandum,no_vesting_clause,No vesting clause,31,227.090909,false
+1,Harry S Truman (First),Truman,Harry S Truman,First,false,memorandum,other_vesting_authority,Other/unclassified vesting authority,0,34.590909,false
+1,Harry S Truman (First),Truman,Harry S Truman,First,false,letter,generic_constitution_only,Generic Constitution only,0,4.454545,false
+1,Harry S Truman (First),Truman,Harry S Truman,First,false,letter,specific_constitution_only,Specific Constitution only,0,4.181818,false
+1,Harry S Truman (First),Truman,Harry S Truman,First,false,letter,generic_statute_only,Generic Statute only,0,0.045455,false
+1,Harry S Truman (First),Truman,Harry S Truman,First,false,letter,specific_statute_only,Specific Statute only,7,144.318182,true
+1,Harry S Truman (First),Truman,Harry S Truman,First,false,letter,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,0,65.636364,true
+1,Harry S Truman (First),Truman,Harry S Truman,First,false,letter,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,0,124.681818,true
+1,Harry S Truman (First),Truman,Harry S Truman,First,false,letter,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,0,1.318182,false
+1,Harry S Truman (First),Truman,Harry S Truman,First,false,letter,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,0,5.545455,false
+1,Harry S Truman (First),Truman,Harry S Truman,First,false,letter,no_vesting_clause,No vesting clause,256,227.090909,false
+1,Harry S Truman (First),Truman,Harry S Truman,First,false,letter,other_vesting_authority,Other/unclassified vesting authority,4,34.590909,false
+1,Harry S Truman (First),Truman,Harry S Truman,First,false,proclamation,generic_constitution_only,Generic Constitution only,0,4.454545,false
+1,Harry S Truman (First),Truman,Harry S Truman,First,false,proclamation,specific_constitution_only,Specific Constitution only,1,4.181818,false
+1,Harry S Truman (First),Truman,Harry S Truman,First,false,proclamation,generic_statute_only,Generic Statute only,0,0.045455,false
+1,Harry S Truman (First),Truman,Harry S Truman,First,false,proclamation,specific_statute_only,Specific Statute only,81,144.318182,true
+1,Harry S Truman (First),Truman,Harry S Truman,First,false,proclamation,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,0,65.636364,true
+1,Harry S Truman (First),Truman,Harry S Truman,First,false,proclamation,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,20,124.681818,true
+1,Harry S Truman (First),Truman,Harry S Truman,First,false,proclamation,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,0,1.318182,false
+1,Harry S Truman (First),Truman,Harry S Truman,First,false,proclamation,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,0,5.545455,false
+1,Harry S Truman (First),Truman,Harry S Truman,First,false,proclamation,no_vesting_clause,No vesting clause,0,227.090909,false
+1,Harry S Truman (First),Truman,Harry S Truman,First,false,proclamation,other_vesting_authority,Other/unclassified vesting authority,46,34.590909,false
+2,Dwight D. Eisenhower (First),Eisenhower,Dwight D. Eisenhower,First,false,all,generic_constitution_only,Generic Constitution only,0,4.454545,false
+2,Dwight D. Eisenhower (First),Eisenhower,Dwight D. Eisenhower,First,false,all,specific_constitution_only,Specific Constitution only,6,4.181818,false
+2,Dwight D. Eisenhower (First),Eisenhower,Dwight D. Eisenhower,First,false,all,generic_statute_only,Generic Statute only,0,0.045455,false
+2,Dwight D. Eisenhower (First),Eisenhower,Dwight D. Eisenhower,First,false,all,specific_statute_only,Specific Statute only,229,144.318182,true
+2,Dwight D. Eisenhower (First),Eisenhower,Dwight D. Eisenhower,First,false,all,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,13,65.636364,true
+2,Dwight D. Eisenhower (First),Eisenhower,Dwight D. Eisenhower,First,false,all,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,25,124.681818,true
+2,Dwight D. Eisenhower (First),Eisenhower,Dwight D. Eisenhower,First,false,all,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,2,1.318182,false
+2,Dwight D. Eisenhower (First),Eisenhower,Dwight D. Eisenhower,First,false,all,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,14,5.545455,false
+2,Dwight D. Eisenhower (First),Eisenhower,Dwight D. Eisenhower,First,false,all,no_vesting_clause,No vesting clause,286,227.090909,false
+2,Dwight D. Eisenhower (First),Eisenhower,Dwight D. Eisenhower,First,false,all,other_vesting_authority,Other/unclassified vesting authority,48,34.590909,false
+2,Dwight D. Eisenhower (First),Eisenhower,Dwight D. Eisenhower,First,false,executive_order,generic_constitution_only,Generic Constitution only,0,4.454545,false
+2,Dwight D. Eisenhower (First),Eisenhower,Dwight D. Eisenhower,First,false,executive_order,specific_constitution_only,Specific Constitution only,6,4.181818,false
+2,Dwight D. Eisenhower (First),Eisenhower,Dwight D. Eisenhower,First,false,executive_order,generic_statute_only,Generic Statute only,0,0.045455,false
+2,Dwight D. Eisenhower (First),Eisenhower,Dwight D. Eisenhower,First,false,executive_order,specific_statute_only,Specific Statute only,186,144.318182,true
+2,Dwight D. Eisenhower (First),Eisenhower,Dwight D. Eisenhower,First,false,executive_order,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,13,65.636364,true
+2,Dwight D. Eisenhower (First),Eisenhower,Dwight D. Eisenhower,First,false,executive_order,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,13,124.681818,true
+2,Dwight D. Eisenhower (First),Eisenhower,Dwight D. Eisenhower,First,false,executive_order,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,2,1.318182,false
+2,Dwight D. Eisenhower (First),Eisenhower,Dwight D. Eisenhower,First,false,executive_order,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,14,5.545455,false
+2,Dwight D. Eisenhower (First),Eisenhower,Dwight D. Eisenhower,First,false,executive_order,no_vesting_clause,No vesting clause,2,227.090909,false
+2,Dwight D. Eisenhower (First),Eisenhower,Dwight D. Eisenhower,First,false,executive_order,other_vesting_authority,Other/unclassified vesting authority,23,34.590909,false
+2,Dwight D. Eisenhower (First),Eisenhower,Dwight D. Eisenhower,First,false,memorandum,generic_constitution_only,Generic Constitution only,0,4.454545,false
+2,Dwight D. Eisenhower (First),Eisenhower,Dwight D. Eisenhower,First,false,memorandum,specific_constitution_only,Specific Constitution only,0,4.181818,false
+2,Dwight D. Eisenhower (First),Eisenhower,Dwight D. Eisenhower,First,false,memorandum,generic_statute_only,Generic Statute only,0,0.045455,false
+2,Dwight D. Eisenhower (First),Eisenhower,Dwight D. Eisenhower,First,false,memorandum,specific_statute_only,Specific Statute only,4,144.318182,true
+2,Dwight D. Eisenhower (First),Eisenhower,Dwight D. Eisenhower,First,false,memorandum,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,0,65.636364,true
+2,Dwight D. Eisenhower (First),Eisenhower,Dwight D. Eisenhower,First,false,memorandum,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,0,124.681818,true
+2,Dwight D. Eisenhower (First),Eisenhower,Dwight D. Eisenhower,First,false,memorandum,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,0,1.318182,false
+2,Dwight D. Eisenhower (First),Eisenhower,Dwight D. Eisenhower,First,false,memorandum,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,0,5.545455,false
+2,Dwight D. Eisenhower (First),Eisenhower,Dwight D. Eisenhower,First,false,memorandum,no_vesting_clause,No vesting clause,85,227.090909,false
+2,Dwight D. Eisenhower (First),Eisenhower,Dwight D. Eisenhower,First,false,memorandum,other_vesting_authority,Other/unclassified vesting authority,1,34.590909,false
+2,Dwight D. Eisenhower (First),Eisenhower,Dwight D. Eisenhower,First,false,letter,generic_constitution_only,Generic Constitution only,0,4.454545,false
+2,Dwight D. Eisenhower (First),Eisenhower,Dwight D. Eisenhower,First,false,letter,specific_constitution_only,Specific Constitution only,0,4.181818,false
+2,Dwight D. Eisenhower (First),Eisenhower,Dwight D. Eisenhower,First,false,letter,generic_statute_only,Generic Statute only,0,0.045455,false
+2,Dwight D. Eisenhower (First),Eisenhower,Dwight D. Eisenhower,First,false,letter,specific_statute_only,Specific Statute only,6,144.318182,true
+2,Dwight D. Eisenhower (First),Eisenhower,Dwight D. Eisenhower,First,false,letter,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,0,65.636364,true
+2,Dwight D. Eisenhower (First),Eisenhower,Dwight D. Eisenhower,First,false,letter,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,0,124.681818,true
+2,Dwight D. Eisenhower (First),Eisenhower,Dwight D. Eisenhower,First,false,letter,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,0,1.318182,false
+2,Dwight D. Eisenhower (First),Eisenhower,Dwight D. Eisenhower,First,false,letter,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,0,5.545455,false
+2,Dwight D. Eisenhower (First),Eisenhower,Dwight D. Eisenhower,First,false,letter,no_vesting_clause,No vesting clause,199,227.090909,false
+2,Dwight D. Eisenhower (First),Eisenhower,Dwight D. Eisenhower,First,false,letter,other_vesting_authority,Other/unclassified vesting authority,0,34.590909,false
+2,Dwight D. Eisenhower (First),Eisenhower,Dwight D. Eisenhower,First,false,proclamation,generic_constitution_only,Generic Constitution only,0,4.454545,false
+2,Dwight D. Eisenhower (First),Eisenhower,Dwight D. Eisenhower,First,false,proclamation,specific_constitution_only,Specific Constitution only,0,4.181818,false
+2,Dwight D. Eisenhower (First),Eisenhower,Dwight D. Eisenhower,First,false,proclamation,generic_statute_only,Generic Statute only,0,0.045455,false
+2,Dwight D. Eisenhower (First),Eisenhower,Dwight D. Eisenhower,First,false,proclamation,specific_statute_only,Specific Statute only,33,144.318182,true
+2,Dwight D. Eisenhower (First),Eisenhower,Dwight D. Eisenhower,First,false,proclamation,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,0,65.636364,true
+2,Dwight D. Eisenhower (First),Eisenhower,Dwight D. Eisenhower,First,false,proclamation,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,12,124.681818,true
+2,Dwight D. Eisenhower (First),Eisenhower,Dwight D. Eisenhower,First,false,proclamation,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,0,1.318182,false
+2,Dwight D. Eisenhower (First),Eisenhower,Dwight D. Eisenhower,First,false,proclamation,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,0,5.545455,false
+2,Dwight D. Eisenhower (First),Eisenhower,Dwight D. Eisenhower,First,false,proclamation,no_vesting_clause,No vesting clause,0,227.090909,false
+2,Dwight D. Eisenhower (First),Eisenhower,Dwight D. Eisenhower,First,false,proclamation,other_vesting_authority,Other/unclassified vesting authority,24,34.590909,false
+3,Dwight D. Eisenhower (Second),Eisenhower,Dwight D. Eisenhower,Second,false,all,generic_constitution_only,Generic Constitution only,0,4.454545,false
+3,Dwight D. Eisenhower (Second),Eisenhower,Dwight D. Eisenhower,Second,false,all,specific_constitution_only,Specific Constitution only,3,4.181818,false
+3,Dwight D. Eisenhower (Second),Eisenhower,Dwight D. Eisenhower,Second,false,all,generic_statute_only,Generic Statute only,0,0.045455,false
+3,Dwight D. Eisenhower (Second),Eisenhower,Dwight D. Eisenhower,Second,false,all,specific_statute_only,Specific Statute only,204,144.318182,true
+3,Dwight D. Eisenhower (Second),Eisenhower,Dwight D. Eisenhower,Second,false,all,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,9,65.636364,true
+3,Dwight D. Eisenhower (Second),Eisenhower,Dwight D. Eisenhower,Second,false,all,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,20,124.681818,true
+3,Dwight D. Eisenhower (Second),Eisenhower,Dwight D. Eisenhower,Second,false,all,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,2,1.318182,false
+3,Dwight D. Eisenhower (Second),Eisenhower,Dwight D. Eisenhower,Second,false,all,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,6,5.545455,false
+3,Dwight D. Eisenhower (Second),Eisenhower,Dwight D. Eisenhower,Second,false,all,no_vesting_clause,No vesting clause,279,227.090909,false
+3,Dwight D. Eisenhower (Second),Eisenhower,Dwight D. Eisenhower,Second,false,all,other_vesting_authority,Other/unclassified vesting authority,65,34.590909,false
+3,Dwight D. Eisenhower (Second),Eisenhower,Dwight D. Eisenhower,Second,false,executive_order,generic_constitution_only,Generic Constitution only,0,4.454545,false
+3,Dwight D. Eisenhower (Second),Eisenhower,Dwight D. Eisenhower,Second,false,executive_order,specific_constitution_only,Specific Constitution only,3,4.181818,false
+3,Dwight D. Eisenhower (Second),Eisenhower,Dwight D. Eisenhower,Second,false,executive_order,generic_statute_only,Generic Statute only,0,0.045455,false
+3,Dwight D. Eisenhower (Second),Eisenhower,Dwight D. Eisenhower,Second,false,executive_order,specific_statute_only,Specific Statute only,151,144.318182,true
+3,Dwight D. Eisenhower (Second),Eisenhower,Dwight D. Eisenhower,Second,false,executive_order,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,9,65.636364,true
+3,Dwight D. Eisenhower (Second),Eisenhower,Dwight D. Eisenhower,Second,false,executive_order,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,4,124.681818,true
+3,Dwight D. Eisenhower (Second),Eisenhower,Dwight D. Eisenhower,Second,false,executive_order,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,2,1.318182,false
+3,Dwight D. Eisenhower (Second),Eisenhower,Dwight D. Eisenhower,Second,false,executive_order,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,5,5.545455,false
+3,Dwight D. Eisenhower (Second),Eisenhower,Dwight D. Eisenhower,Second,false,executive_order,no_vesting_clause,No vesting clause,0,227.090909,false
+3,Dwight D. Eisenhower (Second),Eisenhower,Dwight D. Eisenhower,Second,false,executive_order,other_vesting_authority,Other/unclassified vesting authority,32,34.590909,false
+3,Dwight D. Eisenhower (Second),Eisenhower,Dwight D. Eisenhower,Second,false,memorandum,generic_constitution_only,Generic Constitution only,0,4.454545,false
+3,Dwight D. Eisenhower (Second),Eisenhower,Dwight D. Eisenhower,Second,false,memorandum,specific_constitution_only,Specific Constitution only,0,4.181818,false
+3,Dwight D. Eisenhower (Second),Eisenhower,Dwight D. Eisenhower,Second,false,memorandum,generic_statute_only,Generic Statute only,0,0.045455,false
+3,Dwight D. Eisenhower (Second),Eisenhower,Dwight D. Eisenhower,Second,false,memorandum,specific_statute_only,Specific Statute only,0,144.318182,true
+3,Dwight D. Eisenhower (Second),Eisenhower,Dwight D. Eisenhower,Second,false,memorandum,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,0,65.636364,true
+3,Dwight D. Eisenhower (Second),Eisenhower,Dwight D. Eisenhower,Second,false,memorandum,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,0,124.681818,true
+3,Dwight D. Eisenhower (Second),Eisenhower,Dwight D. Eisenhower,Second,false,memorandum,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,0,1.318182,false
+3,Dwight D. Eisenhower (Second),Eisenhower,Dwight D. Eisenhower,Second,false,memorandum,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,0,5.545455,false
+3,Dwight D. Eisenhower (Second),Eisenhower,Dwight D. Eisenhower,Second,false,memorandum,no_vesting_clause,No vesting clause,78,227.090909,false
+3,Dwight D. Eisenhower (Second),Eisenhower,Dwight D. Eisenhower,Second,false,memorandum,other_vesting_authority,Other/unclassified vesting authority,0,34.590909,false
+3,Dwight D. Eisenhower (Second),Eisenhower,Dwight D. Eisenhower,Second,false,letter,generic_constitution_only,Generic Constitution only,0,4.454545,false
+3,Dwight D. Eisenhower (Second),Eisenhower,Dwight D. Eisenhower,Second,false,letter,specific_constitution_only,Specific Constitution only,0,4.181818,false
+3,Dwight D. Eisenhower (Second),Eisenhower,Dwight D. Eisenhower,Second,false,letter,generic_statute_only,Generic Statute only,0,0.045455,false
+3,Dwight D. Eisenhower (Second),Eisenhower,Dwight D. Eisenhower,Second,false,letter,specific_statute_only,Specific Statute only,4,144.318182,true
+3,Dwight D. Eisenhower (Second),Eisenhower,Dwight D. Eisenhower,Second,false,letter,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,0,65.636364,true
+3,Dwight D. Eisenhower (Second),Eisenhower,Dwight D. Eisenhower,Second,false,letter,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,0,124.681818,true
+3,Dwight D. Eisenhower (Second),Eisenhower,Dwight D. Eisenhower,Second,false,letter,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,0,1.318182,false
+3,Dwight D. Eisenhower (Second),Eisenhower,Dwight D. Eisenhower,Second,false,letter,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,0,5.545455,false
+3,Dwight D. Eisenhower (Second),Eisenhower,Dwight D. Eisenhower,Second,false,letter,no_vesting_clause,No vesting clause,201,227.090909,false
+3,Dwight D. Eisenhower (Second),Eisenhower,Dwight D. Eisenhower,Second,false,letter,other_vesting_authority,Other/unclassified vesting authority,0,34.590909,false
+3,Dwight D. Eisenhower (Second),Eisenhower,Dwight D. Eisenhower,Second,false,proclamation,generic_constitution_only,Generic Constitution only,0,4.454545,false
+3,Dwight D. Eisenhower (Second),Eisenhower,Dwight D. Eisenhower,Second,false,proclamation,specific_constitution_only,Specific Constitution only,0,4.181818,false
+3,Dwight D. Eisenhower (Second),Eisenhower,Dwight D. Eisenhower,Second,false,proclamation,generic_statute_only,Generic Statute only,0,0.045455,false
+3,Dwight D. Eisenhower (Second),Eisenhower,Dwight D. Eisenhower,Second,false,proclamation,specific_statute_only,Specific Statute only,49,144.318182,true
+3,Dwight D. Eisenhower (Second),Eisenhower,Dwight D. Eisenhower,Second,false,proclamation,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,0,65.636364,true
+3,Dwight D. Eisenhower (Second),Eisenhower,Dwight D. Eisenhower,Second,false,proclamation,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,16,124.681818,true
+3,Dwight D. Eisenhower (Second),Eisenhower,Dwight D. Eisenhower,Second,false,proclamation,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,0,1.318182,false
+3,Dwight D. Eisenhower (Second),Eisenhower,Dwight D. Eisenhower,Second,false,proclamation,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,1,5.545455,false
+3,Dwight D. Eisenhower (Second),Eisenhower,Dwight D. Eisenhower,Second,false,proclamation,no_vesting_clause,No vesting clause,0,227.090909,false
+3,Dwight D. Eisenhower (Second),Eisenhower,Dwight D. Eisenhower,Second,false,proclamation,other_vesting_authority,Other/unclassified vesting authority,33,34.590909,false
+4,John F. Kennedy (First),Kennedy,John F. Kennedy,First,false,all,generic_constitution_only,Generic Constitution only,0,4.454545,false
+4,John F. Kennedy (First),Kennedy,John F. Kennedy,First,false,all,specific_constitution_only,Specific Constitution only,2,4.181818,false
+4,John F. Kennedy (First),Kennedy,John F. Kennedy,First,false,all,generic_statute_only,Generic Statute only,0,0.045455,false
+4,John F. Kennedy (First),Kennedy,John F. Kennedy,First,false,all,specific_statute_only,Specific Statute only,156,144.318182,true
+4,John F. Kennedy (First),Kennedy,John F. Kennedy,First,false,all,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,12,65.636364,true
+4,John F. Kennedy (First),Kennedy,John F. Kennedy,First,false,all,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,24,124.681818,true
+4,John F. Kennedy (First),Kennedy,John F. Kennedy,First,false,all,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,0,1.318182,false
+4,John F. Kennedy (First),Kennedy,John F. Kennedy,First,false,all,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,3,5.545455,false
+4,John F. Kennedy (First),Kennedy,John F. Kennedy,First,false,all,no_vesting_clause,No vesting clause,236,227.090909,false
+4,John F. Kennedy (First),Kennedy,John F. Kennedy,First,false,all,other_vesting_authority,Other/unclassified vesting authority,78,34.590909,false
+4,John F. Kennedy (First),Kennedy,John F. Kennedy,First,false,executive_order,generic_constitution_only,Generic Constitution only,0,4.454545,false
+4,John F. Kennedy (First),Kennedy,John F. Kennedy,First,false,executive_order,specific_constitution_only,Specific Constitution only,2,4.181818,false
+4,John F. Kennedy (First),Kennedy,John F. Kennedy,First,false,executive_order,generic_statute_only,Generic Statute only,0,0.045455,false
+4,John F. Kennedy (First),Kennedy,John F. Kennedy,First,false,executive_order,specific_statute_only,Specific Statute only,126,144.318182,true
+4,John F. Kennedy (First),Kennedy,John F. Kennedy,First,false,executive_order,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,10,65.636364,true
+4,John F. Kennedy (First),Kennedy,John F. Kennedy,First,false,executive_order,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,6,124.681818,true
+4,John F. Kennedy (First),Kennedy,John F. Kennedy,First,false,executive_order,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,0,1.318182,false
+4,John F. Kennedy (First),Kennedy,John F. Kennedy,First,false,executive_order,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,3,5.545455,false
+4,John F. Kennedy (First),Kennedy,John F. Kennedy,First,false,executive_order,no_vesting_clause,No vesting clause,1,227.090909,false
+4,John F. Kennedy (First),Kennedy,John F. Kennedy,First,false,executive_order,other_vesting_authority,Other/unclassified vesting authority,57,34.590909,false
+4,John F. Kennedy (First),Kennedy,John F. Kennedy,First,false,memorandum,generic_constitution_only,Generic Constitution only,0,4.454545,false
+4,John F. Kennedy (First),Kennedy,John F. Kennedy,First,false,memorandum,specific_constitution_only,Specific Constitution only,0,4.181818,false
+4,John F. Kennedy (First),Kennedy,John F. Kennedy,First,false,memorandum,generic_statute_only,Generic Statute only,0,0.045455,false
+4,John F. Kennedy (First),Kennedy,John F. Kennedy,First,false,memorandum,specific_statute_only,Specific Statute only,0,144.318182,true
+4,John F. Kennedy (First),Kennedy,John F. Kennedy,First,false,memorandum,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,0,65.636364,true
+4,John F. Kennedy (First),Kennedy,John F. Kennedy,First,false,memorandum,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,0,124.681818,true
+4,John F. Kennedy (First),Kennedy,John F. Kennedy,First,false,memorandum,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,0,1.318182,false
+4,John F. Kennedy (First),Kennedy,John F. Kennedy,First,false,memorandum,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,0,5.545455,false
+4,John F. Kennedy (First),Kennedy,John F. Kennedy,First,false,memorandum,no_vesting_clause,No vesting clause,24,227.090909,false
+4,John F. Kennedy (First),Kennedy,John F. Kennedy,First,false,memorandum,other_vesting_authority,Other/unclassified vesting authority,0,34.590909,false
+4,John F. Kennedy (First),Kennedy,John F. Kennedy,First,false,letter,generic_constitution_only,Generic Constitution only,0,4.454545,false
+4,John F. Kennedy (First),Kennedy,John F. Kennedy,First,false,letter,specific_constitution_only,Specific Constitution only,0,4.181818,false
+4,John F. Kennedy (First),Kennedy,John F. Kennedy,First,false,letter,generic_statute_only,Generic Statute only,0,0.045455,false
+4,John F. Kennedy (First),Kennedy,John F. Kennedy,First,false,letter,specific_statute_only,Specific Statute only,6,144.318182,true
+4,John F. Kennedy (First),Kennedy,John F. Kennedy,First,false,letter,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,0,65.636364,true
+4,John F. Kennedy (First),Kennedy,John F. Kennedy,First,false,letter,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,0,124.681818,true
+4,John F. Kennedy (First),Kennedy,John F. Kennedy,First,false,letter,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,0,1.318182,false
+4,John F. Kennedy (First),Kennedy,John F. Kennedy,First,false,letter,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,0,5.545455,false
+4,John F. Kennedy (First),Kennedy,John F. Kennedy,First,false,letter,no_vesting_clause,No vesting clause,211,227.090909,false
+4,John F. Kennedy (First),Kennedy,John F. Kennedy,First,false,letter,other_vesting_authority,Other/unclassified vesting authority,0,34.590909,false
+4,John F. Kennedy (First),Kennedy,John F. Kennedy,First,false,proclamation,generic_constitution_only,Generic Constitution only,0,4.454545,false
+4,John F. Kennedy (First),Kennedy,John F. Kennedy,First,false,proclamation,specific_constitution_only,Specific Constitution only,0,4.181818,false
+4,John F. Kennedy (First),Kennedy,John F. Kennedy,First,false,proclamation,generic_statute_only,Generic Statute only,0,0.045455,false
+4,John F. Kennedy (First),Kennedy,John F. Kennedy,First,false,proclamation,specific_statute_only,Specific Statute only,24,144.318182,true
+4,John F. Kennedy (First),Kennedy,John F. Kennedy,First,false,proclamation,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,2,65.636364,true
+4,John F. Kennedy (First),Kennedy,John F. Kennedy,First,false,proclamation,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,18,124.681818,true
+4,John F. Kennedy (First),Kennedy,John F. Kennedy,First,false,proclamation,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,0,1.318182,false
+4,John F. Kennedy (First),Kennedy,John F. Kennedy,First,false,proclamation,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,0,5.545455,false
+4,John F. Kennedy (First),Kennedy,John F. Kennedy,First,false,proclamation,no_vesting_clause,No vesting clause,0,227.090909,false
+4,John F. Kennedy (First),Kennedy,John F. Kennedy,First,false,proclamation,other_vesting_authority,Other/unclassified vesting authority,21,34.590909,false
+5,Lyndon B. Johnson (First),L. Johnson,Lyndon B. Johnson,First,false,all,generic_constitution_only,Generic Constitution only,0,4.454545,false
+5,Lyndon B. Johnson (First),L. Johnson,Lyndon B. Johnson,First,false,all,specific_constitution_only,Specific Constitution only,0,4.181818,false
+5,Lyndon B. Johnson (First),L. Johnson,Lyndon B. Johnson,First,false,all,generic_statute_only,Generic Statute only,0,0.045455,false
+5,Lyndon B. Johnson (First),L. Johnson,Lyndon B. Johnson,First,false,all,specific_statute_only,Specific Statute only,44,144.318182,true
+5,Lyndon B. Johnson (First),L. Johnson,Lyndon B. Johnson,First,false,all,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,3,65.636364,true
+5,Lyndon B. Johnson (First),L. Johnson,Lyndon B. Johnson,First,false,all,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,3,124.681818,true
+5,Lyndon B. Johnson (First),L. Johnson,Lyndon B. Johnson,First,false,all,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,0,1.318182,false
+5,Lyndon B. Johnson (First),L. Johnson,Lyndon B. Johnson,First,false,all,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,4,5.545455,false
+5,Lyndon B. Johnson (First),L. Johnson,Lyndon B. Johnson,First,false,all,no_vesting_clause,No vesting clause,63,227.090909,false
+5,Lyndon B. Johnson (First),L. Johnson,Lyndon B. Johnson,First,false,all,other_vesting_authority,Other/unclassified vesting authority,35,34.590909,false
+5,Lyndon B. Johnson (First),L. Johnson,Lyndon B. Johnson,First,false,executive_order,generic_constitution_only,Generic Constitution only,0,4.454545,false
+5,Lyndon B. Johnson (First),L. Johnson,Lyndon B. Johnson,First,false,executive_order,specific_constitution_only,Specific Constitution only,0,4.181818,false
+5,Lyndon B. Johnson (First),L. Johnson,Lyndon B. Johnson,First,false,executive_order,generic_statute_only,Generic Statute only,0,0.045455,false
+5,Lyndon B. Johnson (First),L. Johnson,Lyndon B. Johnson,First,false,executive_order,specific_statute_only,Specific Statute only,35,144.318182,true
+5,Lyndon B. Johnson (First),L. Johnson,Lyndon B. Johnson,First,false,executive_order,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,3,65.636364,true
+5,Lyndon B. Johnson (First),L. Johnson,Lyndon B. Johnson,First,false,executive_order,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,1,124.681818,true
+5,Lyndon B. Johnson (First),L. Johnson,Lyndon B. Johnson,First,false,executive_order,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,0,1.318182,false
+5,Lyndon B. Johnson (First),L. Johnson,Lyndon B. Johnson,First,false,executive_order,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,4,5.545455,false
+5,Lyndon B. Johnson (First),L. Johnson,Lyndon B. Johnson,First,false,executive_order,no_vesting_clause,No vesting clause,0,227.090909,false
+5,Lyndon B. Johnson (First),L. Johnson,Lyndon B. Johnson,First,false,executive_order,other_vesting_authority,Other/unclassified vesting authority,20,34.590909,false
+5,Lyndon B. Johnson (First),L. Johnson,Lyndon B. Johnson,First,false,memorandum,generic_constitution_only,Generic Constitution only,0,4.454545,false
+5,Lyndon B. Johnson (First),L. Johnson,Lyndon B. Johnson,First,false,memorandum,specific_constitution_only,Specific Constitution only,0,4.181818,false
+5,Lyndon B. Johnson (First),L. Johnson,Lyndon B. Johnson,First,false,memorandum,generic_statute_only,Generic Statute only,0,0.045455,false
+5,Lyndon B. Johnson (First),L. Johnson,Lyndon B. Johnson,First,false,memorandum,specific_statute_only,Specific Statute only,0,144.318182,true
+5,Lyndon B. Johnson (First),L. Johnson,Lyndon B. Johnson,First,false,memorandum,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,0,65.636364,true
+5,Lyndon B. Johnson (First),L. Johnson,Lyndon B. Johnson,First,false,memorandum,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,0,124.681818,true
+5,Lyndon B. Johnson (First),L. Johnson,Lyndon B. Johnson,First,false,memorandum,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,0,1.318182,false
+5,Lyndon B. Johnson (First),L. Johnson,Lyndon B. Johnson,First,false,memorandum,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,0,5.545455,false
+5,Lyndon B. Johnson (First),L. Johnson,Lyndon B. Johnson,First,false,memorandum,no_vesting_clause,No vesting clause,10,227.090909,false
+5,Lyndon B. Johnson (First),L. Johnson,Lyndon B. Johnson,First,false,memorandum,other_vesting_authority,Other/unclassified vesting authority,0,34.590909,false
+5,Lyndon B. Johnson (First),L. Johnson,Lyndon B. Johnson,First,false,letter,generic_constitution_only,Generic Constitution only,0,4.454545,false
+5,Lyndon B. Johnson (First),L. Johnson,Lyndon B. Johnson,First,false,letter,specific_constitution_only,Specific Constitution only,0,4.181818,false
+5,Lyndon B. Johnson (First),L. Johnson,Lyndon B. Johnson,First,false,letter,generic_statute_only,Generic Statute only,0,0.045455,false
+5,Lyndon B. Johnson (First),L. Johnson,Lyndon B. Johnson,First,false,letter,specific_statute_only,Specific Statute only,1,144.318182,true
+5,Lyndon B. Johnson (First),L. Johnson,Lyndon B. Johnson,First,false,letter,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,0,65.636364,true
+5,Lyndon B. Johnson (First),L. Johnson,Lyndon B. Johnson,First,false,letter,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,0,124.681818,true
+5,Lyndon B. Johnson (First),L. Johnson,Lyndon B. Johnson,First,false,letter,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,0,1.318182,false
+5,Lyndon B. Johnson (First),L. Johnson,Lyndon B. Johnson,First,false,letter,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,0,5.545455,false
+5,Lyndon B. Johnson (First),L. Johnson,Lyndon B. Johnson,First,false,letter,no_vesting_clause,No vesting clause,53,227.090909,false
+5,Lyndon B. Johnson (First),L. Johnson,Lyndon B. Johnson,First,false,letter,other_vesting_authority,Other/unclassified vesting authority,0,34.590909,false
+5,Lyndon B. Johnson (First),L. Johnson,Lyndon B. Johnson,First,false,proclamation,generic_constitution_only,Generic Constitution only,0,4.454545,false
+5,Lyndon B. Johnson (First),L. Johnson,Lyndon B. Johnson,First,false,proclamation,specific_constitution_only,Specific Constitution only,0,4.181818,false
+5,Lyndon B. Johnson (First),L. Johnson,Lyndon B. Johnson,First,false,proclamation,generic_statute_only,Generic Statute only,0,0.045455,false
+5,Lyndon B. Johnson (First),L. Johnson,Lyndon B. Johnson,First,false,proclamation,specific_statute_only,Specific Statute only,8,144.318182,true
+5,Lyndon B. Johnson (First),L. Johnson,Lyndon B. Johnson,First,false,proclamation,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,0,65.636364,true
+5,Lyndon B. Johnson (First),L. Johnson,Lyndon B. Johnson,First,false,proclamation,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,2,124.681818,true
+5,Lyndon B. Johnson (First),L. Johnson,Lyndon B. Johnson,First,false,proclamation,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,0,1.318182,false
+5,Lyndon B. Johnson (First),L. Johnson,Lyndon B. Johnson,First,false,proclamation,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,0,5.545455,false
+5,Lyndon B. Johnson (First),L. Johnson,Lyndon B. Johnson,First,false,proclamation,no_vesting_clause,No vesting clause,0,227.090909,false
+5,Lyndon B. Johnson (First),L. Johnson,Lyndon B. Johnson,First,false,proclamation,other_vesting_authority,Other/unclassified vesting authority,15,34.590909,false
+6,Lyndon B. Johnson (Second),L. Johnson,Lyndon B. Johnson,Second,false,all,generic_constitution_only,Generic Constitution only,0,4.454545,false
+6,Lyndon B. Johnson (Second),L. Johnson,Lyndon B. Johnson,Second,false,all,specific_constitution_only,Specific Constitution only,5,4.181818,false
+6,Lyndon B. Johnson (Second),L. Johnson,Lyndon B. Johnson,Second,false,all,generic_statute_only,Generic Statute only,0,0.045455,false
+6,Lyndon B. Johnson (Second),L. Johnson,Lyndon B. Johnson,Second,false,all,specific_statute_only,Specific Statute only,186,144.318182,true
+6,Lyndon B. Johnson (Second),L. Johnson,Lyndon B. Johnson,Second,false,all,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,7,65.636364,true
+6,Lyndon B. Johnson (Second),L. Johnson,Lyndon B. Johnson,Second,false,all,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,35,124.681818,true
+6,Lyndon B. Johnson (Second),L. Johnson,Lyndon B. Johnson,Second,false,all,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,0,1.318182,false
+6,Lyndon B. Johnson (Second),L. Johnson,Lyndon B. Johnson,Second,false,all,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,10,5.545455,false
+6,Lyndon B. Johnson (Second),L. Johnson,Lyndon B. Johnson,Second,false,all,no_vesting_clause,No vesting clause,291,227.090909,false
+6,Lyndon B. Johnson (Second),L. Johnson,Lyndon B. Johnson,Second,false,all,other_vesting_authority,Other/unclassified vesting authority,97,34.590909,false
+6,Lyndon B. Johnson (Second),L. Johnson,Lyndon B. Johnson,Second,false,executive_order,generic_constitution_only,Generic Constitution only,0,4.454545,false
+6,Lyndon B. Johnson (Second),L. Johnson,Lyndon B. Johnson,Second,false,executive_order,specific_constitution_only,Specific Constitution only,5,4.181818,false
+6,Lyndon B. Johnson (Second),L. Johnson,Lyndon B. Johnson,Second,false,executive_order,generic_statute_only,Generic Statute only,0,0.045455,false
+6,Lyndon B. Johnson (Second),L. Johnson,Lyndon B. Johnson,Second,false,executive_order,specific_statute_only,Specific Statute only,164,144.318182,true
+6,Lyndon B. Johnson (Second),L. Johnson,Lyndon B. Johnson,Second,false,executive_order,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,6,65.636364,true
+6,Lyndon B. Johnson (Second),L. Johnson,Lyndon B. Johnson,Second,false,executive_order,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,9,124.681818,true
+6,Lyndon B. Johnson (Second),L. Johnson,Lyndon B. Johnson,Second,false,executive_order,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,0,1.318182,false
+6,Lyndon B. Johnson (Second),L. Johnson,Lyndon B. Johnson,Second,false,executive_order,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,10,5.545455,false
+6,Lyndon B. Johnson (Second),L. Johnson,Lyndon B. Johnson,Second,false,executive_order,no_vesting_clause,No vesting clause,1,227.090909,false
+6,Lyndon B. Johnson (Second),L. Johnson,Lyndon B. Johnson,Second,false,executive_order,other_vesting_authority,Other/unclassified vesting authority,58,34.590909,false
+6,Lyndon B. Johnson (Second),L. Johnson,Lyndon B. Johnson,Second,false,memorandum,generic_constitution_only,Generic Constitution only,0,4.454545,false
+6,Lyndon B. Johnson (Second),L. Johnson,Lyndon B. Johnson,Second,false,memorandum,specific_constitution_only,Specific Constitution only,0,4.181818,false
+6,Lyndon B. Johnson (Second),L. Johnson,Lyndon B. Johnson,Second,false,memorandum,generic_statute_only,Generic Statute only,0,0.045455,false
+6,Lyndon B. Johnson (Second),L. Johnson,Lyndon B. Johnson,Second,false,memorandum,specific_statute_only,Specific Statute only,2,144.318182,true
+6,Lyndon B. Johnson (Second),L. Johnson,Lyndon B. Johnson,Second,false,memorandum,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,0,65.636364,true
+6,Lyndon B. Johnson (Second),L. Johnson,Lyndon B. Johnson,Second,false,memorandum,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,0,124.681818,true
+6,Lyndon B. Johnson (Second),L. Johnson,Lyndon B. Johnson,Second,false,memorandum,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,0,1.318182,false
+6,Lyndon B. Johnson (Second),L. Johnson,Lyndon B. Johnson,Second,false,memorandum,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,0,5.545455,false
+6,Lyndon B. Johnson (Second),L. Johnson,Lyndon B. Johnson,Second,false,memorandum,no_vesting_clause,No vesting clause,86,227.090909,false
+6,Lyndon B. Johnson (Second),L. Johnson,Lyndon B. Johnson,Second,false,memorandum,other_vesting_authority,Other/unclassified vesting authority,0,34.590909,false
+6,Lyndon B. Johnson (Second),L. Johnson,Lyndon B. Johnson,Second,false,letter,generic_constitution_only,Generic Constitution only,0,4.454545,false
+6,Lyndon B. Johnson (Second),L. Johnson,Lyndon B. Johnson,Second,false,letter,specific_constitution_only,Specific Constitution only,0,4.181818,false
+6,Lyndon B. Johnson (Second),L. Johnson,Lyndon B. Johnson,Second,false,letter,generic_statute_only,Generic Statute only,0,0.045455,false
+6,Lyndon B. Johnson (Second),L. Johnson,Lyndon B. Johnson,Second,false,letter,specific_statute_only,Specific Statute only,3,144.318182,true
+6,Lyndon B. Johnson (Second),L. Johnson,Lyndon B. Johnson,Second,false,letter,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,0,65.636364,true
+6,Lyndon B. Johnson (Second),L. Johnson,Lyndon B. Johnson,Second,false,letter,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,0,124.681818,true
+6,Lyndon B. Johnson (Second),L. Johnson,Lyndon B. Johnson,Second,false,letter,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,0,1.318182,false
+6,Lyndon B. Johnson (Second),L. Johnson,Lyndon B. Johnson,Second,false,letter,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,0,5.545455,false
+6,Lyndon B. Johnson (Second),L. Johnson,Lyndon B. Johnson,Second,false,letter,no_vesting_clause,No vesting clause,203,227.090909,false
+6,Lyndon B. Johnson (Second),L. Johnson,Lyndon B. Johnson,Second,false,letter,other_vesting_authority,Other/unclassified vesting authority,1,34.590909,false
+6,Lyndon B. Johnson (Second),L. Johnson,Lyndon B. Johnson,Second,false,proclamation,generic_constitution_only,Generic Constitution only,0,4.454545,false
+6,Lyndon B. Johnson (Second),L. Johnson,Lyndon B. Johnson,Second,false,proclamation,specific_constitution_only,Specific Constitution only,0,4.181818,false
+6,Lyndon B. Johnson (Second),L. Johnson,Lyndon B. Johnson,Second,false,proclamation,generic_statute_only,Generic Statute only,0,0.045455,false
+6,Lyndon B. Johnson (Second),L. Johnson,Lyndon B. Johnson,Second,false,proclamation,specific_statute_only,Specific Statute only,17,144.318182,true
+6,Lyndon B. Johnson (Second),L. Johnson,Lyndon B. Johnson,Second,false,proclamation,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,1,65.636364,true
+6,Lyndon B. Johnson (Second),L. Johnson,Lyndon B. Johnson,Second,false,proclamation,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,26,124.681818,true
+6,Lyndon B. Johnson (Second),L. Johnson,Lyndon B. Johnson,Second,false,proclamation,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,0,1.318182,false
+6,Lyndon B. Johnson (Second),L. Johnson,Lyndon B. Johnson,Second,false,proclamation,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,0,5.545455,false
+6,Lyndon B. Johnson (Second),L. Johnson,Lyndon B. Johnson,Second,false,proclamation,no_vesting_clause,No vesting clause,1,227.090909,false
+6,Lyndon B. Johnson (Second),L. Johnson,Lyndon B. Johnson,Second,false,proclamation,other_vesting_authority,Other/unclassified vesting authority,38,34.590909,false
+7,Richard Nixon (First),Nixon,Richard Nixon,First,false,all,generic_constitution_only,Generic Constitution only,1,4.454545,false
+7,Richard Nixon (First),Nixon,Richard Nixon,First,false,all,specific_constitution_only,Specific Constitution only,3,4.181818,false
+7,Richard Nixon (First),Nixon,Richard Nixon,First,false,all,generic_statute_only,Generic Statute only,0,0.045455,false
+7,Richard Nixon (First),Nixon,Richard Nixon,First,false,all,specific_statute_only,Specific Statute only,142,144.318182,true
+7,Richard Nixon (First),Nixon,Richard Nixon,First,false,all,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,13,65.636364,true
+7,Richard Nixon (First),Nixon,Richard Nixon,First,false,all,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,46,124.681818,true
+7,Richard Nixon (First),Nixon,Richard Nixon,First,false,all,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,1,1.318182,false
+7,Richard Nixon (First),Nixon,Richard Nixon,First,false,all,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,8,5.545455,false
+7,Richard Nixon (First),Nixon,Richard Nixon,First,false,all,no_vesting_clause,No vesting clause,172,227.090909,false
+7,Richard Nixon (First),Nixon,Richard Nixon,First,false,all,other_vesting_authority,Other/unclassified vesting authority,88,34.590909,false
+7,Richard Nixon (First),Nixon,Richard Nixon,First,false,executive_order,generic_constitution_only,Generic Constitution only,1,4.454545,false
+7,Richard Nixon (First),Nixon,Richard Nixon,First,false,executive_order,specific_constitution_only,Specific Constitution only,3,4.181818,false
+7,Richard Nixon (First),Nixon,Richard Nixon,First,false,executive_order,generic_statute_only,Generic Statute only,0,0.045455,false
+7,Richard Nixon (First),Nixon,Richard Nixon,First,false,executive_order,specific_statute_only,Specific Statute only,132,144.318182,true
+7,Richard Nixon (First),Nixon,Richard Nixon,First,false,executive_order,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,13,65.636364,true
+7,Richard Nixon (First),Nixon,Richard Nixon,First,false,executive_order,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,24,124.681818,true
+7,Richard Nixon (First),Nixon,Richard Nixon,First,false,executive_order,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,1,1.318182,false
+7,Richard Nixon (First),Nixon,Richard Nixon,First,false,executive_order,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,8,5.545455,false
+7,Richard Nixon (First),Nixon,Richard Nixon,First,false,executive_order,no_vesting_clause,No vesting clause,0,227.090909,false
+7,Richard Nixon (First),Nixon,Richard Nixon,First,false,executive_order,other_vesting_authority,Other/unclassified vesting authority,52,34.590909,false
+7,Richard Nixon (First),Nixon,Richard Nixon,First,false,memorandum,generic_constitution_only,Generic Constitution only,0,4.454545,false
+7,Richard Nixon (First),Nixon,Richard Nixon,First,false,memorandum,specific_constitution_only,Specific Constitution only,0,4.181818,false
+7,Richard Nixon (First),Nixon,Richard Nixon,First,false,memorandum,generic_statute_only,Generic Statute only,0,0.045455,false
+7,Richard Nixon (First),Nixon,Richard Nixon,First,false,memorandum,specific_statute_only,Specific Statute only,1,144.318182,true
+7,Richard Nixon (First),Nixon,Richard Nixon,First,false,memorandum,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,0,65.636364,true
+7,Richard Nixon (First),Nixon,Richard Nixon,First,false,memorandum,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,0,124.681818,true
+7,Richard Nixon (First),Nixon,Richard Nixon,First,false,memorandum,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,0,1.318182,false
+7,Richard Nixon (First),Nixon,Richard Nixon,First,false,memorandum,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,0,5.545455,false
+7,Richard Nixon (First),Nixon,Richard Nixon,First,false,memorandum,no_vesting_clause,No vesting clause,57,227.090909,false
+7,Richard Nixon (First),Nixon,Richard Nixon,First,false,memorandum,other_vesting_authority,Other/unclassified vesting authority,0,34.590909,false
+7,Richard Nixon (First),Nixon,Richard Nixon,First,false,letter,generic_constitution_only,Generic Constitution only,0,4.454545,false
+7,Richard Nixon (First),Nixon,Richard Nixon,First,false,letter,specific_constitution_only,Specific Constitution only,0,4.181818,false
+7,Richard Nixon (First),Nixon,Richard Nixon,First,false,letter,generic_statute_only,Generic Statute only,0,0.045455,false
+7,Richard Nixon (First),Nixon,Richard Nixon,First,false,letter,specific_statute_only,Specific Statute only,2,144.318182,true
+7,Richard Nixon (First),Nixon,Richard Nixon,First,false,letter,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,0,65.636364,true
+7,Richard Nixon (First),Nixon,Richard Nixon,First,false,letter,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,0,124.681818,true
+7,Richard Nixon (First),Nixon,Richard Nixon,First,false,letter,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,0,1.318182,false
+7,Richard Nixon (First),Nixon,Richard Nixon,First,false,letter,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,0,5.545455,false
+7,Richard Nixon (First),Nixon,Richard Nixon,First,false,letter,no_vesting_clause,No vesting clause,115,227.090909,false
+7,Richard Nixon (First),Nixon,Richard Nixon,First,false,letter,other_vesting_authority,Other/unclassified vesting authority,0,34.590909,false
+7,Richard Nixon (First),Nixon,Richard Nixon,First,false,proclamation,generic_constitution_only,Generic Constitution only,0,4.454545,false
+7,Richard Nixon (First),Nixon,Richard Nixon,First,false,proclamation,specific_constitution_only,Specific Constitution only,0,4.181818,false
+7,Richard Nixon (First),Nixon,Richard Nixon,First,false,proclamation,generic_statute_only,Generic Statute only,0,0.045455,false
+7,Richard Nixon (First),Nixon,Richard Nixon,First,false,proclamation,specific_statute_only,Specific Statute only,7,144.318182,true
+7,Richard Nixon (First),Nixon,Richard Nixon,First,false,proclamation,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,0,65.636364,true
+7,Richard Nixon (First),Nixon,Richard Nixon,First,false,proclamation,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,22,124.681818,true
+7,Richard Nixon (First),Nixon,Richard Nixon,First,false,proclamation,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,0,1.318182,false
+7,Richard Nixon (First),Nixon,Richard Nixon,First,false,proclamation,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,0,5.545455,false
+7,Richard Nixon (First),Nixon,Richard Nixon,First,false,proclamation,no_vesting_clause,No vesting clause,0,227.090909,false
+7,Richard Nixon (First),Nixon,Richard Nixon,First,false,proclamation,other_vesting_authority,Other/unclassified vesting authority,36,34.590909,false
+8,Richard Nixon (Second),Nixon,Richard Nixon,Second,false,all,generic_constitution_only,Generic Constitution only,0,4.454545,false
+8,Richard Nixon (Second),Nixon,Richard Nixon,Second,false,all,specific_constitution_only,Specific Constitution only,0,4.181818,false
+8,Richard Nixon (Second),Nixon,Richard Nixon,Second,false,all,generic_statute_only,Generic Statute only,0,0.045455,false
+8,Richard Nixon (Second),Nixon,Richard Nixon,Second,false,all,specific_statute_only,Specific Statute only,73,144.318182,true
+8,Richard Nixon (Second),Nixon,Richard Nixon,Second,false,all,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,2,65.636364,true
+8,Richard Nixon (Second),Nixon,Richard Nixon,Second,false,all,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,20,124.681818,true
+8,Richard Nixon (Second),Nixon,Richard Nixon,Second,false,all,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,0,1.318182,false
+8,Richard Nixon (Second),Nixon,Richard Nixon,Second,false,all,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,5,5.545455,false
+8,Richard Nixon (Second),Nixon,Richard Nixon,Second,false,all,no_vesting_clause,No vesting clause,53,227.090909,false
+8,Richard Nixon (Second),Nixon,Richard Nixon,Second,false,all,other_vesting_authority,Other/unclassified vesting authority,28,34.590909,false
+8,Richard Nixon (Second),Nixon,Richard Nixon,Second,false,executive_order,generic_constitution_only,Generic Constitution only,0,4.454545,false
+8,Richard Nixon (Second),Nixon,Richard Nixon,Second,false,executive_order,specific_constitution_only,Specific Constitution only,0,4.181818,false
+8,Richard Nixon (Second),Nixon,Richard Nixon,Second,false,executive_order,generic_statute_only,Generic Statute only,0,0.045455,false
+8,Richard Nixon (Second),Nixon,Richard Nixon,Second,false,executive_order,specific_statute_only,Specific Statute only,62,144.318182,true
+8,Richard Nixon (Second),Nixon,Richard Nixon,Second,false,executive_order,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,2,65.636364,true
+8,Richard Nixon (Second),Nixon,Richard Nixon,Second,false,executive_order,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,14,124.681818,true
+8,Richard Nixon (Second),Nixon,Richard Nixon,Second,false,executive_order,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,0,1.318182,false
+8,Richard Nixon (Second),Nixon,Richard Nixon,Second,false,executive_order,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,5,5.545455,false
+8,Richard Nixon (Second),Nixon,Richard Nixon,Second,false,executive_order,no_vesting_clause,No vesting clause,0,227.090909,false
+8,Richard Nixon (Second),Nixon,Richard Nixon,Second,false,executive_order,other_vesting_authority,Other/unclassified vesting authority,14,34.590909,false
+8,Richard Nixon (Second),Nixon,Richard Nixon,Second,false,memorandum,generic_constitution_only,Generic Constitution only,0,4.454545,false
+8,Richard Nixon (Second),Nixon,Richard Nixon,Second,false,memorandum,specific_constitution_only,Specific Constitution only,0,4.181818,false
+8,Richard Nixon (Second),Nixon,Richard Nixon,Second,false,memorandum,generic_statute_only,Generic Statute only,0,0.045455,false
+8,Richard Nixon (Second),Nixon,Richard Nixon,Second,false,memorandum,specific_statute_only,Specific Statute only,0,144.318182,true
+8,Richard Nixon (Second),Nixon,Richard Nixon,Second,false,memorandum,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,0,65.636364,true
+8,Richard Nixon (Second),Nixon,Richard Nixon,Second,false,memorandum,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,0,124.681818,true
+8,Richard Nixon (Second),Nixon,Richard Nixon,Second,false,memorandum,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,0,1.318182,false
+8,Richard Nixon (Second),Nixon,Richard Nixon,Second,false,memorandum,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,0,5.545455,false
+8,Richard Nixon (Second),Nixon,Richard Nixon,Second,false,memorandum,no_vesting_clause,No vesting clause,11,227.090909,false
+8,Richard Nixon (Second),Nixon,Richard Nixon,Second,false,memorandum,other_vesting_authority,Other/unclassified vesting authority,0,34.590909,false
+8,Richard Nixon (Second),Nixon,Richard Nixon,Second,false,letter,generic_constitution_only,Generic Constitution only,0,4.454545,false
+8,Richard Nixon (Second),Nixon,Richard Nixon,Second,false,letter,specific_constitution_only,Specific Constitution only,0,4.181818,false
+8,Richard Nixon (Second),Nixon,Richard Nixon,Second,false,letter,generic_statute_only,Generic Statute only,0,0.045455,false
+8,Richard Nixon (Second),Nixon,Richard Nixon,Second,false,letter,specific_statute_only,Specific Statute only,0,144.318182,true
+8,Richard Nixon (Second),Nixon,Richard Nixon,Second,false,letter,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,0,65.636364,true
+8,Richard Nixon (Second),Nixon,Richard Nixon,Second,false,letter,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,0,124.681818,true
+8,Richard Nixon (Second),Nixon,Richard Nixon,Second,false,letter,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,0,1.318182,false
+8,Richard Nixon (Second),Nixon,Richard Nixon,Second,false,letter,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,0,5.545455,false
+8,Richard Nixon (Second),Nixon,Richard Nixon,Second,false,letter,no_vesting_clause,No vesting clause,42,227.090909,false
+8,Richard Nixon (Second),Nixon,Richard Nixon,Second,false,letter,other_vesting_authority,Other/unclassified vesting authority,0,34.590909,false
+8,Richard Nixon (Second),Nixon,Richard Nixon,Second,false,proclamation,generic_constitution_only,Generic Constitution only,0,4.454545,false
+8,Richard Nixon (Second),Nixon,Richard Nixon,Second,false,proclamation,specific_constitution_only,Specific Constitution only,0,4.181818,false
+8,Richard Nixon (Second),Nixon,Richard Nixon,Second,false,proclamation,generic_statute_only,Generic Statute only,0,0.045455,false
+8,Richard Nixon (Second),Nixon,Richard Nixon,Second,false,proclamation,specific_statute_only,Specific Statute only,11,144.318182,true
+8,Richard Nixon (Second),Nixon,Richard Nixon,Second,false,proclamation,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,0,65.636364,true
+8,Richard Nixon (Second),Nixon,Richard Nixon,Second,false,proclamation,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,6,124.681818,true
+8,Richard Nixon (Second),Nixon,Richard Nixon,Second,false,proclamation,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,0,1.318182,false
+8,Richard Nixon (Second),Nixon,Richard Nixon,Second,false,proclamation,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,0,5.545455,false
+8,Richard Nixon (Second),Nixon,Richard Nixon,Second,false,proclamation,no_vesting_clause,No vesting clause,0,227.090909,false
+8,Richard Nixon (Second),Nixon,Richard Nixon,Second,false,proclamation,other_vesting_authority,Other/unclassified vesting authority,14,34.590909,false
+9,Gerald R. Ford (First),Ford,Gerald R. Ford,First,false,all,generic_constitution_only,Generic Constitution only,1,4.454545,false
+9,Gerald R. Ford (First),Ford,Gerald R. Ford,First,false,all,specific_constitution_only,Specific Constitution only,6,4.181818,false
+9,Gerald R. Ford (First),Ford,Gerald R. Ford,First,false,all,generic_statute_only,Generic Statute only,0,0.045455,false
+9,Gerald R. Ford (First),Ford,Gerald R. Ford,First,false,all,specific_statute_only,Specific Statute only,94,144.318182,true
+9,Gerald R. Ford (First),Ford,Gerald R. Ford,First,false,all,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,23,65.636364,true
+9,Gerald R. Ford (First),Ford,Gerald R. Ford,First,false,all,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,53,124.681818,true
+9,Gerald R. Ford (First),Ford,Gerald R. Ford,First,false,all,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,1,1.318182,false
+9,Gerald R. Ford (First),Ford,Gerald R. Ford,First,false,all,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,10,5.545455,false
+9,Gerald R. Ford (First),Ford,Gerald R. Ford,First,false,all,no_vesting_clause,No vesting clause,204,227.090909,false
+9,Gerald R. Ford (First),Ford,Gerald R. Ford,First,false,all,other_vesting_authority,Other/unclassified vesting authority,27,34.590909,false
+9,Gerald R. Ford (First),Ford,Gerald R. Ford,First,false,executive_order,generic_constitution_only,Generic Constitution only,1,4.454545,false
+9,Gerald R. Ford (First),Ford,Gerald R. Ford,First,false,executive_order,specific_constitution_only,Specific Constitution only,4,4.181818,false
+9,Gerald R. Ford (First),Ford,Gerald R. Ford,First,false,executive_order,generic_statute_only,Generic Statute only,0,0.045455,false
+9,Gerald R. Ford (First),Ford,Gerald R. Ford,First,false,executive_order,specific_statute_only,Specific Statute only,79,144.318182,true
+9,Gerald R. Ford (First),Ford,Gerald R. Ford,First,false,executive_order,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,23,65.636364,true
+9,Gerald R. Ford (First),Ford,Gerald R. Ford,First,false,executive_order,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,33,124.681818,true
+9,Gerald R. Ford (First),Ford,Gerald R. Ford,First,false,executive_order,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,1,1.318182,false
+9,Gerald R. Ford (First),Ford,Gerald R. Ford,First,false,executive_order,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,9,5.545455,false
+9,Gerald R. Ford (First),Ford,Gerald R. Ford,First,false,executive_order,no_vesting_clause,No vesting clause,1,227.090909,false
+9,Gerald R. Ford (First),Ford,Gerald R. Ford,First,false,executive_order,other_vesting_authority,Other/unclassified vesting authority,12,34.590909,false
+9,Gerald R. Ford (First),Ford,Gerald R. Ford,First,false,memorandum,generic_constitution_only,Generic Constitution only,0,4.454545,false
+9,Gerald R. Ford (First),Ford,Gerald R. Ford,First,false,memorandum,specific_constitution_only,Specific Constitution only,0,4.181818,false
+9,Gerald R. Ford (First),Ford,Gerald R. Ford,First,false,memorandum,generic_statute_only,Generic Statute only,0,0.045455,false
+9,Gerald R. Ford (First),Ford,Gerald R. Ford,First,false,memorandum,specific_statute_only,Specific Statute only,3,144.318182,true
+9,Gerald R. Ford (First),Ford,Gerald R. Ford,First,false,memorandum,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,0,65.636364,true
+9,Gerald R. Ford (First),Ford,Gerald R. Ford,First,false,memorandum,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,0,124.681818,true
+9,Gerald R. Ford (First),Ford,Gerald R. Ford,First,false,memorandum,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,0,1.318182,false
+9,Gerald R. Ford (First),Ford,Gerald R. Ford,First,false,memorandum,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,0,5.545455,false
+9,Gerald R. Ford (First),Ford,Gerald R. Ford,First,false,memorandum,no_vesting_clause,No vesting clause,69,227.090909,false
+9,Gerald R. Ford (First),Ford,Gerald R. Ford,First,false,memorandum,other_vesting_authority,Other/unclassified vesting authority,0,34.590909,false
+9,Gerald R. Ford (First),Ford,Gerald R. Ford,First,false,letter,generic_constitution_only,Generic Constitution only,0,4.454545,false
+9,Gerald R. Ford (First),Ford,Gerald R. Ford,First,false,letter,specific_constitution_only,Specific Constitution only,0,4.181818,false
+9,Gerald R. Ford (First),Ford,Gerald R. Ford,First,false,letter,generic_statute_only,Generic Statute only,0,0.045455,false
+9,Gerald R. Ford (First),Ford,Gerald R. Ford,First,false,letter,specific_statute_only,Specific Statute only,5,144.318182,true
+9,Gerald R. Ford (First),Ford,Gerald R. Ford,First,false,letter,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,0,65.636364,true
+9,Gerald R. Ford (First),Ford,Gerald R. Ford,First,false,letter,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,0,124.681818,true
+9,Gerald R. Ford (First),Ford,Gerald R. Ford,First,false,letter,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,0,1.318182,false
+9,Gerald R. Ford (First),Ford,Gerald R. Ford,First,false,letter,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,0,5.545455,false
+9,Gerald R. Ford (First),Ford,Gerald R. Ford,First,false,letter,no_vesting_clause,No vesting clause,134,227.090909,false
+9,Gerald R. Ford (First),Ford,Gerald R. Ford,First,false,letter,other_vesting_authority,Other/unclassified vesting authority,1,34.590909,false
+9,Gerald R. Ford (First),Ford,Gerald R. Ford,First,false,proclamation,generic_constitution_only,Generic Constitution only,0,4.454545,false
+9,Gerald R. Ford (First),Ford,Gerald R. Ford,First,false,proclamation,specific_constitution_only,Specific Constitution only,2,4.181818,false
+9,Gerald R. Ford (First),Ford,Gerald R. Ford,First,false,proclamation,generic_statute_only,Generic Statute only,0,0.045455,false
+9,Gerald R. Ford (First),Ford,Gerald R. Ford,First,false,proclamation,specific_statute_only,Specific Statute only,7,144.318182,true
+9,Gerald R. Ford (First),Ford,Gerald R. Ford,First,false,proclamation,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,0,65.636364,true
+9,Gerald R. Ford (First),Ford,Gerald R. Ford,First,false,proclamation,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,20,124.681818,true
+9,Gerald R. Ford (First),Ford,Gerald R. Ford,First,false,proclamation,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,0,1.318182,false
+9,Gerald R. Ford (First),Ford,Gerald R. Ford,First,false,proclamation,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,1,5.545455,false
+9,Gerald R. Ford (First),Ford,Gerald R. Ford,First,false,proclamation,no_vesting_clause,No vesting clause,0,227.090909,false
+9,Gerald R. Ford (First),Ford,Gerald R. Ford,First,false,proclamation,other_vesting_authority,Other/unclassified vesting authority,14,34.590909,false
+10,Jimmy Carter (First),Carter,Jimmy Carter,First,false,all,generic_constitution_only,Generic Constitution only,41,4.454545,false
+10,Jimmy Carter (First),Carter,Jimmy Carter,First,false,all,specific_constitution_only,Specific Constitution only,2,4.181818,false
+10,Jimmy Carter (First),Carter,Jimmy Carter,First,false,all,generic_statute_only,Generic Statute only,0,0.045455,false
+10,Jimmy Carter (First),Carter,Jimmy Carter,First,false,all,specific_statute_only,Specific Statute only,183,144.318182,true
+10,Jimmy Carter (First),Carter,Jimmy Carter,First,false,all,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,61,65.636364,true
+10,Jimmy Carter (First),Carter,Jimmy Carter,First,false,all,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,147,124.681818,true
+10,Jimmy Carter (First),Carter,Jimmy Carter,First,false,all,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,0,1.318182,false
+10,Jimmy Carter (First),Carter,Jimmy Carter,First,false,all,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,4,5.545455,false
+10,Jimmy Carter (First),Carter,Jimmy Carter,First,false,all,no_vesting_clause,No vesting clause,353,227.090909,false
+10,Jimmy Carter (First),Carter,Jimmy Carter,First,false,all,other_vesting_authority,Other/unclassified vesting authority,48,34.590909,false
+10,Jimmy Carter (First),Carter,Jimmy Carter,First,false,executive_order,generic_constitution_only,Generic Constitution only,41,4.454545,false
+10,Jimmy Carter (First),Carter,Jimmy Carter,First,false,executive_order,specific_constitution_only,Specific Constitution only,1,4.181818,false
+10,Jimmy Carter (First),Carter,Jimmy Carter,First,false,executive_order,generic_statute_only,Generic Statute only,0,0.045455,false
+10,Jimmy Carter (First),Carter,Jimmy Carter,First,false,executive_order,specific_statute_only,Specific Statute only,113,144.318182,true
+10,Jimmy Carter (First),Carter,Jimmy Carter,First,false,executive_order,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,59,65.636364,true
+10,Jimmy Carter (First),Carter,Jimmy Carter,First,false,executive_order,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,89,124.681818,true
+10,Jimmy Carter (First),Carter,Jimmy Carter,First,false,executive_order,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,0,1.318182,false
+10,Jimmy Carter (First),Carter,Jimmy Carter,First,false,executive_order,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,4,5.545455,false
+10,Jimmy Carter (First),Carter,Jimmy Carter,First,false,executive_order,no_vesting_clause,No vesting clause,2,227.090909,false
+10,Jimmy Carter (First),Carter,Jimmy Carter,First,false,executive_order,other_vesting_authority,Other/unclassified vesting authority,7,34.590909,false
+10,Jimmy Carter (First),Carter,Jimmy Carter,First,false,memorandum,generic_constitution_only,Generic Constitution only,0,4.454545,false
+10,Jimmy Carter (First),Carter,Jimmy Carter,First,false,memorandum,specific_constitution_only,Specific Constitution only,0,4.181818,false
+10,Jimmy Carter (First),Carter,Jimmy Carter,First,false,memorandum,generic_statute_only,Generic Statute only,0,0.045455,false
+10,Jimmy Carter (First),Carter,Jimmy Carter,First,false,memorandum,specific_statute_only,Specific Statute only,38,144.318182,true
+10,Jimmy Carter (First),Carter,Jimmy Carter,First,false,memorandum,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,0,65.636364,true
+10,Jimmy Carter (First),Carter,Jimmy Carter,First,false,memorandum,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,3,124.681818,true
+10,Jimmy Carter (First),Carter,Jimmy Carter,First,false,memorandum,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,0,1.318182,false
+10,Jimmy Carter (First),Carter,Jimmy Carter,First,false,memorandum,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,0,5.545455,false
+10,Jimmy Carter (First),Carter,Jimmy Carter,First,false,memorandum,no_vesting_clause,No vesting clause,170,227.090909,false
+10,Jimmy Carter (First),Carter,Jimmy Carter,First,false,memorandum,other_vesting_authority,Other/unclassified vesting authority,1,34.590909,false
+10,Jimmy Carter (First),Carter,Jimmy Carter,First,false,letter,generic_constitution_only,Generic Constitution only,0,4.454545,false
+10,Jimmy Carter (First),Carter,Jimmy Carter,First,false,letter,specific_constitution_only,Specific Constitution only,0,4.181818,false
+10,Jimmy Carter (First),Carter,Jimmy Carter,First,false,letter,generic_statute_only,Generic Statute only,0,0.045455,false
+10,Jimmy Carter (First),Carter,Jimmy Carter,First,false,letter,specific_statute_only,Specific Statute only,9,144.318182,true
+10,Jimmy Carter (First),Carter,Jimmy Carter,First,false,letter,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,0,65.636364,true
+10,Jimmy Carter (First),Carter,Jimmy Carter,First,false,letter,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,0,124.681818,true
+10,Jimmy Carter (First),Carter,Jimmy Carter,First,false,letter,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,0,1.318182,false
+10,Jimmy Carter (First),Carter,Jimmy Carter,First,false,letter,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,0,5.545455,false
+10,Jimmy Carter (First),Carter,Jimmy Carter,First,false,letter,no_vesting_clause,No vesting clause,181,227.090909,false
+10,Jimmy Carter (First),Carter,Jimmy Carter,First,false,letter,other_vesting_authority,Other/unclassified vesting authority,0,34.590909,false
+10,Jimmy Carter (First),Carter,Jimmy Carter,First,false,proclamation,generic_constitution_only,Generic Constitution only,0,4.454545,false
+10,Jimmy Carter (First),Carter,Jimmy Carter,First,false,proclamation,specific_constitution_only,Specific Constitution only,1,4.181818,false
+10,Jimmy Carter (First),Carter,Jimmy Carter,First,false,proclamation,generic_statute_only,Generic Statute only,0,0.045455,false
+10,Jimmy Carter (First),Carter,Jimmy Carter,First,false,proclamation,specific_statute_only,Specific Statute only,23,144.318182,true
+10,Jimmy Carter (First),Carter,Jimmy Carter,First,false,proclamation,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,2,65.636364,true
+10,Jimmy Carter (First),Carter,Jimmy Carter,First,false,proclamation,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,55,124.681818,true
+10,Jimmy Carter (First),Carter,Jimmy Carter,First,false,proclamation,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,0,1.318182,false
+10,Jimmy Carter (First),Carter,Jimmy Carter,First,false,proclamation,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,0,5.545455,false
+10,Jimmy Carter (First),Carter,Jimmy Carter,First,false,proclamation,no_vesting_clause,No vesting clause,0,227.090909,false
+10,Jimmy Carter (First),Carter,Jimmy Carter,First,false,proclamation,other_vesting_authority,Other/unclassified vesting authority,40,34.590909,false
+11,Ronald Reagan (First),Reagan,Ronald Reagan,First,false,all,generic_constitution_only,Generic Constitution only,25,4.454545,false
+11,Ronald Reagan (First),Reagan,Ronald Reagan,First,false,all,specific_constitution_only,Specific Constitution only,3,4.181818,false
+11,Ronald Reagan (First),Reagan,Ronald Reagan,First,false,all,generic_statute_only,Generic Statute only,0,0.045455,false
+11,Ronald Reagan (First),Reagan,Ronald Reagan,First,false,all,specific_statute_only,Specific Statute only,73,144.318182,true
+11,Ronald Reagan (First),Reagan,Ronald Reagan,First,false,all,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,45,65.636364,true
+11,Ronald Reagan (First),Reagan,Ronald Reagan,First,false,all,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,114,124.681818,true
+11,Ronald Reagan (First),Reagan,Ronald Reagan,First,false,all,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,1,1.318182,false
+11,Ronald Reagan (First),Reagan,Ronald Reagan,First,false,all,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,2,5.545455,false
+11,Ronald Reagan (First),Reagan,Ronald Reagan,First,false,all,no_vesting_clause,No vesting clause,220,227.090909,false
+11,Ronald Reagan (First),Reagan,Ronald Reagan,First,false,all,other_vesting_authority,Other/unclassified vesting authority,52,34.590909,false
+11,Ronald Reagan (First),Reagan,Ronald Reagan,First,false,executive_order,generic_constitution_only,Generic Constitution only,25,4.454545,false
+11,Ronald Reagan (First),Reagan,Ronald Reagan,First,false,executive_order,specific_constitution_only,Specific Constitution only,1,4.181818,false
+11,Ronald Reagan (First),Reagan,Ronald Reagan,First,false,executive_order,generic_statute_only,Generic Statute only,0,0.045455,false
+11,Ronald Reagan (First),Reagan,Ronald Reagan,First,false,executive_order,specific_statute_only,Specific Statute only,47,144.318182,true
+11,Ronald Reagan (First),Reagan,Ronald Reagan,First,false,executive_order,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,43,65.636364,true
+11,Ronald Reagan (First),Reagan,Ronald Reagan,First,false,executive_order,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,84,124.681818,true
+11,Ronald Reagan (First),Reagan,Ronald Reagan,First,false,executive_order,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,1,1.318182,false
+11,Ronald Reagan (First),Reagan,Ronald Reagan,First,false,executive_order,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,2,5.545455,false
+11,Ronald Reagan (First),Reagan,Ronald Reagan,First,false,executive_order,no_vesting_clause,No vesting clause,0,227.090909,false
+11,Ronald Reagan (First),Reagan,Ronald Reagan,First,false,executive_order,other_vesting_authority,Other/unclassified vesting authority,8,34.590909,false
+11,Ronald Reagan (First),Reagan,Ronald Reagan,First,false,memorandum,generic_constitution_only,Generic Constitution only,0,4.454545,false
+11,Ronald Reagan (First),Reagan,Ronald Reagan,First,false,memorandum,specific_constitution_only,Specific Constitution only,0,4.181818,false
+11,Ronald Reagan (First),Reagan,Ronald Reagan,First,false,memorandum,generic_statute_only,Generic Statute only,0,0.045455,false
+11,Ronald Reagan (First),Reagan,Ronald Reagan,First,false,memorandum,specific_statute_only,Specific Statute only,13,144.318182,true
+11,Ronald Reagan (First),Reagan,Ronald Reagan,First,false,memorandum,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,0,65.636364,true
+11,Ronald Reagan (First),Reagan,Ronald Reagan,First,false,memorandum,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,4,124.681818,true
+11,Ronald Reagan (First),Reagan,Ronald Reagan,First,false,memorandum,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,0,1.318182,false
+11,Ronald Reagan (First),Reagan,Ronald Reagan,First,false,memorandum,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,0,5.545455,false
+11,Ronald Reagan (First),Reagan,Ronald Reagan,First,false,memorandum,no_vesting_clause,No vesting clause,59,227.090909,false
+11,Ronald Reagan (First),Reagan,Ronald Reagan,First,false,memorandum,other_vesting_authority,Other/unclassified vesting authority,2,34.590909,false
+11,Ronald Reagan (First),Reagan,Ronald Reagan,First,false,letter,generic_constitution_only,Generic Constitution only,0,4.454545,false
+11,Ronald Reagan (First),Reagan,Ronald Reagan,First,false,letter,specific_constitution_only,Specific Constitution only,1,4.181818,false
+11,Ronald Reagan (First),Reagan,Ronald Reagan,First,false,letter,generic_statute_only,Generic Statute only,0,0.045455,false
+11,Ronald Reagan (First),Reagan,Ronald Reagan,First,false,letter,specific_statute_only,Specific Statute only,8,144.318182,true
+11,Ronald Reagan (First),Reagan,Ronald Reagan,First,false,letter,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,0,65.636364,true
+11,Ronald Reagan (First),Reagan,Ronald Reagan,First,false,letter,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,0,124.681818,true
+11,Ronald Reagan (First),Reagan,Ronald Reagan,First,false,letter,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,0,1.318182,false
+11,Ronald Reagan (First),Reagan,Ronald Reagan,First,false,letter,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,0,5.545455,false
+11,Ronald Reagan (First),Reagan,Ronald Reagan,First,false,letter,no_vesting_clause,No vesting clause,161,227.090909,false
+11,Ronald Reagan (First),Reagan,Ronald Reagan,First,false,letter,other_vesting_authority,Other/unclassified vesting authority,0,34.590909,false
+11,Ronald Reagan (First),Reagan,Ronald Reagan,First,false,proclamation,generic_constitution_only,Generic Constitution only,0,4.454545,false
+11,Ronald Reagan (First),Reagan,Ronald Reagan,First,false,proclamation,specific_constitution_only,Specific Constitution only,1,4.181818,false
+11,Ronald Reagan (First),Reagan,Ronald Reagan,First,false,proclamation,generic_statute_only,Generic Statute only,0,0.045455,false
+11,Ronald Reagan (First),Reagan,Ronald Reagan,First,false,proclamation,specific_statute_only,Specific Statute only,5,144.318182,true
+11,Ronald Reagan (First),Reagan,Ronald Reagan,First,false,proclamation,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,2,65.636364,true
+11,Ronald Reagan (First),Reagan,Ronald Reagan,First,false,proclamation,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,26,124.681818,true
+11,Ronald Reagan (First),Reagan,Ronald Reagan,First,false,proclamation,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,0,1.318182,false
+11,Ronald Reagan (First),Reagan,Ronald Reagan,First,false,proclamation,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,0,5.545455,false
+11,Ronald Reagan (First),Reagan,Ronald Reagan,First,false,proclamation,no_vesting_clause,No vesting clause,0,227.090909,false
+11,Ronald Reagan (First),Reagan,Ronald Reagan,First,false,proclamation,other_vesting_authority,Other/unclassified vesting authority,42,34.590909,false
+12,Ronald Reagan (Second),Reagan,Ronald Reagan,Second,false,all,generic_constitution_only,Generic Constitution only,1,4.454545,false
+12,Ronald Reagan (Second),Reagan,Ronald Reagan,Second,false,all,specific_constitution_only,Specific Constitution only,0,4.181818,false
+12,Ronald Reagan (Second),Reagan,Ronald Reagan,Second,false,all,generic_statute_only,Generic Statute only,0,0.045455,false
+12,Ronald Reagan (Second),Reagan,Ronald Reagan,Second,false,all,specific_statute_only,Specific Statute only,118,144.318182,true
+12,Ronald Reagan (Second),Reagan,Ronald Reagan,Second,false,all,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,41,65.636364,true
+12,Ronald Reagan (Second),Reagan,Ronald Reagan,Second,false,all,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,171,124.681818,true
+12,Ronald Reagan (Second),Reagan,Ronald Reagan,Second,false,all,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,1,1.318182,false
+12,Ronald Reagan (Second),Reagan,Ronald Reagan,Second,false,all,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,1,5.545455,false
+12,Ronald Reagan (Second),Reagan,Ronald Reagan,Second,false,all,no_vesting_clause,No vesting clause,219,227.090909,false
+12,Ronald Reagan (Second),Reagan,Ronald Reagan,Second,false,all,other_vesting_authority,Other/unclassified vesting authority,28,34.590909,false
+12,Ronald Reagan (Second),Reagan,Ronald Reagan,Second,false,executive_order,generic_constitution_only,Generic Constitution only,0,4.454545,false
+12,Ronald Reagan (Second),Reagan,Ronald Reagan,Second,false,executive_order,specific_constitution_only,Specific Constitution only,0,4.181818,false
+12,Ronald Reagan (Second),Reagan,Ronald Reagan,Second,false,executive_order,generic_statute_only,Generic Statute only,0,0.045455,false
+12,Ronald Reagan (Second),Reagan,Ronald Reagan,Second,false,executive_order,specific_statute_only,Specific Statute only,21,144.318182,true
+12,Ronald Reagan (Second),Reagan,Ronald Reagan,Second,false,executive_order,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,38,65.636364,true
+12,Ronald Reagan (Second),Reagan,Ronald Reagan,Second,false,executive_order,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,106,124.681818,true
+12,Ronald Reagan (Second),Reagan,Ronald Reagan,Second,false,executive_order,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,1,1.318182,false
+12,Ronald Reagan (Second),Reagan,Ronald Reagan,Second,false,executive_order,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,1,5.545455,false
+12,Ronald Reagan (Second),Reagan,Ronald Reagan,Second,false,executive_order,no_vesting_clause,No vesting clause,0,227.090909,false
+12,Ronald Reagan (Second),Reagan,Ronald Reagan,Second,false,executive_order,other_vesting_authority,Other/unclassified vesting authority,1,34.590909,false
+12,Ronald Reagan (Second),Reagan,Ronald Reagan,Second,false,memorandum,generic_constitution_only,Generic Constitution only,0,4.454545,false
+12,Ronald Reagan (Second),Reagan,Ronald Reagan,Second,false,memorandum,specific_constitution_only,Specific Constitution only,0,4.181818,false
+12,Ronald Reagan (Second),Reagan,Ronald Reagan,Second,false,memorandum,generic_statute_only,Generic Statute only,0,0.045455,false
+12,Ronald Reagan (Second),Reagan,Ronald Reagan,Second,false,memorandum,specific_statute_only,Specific Statute only,75,144.318182,true
+12,Ronald Reagan (Second),Reagan,Ronald Reagan,Second,false,memorandum,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,0,65.636364,true
+12,Ronald Reagan (Second),Reagan,Ronald Reagan,Second,false,memorandum,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,8,124.681818,true
+12,Ronald Reagan (Second),Reagan,Ronald Reagan,Second,false,memorandum,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,0,1.318182,false
+12,Ronald Reagan (Second),Reagan,Ronald Reagan,Second,false,memorandum,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,0,5.545455,false
+12,Ronald Reagan (Second),Reagan,Ronald Reagan,Second,false,memorandum,no_vesting_clause,No vesting clause,58,227.090909,false
+12,Ronald Reagan (Second),Reagan,Ronald Reagan,Second,false,memorandum,other_vesting_authority,Other/unclassified vesting authority,10,34.590909,false
+12,Ronald Reagan (Second),Reagan,Ronald Reagan,Second,false,letter,generic_constitution_only,Generic Constitution only,0,4.454545,false
+12,Ronald Reagan (Second),Reagan,Ronald Reagan,Second,false,letter,specific_constitution_only,Specific Constitution only,0,4.181818,false
+12,Ronald Reagan (Second),Reagan,Ronald Reagan,Second,false,letter,generic_statute_only,Generic Statute only,0,0.045455,false
+12,Ronald Reagan (Second),Reagan,Ronald Reagan,Second,false,letter,specific_statute_only,Specific Statute only,20,144.318182,true
+12,Ronald Reagan (Second),Reagan,Ronald Reagan,Second,false,letter,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,0,65.636364,true
+12,Ronald Reagan (Second),Reagan,Ronald Reagan,Second,false,letter,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,3,124.681818,true
+12,Ronald Reagan (Second),Reagan,Ronald Reagan,Second,false,letter,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,0,1.318182,false
+12,Ronald Reagan (Second),Reagan,Ronald Reagan,Second,false,letter,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,0,5.545455,false
+12,Ronald Reagan (Second),Reagan,Ronald Reagan,Second,false,letter,no_vesting_clause,No vesting clause,161,227.090909,false
+12,Ronald Reagan (Second),Reagan,Ronald Reagan,Second,false,letter,other_vesting_authority,Other/unclassified vesting authority,0,34.590909,false
+12,Ronald Reagan (Second),Reagan,Ronald Reagan,Second,false,proclamation,generic_constitution_only,Generic Constitution only,1,4.454545,false
+12,Ronald Reagan (Second),Reagan,Ronald Reagan,Second,false,proclamation,specific_constitution_only,Specific Constitution only,0,4.181818,false
+12,Ronald Reagan (Second),Reagan,Ronald Reagan,Second,false,proclamation,generic_statute_only,Generic Statute only,0,0.045455,false
+12,Ronald Reagan (Second),Reagan,Ronald Reagan,Second,false,proclamation,specific_statute_only,Specific Statute only,2,144.318182,true
+12,Ronald Reagan (Second),Reagan,Ronald Reagan,Second,false,proclamation,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,3,65.636364,true
+12,Ronald Reagan (Second),Reagan,Ronald Reagan,Second,false,proclamation,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,54,124.681818,true
+12,Ronald Reagan (Second),Reagan,Ronald Reagan,Second,false,proclamation,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,0,1.318182,false
+12,Ronald Reagan (Second),Reagan,Ronald Reagan,Second,false,proclamation,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,0,5.545455,false
+12,Ronald Reagan (Second),Reagan,Ronald Reagan,Second,false,proclamation,no_vesting_clause,No vesting clause,0,227.090909,false
+12,Ronald Reagan (Second),Reagan,Ronald Reagan,Second,false,proclamation,other_vesting_authority,Other/unclassified vesting authority,17,34.590909,false
+13,George Bush (First),G.H.W. Bush,George Bush,First,false,all,generic_constitution_only,Generic Constitution only,0,4.454545,false
+13,George Bush (First),G.H.W. Bush,George Bush,First,false,all,specific_constitution_only,Specific Constitution only,1,4.181818,false
+13,George Bush (First),G.H.W. Bush,George Bush,First,false,all,generic_statute_only,Generic Statute only,0,0.045455,false
+13,George Bush (First),G.H.W. Bush,George Bush,First,false,all,specific_statute_only,Specific Statute only,216,144.318182,true
+13,George Bush (First),G.H.W. Bush,George Bush,First,false,all,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,48,65.636364,true
+13,George Bush (First),G.H.W. Bush,George Bush,First,false,all,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,201,124.681818,true
+13,George Bush (First),G.H.W. Bush,George Bush,First,false,all,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,0,1.318182,false
+13,George Bush (First),G.H.W. Bush,George Bush,First,false,all,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,4,5.545455,false
+13,George Bush (First),G.H.W. Bush,George Bush,First,false,all,no_vesting_clause,No vesting clause,262,227.090909,false
+13,George Bush (First),G.H.W. Bush,George Bush,First,false,all,other_vesting_authority,Other/unclassified vesting authority,25,34.590909,false
+13,George Bush (First),G.H.W. Bush,George Bush,First,false,executive_order,generic_constitution_only,Generic Constitution only,0,4.454545,false
+13,George Bush (First),G.H.W. Bush,George Bush,First,false,executive_order,specific_constitution_only,Specific Constitution only,0,4.181818,false
+13,George Bush (First),G.H.W. Bush,George Bush,First,false,executive_order,generic_statute_only,Generic Statute only,0,0.045455,false
+13,George Bush (First),G.H.W. Bush,George Bush,First,false,executive_order,specific_statute_only,Specific Statute only,0,144.318182,true
+13,George Bush (First),G.H.W. Bush,George Bush,First,false,executive_order,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,41,65.636364,true
+13,George Bush (First),G.H.W. Bush,George Bush,First,false,executive_order,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,114,124.681818,true
+13,George Bush (First),G.H.W. Bush,George Bush,First,false,executive_order,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,0,1.318182,false
+13,George Bush (First),G.H.W. Bush,George Bush,First,false,executive_order,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,3,5.545455,false
+13,George Bush (First),G.H.W. Bush,George Bush,First,false,executive_order,no_vesting_clause,No vesting clause,2,227.090909,false
+13,George Bush (First),G.H.W. Bush,George Bush,First,false,executive_order,other_vesting_authority,Other/unclassified vesting authority,0,34.590909,false
+13,George Bush (First),G.H.W. Bush,George Bush,First,false,memorandum,generic_constitution_only,Generic Constitution only,0,4.454545,false
+13,George Bush (First),G.H.W. Bush,George Bush,First,false,memorandum,specific_constitution_only,Specific Constitution only,0,4.181818,false
+13,George Bush (First),G.H.W. Bush,George Bush,First,false,memorandum,generic_statute_only,Generic Statute only,0,0.045455,false
+13,George Bush (First),G.H.W. Bush,George Bush,First,false,memorandum,specific_statute_only,Specific Statute only,164,144.318182,true
+13,George Bush (First),G.H.W. Bush,George Bush,First,false,memorandum,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,0,65.636364,true
+13,George Bush (First),G.H.W. Bush,George Bush,First,false,memorandum,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,36,124.681818,true
+13,George Bush (First),G.H.W. Bush,George Bush,First,false,memorandum,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,0,1.318182,false
+13,George Bush (First),G.H.W. Bush,George Bush,First,false,memorandum,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,1,5.545455,false
+13,George Bush (First),G.H.W. Bush,George Bush,First,false,memorandum,no_vesting_clause,No vesting clause,57,227.090909,false
+13,George Bush (First),G.H.W. Bush,George Bush,First,false,memorandum,other_vesting_authority,Other/unclassified vesting authority,2,34.590909,false
+13,George Bush (First),G.H.W. Bush,George Bush,First,false,letter,generic_constitution_only,Generic Constitution only,0,4.454545,false
+13,George Bush (First),G.H.W. Bush,George Bush,First,false,letter,specific_constitution_only,Specific Constitution only,0,4.181818,false
+13,George Bush (First),G.H.W. Bush,George Bush,First,false,letter,generic_statute_only,Generic Statute only,0,0.045455,false
+13,George Bush (First),G.H.W. Bush,George Bush,First,false,letter,specific_statute_only,Specific Statute only,50,144.318182,true
+13,George Bush (First),G.H.W. Bush,George Bush,First,false,letter,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,0,65.636364,true
+13,George Bush (First),G.H.W. Bush,George Bush,First,false,letter,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,2,124.681818,true
+13,George Bush (First),G.H.W. Bush,George Bush,First,false,letter,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,0,1.318182,false
+13,George Bush (First),G.H.W. Bush,George Bush,First,false,letter,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,0,5.545455,false
+13,George Bush (First),G.H.W. Bush,George Bush,First,false,letter,no_vesting_clause,No vesting clause,203,227.090909,false
+13,George Bush (First),G.H.W. Bush,George Bush,First,false,letter,other_vesting_authority,Other/unclassified vesting authority,3,34.590909,false
+13,George Bush (First),G.H.W. Bush,George Bush,First,false,proclamation,generic_constitution_only,Generic Constitution only,0,4.454545,false
+13,George Bush (First),G.H.W. Bush,George Bush,First,false,proclamation,specific_constitution_only,Specific Constitution only,1,4.181818,false
+13,George Bush (First),G.H.W. Bush,George Bush,First,false,proclamation,generic_statute_only,Generic Statute only,0,0.045455,false
+13,George Bush (First),G.H.W. Bush,George Bush,First,false,proclamation,specific_statute_only,Specific Statute only,2,144.318182,true
+13,George Bush (First),G.H.W. Bush,George Bush,First,false,proclamation,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,7,65.636364,true
+13,George Bush (First),G.H.W. Bush,George Bush,First,false,proclamation,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,49,124.681818,true
+13,George Bush (First),G.H.W. Bush,George Bush,First,false,proclamation,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,0,1.318182,false
+13,George Bush (First),G.H.W. Bush,George Bush,First,false,proclamation,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,0,5.545455,false
+13,George Bush (First),G.H.W. Bush,George Bush,First,false,proclamation,no_vesting_clause,No vesting clause,0,227.090909,false
+13,George Bush (First),G.H.W. Bush,George Bush,First,false,proclamation,other_vesting_authority,Other/unclassified vesting authority,20,34.590909,false
+14,William J. Clinton (First),Clinton,William J. Clinton,First,false,all,generic_constitution_only,Generic Constitution only,0,4.454545,false
+14,William J. Clinton (First),Clinton,William J. Clinton,First,false,all,specific_constitution_only,Specific Constitution only,3,4.181818,false
+14,William J. Clinton (First),Clinton,William J. Clinton,First,false,all,generic_statute_only,Generic Statute only,0,0.045455,false
+14,William J. Clinton (First),Clinton,William J. Clinton,First,false,all,specific_statute_only,Specific Statute only,230,144.318182,true
+14,William J. Clinton (First),Clinton,William J. Clinton,First,false,all,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,103,65.636364,true
+14,William J. Clinton (First),Clinton,William J. Clinton,First,false,all,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,226,124.681818,true
+14,William J. Clinton (First),Clinton,William J. Clinton,First,false,all,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,0,1.318182,false
+14,William J. Clinton (First),Clinton,William J. Clinton,First,false,all,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,1,5.545455,false
+14,William J. Clinton (First),Clinton,William J. Clinton,First,false,all,no_vesting_clause,No vesting clause,350,227.090909,false
+14,William J. Clinton (First),Clinton,William J. Clinton,First,false,all,other_vesting_authority,Other/unclassified vesting authority,19,34.590909,false
+14,William J. Clinton (First),Clinton,William J. Clinton,First,false,executive_order,generic_constitution_only,Generic Constitution only,0,4.454545,false
+14,William J. Clinton (First),Clinton,William J. Clinton,First,false,executive_order,specific_constitution_only,Specific Constitution only,0,4.181818,false
+14,William J. Clinton (First),Clinton,William J. Clinton,First,false,executive_order,generic_statute_only,Generic Statute only,0,0.045455,false
+14,William J. Clinton (First),Clinton,William J. Clinton,First,false,executive_order,specific_statute_only,Specific Statute only,3,144.318182,true
+14,William J. Clinton (First),Clinton,William J. Clinton,First,false,executive_order,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,55,65.636364,true
+14,William J. Clinton (First),Clinton,William J. Clinton,First,false,executive_order,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,138,124.681818,true
+14,William J. Clinton (First),Clinton,William J. Clinton,First,false,executive_order,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,0,1.318182,false
+14,William J. Clinton (First),Clinton,William J. Clinton,First,false,executive_order,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,1,5.545455,false
+14,William J. Clinton (First),Clinton,William J. Clinton,First,false,executive_order,no_vesting_clause,No vesting clause,1,227.090909,false
+14,William J. Clinton (First),Clinton,William J. Clinton,First,false,executive_order,other_vesting_authority,Other/unclassified vesting authority,0,34.590909,false
+14,William J. Clinton (First),Clinton,William J. Clinton,First,false,memorandum,generic_constitution_only,Generic Constitution only,0,4.454545,false
+14,William J. Clinton (First),Clinton,William J. Clinton,First,false,memorandum,specific_constitution_only,Specific Constitution only,3,4.181818,false
+14,William J. Clinton (First),Clinton,William J. Clinton,First,false,memorandum,generic_statute_only,Generic Statute only,0,0.045455,false
+14,William J. Clinton (First),Clinton,William J. Clinton,First,false,memorandum,specific_statute_only,Specific Statute only,200,144.318182,true
+14,William J. Clinton (First),Clinton,William J. Clinton,First,false,memorandum,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,4,65.636364,true
+14,William J. Clinton (First),Clinton,William J. Clinton,First,false,memorandum,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,43,124.681818,true
+14,William J. Clinton (First),Clinton,William J. Clinton,First,false,memorandum,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,0,1.318182,false
+14,William J. Clinton (First),Clinton,William J. Clinton,First,false,memorandum,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,0,5.545455,false
+14,William J. Clinton (First),Clinton,William J. Clinton,First,false,memorandum,no_vesting_clause,No vesting clause,105,227.090909,false
+14,William J. Clinton (First),Clinton,William J. Clinton,First,false,memorandum,other_vesting_authority,Other/unclassified vesting authority,4,34.590909,false
+14,William J. Clinton (First),Clinton,William J. Clinton,First,false,letter,generic_constitution_only,Generic Constitution only,0,4.454545,false
+14,William J. Clinton (First),Clinton,William J. Clinton,First,false,letter,specific_constitution_only,Specific Constitution only,0,4.181818,false
+14,William J. Clinton (First),Clinton,William J. Clinton,First,false,letter,generic_statute_only,Generic Statute only,0,0.045455,false
+14,William J. Clinton (First),Clinton,William J. Clinton,First,false,letter,specific_statute_only,Specific Statute only,26,144.318182,true
+14,William J. Clinton (First),Clinton,William J. Clinton,First,false,letter,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,0,65.636364,true
+14,William J. Clinton (First),Clinton,William J. Clinton,First,false,letter,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,0,124.681818,true
+14,William J. Clinton (First),Clinton,William J. Clinton,First,false,letter,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,0,1.318182,false
+14,William J. Clinton (First),Clinton,William J. Clinton,First,false,letter,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,0,5.545455,false
+14,William J. Clinton (First),Clinton,William J. Clinton,First,false,letter,no_vesting_clause,No vesting clause,243,227.090909,false
+14,William J. Clinton (First),Clinton,William J. Clinton,First,false,letter,other_vesting_authority,Other/unclassified vesting authority,5,34.590909,false
+14,William J. Clinton (First),Clinton,William J. Clinton,First,false,proclamation,generic_constitution_only,Generic Constitution only,0,4.454545,false
+14,William J. Clinton (First),Clinton,William J. Clinton,First,false,proclamation,specific_constitution_only,Specific Constitution only,0,4.181818,false
+14,William J. Clinton (First),Clinton,William J. Clinton,First,false,proclamation,generic_statute_only,Generic Statute only,0,0.045455,false
+14,William J. Clinton (First),Clinton,William J. Clinton,First,false,proclamation,specific_statute_only,Specific Statute only,1,144.318182,true
+14,William J. Clinton (First),Clinton,William J. Clinton,First,false,proclamation,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,44,65.636364,true
+14,William J. Clinton (First),Clinton,William J. Clinton,First,false,proclamation,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,45,124.681818,true
+14,William J. Clinton (First),Clinton,William J. Clinton,First,false,proclamation,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,0,1.318182,false
+14,William J. Clinton (First),Clinton,William J. Clinton,First,false,proclamation,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,0,5.545455,false
+14,William J. Clinton (First),Clinton,William J. Clinton,First,false,proclamation,no_vesting_clause,No vesting clause,1,227.090909,false
+14,William J. Clinton (First),Clinton,William J. Clinton,First,false,proclamation,other_vesting_authority,Other/unclassified vesting authority,10,34.590909,false
+15,William J. Clinton (Second),Clinton,William J. Clinton,Second,false,all,generic_constitution_only,Generic Constitution only,4,4.454545,false
+15,William J. Clinton (Second),Clinton,William J. Clinton,Second,false,all,specific_constitution_only,Specific Constitution only,2,4.181818,false
+15,William J. Clinton (Second),Clinton,William J. Clinton,Second,false,all,generic_statute_only,Generic Statute only,0,0.045455,false
+15,William J. Clinton (Second),Clinton,William J. Clinton,Second,false,all,specific_statute_only,Specific Statute only,201,144.318182,true
+15,William J. Clinton (Second),Clinton,William J. Clinton,Second,false,all,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,91,65.636364,true
+15,William J. Clinton (Second),Clinton,William J. Clinton,Second,false,all,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,161,124.681818,true
+15,William J. Clinton (Second),Clinton,William J. Clinton,Second,false,all,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,0,1.318182,false
+15,William J. Clinton (Second),Clinton,William J. Clinton,Second,false,all,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,0,5.545455,false
+15,William J. Clinton (Second),Clinton,William J. Clinton,Second,false,all,no_vesting_clause,No vesting clause,469,227.090909,false
+15,William J. Clinton (Second),Clinton,William J. Clinton,Second,false,all,other_vesting_authority,Other/unclassified vesting authority,17,34.590909,false
+15,William J. Clinton (Second),Clinton,William J. Clinton,Second,false,executive_order,generic_constitution_only,Generic Constitution only,0,4.454545,false
+15,William J. Clinton (Second),Clinton,William J. Clinton,Second,false,executive_order,specific_constitution_only,Specific Constitution only,0,4.181818,false
+15,William J. Clinton (Second),Clinton,William J. Clinton,Second,false,executive_order,generic_statute_only,Generic Statute only,0,0.045455,false
+15,William J. Clinton (Second),Clinton,William J. Clinton,Second,false,executive_order,specific_statute_only,Specific Statute only,1,144.318182,true
+15,William J. Clinton (Second),Clinton,William J. Clinton,Second,false,executive_order,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,75,65.636364,true
+15,William J. Clinton (Second),Clinton,William J. Clinton,Second,false,executive_order,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,84,124.681818,true
+15,William J. Clinton (Second),Clinton,William J. Clinton,Second,false,executive_order,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,0,1.318182,false
+15,William J. Clinton (Second),Clinton,William J. Clinton,Second,false,executive_order,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,0,5.545455,false
+15,William J. Clinton (Second),Clinton,William J. Clinton,Second,false,executive_order,no_vesting_clause,No vesting clause,1,227.090909,false
+15,William J. Clinton (Second),Clinton,William J. Clinton,Second,false,executive_order,other_vesting_authority,Other/unclassified vesting authority,1,34.590909,false
+15,William J. Clinton (Second),Clinton,William J. Clinton,Second,false,memorandum,generic_constitution_only,Generic Constitution only,3,4.454545,false
+15,William J. Clinton (Second),Clinton,William J. Clinton,Second,false,memorandum,specific_constitution_only,Specific Constitution only,0,4.181818,false
+15,William J. Clinton (Second),Clinton,William J. Clinton,Second,false,memorandum,generic_statute_only,Generic Statute only,0,0.045455,false
+15,William J. Clinton (Second),Clinton,William J. Clinton,Second,false,memorandum,specific_statute_only,Specific Statute only,130,144.318182,true
+15,William J. Clinton (Second),Clinton,William J. Clinton,Second,false,memorandum,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,4,65.636364,true
+15,William J. Clinton (Second),Clinton,William J. Clinton,Second,false,memorandum,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,39,124.681818,true
+15,William J. Clinton (Second),Clinton,William J. Clinton,Second,false,memorandum,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,0,1.318182,false
+15,William J. Clinton (Second),Clinton,William J. Clinton,Second,false,memorandum,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,0,5.545455,false
+15,William J. Clinton (Second),Clinton,William J. Clinton,Second,false,memorandum,no_vesting_clause,No vesting clause,156,227.090909,false
+15,William J. Clinton (Second),Clinton,William J. Clinton,Second,false,memorandum,other_vesting_authority,Other/unclassified vesting authority,8,34.590909,false
+15,William J. Clinton (Second),Clinton,William J. Clinton,Second,false,letter,generic_constitution_only,Generic Constitution only,0,4.454545,false
+15,William J. Clinton (Second),Clinton,William J. Clinton,Second,false,letter,specific_constitution_only,Specific Constitution only,2,4.181818,false
+15,William J. Clinton (Second),Clinton,William J. Clinton,Second,false,letter,generic_statute_only,Generic Statute only,0,0.045455,false
+15,William J. Clinton (Second),Clinton,William J. Clinton,Second,false,letter,specific_statute_only,Specific Statute only,46,144.318182,true
+15,William J. Clinton (Second),Clinton,William J. Clinton,Second,false,letter,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,0,65.636364,true
+15,William J. Clinton (Second),Clinton,William J. Clinton,Second,false,letter,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,2,124.681818,true
+15,William J. Clinton (Second),Clinton,William J. Clinton,Second,false,letter,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,0,1.318182,false
+15,William J. Clinton (Second),Clinton,William J. Clinton,Second,false,letter,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,0,5.545455,false
+15,William J. Clinton (Second),Clinton,William J. Clinton,Second,false,letter,no_vesting_clause,No vesting clause,311,227.090909,false
+15,William J. Clinton (Second),Clinton,William J. Clinton,Second,false,letter,other_vesting_authority,Other/unclassified vesting authority,8,34.590909,false
+15,William J. Clinton (Second),Clinton,William J. Clinton,Second,false,proclamation,generic_constitution_only,Generic Constitution only,1,4.454545,false
+15,William J. Clinton (Second),Clinton,William J. Clinton,Second,false,proclamation,specific_constitution_only,Specific Constitution only,0,4.181818,false
+15,William J. Clinton (Second),Clinton,William J. Clinton,Second,false,proclamation,generic_statute_only,Generic Statute only,0,0.045455,false
+15,William J. Clinton (Second),Clinton,William J. Clinton,Second,false,proclamation,specific_statute_only,Specific Statute only,24,144.318182,true
+15,William J. Clinton (Second),Clinton,William J. Clinton,Second,false,proclamation,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,12,65.636364,true
+15,William J. Clinton (Second),Clinton,William J. Clinton,Second,false,proclamation,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,36,124.681818,true
+15,William J. Clinton (Second),Clinton,William J. Clinton,Second,false,proclamation,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,0,1.318182,false
+15,William J. Clinton (Second),Clinton,William J. Clinton,Second,false,proclamation,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,0,5.545455,false
+15,William J. Clinton (Second),Clinton,William J. Clinton,Second,false,proclamation,no_vesting_clause,No vesting clause,1,227.090909,false
+15,William J. Clinton (Second),Clinton,William J. Clinton,Second,false,proclamation,other_vesting_authority,Other/unclassified vesting authority,0,34.590909,false
+16,George W. Bush (First),G.W. Bush,George W. Bush,First,false,all,generic_constitution_only,Generic Constitution only,2,4.454545,false
+16,George W. Bush (First),G.W. Bush,George W. Bush,First,false,all,specific_constitution_only,Specific Constitution only,2,4.181818,false
+16,George W. Bush (First),G.W. Bush,George W. Bush,First,false,all,generic_statute_only,Generic Statute only,0,0.045455,false
+16,George W. Bush (First),G.W. Bush,George W. Bush,First,false,all,specific_statute_only,Specific Statute only,180,144.318182,true
+16,George W. Bush (First),G.W. Bush,George W. Bush,First,false,all,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,84,65.636364,true
+16,George W. Bush (First),G.W. Bush,George W. Bush,First,false,all,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,214,124.681818,true
+16,George W. Bush (First),G.W. Bush,George W. Bush,First,false,all,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,2,1.318182,false
+16,George W. Bush (First),G.W. Bush,George W. Bush,First,false,all,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,1,5.545455,false
+16,George W. Bush (First),G.W. Bush,George W. Bush,First,false,all,no_vesting_clause,No vesting clause,316,227.090909,false
+16,George W. Bush (First),G.W. Bush,George W. Bush,First,false,all,other_vesting_authority,Other/unclassified vesting authority,8,34.590909,false
+16,George W. Bush (First),G.W. Bush,George W. Bush,First,false,executive_order,generic_constitution_only,Generic Constitution only,0,4.454545,false
+16,George W. Bush (First),G.W. Bush,George W. Bush,First,false,executive_order,specific_constitution_only,Specific Constitution only,1,4.181818,false
+16,George W. Bush (First),G.W. Bush,George W. Bush,First,false,executive_order,generic_statute_only,Generic Statute only,0,0.045455,false
+16,George W. Bush (First),G.W. Bush,George W. Bush,First,false,executive_order,specific_statute_only,Specific Statute only,1,144.318182,true
+16,George W. Bush (First),G.W. Bush,George W. Bush,First,false,executive_order,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,73,65.636364,true
+16,George W. Bush (First),G.W. Bush,George W. Bush,First,false,executive_order,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,95,124.681818,true
+16,George W. Bush (First),G.W. Bush,George W. Bush,First,false,executive_order,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,1,1.318182,false
+16,George W. Bush (First),G.W. Bush,George W. Bush,First,false,executive_order,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,0,5.545455,false
+16,George W. Bush (First),G.W. Bush,George W. Bush,First,false,executive_order,no_vesting_clause,No vesting clause,0,227.090909,false
+16,George W. Bush (First),G.W. Bush,George W. Bush,First,false,executive_order,other_vesting_authority,Other/unclassified vesting authority,0,34.590909,false
+16,George W. Bush (First),G.W. Bush,George W. Bush,First,false,memorandum,generic_constitution_only,Generic Constitution only,1,4.454545,false
+16,George W. Bush (First),G.W. Bush,George W. Bush,First,false,memorandum,specific_constitution_only,Specific Constitution only,0,4.181818,false
+16,George W. Bush (First),G.W. Bush,George W. Bush,First,false,memorandum,generic_statute_only,Generic Statute only,0,0.045455,false
+16,George W. Bush (First),G.W. Bush,George W. Bush,First,false,memorandum,specific_statute_only,Specific Statute only,129,144.318182,true
+16,George W. Bush (First),G.W. Bush,George W. Bush,First,false,memorandum,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,1,65.636364,true
+16,George W. Bush (First),G.W. Bush,George W. Bush,First,false,memorandum,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,80,124.681818,true
+16,George W. Bush (First),G.W. Bush,George W. Bush,First,false,memorandum,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,1,1.318182,false
+16,George W. Bush (First),G.W. Bush,George W. Bush,First,false,memorandum,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,1,5.545455,false
+16,George W. Bush (First),G.W. Bush,George W. Bush,First,false,memorandum,no_vesting_clause,No vesting clause,67,227.090909,false
+16,George W. Bush (First),G.W. Bush,George W. Bush,First,false,memorandum,other_vesting_authority,Other/unclassified vesting authority,2,34.590909,false
+16,George W. Bush (First),G.W. Bush,George W. Bush,First,false,letter,generic_constitution_only,Generic Constitution only,1,4.454545,false
+16,George W. Bush (First),G.W. Bush,George W. Bush,First,false,letter,specific_constitution_only,Specific Constitution only,1,4.181818,false
+16,George W. Bush (First),G.W. Bush,George W. Bush,First,false,letter,generic_statute_only,Generic Statute only,0,0.045455,false
+16,George W. Bush (First),G.W. Bush,George W. Bush,First,false,letter,specific_statute_only,Specific Statute only,49,144.318182,true
+16,George W. Bush (First),G.W. Bush,George W. Bush,First,false,letter,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,0,65.636364,true
+16,George W. Bush (First),G.W. Bush,George W. Bush,First,false,letter,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,1,124.681818,true
+16,George W. Bush (First),G.W. Bush,George W. Bush,First,false,letter,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,0,1.318182,false
+16,George W. Bush (First),G.W. Bush,George W. Bush,First,false,letter,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,0,5.545455,false
+16,George W. Bush (First),G.W. Bush,George W. Bush,First,false,letter,no_vesting_clause,No vesting clause,249,227.090909,false
+16,George W. Bush (First),G.W. Bush,George W. Bush,First,false,letter,other_vesting_authority,Other/unclassified vesting authority,3,34.590909,false
+16,George W. Bush (First),G.W. Bush,George W. Bush,First,false,proclamation,generic_constitution_only,Generic Constitution only,0,4.454545,false
+16,George W. Bush (First),G.W. Bush,George W. Bush,First,false,proclamation,specific_constitution_only,Specific Constitution only,0,4.181818,false
+16,George W. Bush (First),G.W. Bush,George W. Bush,First,false,proclamation,generic_statute_only,Generic Statute only,0,0.045455,false
+16,George W. Bush (First),G.W. Bush,George W. Bush,First,false,proclamation,specific_statute_only,Specific Statute only,1,144.318182,true
+16,George W. Bush (First),G.W. Bush,George W. Bush,First,false,proclamation,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,10,65.636364,true
+16,George W. Bush (First),G.W. Bush,George W. Bush,First,false,proclamation,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,38,124.681818,true
+16,George W. Bush (First),G.W. Bush,George W. Bush,First,false,proclamation,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,0,1.318182,false
+16,George W. Bush (First),G.W. Bush,George W. Bush,First,false,proclamation,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,0,5.545455,false
+16,George W. Bush (First),G.W. Bush,George W. Bush,First,false,proclamation,no_vesting_clause,No vesting clause,0,227.090909,false
+16,George W. Bush (First),G.W. Bush,George W. Bush,First,false,proclamation,other_vesting_authority,Other/unclassified vesting authority,3,34.590909,false
+17,George W. Bush (Second),G.W. Bush,George W. Bush,Second,false,all,generic_constitution_only,Generic Constitution only,3,4.454545,false
+17,George W. Bush (Second),G.W. Bush,George W. Bush,Second,false,all,specific_constitution_only,Specific Constitution only,1,4.181818,false
+17,George W. Bush (Second),G.W. Bush,George W. Bush,Second,false,all,generic_statute_only,Generic Statute only,0,0.045455,false
+17,George W. Bush (Second),G.W. Bush,George W. Bush,Second,false,all,specific_statute_only,Specific Statute only,88,144.318182,true
+17,George W. Bush (Second),G.W. Bush,George W. Bush,Second,false,all,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,63,65.636364,true
+17,George W. Bush (Second),G.W. Bush,George W. Bush,Second,false,all,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,236,124.681818,true
+17,George W. Bush (Second),G.W. Bush,George W. Bush,Second,false,all,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,0,1.318182,false
+17,George W. Bush (Second),G.W. Bush,George W. Bush,Second,false,all,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,1,5.545455,false
+17,George W. Bush (Second),G.W. Bush,George W. Bush,Second,false,all,no_vesting_clause,No vesting clause,155,227.090909,false
+17,George W. Bush (Second),G.W. Bush,George W. Bush,Second,false,all,other_vesting_authority,Other/unclassified vesting authority,3,34.590909,false
+17,George W. Bush (Second),G.W. Bush,George W. Bush,Second,false,executive_order,generic_constitution_only,Generic Constitution only,0,4.454545,false
+17,George W. Bush (Second),G.W. Bush,George W. Bush,Second,false,executive_order,specific_constitution_only,Specific Constitution only,0,4.181818,false
+17,George W. Bush (Second),G.W. Bush,George W. Bush,Second,false,executive_order,generic_statute_only,Generic Statute only,0,0.045455,false
+17,George W. Bush (Second),G.W. Bush,George W. Bush,Second,false,executive_order,specific_statute_only,Specific Statute only,0,144.318182,true
+17,George W. Bush (Second),G.W. Bush,George W. Bush,Second,false,executive_order,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,51,65.636364,true
+17,George W. Bush (Second),G.W. Bush,George W. Bush,Second,false,executive_order,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,66,124.681818,true
+17,George W. Bush (Second),G.W. Bush,George W. Bush,Second,false,executive_order,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,0,1.318182,false
+17,George W. Bush (Second),G.W. Bush,George W. Bush,Second,false,executive_order,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,1,5.545455,false
+17,George W. Bush (Second),G.W. Bush,George W. Bush,Second,false,executive_order,no_vesting_clause,No vesting clause,0,227.090909,false
+17,George W. Bush (Second),G.W. Bush,George W. Bush,Second,false,executive_order,other_vesting_authority,Other/unclassified vesting authority,0,34.590909,false
+17,George W. Bush (Second),G.W. Bush,George W. Bush,Second,false,memorandum,generic_constitution_only,Generic Constitution only,1,4.454545,false
+17,George W. Bush (Second),G.W. Bush,George W. Bush,Second,false,memorandum,specific_constitution_only,Specific Constitution only,0,4.181818,false
+17,George W. Bush (Second),G.W. Bush,George W. Bush,Second,false,memorandum,generic_statute_only,Generic Statute only,0,0.045455,false
+17,George W. Bush (Second),G.W. Bush,George W. Bush,Second,false,memorandum,specific_statute_only,Specific Statute only,71,144.318182,true
+17,George W. Bush (Second),G.W. Bush,George W. Bush,Second,false,memorandum,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,0,65.636364,true
+17,George W. Bush (Second),G.W. Bush,George W. Bush,Second,false,memorandum,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,130,124.681818,true
+17,George W. Bush (Second),G.W. Bush,George W. Bush,Second,false,memorandum,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,0,1.318182,false
+17,George W. Bush (Second),G.W. Bush,George W. Bush,Second,false,memorandum,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,0,5.545455,false
+17,George W. Bush (Second),G.W. Bush,George W. Bush,Second,false,memorandum,no_vesting_clause,No vesting clause,42,227.090909,false
+17,George W. Bush (Second),G.W. Bush,George W. Bush,Second,false,memorandum,other_vesting_authority,Other/unclassified vesting authority,0,34.590909,false
+17,George W. Bush (Second),G.W. Bush,George W. Bush,Second,false,letter,generic_constitution_only,Generic Constitution only,2,4.454545,false
+17,George W. Bush (Second),G.W. Bush,George W. Bush,Second,false,letter,specific_constitution_only,Specific Constitution only,0,4.181818,false
+17,George W. Bush (Second),G.W. Bush,George W. Bush,Second,false,letter,generic_statute_only,Generic Statute only,0,0.045455,false
+17,George W. Bush (Second),G.W. Bush,George W. Bush,Second,false,letter,specific_statute_only,Specific Statute only,11,144.318182,true
+17,George W. Bush (Second),G.W. Bush,George W. Bush,Second,false,letter,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,0,65.636364,true
+17,George W. Bush (Second),G.W. Bush,George W. Bush,Second,false,letter,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,0,124.681818,true
+17,George W. Bush (Second),G.W. Bush,George W. Bush,Second,false,letter,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,0,1.318182,false
+17,George W. Bush (Second),G.W. Bush,George W. Bush,Second,false,letter,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,0,5.545455,false
+17,George W. Bush (Second),G.W. Bush,George W. Bush,Second,false,letter,no_vesting_clause,No vesting clause,113,227.090909,false
+17,George W. Bush (Second),G.W. Bush,George W. Bush,Second,false,letter,other_vesting_authority,Other/unclassified vesting authority,2,34.590909,false
+17,George W. Bush (Second),G.W. Bush,George W. Bush,Second,false,proclamation,generic_constitution_only,Generic Constitution only,0,4.454545,false
+17,George W. Bush (Second),G.W. Bush,George W. Bush,Second,false,proclamation,specific_constitution_only,Specific Constitution only,1,4.181818,false
+17,George W. Bush (Second),G.W. Bush,George W. Bush,Second,false,proclamation,generic_statute_only,Generic Statute only,0,0.045455,false
+17,George W. Bush (Second),G.W. Bush,George W. Bush,Second,false,proclamation,specific_statute_only,Specific Statute only,6,144.318182,true
+17,George W. Bush (Second),G.W. Bush,George W. Bush,Second,false,proclamation,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,12,65.636364,true
+17,George W. Bush (Second),G.W. Bush,George W. Bush,Second,false,proclamation,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,40,124.681818,true
+17,George W. Bush (Second),G.W. Bush,George W. Bush,Second,false,proclamation,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,0,1.318182,false
+17,George W. Bush (Second),G.W. Bush,George W. Bush,Second,false,proclamation,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,0,5.545455,false
+17,George W. Bush (Second),G.W. Bush,George W. Bush,Second,false,proclamation,no_vesting_clause,No vesting clause,0,227.090909,false
+17,George W. Bush (Second),G.W. Bush,George W. Bush,Second,false,proclamation,other_vesting_authority,Other/unclassified vesting authority,1,34.590909,false
+18,Barack Obama (First),Obama,Barack Obama,First,false,all,generic_constitution_only,Generic Constitution only,3,4.454545,false
+18,Barack Obama (First),Obama,Barack Obama,First,false,all,specific_constitution_only,Specific Constitution only,4,4.181818,false
+18,Barack Obama (First),Obama,Barack Obama,First,false,all,generic_statute_only,Generic Statute only,0,0.045455,false
+18,Barack Obama (First),Obama,Barack Obama,First,false,all,specific_statute_only,Specific Statute only,69,144.318182,true
+18,Barack Obama (First),Obama,Barack Obama,First,false,all,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,107,65.636364,true
+18,Barack Obama (First),Obama,Barack Obama,First,false,all,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,173,124.681818,true
+18,Barack Obama (First),Obama,Barack Obama,First,false,all,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,0,1.318182,false
+18,Barack Obama (First),Obama,Barack Obama,First,false,all,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,2,5.545455,false
+18,Barack Obama (First),Obama,Barack Obama,First,false,all,no_vesting_clause,No vesting clause,187,227.090909,false
+18,Barack Obama (First),Obama,Barack Obama,First,false,all,other_vesting_authority,Other/unclassified vesting authority,4,34.590909,false
+18,Barack Obama (First),Obama,Barack Obama,First,false,executive_order,generic_constitution_only,Generic Constitution only,0,4.454545,false
+18,Barack Obama (First),Obama,Barack Obama,First,false,executive_order,specific_constitution_only,Specific Constitution only,0,4.181818,false
+18,Barack Obama (First),Obama,Barack Obama,First,false,executive_order,generic_statute_only,Generic Statute only,0,0.045455,false
+18,Barack Obama (First),Obama,Barack Obama,First,false,executive_order,specific_statute_only,Specific Statute only,0,144.318182,true
+18,Barack Obama (First),Obama,Barack Obama,First,false,executive_order,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,82,65.636364,true
+18,Barack Obama (First),Obama,Barack Obama,First,false,executive_order,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,63,124.681818,true
+18,Barack Obama (First),Obama,Barack Obama,First,false,executive_order,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,0,1.318182,false
+18,Barack Obama (First),Obama,Barack Obama,First,false,executive_order,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,1,5.545455,false
+18,Barack Obama (First),Obama,Barack Obama,First,false,executive_order,no_vesting_clause,No vesting clause,1,227.090909,false
+18,Barack Obama (First),Obama,Barack Obama,First,false,executive_order,other_vesting_authority,Other/unclassified vesting authority,0,34.590909,false
+18,Barack Obama (First),Obama,Barack Obama,First,false,memorandum,generic_constitution_only,Generic Constitution only,3,4.454545,false
+18,Barack Obama (First),Obama,Barack Obama,First,false,memorandum,specific_constitution_only,Specific Constitution only,2,4.181818,false
+18,Barack Obama (First),Obama,Barack Obama,First,false,memorandum,generic_statute_only,Generic Statute only,0,0.045455,false
+18,Barack Obama (First),Obama,Barack Obama,First,false,memorandum,specific_statute_only,Specific Statute only,45,144.318182,true
+18,Barack Obama (First),Obama,Barack Obama,First,false,memorandum,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,15,65.636364,true
+18,Barack Obama (First),Obama,Barack Obama,First,false,memorandum,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,86,124.681818,true
+18,Barack Obama (First),Obama,Barack Obama,First,false,memorandum,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,0,1.318182,false
+18,Barack Obama (First),Obama,Barack Obama,First,false,memorandum,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,1,5.545455,false
+18,Barack Obama (First),Obama,Barack Obama,First,false,memorandum,no_vesting_clause,No vesting clause,85,227.090909,false
+18,Barack Obama (First),Obama,Barack Obama,First,false,memorandum,other_vesting_authority,Other/unclassified vesting authority,2,34.590909,false
+18,Barack Obama (First),Obama,Barack Obama,First,false,letter,generic_constitution_only,Generic Constitution only,0,4.454545,false
+18,Barack Obama (First),Obama,Barack Obama,First,false,letter,specific_constitution_only,Specific Constitution only,2,4.181818,false
+18,Barack Obama (First),Obama,Barack Obama,First,false,letter,generic_statute_only,Generic Statute only,0,0.045455,false
+18,Barack Obama (First),Obama,Barack Obama,First,false,letter,specific_statute_only,Specific Statute only,20,144.318182,true
+18,Barack Obama (First),Obama,Barack Obama,First,false,letter,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,0,65.636364,true
+18,Barack Obama (First),Obama,Barack Obama,First,false,letter,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,0,124.681818,true
+18,Barack Obama (First),Obama,Barack Obama,First,false,letter,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,0,1.318182,false
+18,Barack Obama (First),Obama,Barack Obama,First,false,letter,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,0,5.545455,false
+18,Barack Obama (First),Obama,Barack Obama,First,false,letter,no_vesting_clause,No vesting clause,101,227.090909,false
+18,Barack Obama (First),Obama,Barack Obama,First,false,letter,other_vesting_authority,Other/unclassified vesting authority,2,34.590909,false
+18,Barack Obama (First),Obama,Barack Obama,First,false,proclamation,generic_constitution_only,Generic Constitution only,0,4.454545,false
+18,Barack Obama (First),Obama,Barack Obama,First,false,proclamation,specific_constitution_only,Specific Constitution only,0,4.181818,false
+18,Barack Obama (First),Obama,Barack Obama,First,false,proclamation,generic_statute_only,Generic Statute only,0,0.045455,false
+18,Barack Obama (First),Obama,Barack Obama,First,false,proclamation,specific_statute_only,Specific Statute only,4,144.318182,true
+18,Barack Obama (First),Obama,Barack Obama,First,false,proclamation,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,10,65.636364,true
+18,Barack Obama (First),Obama,Barack Obama,First,false,proclamation,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,24,124.681818,true
+18,Barack Obama (First),Obama,Barack Obama,First,false,proclamation,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,0,1.318182,false
+18,Barack Obama (First),Obama,Barack Obama,First,false,proclamation,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,0,5.545455,false
+18,Barack Obama (First),Obama,Barack Obama,First,false,proclamation,no_vesting_clause,No vesting clause,0,227.090909,false
+18,Barack Obama (First),Obama,Barack Obama,First,false,proclamation,other_vesting_authority,Other/unclassified vesting authority,0,34.590909,false
+19,Barack Obama (Second),Obama,Barack Obama,Second,false,all,generic_constitution_only,Generic Constitution only,5,4.454545,false
+19,Barack Obama (Second),Obama,Barack Obama,Second,false,all,specific_constitution_only,Specific Constitution only,5,4.181818,false
+19,Barack Obama (Second),Obama,Barack Obama,Second,false,all,generic_statute_only,Generic Statute only,0,0.045455,false
+19,Barack Obama (Second),Obama,Barack Obama,Second,false,all,specific_statute_only,Specific Statute only,101,144.318182,true
+19,Barack Obama (Second),Obama,Barack Obama,Second,false,all,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,118,65.636364,true
+19,Barack Obama (Second),Obama,Barack Obama,Second,false,all,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,188,124.681818,true
+19,Barack Obama (Second),Obama,Barack Obama,Second,false,all,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,1,1.318182,false
+19,Barack Obama (Second),Obama,Barack Obama,Second,false,all,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,0,5.545455,false
+19,Barack Obama (Second),Obama,Barack Obama,Second,false,all,no_vesting_clause,No vesting clause,173,227.090909,false
+19,Barack Obama (Second),Obama,Barack Obama,Second,false,all,other_vesting_authority,Other/unclassified vesting authority,1,34.590909,false
+19,Barack Obama (Second),Obama,Barack Obama,Second,false,executive_order,generic_constitution_only,Generic Constitution only,1,4.454545,false
+19,Barack Obama (Second),Obama,Barack Obama,Second,false,executive_order,specific_constitution_only,Specific Constitution only,0,4.181818,false
+19,Barack Obama (Second),Obama,Barack Obama,Second,false,executive_order,generic_statute_only,Generic Statute only,0,0.045455,false
+19,Barack Obama (Second),Obama,Barack Obama,Second,false,executive_order,specific_statute_only,Specific Statute only,0,144.318182,true
+19,Barack Obama (Second),Obama,Barack Obama,Second,false,executive_order,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,54,65.636364,true
+19,Barack Obama (Second),Obama,Barack Obama,Second,false,executive_order,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,69,124.681818,true
+19,Barack Obama (Second),Obama,Barack Obama,Second,false,executive_order,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,1,1.318182,false
+19,Barack Obama (Second),Obama,Barack Obama,Second,false,executive_order,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,0,5.545455,false
+19,Barack Obama (Second),Obama,Barack Obama,Second,false,executive_order,no_vesting_clause,No vesting clause,1,227.090909,false
+19,Barack Obama (Second),Obama,Barack Obama,Second,false,executive_order,other_vesting_authority,Other/unclassified vesting authority,0,34.590909,false
+19,Barack Obama (Second),Obama,Barack Obama,Second,false,memorandum,generic_constitution_only,Generic Constitution only,3,4.454545,false
+19,Barack Obama (Second),Obama,Barack Obama,Second,false,memorandum,specific_constitution_only,Specific Constitution only,2,4.181818,false
+19,Barack Obama (Second),Obama,Barack Obama,Second,false,memorandum,generic_statute_only,Generic Statute only,0,0.045455,false
+19,Barack Obama (Second),Obama,Barack Obama,Second,false,memorandum,specific_statute_only,Specific Statute only,38,144.318182,true
+19,Barack Obama (Second),Obama,Barack Obama,Second,false,memorandum,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,52,65.636364,true
+19,Barack Obama (Second),Obama,Barack Obama,Second,false,memorandum,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,104,124.681818,true
+19,Barack Obama (Second),Obama,Barack Obama,Second,false,memorandum,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,0,1.318182,false
+19,Barack Obama (Second),Obama,Barack Obama,Second,false,memorandum,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,0,5.545455,false
+19,Barack Obama (Second),Obama,Barack Obama,Second,false,memorandum,no_vesting_clause,No vesting clause,33,227.090909,false
+19,Barack Obama (Second),Obama,Barack Obama,Second,false,memorandum,other_vesting_authority,Other/unclassified vesting authority,1,34.590909,false
+19,Barack Obama (Second),Obama,Barack Obama,Second,false,letter,generic_constitution_only,Generic Constitution only,1,4.454545,false
+19,Barack Obama (Second),Obama,Barack Obama,Second,false,letter,specific_constitution_only,Specific Constitution only,3,4.181818,false
+19,Barack Obama (Second),Obama,Barack Obama,Second,false,letter,generic_statute_only,Generic Statute only,0,0.045455,false
+19,Barack Obama (Second),Obama,Barack Obama,Second,false,letter,specific_statute_only,Specific Statute only,32,144.318182,true
+19,Barack Obama (Second),Obama,Barack Obama,Second,false,letter,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,0,65.636364,true
+19,Barack Obama (Second),Obama,Barack Obama,Second,false,letter,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,0,124.681818,true
+19,Barack Obama (Second),Obama,Barack Obama,Second,false,letter,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,0,1.318182,false
+19,Barack Obama (Second),Obama,Barack Obama,Second,false,letter,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,0,5.545455,false
+19,Barack Obama (Second),Obama,Barack Obama,Second,false,letter,no_vesting_clause,No vesting clause,139,227.090909,false
+19,Barack Obama (Second),Obama,Barack Obama,Second,false,letter,other_vesting_authority,Other/unclassified vesting authority,0,34.590909,false
+19,Barack Obama (Second),Obama,Barack Obama,Second,false,proclamation,generic_constitution_only,Generic Constitution only,0,4.454545,false
+19,Barack Obama (Second),Obama,Barack Obama,Second,false,proclamation,specific_constitution_only,Specific Constitution only,0,4.181818,false
+19,Barack Obama (Second),Obama,Barack Obama,Second,false,proclamation,generic_statute_only,Generic Statute only,0,0.045455,false
+19,Barack Obama (Second),Obama,Barack Obama,Second,false,proclamation,specific_statute_only,Specific Statute only,31,144.318182,true
+19,Barack Obama (Second),Obama,Barack Obama,Second,false,proclamation,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,12,65.636364,true
+19,Barack Obama (Second),Obama,Barack Obama,Second,false,proclamation,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,15,124.681818,true
+19,Barack Obama (Second),Obama,Barack Obama,Second,false,proclamation,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,0,1.318182,false
+19,Barack Obama (Second),Obama,Barack Obama,Second,false,proclamation,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,0,5.545455,false
+19,Barack Obama (Second),Obama,Barack Obama,Second,false,proclamation,no_vesting_clause,No vesting clause,0,227.090909,false
+19,Barack Obama (Second),Obama,Barack Obama,Second,false,proclamation,other_vesting_authority,Other/unclassified vesting authority,0,34.590909,false
+20,Donald J. Trump (First),Trump,Donald J. Trump,First,false,all,generic_constitution_only,Generic Constitution only,4,4.454545,false
+20,Donald J. Trump (First),Trump,Donald J. Trump,First,false,all,specific_constitution_only,Specific Constitution only,2,4.181818,false
+20,Donald J. Trump (First),Trump,Donald J. Trump,First,false,all,generic_statute_only,Generic Statute only,0,0.045455,false
+20,Donald J. Trump (First),Trump,Donald J. Trump,First,false,all,specific_statute_only,Specific Statute only,67,144.318182,true
+20,Donald J. Trump (First),Trump,Donald J. Trump,First,false,all,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,238,65.636364,true
+20,Donald J. Trump (First),Trump,Donald J. Trump,First,false,all,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,264,124.681818,true
+20,Donald J. Trump (First),Trump,Donald J. Trump,First,false,all,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,5,1.318182,false
+20,Donald J. Trump (First),Trump,Donald J. Trump,First,false,all,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,2,5.545455,false
+20,Donald J. Trump (First),Trump,Donald J. Trump,First,false,all,no_vesting_clause,No vesting clause,183,227.090909,false
+20,Donald J. Trump (First),Trump,Donald J. Trump,First,false,all,other_vesting_authority,Other/unclassified vesting authority,1,34.590909,false
+20,Donald J. Trump (First),Trump,Donald J. Trump,First,false,executive_order,generic_constitution_only,Generic Constitution only,0,4.454545,false
+20,Donald J. Trump (First),Trump,Donald J. Trump,First,false,executive_order,specific_constitution_only,Specific Constitution only,0,4.181818,false
+20,Donald J. Trump (First),Trump,Donald J. Trump,First,false,executive_order,generic_statute_only,Generic Statute only,0,0.045455,false
+20,Donald J. Trump (First),Trump,Donald J. Trump,First,false,executive_order,specific_statute_only,Specific Statute only,0,144.318182,true
+20,Donald J. Trump (First),Trump,Donald J. Trump,First,false,executive_order,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,137,65.636364,true
+20,Donald J. Trump (First),Trump,Donald J. Trump,First,false,executive_order,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,80,124.681818,true
+20,Donald J. Trump (First),Trump,Donald J. Trump,First,false,executive_order,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,1,1.318182,false
+20,Donald J. Trump (First),Trump,Donald J. Trump,First,false,executive_order,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,0,5.545455,false
+20,Donald J. Trump (First),Trump,Donald J. Trump,First,false,executive_order,no_vesting_clause,No vesting clause,0,227.090909,false
+20,Donald J. Trump (First),Trump,Donald J. Trump,First,false,executive_order,other_vesting_authority,Other/unclassified vesting authority,0,34.590909,false
+20,Donald J. Trump (First),Trump,Donald J. Trump,First,false,memorandum,generic_constitution_only,Generic Constitution only,4,4.454545,false
+20,Donald J. Trump (First),Trump,Donald J. Trump,First,false,memorandum,specific_constitution_only,Specific Constitution only,1,4.181818,false
+20,Donald J. Trump (First),Trump,Donald J. Trump,First,false,memorandum,generic_statute_only,Generic Statute only,0,0.045455,false
+20,Donald J. Trump (First),Trump,Donald J. Trump,First,false,memorandum,specific_statute_only,Specific Statute only,11,144.318182,true
+20,Donald J. Trump (First),Trump,Donald J. Trump,First,false,memorandum,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,68,65.636364,true
+20,Donald J. Trump (First),Trump,Donald J. Trump,First,false,memorandum,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,122,124.681818,true
+20,Donald J. Trump (First),Trump,Donald J. Trump,First,false,memorandum,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,4,1.318182,false
+20,Donald J. Trump (First),Trump,Donald J. Trump,First,false,memorandum,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,2,5.545455,false
+20,Donald J. Trump (First),Trump,Donald J. Trump,First,false,memorandum,no_vesting_clause,No vesting clause,34,227.090909,false
+20,Donald J. Trump (First),Trump,Donald J. Trump,First,false,memorandum,other_vesting_authority,Other/unclassified vesting authority,0,34.590909,false
+20,Donald J. Trump (First),Trump,Donald J. Trump,First,false,letter,generic_constitution_only,Generic Constitution only,0,4.454545,false
+20,Donald J. Trump (First),Trump,Donald J. Trump,First,false,letter,specific_constitution_only,Specific Constitution only,1,4.181818,false
+20,Donald J. Trump (First),Trump,Donald J. Trump,First,false,letter,generic_statute_only,Generic Statute only,0,0.045455,false
+20,Donald J. Trump (First),Trump,Donald J. Trump,First,false,letter,specific_statute_only,Specific Statute only,53,144.318182,true
+20,Donald J. Trump (First),Trump,Donald J. Trump,First,false,letter,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,3,65.636364,true
+20,Donald J. Trump (First),Trump,Donald J. Trump,First,false,letter,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,0,124.681818,true
+20,Donald J. Trump (First),Trump,Donald J. Trump,First,false,letter,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,0,1.318182,false
+20,Donald J. Trump (First),Trump,Donald J. Trump,First,false,letter,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,0,5.545455,false
+20,Donald J. Trump (First),Trump,Donald J. Trump,First,false,letter,no_vesting_clause,No vesting clause,149,227.090909,false
+20,Donald J. Trump (First),Trump,Donald J. Trump,First,false,letter,other_vesting_authority,Other/unclassified vesting authority,0,34.590909,false
+20,Donald J. Trump (First),Trump,Donald J. Trump,First,false,proclamation,generic_constitution_only,Generic Constitution only,0,4.454545,false
+20,Donald J. Trump (First),Trump,Donald J. Trump,First,false,proclamation,specific_constitution_only,Specific Constitution only,0,4.181818,false
+20,Donald J. Trump (First),Trump,Donald J. Trump,First,false,proclamation,generic_statute_only,Generic Statute only,0,0.045455,false
+20,Donald J. Trump (First),Trump,Donald J. Trump,First,false,proclamation,specific_statute_only,Specific Statute only,3,144.318182,true
+20,Donald J. Trump (First),Trump,Donald J. Trump,First,false,proclamation,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,30,65.636364,true
+20,Donald J. Trump (First),Trump,Donald J. Trump,First,false,proclamation,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,62,124.681818,true
+20,Donald J. Trump (First),Trump,Donald J. Trump,First,false,proclamation,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,0,1.318182,false
+20,Donald J. Trump (First),Trump,Donald J. Trump,First,false,proclamation,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,0,5.545455,false
+20,Donald J. Trump (First),Trump,Donald J. Trump,First,false,proclamation,no_vesting_clause,No vesting clause,0,227.090909,false
+20,Donald J. Trump (First),Trump,Donald J. Trump,First,false,proclamation,other_vesting_authority,Other/unclassified vesting authority,1,34.590909,false
+21,"Joseph R. Biden, Jr. (First)",Biden,"Joseph R. Biden, Jr.",First,false,all,generic_constitution_only,Generic Constitution only,8,4.454545,false
+21,"Joseph R. Biden, Jr. (First)",Biden,"Joseph R. Biden, Jr.",First,false,all,specific_constitution_only,Specific Constitution only,29,4.181818,false
+21,"Joseph R. Biden, Jr. (First)",Biden,"Joseph R. Biden, Jr.",First,false,all,generic_statute_only,Generic Statute only,0,0.045455,false
+21,"Joseph R. Biden, Jr. (First)",Biden,"Joseph R. Biden, Jr.",First,false,all,specific_statute_only,Specific Statute only,64,144.318182,true
+21,"Joseph R. Biden, Jr. (First)",Biden,"Joseph R. Biden, Jr.",First,false,all,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,143,65.636364,true
+21,"Joseph R. Biden, Jr. (First)",Biden,"Joseph R. Biden, Jr.",First,false,all,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,261,124.681818,true
+21,"Joseph R. Biden, Jr. (First)",Biden,"Joseph R. Biden, Jr.",First,false,all,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,2,1.318182,false
+21,"Joseph R. Biden, Jr. (First)",Biden,"Joseph R. Biden, Jr.",First,false,all,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,0,5.545455,false
+21,"Joseph R. Biden, Jr. (First)",Biden,"Joseph R. Biden, Jr.",First,false,all,no_vesting_clause,No vesting clause,181,227.090909,false
+21,"Joseph R. Biden, Jr. (First)",Biden,"Joseph R. Biden, Jr.",First,false,all,other_vesting_authority,Other/unclassified vesting authority,1,34.590909,false
+21,"Joseph R. Biden, Jr. (First)",Biden,"Joseph R. Biden, Jr.",First,false,executive_order,generic_constitution_only,Generic Constitution only,0,4.454545,false
+21,"Joseph R. Biden, Jr. (First)",Biden,"Joseph R. Biden, Jr.",First,false,executive_order,specific_constitution_only,Specific Constitution only,0,4.181818,false
+21,"Joseph R. Biden, Jr. (First)",Biden,"Joseph R. Biden, Jr.",First,false,executive_order,generic_statute_only,Generic Statute only,0,0.045455,false
+21,"Joseph R. Biden, Jr. (First)",Biden,"Joseph R. Biden, Jr.",First,false,executive_order,specific_statute_only,Specific Statute only,0,144.318182,true
+21,"Joseph R. Biden, Jr. (First)",Biden,"Joseph R. Biden, Jr.",First,false,executive_order,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,96,65.636364,true
+21,"Joseph R. Biden, Jr. (First)",Biden,"Joseph R. Biden, Jr.",First,false,executive_order,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,63,124.681818,true
+21,"Joseph R. Biden, Jr. (First)",Biden,"Joseph R. Biden, Jr.",First,false,executive_order,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,2,1.318182,false
+21,"Joseph R. Biden, Jr. (First)",Biden,"Joseph R. Biden, Jr.",First,false,executive_order,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,0,5.545455,false
+21,"Joseph R. Biden, Jr. (First)",Biden,"Joseph R. Biden, Jr.",First,false,executive_order,no_vesting_clause,No vesting clause,0,227.090909,false
+21,"Joseph R. Biden, Jr. (First)",Biden,"Joseph R. Biden, Jr.",First,false,executive_order,other_vesting_authority,Other/unclassified vesting authority,0,34.590909,false
+21,"Joseph R. Biden, Jr. (First)",Biden,"Joseph R. Biden, Jr.",First,false,memorandum,generic_constitution_only,Generic Constitution only,8,4.454545,false
+21,"Joseph R. Biden, Jr. (First)",Biden,"Joseph R. Biden, Jr.",First,false,memorandum,specific_constitution_only,Specific Constitution only,2,4.181818,false
+21,"Joseph R. Biden, Jr. (First)",Biden,"Joseph R. Biden, Jr.",First,false,memorandum,generic_statute_only,Generic Statute only,0,0.045455,false
+21,"Joseph R. Biden, Jr. (First)",Biden,"Joseph R. Biden, Jr.",First,false,memorandum,specific_statute_only,Specific Statute only,19,144.318182,true
+21,"Joseph R. Biden, Jr. (First)",Biden,"Joseph R. Biden, Jr.",First,false,memorandum,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,38,65.636364,true
+21,"Joseph R. Biden, Jr. (First)",Biden,"Joseph R. Biden, Jr.",First,false,memorandum,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,157,124.681818,true
+21,"Joseph R. Biden, Jr. (First)",Biden,"Joseph R. Biden, Jr.",First,false,memorandum,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,0,1.318182,false
+21,"Joseph R. Biden, Jr. (First)",Biden,"Joseph R. Biden, Jr.",First,false,memorandum,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,0,5.545455,false
+21,"Joseph R. Biden, Jr. (First)",Biden,"Joseph R. Biden, Jr.",First,false,memorandum,no_vesting_clause,No vesting clause,35,227.090909,false
+21,"Joseph R. Biden, Jr. (First)",Biden,"Joseph R. Biden, Jr.",First,false,memorandum,other_vesting_authority,Other/unclassified vesting authority,0,34.590909,false
+21,"Joseph R. Biden, Jr. (First)",Biden,"Joseph R. Biden, Jr.",First,false,letter,generic_constitution_only,Generic Constitution only,0,4.454545,false
+21,"Joseph R. Biden, Jr. (First)",Biden,"Joseph R. Biden, Jr.",First,false,letter,specific_constitution_only,Specific Constitution only,24,4.181818,false
+21,"Joseph R. Biden, Jr. (First)",Biden,"Joseph R. Biden, Jr.",First,false,letter,generic_statute_only,Generic Statute only,0,0.045455,false
+21,"Joseph R. Biden, Jr. (First)",Biden,"Joseph R. Biden, Jr.",First,false,letter,specific_statute_only,Specific Statute only,32,144.318182,true
+21,"Joseph R. Biden, Jr. (First)",Biden,"Joseph R. Biden, Jr.",First,false,letter,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,1,65.636364,true
+21,"Joseph R. Biden, Jr. (First)",Biden,"Joseph R. Biden, Jr.",First,false,letter,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,0,124.681818,true
+21,"Joseph R. Biden, Jr. (First)",Biden,"Joseph R. Biden, Jr.",First,false,letter,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,0,1.318182,false
+21,"Joseph R. Biden, Jr. (First)",Biden,"Joseph R. Biden, Jr.",First,false,letter,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,0,5.545455,false
+21,"Joseph R. Biden, Jr. (First)",Biden,"Joseph R. Biden, Jr.",First,false,letter,no_vesting_clause,No vesting clause,144,227.090909,false
+21,"Joseph R. Biden, Jr. (First)",Biden,"Joseph R. Biden, Jr.",First,false,letter,other_vesting_authority,Other/unclassified vesting authority,0,34.590909,false
+21,"Joseph R. Biden, Jr. (First)",Biden,"Joseph R. Biden, Jr.",First,false,proclamation,generic_constitution_only,Generic Constitution only,0,4.454545,false
+21,"Joseph R. Biden, Jr. (First)",Biden,"Joseph R. Biden, Jr.",First,false,proclamation,specific_constitution_only,Specific Constitution only,3,4.181818,false
+21,"Joseph R. Biden, Jr. (First)",Biden,"Joseph R. Biden, Jr.",First,false,proclamation,generic_statute_only,Generic Statute only,0,0.045455,false
+21,"Joseph R. Biden, Jr. (First)",Biden,"Joseph R. Biden, Jr.",First,false,proclamation,specific_statute_only,Specific Statute only,13,144.318182,true
+21,"Joseph R. Biden, Jr. (First)",Biden,"Joseph R. Biden, Jr.",First,false,proclamation,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,8,65.636364,true
+21,"Joseph R. Biden, Jr. (First)",Biden,"Joseph R. Biden, Jr.",First,false,proclamation,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,41,124.681818,true
+21,"Joseph R. Biden, Jr. (First)",Biden,"Joseph R. Biden, Jr.",First,false,proclamation,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,0,1.318182,false
+21,"Joseph R. Biden, Jr. (First)",Biden,"Joseph R. Biden, Jr.",First,false,proclamation,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,0,5.545455,false
+21,"Joseph R. Biden, Jr. (First)",Biden,"Joseph R. Biden, Jr.",First,false,proclamation,no_vesting_clause,No vesting clause,2,227.090909,false
+21,"Joseph R. Biden, Jr. (First)",Biden,"Joseph R. Biden, Jr.",First,false,proclamation,other_vesting_authority,Other/unclassified vesting authority,1,34.590909,false
+22,Donald J. Trump (Second),Trump*,Donald J. Trump,Second,true,all,generic_constitution_only,Generic Constitution only,0,4.454545,false
+22,Donald J. Trump (Second),Trump*,Donald J. Trump,Second,true,all,specific_constitution_only,Specific Constitution only,5,4.181818,false
+22,Donald J. Trump (Second),Trump*,Donald J. Trump,Second,true,all,generic_statute_only,Generic Statute only,1,0.045455,false
+22,Donald J. Trump (Second),Trump*,Donald J. Trump,Second,true,all,specific_statute_only,Specific Statute only,3,144.318182,true
+22,Donald J. Trump (Second),Trump*,Donald J. Trump,Second,true,all,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,209,65.636364,true
+22,Donald J. Trump (Second),Trump*,Donald J. Trump,Second,true,all,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,118,124.681818,true
+22,Donald J. Trump (Second),Trump*,Donald J. Trump,Second,true,all,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,2,1.318182,false
+22,Donald J. Trump (Second),Trump*,Donald J. Trump,Second,true,all,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,1,5.545455,false
+22,Donald J. Trump (Second),Trump*,Donald J. Trump,Second,true,all,no_vesting_clause,No vesting clause,46,227.090909,false
+22,Donald J. Trump (Second),Trump*,Donald J. Trump,Second,true,all,other_vesting_authority,Other/unclassified vesting authority,0,34.590909,false
+22,Donald J. Trump (Second),Trump*,Donald J. Trump,Second,true,executive_order,generic_constitution_only,Generic Constitution only,0,4.454545,false
+22,Donald J. Trump (Second),Trump*,Donald J. Trump,Second,true,executive_order,specific_constitution_only,Specific Constitution only,0,4.181818,false
+22,Donald J. Trump (Second),Trump*,Donald J. Trump,Second,true,executive_order,generic_statute_only,Generic Statute only,0,0.045455,false
+22,Donald J. Trump (Second),Trump*,Donald J. Trump,Second,true,executive_order,specific_statute_only,Specific Statute only,0,144.318182,true
+22,Donald J. Trump (Second),Trump*,Donald J. Trump,Second,true,executive_order,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,166,65.636364,true
+22,Donald J. Trump (Second),Trump*,Donald J. Trump,Second,true,executive_order,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,73,124.681818,true
+22,Donald J. Trump (Second),Trump*,Donald J. Trump,Second,true,executive_order,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,2,1.318182,false
+22,Donald J. Trump (Second),Trump*,Donald J. Trump,Second,true,executive_order,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,0,5.545455,false
+22,Donald J. Trump (Second),Trump*,Donald J. Trump,Second,true,executive_order,no_vesting_clause,No vesting clause,2,227.090909,false
+22,Donald J. Trump (Second),Trump*,Donald J. Trump,Second,true,executive_order,other_vesting_authority,Other/unclassified vesting authority,0,34.590909,false
+22,Donald J. Trump (Second),Trump*,Donald J. Trump,Second,true,memorandum,generic_constitution_only,Generic Constitution only,0,4.454545,false
+22,Donald J. Trump (Second),Trump*,Donald J. Trump,Second,true,memorandum,specific_constitution_only,Specific Constitution only,2,4.181818,false
+22,Donald J. Trump (Second),Trump*,Donald J. Trump,Second,true,memorandum,generic_statute_only,Generic Statute only,0,0.045455,false
+22,Donald J. Trump (Second),Trump*,Donald J. Trump,Second,true,memorandum,specific_statute_only,Specific Statute only,3,144.318182,true
+22,Donald J. Trump (Second),Trump*,Donald J. Trump,Second,true,memorandum,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,28,65.636364,true
+22,Donald J. Trump (Second),Trump*,Donald J. Trump,Second,true,memorandum,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,15,124.681818,true
+22,Donald J. Trump (Second),Trump*,Donald J. Trump,Second,true,memorandum,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,0,1.318182,false
+22,Donald J. Trump (Second),Trump*,Donald J. Trump,Second,true,memorandum,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,0,5.545455,false
+22,Donald J. Trump (Second),Trump*,Donald J. Trump,Second,true,memorandum,no_vesting_clause,No vesting clause,40,227.090909,false
+22,Donald J. Trump (Second),Trump*,Donald J. Trump,Second,true,memorandum,other_vesting_authority,Other/unclassified vesting authority,0,34.590909,false
+22,Donald J. Trump (Second),Trump*,Donald J. Trump,Second,true,letter,generic_constitution_only,Generic Constitution only,0,4.454545,false
+22,Donald J. Trump (Second),Trump*,Donald J. Trump,Second,true,letter,specific_constitution_only,Specific Constitution only,1,4.181818,false
+22,Donald J. Trump (Second),Trump*,Donald J. Trump,Second,true,letter,generic_statute_only,Generic Statute only,0,0.045455,false
+22,Donald J. Trump (Second),Trump*,Donald J. Trump,Second,true,letter,specific_statute_only,Specific Statute only,0,144.318182,true
+22,Donald J. Trump (Second),Trump*,Donald J. Trump,Second,true,letter,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,0,65.636364,true
+22,Donald J. Trump (Second),Trump*,Donald J. Trump,Second,true,letter,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,0,124.681818,true
+22,Donald J. Trump (Second),Trump*,Donald J. Trump,Second,true,letter,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,0,1.318182,false
+22,Donald J. Trump (Second),Trump*,Donald J. Trump,Second,true,letter,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,1,5.545455,false
+22,Donald J. Trump (Second),Trump*,Donald J. Trump,Second,true,letter,no_vesting_clause,No vesting clause,4,227.090909,false
+22,Donald J. Trump (Second),Trump*,Donald J. Trump,Second,true,letter,other_vesting_authority,Other/unclassified vesting authority,0,34.590909,false
+22,Donald J. Trump (Second),Trump*,Donald J. Trump,Second,true,proclamation,generic_constitution_only,Generic Constitution only,0,4.454545,false
+22,Donald J. Trump (Second),Trump*,Donald J. Trump,Second,true,proclamation,specific_constitution_only,Specific Constitution only,2,4.181818,false
+22,Donald J. Trump (Second),Trump*,Donald J. Trump,Second,true,proclamation,generic_statute_only,Generic Statute only,1,0.045455,false
+22,Donald J. Trump (Second),Trump*,Donald J. Trump,Second,true,proclamation,specific_statute_only,Specific Statute only,0,144.318182,true
+22,Donald J. Trump (Second),Trump*,Donald J. Trump,Second,true,proclamation,generic_constitution_and_generic_statute,Generic Constitution + Generic Statute,15,65.636364,true
+22,Donald J. Trump (Second),Trump*,Donald J. Trump,Second,true,proclamation,generic_constitution_and_specific_statute,Generic Constitution + Specific Statute,30,124.681818,true
+22,Donald J. Trump (Second),Trump*,Donald J. Trump,Second,true,proclamation,specific_constitution_and_generic_statute,Specific Constitution + Generic Statute,0,1.318182,false
+22,Donald J. Trump (Second),Trump*,Donald J. Trump,Second,true,proclamation,specific_constitution_and_specific_statute,Specific Constitution + Specific Statute,0,5.545455,false
+22,Donald J. Trump (Second),Trump*,Donald J. Trump,Second,true,proclamation,no_vesting_clause,No vesting clause,0,227.090909,false
+22,Donald J. Trump (Second),Trump*,Donald J. Trump,Second,true,proclamation,other_vesting_authority,Other/unclassified vesting authority,0,34.590909,false

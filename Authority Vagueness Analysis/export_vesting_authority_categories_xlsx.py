@@ -1,4 +1,4 @@
-"""Export all vesting-authority categories to an Excel workbook."""
+"""Export the eight substantive vesting-authority categories to an Excel workbook."""
 
 from __future__ import annotations
 
@@ -12,6 +12,7 @@ from vesting_authority_breakdown import (
     CATEGORIES,
     POSSIBLE_VESTING_RE,
     PRESIDENTIAL_TITLE_INVOCATION_RE,
+    SUBSTANTIVE_CATEGORIES,
     classify_authority_category,
     extract_vesting_clauses,
 )
@@ -20,7 +21,7 @@ from vesting_authority_stats import DEFAULT_DEV, DEFAULT_HOLDOUT, load_corpus
 
 ANALYSIS_DIR = Path(__file__).resolve().parent
 OUTPUT = ANALYSIS_DIR / "vesting_authority_all_categories.xlsx"
-TARGETS = CATEGORIES
+TARGETS = SUBSTANTIVE_CATEGORIES
 SHEET_NAMES = {
     "generic_constitution_only": "1 Generic Constitution",
     "specific_constitution_only": "2 Specific Constitution",
@@ -130,7 +131,7 @@ def write_workbook(path: Path, sheets: list[tuple[str, list[tuple[str, str, int,
         "_rels/.rels": '''<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="xl/workbook.xml"/><Relationship Id="rId2" Type="http://schemas.openxmlformats.org/package/2006/relationships/metadata/core-properties" Target="docProps/core.xml"/><Relationship Id="rId3" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/extended-properties" Target="docProps/app.xml"/></Relationships>''',
         "docProps/core.xml": f'''<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<cp:coreProperties xmlns:cp="http://schemas.openxmlformats.org/package/2006/metadata/core-properties" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><dc:title>All Vesting Authority Categories</dc:title><dc:creator>Prez Authority 26</dc:creator><dcterms:created xsi:type="dcterms:W3CDTF">{created}</dcterms:created></cp:coreProperties>''',
+<cp:coreProperties xmlns:cp="http://schemas.openxmlformats.org/package/2006/metadata/core-properties" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><dc:title>Eight Substantive Vesting Authority Categories</dc:title><dc:creator>Prez Authority 26</dc:creator><dcterms:created xsi:type="dcterms:W3CDTF">{created}</dcterms:created></cp:coreProperties>''',
         "docProps/app.xml": '''<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Properties xmlns="http://schemas.openxmlformats.org/officeDocument/2006/extended-properties"><Application>Prez Authority 26</Application></Properties>''',
         "xl/workbook.xml": f'''<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
@@ -151,7 +152,7 @@ def write_workbook(path: Path, sheets: list[tuple[str, list[tuple[str, str, int,
 
 
 def main() -> None:
-    categorized = {category: [] for category in TARGETS}
+    categorized = {category: [] for category in CATEGORIES}
     corpus = load_corpus([DEFAULT_DEV, DEFAULT_HOLDOUT])
     for row in corpus:
         text = row["doc_text"]

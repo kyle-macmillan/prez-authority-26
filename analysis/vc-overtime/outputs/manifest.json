@@ -1,0 +1,129 @@
+{
+  "source_files": [
+    "data/4_28_2026_build_dev.csv",
+    "data/4_28_2026_build_holdout.csv"
+  ],
+  "corpus_documents": 20232,
+  "ceremonial_exclusions": 6771,
+  "nonceremonial_documents": 13461,
+  "ceremonial_exclusion_reasons": {
+    "memorial_half_staff": 368,
+    "national_observance": 38,
+    "observance_designation": 3813,
+    "public_commemoration": 2482,
+    "symbol_design": 22,
+    "symbolic_honor": 48
+  },
+  "administrations": 22,
+  "latest_document_date": "2026-03-12",
+  "partial_administration": "Donald J. Trump (Second)",
+  "partial_through": "2026-03-12",
+  "category_average_denominator": 22,
+  "category_average_includes_zero_count_administrations": true,
+  "category_threshold": 50.0,
+  "excluded_from_figures": [
+    "no_vesting_clause",
+    "other_vesting_authority"
+  ],
+  "plotted_categories": [
+    "generic_constitution_only",
+    "specific_constitution_only",
+    "generic_statute_only",
+    "specific_statute_only",
+    "generic_constitution_and_generic_statute",
+    "generic_constitution_and_specific_statute",
+    "specific_constitution_and_generic_statute",
+    "specific_constitution_and_specific_statute"
+  ],
+  "retained_categories": [
+    "specific_statute_only",
+    "generic_constitution_and_generic_statute",
+    "generic_constitution_and_specific_statute"
+  ],
+  "core_authority_categories": [
+    "specific_statute_only",
+    "generic_constitution_and_generic_statute",
+    "generic_constitution_and_specific_statute"
+  ],
+  "global_category_means": {
+    "generic_constitution_only": 4.454545,
+    "specific_constitution_only": 4.181818,
+    "generic_statute_only": 0.045455,
+    "specific_statute_only": 144.318182,
+    "generic_constitution_and_generic_statute": 65.636364,
+    "generic_constitution_and_specific_statute": 124.681818,
+    "specific_constitution_and_generic_statute": 1.318182,
+    "specific_constitution_and_specific_statute": 5.545455,
+    "no_vesting_clause": 227.090909,
+    "other_vesting_authority": 34.590909
+  },
+  "directive_totals": {
+    "all": 13461,
+    "executive_order": 4386,
+    "memorandum": 3454,
+    "letter": 4044,
+    "proclamation": 1577
+  },
+  "counts_csv": "outputs/counts_by_administration.csv",
+  "figure_files": [
+    "outputs/figures/vc_counts_all_directives_all_categories.png",
+    "outputs/figures/vc_counts_all_directives_all_categories.pdf",
+    "outputs/figures/vc_counts_all_directives_min50.png",
+    "outputs/figures/vc_counts_all_directives_min50.pdf",
+    "outputs/figures/vc_counts_all_directives_core_authority.png",
+    "outputs/figures/vc_counts_all_directives_core_authority.pdf",
+    "outputs/figures/vc_counts_executive_orders_all_categories.png",
+    "outputs/figures/vc_counts_executive_orders_all_categories.pdf",
+    "outputs/figures/vc_counts_executive_orders_min50.png",
+    "outputs/figures/vc_counts_executive_orders_min50.pdf",
+    "outputs/figures/vc_counts_executive_orders_core_authority.png",
+    "outputs/figures/vc_counts_executive_orders_core_authority.pdf",
+    "outputs/figures/vc_counts_memoranda_all_categories.png",
+    "outputs/figures/vc_counts_memoranda_all_categories.pdf",
+    "outputs/figures/vc_counts_memoranda_min50.png",
+    "outputs/figures/vc_counts_memoranda_min50.pdf",
+    "outputs/figures/vc_counts_memoranda_core_authority.png",
+    "outputs/figures/vc_counts_memoranda_core_authority.pdf",
+    "outputs/figures/vc_counts_letters_all_categories.png",
+    "outputs/figures/vc_counts_letters_all_categories.pdf",
+    "outputs/figures/vc_counts_letters_min50.png",
+    "outputs/figures/vc_counts_letters_min50.pdf",
+    "outputs/figures/vc_counts_letters_core_authority.png",
+    "outputs/figures/vc_counts_letters_core_authority.pdf",
+    "outputs/figures/vc_counts_proclamations_all_categories.png",
+    "outputs/figures/vc_counts_proclamations_all_categories.pdf",
+    "outputs/figures/vc_counts_proclamations_min50.png",
+    "outputs/figures/vc_counts_proclamations_min50.pdf",
+    "outputs/figures/vc_counts_proclamations_core_authority.png",
+    "outputs/figures/vc_counts_proclamations_core_authority.pdf",
+    "outputs/figures/vc_shares_all_directives_with_counts.png",
+    "outputs/figures/vc_shares_all_directives_with_counts.pdf",
+    "outputs/figures/vc_shares_executive_orders_with_counts.png",
+    "outputs/figures/vc_shares_executive_orders_with_counts.pdf",
+    "outputs/figures/vc_shares_memoranda_with_counts.png",
+    "outputs/figures/vc_shares_memoranda_with_counts.pdf",
+    "outputs/figures/vc_shares_letters_with_counts.png",
+    "outputs/figures/vc_shares_letters_with_counts.pdf",
+    "outputs/figures/vc_shares_proclamations_with_counts.png",
+    "outputs/figures/vc_shares_proclamations_with_counts.pdf"
+  ],
+  "matplotlib_rcparams": {
+    "font.size": 10,
+    "figure.figsize": [
+      6.25,
+      3.86
+    ],
+    "legend.fontsize": 6,
+    "legend.fancybox": true,
+    "font.family": "serif",
+    "font.sans-serif": "Times",
+    "xtick.major.width": 0.25,
+    "xtick.minor.width": 0.25,
+    "ytick.major.width": 0.25,
+    "ytick.minor.width": 0.25,
+    "text.usetex": false,
+    "pdf.fonttype": 42,
+    "ps.fonttype": 42
+  },
+  "png_dpi": 300
+}
