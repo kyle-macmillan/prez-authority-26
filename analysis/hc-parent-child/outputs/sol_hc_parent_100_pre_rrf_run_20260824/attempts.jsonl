@@ -1,0 +1,4 @@
+{"case_id": "SHC001", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "f78d1b2b63243b864c71d325fc621e59a67b105f79ea98251a8442b157f46551", "timestamp": "2026-08-24T19:57:58.444169+00:00"}
+{"case_id": "SHC001", "event": "failed", "returncode": 1, "timestamp": "2026-08-24T19:57:58.494592+00:00"}
+{"case_id": "SHC001", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "f78d1b2b63243b864c71d325fc621e59a67b105f79ea98251a8442b157f46551", "timestamp": "2026-08-24T19:58:54.064310+00:00"}
+{"case_id": "SHC001", "decision": "candidate", "event": "completed", "selected_candidate_label": "C02", "timestamp": "2026-08-24T19:59:18.409266+00:00"}

@@ -55,6 +55,8 @@ def main() -> None:
     parser.add_argument("--reasoning-effort", default="low")
     parser.add_argument("--limit", type=int)
     parser.add_argument("--case-id", action="append", dest="case_ids")
+    parser.add_argument("--shard-count", type=int, default=1)
+    parser.add_argument("--shard-index", type=int, default=0)
     parser.add_argument("--dry-run", action="store_true")
     parser.add_argument("--force", action="store_true")
     args = parser.parse_args()
@@ -63,14 +65,22 @@ def main() -> None:
         raise SystemExit("codex CLI not found on PATH")
     if args.limit is not None and args.limit < 1:
         parser.error("--limit must be positive")
+    if args.shard_count < 1:
+        parser.error("--shard-count must be positive")
+    if not 0 <= args.shard_index < args.shard_count:
+        parser.error("--shard-index must be between zero and shard-count minus one")
 
-    request_paths = sorted((args.package_dir / "requests").glob("SHC*.json"))
+    request_paths = sorted((args.package_dir / "requests").glob("*.json"))
     if args.case_ids:
         wanted = set(args.case_ids)
         request_paths = [path for path in request_paths if path.stem in wanted]
         missing = wanted - {path.stem for path in request_paths}
         if missing:
             raise SystemExit(f"unknown case IDs: {sorted(missing)}")
+    request_paths = [
+        path for position, path in enumerate(request_paths)
+        if position % args.shard_count == args.shard_index
+    ]
     if args.limit is not None:
         request_paths = request_paths[:args.limit]
     responses = args.package_dir / "responses"
