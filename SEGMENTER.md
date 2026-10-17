@@ -194,6 +194,7 @@ keep only the document's own authority invocation (`_vesting_kind` / `_select_ve
 | Any other candidate before `Now, Therefore, I…` in a proclamation | No — recital |
 | Bare `Pursuant to section X…`, inline citations, other Public Law / joint resolution recitals | Only the first, and only when the document has no formal invocation |
 | `The authority vested in me by section X … is delegated to…` | No — an order action |
+| Dated past-tense opening: `On May 14, 1957, by virtue of the authority vested in me … I issued…` | No — narration of an earlier act; does not count as a formal invocation |
 
 `select_vesting` is off by default: `segment_ordering()` returns the original splits, which
 the annotation viewers and legal-effect coding use. With it on, rejected candidates are

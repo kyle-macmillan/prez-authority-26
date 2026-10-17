@@ -72,11 +72,12 @@ Status tags: **[settled]** decided by Kyle; **[open]** undecided.
     already taken under it (e.g. "On November 22, 1956, by virtue of the authority vested in me
     by Section 206 ..., I issued Executive Order 10689"). Each citation also records `region`
     (where it really belongs) alongside `segmenter_region`, so segmenter errors can be counted.
-    **[settled 2026-10-17, replaces the earlier Taft-Hartley call]** Kyle adopted the
-    one-invocation vesting rule for the gold set too: in the Taft-Hartley letters the opening
-    "On <date>, by virtue of the authority vested in me by Section 206 ..., I issued Executive
-    Order ..." is the vesting clause (citations flagged past tense), and the later "pursuant to
-    the provisions of Section 208" is body. Labels on 8089 and 7476 were updated to match.
+    Past-tense openings like the Taft-Hartley letters ("On <date>, by virtue of the authority
+    vested in me by Section 206 ..., I issued Executive Order ...") are not vesting clauses:
+    their citations count as body, flagged past tense. The real vesting clause is the later
+    "pursuant to the provisions of Section 208" segment. Since 2026-10-17 the segmenter agrees
+    (`past_invocation` in `segmenter._vesting_kind`: a dated opening plus "I issued" or a
+    similar past-tense act).
 20. **[open: definition]** Each citation records `use`: "legal_purpose" (cited for a legal
     purpose) or "named" (just named). Required, so a blank never means "not considered".
     Inclusion is unaffected (rule 2): both kinds are still citations.

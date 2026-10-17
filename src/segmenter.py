@@ -1294,6 +1294,18 @@ _VESTED_SUBJECT_START_RE = re.compile(
 )
 
 
+# A strong marker in a sentence that recounts an earlier act ("On May 14, 1957, by virtue
+# of the authority vested in me by section 206 ..., I issued Executive Order 10710") is
+# narration, not this document's own invocation.  Both the dated opening and the past-tense
+# act are required: a present invocation can mention "the national emergency I declared".
+_DATED_OPENING_RE = re.compile(r"^\W*On\s+[A-Za-z]+\.?\s+\d{1,2},\s+\d{4}\b")
+_PAST_INVOCATION_RE = re.compile(
+    r"\bI\s+(?:issued|signed|proclaimed|established|created|directed|ordered|"
+    r"determined|approved|designated|appointed|delegated|declared)\b",
+    re.IGNORECASE,
+)
+
+
 # A recital in which Congress asks or authorizes the President to issue the proclamation
 # ("…by House Joint Resolution 265, has authorized and requested the President to issue a
 # proclamation…").  Combined with _PROC_VESTING_RE, this is the proclamation's authority.
@@ -1313,7 +1325,10 @@ def _vesting_kind(text: str) -> str:
     (a directive, not an invocation), 'congressional_request' for a joint resolution
     or Public Law that asks or authorizes the President to issue the proclamation,
     and 'fallback' for everything else (bare "Pursuant to section X", other
-    Public Law / joint resolution recitals, mid-sentence citations).
+    Public Law / joint resolution recitals, mid-sentence citations).  A strong marker
+    followed by "I issued" (or another past-tense act) is 'past_invocation': the
+    document recounting an earlier exercise of authority ("On May 14, 1957, by virtue
+    of ... I issued"), never kept as vesting.
     """
     if _CONDITIONAL_VESTING_RE.search(text):
         return "proclaiming"
@@ -1322,6 +1337,8 @@ def _vesting_kind(text: str) -> str:
         if _PROC_VESTING_RE.search(text) and _CONGRESSIONAL_REQUEST_RE.search(text):
             return "congressional_request"
         return "fallback"
+    if _DATED_OPENING_RE.match(text) and _PAST_INVOCATION_RE.search(text, strong.end()):
+        return "past_invocation"
     # Judge only the clause containing the marker; a carved piece can run across a
     # list-item boundary ("… section 81(c)(2). (2) The authority vested in me …").
     clause_start = max(

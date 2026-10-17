@@ -549,3 +549,22 @@ if __name__ == "__main__":
         test()
         print(f"  PASS  {test.__name__}")
     print(f"\n{len(tests)} passed")
+
+
+def test_past_tense_invocation_is_not_the_documents_vesting_clause():
+    from segmenter import _select_vesting, _vesting_kind
+
+    recounted = (
+        "On November 22, 1956, by virtue of the authority vested in me by Section 206 of the "
+        "Labor Management Relations Act, 1947, I issued Executive Order 10689, creating a Board of Inquiry."
+    )
+    pursuant = "pursuant to the provisions of Section 208 of the Labor Management Relations Act, 1947,"
+    kinds = [_vesting_kind(recounted), _vesting_kind(pursuant)]
+    assert kinds == ["past_invocation", "fallback"]
+    assert _select_vesting(kinds) == [False, True]
+    assert _vesting_kind("By the authority vested in me as President, I hereby order:") == "formal"
+    assert _vesting_kind(
+        "By the authority vested in me as President by the Constitution and the laws of the United "
+        "States of America, including the National Emergencies Act, and in order to further respond "
+        "to the national emergency I declared in Proclamation 7463 of September 14, 2001,"
+    ) == "formal"

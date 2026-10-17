@@ -9,6 +9,8 @@ development partition and fails if any protected holdout ID is present.
 - **Vesting** uses the project's existing structural vesting-clause segmentation, keeping
   only the document's own authority invocation (`segmenter._select_vesting`). Rejected
   candidates keep their boundaries but become body segments (`rejected_vesting_clause`).
+  A dated past-tense opening ("On May 14, 1957, by virtue of the authority vested in me
+  ..., I issued ...") is narration, not the invocation.
 - **Body** includes recitals, preambles, operative provisions, and general provisions;
   structural metadata is excluded.
 - The authority universe includes identifiable operative legal instruments from any

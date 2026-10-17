@@ -120,10 +120,10 @@ class CitationCoreTests(unittest.TestCase):
             "to petition any District Court of the United States to enjoin such strike."
         )
         segments = {segment.text[:20]: segment for segment in build_segments(text, "letter")[0]}
-        self.assertEqual(segments["On November 22, 1956"].region, "vesting")
-        rejected = segments["pursuant to the prov"]
-        self.assertEqual((rejected.segment_id, rejected.region), ("B003", "body"))
-        self.assertEqual(rejected.source_type, "rejected_vesting_clause")
+        recounted = segments["On November 22, 1956"]
+        self.assertEqual((recounted.segment_id, recounted.region), ("B001", "body"))
+        self.assertEqual(recounted.source_type, "rejected_vesting_clause")
+        self.assertEqual(segments["pursuant to the prov"].region, "vesting")
 
 
 if __name__ == "__main__":
