@@ -343,6 +343,30 @@ def extract_vesting_clauses(doc_text: str, doc_type: str) -> list[str]:
     return clauses
 
 
+def vesting_invocation_type(doc_text: str, doc_type: str, clauses: list[str] | None = None) -> str:
+    """Classify how a document invokes authority, given its extracted vesting clauses.
+
+    'formal'        - a formal invocation ("By the authority vested in me", "Now,
+                      Therefore, I", "I, [name], President …", or a proclamation's
+                      congressional request)
+    'pursuant_only' - no formal invocation, but the text uses "pursuant to"
+    'other_citation'- no formal invocation or "pursuant to", but a fallback citation
+                      ("Under section 5 …") serves as the vesting clause
+    'none'          - none of the above
+    """
+    if clauses is None:
+        clauses = extract_vesting_clauses(doc_text, doc_type)
+    for clause in clauses:
+        kind = _vesting_kind(clause)
+        if kind == "congressional_request" and doc_type != "proclamation":
+            kind = "fallback"
+        if kind != "fallback" or PRESIDENTIAL_TITLE_INVOCATION_RE.search(clause):
+            return "formal"
+    if _PURSUANT_RE.search(doc_text):
+        return "pursuant_only"
+    return "other_citation" if clauses else "none"
+
+
 def load_corpus(paths: list[Path]) -> list[dict]:
     rows = []
     seen_ids: set[str] = set()

@@ -5,7 +5,11 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parents[1]))
 
-from vesting_authority_stats import classify_vesting_clauses, extract_vesting_clauses
+from vesting_authority_stats import (
+    classify_vesting_clauses,
+    extract_vesting_clauses,
+    vesting_invocation_type,
+)
 
 
 def classify(*clauses: str) -> bool:
@@ -62,6 +66,27 @@ def test_joint_resolution_mention_without_request_is_not_vesting():
     clauses = extract_vesting_clauses(text, "proclamation")
 
     assert not any("Joint Resolution 161" in clause for clause in clauses)
+
+
+def test_invocation_type_distinguishes_pursuant_only_directives():
+    formal = (
+        "By the authority vested in me as President by the Constitution and the laws of "
+        "the United States of America, it is hereby ordered as follows:  Section 1. Policy."
+    )
+    pursuant_vesting = (
+        "Memorandum for the Secretary of State  Pursuant to section 404 of the Child "
+        "Soldiers Prevention Act of 2008 (22 U.S.C. 2370c-1), I hereby waive the prohibition."
+    )
+    pursuant_in_passing = (
+        "Dear Mr. Speaker:  I am transmitting the report required pursuant to section 5 of "
+        "the Act.  Sincerely, George Bush"
+    )
+    no_authority = "Dear Mr. Speaker:  I am transmitting the annual report.  Sincerely, George Bush"
+
+    assert vesting_invocation_type(formal, "executive_order") == "formal"
+    assert vesting_invocation_type(pursuant_vesting, "memorandum") == "pursuant_only"
+    assert vesting_invocation_type(pursuant_in_passing, "letter") == "pursuant_only"
+    assert vesting_invocation_type(no_authority, "letter") == "none"
 
 
 def test_statutes_alone_do_not_qualify():
