@@ -29,7 +29,9 @@ locked benchmark passes the agreed 90% precision-and-recall gates.
 - `run_models.py`: resumable runner; inert unless both execution confirmation flags are given.
   Started requests without durable responses are held as unknown unless an explicit
   `--retry-unknown` override is supplied, preventing accidental duplicate submissions.
-- `outputs/benchmark/review.html`: standalone human-review interface.
+- `outputs/benchmark/annotator_batch_1.html` and `annotator_batch_2.html`: standalone
+  100-document human-review interfaces with explicit body-to-vesting authority links.
+- `outputs/benchmark/review.html`: combined 200-document version of the same interface.
 - `outputs/benchmark/documents.jsonl`: 200 review documents with substantive regions.
 - `outputs/benchmark/regex_predictions.jsonl`: editable baseline annotations.
 - `outputs/benchmark/terra_requests.jsonl` and `sol_requests.jsonl`: 200 prepared requests each.
@@ -39,27 +41,30 @@ locked benchmark passes the agreed 90% precision-and-recall gates.
 ## Benchmark facts
 
 - Seed: `260907`.
-- Calibration: 100 documents, 25 of each directive type.
-- Locked evaluation: 100 documents, 25 of each directive type.
+- Calibration: 100 vesting-clause documents (31 executive orders, 20 memoranda, 18
+  letters, and 31 proclamations).
+- Locked evaluation: the same 100-document type allocation.
 - The sample covers nine decades.
-- Ninety-nine sampled documents contain structural vesting segments.
+- All 200 sampled documents contain structural vesting clauses.
 - The current regex baseline proposes 477 citation records. These are starting
   annotations, not findings.
 
 ## Next step: human gold labels
 
-Open `outputs/benchmark/review.html` in a browser. For every document:
+Give the two `outputs/benchmark/annotator_batch_*.html` files to the annotators. For every document:
 
 1. Inspect all displayed vesting and body segments.
 2. Correct, add, merge, or delete citation records in the JSON editor.
-3. Keep evidence verbatim and use only text-grounded identity links.
-4. Check the certification box and save.
-5. Export after all 200 documents are certified, then place the export at
-   `outputs/benchmark/gold.jsonl`.
+3. For every included body authority, record the matching vesting authority key or `null`.
+4. Keep evidence verbatim and use only text-grounded identity links.
+5. Check the certification box and save.
+6. Export each batch after its 100 documents are certified, concatenate the two JSONL
+   exports, and place the result at `outputs/benchmark/gold.jsonl`.
 
-The review page has separate editors for citations and unresolved identity links and refuses
-to export a partial certification set. Server-side validation also checks identity-link
-references, excluded-record keys, and optional evidence offsets.
+The review page has separate editors for citations, body-to-vesting mappings, and unresolved
+identity links, and refuses to export a partial certification set. Server-side validation
+also checks body-to-vesting completeness, identity-link references, excluded-record keys,
+and optional evidence offsets.
 
 Validate it before any model scoring:
 

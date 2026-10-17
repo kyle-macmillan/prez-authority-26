@@ -53,10 +53,19 @@ def validate_development_rows(rows: list[dict[str, str]]) -> None:
 
 
 def build_segments(text: str, doc_type: str) -> tuple[list[TextSegment], list[str]]:
-    """Apply existing structural segmentation, retaining only analytic regions."""
-    from segmenter import segment_ordering
+    """Apply existing structural segmentation, retaining only analytic regions.
+
+    Only the document's own authority invocation is vesting (segmenter._select_vesting);
+    rejected vesting candidates keep their boundaries but join the body region.
+    """
+    from segmenter import _select_vesting, _vesting_kind, segment_ordering
 
     raw = segment_ordering(text, doc_type)
+    candidates = [segment for segment in raw if segment.seg_type == "vesting_clause"]
+    kept = _select_vesting(
+        [_vesting_kind(segment.text) for segment in candidates], is_proclamation=doc_type == "proclamation",
+    )
+    vesting_ids = {id(segment) for segment, keep in zip(candidates, kept) if keep}
     segments: list[TextSegment] = []
     excluded: list[str] = []
     counters = {"vesting": 0, "body": 0, "excluded": 0}
@@ -65,13 +74,14 @@ def build_segments(text: str, doc_type: str) -> tuple[list[TextSegment], list[st
             excluded.append(segment.text)
             counters["excluded"] += 1
             continue
-        region = "vesting" if segment.seg_type == "vesting_clause" else "body"
+        region = "vesting" if id(segment) in vesting_ids else "body"
         counters[region] += 1
         segments.append(TextSegment(
             segment_id=f"{region[0].upper()}{counters[region]:03d}",
             region=region,
             text=segment.text,
-            source_type=segment.seg_type,
+            source_type="rejected_vesting_clause"
+            if segment.seg_type == "vesting_clause" and region == "body" else segment.seg_type,
         ))
     if not segments and text.strip():
         # Preserve anomalous short/legacy documents for review instead of silently
@@ -290,6 +300,35 @@ def validate_citations(response: dict, request: dict) -> None:
         if pair in seen_links:
             raise ValueError(f"duplicate unresolved identity link at index {index}")
         seen_links.add(pair)
+
+
+def validate_body_vesting_links(response: dict) -> None:
+    """Require one explicit vesting-match decision for every included body authority."""
+    citations = response["citations"]
+    body_keys = {
+        key for citation in citations if citation["region"] == "body" and not citation["excluded"]
+        for key in citation["instrument_keys"]
+    }
+    vesting_keys = {
+        key for citation in citations if citation["region"] == "vesting" and not citation["excluded"]
+        for key in citation["instrument_keys"]
+    }
+    links = response.get("body_vesting_links")
+    if not isinstance(links, list):
+        raise ValueError("body_vesting_links must be a list")
+    mapped: set[str] = set()
+    for index, link in enumerate(links):
+        if not isinstance(link, dict) or set(link) != {"body_instrument_key", "vesting_instrument_key"}:
+            raise ValueError(f"body-to-vesting link {index} has invalid fields")
+        body_key = link["body_instrument_key"]
+        vesting_key = link["vesting_instrument_key"]
+        if body_key not in body_keys or body_key in mapped:
+            raise ValueError(f"body-to-vesting link {index} has a duplicate or unknown body key")
+        if vesting_key is not None and vesting_key not in vesting_keys:
+            raise ValueError(f"body-to-vesting link {index} has an unknown vesting key")
+        mapped.add(body_key)
+    if mapped != body_keys:
+        raise ValueError("body_vesting_links must decide every included body authority")
 
 
 def entity_set(citations: list[dict], level: str) -> set[tuple[str, str]]:

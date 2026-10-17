@@ -6,7 +6,9 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
-from citation_core import TextSegment, entity_set, regex_citations, validate_citations
+from citation_core import (
+    TextSegment, build_segments, entity_set, regex_citations, validate_body_vesting_links, validate_citations,
+)
 
 
 class CitationCoreTests(unittest.TestCase):
@@ -91,6 +93,37 @@ class CitationCoreTests(unittest.TestCase):
         }
         with self.assertRaisesRegex(ValueError, "distinct cited instrument keys"):
             validate_citations(response, request)
+
+    def test_body_authorities_require_explicit_valid_vesting_decisions(self):
+        response = {
+            "citations": [
+                {"region": "vesting", "excluded": False, "instrument_keys": ["act:clean-air"]},
+                {"region": "body", "excluded": False, "instrument_keys": ["act:clean-air", "eo:12345"]},
+            ],
+            "body_vesting_links": [
+                {"body_instrument_key": "act:clean-air", "vesting_instrument_key": "act:clean-air"},
+                {"body_instrument_key": "eo:12345", "vesting_instrument_key": None},
+            ],
+        }
+        validate_body_vesting_links(response)
+        response["body_vesting_links"][1]["vesting_instrument_key"] = "eo:99999"
+        with self.assertRaisesRegex(ValueError, "unknown vesting key"):
+            validate_body_vesting_links(response)
+
+    def test_only_the_documents_own_invocation_is_vesting(self):
+        sys.path.insert(0, str(HERE.parents[1] / "src"))
+        text = (
+            "On November 22, 1956, by virtue of the authority vested in me by Section 206 of the "
+            "Labor Management Relations Act, 1947, I issued Executive Order 10689, creating a Board "
+            "of Inquiry. Today I received the Board's written report. I therefore direct you, "
+            "pursuant to the provisions of Section 208 of the Labor Management Relations Act, 1947, "
+            "to petition any District Court of the United States to enjoin such strike."
+        )
+        segments = {segment.text[:20]: segment for segment in build_segments(text, "letter")[0]}
+        self.assertEqual(segments["On November 22, 1956"].region, "vesting")
+        rejected = segments["pursuant to the prov"]
+        self.assertEqual((rejected.segment_id, rejected.region), ("B003", "body"))
+        self.assertEqual(rejected.source_type, "rejected_vesting_clause")
 
 
 if __name__ == "__main__":

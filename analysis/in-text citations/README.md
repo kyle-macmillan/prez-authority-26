@@ -6,7 +6,9 @@ development partition and fails if any protected holdout ID is present.
 
 ## Definitions
 
-- **Vesting** uses the project's existing structural vesting-clause segmentation.
+- **Vesting** uses the project's existing structural vesting-clause segmentation, keeping
+  only the document's own authority invocation (`segmenter._select_vesting`). Rejected
+  candidates keep their boundaries but become body segments (`rejected_vesting_clause`).
 - **Body** includes recitals, preambles, operative provisions, and general provisions;
   structural metadata is excluded.
 - The authority universe includes identifiable operative legal instruments from any
@@ -22,10 +24,12 @@ Build the deterministic 200-document sample and regex baseline:
 python3 "analysis/in-text citations/pipeline.py" build-benchmark
 ```
 
-Open `outputs/benchmark/review.html`, inspect every substantive segment, edit the JSON
-records and unresolved identity links, certify documents, and export `gold.jsonl`. The page
-blocks export until all 200 documents are certified. One hundred records are calibration
-documents and 100 are the locked evaluation set.
+Give `outputs/benchmark/annotator_batch_1.html` and `annotator_batch_2.html` to the
+annotators. Each standalone page contains 100 documents with structurally detected vesting
+clauses and records vesting authorities,
+body authorities, and one explicit vesting-match (or `null`) for every body authority. Each
+page blocks export until all of its documents are certified. The legacy `review.html` page
+contains the same 200 documents in one file.
 
 Prepare direct model requests without submitting them:
 

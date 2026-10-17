@@ -1,0 +1,95 @@
+{
+ "seed": 20261017,
+ "source": "benchmark/documents.jsonl split=evaluation",
+ "quota": {
+  "executive_order": 12,
+  "proclamation": 13,
+  "memorandum": 8,
+  "letter": 7
+ },
+ "document_ids": [
+  "14952",
+  "17169",
+  "5671",
+  "8089",
+  "1501",
+  "3608",
+  "2107",
+  "7476",
+  "19980",
+  "5247",
+  "2885",
+  "6174",
+  "2789",
+  "10483",
+  "11230",
+  "14711",
+  "15842",
+  "8698",
+  "424",
+  "14987",
+  "9813",
+  "9763",
+  "11206",
+  "1261",
+  "15180",
+  "6516",
+  "3323",
+  "2674",
+  "3174",
+  "3549",
+  "15204",
+  "5525",
+  "10223",
+  "12165",
+  "11284",
+  "5713",
+  "14583",
+  "2925",
+  "2413",
+  "9020"
+ ],
+ "assisted_excluded": [
+  "17085",
+  "14297",
+  "6019",
+  "8069"
+ ],
+ "replacements": {
+  "seed": 20261018,
+  "map": {
+   "17085": "14952",
+   "14297": "17169",
+   "6019": "5671",
+   "8069": "8089"
+  }
+ },
+ "commemorative_rebalance": {
+  "note": "Kyle: keep the 2 commemorative proclamations already annotated (14952, 17169); replace the other 8 commemoratives with all 5 remaining substantive evaluation proclamations plus 3 random non-proclamation evaluation documents.",
+  "dropped": [
+   "16602",
+   "15660",
+   "19909",
+   "15137",
+   "20002",
+   "19940",
+   "16530",
+   "16830"
+  ],
+  "added_proclamations": [
+   "19980",
+   "14711",
+   "14987",
+   "15204",
+   "12165"
+  ],
+  "added_other": {
+   "seed": 20261019,
+   "ids": [
+    "11284",
+    "5713",
+    "2413"
+   ]
+  }
+ }
+}

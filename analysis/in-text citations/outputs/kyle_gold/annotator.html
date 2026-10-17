@@ -1,0 +1,229 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Vesting vs. body citation annotation</title>
+<style>
+  :root { color-scheme: light; }
+  body { font: 15px/1.55 -apple-system, system-ui, sans-serif; margin: 0; color: #222; background: #fff; }
+  header { position: sticky; top: 0; background: #f6f6f4; border-bottom: 1px solid #ddd; padding: 8px 16px; display: flex; gap: 10px; align-items: center; z-index: 2; }
+  header select { max-width: 360px; }
+  #status { margin-left: auto; color: #666; font-size: 13px; }
+  main { display: grid; grid-template-columns: minmax(0, 1fr) 380px; gap: 20px; padding: 16px; }
+  .meta { color: #555; margin-bottom: 12px; }
+  .seg { border: 1px solid #ddd; border-radius: 6px; margin-bottom: 10px; }
+  .seg.vesting { border-color: #c9a227; background: #fffbea; }
+  .seg h4 { margin: 0; padding: 4px 10px; font: 12px ui-monospace, monospace; color: #666; border-bottom: 1px solid #eee; }
+  .seg .text { padding: 8px 10px; white-space: pre-wrap; }
+  mark { background: #b6dcff; border-radius: 2px; }
+  aside { position: sticky; top: 56px; align-self: start; max-height: calc(100vh - 72px); overflow: auto; }
+  .card { border: 1px solid #ddd; border-radius: 6px; padding: 10px; margin-bottom: 12px; }
+  .card h3 { margin: 0 0 8px; font-size: 14px; }
+  label { display: block; font-size: 13px; margin-top: 6px; }
+  input[type=text], select, textarea { width: 100%; box-sizing: border-box; font: inherit; font-size: 14px; }
+  .evidence { font-style: italic; background: #eef6ff; padding: 4px 6px; border-radius: 4px; }
+  .cite { font-size: 13px; border-top: 1px solid #eee; padding: 5px 0; display: flex; gap: 6px; }
+  .cite div { flex: 1; }
+  .cite small { color: #777; }
+  button { font: inherit; font-size: 13px; cursor: pointer; }
+  .hint { color: #777; font-size: 13px; }
+  #form { display: none; border-color: #4a90d9; }
+</style>
+<header>
+  <button id="prev">&larr;</button>
+  <select id="picker"></select>
+  <button id="next">&rarr;</button>
+  <label style="margin:0"><input type="checkbox" id="segprob"> Segmentation problem</label>
+  <label style="margin:0"><input type="checkbox" id="done"> Document done</label>
+  <span id="status"></span>
+</header>
+<main>
+  <section>
+    <div class="meta" id="meta"></div>
+    <div id="segments"></div>
+  </section>
+  <aside>
+    <div class="card" id="form">
+      <h3>New citation</h3>
+      <div class="evidence" id="f-evidence"></div>
+      <label>Refers back to (short forms like "the Act")
+        <select id="f-ante"></select></label>
+      <label>Type <select id="f-type"></select></label>
+      <label>Authority <input type="text" id="f-auth" autocomplete="off" placeholder="optional, e.g. Trade Act of 1974"></label>
+      <label>Provision (if given) <input type="text" id="f-prov" placeholder="e.g. 203(b)"></label>
+      <label><input type="checkbox" id="f-generic"> Generic (Constitution / laws of the United States)</label>
+      <label>Use <select id="f-use"><option value="">— choose —</option><option value="legal_purpose">Cited for a legal purpose</option><option value="named">Just named</option></select></label>
+      <label><input type="checkbox" id="f-past"> Past tense (describes an action already taken, e.g. "I issued Executive Order ...")</label>
+      <label>Counts as <select id="f-region"><option value="vesting">vesting</option><option value="body">body</option></select>
+        <span class="hint" id="f-region-hint"></span></label>
+      <p><button id="f-add">Add (Enter)</button> <button id="f-cancel">Cancel (Esc)</button></p>
+    </div>
+    <div class="card">
+      <h3>Citations</h3>
+      <div id="cites"></div>
+      <p class="hint">Highlight text in any segment to add a citation.</p>
+    </div>
+    <div class="card">
+      <details id="l-box"><summary><b>Same law, different form (optional)</b></summary>
+      <p class="hint">Use only when two citations in this document are the same law but the text doesn't
+      say so, e.g. "19 U.S.C. 2253" in the body and "the Trade Act of 1974" in the vesting clause.</p>
+      <div id="links"></div>
+      <label>Citation <select id="l-a"></select></label>
+      <label>is the same law as <select id="l-b"></select></label>
+      <label>How you know <input type="text" id="l-basis" placeholder="e.g. 19 U.S.C. 2253 is section 203 of the Trade Act"></label>
+      <p><button id="l-add">Add link</button></p>
+      </details>
+    </div>
+    <div class="card">
+      <h3>Note <span class="hint">(describe any segmentation problem here)</span></h3>
+      <textarea id="note" rows="3"></textarea>
+    </div>
+  </aside>
+</main>
+<script>
+const $ = id => document.getElementById(id);
+let docs = [], ann = {}, idx = 0, pending = null;
+
+const TYPES = {
+  constitution: 'Constitution', statute: 'Statute / Act / code section', joint_resolution: 'Joint resolution',
+  concurrent_resolution: 'Concurrent / simple resolution', regulation: 'Regulation', judicial_decision: 'Judicial decision',
+  treaty: 'Treaty / international agreement', executive_order: 'Executive order', proclamation: 'Proclamation',
+  other_presidential: 'Other presidential directive (memo, determination, ...)', reorganization_plan: 'Reorganization plan',
+  generic_laws: 'Generic laws of the United States', office: 'Office (President / Commander in Chief)', other: 'Other'};
+const esc = s => s.replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const norm = s => s.toLowerCase().replace(/[^a-z0-9()]+/g, ' ').trim();
+const authOf = c => c.instrument_label ?? c.instrument_key ?? `“${c.evidence}”`;
+const describe = c => `${c.segment_id} · ${TYPES[c.source_type] ? '[' + TYPES[c.source_type].split(' (')[0] + '] ' : ''}${authOf(c)}${c.provision_label ? ' § ' + c.provision_label : ''}`;
+const doc = () => docs[idx];
+const rec = () => ann[doc().document_id] ??= {document_id: doc().document_id, citations: [], outside_links: [], note: '', done: false};
+
+async function load() {
+  const data = await (await fetch('/api/data')).json();
+  docs = data.documents; ann = data.annotations;
+  idx = Math.max(0, docs.findIndex(d => !ann[d.document_id]?.done));
+  render();
+}
+
+async function save() {
+  const r = rec();
+  r.annotated_at = new Date().toISOString();
+  const res = await fetch('/api/save', {method: 'POST', body: JSON.stringify(r)});
+  $('status').textContent = res.ok ? `saved ${new Date().toLocaleTimeString()}` : 'SAVE FAILED: ' + (await res.json()).error;
+  renderPicker();
+}
+
+function renderPicker() {
+  $('picker').innerHTML = docs.map((d, i) =>
+    `<option value="${i}" ${i === idx ? 'selected' : ''}>${ann[d.document_id]?.done ? '✓' : '·'} ${i + 1}/40 · ${d.document_id} · ${d.doc_type} · ${d.date}</option>`).join('');
+}
+
+function render() {
+  const d = doc(), r = rec();
+  pending = null; $('form').style.display = 'none';
+  renderPicker();
+  $('meta').innerHTML = `<b>${d.doc_type}</b> · ${d.date} · ${esc(d.president)} · <a href="${d.url}" target="_blank">source</a>`;
+  $('segments').innerHTML = d.segments.map(s => {
+    const cov = new Array(s.text.length).fill(false);
+    r.citations.filter(c => c.segment_id === s.segment_id).forEach(c => cov.fill(true, c.start, c.end));
+    let html = '', i = 0;
+    while (i < s.text.length) {
+      let j = i; while (j < s.text.length && cov[j] === cov[i]) j++;
+      const chunk = esc(s.text.slice(i, j));
+      html += cov[i] ? `<mark>${chunk}</mark>` : chunk; i = j;
+    }
+    return `<div class="seg ${s.region}"><h4>${s.segment_id} · ${s.region} · ${s.source_type}</h4><div class="text" data-seg="${s.segment_id}">${html}</div></div>`;
+  }).join('');
+  $('cites').innerHTML = ['vesting', 'body'].map(region => {
+    const items = r.citations.map((c, i) => [c, i]).filter(([c]) => c.region === region);
+    return `<div style="font-size:13px;font-weight:bold;margin-top:4px">${region} (${items.length})</div>` + items.map(([c, i]) =>
+      `<div class="cite"><div>${esc(describe(c))}${c.generic ? ' <small>[generic]</small>' : ''}<br><select data-use="${i}" style="width:auto;font-size:12px${c.use ? '' : ';outline:2px solid #e66'}"><option value="">— use? —</option><option value="legal_purpose" ${c.use === 'legal_purpose' ? 'selected' : ''}>Cited for a legal purpose</option><option value="named" ${c.use === 'named' ? 'selected' : ''}>Just named</option></select>${c.past_tense ? ' <small>[past]</small>' : ''}${c.segmenter_region && c.region !== c.segmenter_region ? ` <small>[segmenter: ${c.segmenter_region}]</small>` : ''}<br><small>“${esc(c.evidence)}”${c.antecedent ? ` → refers to ${esc(c.antecedent.segment_id)} “${esc(c.antecedent.evidence)}”` : ''}</small></div><button data-del="${i}">✕</button></div>`).join('');
+  }).join('');
+  const opts = r.citations.map((c, i) => `<option value="${i}">${esc(describe(c))} — “${esc(c.evidence)}”</option>`).join('');
+  $('l-a').innerHTML = $('l-b').innerHTML = '<option value="">— choose —</option>' + opts;
+  $('l-box').open = r.outside_links.length > 0;
+  $('links').innerHTML = r.outside_links.map((l, i) =>
+    `<div class="cite"><div>${esc(l.a.evidence)} ⇄ ${esc(l.b.evidence)}<br><small>${esc(l.basis)}</small></div><button data-unlink="${i}">✕</button></div>`).join('');
+  $('note').value = r.note; $('done').checked = !!r.done; $('segprob').checked = !!r.segmentation_problem;
+}
+
+document.addEventListener('mouseup', e => {
+  if (e.target.closest('aside, header')) return;
+  const sel = getSelection();
+  if (sel.isCollapsed) return;
+  const range = sel.getRangeAt(0);
+  const box = range.startContainer.parentElement?.closest('.text');
+  if (!box || box !== range.endContainer.parentElement?.closest('.text')) return;
+  const pre = document.createRange(); pre.selectNodeContents(box); pre.setEnd(range.startContainer, range.startOffset);
+  let start = pre.toString().length, text = range.toString();
+  const lead = text.length - text.trimStart().length;
+  start += lead; text = text.trim();
+  if (!text) return;
+  const seg = doc().segments.find(s => s.segment_id === box.dataset.seg);
+  pending = {segment_id: seg.segment_id, region: seg.region, evidence: text, start, end: start + text.length};
+  $('f-evidence').textContent = `${seg.segment_id} (${seg.region}): “${text}”`;
+  $('f-ante').innerHTML = '<option value="">— none, full citation —</option>' +
+    rec().citations.map((c, i) => `<option value="${i}">${esc(describe(c))} — “${esc(c.evidence)}”</option>`).join('');
+  $('f-type').innerHTML = '<option value="">— choose type —</option>' +
+    Object.entries(TYPES).map(([k, v]) => `<option value="${k}">${v}</option>`).join('');
+  $('f-auth').value = ''; $('f-prov').value = ''; $('f-generic').checked = false; $('f-past').checked = false; $('f-use').value = '';
+  $('f-region').value = seg.region; $('f-region-hint').textContent = `(segmenter says ${seg.region}; change only if it is wrong)`;
+  $('form').style.display = 'block'; $('f-type').focus();
+});
+
+$('f-ante').onchange = () => {
+  const c = rec().citations[$('f-ante').value];
+  if (c) { $('f-auth').value = authOf(c); $('f-type').value = c.source_type ?? ''; $('f-generic').checked = !!c.generic; }
+};
+
+function addCitation() {
+  const auth = $('f-auth').value.trim();
+  if (!pending || !$('f-type').value) return $('f-type').focus();
+  if (!$('f-use').value) return $('f-use').focus();
+  const prov = $('f-prov').value.trim(), ante = rec().citations[$('f-ante').value];
+  const key = auth ? 'auth:' + norm(auth) : null;
+  rec().citations.push({...pending, source_type: $('f-type').value, instrument_label: auth || null, instrument_key: key,
+    provision_label: prov || null, provision_key: prov && key ? key + ':' + norm(prov).replace(/ /g, '') : null,
+    generic: $('f-generic').checked, past_tense: $('f-past').checked, use: $('f-use').value,
+    region: $('f-region').value, segmenter_region: pending.region,
+    antecedent: ante ? {segment_id: ante.segment_id, evidence: ante.evidence} : null});
+  getSelection().removeAllRanges(); render(); save();
+}
+$('f-add').onclick = addCitation;
+$('f-cancel').onclick = () => { pending = null; $('form').style.display = 'none'; };
+$('form').addEventListener('keydown', e => {
+  if (e.key === 'Enter') { e.preventDefault(); addCitation(); }
+  if (e.key === 'Escape') $('f-cancel').onclick();
+});
+
+document.addEventListener('click', e => {
+  const del = e.target.dataset.del, unlink = e.target.dataset.unlink;
+  if (del !== undefined) {
+    const gone = rec().citations[del];
+    const same = (x, c) => x && x.segment_id === c.segment_id && x.evidence === c.evidence;
+    if (rec().citations.some(c => same(c.antecedent, gone)) || rec().outside_links.some(l => same(l.a, gone) || same(l.b, gone)))
+      if (!confirm('Other citations or links refer to this one. Delete anyway?')) return;
+    rec().citations.splice(del, 1); render(); save();
+  }
+  if (unlink !== undefined) { rec().outside_links.splice(unlink, 1); render(); save(); }
+});
+
+$('l-add').onclick = () => {
+  const a = rec().citations[$('l-a').value], b = rec().citations[$('l-b').value];
+  if (!a || !b || a === b) return;
+  const ref = c => ({segment_id: c.segment_id, evidence: c.evidence});
+  rec().outside_links.push({a: ref(a), b: ref(b), basis: $('l-basis').value.trim()});
+  $('l-basis').value = ''; render(); save();
+};
+document.addEventListener('change', e => {
+  const i = e.target.dataset.use;
+  if (i !== undefined) { rec().citations[i].use = e.target.value; render(); save(); }
+});
+$('note').onchange = () => { rec().note = $('note').value; save(); };
+$('done').onchange = () => { rec().done = $('done').checked; save(); };
+$('segprob').onchange = () => {
+  rec().segmentation_problem = $('segprob').checked; save();
+  if ($('segprob').checked && !$('note').value.trim()) $('note').focus();
+};
+$('picker').onchange = () => { idx = +$('picker').value; render(); scrollTo(0, 0); };
+$('prev').onclick = () => { if (idx > 0) { idx--; render(); scrollTo(0, 0); } };
+$('next').onclick = () => { if (idx < docs.length - 1) { idx++; render(); scrollTo(0, 0); } };
+load();
+</script>

@@ -21,12 +21,15 @@ sys.path.insert(0, str(HERE))
 
 from citation_core import (  # noqa: E402
     DEV, EXPECTED_DEVELOPMENT_HASH, build_segments, entity_set, id_hash,
-    regex_citations, validate_citations, validate_development_rows,
+    regex_citations, validate_body_vesting_links, validate_citations, validate_development_rows,
 )
 
 
 SEED = 260907
 DOC_TYPES = ("executive_order", "memorandum", "letter", "proclamation")
+BENCHMARK_TYPE_COUNTS = {
+    "executive_order": 31, "memorandum": 20, "letter": 18, "proclamation": 31,
+}
 VESTING_HINT = re.compile(
     r"authority\s+vested\s+in\s+me|\bI,\s+.{0,120}?President\s+of\s+the\s+United\s+States",
     re.I | re.S,
@@ -84,18 +87,32 @@ def _interleave_decades(rows: list[dict], rng: random.Random) -> list[dict]:
 
 
 def _select_type(rows: list[dict], count: int, used: set[str], rng: random.Random) -> list[dict]:
-    available = [row for row in rows if row[""] not in used]
-    strata: dict[tuple[bool, bool], list[dict]] = defaultdict(list)
+    available = [
+        row for row in rows
+        if row[""] not in used and VESTING_HINT.search(row["doc_text"])
+    ]
+    strata: dict[bool, list[dict]] = defaultdict(list)
     for row in available:
-        strata[(bool(VESTING_HINT.search(row["doc_text"])), bool(CITATION_HINT.search(row["doc_text"])))] .append(row)
-    quotas = [count // 4 + (1 if index < count % 4 else 0) for index in range(4)]
+        strata[bool(CITATION_HINT.search(row["doc_text"]))].append(row)
+    quotas = [count // 2 + (1 if index < count % 2 else 0) for index in range(2)]
     chosen = []
-    for quota, key in zip(quotas, ((True, True), (True, False), (False, True), (False, False))):
+    for quota, key in zip(quotas, (True, False)):
         chosen.extend(_interleave_decades(strata[key], rng)[:quota])
+    chosen = [
+        row for row in chosen
+        if any(segment.region == "vesting" for segment in build_segments(row["doc_text"], row["doc_type"])[0])
+    ]
     if len(chosen) < count:
         selected_ids = {row[""] for row in chosen}
-        remainder = [row for row in available if row[""] not in selected_ids]
-        chosen.extend(_interleave_decades(remainder, rng)[:count - len(chosen)])
+        remainder = _interleave_decades(
+            [row for row in available if row[""] not in selected_ids], rng,
+        )
+        for row in remainder:
+            if any(segment.region == "vesting" for segment in build_segments(row["doc_text"], row["doc_type"])[0]):
+                chosen.append(row)
+                selected_ids.add(row[""])
+            if len(chosen) == count:
+                break
     if len(chosen) != count:
         raise ValueError("insufficient documents for benchmark stratum")
     used.update(row[""] for row in chosen)
@@ -123,9 +140,17 @@ def build_benchmark(output: Path) -> None:
     selected = []
     for split in ("calibration", "evaluation"):
         for kind in DOC_TYPES:
-            selected.extend((split, row) for row in _select_type(by_type[kind], 25, used, rng))
+            selected.extend(
+                (split, row) for row in _select_type(by_type[kind], BENCHMARK_TYPE_COUNTS[kind], used, rng)
+            )
     rng.shuffle(selected)
     documents = [_document_record(row, split, index) for index, (split, row) in enumerate(selected, 1)]
+    without_vesting = [
+        document["document_id"] for document in documents
+        if not any(segment["region"] == "vesting" for segment in document["segments"])
+    ]
+    if without_vesting:
+        raise ValueError(f"benchmark contains {len(without_vesting)} documents without structural vesting clauses")
     predictions = [
         {"document_id": doc["document_id"], "citations": regex_citations(
             doc["document_id"], [type("Segment", (), segment) for segment in doc["segments"]]
@@ -151,6 +176,14 @@ def build_benchmark(output: Path) -> None:
     }
     (output / "sample_manifest.json").write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
     (output / "review.html").write_text(review_html(documents, predictions), encoding="utf-8")
+    for split, filename in (("calibration", "annotator_batch_1.html"), ("evaluation", "annotator_batch_2.html")):
+        split_documents = [document for document in documents if document["split"] == split]
+        split_ids = {document["document_id"] for document in split_documents}
+        split_predictions = [prediction for prediction in predictions if prediction["document_id"] in split_ids]
+        (output / filename).write_text(
+            review_html(split_documents, split_predictions, batch_name=filename.removesuffix(".html")),
+            encoding="utf-8",
+        )
 
 
 def build_corpus(output: Path) -> None:
@@ -174,30 +207,42 @@ def build_corpus(output: Path) -> None:
     (output / "corpus_manifest.json").write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
 
 
-def review_html(documents: list[dict], predictions: list[dict]) -> str:
+def review_html(documents: list[dict], predictions: list[dict], batch_name: str = "all_200") -> str:
     data = json.dumps({"documents": documents, "predictions": predictions}, ensure_ascii=False).replace("</", "<\\/")
+    total = len(documents)
     return f"""<!doctype html><meta charset=utf-8><title>In-text citation gold review</title>
 <style>
 *{{box-sizing:border-box}}body{{margin:0;font:14px/1.45 system-ui;color:#182230;background:#eef2f6}}
-header{{position:sticky;top:0;background:#14213d;color:white;padding:12px 20px;z-index:3}}button,select{{font:inherit;padding:6px 10px}}
+header{{position:sticky;top:0;background:#14213d;color:white;padding:12px 20px;z-index:3}}button,select,input{{font:inherit;padding:6px 10px}}
 .layout{{display:grid;grid-template-columns:250px 1fr;max-width:1500px;margin:auto;min-height:100vh}}aside{{background:white;padding:12px;overflow:auto;height:calc(100vh - 58px);position:sticky;top:58px}}
 .item{{display:block;width:100%;text-align:left;border:0;background:white;padding:7px;cursor:pointer}}.item.active{{background:#dbeafe}}main{{padding:18px}}
 .card{{background:white;border:1px solid #ccd5df;border-radius:8px;padding:14px;margin-bottom:12px}}.segment{{white-space:pre-wrap;padding:9px;border-left:4px solid #94a3b8;margin:8px 0;background:#f8fafc}}.vesting{{border-color:#7c3aed;background:#f5f3ff}}
 textarea{{width:100%;min-height:280px;font:12px/1.45 ui-monospace,monospace}}.meta{{color:#526170}}.ok{{color:#166534;font-weight:700}}
-</style><header><b>In-text citation benchmark</b> · edit the JSON list, inspect all substantive text, certify, then export
- <select id=filter><option value=all>all</option><option>calibration</option><option>evaluation</option></select>
+.labeler{{display:none;border:2px solid #2563eb;background:#eff6ff}}.labeler.show{{display:block}}.fields{{display:grid;grid-template-columns:1fr 1fr;gap:10px}}.fields label{{display:flex;flex-direction:column;gap:3px}}.wide{{grid-column:1/-1}}#selected{{font-weight:700;background:#fef3c7;padding:8px}}.chip{{display:inline-block;background:#e2e8f0;border-radius:14px;padding:4px 9px;margin:3px}}details{{margin-top:18px}}::selection{{background:#fde047;color:#111827}}
+</style><header><b>In-text citation benchmark · {batch_name.replace('_', ' ')}</b> · inspect, label, link, certify, then export
  <button id=export>Export certified gold JSONL</button> <span id=progress></span></header>
-<div class=layout><aside id=list></aside><main><section class=card><h2 id=title></h2><div id=meta class=meta></div></section><section class=card id=text></section>
-<section class=card><h3>Unique authority records</h3><p>Correct, add, or delete records. Evidence must be verbatim.</p><textarea id=citations></textarea>
-<h3>Unresolved identity links</h3><p>Record plausible cross-form equivalences only when the text does not establish that the two keys identify the same authority.</p><textarea id=links></textarea>
-<label><input type=checkbox id=certified> I inspected the complete substantive text and this list includes every eligible citation.</label> <button id=save>Save</button> <span id=status></span></section></main></div>
-<script>const DATA={data}; const KEY='in-text-citation-gold-v1';let saved=JSON.parse(localStorage.getItem(KEY)||'{{}}'),shown=[],idx=0;
+<div class=layout><aside id=list></aside><main><section class=card><h2 id=title></h2><div id=meta class=meta></div></section><section class=card><b>Highlight an authority in the text below to label it.</b><div id=text></div></section>
+<section class="card labeler" id=labeler><h3>Label highlighted authority</h3><div id=selected></div><div class=fields>
+<label>Authority type<select id=source_type><option>constitution</option><option>statute_or_code</option><option>legislative_measure</option><option>regulation</option><option>judicial_decision</option><option>treaty_or_agreement</option><option>presidential_directive</option><option>other_legal_instrument</option><option>generic_laws</option></select></label>
+<label>Region<input id=selected_region readonly></label><label class=wide>Authority label<input id=instrument_label></label><label class=wide>Authority key<input id=instrument_key></label><label class="wide" id=matchrow>Matching vesting authority<select id=vesting_match></select></label></div><p><button id=add_authority>Add authority</button> <button id=cancel_authority>Cancel</button> <span id=add_status></span></p></section>
+<section class=card><h3>Current authority labels</h3><div id=labels></div><details><summary>Advanced JSON correction</summary><p>Correct, add, or delete records. Each record's <code>region</code> must be <code>vesting</code> or <code>body</code>; evidence must be verbatim.</p><textarea id=citations></textarea>
+<h3>Body authority → vesting authority</h3><p>Include exactly one row for every included body <code>instrument_key</code>. Set <code>vesting_instrument_key</code> to the matching vesting key, or <code>null</code> when it does not match an authority in the vesting clause.</p><textarea id=bodylinks></textarea>
+<h3>Unresolved identity links</h3><p>Record plausible cross-form equivalences only when the text does not establish that the two keys identify the same authority.</p><textarea id=links></textarea></details>
+<label><input type=checkbox id=certified> I labeled every vesting and body authority and mapped every body authority to a vesting authority or to null.</label> <button id=save>Save</button> <span id=status></span></section></main></div>
+<script>const DATA={data}; const KEY='in-text-citation-gold-v3-{batch_name}';let saved=JSON.parse(localStorage.getItem(KEY)||'{{}}'),shown=DATA.documents,idx=0;
 const $=id=>document.getElementById(id), esc=s=>String(s).replace(/[&<>]/g,c=>({{'&':'&amp;','<':'&lt;','>':'&gt;'}}[c]));
-function refreshList(){{let f=$('filter').value;shown=DATA.documents.filter(d=>f==='all'||d.split===f);$('list').innerHTML=shown.map((d,i)=>`<button class="item ${{i===idx?'active':''}}" data-i="${{i}}">${{d.display_order}} · ${{d.doc_type}} · ${{d.document_id}} ${{saved[d.document_id]?.certified?'✓':''}}</button>`).join('');document.querySelectorAll('.item').forEach(b=>b.onclick=()=>{{save();idx=+b.dataset.i;show()}});}}
-function show(){{let d=shown[idx];if(!d)return;$('title').textContent=`${{d.display_order}} · ${{d.document_id}}`;$('meta').textContent=`${{d.split}} · ${{d.doc_type}} · ${{d.date}} · ${{d.president}}`;$('text').innerHTML=d.segments.map(s=>`<div class="segment ${{s.region}}"><b>${{esc(s.segment_id)}} · ${{esc(s.region)}} · ${{esc(s.source_type)}}</b><br>${{esc(s.text)}}</div>`).join('');let initial=DATA.predictions.find(x=>x.document_id===d.document_id);$('citations').value=JSON.stringify(saved[d.document_id]?.citations||initial.citations,null,2);$('links').value=JSON.stringify(saved[d.document_id]?.unresolved_identity_links||initial.unresolved_identity_links||[],null,2);$('certified').checked=!!saved[d.document_id]?.certified;$('status').textContent='';refreshList();progress();}}
-function save(){{let d=shown[idx];if(!d)return;try{{let citations=JSON.parse($('citations').value),links=JSON.parse($('links').value);if(!Array.isArray(citations))throw Error('citations must be a JSON list');if(!Array.isArray(links))throw Error('unresolved identity links must be a JSON list');saved[d.document_id]={{document_id:d.document_id,citations,unresolved_identity_links:links,certified:$('certified').checked,split:d.split}};localStorage.setItem(KEY,JSON.stringify(saved));$('status').textContent='saved';$('status').className='ok';}}catch(e){{$('status').textContent=e.message;$('status').className='';}}progress();}}
-function progress(){{$('progress').textContent=`${{Object.values(saved).filter(x=>x.certified).length}} / 200 certified`;}}
-$('filter').onchange=()=>{{save();idx=0;refreshList();show()}};$('save').onclick=()=>{{save();refreshList()}};$('export').onclick=()=>{{save();let rows=DATA.documents.map(d=>saved[d.document_id]).filter(x=>x?.certified);if(rows.length!==DATA.documents.length){{alert(`Certify all ${{DATA.documents.length}} documents before export (${{rows.length}} complete).`);return;}}let blob=new Blob([rows.map(x=>JSON.stringify(x)).join('\\n')+'\\n'],{{type:'application/jsonl'}}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='gold.jsonl';a.click();URL.revokeObjectURL(a.href)}};refreshList();show();</script>"""
+function suggestedLinks(citations){{let vest=new Set(citations.filter(c=>c.region==='vesting'&&!c.excluded).flatMap(c=>c.instrument_keys||[]));return [...new Set(citations.filter(c=>c.region==='body'&&!c.excluded).flatMap(c=>c.instrument_keys||[]))].map(k=>({{body_instrument_key:k,vesting_instrument_key:vest.has(k)?k:null}}));}}
+function parse(id){{return JSON.parse($(id).value)}}function slug(s){{return s.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')}}
+function refreshLabels(){{let citations;try{{citations=parse('citations')}}catch(e){{return}}$('labels').innerHTML=citations.filter(c=>!c.excluded).map(c=>`<span class=chip><b>${{esc(c.region)}}</b> · ${{esc(c.instrument_label)}} <small>(${{esc((c.instrument_keys||[]).join(', '))}})</small></span>`).join('')||'<span class=meta>No authorities labeled.</span>';}}
+function refreshList(){{$('list').innerHTML=shown.map((d,i)=>`<button class="item ${{i===idx?'active':''}}" data-i="${{i}}">${{d.display_order}} · ${{d.doc_type}} · ${{d.document_id}} ${{saved[d.document_id]?.certified?'✓':''}}</button>`).join('');document.querySelectorAll('.item').forEach(b=>b.onclick=()=>{{save();idx=+b.dataset.i;show()}});}}
+function show(){{let d=shown[idx];if(!d)return;$('title').textContent=`${{d.display_order}} · ${{d.document_id}}`;$('meta').textContent=`${{d.split}} · ${{d.doc_type}} · ${{d.date}} · ${{d.president}}`;$('text').innerHTML=d.segments.map(s=>`<div class="segment ${{s.region}}" data-segment="${{esc(s.segment_id)}}" data-region="${{s.region}}"><b>${{esc(s.segment_id)}} · ${{esc(s.region)}} · ${{esc(s.source_type)}}</b><br><span class=segtext>${{esc(s.text)}}</span></div>`).join('');let initial=DATA.predictions.find(x=>x.document_id===d.document_id),citations=saved[d.document_id]?.citations||initial.citations;$('citations').value=JSON.stringify(citations,null,2);$('bodylinks').value=JSON.stringify(saved[d.document_id]?.body_vesting_links||suggestedLinks(citations),null,2);$('links').value=JSON.stringify(saved[d.document_id]?.unresolved_identity_links||initial.unresolved_identity_links||[],null,2);$('certified').checked=!!saved[d.document_id]?.certified;$('status').textContent='';$('labeler').classList.remove('show');refreshLabels();refreshList();progress();}}
+let pending=null;$('text').onmouseup=()=>{{let sel=getSelection();if(!sel||sel.isCollapsed)return;let range=sel.getRangeAt(0),start=(range.startContainer.nodeType===3?range.startContainer.parentElement:range.startContainer).closest('.segtext'),end=(range.endContainer.nodeType===3?range.endContainer.parentElement:range.endContainer).closest('.segtext');if(!start||start!==end)return;let evidence=sel.toString().trim();if(!evidence)return;let box=start.closest('.segment'),segment=shown[idx].segments.find(s=>s.segment_id===box.dataset.segment),offset=segment.text.indexOf(evidence);pending={{evidence,segment_id:segment.segment_id,region:segment.region,start:offset,end:offset+evidence.length}};$('selected').textContent=evidence;$('selected_region').value=segment.region;$('instrument_label').value=evidence;$('instrument_key').value=$('source_type').value+':'+slug(evidence);let citations=parse('citations'),vesting=[...new Map(citations.filter(c=>c.region==='vesting'&&!c.excluded).flatMap(c=>(c.instrument_keys||[]).map(k=>[k,c.instrument_label]))).entries()];$('vesting_match').innerHTML='<option value="">No matching vesting authority</option>'+vesting.map(([k,v])=>`<option value="${{esc(k)}}">${{esc(v)}} (${{esc(k)}})</option>`).join('');$('matchrow').style.display=segment.region==='body'?'flex':'none';$('labeler').classList.add('show');}};
+$('source_type').onchange=()=>{{if(pending)$('instrument_key').value=$('source_type').value+':'+slug($('instrument_label').value)}};$('cancel_authority').onclick=()=>{{$('labeler').classList.remove('show');pending=null}};
+$('add_authority').onclick=()=>{{if(!pending)return;try{{let citations=parse('citations'),key=$('instrument_key').value.trim(),label=$('instrument_label').value.trim();if(!key||!label)throw Error('label and key are required');citations.push({{document_id:shown[idx].document_id,region:pending.region,segment_id:pending.segment_id,evidence:pending.evidence,start:pending.start,end:pending.end,source_type:$('source_type').value,instrument_label:label,instrument_keys:[key],provision_keys:[],generic:['constitution','generic_laws'].includes($('source_type').value),excluded:false,exclusion_reason:'',method:'human'}});$('citations').value=JSON.stringify(citations,null,2);let links=parse('bodylinks');if(pending.region==='body'&&!links.some(x=>x.body_instrument_key===key))links.push({{body_instrument_key:key,vesting_instrument_key:$('vesting_match').value||null}});$('bodylinks').value=JSON.stringify(links,null,2);refreshLabels();$('labeler').classList.remove('show');pending=null;$('add_status').textContent='added';save();}}catch(e){{$('add_status').textContent=e.message}}}};
+function save(){{let d=shown[idx];if(!d)return;try{{let citations=JSON.parse($('citations').value),bodyLinks=JSON.parse($('bodylinks').value),links=JSON.parse($('links').value);if(!Array.isArray(citations))throw Error('citations must be a JSON list');if(!Array.isArray(bodyLinks))throw Error('body-to-vesting links must be a JSON list');if(!Array.isArray(links))throw Error('unresolved identity links must be a JSON list');let body=[...new Set(citations.filter(c=>c.region==='body'&&!c.excluded).flatMap(c=>c.instrument_keys||[]))],vest=new Set(citations.filter(c=>c.region==='vesting'&&!c.excluded).flatMap(c=>c.instrument_keys||[])),mapped=bodyLinks.map(x=>x.body_instrument_key);if(body.length!==bodyLinks.length||new Set(mapped).size!==mapped.length||body.some(k=>!mapped.includes(k)))throw Error('provide exactly one mapping row for every included body instrument key');if(bodyLinks.some(x=>x.vesting_instrument_key!==null&&!vest.has(x.vesting_instrument_key)))throw Error('a vesting_instrument_key is not among the labeled vesting authorities');saved[d.document_id]={{document_id:d.document_id,citations,body_vesting_links:bodyLinks,unresolved_identity_links:links,certified:$('certified').checked,split:d.split}};localStorage.setItem(KEY,JSON.stringify(saved));$('status').textContent='saved';$('status').className='ok';}}catch(e){{$('status').textContent=e.message;$('status').className='';}}progress();}}
+function progress(){{$('progress').textContent=`${{DATA.documents.filter(d=>saved[d.document_id]?.certified).length}} / {total} certified`;}}
+let autosaveTimer;['citations','bodylinks','links'].forEach(id=>$(id).addEventListener('input',()=>{{clearTimeout(autosaveTimer);autosaveTimer=setTimeout(save,500)}}));$('certified').addEventListener('change',()=>{{save();refreshList()}});window.addEventListener('pagehide',save);
+$('save').onclick=()=>{{save();refreshList()}};$('export').onclick=()=>{{save();let rows=DATA.documents.map(d=>saved[d.document_id]).filter(x=>x?.certified);if(rows.length!==DATA.documents.length){{alert(`Certify all ${{DATA.documents.length}} documents before export (${{rows.length}} complete).`);return;}}let blob=new Blob([rows.map(x=>JSON.stringify(x)).join('\\n')+'\\n'],{{type:'application/jsonl'}}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='{batch_name}.jsonl';a.click();URL.revokeObjectURL(a.href)}};refreshList();show();</script>"""
 
 
 def build_requests(documents_path: Path, method: str, output: Path, benchmark_score: Path | None = None) -> None:
@@ -300,6 +345,7 @@ def validate_gold(documents_path: Path, gold_path: Path, output: Path) -> None:
         if row.get("split") != documents[document_id]["split"]:
             raise ValueError(f"gold split mismatch for {document_id}")
         validate_citations(row, documents[document_id])
+        validate_body_vesting_links(row)
         validated.append(row)
     if Counter(row["split"] for row in validated) != {"calibration": 100, "evaluation": 100}:
         raise ValueError("gold labels must preserve the 100/100 split")
