@@ -78,8 +78,13 @@ Status tags: **[settled]** decided by Kyle; **[open]** undecided.
     "pursuant to the provisions of Section 208" segment. Since 2026-10-17 the segmenter agrees
     (`past_invocation` in `segmenter._vesting_kind`: a dated opening plus "I issued" or a
     similar past-tense act).
-20. **[open: definition]** Each citation records `use`: "legal_purpose" (cited for a legal
-    purpose) or "named" (just named). Required, so a blank never means "not considered".
-    Inclusion is unaffected (rule 2): both kinds are still citations.
+20. **[settled]** Each citation records `use` (required, so a blank never means "not
+    considered"); inclusion is unaffected (rule 2):
+    - `legal_purpose` ("cited for a legal purpose"): the directive relies on or acts on the
+      authority: invokes it, acts pursuant to it, amends/revokes/supersedes it, delegates
+      under it, or says it requires or permits what the directive does. A joint resolution
+      that calls for a commemorative proclamation counts here.
+    - `named` ("just named"): mentioned without the directive relying on it: background,
+      history, or what someone else did. Past-tense citations (rule 19) are always `named`.
 21. Annotation is done in `annotator.html` (run `python3 serve.py`, open
     http://localhost:8765); every change saves to `annotations.jsonl`.

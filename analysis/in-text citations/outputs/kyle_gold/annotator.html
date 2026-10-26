@@ -50,7 +50,8 @@
       <label>Authority <input type="text" id="f-auth" autocomplete="off" placeholder="optional, e.g. Trade Act of 1974"></label>
       <label>Provision (if given) <input type="text" id="f-prov" placeholder="e.g. 203(b)"></label>
       <label><input type="checkbox" id="f-generic"> Generic (Constitution / laws of the United States)</label>
-      <label>Use <select id="f-use"><option value="">— choose —</option><option value="legal_purpose">Cited for a legal purpose</option><option value="named">Just named</option></select></label>
+      <label>Use <select id="f-use"><option value="">— choose —</option><option value="legal_purpose">Cited for a legal purpose</option><option value="named">Just named</option></select>
+        <span class="hint">Legal purpose = relied on or acted on (incl. a joint resolution calling for the proclamation). Past tense = just named.</span></label>
       <label><input type="checkbox" id="f-past"> Past tense (describes an action already taken, e.g. "I issued Executive Order ...")</label>
       <label>Counts as <select id="f-region"><option value="vesting">vesting</option><option value="body">body</option></select>
         <span class="hint" id="f-region-hint"></span></label>
@@ -168,6 +169,7 @@ document.addEventListener('mouseup', e => {
   $('form').style.display = 'block'; $('f-type').focus();
 });
 
+$('f-past').onchange = () => { if ($('f-past').checked) $('f-use').value = 'named'; };
 $('f-ante').onchange = () => {
   const c = rec().citations[$('f-ante').value];
   if (c) { $('f-auth').value = authOf(c); $('f-type').value = c.source_type ?? ''; $('f-generic').checked = !!c.generic; }
