@@ -1,0 +1,26 @@
+{
+  "candidate_channels": [
+    "word5",
+    "word10",
+    "bm25_tfidf_proxy",
+    "operative_tfidf",
+    "recency"
+  ],
+  "candidate_method_note": "Function-profile embeddings used by the frozen 100-case package were not preserved; operative-text TF-IDF is used for full-corpus coverage.",
+  "candidate_pool_size": 25,
+  "explicit_direct_transition_children": 2382,
+  "kind": "remaining_nonceremonial_no_explicit_link_sol_parent_identification",
+  "model": "gpt-5.6-sol",
+  "nonceremonial_directives": 13461,
+  "previously_evaluated_children": 100,
+  "reasoning_effort": "low",
+  "remaining_children": 10979,
+  "requests_built": 500,
+  "schema_version": 1,
+  "skipped_with_fewer_than_three_earlier_candidates": [
+    "15215",
+    "4507",
+    "15214"
+  ],
+  "text": "vesting clauses and generic boilerplate removed; directive-number references masked"
+}

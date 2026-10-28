@@ -1,0 +1,23 @@
+administration_order,administration,president,term,executive_order,memorandum,letter,proclamation
+1,Truman,Harry S Truman,First,507,32,267,148
+2,Eisenhower,Dwight D. Eisenhower,First,259,90,205,69
+3,Eisenhower,Dwight D. Eisenhower,Second,206,78,205,99
+4,Kennedy,John F. Kennedy,First,205,24,217,65
+5,Johnson,Lyndon B. Johnson,First,63,10,54,25
+6,Johnson,Lyndon B. Johnson,Second,253,88,207,83
+7,Nixon,Richard Nixon,First,234,58,117,65
+8,Nixon,Richard Nixon,Second,97,11,42,31
+9,Ford,Gerald R. Ford,First,163,72,140,44
+10,Carter,Jimmy Carter,First,316,212,190,121
+11,Reagan,Ronald Reagan,First,211,78,170,76
+12,Reagan,Ronald Reagan,Second,168,151,183,77
+13,G.H.W. Bush,George Bush,First,160,260,258,79
+14,Clinton,William J. Clinton,First,198,359,274,101
+15,Clinton,William J. Clinton,Second,162,340,369,74
+16,G.W. Bush,George W. Bush,First,171,282,304,52
+17,G.W. Bush,George W. Bush,Second,118,244,128,60
+18,Obama,Barack Obama,First,147,239,125,38
+19,Obama,Barack Obama,Second,126,233,175,58
+20,Trump,Donald J. Trump,First,218,246,206,96
+21,Biden,"Joseph R. Biden, Jr.",First,161,259,201,68
+22,Trump,Donald J. Trump,Second,243,88,6,48

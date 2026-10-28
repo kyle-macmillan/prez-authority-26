@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "citation-annotator",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["-I", "analysis/in-text citations/outputs/kyle_gold/serve.py", "8765"],
+      "port": 8765
+    }
+  ]
+}

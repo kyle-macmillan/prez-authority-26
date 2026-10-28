@@ -1,0 +1,16 @@
+doc_type,self_executing_category,count
+executive_order,self_executing_legal_effect,83
+executive_order,not_self_executing_legal_effect,578
+executive_order,uncertain_review,155
+memorandum,self_executing_legal_effect,3
+memorandum,not_self_executing_legal_effect,112
+memorandum,uncertain_review,31
+proclamation,self_executing_legal_effect,5
+proclamation,not_self_executing_legal_effect,2726
+proclamation,uncertain_review,0
+letter,self_executing_legal_effect,0
+letter,not_self_executing_legal_effect,0
+letter,uncertain_review,5
+total,self_executing_legal_effect,91
+total,not_self_executing_legal_effect,3416
+total,uncertain_review,191

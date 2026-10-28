@@ -1,0 +1,23 @@
+administration_order,administration,president,term,generic_constitution_only,specific_constitution_only,generic_statute_only,specific_statute_only,generic_constitution_and_generic_statute,generic_constitution_and_specific_statute,specific_constitution_and_generic_statute,specific_constitution_and_specific_statute
+1,Truman,Harry S Truman,First,0,8,0,454,11,43,9,43
+2,Eisenhower,Dwight D. Eisenhower,First,0,6,0,229,13,25,2,14
+3,Eisenhower,Dwight D. Eisenhower,Second,0,3,0,204,9,20,2,6
+4,Kennedy,John F. Kennedy,First,0,2,0,156,12,24,0,3
+5,Johnson,Lyndon B. Johnson,First,0,0,0,44,3,3,0,4
+6,Johnson,Lyndon B. Johnson,Second,0,5,0,186,7,35,0,10
+7,Nixon,Richard Nixon,First,1,3,0,142,13,46,1,8
+8,Nixon,Richard Nixon,Second,0,0,0,73,2,20,0,5
+9,Ford,Gerald R. Ford,First,1,6,0,94,23,53,1,10
+10,Carter,Jimmy Carter,First,41,2,0,183,61,147,0,4
+11,Reagan,Ronald Reagan,First,25,3,0,73,45,114,1,2
+12,Reagan,Ronald Reagan,Second,1,0,0,118,41,171,1,1
+13,G.H.W. Bush,George Bush,First,0,1,0,216,48,201,0,4
+14,Clinton,William J. Clinton,First,0,3,0,230,103,226,0,1
+15,Clinton,William J. Clinton,Second,4,2,0,201,91,161,0,0
+16,G.W. Bush,George W. Bush,First,2,2,0,180,84,214,2,1
+17,G.W. Bush,George W. Bush,Second,3,1,0,88,63,236,0,1
+18,Obama,Barack Obama,First,3,4,0,69,107,173,0,2
+19,Obama,Barack Obama,Second,5,5,0,101,118,188,1,0
+20,Trump,Donald J. Trump,First,4,2,0,67,238,264,5,2
+21,Biden,"Joseph R. Biden, Jr.",First,8,29,0,64,143,261,2,0
+22,Trump,Donald J. Trump,Second,0,5,1,3,209,118,2,1

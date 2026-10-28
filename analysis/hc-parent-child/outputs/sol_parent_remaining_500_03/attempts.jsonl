@@ -1,0 +1,1000 @@
+{"case_id": "SPR00005", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "15c36a4b9908f8b4b145abfb0c0d2fd9882e2a321612da70ba9cd2853590dce8", "timestamp": "2026-08-25T20:23:05.486000+00:00"}
+{"case_id": "SPR00006", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "902e0f3c4dc5019d11c8471b3817b7d3de19e9ed6f06e4b5d9b32a3dd2a2ee06", "timestamp": "2026-08-25T20:23:06.096909+00:00"}
+{"case_id": "SPR00004", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "bcdb95c84104a1eb2b05861ecf289c89c6ddca6c4c03b0569658d46fe18db9df", "timestamp": "2026-08-25T20:23:06.262577+00:00"}
+{"case_id": "SPR00007", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "6cb99cc01146f21c8140468e67a13ae17da92ad40e282548bc37d5cb8628573a", "timestamp": "2026-08-25T20:23:06.416211+00:00"}
+{"case_id": "SPR00007", "decision": "candidate", "event": "completed", "selected_candidate_label": "C06", "timestamp": "2026-08-25T20:23:20.763669+00:00"}
+{"case_id": "SPR00011", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "d8466c833397f74bf0f720c572d558d48cb8b647af6e96669232262e6b5a1028", "timestamp": "2026-08-25T20:23:20.765346+00:00"}
+{"case_id": "SPR00006", "decision": "candidate", "event": "completed", "selected_candidate_label": "C21", "timestamp": "2026-08-25T20:23:22.235324+00:00"}
+{"case_id": "SPR00010", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "01c62b41f230e27720d8180553106bb159e6747236c5168b289510040ba0601b", "timestamp": "2026-08-25T20:23:22.237369+00:00"}
+{"case_id": "SPR00005", "decision": "candidate", "event": "completed", "selected_candidate_label": "C08", "timestamp": "2026-08-25T20:23:22.631151+00:00"}
+{"case_id": "SPR00009", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "d7d342ebbb5e0a955332c82df36a3a7acfd00f02e982afffffaf92e9ed842a0a", "timestamp": "2026-08-25T20:23:22.632230+00:00"}
+{"case_id": "SPR00004", "decision": "candidate", "event": "completed", "selected_candidate_label": "C23", "timestamp": "2026-08-25T20:23:23.182661+00:00"}
+{"case_id": "SPR00008", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "9e0be174dd9911207e329792e270dd18f499d596324c297ff48bafb4ad5468c8", "timestamp": "2026-08-25T20:23:23.183585+00:00"}
+{"case_id": "SPR00010", "decision": "candidate", "event": "completed", "selected_candidate_label": "C20", "timestamp": "2026-08-25T20:23:35.706150+00:00"}
+{"case_id": "SPR00014", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "0bd78009164137d0dd4f662f8b8b6ec8503bbd933dd21ea67539aa2fc26e45ab", "timestamp": "2026-08-25T20:23:35.708403+00:00"}
+{"case_id": "SPR00009", "decision": "none", "event": "completed", "selected_candidate_label": null, "timestamp": "2026-08-25T20:23:36.837933+00:00"}
+{"case_id": "SPR00013", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "c2ed358d358e51caa4c0ce93db38c6ba64cba03d7de553802e14c834fd836a3a", "timestamp": "2026-08-25T20:23:36.839587+00:00"}
+{"case_id": "SPR00008", "decision": "candidate", "event": "completed", "selected_candidate_label": "C03", "timestamp": "2026-08-25T20:23:40.031161+00:00"}
+{"case_id": "SPR00012", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "a520944c8b1b2643cd7da7581fd388ef4947a56f6ff56f1c38f381a8dd3ba793", "timestamp": "2026-08-25T20:23:40.032397+00:00"}
+{"case_id": "SPR00011", "decision": "candidate", "event": "completed", "selected_candidate_label": "C11", "timestamp": "2026-08-25T20:23:45.719027+00:00"}
+{"case_id": "SPR00015", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "fedca785cb4b3791b1dd058f3ca4ca3c36a5d8cdee90708438ca8fcde90e5f98", "timestamp": "2026-08-25T20:23:45.720461+00:00"}
+{"case_id": "SPR00014", "decision": "candidate", "event": "completed", "selected_candidate_label": "C19", "timestamp": "2026-08-25T20:23:52.813132+00:00"}
+{"case_id": "SPR00018", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "17ab714b1925e14a47bc6168b302a2e9c54d5bbc8809b21a4900348a5ae68715", "timestamp": "2026-08-25T20:23:52.815519+00:00"}
+{"case_id": "SPR00012", "decision": "candidate", "event": "completed", "selected_candidate_label": "C10", "timestamp": "2026-08-25T20:23:55.446483+00:00"}
+{"case_id": "SPR00016", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "8e4e897d7672f31eb860c7da1666f182dc49f2cbe91470b77be2fbdf4b957232", "timestamp": "2026-08-25T20:23:55.448327+00:00"}
+{"case_id": "SPR00015", "decision": "candidate", "event": "completed", "selected_candidate_label": "C23", "timestamp": "2026-08-25T20:24:03.143964+00:00"}
+{"case_id": "SPR00019", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "19562bdc40c54248361834f86edda026c3458dfce8cf6a40469fb2915e97ba0a", "timestamp": "2026-08-25T20:24:03.145452+00:00"}
+{"case_id": "SPR00013", "decision": "candidate", "event": "completed", "selected_candidate_label": "C22", "timestamp": "2026-08-25T20:24:04.029272+00:00"}
+{"case_id": "SPR00017", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "05b70a4571736d26d327b47632ab523d5aeae417587a45207cdecf87c92e0a58", "timestamp": "2026-08-25T20:24:04.031506+00:00"}
+{"case_id": "SPR00018", "decision": "candidate", "event": "completed", "selected_candidate_label": "C10", "timestamp": "2026-08-25T20:24:09.591425+00:00"}
+{"case_id": "SPR00022", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "4bfc3a4695515bf9fffa089b016ec4380fa2df2874b75816528ac09019babc63", "timestamp": "2026-08-25T20:24:09.593370+00:00"}
+{"case_id": "SPR00016", "decision": "candidate", "event": "completed", "selected_candidate_label": "C04", "timestamp": "2026-08-25T20:24:13.883689+00:00"}
+{"case_id": "SPR00020", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "cba23a514f5ab89ba21c8c3575371deead16c85e5bb60bc8459863170ca7205e", "timestamp": "2026-08-25T20:24:13.886685+00:00"}
+{"case_id": "SPR00019", "decision": "candidate", "event": "completed", "selected_candidate_label": "C22", "timestamp": "2026-08-25T20:24:15.294539+00:00"}
+{"case_id": "SPR00023", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "8e7a89e1af89761d9bd12359c88f6fbe20e489c19be74d64c15f95f01ac27524", "timestamp": "2026-08-25T20:24:15.296177+00:00"}
+{"case_id": "SPR00017", "decision": "candidate", "event": "completed", "selected_candidate_label": "C20", "timestamp": "2026-08-25T20:24:20.649185+00:00"}
+{"case_id": "SPR00021", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "08096b1a65f2bb22144344466941b6db3c22479da8ee1feafcfa7e4268da7a09", "timestamp": "2026-08-25T20:24:20.651131+00:00"}
+{"case_id": "SPR00022", "decision": "candidate", "event": "completed", "selected_candidate_label": "C12", "timestamp": "2026-08-25T20:24:26.064932+00:00"}
+{"case_id": "SPR00026", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "9beba606f1267501047c3e1d6b679c2709d27ca1e6e4c442b38a47ddf8f8f8dc", "timestamp": "2026-08-25T20:24:26.068022+00:00"}
+{"case_id": "SPR00023", "decision": "candidate", "event": "completed", "selected_candidate_label": "C06", "timestamp": "2026-08-25T20:24:29.431255+00:00"}
+{"case_id": "SPR00027", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "37d8c279bb31ab4757b8f7607c3d1f7e9b1ef7b1f706565f5094e2ac900c9fb5", "timestamp": "2026-08-25T20:24:29.432935+00:00"}
+{"case_id": "SPR00020", "decision": "candidate", "event": "completed", "selected_candidate_label": "C20", "timestamp": "2026-08-25T20:24:32.346670+00:00"}
+{"case_id": "SPR00024", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "db19faf8c80b387163760bd7163361e6b5b72ee917db9e4808c677fe99791d55", "timestamp": "2026-08-25T20:24:32.348529+00:00"}
+{"case_id": "SPR00021", "decision": "candidate", "event": "completed", "selected_candidate_label": "C04", "timestamp": "2026-08-25T20:24:35.036010+00:00"}
+{"case_id": "SPR00025", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "d169ad894d5f5de24cc31f1134049bdb860a704556cf639ad6025be7cbebc41a", "timestamp": "2026-08-25T20:24:35.038215+00:00"}
+{"case_id": "SPR00026", "decision": "candidate", "event": "completed", "selected_candidate_label": "C06", "timestamp": "2026-08-25T20:24:44.458914+00:00"}
+{"case_id": "SPR00030", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "82d636b6877b8f9a67d3f8bfb6664bc6b988fc4fe64df918154b5df7627d5016", "timestamp": "2026-08-25T20:24:44.460719+00:00"}
+{"case_id": "SPR00027", "decision": "candidate", "event": "completed", "selected_candidate_label": "C14", "timestamp": "2026-08-25T20:24:47.161642+00:00"}
+{"case_id": "SPR00031", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "5d4d2ca83d02468eab083165a2f0c9858cb5ba632a60410c4e77ad79196a32cb", "timestamp": "2026-08-25T20:24:47.164473+00:00"}
+{"case_id": "SPR00024", "decision": "candidate", "event": "completed", "selected_candidate_label": "C24", "timestamp": "2026-08-25T20:24:47.847720+00:00"}
+{"case_id": "SPR00028", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "df6b5c8551a5fceed967754f7b43e3721c9809247eb4f64c11d611632b11941d", "timestamp": "2026-08-25T20:24:47.849354+00:00"}
+{"case_id": "SPR00025", "decision": "candidate", "event": "completed", "selected_candidate_label": "C05", "timestamp": "2026-08-25T20:24:52.002848+00:00"}
+{"case_id": "SPR00029", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "a3952a09480db3f08db896e0ac8a7c531b2bd45647b9bbfb8172e4da51bfa4ed", "timestamp": "2026-08-25T20:24:52.004858+00:00"}
+{"case_id": "SPR00030", "decision": "candidate", "event": "completed", "selected_candidate_label": "C20", "timestamp": "2026-08-25T20:24:57.923872+00:00"}
+{"case_id": "SPR00034", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "fa1a88f29805dc45438fc14f7a607de8d461bc16cf787153ffbf21381d4f8f52", "timestamp": "2026-08-25T20:24:57.925790+00:00"}
+{"case_id": "SPR00028", "decision": "candidate", "event": "completed", "selected_candidate_label": "C24", "timestamp": "2026-08-25T20:25:01.890724+00:00"}
+{"case_id": "SPR00032", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "0aa5fb498cb173dcf44f024d64740a043144f028180ca6a2610ebfeeab3a6ed1", "timestamp": "2026-08-25T20:25:01.892579+00:00"}
+{"case_id": "SPR00031", "decision": "candidate", "event": "completed", "selected_candidate_label": "C18", "timestamp": "2026-08-25T20:25:01.977369+00:00"}
+{"case_id": "SPR00035", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "17ec51c7ae410703b9dee0e421294dcc94894bca6a1cf56221ed8dd888e7e8a5", "timestamp": "2026-08-25T20:25:01.979136+00:00"}
+{"case_id": "SPR00029", "decision": "candidate", "event": "completed", "selected_candidate_label": "C10", "timestamp": "2026-08-25T20:25:10.222018+00:00"}
+{"case_id": "SPR00033", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "331abd8ecbb4e5da4ac0df5cd8eecfda5ee8633236e575afb780d02a7a727bd5", "timestamp": "2026-08-25T20:25:10.225852+00:00"}
+{"case_id": "SPR00034", "decision": "candidate", "event": "completed", "selected_candidate_label": "C22", "timestamp": "2026-08-25T20:25:10.461300+00:00"}
+{"case_id": "SPR00038", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "b39f824516e4ce84e75f03867e4a38cbc1d6782bfeafb537c224c26c661e703a", "timestamp": "2026-08-25T20:25:10.462897+00:00"}
+{"case_id": "SPR00032", "decision": "candidate", "event": "completed", "selected_candidate_label": "C13", "timestamp": "2026-08-25T20:25:16.442630+00:00"}
+{"case_id": "SPR00036", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "00b2efb4c491d19bf9b7abf605906b75ea96f3b8f920f475debd208c69ce8f1c", "timestamp": "2026-08-25T20:25:16.445789+00:00"}
+{"case_id": "SPR00035", "decision": "candidate", "event": "completed", "selected_candidate_label": "C14", "timestamp": "2026-08-25T20:25:19.962841+00:00"}
+{"case_id": "SPR00039", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "b32f2a0448d84686d77d80472d4db98361465df8f175870142509b7bb9e47907", "timestamp": "2026-08-25T20:25:19.965338+00:00"}
+{"case_id": "SPR00033", "decision": "candidate", "event": "completed", "selected_candidate_label": "C02", "timestamp": "2026-08-25T20:25:26.717962+00:00"}
+{"case_id": "SPR00037", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "d7e02e141ce499bf0c3bcd0d595dab807557593a4f2cda8f015b3d1fca315490", "timestamp": "2026-08-25T20:25:26.722017+00:00"}
+{"case_id": "SPR00038", "decision": "candidate", "event": "completed", "selected_candidate_label": "C18", "timestamp": "2026-08-25T20:25:28.319303+00:00"}
+{"case_id": "SPR00042", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "c07a8e18a218e5918d41f7ad85faaaf4c3ccf222ee6f27789b18520f3a101156", "timestamp": "2026-08-25T20:25:28.321857+00:00"}
+{"case_id": "SPR00036", "decision": "candidate", "event": "completed", "selected_candidate_label": "C14", "timestamp": "2026-08-25T20:25:36.296944+00:00"}
+{"case_id": "SPR00040", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "ff921dea73dffbf2533dfa61464ee4a46db1411d0246e2fe2cb54499368742ed", "timestamp": "2026-08-25T20:25:36.298963+00:00"}
+{"case_id": "SPR00039", "decision": "candidate", "event": "completed", "selected_candidate_label": "C02", "timestamp": "2026-08-25T20:25:36.956760+00:00"}
+{"case_id": "SPR00043", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "9ec56f0261b3ce8d544289e1a163932a94c234e45293be6cca86034eff304463", "timestamp": "2026-08-25T20:25:36.958228+00:00"}
+{"case_id": "SPR00037", "decision": "candidate", "event": "completed", "selected_candidate_label": "C03", "timestamp": "2026-08-25T20:25:45.467230+00:00"}
+{"case_id": "SPR00041", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "363536cdbcaa74e28578833b5558ecf8cb18d015321b40a845a80e5aebc428f2", "timestamp": "2026-08-25T20:25:45.469100+00:00"}
+{"case_id": "SPR00042", "decision": "none", "event": "completed", "selected_candidate_label": null, "timestamp": "2026-08-25T20:25:47.403103+00:00"}
+{"case_id": "SPR00046", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "6bb99c043ff5cb1aca1a63330a67b9a487ccd499865a7b457a5874615b4e1483", "timestamp": "2026-08-25T20:25:47.405394+00:00"}
+{"case_id": "SPR00043", "decision": "none", "event": "completed", "selected_candidate_label": null, "timestamp": "2026-08-25T20:25:54.328574+00:00"}
+{"case_id": "SPR00047", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "2f9a3d84c0c80ed8e5cd33abeb7fb6f3f11a4cbc5072b8f3df658f2f3128b632", "timestamp": "2026-08-25T20:25:54.330341+00:00"}
+{"case_id": "SPR00040", "decision": "candidate", "event": "completed", "selected_candidate_label": "C23", "timestamp": "2026-08-25T20:25:55.593494+00:00"}
+{"case_id": "SPR00044", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "5f9f05ef267a4abad6c81f1d1d2d746552e42e3acd3c6dfb2198232e5aab515c", "timestamp": "2026-08-25T20:25:55.596083+00:00"}
+{"case_id": "SPR00046", "decision": "none", "event": "completed", "selected_candidate_label": null, "timestamp": "2026-08-25T20:26:03.484819+00:00"}
+{"case_id": "SPR00050", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "2fdc8568086e2566291526e8843524633cb74dc50cebaceeda22a48b0bd14a43", "timestamp": "2026-08-25T20:26:03.486271+00:00"}
+{"case_id": "SPR00041", "decision": "candidate", "event": "completed", "selected_candidate_label": "C14", "timestamp": "2026-08-25T20:26:03.931180+00:00"}
+{"case_id": "SPR00045", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "842aecbb34605834220666381deb7776a0d21d0347b2abf6f2fc084591d9f199", "timestamp": "2026-08-25T20:26:03.932900+00:00"}
+{"case_id": "SPR00047", "decision": "none", "event": "completed", "selected_candidate_label": null, "timestamp": "2026-08-25T20:26:10.270808+00:00"}
+{"case_id": "SPR00051", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "de49c51cd9bbb7a44124653edec3aaf4af1b0d98cb730744c6954f489314cebd", "timestamp": "2026-08-25T20:26:10.273739+00:00"}
+{"case_id": "SPR00044", "decision": "none", "event": "completed", "selected_candidate_label": null, "timestamp": "2026-08-25T20:26:13.090264+00:00"}
+{"case_id": "SPR00048", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "b5293d1540e44ce3e3c6e12a4f1bec290814a998af5e018a5b6fae2a6d033de9", "timestamp": "2026-08-25T20:26:13.092214+00:00"}
+{"case_id": "SPR00050", "decision": "candidate", "event": "completed", "selected_candidate_label": "C25", "timestamp": "2026-08-25T20:26:16.944586+00:00"}
+{"case_id": "SPR00054", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "1f0d9616dd0fdd65b5da11fdd75c1041b129c42f91e1941c96d5ef2549426fc1", "timestamp": "2026-08-25T20:26:16.946728+00:00"}
+{"case_id": "SPR00045", "decision": "candidate", "event": "completed", "selected_candidate_label": "C13", "timestamp": "2026-08-25T20:26:21.962678+00:00"}
+{"case_id": "SPR00049", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "337c168cafe0d37c5cd94bf767b17153aeae65f3393f5b4be8554a545d6051e0", "timestamp": "2026-08-25T20:26:21.965152+00:00"}
+{"case_id": "SPR00048", "decision": "candidate", "event": "completed", "selected_candidate_label": "C07", "timestamp": "2026-08-25T20:26:28.795133+00:00"}
+{"case_id": "SPR00052", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "1f045c780c7a0e1e0f203f5fa30f88a45c672d262ee21a5ccb13644647043e32", "timestamp": "2026-08-25T20:26:28.798370+00:00"}
+{"case_id": "SPR00051", "decision": "candidate", "event": "completed", "selected_candidate_label": "C21", "timestamp": "2026-08-25T20:26:29.509545+00:00"}
+{"case_id": "SPR00055", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "39b4f0e3ce996380a503bf199e998befe116d1f08a3f73ff174af108d2fd05f6", "timestamp": "2026-08-25T20:26:29.510580+00:00"}
+{"case_id": "SPR00054", "decision": "candidate", "event": "completed", "selected_candidate_label": "C08", "timestamp": "2026-08-25T20:26:30.783754+00:00"}
+{"case_id": "SPR00058", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "b7ba1630fea38d3878767ea0af2e47249358b75af4c7b209bf445eb3ec43064c", "timestamp": "2026-08-25T20:26:30.785671+00:00"}
+{"case_id": "SPR00049", "decision": "candidate", "event": "completed", "selected_candidate_label": "C20", "timestamp": "2026-08-25T20:26:34.775583+00:00"}
+{"case_id": "SPR00053", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "7374aac37b2765e18ab3674e8068b8f5fa4f91d75f1b2dd0680cfe2e77878ba7", "timestamp": "2026-08-25T20:26:34.777374+00:00"}
+{"case_id": "SPR00058", "decision": "candidate", "event": "completed", "selected_candidate_label": "C04", "timestamp": "2026-08-25T20:26:45.882924+00:00"}
+{"case_id": "SPR00062", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "6b131916108583a41e2f95bc383ccc38b03902690c7a0db561e35ec79f0acb6d", "timestamp": "2026-08-25T20:26:45.884748+00:00"}
+{"case_id": "SPR00052", "decision": "none", "event": "completed", "selected_candidate_label": null, "timestamp": "2026-08-25T20:26:46.405806+00:00"}
+{"case_id": "SPR00056", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "4f549f938ae15d9a208881087f280f4748185d0b89e6d35e0b1022c853544652", "timestamp": "2026-08-25T20:26:46.406672+00:00"}
+{"case_id": "SPR00055", "decision": "candidate", "event": "completed", "selected_candidate_label": "C15", "timestamp": "2026-08-25T20:26:46.661587+00:00"}
+{"case_id": "SPR00059", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "98185b8dcc684ab025f24aaab029802ca5a16323c8f7b00c31cbdad7ddf45a88", "timestamp": "2026-08-25T20:26:46.662348+00:00"}
+{"case_id": "SPR00053", "decision": "candidate", "event": "completed", "selected_candidate_label": "C07", "timestamp": "2026-08-25T20:26:48.567133+00:00"}
+{"case_id": "SPR00057", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "4cef25db3651edf8a5faf00cfcad4a79b870ecc5d64f4c08841f9256e86e2410", "timestamp": "2026-08-25T20:26:48.568814+00:00"}
+{"case_id": "SPR00059", "decision": "candidate", "event": "completed", "selected_candidate_label": "C20", "timestamp": "2026-08-25T20:26:56.480008+00:00"}
+{"case_id": "SPR00063", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "569c94682c4ea3042ce3f1d789ff954a0018e099c8a7d3b0a71ae6c867289c04", "timestamp": "2026-08-25T20:26:56.482106+00:00"}
+{"case_id": "SPR00062", "decision": "candidate", "event": "completed", "selected_candidate_label": "C15", "timestamp": "2026-08-25T20:27:01.639882+00:00"}
+{"case_id": "SPR00066", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "6f455c9bd8510c34c864b10c9ba2912340b62e93a4bb2f7c62dcd5de92ec2a36", "timestamp": "2026-08-25T20:27:01.642523+00:00"}
+{"case_id": "SPR00056", "decision": "candidate", "event": "completed", "selected_candidate_label": "C07", "timestamp": "2026-08-25T20:27:02.278948+00:00"}
+{"case_id": "SPR00060", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "b7cbe1933e3e4763549f56a294cc3416535491aa580ecbe589d1f28ffd370097", "timestamp": "2026-08-25T20:27:02.279920+00:00"}
+{"case_id": "SPR00057", "decision": "candidate", "event": "completed", "selected_candidate_label": "C03", "timestamp": "2026-08-25T20:27:07.870493+00:00"}
+{"case_id": "SPR00061", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "b718acff42bc97aa2b20e7c3f369260d4d1149e06e3ae489e550c15ca8bb0504", "timestamp": "2026-08-25T20:27:07.872901+00:00"}
+{"case_id": "SPR00063", "decision": "candidate", "event": "completed", "selected_candidate_label": "C24", "timestamp": "2026-08-25T20:27:17.327683+00:00"}
+{"case_id": "SPR00067", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "587834d4ea9701c3b998e3bfb09730dc76525b5eb8316c5a6e015e073de6f5af", "timestamp": "2026-08-25T20:27:17.329566+00:00"}
+{"case_id": "SPR00060", "decision": "candidate", "event": "completed", "selected_candidate_label": "C08", "timestamp": "2026-08-25T20:27:18.277901+00:00"}
+{"case_id": "SPR00064", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "16565d7ad2eb1c458c22b8f45083493aa27bf994e7af46b0be118f91ec7f155d", "timestamp": "2026-08-25T20:27:18.278861+00:00"}
+{"case_id": "SPR00066", "decision": "candidate", "event": "completed", "selected_candidate_label": "C19", "timestamp": "2026-08-25T20:27:20.367131+00:00"}
+{"case_id": "SPR00070", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "52991b47a7efda898f3666961a2dfc4b87f2b9f91a841764f021df6e4694637e", "timestamp": "2026-08-25T20:27:20.368931+00:00"}
+{"case_id": "SPR00061", "decision": "candidate", "event": "completed", "selected_candidate_label": "C16", "timestamp": "2026-08-25T20:27:25.992231+00:00"}
+{"case_id": "SPR00065", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "4e06686b63c72d43273556a4a3b5d12c3cdf4854faae6602c479e72e7ac5214e", "timestamp": "2026-08-25T20:27:25.994540+00:00"}
+{"case_id": "SPR00070", "decision": "candidate", "event": "completed", "selected_candidate_label": "C05", "timestamp": "2026-08-25T20:27:34.658710+00:00"}
+{"case_id": "SPR00074", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "be289be2f74297b0a32627bb0b37bbc819815ca5695ff26fa8488c5302af0038", "timestamp": "2026-08-25T20:27:34.660512+00:00"}
+{"case_id": "SPR00067", "decision": "candidate", "event": "completed", "selected_candidate_label": "C09", "timestamp": "2026-08-25T20:27:34.897771+00:00"}
+{"case_id": "SPR00071", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "dfa69308a91bcdc25596ef1ab5ce0025880297188436a972bc4d8502c79d2a2c", "timestamp": "2026-08-25T20:27:34.898987+00:00"}
+{"case_id": "SPR00064", "decision": "candidate", "event": "completed", "selected_candidate_label": "C05", "timestamp": "2026-08-25T20:27:36.814711+00:00"}
+{"case_id": "SPR00068", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "21939d12cee825dc9094167ce17d5a709bd6511aa92b4a0ba0860f0dac9fe47b", "timestamp": "2026-08-25T20:27:36.816504+00:00"}
+{"case_id": "SPR00071", "decision": "none", "event": "completed", "selected_candidate_label": null, "timestamp": "2026-08-25T20:27:42.775586+00:00"}
+{"case_id": "SPR00075", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "68ddad46554fe69e3768069c2637887088976e89262bdd3f27ea216d1b74ea5b", "timestamp": "2026-08-25T20:27:42.777166+00:00"}
+{"case_id": "SPR00065", "decision": "candidate", "event": "completed", "selected_candidate_label": "C16", "timestamp": "2026-08-25T20:27:44.878245+00:00"}
+{"case_id": "SPR00069", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "918f115e613e7c7af22b6571dee759ae8ea3854ff0d6135fe4acbc16377cbd9f", "timestamp": "2026-08-25T20:27:44.880362+00:00"}
+{"case_id": "SPR00074", "decision": "candidate", "event": "completed", "selected_candidate_label": "C14", "timestamp": "2026-08-25T20:27:50.761298+00:00"}
+{"case_id": "SPR00078", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "0545a726ed2e8fbeb485f35ef237d779ca55bb65c1d256e5f0e200e46c5b7f45", "timestamp": "2026-08-25T20:27:50.762715+00:00"}
+{"case_id": "SPR00068", "decision": "candidate", "event": "completed", "selected_candidate_label": "C02", "timestamp": "2026-08-25T20:27:53.936907+00:00"}
+{"case_id": "SPR00072", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "0a20a1db12ad5ab0dd71cb0a3bbd35e56e142a06033c60b651c16b884c393ae9", "timestamp": "2026-08-25T20:27:53.938015+00:00"}
+{"case_id": "SPR00075", "decision": "candidate", "event": "completed", "selected_candidate_label": "C12", "timestamp": "2026-08-25T20:27:55.765635+00:00"}
+{"case_id": "SPR00079", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "87fe05545bec68d40d4eb8f9822dc9e57bf4815d737ac8194ff2a451bf24ae91", "timestamp": "2026-08-25T20:27:55.768296+00:00"}
+{"case_id": "SPR00069", "decision": "candidate", "event": "completed", "selected_candidate_label": "C10", "timestamp": "2026-08-25T20:27:57.339702+00:00"}
+{"case_id": "SPR00073", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "08adb3779e60391d4960096ba4e4ac4358367dbe20980f70bd9e086b0e9a65d8", "timestamp": "2026-08-25T20:27:57.340638+00:00"}
+{"case_id": "SPR00072", "decision": "candidate", "event": "completed", "selected_candidate_label": "C01", "timestamp": "2026-08-25T20:28:10.348834+00:00"}
+{"case_id": "SPR00076", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "af087b2b5af8bbb87fa330c71d2c87aa298e635e05a575257519b93a32cd4ed9", "timestamp": "2026-08-25T20:28:10.351112+00:00"}
+{"case_id": "SPR00078", "decision": "candidate", "event": "completed", "selected_candidate_label": "C25", "timestamp": "2026-08-25T20:28:11.082010+00:00"}
+{"case_id": "SPR00082", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "8dcd4bda2a46b77507884133f267a9bd1f8bb039a8f60d30d1fecf4b0904bdd1", "timestamp": "2026-08-25T20:28:11.084665+00:00"}
+{"case_id": "SPR00073", "decision": "candidate", "event": "completed", "selected_candidate_label": "C03", "timestamp": "2026-08-25T20:28:11.220582+00:00"}
+{"case_id": "SPR00077", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "d1b955e575ea15b865e5e678d7824169d9d1889c78add7ff1c943755751ac54b", "timestamp": "2026-08-25T20:28:11.223166+00:00"}
+{"case_id": "SPR00079", "decision": "candidate", "event": "completed", "selected_candidate_label": "C08", "timestamp": "2026-08-25T20:28:11.914821+00:00"}
+{"case_id": "SPR00083", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "d310a40ca1d9474dca49c84713e1ca0fe0c50c1f48c0a0d1b99d86e08c7a24f1", "timestamp": "2026-08-25T20:28:11.916518+00:00"}
+{"case_id": "SPR00083", "decision": "candidate", "event": "completed", "selected_candidate_label": "C08", "timestamp": "2026-08-25T20:28:25.518357+00:00"}
+{"case_id": "SPR00087", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "1e25e784f15d46d070657c9c8fbdea9decce59ee83e75f173b13fb5c1ea9edf4", "timestamp": "2026-08-25T20:28:25.521047+00:00"}
+{"case_id": "SPR00077", "decision": "candidate", "event": "completed", "selected_candidate_label": "C13", "timestamp": "2026-08-25T20:28:27.407035+00:00"}
+{"case_id": "SPR00081", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "3d255cbe6bb553877e8d04f672162bc81972c05802ec4df329ac285b9fe099b1", "timestamp": "2026-08-25T20:28:27.413233+00:00"}
+{"case_id": "SPR00076", "decision": "candidate", "event": "completed", "selected_candidate_label": "C12", "timestamp": "2026-08-25T20:28:28.861226+00:00"}
+{"case_id": "SPR00080", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "c786ca575bdfdbda42e47aa798dd5552e31a04e78c99b5a91b6eb246158d3ee0", "timestamp": "2026-08-25T20:28:28.863188+00:00"}
+{"case_id": "SPR00082", "decision": "candidate", "event": "completed", "selected_candidate_label": "C16", "timestamp": "2026-08-25T20:28:29.427016+00:00"}
+{"case_id": "SPR00086", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "71ec9316be3be80e7eb37d72865e2907de790868261c6d32d714a74008f12de8", "timestamp": "2026-08-25T20:28:29.430966+00:00"}
+{"case_id": "SPR00087", "decision": "candidate", "event": "completed", "selected_candidate_label": "C02", "timestamp": "2026-08-25T20:28:40.848191+00:00"}
+{"case_id": "SPR00091", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "6a895eef72d17bddcc4ddc4e83175c023f1bfd40e732b6a9672122f6afe1faa1", "timestamp": "2026-08-25T20:28:40.851711+00:00"}
+{"case_id": "SPR00086", "decision": "none", "event": "completed", "selected_candidate_label": null, "timestamp": "2026-08-25T20:28:43.882011+00:00"}
+{"case_id": "SPR00090", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "c9d7baefe123bfa4ea0ae8e49be262e4a08e0ea73fb742987bc8a9b6a5aecef6", "timestamp": "2026-08-25T20:28:43.883795+00:00"}
+{"case_id": "SPR00080", "decision": "candidate", "event": "completed", "selected_candidate_label": "C01", "timestamp": "2026-08-25T20:28:44.113950+00:00"}
+{"case_id": "SPR00084", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "06ecba1e768168a70d6da4c0a2affb69251d17c845b1aa8f83eac9b00f2b2184", "timestamp": "2026-08-25T20:28:44.115964+00:00"}
+{"case_id": "SPR00081", "decision": "candidate", "event": "completed", "selected_candidate_label": "C06", "timestamp": "2026-08-25T20:28:45.232028+00:00"}
+{"case_id": "SPR00085", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "e49317570ff7ad305839e6afad02351b0cc0bfaa171c02d63ffb8afa6a66f11e", "timestamp": "2026-08-25T20:28:45.234298+00:00"}
+{"case_id": "SPR00091", "decision": "none", "event": "completed", "selected_candidate_label": null, "timestamp": "2026-08-25T20:28:54.245748+00:00"}
+{"case_id": "SPR00095", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "6718c6350b5698c5fa33d39a8a5da8b1814b86c580529d610a34aff94a62fcf4", "timestamp": "2026-08-25T20:28:54.247929+00:00"}
+{"case_id": "SPR00090", "decision": "candidate", "event": "completed", "selected_candidate_label": "C03", "timestamp": "2026-08-25T20:28:59.931377+00:00"}
+{"case_id": "SPR00094", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "6b996b8b6822fd2e7d8e494c5149bb5bf65e379798780ab087296dd50fcd7df5", "timestamp": "2026-08-25T20:28:59.932578+00:00"}
+{"case_id": "SPR00084", "decision": "candidate", "event": "completed", "selected_candidate_label": "C07", "timestamp": "2026-08-25T20:29:04.116284+00:00"}
+{"case_id": "SPR00088", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "6056a9a721c5c71d01eace74b96ccc812ae9f909ad58bde21ebc504c7d4f8a83", "timestamp": "2026-08-25T20:29:04.117847+00:00"}
+{"case_id": "SPR00085", "decision": "candidate", "event": "completed", "selected_candidate_label": "C19", "timestamp": "2026-08-25T20:29:05.760091+00:00"}
+{"case_id": "SPR00089", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "cf3b932b829b97aaa93b17ee7ac5f00fd3d1b5e4986e4a2953e018a583cd92cb", "timestamp": "2026-08-25T20:29:05.761145+00:00"}
+{"case_id": "SPR00095", "decision": "none", "event": "completed", "selected_candidate_label": null, "timestamp": "2026-08-25T20:29:08.188490+00:00"}
+{"case_id": "SPR00099", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "0c03fa84352c188eab8bc79caa0b035b9585e7a06129a5c6ee870b4370516321", "timestamp": "2026-08-25T20:29:08.190474+00:00"}
+{"case_id": "SPR00094", "decision": "candidate", "event": "completed", "selected_candidate_label": "C25", "timestamp": "2026-08-25T20:29:12.590547+00:00"}
+{"case_id": "SPR00098", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "8b4d65feca1ededfc2a49a8c3c282963c89bc9554793d4449fda9623171cdfb5", "timestamp": "2026-08-25T20:29:12.592446+00:00"}
+{"case_id": "SPR00089", "decision": "candidate", "event": "completed", "selected_candidate_label": "C14", "timestamp": "2026-08-25T20:29:16.816627+00:00"}
+{"case_id": "SPR00093", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "185d47bb37f0aac114b52ed2371b959d392057011494a8d6ac56165e3b40a49c", "timestamp": "2026-08-25T20:29:16.819202+00:00"}
+{"case_id": "SPR00088", "decision": "candidate", "event": "completed", "selected_candidate_label": "C10", "timestamp": "2026-08-25T20:29:18.497510+00:00"}
+{"case_id": "SPR00092", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "e3743cfe2ab52c822fc527958e7cbd3aad21d3be8d29e6780b8ca0d73884d10d", "timestamp": "2026-08-25T20:29:18.499752+00:00"}
+{"case_id": "SPR00099", "decision": "candidate", "event": "completed", "selected_candidate_label": "C12", "timestamp": "2026-08-25T20:29:20.730979+00:00"}
+{"case_id": "SPR00103", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "0b0a99c5d7cdbe53b278482feeee2bff07df9bba1bdcc762b6aaab7c518219d1", "timestamp": "2026-08-25T20:29:20.732914+00:00"}
+{"case_id": "SPR00098", "decision": "candidate", "event": "completed", "selected_candidate_label": "C03", "timestamp": "2026-08-25T20:29:23.460161+00:00"}
+{"case_id": "SPR00102", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "e187a59d1327469d3214d58876e593b768184bade63d1eccc84a988227b01645", "timestamp": "2026-08-25T20:29:23.461990+00:00"}
+{"case_id": "SPR00093", "decision": "candidate", "event": "completed", "selected_candidate_label": "C18", "timestamp": "2026-08-25T20:29:31.219351+00:00"}
+{"case_id": "SPR00097", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "79a3d4900894593a897afd7a13981f61f57fb3a253632b88c18c6a7a4c61e50f", "timestamp": "2026-08-25T20:29:31.221512+00:00"}
+{"case_id": "SPR00103", "decision": "candidate", "event": "completed", "selected_candidate_label": "C03", "timestamp": "2026-08-25T20:29:33.377966+00:00"}
+{"case_id": "SPR00107", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "444eda6ab7ccdf73598b1c46bcacb0c30ce7f6ea549f75bf60c5ea73407499fc", "timestamp": "2026-08-25T20:29:33.379515+00:00"}
+{"case_id": "SPR00092", "decision": "candidate", "event": "completed", "selected_candidate_label": "C03", "timestamp": "2026-08-25T20:29:35.489718+00:00"}
+{"case_id": "SPR00096", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "00859066521eaedbb0562a3d0bcbd47453b58f146d9b508382173d011e1e7896", "timestamp": "2026-08-25T20:29:35.491051+00:00"}
+{"case_id": "SPR00102", "decision": "candidate", "event": "completed", "selected_candidate_label": "C12", "timestamp": "2026-08-25T20:29:39.558668+00:00"}
+{"case_id": "SPR00106", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "d4404fffefc3a26ca02f20d56aaf74ea33b48e41ee5d774e9c3ca23333f042c2", "timestamp": "2026-08-25T20:29:39.560574+00:00"}
+{"case_id": "SPR00096", "decision": "candidate", "event": "completed", "selected_candidate_label": "C03", "timestamp": "2026-08-25T20:29:48.364703+00:00"}
+{"case_id": "SPR00100", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "f2e1284f5afc5d0364fb82c93d2848f5e4d07c958abde6156612742fcb8d6909", "timestamp": "2026-08-25T20:29:48.367300+00:00"}
+{"case_id": "SPR00107", "decision": "candidate", "event": "completed", "selected_candidate_label": "C10", "timestamp": "2026-08-25T20:29:50.350322+00:00"}
+{"case_id": "SPR00111", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "58f63ba4b1d15d7757968d95dbd83a7f7c13c1389a8683e48de5c94c42f0716e", "timestamp": "2026-08-25T20:29:50.351763+00:00"}
+{"case_id": "SPR00097", "decision": "candidate", "event": "completed", "selected_candidate_label": "C11", "timestamp": "2026-08-25T20:29:51.002554+00:00"}
+{"case_id": "SPR00101", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "a6c470d06f53518564791bf4c8153bed6acb1ed8a6f1b3d32ed581d2c8f250e8", "timestamp": "2026-08-25T20:29:51.004990+00:00"}
+{"case_id": "SPR00106", "decision": "candidate", "event": "completed", "selected_candidate_label": "C23", "timestamp": "2026-08-25T20:29:56.169513+00:00"}
+{"case_id": "SPR00110", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "3b619a0ea778cf3d54dd27a8a3df9b48a4aa517587f3a439b3740c0547ef01bd", "timestamp": "2026-08-25T20:29:56.171472+00:00"}
+{"case_id": "SPR00100", "decision": "candidate", "event": "completed", "selected_candidate_label": "C20", "timestamp": "2026-08-25T20:30:02.835659+00:00"}
+{"case_id": "SPR00104", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "2405ca367b173f9ac9a2219f7bbec3c2c78231c0f8e792592b54acbe55addebf", "timestamp": "2026-08-25T20:30:02.837544+00:00"}
+{"case_id": "SPR00111", "decision": "candidate", "event": "completed", "selected_candidate_label": "C21", "timestamp": "2026-08-25T20:30:03.242494+00:00"}
+{"case_id": "SPR00115", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "8e67d0cb070d58f212695ab1e4bc320b2d8fe89ed478815bd3bb29a04e59f962", "timestamp": "2026-08-25T20:30:03.244029+00:00"}
+{"case_id": "SPR00101", "decision": "candidate", "event": "completed", "selected_candidate_label": "C24", "timestamp": "2026-08-25T20:30:08.887425+00:00"}
+{"case_id": "SPR00105", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "9e2eec2f4a4c3256210c5fe89909a28a7b9df08eb8ffc23625d5aaae80dbdea4", "timestamp": "2026-08-25T20:30:08.888700+00:00"}
+{"case_id": "SPR00110", "decision": "candidate", "event": "completed", "selected_candidate_label": "C16", "timestamp": "2026-08-25T20:30:15.745943+00:00"}
+{"case_id": "SPR00114", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "b39d365a724445b4458136f371ca61fc1880494bfe29d071ea1f66cd7e46ebb7", "timestamp": "2026-08-25T20:30:15.748091+00:00"}
+{"case_id": "SPR00104", "decision": "candidate", "event": "completed", "selected_candidate_label": "C01", "timestamp": "2026-08-25T20:30:20.149401+00:00"}
+{"case_id": "SPR00108", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "7648b0679f036b3a6268969b51d816de7511c1d2dfa84426a3218f64374d74e5", "timestamp": "2026-08-25T20:30:20.152796+00:00"}
+{"case_id": "SPR00105", "decision": "candidate", "event": "completed", "selected_candidate_label": "C19", "timestamp": "2026-08-25T20:30:22.456452+00:00"}
+{"case_id": "SPR00109", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "ebc74a96fcf0dab807da05c6fa425e1ff3813c3f869e87de43d3155876eb87bc", "timestamp": "2026-08-25T20:30:22.458735+00:00"}
+{"case_id": "SPR00115", "decision": "candidate", "event": "completed", "selected_candidate_label": "C11", "timestamp": "2026-08-25T20:30:22.753344+00:00"}
+{"case_id": "SPR00119", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "f9d7529e672d217cefe58dc45e84da85b3fc7a8c35ce079673e349041cfbcfce", "timestamp": "2026-08-25T20:30:22.755537+00:00"}
+{"case_id": "SPR00114", "decision": "candidate", "event": "completed", "selected_candidate_label": "C24", "timestamp": "2026-08-25T20:30:35.317982+00:00"}
+{"case_id": "SPR00118", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "eabb44d0e1fc875ed9220df2f75308dd6129cb557ce3ac3540f17afaf950ac76", "timestamp": "2026-08-25T20:30:35.319612+00:00"}
+{"case_id": "SPR00109", "decision": "candidate", "event": "completed", "selected_candidate_label": "C14", "timestamp": "2026-08-25T20:30:38.721556+00:00"}
+{"case_id": "SPR00113", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "cde08540e632f1034c71c7aaedc96b723c911c4db97ae9fd8537939c230b6023", "timestamp": "2026-08-25T20:30:38.723214+00:00"}
+{"case_id": "SPR00108", "decision": "candidate", "event": "completed", "selected_candidate_label": "C07", "timestamp": "2026-08-25T20:30:39.010543+00:00"}
+{"case_id": "SPR00112", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "c75d29a9019cf15aabc93e55e2f5b0e0b480e051616282adc096c20e631e3ca1", "timestamp": "2026-08-25T20:30:39.012976+00:00"}
+{"case_id": "SPR00119", "decision": "candidate", "event": "completed", "selected_candidate_label": "C11", "timestamp": "2026-08-25T20:30:42.006830+00:00"}
+{"case_id": "SPR00123", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "c22bf14f44355c1761ce061965c97b2149282dcdf7efb971880630f3225fe65f", "timestamp": "2026-08-25T20:30:42.008194+00:00"}
+{"case_id": "SPR00118", "decision": "candidate", "event": "completed", "selected_candidate_label": "C16", "timestamp": "2026-08-25T20:30:48.259495+00:00"}
+{"case_id": "SPR00122", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "49b857806ecc3fed31b1b7c1d7bf5f010a96772955544325d8e2f8face4bae15", "timestamp": "2026-08-25T20:30:48.260542+00:00"}
+{"case_id": "SPR00113", "decision": "candidate", "event": "completed", "selected_candidate_label": "C08", "timestamp": "2026-08-25T20:30:52.219982+00:00"}
+{"case_id": "SPR00117", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "658ad869d6261ad81b3d7243f98957c23531e02816863e27a2f32e4744067540", "timestamp": "2026-08-25T20:30:52.222742+00:00"}
+{"case_id": "SPR00123", "decision": "candidate", "event": "completed", "selected_candidate_label": "C23", "timestamp": "2026-08-25T20:30:56.075452+00:00"}
+{"case_id": "SPR00127", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "530ff7361fd02aaabcb1efaa5136923648913bec891d9d8894a8896aef7df623", "timestamp": "2026-08-25T20:30:56.078003+00:00"}
+{"case_id": "SPR00112", "decision": "none", "event": "completed", "selected_candidate_label": null, "timestamp": "2026-08-25T20:30:58.885447+00:00"}
+{"case_id": "SPR00116", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "97fd3b2d851d30ca8c76869e3f41f385f6abcab7c8946e1dc5c5b38a83855dea", "timestamp": "2026-08-25T20:30:58.888152+00:00"}
+{"case_id": "SPR00122", "decision": "candidate", "event": "completed", "selected_candidate_label": "C02", "timestamp": "2026-08-25T20:31:05.768803+00:00"}
+{"case_id": "SPR00126", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "bb22f5c17f4ac7b91498b31580495560b7cf1523e2af683636a26f86153a0851", "timestamp": "2026-08-25T20:31:05.771537+00:00"}
+{"case_id": "SPR00117", "decision": "none", "event": "completed", "selected_candidate_label": null, "timestamp": "2026-08-25T20:31:08.532167+00:00"}
+{"case_id": "SPR00121", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "d44069ebb706efdab5d1713c34c310bc9b09b69f08bd8404cf1d6445e755827a", "timestamp": "2026-08-25T20:31:08.533805+00:00"}
+{"case_id": "SPR00127", "decision": "candidate", "event": "completed", "selected_candidate_label": "C06", "timestamp": "2026-08-25T20:31:11.442025+00:00"}
+{"case_id": "SPR00131", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "8f33a00dd90c95fe696379798fe04cda1fee6f0d5ace1d174511eaa41c6d2a8b", "timestamp": "2026-08-25T20:31:11.444934+00:00"}
+{"case_id": "SPR00116", "decision": "candidate", "event": "completed", "selected_candidate_label": "C04", "timestamp": "2026-08-25T20:31:11.460925+00:00"}
+{"case_id": "SPR00120", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "37eca70ed59bcd5c2cecff7fac36a6f1008a67c8eb2a40e17e530623a80078b0", "timestamp": "2026-08-25T20:31:11.462079+00:00"}
+{"case_id": "SPR00126", "decision": "candidate", "event": "completed", "selected_candidate_label": "C21", "timestamp": "2026-08-25T20:31:21.395816+00:00"}
+{"case_id": "SPR00130", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "3f87b9babe0bf922c46b953ff530ca3eaf468761281af0b9b223e51b503570b0", "timestamp": "2026-08-25T20:31:21.400256+00:00"}
+{"case_id": "SPR00121", "decision": "candidate", "event": "completed", "selected_candidate_label": "C22", "timestamp": "2026-08-25T20:31:22.208187+00:00"}
+{"case_id": "SPR00125", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "c83e2da3d701c6b0c0f9195ec609fedef8e4759029d8e747f683315ad0da5793", "timestamp": "2026-08-25T20:31:22.209633+00:00"}
+{"case_id": "SPR00120", "decision": "candidate", "event": "completed", "selected_candidate_label": "C06", "timestamp": "2026-08-25T20:31:25.445755+00:00"}
+{"case_id": "SPR00124", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "48fb2c7388d14b88fac2e7f5c795236fb540093bead3fe8798152f6ad98e0cb9", "timestamp": "2026-08-25T20:31:25.447763+00:00"}
+{"case_id": "SPR00131", "decision": "candidate", "event": "completed", "selected_candidate_label": "C14", "timestamp": "2026-08-25T20:31:26.037963+00:00"}
+{"case_id": "SPR00135", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "59bb2115c2f3a5e17295029e13a5f2370f3712fbe2b8f21b04d5451e1612c874", "timestamp": "2026-08-25T20:31:26.039205+00:00"}
+{"case_id": "SPR00125", "decision": "candidate", "event": "completed", "selected_candidate_label": "C11", "timestamp": "2026-08-25T20:31:37.781991+00:00"}
+{"case_id": "SPR00129", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "89f5c0bfb9dfb072a94e1f992015e191e74451928115175b14355851bcf0cf9e", "timestamp": "2026-08-25T20:31:37.783950+00:00"}
+{"case_id": "SPR00130", "decision": "candidate", "event": "completed", "selected_candidate_label": "C12", "timestamp": "2026-08-25T20:31:38.158796+00:00"}
+{"case_id": "SPR00134", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "acbe10486cc9e9208e94685747d99281c4b9b1e97eda90e29b3f5f09e85e8334", "timestamp": "2026-08-25T20:31:38.160322+00:00"}
+{"case_id": "SPR00135", "decision": "candidate", "event": "completed", "selected_candidate_label": "C18", "timestamp": "2026-08-25T20:31:40.358194+00:00"}
+{"case_id": "SPR00139", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "40d65cf8f8f1e1a1488003c9daf12d0382a3d6bfdbe232d8c7dc86e21189bafd", "timestamp": "2026-08-25T20:31:40.359799+00:00"}
+{"case_id": "SPR00124", "decision": "candidate", "event": "completed", "selected_candidate_label": "C18", "timestamp": "2026-08-25T20:31:41.108222+00:00"}
+{"case_id": "SPR00128", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "1085a70c345911783f0450419eb6b180827152ea3e2a2e47a2e1b3084df1bbac", "timestamp": "2026-08-25T20:31:41.110186+00:00"}
+{"case_id": "SPR00129", "decision": "candidate", "event": "completed", "selected_candidate_label": "C03", "timestamp": "2026-08-25T20:31:53.486116+00:00"}
+{"case_id": "SPR00133", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "efccd84b9e0d5d6f47b98287f13e6e691042514e3dd4de75f71eb333942f41df", "timestamp": "2026-08-25T20:31:53.487973+00:00"}
+{"case_id": "SPR00139", "decision": "candidate", "event": "completed", "selected_candidate_label": "C04", "timestamp": "2026-08-25T20:31:53.913950+00:00"}
+{"case_id": "SPR00143", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "95410c8a29810f32761bb060e6a3017b488e08ca1e7a7072c27f14c8a1eb6df5", "timestamp": "2026-08-25T20:31:53.916244+00:00"}
+{"case_id": "SPR00134", "decision": "candidate", "event": "completed", "selected_candidate_label": "C11", "timestamp": "2026-08-25T20:31:54.592354+00:00"}
+{"case_id": "SPR00138", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "6088b28a494ecced58fe45967c6c2c62641645c4f4abea894fe34294f05c32b7", "timestamp": "2026-08-25T20:31:54.593514+00:00"}
+{"case_id": "SPR00128", "decision": "candidate", "event": "completed", "selected_candidate_label": "C08", "timestamp": "2026-08-25T20:31:57.615334+00:00"}
+{"case_id": "SPR00132", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "45948bcd57d16e1d634a098c3357274c56308e3fc5e1981de895de3f82fa2ce8", "timestamp": "2026-08-25T20:31:57.617148+00:00"}
+{"case_id": "SPR00133", "decision": "candidate", "event": "completed", "selected_candidate_label": "C17", "timestamp": "2026-08-25T20:32:07.095191+00:00"}
+{"case_id": "SPR00137", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "f50c123911f41a19cc3f0c9d1eb5b27e54e03241355ad6fbbdef41978855468e", "timestamp": "2026-08-25T20:32:07.096477+00:00"}
+{"case_id": "SPR00138", "decision": "candidate", "event": "completed", "selected_candidate_label": "C01", "timestamp": "2026-08-25T20:32:11.407313+00:00"}
+{"case_id": "SPR00142", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "76bf905ce56d499b17cb7dc9d5cb454fc9261792ba80235978886293c9bb6b2c", "timestamp": "2026-08-25T20:32:11.410299+00:00"}
+{"case_id": "SPR00143", "decision": "candidate", "event": "completed", "selected_candidate_label": "C05", "timestamp": "2026-08-25T20:32:12.072311+00:00"}
+{"case_id": "SPR00147", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "7e6898044150924c7346560d79f889406e35a10731d9e49540e2ef50e765a1cd", "timestamp": "2026-08-25T20:32:12.073997+00:00"}
+{"case_id": "SPR00132", "decision": "candidate", "event": "completed", "selected_candidate_label": "C05", "timestamp": "2026-08-25T20:32:16.709755+00:00"}
+{"case_id": "SPR00136", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "51465d768592ba53f12d3344be83c7001723ddc2ee36168b2e5fd584685c4a76", "timestamp": "2026-08-25T20:32:16.711744+00:00"}
+{"case_id": "SPR00137", "decision": "candidate", "event": "completed", "selected_candidate_label": "C15", "timestamp": "2026-08-25T20:32:24.958241+00:00"}
+{"case_id": "SPR00141", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "33d1092d3f88aee62d1482d7884901c9b0b0d01569360ce9aaa2fc0d150444e5", "timestamp": "2026-08-25T20:32:24.959509+00:00"}
+{"case_id": "SPR00147", "decision": "candidate", "event": "completed", "selected_candidate_label": "C04", "timestamp": "2026-08-25T20:32:27.720206+00:00"}
+{"case_id": "SPR00151", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "32e70c10247a2b003aeb20844ca1dfae6e7a435ae014b9c2e9111a42741370cc", "timestamp": "2026-08-25T20:32:27.723794+00:00"}
+{"case_id": "SPR00142", "decision": "candidate", "event": "completed", "selected_candidate_label": "C08", "timestamp": "2026-08-25T20:32:29.056927+00:00"}
+{"case_id": "SPR00146", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "17b50ecb810e0a1a67f22180633af1414839deff5987949962ad29fa6125326f", "timestamp": "2026-08-25T20:32:29.058488+00:00"}
+{"case_id": "SPR00136", "decision": "none", "event": "completed", "selected_candidate_label": null, "timestamp": "2026-08-25T20:32:32.047461+00:00"}
+{"case_id": "SPR00140", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "94ecb3134d88d1a87b035f0055c3b417f827c5067aacdb442d30d5860e3b188e", "timestamp": "2026-08-25T20:32:32.048840+00:00"}
+{"case_id": "SPR00151", "decision": "candidate", "event": "completed", "selected_candidate_label": "C25", "timestamp": "2026-08-25T20:32:40.657818+00:00"}
+{"case_id": "SPR00155", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "ac8caa4a9b5a5e79e3dfd28da420ea10ef478b41a0352ccfe5e4e974ca7a7b4a", "timestamp": "2026-08-25T20:32:40.660278+00:00"}
+{"case_id": "SPR00146", "decision": "candidate", "event": "completed", "selected_candidate_label": "C20", "timestamp": "2026-08-25T20:32:42.914348+00:00"}
+{"case_id": "SPR00150", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "657ed60515407fe7e86a15b2745294fc475fc95dbe13323a5890b351d01e48a5", "timestamp": "2026-08-25T20:32:42.916845+00:00"}
+{"case_id": "SPR00141", "decision": "candidate", "event": "completed", "selected_candidate_label": "C02", "timestamp": "2026-08-25T20:32:47.097103+00:00"}
+{"case_id": "SPR00145", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "670051cc70ccd5ae7e9487c1ca56388a96a923edd85e2e566045784848484f61", "timestamp": "2026-08-25T20:32:47.098552+00:00"}
+{"case_id": "SPR00140", "decision": "candidate", "event": "completed", "selected_candidate_label": "C15", "timestamp": "2026-08-25T20:32:50.658675+00:00"}
+{"case_id": "SPR00144", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "b85e4b19ea27b3480cb7a139b3074802e9d891820fea70a7538d21500b051cbf", "timestamp": "2026-08-25T20:32:50.660268+00:00"}
+{"case_id": "SPR00155", "decision": "candidate", "event": "completed", "selected_candidate_label": "C13", "timestamp": "2026-08-25T20:32:56.539418+00:00"}
+{"case_id": "SPR00159", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "5a3c239cf5161c88ee806428f9e897f5fe8c6809100e43785631641eb316ef06", "timestamp": "2026-08-25T20:32:56.545429+00:00"}
+{"case_id": "SPR00145", "decision": "candidate", "event": "completed", "selected_candidate_label": "C10", "timestamp": "2026-08-25T20:33:00.758349+00:00"}
+{"case_id": "SPR00149", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "e55b61cf4f8ddd8a0dfa50f2417a38fad71e279f21eb414635e5f4b1e9a3d6d8", "timestamp": "2026-08-25T20:33:00.759973+00:00"}
+{"case_id": "SPR00150", "decision": "candidate", "event": "completed", "selected_candidate_label": "C07", "timestamp": "2026-08-25T20:33:01.170228+00:00"}
+{"case_id": "SPR00154", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "9d458c445bbe2759a3ad318655881863f78761190dcc8a7800696c334dbae042", "timestamp": "2026-08-25T20:33:01.171027+00:00"}
+{"case_id": "SPR00144", "decision": "candidate", "event": "completed", "selected_candidate_label": "C11", "timestamp": "2026-08-25T20:33:07.638005+00:00"}
+{"case_id": "SPR00148", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "89c563b4fe45cb020989a49745fb131c06f6415e85106393558e6884875f5327", "timestamp": "2026-08-25T20:33:07.639633+00:00"}
+{"case_id": "SPR00159", "decision": "none", "event": "completed", "selected_candidate_label": null, "timestamp": "2026-08-25T20:33:12.813859+00:00"}
+{"case_id": "SPR00163", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "b7ed4ce109e6621b46f40af8983e131968b503efa055ef99b1409ff8ba427322", "timestamp": "2026-08-25T20:33:12.816002+00:00"}
+{"case_id": "SPR00149", "decision": "none", "event": "completed", "selected_candidate_label": null, "timestamp": "2026-08-25T20:33:15.270527+00:00"}
+{"case_id": "SPR00153", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "c07a83a8fbcd48c92f0cc249430d268f47559248b48d2d702d95c87e614b23da", "timestamp": "2026-08-25T20:33:15.273090+00:00"}
+{"case_id": "SPR00154", "decision": "candidate", "event": "completed", "selected_candidate_label": "C10", "timestamp": "2026-08-25T20:33:17.888377+00:00"}
+{"case_id": "SPR00158", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "bf394eab68068f793c5174ee9c86d38af599f02bae6c3f1c455b9f7eb846d0d0", "timestamp": "2026-08-25T20:33:17.891351+00:00"}
+{"case_id": "SPR00148", "decision": "candidate", "event": "completed", "selected_candidate_label": "C10", "timestamp": "2026-08-25T20:33:23.305919+00:00"}
+{"case_id": "SPR00152", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "bd4aee2f86816395247923960e395f85f39559cf430e5d415dfa932c7b61d376", "timestamp": "2026-08-25T20:33:23.308168+00:00"}
+{"case_id": "SPR00153", "decision": "candidate", "event": "completed", "selected_candidate_label": "C09", "timestamp": "2026-08-25T20:33:31.331648+00:00"}
+{"case_id": "SPR00157", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "cb702e8e46b2523222e86ee75fc21b26edab92a1698f7e259d82672747752c37", "timestamp": "2026-08-25T20:33:31.333514+00:00"}
+{"case_id": "SPR00163", "decision": "candidate", "event": "completed", "selected_candidate_label": "C01", "timestamp": "2026-08-25T20:33:31.556575+00:00"}
+{"case_id": "SPR00167", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "140999c211b2e8f7a20774bf5e014f34237a917b805b91e8cb3667e1ce217702", "timestamp": "2026-08-25T20:33:31.558353+00:00"}
+{"case_id": "SPR00158", "decision": "candidate", "event": "completed", "selected_candidate_label": "C07", "timestamp": "2026-08-25T20:33:33.749530+00:00"}
+{"case_id": "SPR00162", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "5378208e53e58deb90e31cd049875ad81f5c123f087356baf965a3516011a5d6", "timestamp": "2026-08-25T20:33:33.752875+00:00"}
+{"case_id": "SPR00152", "decision": "candidate", "event": "completed", "selected_candidate_label": "C23", "timestamp": "2026-08-25T20:33:39.243456+00:00"}
+{"case_id": "SPR00156", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "3e7afd4c730f1578e326abc1e8e21522336a5db09b236ea5ebf454a08b51446a", "timestamp": "2026-08-25T20:33:39.244694+00:00"}
+{"case_id": "SPR00157", "decision": "none", "event": "completed", "selected_candidate_label": null, "timestamp": "2026-08-25T20:33:44.556715+00:00"}
+{"case_id": "SPR00161", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "c4f897f200f568498876af6ca99302e5f4be144fc6f230421a49937ed9f8ca83", "timestamp": "2026-08-25T20:33:44.558259+00:00"}
+{"case_id": "SPR00167", "decision": "candidate", "event": "completed", "selected_candidate_label": "C11", "timestamp": "2026-08-25T20:33:47.515299+00:00"}
+{"case_id": "SPR00171", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "45e0d7ead2af30c37ba5220fcfe7c3f8bd7f6fd8513fece9d68d580d23052b7f", "timestamp": "2026-08-25T20:33:47.518298+00:00"}
+{"case_id": "SPR00156", "decision": "candidate", "event": "completed", "selected_candidate_label": "C10", "timestamp": "2026-08-25T20:33:53.093636+00:00"}
+{"case_id": "SPR00160", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "f137e375425442c6c4bd0ac1425f2876f4f1167977cbfcdc42d1716a8af1d36d", "timestamp": "2026-08-25T20:33:53.095311+00:00"}
+{"case_id": "SPR00162", "decision": "none", "event": "completed", "selected_candidate_label": null, "timestamp": "2026-08-25T20:34:00.471126+00:00"}
+{"case_id": "SPR00166", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "45f2421d0d9391acb2cc005a97edf13b82fbb0ef477b3284bf2d5341f4e71560", "timestamp": "2026-08-25T20:34:00.472711+00:00"}
+{"case_id": "SPR00161", "decision": "candidate", "event": "completed", "selected_candidate_label": "C11", "timestamp": "2026-08-25T20:34:02.111643+00:00"}
+{"case_id": "SPR00165", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "1a29f5351325551a27c07e2aa00e6559afe536785492b957b4622bdbee4b7bd6", "timestamp": "2026-08-25T20:34:02.113319+00:00"}
+{"case_id": "SPR00171", "decision": "candidate", "event": "completed", "selected_candidate_label": "C11", "timestamp": "2026-08-25T20:34:02.268076+00:00"}
+{"case_id": "SPR00175", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "a510ecec911d52133272f97aa346d29615e07dba1bf2f3ae075ff0c867c93bca", "timestamp": "2026-08-25T20:34:02.269308+00:00"}
+{"case_id": "SPR00160", "decision": "candidate", "event": "completed", "selected_candidate_label": "C03", "timestamp": "2026-08-25T20:34:10.615735+00:00"}
+{"case_id": "SPR00164", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "09755fe767c8122e22f2a26e1cf9475ba2dc93795d403a04d6ef42ba0e81bf7a", "timestamp": "2026-08-25T20:34:10.617511+00:00"}
+{"case_id": "SPR00165", "decision": "none", "event": "completed", "selected_candidate_label": null, "timestamp": "2026-08-25T20:34:14.726456+00:00"}
+{"case_id": "SPR00169", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "531f2bdf5c72346045c11cbcbfc6897db8386c4315d54e716573d310430a3d01", "timestamp": "2026-08-25T20:34:14.729989+00:00"}
+{"case_id": "SPR00175", "decision": "candidate", "event": "completed", "selected_candidate_label": "C16", "timestamp": "2026-08-25T20:34:16.022273+00:00"}
+{"case_id": "SPR00179", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "252c746c9ffbf101bd1ac79053af9c65dbca32f6f7cf25e1a9f2b44574ba6ccd", "timestamp": "2026-08-25T20:34:16.025059+00:00"}
+{"case_id": "SPR00166", "decision": "candidate", "event": "completed", "selected_candidate_label": "C03", "timestamp": "2026-08-25T20:34:16.618187+00:00"}
+{"case_id": "SPR00170", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "934440edd0366951b1622a16070aeae3af8ee56285c65a47310db3d8e9f53de8", "timestamp": "2026-08-25T20:34:16.619641+00:00"}
+{"case_id": "SPR00164", "decision": "candidate", "event": "completed", "selected_candidate_label": "C12", "timestamp": "2026-08-25T20:34:25.982924+00:00"}
+{"case_id": "SPR00168", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "28c86c7158f2616c02fa3fd341b59c8ac615203b9ccfbf7bf769d05720916abb", "timestamp": "2026-08-25T20:34:25.985395+00:00"}
+{"case_id": "SPR00170", "decision": "candidate", "event": "completed", "selected_candidate_label": "C14", "timestamp": "2026-08-25T20:34:28.589190+00:00"}
+{"case_id": "SPR00174", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "3667fd0b2bfab4b698d82cf2bb061d3e61ae540243fd49453656060cb04314c2", "timestamp": "2026-08-25T20:34:28.591052+00:00"}
+{"case_id": "SPR00179", "decision": "candidate", "event": "completed", "selected_candidate_label": "C08", "timestamp": "2026-08-25T20:34:29.774839+00:00"}
+{"case_id": "SPR00183", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "530da4568b3ecb57f3dc440945987595ab7bf1b632d5d8f082b56ef0f66b2c51", "timestamp": "2026-08-25T20:34:29.776814+00:00"}
+{"case_id": "SPR00169", "decision": "candidate", "event": "completed", "selected_candidate_label": "C12", "timestamp": "2026-08-25T20:34:36.718059+00:00"}
+{"case_id": "SPR00173", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "5a2d086b71e1c8459b08f0b147a1142d65f7a94d67d4517829e5fd23ba656f4b", "timestamp": "2026-08-25T20:34:36.719568+00:00"}
+{"case_id": "SPR00168", "decision": "candidate", "event": "completed", "selected_candidate_label": "C23", "timestamp": "2026-08-25T20:34:37.705072+00:00"}
+{"case_id": "SPR00172", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "2fcb10dbe5c99c7b3ef0800a3d338bd9810c054bca77f3ac0f5038fe6a8ef833", "timestamp": "2026-08-25T20:34:37.708006+00:00"}
+{"case_id": "SPR00183", "decision": "none", "event": "completed", "selected_candidate_label": null, "timestamp": "2026-08-25T20:34:43.541346+00:00"}
+{"case_id": "SPR00187", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "11e5aefc6eebe7d1eadb2573c42e8fe9b49b176f16ccae6cac60f02a5255083e", "timestamp": "2026-08-25T20:34:43.542469+00:00"}
+{"case_id": "SPR00174", "decision": "candidate", "event": "completed", "selected_candidate_label": "C17", "timestamp": "2026-08-25T20:34:45.904668+00:00"}
+{"case_id": "SPR00178", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "85fccfc6a7fe9b020ee6019c4f4cdefb1dad5250adab30c2763a8b67454d669f", "timestamp": "2026-08-25T20:34:45.906147+00:00"}
+{"case_id": "SPR00187", "decision": "candidate", "event": "completed", "selected_candidate_label": "C24", "timestamp": "2026-08-25T20:34:53.180575+00:00"}
+{"case_id": "SPR00191", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "f46fd0caa4130aa119a2572c670e6bc1f4716401b9c733b9280d17bd63d22b44", "timestamp": "2026-08-25T20:34:53.181878+00:00"}
+{"case_id": "SPR00173", "decision": "candidate", "event": "completed", "selected_candidate_label": "C23", "timestamp": "2026-08-25T20:34:53.465854+00:00"}
+{"case_id": "SPR00177", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "aee42376003b2c81b075714808373bec4db980dd6ffe1d7dc117dc55f4e9bf74", "timestamp": "2026-08-25T20:34:53.469004+00:00"}
+{"case_id": "SPR00172", "decision": "candidate", "event": "completed", "selected_candidate_label": "C22", "timestamp": "2026-08-25T20:34:56.409761+00:00"}
+{"case_id": "SPR00176", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "03cf36fa31c440865034e13c242454f565ac0619232b4152aa2dd982bdab95d5", "timestamp": "2026-08-25T20:34:56.412618+00:00"}
+{"case_id": "SPR00178", "decision": "candidate", "event": "completed", "selected_candidate_label": "C11", "timestamp": "2026-08-25T20:34:59.933158+00:00"}
+{"case_id": "SPR00182", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "b0f75be2b01ac95517cbeb4ff5bed2f98da13fca3d5068caeb0d60b0bf684653", "timestamp": "2026-08-25T20:34:59.935730+00:00"}
+{"case_id": "SPR00177", "decision": "candidate", "event": "completed", "selected_candidate_label": "C22", "timestamp": "2026-08-25T20:35:08.984295+00:00"}
+{"case_id": "SPR00181", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "a63265ee8bd8e677c10e9b2bf666a7f21c40b5a7b6614728825ae51d112752eb", "timestamp": "2026-08-25T20:35:08.986198+00:00"}
+{"case_id": "SPR00191", "decision": "candidate", "event": "completed", "selected_candidate_label": "C19", "timestamp": "2026-08-25T20:35:10.865215+00:00"}
+{"case_id": "SPR00195", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "2d1b6aadbc614055edba9714ed90b313c5a3bacd7128e61ed0e0b88c935354d6", "timestamp": "2026-08-25T20:35:10.867264+00:00"}
+{"case_id": "SPR00176", "decision": "candidate", "event": "completed", "selected_candidate_label": "C04", "timestamp": "2026-08-25T20:35:15.659982+00:00"}
+{"case_id": "SPR00180", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "2bdd17bcc2b13f2ef0dc616adbf789b431bfe927bd70edf81a2002ba570dd5e2", "timestamp": "2026-08-25T20:35:15.662200+00:00"}
+{"case_id": "SPR00182", "decision": "candidate", "event": "completed", "selected_candidate_label": "C11", "timestamp": "2026-08-25T20:35:18.914938+00:00"}
+{"case_id": "SPR00186", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "a584e60e50642538e46b168d42a4c05c520ee68e2ea9ac46f22d5d4fce31d8c1", "timestamp": "2026-08-25T20:35:18.916550+00:00"}
+{"case_id": "SPR00195", "decision": "candidate", "event": "completed", "selected_candidate_label": "C16", "timestamp": "2026-08-25T20:35:25.322713+00:00"}
+{"case_id": "SPR00199", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "78d4427e30133bc88e2dc2f5aa2c3b9c1c2eb8dfdee073aa69b57d44e532a0b1", "timestamp": "2026-08-25T20:35:25.325006+00:00"}
+{"case_id": "SPR00181", "decision": "none", "event": "completed", "selected_candidate_label": null, "timestamp": "2026-08-25T20:35:26.189281+00:00"}
+{"case_id": "SPR00185", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "a1292ccba316dbfcc747cdb6002ac1218d598876cfaf3572b0930049ec1a20af", "timestamp": "2026-08-25T20:35:26.191226+00:00"}
+{"case_id": "SPR00180", "decision": "candidate", "event": "completed", "selected_candidate_label": "C05", "timestamp": "2026-08-25T20:35:29.578619+00:00"}
+{"case_id": "SPR00184", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "d6710e581600cd00e41aadd9d8bb81daee138ea2cb1d37ceb9483b7d8e5e327f", "timestamp": "2026-08-25T20:35:29.580799+00:00"}
+{"case_id": "SPR00186", "decision": "none", "event": "completed", "selected_candidate_label": null, "timestamp": "2026-08-25T20:35:37.288992+00:00"}
+{"case_id": "SPR00190", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "44dbb61ab1d60ae5e6cc3dcb51582564e58bb3f80fd3fd9502fa305e6db2e375", "timestamp": "2026-08-25T20:35:37.290519+00:00"}
+{"case_id": "SPR00199", "decision": "candidate", "event": "completed", "selected_candidate_label": "C18", "timestamp": "2026-08-25T20:35:39.056670+00:00"}
+{"case_id": "SPR00203", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "b9e296e2bfa6997ad4d999e4cc64ca15bab60f41714b1f6210e8426bb4745343", "timestamp": "2026-08-25T20:35:39.058853+00:00"}
+{"case_id": "SPR00185", "decision": "candidate", "event": "completed", "selected_candidate_label": "C20", "timestamp": "2026-08-25T20:35:39.687484+00:00"}
+{"case_id": "SPR00189", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "dcbffd72537ede50f4fb1fbaa91c68947aec40194b21a85b3254cdb9d812423e", "timestamp": "2026-08-25T20:35:39.690192+00:00"}
+{"case_id": "SPR00184", "decision": "candidate", "event": "completed", "selected_candidate_label": "C18", "timestamp": "2026-08-25T20:35:45.653460+00:00"}
+{"case_id": "SPR00188", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "5b232aef08a1602fe76dca2743a0db2dec62a94c6419901bed641d9ea4eaf4a5", "timestamp": "2026-08-25T20:35:45.655694+00:00"}
+{"case_id": "SPR00190", "decision": "candidate", "event": "completed", "selected_candidate_label": "C16", "timestamp": "2026-08-25T20:35:48.909045+00:00"}
+{"case_id": "SPR00194", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "73aea03ac4d6c7d63c17af6c15de8249eba1908f153ec5ee267939408a405e1a", "timestamp": "2026-08-25T20:35:48.911266+00:00"}
+{"case_id": "SPR00203", "decision": "candidate", "event": "completed", "selected_candidate_label": "C17", "timestamp": "2026-08-25T20:35:50.311051+00:00"}
+{"case_id": "SPR00207", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "1ce9927ac001e60569f8ff6a1477d88a5ca718d0402febb70121a82c0fa3d212", "timestamp": "2026-08-25T20:35:50.312162+00:00"}
+{"case_id": "SPR00189", "decision": "candidate", "event": "completed", "selected_candidate_label": "C24", "timestamp": "2026-08-25T20:35:53.976156+00:00"}
+{"case_id": "SPR00193", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "2ce0724c4593db1c1f35acd273c71ab333a3e21d9d8a19161ec9beec282778c1", "timestamp": "2026-08-25T20:35:53.979073+00:00"}
+{"case_id": "SPR00188", "decision": "candidate", "event": "completed", "selected_candidate_label": "C08", "timestamp": "2026-08-25T20:36:01.194834+00:00"}
+{"case_id": "SPR00192", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "bff0beaa4357653dca44510aa5a88dc3c243cb615db0570919d21a54911fffdc", "timestamp": "2026-08-25T20:36:01.197111+00:00"}
+{"case_id": "SPR00194", "decision": "none", "event": "completed", "selected_candidate_label": null, "timestamp": "2026-08-25T20:36:03.031339+00:00"}
+{"case_id": "SPR00198", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "437fb19991e7f89027265a6d5a29ffafcb5e4dd67dabf3b2802f74b290c436fd", "timestamp": "2026-08-25T20:36:03.034404+00:00"}
+{"case_id": "SPR00207", "decision": "candidate", "event": "completed", "selected_candidate_label": "C17", "timestamp": "2026-08-25T20:36:03.264231+00:00"}
+{"case_id": "SPR00211", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "ca7bff85ba408a8a7aed918fef75ef87a4993770d9c130613f5ab727b5865eba", "timestamp": "2026-08-25T20:36:03.265307+00:00"}
+{"case_id": "SPR00193", "decision": "candidate", "event": "completed", "selected_candidate_label": "C24", "timestamp": "2026-08-25T20:36:08.472781+00:00"}
+{"case_id": "SPR00197", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "b3d6eeba9f588ade8d0d6e010af4e6d0e907df82929b9147888b7ca28b2e7ca5", "timestamp": "2026-08-25T20:36:08.474308+00:00"}
+{"case_id": "SPR00211", "decision": "candidate", "event": "completed", "selected_candidate_label": "C23", "timestamp": "2026-08-25T20:36:18.158946+00:00"}
+{"case_id": "SPR00215", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "031ce29f909efea26f0eb42286999f982aed76ef684c9c3a9df8d931b502c32f", "timestamp": "2026-08-25T20:36:18.162170+00:00"}
+{"case_id": "SPR00192", "decision": "candidate", "event": "completed", "selected_candidate_label": "C18", "timestamp": "2026-08-25T20:36:18.897348+00:00"}
+{"case_id": "SPR00196", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "bd162e24841cd9878525c124b57fb90f45bb4199c4a0dc895a97979b45bd748c", "timestamp": "2026-08-25T20:36:18.899339+00:00"}
+{"case_id": "SPR00198", "decision": "candidate", "event": "completed", "selected_candidate_label": "C25", "timestamp": "2026-08-25T20:36:19.663566+00:00"}
+{"case_id": "SPR00202", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "42211ed8cebc69dc50a8a048c31f5460906afd4fae41ac0d29ea4288a64d35bd", "timestamp": "2026-08-25T20:36:19.664424+00:00"}
+{"case_id": "SPR00197", "decision": "candidate", "event": "completed", "selected_candidate_label": "C23", "timestamp": "2026-08-25T20:36:28.002203+00:00"}
+{"case_id": "SPR00201", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "da651e33dc94da79e303a5d3c7ca5633c6e13ad21e6dde77de89a2d2640eb5bb", "timestamp": "2026-08-25T20:36:28.012218+00:00"}
+{"case_id": "SPR00202", "decision": "candidate", "event": "completed", "selected_candidate_label": "C10", "timestamp": "2026-08-25T20:36:32.055097+00:00"}
+{"case_id": "SPR00206", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "97661dcb5fadcc5decd552980c0d8bee625c11d99269b1a036a775bddc47aabd", "timestamp": "2026-08-25T20:36:32.056955+00:00"}
+{"case_id": "SPR00196", "decision": "candidate", "event": "completed", "selected_candidate_label": "C07", "timestamp": "2026-08-25T20:36:32.487473+00:00"}
+{"case_id": "SPR00200", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "e47a8c2de35adb52cb74371779d2a7b95541091a88fee80335a2e58d5d9385eb", "timestamp": "2026-08-25T20:36:32.492252+00:00"}
+{"case_id": "SPR00215", "decision": "candidate", "event": "completed", "selected_candidate_label": "C24", "timestamp": "2026-08-25T20:36:32.958467+00:00"}
+{"case_id": "SPR00219", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "88d858cd0e881c3d20bc00880bf236df3e379da3c3a6cc141fb58952e6b7db80", "timestamp": "2026-08-25T20:36:32.959644+00:00"}
+{"case_id": "SPR00201", "decision": "candidate", "event": "completed", "selected_candidate_label": "C25", "timestamp": "2026-08-25T20:36:44.577793+00:00"}
+{"case_id": "SPR00205", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "f05b63e189e582709c54a96754ce66ccedea3d4d5ed956c7b0f1e3c4a836c59c", "timestamp": "2026-08-25T20:36:44.581280+00:00"}
+{"case_id": "SPR00219", "decision": "candidate", "event": "completed", "selected_candidate_label": "C25", "timestamp": "2026-08-25T20:36:45.727161+00:00"}
+{"case_id": "SPR00223", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "95ccb14019ea06a0bc8624584dd318e153e85096bcecaaf9859f81ab3db9839d", "timestamp": "2026-08-25T20:36:45.728938+00:00"}
+{"case_id": "SPR00206", "decision": "candidate", "event": "completed", "selected_candidate_label": "C13", "timestamp": "2026-08-25T20:36:48.330174+00:00"}
+{"case_id": "SPR00210", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "d040fe8e522e2e0b3d2124952b4d5927623e977f98b9bbc34940c984d29bea73", "timestamp": "2026-08-25T20:36:48.331724+00:00"}
+{"case_id": "SPR00200", "decision": "candidate", "event": "completed", "selected_candidate_label": "C01", "timestamp": "2026-08-25T20:36:52.195126+00:00"}
+{"case_id": "SPR00204", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "46229b4d21f3f84449eb8d1d0889ba712dca99d1f95a3cd48bff7b9ab0e2b4ba", "timestamp": "2026-08-25T20:36:52.197487+00:00"}
+{"case_id": "SPR00205", "decision": "candidate", "event": "completed", "selected_candidate_label": "C10", "timestamp": "2026-08-25T20:36:58.860671+00:00"}
+{"case_id": "SPR00209", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "885a8f4ace5277f025ed3536a6a9e9106ff6dc1555470f39996f3e9b2898f367", "timestamp": "2026-08-25T20:36:58.863771+00:00"}
+{"case_id": "SPR00223", "decision": "candidate", "event": "completed", "selected_candidate_label": "C22", "timestamp": "2026-08-25T20:37:02.419242+00:00"}
+{"case_id": "SPR00227", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "f4cdfdec90152892ffbae5a1bb5922ad776685ec79287658f1326954f17b097e", "timestamp": "2026-08-25T20:37:02.422390+00:00"}
+{"case_id": "SPR00210", "decision": "candidate", "event": "completed", "selected_candidate_label": "C20", "timestamp": "2026-08-25T20:37:03.727351+00:00"}
+{"case_id": "SPR00214", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "97beddd95c263667962573611fc4efc3401fe8bc44af50f87b19dc4ddf7f5ca1", "timestamp": "2026-08-25T20:37:03.730182+00:00"}
+{"case_id": "SPR00204", "decision": "candidate", "event": "completed", "selected_candidate_label": "C08", "timestamp": "2026-08-25T20:37:07.192407+00:00"}
+{"case_id": "SPR00208", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "7c75a54049b3065a51a4184a65dafc0528d422970c0a744776895da0b66d0342", "timestamp": "2026-08-25T20:37:07.195593+00:00"}
+{"case_id": "SPR00209", "decision": "candidate", "event": "completed", "selected_candidate_label": "C21", "timestamp": "2026-08-25T20:37:12.940165+00:00"}
+{"case_id": "SPR00213", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "559482e53f3b1ddabd2e6ba0d99586f3a9239accbf2f009b9570f10dd7f0f6eb", "timestamp": "2026-08-25T20:37:12.941731+00:00"}
+{"case_id": "SPR00227", "decision": "candidate", "event": "completed", "selected_candidate_label": "C03", "timestamp": "2026-08-25T20:37:18.556987+00:00"}
+{"case_id": "SPR00231", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "8359e927e2598ac037f22a7f64cbf9f8cb7ebeb795e9eed546fbbdd802d4686e", "timestamp": "2026-08-25T20:37:18.558569+00:00"}
+{"case_id": "SPR00214", "decision": "candidate", "event": "completed", "selected_candidate_label": "C05", "timestamp": "2026-08-25T20:37:18.856645+00:00"}
+{"case_id": "SPR00218", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "754fd609ffea94ee6ac30c6df14fa6a0dfae724e12c4d4e02c1de6aa703ad500", "timestamp": "2026-08-25T20:37:18.858600+00:00"}
+{"case_id": "SPR00208", "decision": "candidate", "event": "completed", "selected_candidate_label": "C11", "timestamp": "2026-08-25T20:37:24.265963+00:00"}
+{"case_id": "SPR00212", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "d528d72ee12bfc65fe025e9a5e69cab7e8a1ed575f434ddaf17793b052b1ed89", "timestamp": "2026-08-25T20:37:24.268729+00:00"}
+{"case_id": "SPR00213", "decision": "candidate", "event": "completed", "selected_candidate_label": "C17", "timestamp": "2026-08-25T20:37:26.465548+00:00"}
+{"case_id": "SPR00217", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "600debaefdc7dd27f46820ef224d187fbf81f7049d9ae7a42f53efb670645902", "timestamp": "2026-08-25T20:37:26.467379+00:00"}
+{"case_id": "SPR00231", "decision": "candidate", "event": "completed", "selected_candidate_label": "C22", "timestamp": "2026-08-25T20:37:30.703432+00:00"}
+{"case_id": "SPR00235", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "a6ddae04ad7049e54f6a81440e97ec5e8be95e94da29ab3363e9fcbd518a3863", "timestamp": "2026-08-25T20:37:30.704847+00:00"}
+{"case_id": "SPR00218", "decision": "candidate", "event": "completed", "selected_candidate_label": "C18", "timestamp": "2026-08-25T20:37:32.747387+00:00"}
+{"case_id": "SPR00222", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "8243e0ebc7b49969bccc8a8a7895bb56df7c80defc5a7aa51ebdbdf90a7b5f75", "timestamp": "2026-08-25T20:37:32.749341+00:00"}
+{"case_id": "SPR00212", "decision": "candidate", "event": "completed", "selected_candidate_label": "C01", "timestamp": "2026-08-25T20:37:36.077388+00:00"}
+{"case_id": "SPR00216", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "614f33fe7a3243730a0647cd70664b92bc119608dccd6ef45f58588add1a0c8e", "timestamp": "2026-08-25T20:37:36.079289+00:00"}
+{"case_id": "SPR00217", "decision": "candidate", "event": "completed", "selected_candidate_label": "C21", "timestamp": "2026-08-25T20:37:40.672650+00:00"}
+{"case_id": "SPR00221", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "2f694375c51f0d265fd234a50e849b86598e3b3bbfa5cb09b95b98514eaee7ef", "timestamp": "2026-08-25T20:37:40.674619+00:00"}
+{"case_id": "SPR00235", "decision": "candidate", "event": "completed", "selected_candidate_label": "C02", "timestamp": "2026-08-25T20:37:44.608144+00:00"}
+{"case_id": "SPR00239", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "323583a296a9b8bec24233d728b454bd62966d9df134a3df62172f3036bcb334", "timestamp": "2026-08-25T20:37:44.610076+00:00"}
+{"case_id": "SPR00222", "decision": "candidate", "event": "completed", "selected_candidate_label": "C20", "timestamp": "2026-08-25T20:37:46.901271+00:00"}
+{"case_id": "SPR00226", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "37b01ccb885b51b2bc0601c8c0f126e2847f5817c7603ad889bde39adb2060c8", "timestamp": "2026-08-25T20:37:46.903640+00:00"}
+{"case_id": "SPR00216", "decision": "none", "event": "completed", "selected_candidate_label": null, "timestamp": "2026-08-25T20:37:49.499310+00:00"}
+{"case_id": "SPR00220", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "f1d4370a6479bf3bb64e10d95fda7764bdf8db9405b6d3abfed21b4da4e9c275", "timestamp": "2026-08-25T20:37:49.501059+00:00"}
+{"case_id": "SPR00221", "decision": "candidate", "event": "completed", "selected_candidate_label": "C17", "timestamp": "2026-08-25T20:37:55.079630+00:00"}
+{"case_id": "SPR00225", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "540c1f1414a1377c193246cc6207f3eb3ad1389c5e5bf707ae489e41fc43fd1c", "timestamp": "2026-08-25T20:37:55.082773+00:00"}
+{"case_id": "SPR00226", "decision": "candidate", "event": "completed", "selected_candidate_label": "C15", "timestamp": "2026-08-25T20:38:01.654994+00:00"}
+{"case_id": "SPR00230", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "50e154ceebf777e8c766afaada82694b0c4e03816a9b0601c4c9c532656e43a9", "timestamp": "2026-08-25T20:38:01.656626+00:00"}
+{"case_id": "SPR00239", "decision": "none", "event": "completed", "selected_candidate_label": null, "timestamp": "2026-08-25T20:38:03.824514+00:00"}
+{"case_id": "SPR00243", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "83d1aef6404a59cc932b25edae2a19c3617b7a54564f689a31765993fb55da06", "timestamp": "2026-08-25T20:38:03.827372+00:00"}
+{"case_id": "SPR00220", "decision": "candidate", "event": "completed", "selected_candidate_label": "C15", "timestamp": "2026-08-25T20:38:04.446902+00:00"}
+{"case_id": "SPR00224", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "925262285bb6d12c98361cd4cb07a005f352cea215bae671572e22552acd3f41", "timestamp": "2026-08-25T20:38:04.447939+00:00"}
+{"case_id": "SPR00224", "decision": "candidate", "event": "completed", "selected_candidate_label": "C03", "timestamp": "2026-08-25T20:38:15.594642+00:00"}
+{"case_id": "SPR00228", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "da2ae5283beefbe3ce1305f923a0d45df07d87177a6423f84c40198924f10821", "timestamp": "2026-08-25T20:38:15.597930+00:00"}
+{"case_id": "SPR00225", "decision": "candidate", "event": "completed", "selected_candidate_label": "C08", "timestamp": "2026-08-25T20:38:16.810255+00:00"}
+{"case_id": "SPR00229", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "14a1aacba3fe1e23ff15453f91094ef0c74efdaa02adb7e972e9f58a9a6f2ea4", "timestamp": "2026-08-25T20:38:16.812683+00:00"}
+{"case_id": "SPR00230", "decision": "candidate", "event": "completed", "selected_candidate_label": "C13", "timestamp": "2026-08-25T20:38:20.057847+00:00"}
+{"case_id": "SPR00234", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "925f714b2916ecab67d5a2feea4e6a350d5851743f041999f5d1c2558f8def6c", "timestamp": "2026-08-25T20:38:20.059685+00:00"}
+{"case_id": "SPR00243", "decision": "candidate", "event": "completed", "selected_candidate_label": "C09", "timestamp": "2026-08-25T20:38:20.729726+00:00"}
+{"case_id": "SPR00247", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "be7af3b300fc6cc086212890402ba379e0c655ffe9fd8e3c49b81fb74b967c5e", "timestamp": "2026-08-25T20:38:20.731139+00:00"}
+{"case_id": "SPR00229", "decision": "candidate", "event": "completed", "selected_candidate_label": "C03", "timestamp": "2026-08-25T20:38:29.793764+00:00"}
+{"case_id": "SPR00233", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "950ace15858d4226cb4eff9bd13814bde3077dc2f50a0318ad0cb347d27117cd", "timestamp": "2026-08-25T20:38:29.796010+00:00"}
+{"case_id": "SPR00228", "decision": "candidate", "event": "completed", "selected_candidate_label": "C05", "timestamp": "2026-08-25T20:38:31.517714+00:00"}
+{"case_id": "SPR00232", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "3b6e40ba5a88db4e2d5da9706143049b786a79416be5dd24d6aa6d0e56db0334", "timestamp": "2026-08-25T20:38:31.519077+00:00"}
+{"case_id": "SPR00247", "decision": "candidate", "event": "completed", "selected_candidate_label": "C06", "timestamp": "2026-08-25T20:38:34.447786+00:00"}
+{"case_id": "SPR00251", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "a2f08d05982ad6a78690e8e7d4961c5973804e528bf0f0c58379fd13d85d4f4a", "timestamp": "2026-08-25T20:38:34.450131+00:00"}
+{"case_id": "SPR00234", "decision": "candidate", "event": "completed", "selected_candidate_label": "C16", "timestamp": "2026-08-25T20:38:38.553948+00:00"}
+{"case_id": "SPR00238", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "77d2b07d865eb54a89ce9ba12f495311c12d4f4055111ef8d6724d8f34a6a846", "timestamp": "2026-08-25T20:38:38.555480+00:00"}
+{"case_id": "SPR00232", "decision": "candidate", "event": "completed", "selected_candidate_label": "C14", "timestamp": "2026-08-25T20:38:42.615123+00:00"}
+{"case_id": "SPR00236", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "acec982fae7ecb106f79a9639ab09f1081723c21bb913d05da1fdb20ec43ecc2", "timestamp": "2026-08-25T20:38:42.616628+00:00"}
+{"case_id": "SPR00233", "decision": "candidate", "event": "completed", "selected_candidate_label": "C06", "timestamp": "2026-08-25T20:38:45.739527+00:00"}
+{"case_id": "SPR00237", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "90fd4d2ecd119748a77b02b0af7de050dfc8933b06160644d614fb2f65c08a21", "timestamp": "2026-08-25T20:38:45.741116+00:00"}
+{"case_id": "SPR00251", "decision": "candidate", "event": "completed", "selected_candidate_label": "C21", "timestamp": "2026-08-25T20:38:48.125764+00:00"}
+{"case_id": "SPR00255", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "559c2c40af65011591c04b52c2f7c3308f8e920a6ed3fcc18319cb1f65f882ef", "timestamp": "2026-08-25T20:38:48.127565+00:00"}
+{"case_id": "SPR00236", "decision": "candidate", "event": "completed", "selected_candidate_label": "C04", "timestamp": "2026-08-25T20:38:56.518760+00:00"}
+{"case_id": "SPR00240", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "a7dccd85dd1e28827438a2e67df9d73dfae85bcf8021e0f70b5a5270d4014c59", "timestamp": "2026-08-25T20:38:56.521945+00:00"}
+{"case_id": "SPR00237", "decision": "none", "event": "completed", "selected_candidate_label": null, "timestamp": "2026-08-25T20:38:59.807423+00:00"}
+{"case_id": "SPR00241", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "75acc777dca7bf1d30630b2b57c4b1842d8d6072baef52b2a17d8bb83041ede5", "timestamp": "2026-08-25T20:38:59.810508+00:00"}
+{"case_id": "SPR00238", "decision": "candidate", "event": "completed", "selected_candidate_label": "C08", "timestamp": "2026-08-25T20:39:00.531821+00:00"}
+{"case_id": "SPR00242", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "a8c1168d1e5171e6dccc39d47d019a3ca0f3438e615a51aa878ca916c40bcd3c", "timestamp": "2026-08-25T20:39:00.533699+00:00"}
+{"case_id": "SPR00255", "decision": "none", "event": "completed", "selected_candidate_label": null, "timestamp": "2026-08-25T20:39:04.351662+00:00"}
+{"case_id": "SPR00259", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "86a41cc4f983e4d6c47eb6799029110be351addb83b6b21bbc23d0f2999cf048", "timestamp": "2026-08-25T20:39:04.354049+00:00"}
+{"case_id": "SPR00240", "decision": "candidate", "event": "completed", "selected_candidate_label": "C01", "timestamp": "2026-08-25T20:39:13.967658+00:00"}
+{"case_id": "SPR00244", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "76937ddf2a392502d52f6e21f247b93746622b474dfeb676a22fc40f633d7958", "timestamp": "2026-08-25T20:39:13.970417+00:00"}
+{"case_id": "SPR00241", "decision": "candidate", "event": "completed", "selected_candidate_label": "C17", "timestamp": "2026-08-25T20:39:14.440535+00:00"}
+{"case_id": "SPR00245", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "90e2f76bd0059319c58f48190b48a8f690725f6e8e337f1b74667c2c31db90a4", "timestamp": "2026-08-25T20:39:14.442351+00:00"}
+{"case_id": "SPR00242", "decision": "candidate", "event": "completed", "selected_candidate_label": "C03", "timestamp": "2026-08-25T20:39:16.418459+00:00"}
+{"case_id": "SPR00246", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "43b97574a588f8f680f96794e1cffdf05f01cb4662be61742c159721d80c4830", "timestamp": "2026-08-25T20:39:16.422007+00:00"}
+{"case_id": "SPR00259", "decision": "candidate", "event": "completed", "selected_candidate_label": "C03", "timestamp": "2026-08-25T20:39:17.697910+00:00"}
+{"case_id": "SPR00263", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "88133fc559e7e340616b994dba96e79ce74254c42fb3ed7a255087ecbdf78521", "timestamp": "2026-08-25T20:39:17.702371+00:00"}
+{"case_id": "SPR00246", "decision": "candidate", "event": "completed", "selected_candidate_label": "C17", "timestamp": "2026-08-25T20:39:28.887205+00:00"}
+{"case_id": "SPR00250", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "c902e03524f492465baa125ec81e9ab305e90b9daf49380a6b020041d317c63a", "timestamp": "2026-08-25T20:39:28.889757+00:00"}
+{"case_id": "SPR00244", "decision": "candidate", "event": "completed", "selected_candidate_label": "C01", "timestamp": "2026-08-25T20:39:29.943967+00:00"}
+{"case_id": "SPR00248", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "f91135c353a065f65e6d93d0bbaa29e02c940cceb82211a8792543789aa6ef2e", "timestamp": "2026-08-25T20:39:29.947108+00:00"}
+{"case_id": "SPR00245", "decision": "candidate", "event": "completed", "selected_candidate_label": "C06", "timestamp": "2026-08-25T20:39:31.751321+00:00"}
+{"case_id": "SPR00249", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "b60d7482e86a52cbb6e0425ee306e314f5fabb35ee87ab13fc8e6b3ccdc88339", "timestamp": "2026-08-25T20:39:31.754041+00:00"}
+{"case_id": "SPR00263", "decision": "candidate", "event": "completed", "selected_candidate_label": "C14", "timestamp": "2026-08-25T20:39:42.669099+00:00"}
+{"case_id": "SPR00267", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "462e07905cb59854cb533558568353d855ebd479f65dd526cc12287e59c3701f", "timestamp": "2026-08-25T20:39:42.671959+00:00"}
+{"case_id": "SPR00250", "decision": "candidate", "event": "completed", "selected_candidate_label": "C11", "timestamp": "2026-08-25T20:39:45.014061+00:00"}
+{"case_id": "SPR00254", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "d3b7457e7aa4fa4430c92b02d40005f8b1c578d66453b256dd1d8435297e34a4", "timestamp": "2026-08-25T20:39:45.016052+00:00"}
+{"case_id": "SPR00249", "decision": "candidate", "event": "completed", "selected_candidate_label": "C25", "timestamp": "2026-08-25T20:39:50.244719+00:00"}
+{"case_id": "SPR00253", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "dbc6bd780f246d7522ea33184f61601828fde0889adfef44ae5e26b247d74fb9", "timestamp": "2026-08-25T20:39:50.248387+00:00"}
+{"case_id": "SPR00248", "decision": "candidate", "event": "completed", "selected_candidate_label": "C25", "timestamp": "2026-08-25T20:39:51.055002+00:00"}
+{"case_id": "SPR00252", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "78b56b51edc2ff661458a5fcf2ef6144421d042dade1e4675a1443c38e5a61db", "timestamp": "2026-08-25T20:39:51.056885+00:00"}
+{"case_id": "SPR00267", "decision": "candidate", "event": "completed", "selected_candidate_label": "C14", "timestamp": "2026-08-25T20:39:57.379566+00:00"}
+{"case_id": "SPR00271", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "f8c835852750abc51675c2383fb1f0b261bfe37b9e0f5499778c36090a8b082d", "timestamp": "2026-08-25T20:39:57.381107+00:00"}
+{"case_id": "SPR00254", "decision": "none", "event": "completed", "selected_candidate_label": null, "timestamp": "2026-08-25T20:39:59.854448+00:00"}
+{"case_id": "SPR00258", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "3eeba4ea4bca372423f6c014f0eae7abaf3008a7de5364e9d300de26a371c257", "timestamp": "2026-08-25T20:39:59.858885+00:00"}
+{"case_id": "SPR00253", "decision": "candidate", "event": "completed", "selected_candidate_label": "C02", "timestamp": "2026-08-25T20:40:03.468578+00:00"}
+{"case_id": "SPR00257", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "df05553e1bd98b5a7d0653ddb0ba2813b210c9cd7ab0a90e2d470fe52a0e27c8", "timestamp": "2026-08-25T20:40:03.470914+00:00"}
+{"case_id": "SPR00252", "decision": "candidate", "event": "completed", "selected_candidate_label": "C07", "timestamp": "2026-08-25T20:40:07.345911+00:00"}
+{"case_id": "SPR00256", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "44fa5248cc4cd136566bf24e4022a0d242d4e79a3163e3a5b6b02bf97a086bae", "timestamp": "2026-08-25T20:40:07.347547+00:00"}
+{"case_id": "SPR00271", "decision": "candidate", "event": "completed", "selected_candidate_label": "C11", "timestamp": "2026-08-25T20:40:10.474502+00:00"}
+{"case_id": "SPR00275", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "33089b715cbea5260ca7885b45ebd500cc35f00f1f45ca3eeb5e4d54a1d8493d", "timestamp": "2026-08-25T20:40:10.477209+00:00"}
+{"case_id": "SPR00258", "decision": "none", "event": "completed", "selected_candidate_label": null, "timestamp": "2026-08-25T20:40:13.882546+00:00"}
+{"case_id": "SPR00262", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "434870ca3b0f17bb8414f6ebc22ed39855418e3930b6887c22e4b5c1baad4eda", "timestamp": "2026-08-25T20:40:13.884452+00:00"}
+{"case_id": "SPR00257", "decision": "candidate", "event": "completed", "selected_candidate_label": "C11", "timestamp": "2026-08-25T20:40:18.979490+00:00"}
+{"case_id": "SPR00261", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "894c9c1121e572964d0f36ede87fdc9e1172e155dc597a6ae995cdb1159a5c65", "timestamp": "2026-08-25T20:40:18.981846+00:00"}
+{"case_id": "SPR00256", "decision": "candidate", "event": "completed", "selected_candidate_label": "C17", "timestamp": "2026-08-25T20:40:23.551869+00:00"}
+{"case_id": "SPR00260", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "36b0bd08c1ffcfae425926d34dbdfd46bc945be39d7dc81d43f1ec599712d6b6", "timestamp": "2026-08-25T20:40:23.553730+00:00"}
+{"case_id": "SPR00262", "decision": "candidate", "event": "completed", "selected_candidate_label": "C12", "timestamp": "2026-08-25T20:40:28.518636+00:00"}
+{"case_id": "SPR00266", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "cabf1857489cb62bddedb144fd480d6a6aea8975894e67cfaedac732894aca30", "timestamp": "2026-08-25T20:40:28.520927+00:00"}
+{"case_id": "SPR00275", "decision": "candidate", "event": "completed", "selected_candidate_label": "C04", "timestamp": "2026-08-25T20:40:34.783745+00:00"}
+{"case_id": "SPR00279", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "70fe8b1f38e9974006dc9d83d0f78bf71398e403acfe31d9abcf3b3e1281f55e", "timestamp": "2026-08-25T20:40:34.786751+00:00"}
+{"case_id": "SPR00261", "decision": "candidate", "event": "completed", "selected_candidate_label": "C15", "timestamp": "2026-08-25T20:40:35.313991+00:00"}
+{"case_id": "SPR00265", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "f3cdd45216b5dbccdc2c533e88defe07b154e89becad8982a9f8833e4f820de6", "timestamp": "2026-08-25T20:40:35.317223+00:00"}
+{"case_id": "SPR00260", "decision": "candidate", "event": "completed", "selected_candidate_label": "C06", "timestamp": "2026-08-25T20:40:38.079049+00:00"}
+{"case_id": "SPR00264", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "c7068f6e6bb6cea5535f4e0ba901812122a2cef043115f2f282da6ce3a44b355", "timestamp": "2026-08-25T20:40:38.081349+00:00"}
+{"case_id": "SPR00266", "decision": "candidate", "event": "completed", "selected_candidate_label": "C10", "timestamp": "2026-08-25T20:40:42.346210+00:00"}
+{"case_id": "SPR00270", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "dd060a96489299466430ead4dde8b76da8d9454467df3b7fb248a123598e4515", "timestamp": "2026-08-25T20:40:42.350834+00:00"}
+{"case_id": "SPR00279", "decision": "candidate", "event": "completed", "selected_candidate_label": "C04", "timestamp": "2026-08-25T20:40:49.686281+00:00"}
+{"case_id": "SPR00283", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "c9b22b663fa9cb18febd3b1c1d9a3ae6d21e2b766dc75184a043ea8baea1bf0b", "timestamp": "2026-08-25T20:40:49.688255+00:00"}
+{"case_id": "SPR00265", "decision": "candidate", "event": "completed", "selected_candidate_label": "C09", "timestamp": "2026-08-25T20:40:53.896793+00:00"}
+{"case_id": "SPR00269", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "5e360a98f4e5a45938f16ecdaf152a3d5a7ebc061f847f830a6336af5d9018ca", "timestamp": "2026-08-25T20:40:53.900597+00:00"}
+{"case_id": "SPR00264", "decision": "candidate", "event": "completed", "selected_candidate_label": "C04", "timestamp": "2026-08-25T20:40:56.152181+00:00"}
+{"case_id": "SPR00268", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "94da5ab5980ddccbce20a0188b35e2438577bb4457afcfe833f9bee301dec513", "timestamp": "2026-08-25T20:40:56.153701+00:00"}
+{"case_id": "SPR00270", "decision": "candidate", "event": "completed", "selected_candidate_label": "C12", "timestamp": "2026-08-25T20:41:02.612871+00:00"}
+{"case_id": "SPR00274", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "03850eb4ca9861196e1a0e9289f14b6d60f23432e93506d585cda35dbd1b1b0c", "timestamp": "2026-08-25T20:41:02.615610+00:00"}
+{"case_id": "SPR00283", "decision": "none", "event": "completed", "selected_candidate_label": null, "timestamp": "2026-08-25T20:41:05.415631+00:00"}
+{"case_id": "SPR00287", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "4a905b4b6e5f0492e215d0d3658f51ae005bc598925f97e4f4f0e6e655676ce9", "timestamp": "2026-08-25T20:41:05.417606+00:00"}
+{"case_id": "SPR00268", "decision": "candidate", "event": "completed", "selected_candidate_label": "C15", "timestamp": "2026-08-25T20:41:08.231673+00:00"}
+{"case_id": "SPR00272", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "3861af55040ebf91c115987c22588138228ca5046e7ed147c2db3c3964879819", "timestamp": "2026-08-25T20:41:08.233240+00:00"}
+{"case_id": "SPR00269", "decision": "candidate", "event": "completed", "selected_candidate_label": "C12", "timestamp": "2026-08-25T20:41:10.714824+00:00"}
+{"case_id": "SPR00273", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "40c74c04f62e655f125ea3c0035091e9e29be606bd3577e41cc828bc0a63756f", "timestamp": "2026-08-25T20:41:10.717538+00:00"}
+{"case_id": "SPR00274", "decision": "candidate", "event": "completed", "selected_candidate_label": "C20", "timestamp": "2026-08-25T20:41:20.004732+00:00"}
+{"case_id": "SPR00278", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "8994ff3f32049b4c2f85be69f54669d7889b1e281006af21b2e23f66babe8f2b", "timestamp": "2026-08-25T20:41:20.007199+00:00"}
+{"case_id": "SPR00287", "decision": "candidate", "event": "completed", "selected_candidate_label": "C07", "timestamp": "2026-08-25T20:41:20.100265+00:00"}
+{"case_id": "SPR00291", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "97bdf8ac990936b760d458ecf84c0314d27a7b11ffd479c7a5be983c8ca0a694", "timestamp": "2026-08-25T20:41:20.101510+00:00"}
+{"case_id": "SPR00272", "decision": "candidate", "event": "completed", "selected_candidate_label": "C25", "timestamp": "2026-08-25T20:41:26.914781+00:00"}
+{"case_id": "SPR00276", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "4e852b98f115bce593df2a757dfb5bc0ac22a49e1d2f67a5c25d4c5c5e349376", "timestamp": "2026-08-25T20:41:26.916895+00:00"}
+{"case_id": "SPR00273", "decision": "candidate", "event": "completed", "selected_candidate_label": "C15", "timestamp": "2026-08-25T20:41:28.879749+00:00"}
+{"case_id": "SPR00277", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "65c0b1df1d6ea9836261405aa79d0f91467609202fe4f7bb525bd672d317f7ab", "timestamp": "2026-08-25T20:41:28.881919+00:00"}
+{"case_id": "SPR00291", "decision": "none", "event": "completed", "selected_candidate_label": null, "timestamp": "2026-08-25T20:41:35.693745+00:00"}
+{"case_id": "SPR00295", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "61920665b1fbb17076ddb4d4f95953e6e98a058185788fc36ebb7592ff448ac9", "timestamp": "2026-08-25T20:41:35.695235+00:00"}
+{"case_id": "SPR00278", "decision": "candidate", "event": "completed", "selected_candidate_label": "C17", "timestamp": "2026-08-25T20:41:36.784694+00:00"}
+{"case_id": "SPR00282", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "83093d5d8f94980b3310205a79443154d997ae43609efdd4efb198e27b060aa4", "timestamp": "2026-08-25T20:41:36.786735+00:00"}
+{"case_id": "SPR00276", "decision": "candidate", "event": "completed", "selected_candidate_label": "C18", "timestamp": "2026-08-25T20:41:42.497115+00:00"}
+{"case_id": "SPR00280", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "5681241a4c3d2964b328d3d1114d551193d41f509e0421d3b9fd65c673bf0251", "timestamp": "2026-08-25T20:41:42.499516+00:00"}
+{"case_id": "SPR00277", "decision": "candidate", "event": "completed", "selected_candidate_label": "C08", "timestamp": "2026-08-25T20:41:42.688700+00:00"}
+{"case_id": "SPR00281", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "e4b5b6aba1d6ddfb749a7da064e94f0501e1ab5358803df6b0edc523953b26c8", "timestamp": "2026-08-25T20:41:42.690726+00:00"}
+{"case_id": "SPR00295", "decision": "candidate", "event": "completed", "selected_candidate_label": "C18", "timestamp": "2026-08-25T20:41:48.476972+00:00"}
+{"case_id": "SPR00299", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "ed2a42823ab8f5b4789ebc286a2bd22c605321b995770fa098a86e6ccbf873cb", "timestamp": "2026-08-25T20:41:48.479415+00:00"}
+{"case_id": "SPR00282", "decision": "candidate", "event": "completed", "selected_candidate_label": "C22", "timestamp": "2026-08-25T20:41:51.030701+00:00"}
+{"case_id": "SPR00286", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "9bd16dbef4c2f52e2c1f91b79a7079dae8ee0a72716a323a1bd39adcd8646894", "timestamp": "2026-08-25T20:41:51.032773+00:00"}
+{"case_id": "SPR00280", "decision": "candidate", "event": "completed", "selected_candidate_label": "C23", "timestamp": "2026-08-25T20:41:55.851817+00:00"}
+{"case_id": "SPR00284", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "341fd8b4792e9f3ea40462c17ecd304fa3351125ee3550e7f94fe750d74210af", "timestamp": "2026-08-25T20:41:55.853862+00:00"}
+{"case_id": "SPR00281", "decision": "candidate", "event": "completed", "selected_candidate_label": "C01", "timestamp": "2026-08-25T20:41:56.188628+00:00"}
+{"case_id": "SPR00285", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "764454e563b3e327ea9178f726f437649bc6841cc5eeabe655e4aaf2dbee2151", "timestamp": "2026-08-25T20:41:56.190214+00:00"}
+{"case_id": "SPR00286", "decision": "candidate", "event": "completed", "selected_candidate_label": "C03", "timestamp": "2026-08-25T20:42:03.253195+00:00"}
+{"case_id": "SPR00290", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "7c813ad9b527b8bff94c8c4c08ffde45d92ddfc1e0084855fab8f25cd4c227b2", "timestamp": "2026-08-25T20:42:03.255327+00:00"}
+{"case_id": "SPR00299", "decision": "candidate", "event": "completed", "selected_candidate_label": "C20", "timestamp": "2026-08-25T20:42:09.868261+00:00"}
+{"case_id": "SPR00303", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "9429b82c7438748c1e9ed05fce53acb7b5cf18a6936fe8e782fcfd0e310d6692", "timestamp": "2026-08-25T20:42:09.869756+00:00"}
+{"case_id": "SPR00285", "decision": "none", "event": "completed", "selected_candidate_label": null, "timestamp": "2026-08-25T20:42:10.837492+00:00"}
+{"case_id": "SPR00289", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "ce25a703daaac6141c717c3cbb6887df9a0c9758d27a0c096af5a1517b7a1935", "timestamp": "2026-08-25T20:42:10.838849+00:00"}
+{"case_id": "SPR00284", "decision": "candidate", "event": "completed", "selected_candidate_label": "C06", "timestamp": "2026-08-25T20:42:13.359869+00:00"}
+{"case_id": "SPR00288", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "d76e2594d0db7074a0a4bd07dd98cb3068feaf54dbe43b1288b3e72af54a1d16", "timestamp": "2026-08-25T20:42:13.361821+00:00"}
+{"case_id": "SPR00290", "decision": "candidate", "event": "completed", "selected_candidate_label": "C11", "timestamp": "2026-08-25T20:42:22.110814+00:00"}
+{"case_id": "SPR00294", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "a98ff5d18da121854d27e5e26bcb576168b5cc2d76ae115abbe889a1bbdba2c0", "timestamp": "2026-08-25T20:42:22.112505+00:00"}
+{"case_id": "SPR00289", "decision": "candidate", "event": "completed", "selected_candidate_label": "C01", "timestamp": "2026-08-25T20:42:27.650014+00:00"}
+{"case_id": "SPR00293", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "2ea40f4dc36513f48325684d92fd95cab3e0a3cdb56bf87bf2aac240011e6a01", "timestamp": "2026-08-25T20:42:27.651412+00:00"}
+{"case_id": "SPR00288", "decision": "candidate", "event": "completed", "selected_candidate_label": "C21", "timestamp": "2026-08-25T20:42:29.065939+00:00"}
+{"case_id": "SPR00292", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "a37e0801a2f53dd064f6288341705ce83e13a90c4fb685ba4b39cd7015379484", "timestamp": "2026-08-25T20:42:29.067653+00:00"}
+{"case_id": "SPR00303", "decision": "candidate", "event": "completed", "selected_candidate_label": "C23", "timestamp": "2026-08-25T20:42:30.475619+00:00"}
+{"case_id": "SPR00307", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "c84d628bf74aa5c13d3fad56873d089e6452daa7e3cd5ed0165e0b74dc18e361", "timestamp": "2026-08-25T20:42:30.478777+00:00"}
+{"case_id": "SPR00294", "decision": "candidate", "event": "completed", "selected_candidate_label": "C12", "timestamp": "2026-08-25T20:42:33.037066+00:00"}
+{"case_id": "SPR00298", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "682d207b4611e20dc9c610a4734b2c5b3429b8c11345330f127006171123bfb6", "timestamp": "2026-08-25T20:42:33.039081+00:00"}
+{"case_id": "SPR00293", "decision": "candidate", "event": "completed", "selected_candidate_label": "C03", "timestamp": "2026-08-25T20:42:39.334537+00:00"}
+{"case_id": "SPR00297", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "0c8c540ecc694278f28a88539ff3f37e9b09d05acb67a18db906a436ba4342f0", "timestamp": "2026-08-25T20:42:39.335779+00:00"}
+{"case_id": "SPR00307", "decision": "candidate", "event": "completed", "selected_candidate_label": "C14", "timestamp": "2026-08-25T20:42:44.880685+00:00"}
+{"case_id": "SPR00311", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "26ab1f24741fb941f768615ff13482985a7a97ce8b0c5d32c110d414e460468e", "timestamp": "2026-08-25T20:42:44.882731+00:00"}
+{"case_id": "SPR00292", "decision": "candidate", "event": "completed", "selected_candidate_label": "C01", "timestamp": "2026-08-25T20:42:45.339642+00:00"}
+{"case_id": "SPR00296", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "9cf8b142412e34267a330b3802378ffc912215e44ff36f979c8793bdbc35dcaa", "timestamp": "2026-08-25T20:42:45.340705+00:00"}
+{"case_id": "SPR00298", "decision": "candidate", "event": "completed", "selected_candidate_label": "C20", "timestamp": "2026-08-25T20:42:46.047903+00:00"}
+{"case_id": "SPR00302", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "adc8cfba147513ba3deb77c9bbe457e68c054cb32eb84e126bed4ab5d49f7015", "timestamp": "2026-08-25T20:42:46.049617+00:00"}
+{"case_id": "SPR00297", "decision": "candidate", "event": "completed", "selected_candidate_label": "C10", "timestamp": "2026-08-25T20:42:53.701500+00:00"}
+{"case_id": "SPR00301", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "9d25bdb50cab803c342bb90749a0c599584a5396121b8683b72b81781d8e9894", "timestamp": "2026-08-25T20:42:53.703403+00:00"}
+{"case_id": "SPR00296", "decision": "none", "event": "completed", "selected_candidate_label": null, "timestamp": "2026-08-25T20:43:00.133487+00:00"}
+{"case_id": "SPR00300", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "19ce3d7c34ef3deca4a832362bddd82dd90dbd68ab82de431604f8145603826b", "timestamp": "2026-08-25T20:43:00.136569+00:00"}
+{"case_id": "SPR00302", "decision": "candidate", "event": "completed", "selected_candidate_label": "C25", "timestamp": "2026-08-25T20:43:00.482307+00:00"}
+{"case_id": "SPR00306", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "1f247440cf7ca24dc19728b774c132087a43cf2e5d58ae70c9028595bbdbad94", "timestamp": "2026-08-25T20:43:00.484465+00:00"}
+{"case_id": "SPR00311", "decision": "candidate", "event": "completed", "selected_candidate_label": "C01", "timestamp": "2026-08-25T20:43:02.020066+00:00"}
+{"case_id": "SPR00315", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "9575ed4ed569ce085473c67dc36c9a63d83198e8a0fbbbf670bf4579aeeb9705", "timestamp": "2026-08-25T20:43:02.022186+00:00"}
+{"case_id": "SPR00301", "decision": "candidate", "event": "completed", "selected_candidate_label": "C06", "timestamp": "2026-08-25T20:43:08.970193+00:00"}
+{"case_id": "SPR00305", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "10ac2d5aa6438704a768255cda7da9e71c1b473c5aa70332aaac68957e886700", "timestamp": "2026-08-25T20:43:08.972226+00:00"}
+{"case_id": "SPR00315", "decision": "candidate", "event": "completed", "selected_candidate_label": "C19", "timestamp": "2026-08-25T20:43:14.547052+00:00"}
+{"case_id": "SPR00319", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "cc6f2594dd9d24e4d0573362b7d0adf47ad4bdfd3870ed19a0542b39c1fb2a94", "timestamp": "2026-08-25T20:43:14.548479+00:00"}
+{"case_id": "SPR00300", "decision": "candidate", "event": "completed", "selected_candidate_label": "C20", "timestamp": "2026-08-25T20:43:16.546328+00:00"}
+{"case_id": "SPR00304", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "6febd1d09a9928fbb2264f21b486050fd942f273bc822f438032e4993a845964", "timestamp": "2026-08-25T20:43:16.547924+00:00"}
+{"case_id": "SPR00306", "decision": "candidate", "event": "completed", "selected_candidate_label": "C11", "timestamp": "2026-08-25T20:43:17.473701+00:00"}
+{"case_id": "SPR00310", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "9919e8b212fec512ab56d709a4ffd1f61493bda04d9aa609a00ed26857126b7b", "timestamp": "2026-08-25T20:43:17.476873+00:00"}
+{"case_id": "SPR00305", "decision": "candidate", "event": "completed", "selected_candidate_label": "C04", "timestamp": "2026-08-25T20:43:25.781474+00:00"}
+{"case_id": "SPR00309", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "f76286e0e4304ab0f8032cb29f9266761617c405c16d2581a6d0a626fd109000", "timestamp": "2026-08-25T20:43:25.784245+00:00"}
+{"case_id": "SPR00304", "decision": "candidate", "event": "completed", "selected_candidate_label": "C19", "timestamp": "2026-08-25T20:43:30.784316+00:00"}
+{"case_id": "SPR00308", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "eb5b090ba451eba169624c59e09638eb1b910f3d0fa0476ae2b2ed9b045a898f", "timestamp": "2026-08-25T20:43:30.786449+00:00"}
+{"case_id": "SPR00319", "decision": "candidate", "event": "completed", "selected_candidate_label": "C01", "timestamp": "2026-08-25T20:43:31.570273+00:00"}
+{"case_id": "SPR00323", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "ed03bb2fecc7df2255d3bc25b4463bead7b4261c2d56d8fb8c93dbb71c6614fa", "timestamp": "2026-08-25T20:43:31.572150+00:00"}
+{"case_id": "SPR00310", "decision": "candidate", "event": "completed", "selected_candidate_label": "C06", "timestamp": "2026-08-25T20:43:34.043872+00:00"}
+{"case_id": "SPR00314", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "41e383bc11a19ca97a346238021d8e31915f13ede8432abd2c02988055a5896a", "timestamp": "2026-08-25T20:43:34.046308+00:00"}
+{"case_id": "SPR00309", "decision": "candidate", "event": "completed", "selected_candidate_label": "C25", "timestamp": "2026-08-25T20:43:40.688206+00:00"}
+{"case_id": "SPR00313", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "acda894de8436f185f6299e683b3765d74db23a667266c3fada883bf0cf5919e", "timestamp": "2026-08-25T20:43:40.690073+00:00"}
+{"case_id": "SPR00308", "decision": "candidate", "event": "completed", "selected_candidate_label": "C11", "timestamp": "2026-08-25T20:43:44.994287+00:00"}
+{"case_id": "SPR00312", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "eb6665dcd4dcfa38f4132e205000c66051bbe6f5e5ecaf236604415db86aaf0c", "timestamp": "2026-08-25T20:43:44.996098+00:00"}
+{"case_id": "SPR00323", "decision": "candidate", "event": "completed", "selected_candidate_label": "C21", "timestamp": "2026-08-25T20:43:46.972347+00:00"}
+{"case_id": "SPR00327", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "7a99fb5e8ca1a6a98eba062b55d3f60151d4c0a37dfff77c536731cc7c2bb7fd", "timestamp": "2026-08-25T20:43:46.974208+00:00"}
+{"case_id": "SPR00314", "decision": "candidate", "event": "completed", "selected_candidate_label": "C23", "timestamp": "2026-08-25T20:43:48.935909+00:00"}
+{"case_id": "SPR00318", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "cb410f7dbca568475f1879d3be8ff6770df66791b537ef92cbfa732d31f2270a", "timestamp": "2026-08-25T20:43:48.938077+00:00"}
+{"case_id": "SPR00313", "decision": "none", "event": "completed", "selected_candidate_label": null, "timestamp": "2026-08-25T20:43:53.899005+00:00"}
+{"case_id": "SPR00317", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "99df5898a68f274a23a6e85d1391fb95e89941fda161e9f3aa84463187a9b08c", "timestamp": "2026-08-25T20:43:53.900759+00:00"}
+{"case_id": "SPR00312", "decision": "candidate", "event": "completed", "selected_candidate_label": "C06", "timestamp": "2026-08-25T20:43:58.743017+00:00"}
+{"case_id": "SPR00316", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "b1d89ff869f26961582447b88c873238b3a0839ce53cca0622846eb0da380573", "timestamp": "2026-08-25T20:43:58.745764+00:00"}
+{"case_id": "SPR00327", "decision": "candidate", "event": "completed", "selected_candidate_label": "C04", "timestamp": "2026-08-25T20:43:59.508769+00:00"}
+{"case_id": "SPR00331", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "a94a2ffc71c524ae5d32b2e321025bc620a7f454aaae99977d75702a74b61ca3", "timestamp": "2026-08-25T20:43:59.510254+00:00"}
+{"case_id": "SPR00318", "decision": "candidate", "event": "completed", "selected_candidate_label": "C07", "timestamp": "2026-08-25T20:44:03.991698+00:00"}
+{"case_id": "SPR00322", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "32be83d7ccd6bd28a032c2aa3bba8c2733a26e40d8ed810f9d4c575e72dbcebb", "timestamp": "2026-08-25T20:44:03.993879+00:00"}
+{"case_id": "SPR00317", "decision": "candidate", "event": "completed", "selected_candidate_label": "C17", "timestamp": "2026-08-25T20:44:08.876110+00:00"}
+{"case_id": "SPR00321", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "76bdcc0570e919464ced9f1be2a657ace0dbe1918f63769de618e791ca4a0b54", "timestamp": "2026-08-25T20:44:08.879000+00:00"}
+{"case_id": "SPR00331", "decision": "candidate", "event": "completed", "selected_candidate_label": "C14", "timestamp": "2026-08-25T20:44:11.738621+00:00"}
+{"case_id": "SPR00335", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "c187f3d18ed1bccbbd1b92dd6bb468ad05b9e71c0a2fff8d45fa6475d393f9b6", "timestamp": "2026-08-25T20:44:11.741229+00:00"}
+{"case_id": "SPR00316", "decision": "candidate", "event": "completed", "selected_candidate_label": "C07", "timestamp": "2026-08-25T20:44:15.715520+00:00"}
+{"case_id": "SPR00320", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "0322ce72ac5ff87eedf220198ebbd5d6ed2771c997b849f8b09f96c81b8b035f", "timestamp": "2026-08-25T20:44:15.717322+00:00"}
+{"case_id": "SPR00322", "decision": "candidate", "event": "completed", "selected_candidate_label": "C01", "timestamp": "2026-08-25T20:44:21.841270+00:00"}
+{"case_id": "SPR00326", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "30439520257b18ccaba8b89e74805d8faae9fbbd3369ea1589c49dd37dbec03d", "timestamp": "2026-08-25T20:44:21.842920+00:00"}
+{"case_id": "SPR00321", "decision": "candidate", "event": "completed", "selected_candidate_label": "C11", "timestamp": "2026-08-25T20:44:28.755801+00:00"}
+{"case_id": "SPR00325", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "12fc02f0c6b36f80e00d85bdf273171daa6f524cd02e0a033f6efb1dd4247897", "timestamp": "2026-08-25T20:44:28.757053+00:00"}
+{"case_id": "SPR00320", "decision": "candidate", "event": "completed", "selected_candidate_label": "C10", "timestamp": "2026-08-25T20:44:29.522285+00:00"}
+{"case_id": "SPR00324", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "1e434391624411ae99e64393b3a62db18bca54370c0886143530ae2ec055ce34", "timestamp": "2026-08-25T20:44:29.523904+00:00"}
+{"case_id": "SPR00335", "decision": "candidate", "event": "completed", "selected_candidate_label": "C15", "timestamp": "2026-08-25T20:44:30.586604+00:00"}
+{"case_id": "SPR00339", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "78a4c3ed66d8a8bfbf0a4b46ce2a0dc0b175c39b9ec8a8bd3fc73aed7a40435e", "timestamp": "2026-08-25T20:44:30.588000+00:00"}
+{"case_id": "SPR00326", "decision": "candidate", "event": "completed", "selected_candidate_label": "C13", "timestamp": "2026-08-25T20:44:41.750919+00:00"}
+{"case_id": "SPR00330", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "e808bec6ccb26e916e1f22132cba2c24448ed3cdb2fe3ff032b45e32d0fc416a", "timestamp": "2026-08-25T20:44:41.753114+00:00"}
+{"case_id": "SPR00339", "decision": "candidate", "event": "completed", "selected_candidate_label": "C16", "timestamp": "2026-08-25T20:44:44.850390+00:00"}
+{"case_id": "SPR00343", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "ba4e706d2f0eb263f9377f77bcb0073da0cda0e836d0530794343a5263ce7d15", "timestamp": "2026-08-25T20:44:44.851681+00:00"}
+{"case_id": "SPR00324", "decision": "candidate", "event": "completed", "selected_candidate_label": "C15", "timestamp": "2026-08-25T20:44:46.359208+00:00"}
+{"case_id": "SPR00328", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "8447a34cc3d54faaf33f363aff7b29976af53114eb838c8be30d4da4e23fe820", "timestamp": "2026-08-25T20:44:46.360476+00:00"}
+{"case_id": "SPR00325", "decision": "candidate", "event": "completed", "selected_candidate_label": "C22", "timestamp": "2026-08-25T20:44:46.770274+00:00"}
+{"case_id": "SPR00329", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "a88f8022d9b7e48694ef0165ee3da2a0af10df2a89b426c4a268fdb27eadd087", "timestamp": "2026-08-25T20:44:46.772886+00:00"}
+{"case_id": "SPR00330", "decision": "candidate", "event": "completed", "selected_candidate_label": "C10", "timestamp": "2026-08-25T20:44:57.635415+00:00"}
+{"case_id": "SPR00334", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "d665aecc1d090e3e91a121b8007e1aaf849d0c52e7f5a9f67fdb94f2a71ca403", "timestamp": "2026-08-25T20:44:57.637789+00:00"}
+{"case_id": "SPR00343", "decision": "candidate", "event": "completed", "selected_candidate_label": "C02", "timestamp": "2026-08-25T20:44:58.965146+00:00"}
+{"case_id": "SPR00347", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "ccfcdb043f176a3e998109b099dbd30bd2ff56c695d2eb13ae32c4b647ca1b5b", "timestamp": "2026-08-25T20:44:58.966704+00:00"}
+{"case_id": "SPR00329", "decision": "candidate", "event": "completed", "selected_candidate_label": "C20", "timestamp": "2026-08-25T20:45:02.654147+00:00"}
+{"case_id": "SPR00333", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "4389d6dc1f951477202ab4fce4fa2be95f0e7d67ededc5bf932c15d7ddf8d5c5", "timestamp": "2026-08-25T20:45:02.656374+00:00"}
+{"case_id": "SPR00328", "decision": "candidate", "event": "completed", "selected_candidate_label": "C04", "timestamp": "2026-08-25T20:45:05.270989+00:00"}
+{"case_id": "SPR00332", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "5919f0965059cbfe8c4819b8d4b7e9432081703cf8b99fbaa06732233cb39457", "timestamp": "2026-08-25T20:45:05.272504+00:00"}
+{"case_id": "SPR00334", "decision": "candidate", "event": "completed", "selected_candidate_label": "C03", "timestamp": "2026-08-25T20:45:10.768323+00:00"}
+{"case_id": "SPR00338", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "df0dd1bb9c03665210967a63e12ea6d57493cad0999f25a44f087619336e5bca", "timestamp": "2026-08-25T20:45:10.771046+00:00"}
+{"case_id": "SPR00347", "decision": "candidate", "event": "completed", "selected_candidate_label": "C21", "timestamp": "2026-08-25T20:45:14.665159+00:00"}
+{"case_id": "SPR00351", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "3091c8abcf2a5064e43daf615c1be445da8831151d063447e3685cd3731cc67c", "timestamp": "2026-08-25T20:45:14.666358+00:00"}
+{"case_id": "SPR00332", "decision": "candidate", "event": "completed", "selected_candidate_label": "C25", "timestamp": "2026-08-25T20:45:19.891679+00:00"}
+{"case_id": "SPR00336", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "7e434e3aeb37cf59d80a4da7ab5f1813d3e27fd785d82e97ec68113d95cac3da", "timestamp": "2026-08-25T20:45:19.892771+00:00"}
+{"case_id": "SPR00333", "decision": "candidate", "event": "completed", "selected_candidate_label": "C05", "timestamp": "2026-08-25T20:45:22.262011+00:00"}
+{"case_id": "SPR00337", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "d1f8c861add2a470f162984b2587eb680905c51ccc60748519e829c15fc37957", "timestamp": "2026-08-25T20:45:22.264112+00:00"}
+{"case_id": "SPR00338", "decision": "candidate", "event": "completed", "selected_candidate_label": "C04", "timestamp": "2026-08-25T20:45:23.585990+00:00"}
+{"case_id": "SPR00342", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "01537b8a6ae9d54b2abf85d2a2991756e190f54d92e23a41417592683214b693", "timestamp": "2026-08-25T20:45:23.587735+00:00"}
+{"case_id": "SPR00351", "decision": "candidate", "event": "completed", "selected_candidate_label": "C05", "timestamp": "2026-08-25T20:45:30.739407+00:00"}
+{"case_id": "SPR00355", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "0a76fd06be2b48ffccdedaf6c984cbedab86ee932459b6a5567aa4dfb28a5b81", "timestamp": "2026-08-25T20:45:30.740741+00:00"}
+{"case_id": "SPR00336", "decision": "candidate", "event": "completed", "selected_candidate_label": "C25", "timestamp": "2026-08-25T20:45:32.155106+00:00"}
+{"case_id": "SPR00340", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "8c91f64e19822450386043c9e7d22ca3ce93af75135c8150a14f2024b3022427", "timestamp": "2026-08-25T20:45:32.156410+00:00"}
+{"case_id": "SPR00337", "decision": "none", "event": "completed", "selected_candidate_label": null, "timestamp": "2026-08-25T20:45:38.673868+00:00"}
+{"case_id": "SPR00341", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "919bc1ac22900b712eaf0938576b5818e08534a198cba6ef9fd129f44da70056", "timestamp": "2026-08-25T20:45:38.675225+00:00"}
+{"case_id": "SPR00342", "decision": "candidate", "event": "completed", "selected_candidate_label": "C08", "timestamp": "2026-08-25T20:45:41.849859+00:00"}
+{"case_id": "SPR00346", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "dc0657dfa8db073ea77ab46a5469480421b5d69a45271a4d3f539f7eb50d77a1", "timestamp": "2026-08-25T20:45:41.852199+00:00"}
+{"case_id": "SPR00340", "decision": "candidate", "event": "completed", "selected_candidate_label": "C14", "timestamp": "2026-08-25T20:45:42.644812+00:00"}
+{"case_id": "SPR00344", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "93b422fb3e9bbdd51f4c03c5d47dba1db2cbd43ffd9beebbe81f679f8906872d", "timestamp": "2026-08-25T20:45:42.646322+00:00"}
+{"case_id": "SPR00355", "decision": "candidate", "event": "completed", "selected_candidate_label": "C04", "timestamp": "2026-08-25T20:45:49.455717+00:00"}
+{"case_id": "SPR00359", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "af497034129d0a8d4cdcdb68b7e7993b2b5e2db0f407c6b7db0b4f832975ed92", "timestamp": "2026-08-25T20:45:49.459045+00:00"}
+{"case_id": "SPR00341", "decision": "candidate", "event": "completed", "selected_candidate_label": "C05", "timestamp": "2026-08-25T20:45:52.272382+00:00"}
+{"case_id": "SPR00345", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "452cf7cc16f90abb4fc9e32e75d126361bb9bc5fc12f324265a295a8a044eb59", "timestamp": "2026-08-25T20:45:52.273723+00:00"}
+{"case_id": "SPR00344", "decision": "candidate", "event": "completed", "selected_candidate_label": "C07", "timestamp": "2026-08-25T20:45:56.506814+00:00"}
+{"case_id": "SPR00348", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "9d84d9bf69cf882f8c44377793405dd137f9353861d49c54b8867be1bda4cce8", "timestamp": "2026-08-25T20:45:56.508368+00:00"}
+{"case_id": "SPR00346", "decision": "candidate", "event": "completed", "selected_candidate_label": "C02", "timestamp": "2026-08-25T20:45:58.204591+00:00"}
+{"case_id": "SPR00350", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "799412305b56e9b59d7be6219872da51f361ab4752535369794df42f48ed8d9c", "timestamp": "2026-08-25T20:45:58.206061+00:00"}
+{"case_id": "SPR00345", "decision": "candidate", "event": "completed", "selected_candidate_label": "C20", "timestamp": "2026-08-25T20:46:04.623697+00:00"}
+{"case_id": "SPR00349", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "9771e0c98abd60a41e5ad009b1821f7cac3728d39d6fd7a756430afe1dcc2099", "timestamp": "2026-08-25T20:46:04.626321+00:00"}
+{"case_id": "SPR00359", "decision": "candidate", "event": "completed", "selected_candidate_label": "C13", "timestamp": "2026-08-25T20:46:05.199854+00:00"}
+{"case_id": "SPR00363", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "66a784123c6d6e6b2d9cb56f276cf5e8874fb42a88a6b189f060e21e71654c68", "timestamp": "2026-08-25T20:46:05.201044+00:00"}
+{"case_id": "SPR00350", "decision": "candidate", "event": "completed", "selected_candidate_label": "C15", "timestamp": "2026-08-25T20:46:10.440756+00:00"}
+{"case_id": "SPR00354", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "085f03486f64fdb4c98fd40434d23738707e50fc38763334ae6971ffc37e8e39", "timestamp": "2026-08-25T20:46:10.441885+00:00"}
+{"case_id": "SPR00348", "decision": "candidate", "event": "completed", "selected_candidate_label": "C25", "timestamp": "2026-08-25T20:46:11.411978+00:00"}
+{"case_id": "SPR00352", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "ccf306c6f30b7156879967507645ccecbd3d507e81882053fda4d5b72a4f0ac6", "timestamp": "2026-08-25T20:46:11.413840+00:00"}
+{"case_id": "SPR00363", "decision": "candidate", "event": "completed", "selected_candidate_label": "C19", "timestamp": "2026-08-25T20:46:22.752436+00:00"}
+{"case_id": "SPR00367", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "ba8d44d5257d28a5b2b2e3e9ba8f9ab052c92036353c6f3a1a1edaf2f684cf12", "timestamp": "2026-08-25T20:46:22.753972+00:00"}
+{"case_id": "SPR00349", "decision": "candidate", "event": "completed", "selected_candidate_label": "C22", "timestamp": "2026-08-25T20:46:24.026947+00:00"}
+{"case_id": "SPR00353", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "6c7b99307b4203e554a5f5b033125250d5b1371fc0391793147e2be164f2d9d3", "timestamp": "2026-08-25T20:46:24.028642+00:00"}
+{"case_id": "SPR00354", "decision": "candidate", "event": "completed", "selected_candidate_label": "C04", "timestamp": "2026-08-25T20:46:25.333786+00:00"}
+{"case_id": "SPR00358", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "5f7454a1a8eac0afd7afa40ca20da8ffcc9521f3e21e3b8e4b0bcf04531fc680", "timestamp": "2026-08-25T20:46:25.336291+00:00"}
+{"case_id": "SPR00352", "decision": "candidate", "event": "completed", "selected_candidate_label": "C23", "timestamp": "2026-08-25T20:46:27.209585+00:00"}
+{"case_id": "SPR00356", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "539a68bfdb05d62c4cac2b3f01a238617bd22bac4952fb1ce6b899127481e01a", "timestamp": "2026-08-25T20:46:27.212155+00:00"}
+{"case_id": "SPR00356", "decision": "candidate", "event": "completed", "selected_candidate_label": "C11", "timestamp": "2026-08-25T20:46:41.584062+00:00"}
+{"case_id": "SPR00360", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "70a23dc69c86e0ad00ed68aeb11bc1156146e1037303a4a1c4a95ede0278ded0", "timestamp": "2026-08-25T20:46:41.585918+00:00"}
+{"case_id": "SPR00367", "decision": "candidate", "event": "completed", "selected_candidate_label": "C21", "timestamp": "2026-08-25T20:46:44.628245+00:00"}
+{"case_id": "SPR00371", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "29c57ae2972482f035864811762f229395d63c8cbc55438bd65fa27676a944f7", "timestamp": "2026-08-25T20:46:44.629547+00:00"}
+{"case_id": "SPR00358", "decision": "candidate", "event": "completed", "selected_candidate_label": "C08", "timestamp": "2026-08-25T20:46:45.437974+00:00"}
+{"case_id": "SPR00362", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "0ba0bfc2cd2e9ecef822bb4f8810553242173c41f55cada2d71d5bc94997fc48", "timestamp": "2026-08-25T20:46:45.439167+00:00"}
+{"case_id": "SPR00353", "decision": "candidate", "event": "completed", "selected_candidate_label": "C18", "timestamp": "2026-08-25T20:46:47.448498+00:00"}
+{"case_id": "SPR00357", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "081553ef01ae230ece14277e1bba05609c9a92de84b28fa1e57bffc28152c550", "timestamp": "2026-08-25T20:46:47.450680+00:00"}
+{"case_id": "SPR00360", "decision": "candidate", "event": "completed", "selected_candidate_label": "C11", "timestamp": "2026-08-25T20:46:55.439181+00:00"}
+{"case_id": "SPR00364", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "20e973fd2646355cb101f3acd1a330a99e5e224e237745a444fd1587e529a694", "timestamp": "2026-08-25T20:46:55.442130+00:00"}
+{"case_id": "SPR00371", "decision": "candidate", "event": "completed", "selected_candidate_label": "C17", "timestamp": "2026-08-25T20:46:57.664610+00:00"}
+{"case_id": "SPR00375", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "4ee1d1c05393e9bde8a55094ee1348171c59e48dbb04e7f35f36023c23c263ca", "timestamp": "2026-08-25T20:46:57.666833+00:00"}
+{"case_id": "SPR00362", "decision": "candidate", "event": "completed", "selected_candidate_label": "C04", "timestamp": "2026-08-25T20:47:01.832973+00:00"}
+{"case_id": "SPR00366", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "89a78b9bdb26c2bcf74fd934a8370d8920661b4bc4655fd366f0aa5797c25332", "timestamp": "2026-08-25T20:47:01.835140+00:00"}
+{"case_id": "SPR00357", "decision": "candidate", "event": "completed", "selected_candidate_label": "C12", "timestamp": "2026-08-25T20:47:06.262585+00:00"}
+{"case_id": "SPR00361", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "acbdaab7f1b37ab7c25bba9878c1d1a9a9b4b59ef262ce0ff6a2ead25214b98f", "timestamp": "2026-08-25T20:47:06.265181+00:00"}
+{"case_id": "SPR00364", "decision": "candidate", "event": "completed", "selected_candidate_label": "C15", "timestamp": "2026-08-25T20:47:08.534292+00:00"}
+{"case_id": "SPR00368", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "42e85559d65467692eca6f103608b450eb8612919d48b67fc7fc189baa97af2f", "timestamp": "2026-08-25T20:47:08.538606+00:00"}
+{"case_id": "SPR00375", "decision": "none", "event": "completed", "selected_candidate_label": null, "timestamp": "2026-08-25T20:47:08.670703+00:00"}
+{"case_id": "SPR00379", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "3f83e8b8c6d7478036d0dff9fc4666f9458d3311ee1a1ff27a096a1b5c3c7e6f", "timestamp": "2026-08-25T20:47:08.672671+00:00"}
+{"case_id": "SPR00366", "decision": "none", "event": "completed", "selected_candidate_label": null, "timestamp": "2026-08-25T20:47:13.794069+00:00"}
+{"case_id": "SPR00370", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "841e54c03c3095e7e0c1674222a0b7f56538c1e21b5a5219444065d478ba3f31", "timestamp": "2026-08-25T20:47:13.795323+00:00"}
+{"case_id": "SPR00379", "decision": "candidate", "event": "completed", "selected_candidate_label": "C24", "timestamp": "2026-08-25T20:47:24.045489+00:00"}
+{"case_id": "SPR00383", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "61bdc4721fb2d2d41d67cb2d848dbb3df3461062ac1cccc075b39e1b146907ed", "timestamp": "2026-08-25T20:47:24.049795+00:00"}
+{"case_id": "SPR00368", "decision": "candidate", "event": "completed", "selected_candidate_label": "C17", "timestamp": "2026-08-25T20:47:24.125508+00:00"}
+{"case_id": "SPR00372", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "aa4ff39a933555e96bca7afbf5b4c2eb63daaf624e83a0c0ec9567b87f4dd0f1", "timestamp": "2026-08-25T20:47:24.126820+00:00"}
+{"case_id": "SPR00361", "decision": "candidate", "event": "completed", "selected_candidate_label": "C15", "timestamp": "2026-08-25T20:47:24.442230+00:00"}
+{"case_id": "SPR00365", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "990bbc028ec6f19e0cb400e1d0aa2ab163e864eb87c3dc245565f2625380211d", "timestamp": "2026-08-25T20:47:24.443092+00:00"}
+{"case_id": "SPR00370", "decision": "candidate", "event": "completed", "selected_candidate_label": "C19", "timestamp": "2026-08-25T20:47:30.442878+00:00"}
+{"case_id": "SPR00374", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "fb299f3ce45bc0f3da4aadb2fbb7c693dffdee22513633b7af7c1c6f1cfbb347", "timestamp": "2026-08-25T20:47:30.445395+00:00"}
+{"case_id": "SPR00372", "decision": "candidate", "event": "completed", "selected_candidate_label": "C05", "timestamp": "2026-08-25T20:47:38.720737+00:00"}
+{"case_id": "SPR00376", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "92bc0d8c989398b726eacb9ea30412e367477079931508d49cc8aba0389132d4", "timestamp": "2026-08-25T20:47:38.723576+00:00"}
+{"case_id": "SPR00365", "decision": "candidate", "event": "completed", "selected_candidate_label": "C01", "timestamp": "2026-08-25T20:47:41.102307+00:00"}
+{"case_id": "SPR00369", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "1887dff7ca34f6bdf622105a9b426417bb1588bdfd5068dfffefe45d7e1e999e", "timestamp": "2026-08-25T20:47:41.103640+00:00"}
+{"case_id": "SPR00383", "decision": "candidate", "event": "completed", "selected_candidate_label": "C02", "timestamp": "2026-08-25T20:47:44.040830+00:00"}
+{"case_id": "SPR00387", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "8eedbc3ee93409d14f39ba6b4f16fabb4336f092176b9c4c0975a9fb85a06535", "timestamp": "2026-08-25T20:47:44.044129+00:00"}
+{"case_id": "SPR00376", "decision": "candidate", "event": "completed", "selected_candidate_label": "C15", "timestamp": "2026-08-25T20:47:51.538417+00:00"}
+{"case_id": "SPR00380", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "501b49dfa20142b2a611ef167f6721cad31b398fb85420cc230a112a092b8cfa", "timestamp": "2026-08-25T20:47:51.542630+00:00"}
+{"case_id": "SPR00374", "decision": "candidate", "event": "completed", "selected_candidate_label": "C21", "timestamp": "2026-08-25T20:47:53.046675+00:00"}
+{"case_id": "SPR00378", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "f7ea86142d2271989f63f1bc40baa52fd115da009abc5e604b96fc1009ddebdf", "timestamp": "2026-08-25T20:47:53.049531+00:00"}
+{"case_id": "SPR00369", "decision": "candidate", "event": "completed", "selected_candidate_label": "C18", "timestamp": "2026-08-25T20:47:57.216271+00:00"}
+{"case_id": "SPR00373", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "6d57491490afa648183b1cab54f984391cd255c66daa600833772709d4021b03", "timestamp": "2026-08-25T20:47:57.221213+00:00"}
+{"case_id": "SPR00387", "decision": "none", "event": "completed", "selected_candidate_label": null, "timestamp": "2026-08-25T20:47:58.646216+00:00"}
+{"case_id": "SPR00391", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "d153f8e015d3e0e3b476ee55c8f88554ecd693206731fe8f24740f45d9fb49ea", "timestamp": "2026-08-25T20:47:58.648873+00:00"}
+{"case_id": "SPR00378", "decision": "candidate", "event": "completed", "selected_candidate_label": "C05", "timestamp": "2026-08-25T20:48:09.753491+00:00"}
+{"case_id": "SPR00382", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "cace1a7abba2d9a4d3d42a74b3ba84a90bc3f71afae87ab9c6a540b692e62019", "timestamp": "2026-08-25T20:48:09.756901+00:00"}
+{"case_id": "SPR00380", "decision": "candidate", "event": "completed", "selected_candidate_label": "C02", "timestamp": "2026-08-25T20:48:11.126068+00:00"}
+{"case_id": "SPR00384", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "09130cafc7efeba5564f9fcf2ac0a51dcc0e37f4228e8d08037e20f03ca98245", "timestamp": "2026-08-25T20:48:11.128030+00:00"}
+{"case_id": "SPR00373", "decision": "candidate", "event": "completed", "selected_candidate_label": "C05", "timestamp": "2026-08-25T20:48:13.283315+00:00"}
+{"case_id": "SPR00377", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "25186ec866ecd7bd1f7bc141fea088faccb14b068086aa828309a4a9ba66716b", "timestamp": "2026-08-25T20:48:13.285902+00:00"}
+{"case_id": "SPR00391", "decision": "candidate", "event": "completed", "selected_candidate_label": "C17", "timestamp": "2026-08-25T20:48:14.799513+00:00"}
+{"case_id": "SPR00395", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "af8297e7f8d151e12888de9692a1ffe00f57ce338a350293426e2265e799910d", "timestamp": "2026-08-25T20:48:14.800778+00:00"}
+{"case_id": "SPR00382", "decision": "candidate", "event": "completed", "selected_candidate_label": "C03", "timestamp": "2026-08-25T20:48:24.529813+00:00"}
+{"case_id": "SPR00386", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "e8cb43cd9f777b7010eacdba7a61a1b17e09a2f74d3f86e6cd5f439b6ab50825", "timestamp": "2026-08-25T20:48:24.532340+00:00"}
+{"case_id": "SPR00377", "decision": "candidate", "event": "completed", "selected_candidate_label": "C05", "timestamp": "2026-08-25T20:48:29.760620+00:00"}
+{"case_id": "SPR00381", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "2304be632945f95b8c924db58bdadc59fa02e177950096d82b370dd3563d6c6e", "timestamp": "2026-08-25T20:48:29.764854+00:00"}
+{"case_id": "SPR00395", "decision": "candidate", "event": "completed", "selected_candidate_label": "C15", "timestamp": "2026-08-25T20:48:33.096562+00:00"}
+{"case_id": "SPR00399", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "b702ae1e6eb865753eec9ce5d53bb8a14db7977731790925ad6d07ea591cef4e", "timestamp": "2026-08-25T20:48:33.099117+00:00"}
+{"case_id": "SPR00384", "decision": "candidate", "event": "completed", "selected_candidate_label": "C10", "timestamp": "2026-08-25T20:48:35.861301+00:00"}
+{"case_id": "SPR00388", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "eb6b9b278698d5fbfcd7148e4165c4dfc136a103e75c90e458cd43ef811903ef", "timestamp": "2026-08-25T20:48:35.862556+00:00"}
+{"case_id": "SPR00386", "decision": "candidate", "event": "completed", "selected_candidate_label": "C14", "timestamp": "2026-08-25T20:48:42.299270+00:00"}
+{"case_id": "SPR00390", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "f14d0836b4764b30e86a3028ca261853072a7a0d18d2e38e417f69051a7111c8", "timestamp": "2026-08-25T20:48:42.300999+00:00"}
+{"case_id": "SPR00381", "decision": "candidate", "event": "completed", "selected_candidate_label": "C07", "timestamp": "2026-08-25T20:48:45.909695+00:00"}
+{"case_id": "SPR00385", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "6563c90da87e2f04a8aab16e3a5d1fc662e8bb63bc54cbb9181b414be40ce0bd", "timestamp": "2026-08-25T20:48:45.911660+00:00"}
+{"case_id": "SPR00399", "decision": "candidate", "event": "completed", "selected_candidate_label": "C05", "timestamp": "2026-08-25T20:48:47.222571+00:00"}
+{"case_id": "SPR00403", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "676f73817512993d8d0acaf53a5641e2166713ca5facc2ba915e4a7aad7dfb8e", "timestamp": "2026-08-25T20:48:47.225632+00:00"}
+{"case_id": "SPR00388", "decision": "candidate", "event": "completed", "selected_candidate_label": "C19", "timestamp": "2026-08-25T20:48:51.065910+00:00"}
+{"case_id": "SPR00392", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "62f61db402ff4694109750e99642596b9e64cd87c29401ab8074f7cf15975b3f", "timestamp": "2026-08-25T20:48:51.068058+00:00"}
+{"case_id": "SPR00385", "decision": "candidate", "event": "completed", "selected_candidate_label": "C05", "timestamp": "2026-08-25T20:49:00.045724+00:00"}
+{"case_id": "SPR00389", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "d30a630a3d253b316c8e4482666cd5004350df745e67850506aba50e5c1b7f83", "timestamp": "2026-08-25T20:49:00.048154+00:00"}
+{"case_id": "SPR00390", "decision": "candidate", "event": "completed", "selected_candidate_label": "C24", "timestamp": "2026-08-25T20:49:01.238817+00:00"}
+{"case_id": "SPR00394", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "4106556c78018423ebff6ba971492a69fe3872d050bf2c8e538673f94223f256", "timestamp": "2026-08-25T20:49:01.240248+00:00"}
+{"case_id": "SPR00403", "decision": "candidate", "event": "completed", "selected_candidate_label": "C09", "timestamp": "2026-08-25T20:49:02.694542+00:00"}
+{"case_id": "SPR00407", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "553fd4b8215eaf0157a891043d80a5715f765d2df7532d0d0f1553887a5306c9", "timestamp": "2026-08-25T20:49:02.696106+00:00"}
+{"case_id": "SPR00392", "decision": "candidate", "event": "completed", "selected_candidate_label": "C21", "timestamp": "2026-08-25T20:49:11.043653+00:00"}
+{"case_id": "SPR00396", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "cca93c22a560e60a356133b2b7ba4956908ca91cc9b1c00b874fe17d899d67a3", "timestamp": "2026-08-25T20:49:11.046194+00:00"}
+{"case_id": "SPR00389", "decision": "none", "event": "completed", "selected_candidate_label": null, "timestamp": "2026-08-25T20:49:13.932911+00:00"}
+{"case_id": "SPR00393", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "dd341dae96826a74f4ad0965b7d1d6a62cca236bf6b0c347a6fc22ea402a93fb", "timestamp": "2026-08-25T20:49:13.934213+00:00"}
+{"case_id": "SPR00394", "decision": "candidate", "event": "completed", "selected_candidate_label": "C16", "timestamp": "2026-08-25T20:49:16.334289+00:00"}
+{"case_id": "SPR00398", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "2f8e5af2e5bb532e620b83ec6d020174d04baeb805a847d523fd0ab6d0718b04", "timestamp": "2026-08-25T20:49:16.336514+00:00"}
+{"case_id": "SPR00393", "decision": "candidate", "event": "completed", "selected_candidate_label": "C24", "timestamp": "2026-08-25T20:49:23.841599+00:00"}
+{"case_id": "SPR00397", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "c3ee1a7f60dfddaad0354e50d1abb9641cdaf24885000738a42ad10a8f92615a", "timestamp": "2026-08-25T20:49:23.843007+00:00"}
+{"case_id": "SPR00407", "decision": "candidate", "event": "completed", "selected_candidate_label": "C16", "timestamp": "2026-08-25T20:49:24.593660+00:00"}
+{"case_id": "SPR00411", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "a2c5ba3efa98f09a05b9cca0eb350eb81f484b8e3515c640c4dcc4b97325e05c", "timestamp": "2026-08-25T20:49:24.595687+00:00"}
+{"case_id": "SPR00396", "decision": "candidate", "event": "completed", "selected_candidate_label": "C01", "timestamp": "2026-08-25T20:49:26.328014+00:00"}
+{"case_id": "SPR00400", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "9b1e8ec9b120385181c7913678a11c595a05ffb56e9d5468874825b0dae6bdfd", "timestamp": "2026-08-25T20:49:26.329801+00:00"}
+{"case_id": "SPR00398", "decision": "candidate", "event": "completed", "selected_candidate_label": "C05", "timestamp": "2026-08-25T20:49:32.785905+00:00"}
+{"case_id": "SPR00402", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "5f59fdd3497277be97bfd41cf6e3c78ad1ac1551501009554b6618a675948c19", "timestamp": "2026-08-25T20:49:32.787891+00:00"}
+{"case_id": "SPR00397", "decision": "candidate", "event": "completed", "selected_candidate_label": "C14", "timestamp": "2026-08-25T20:49:35.869946+00:00"}
+{"case_id": "SPR00401", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "afedf573fb64ff3ba962f433481f06bc30d1c667a9312a2082785bdaa5ee8781", "timestamp": "2026-08-25T20:49:35.872019+00:00"}
+{"case_id": "SPR00411", "decision": "candidate", "event": "completed", "selected_candidate_label": "C12", "timestamp": "2026-08-25T20:49:38.112071+00:00"}
+{"case_id": "SPR00415", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "38a9b61dbae23b10e99267c8399e87b6b23b4a1cc605af6af9f2b29f5c037580", "timestamp": "2026-08-25T20:49:38.114364+00:00"}
+{"case_id": "SPR00400", "decision": "none", "event": "completed", "selected_candidate_label": null, "timestamp": "2026-08-25T20:49:41.112509+00:00"}
+{"case_id": "SPR00404", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "f515cb177ec802a0a3d6f297cf1c0ae205afff643421df6061190c9df9a7054a", "timestamp": "2026-08-25T20:49:41.114314+00:00"}
+{"case_id": "SPR00402", "decision": "candidate", "event": "completed", "selected_candidate_label": "C04", "timestamp": "2026-08-25T20:49:50.226640+00:00"}
+{"case_id": "SPR00406", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "5a5e02f71ea89b381fed1de09255d023af80d9f0dfdd331a7ed0745d13faf372", "timestamp": "2026-08-25T20:49:50.229742+00:00"}
+{"case_id": "SPR00401", "decision": "candidate", "event": "completed", "selected_candidate_label": "C03", "timestamp": "2026-08-25T20:49:51.902413+00:00"}
+{"case_id": "SPR00405", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "4864a002da7e1c1dbbfd186ab2502a5be962f23bfbd6c11e5c1c9ad6ac1c6991", "timestamp": "2026-08-25T20:49:51.904358+00:00"}
+{"case_id": "SPR00415", "decision": "candidate", "event": "completed", "selected_candidate_label": "C04", "timestamp": "2026-08-25T20:49:55.513213+00:00"}
+{"case_id": "SPR00419", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "8817f7cd6bae339f803e607be852b015de358430963940dedfea112a5308bc0f", "timestamp": "2026-08-25T20:49:55.515160+00:00"}
+{"case_id": "SPR00404", "decision": "candidate", "event": "completed", "selected_candidate_label": "C03", "timestamp": "2026-08-25T20:49:58.108137+00:00"}
+{"case_id": "SPR00408", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "f99cfef1ae7141fcce13ac805d50f4e848c7c2240b32147465f5a77d617f5967", "timestamp": "2026-08-25T20:49:58.110972+00:00"}
+{"case_id": "SPR00406", "decision": "candidate", "event": "completed", "selected_candidate_label": "C24", "timestamp": "2026-08-25T20:50:04.556523+00:00"}
+{"case_id": "SPR00410", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "d66b84f25042304df121208492ed24a8a91aeba13a6575ac679f47db6088ad1b", "timestamp": "2026-08-25T20:50:04.558457+00:00"}
+{"case_id": "SPR00405", "decision": "candidate", "event": "completed", "selected_candidate_label": "C20", "timestamp": "2026-08-25T20:50:08.060701+00:00"}
+{"case_id": "SPR00409", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "eaf4dd3f17034ef7f57053aaf6b117b29bcd8538efc4560705cb2754635e5b99", "timestamp": "2026-08-25T20:50:08.062446+00:00"}
+{"case_id": "SPR00419", "decision": "candidate", "event": "completed", "selected_candidate_label": "C05", "timestamp": "2026-08-25T20:50:08.990773+00:00"}
+{"case_id": "SPR00423", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "a4fd74bff8ecf2feb591cce785335404970cf2f88439882798a1836aa7aa98b9", "timestamp": "2026-08-25T20:50:08.992793+00:00"}
+{"case_id": "SPR00408", "decision": "candidate", "event": "completed", "selected_candidate_label": "C03", "timestamp": "2026-08-25T20:50:16.615735+00:00"}
+{"case_id": "SPR00412", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "bf10b6e77965cd9c4d6844ec7152061fbeb52be37174fa6024aa51937a5d10e6", "timestamp": "2026-08-25T20:50:16.618400+00:00"}
+{"case_id": "SPR00410", "decision": "candidate", "event": "completed", "selected_candidate_label": "C23", "timestamp": "2026-08-25T20:50:18.365627+00:00"}
+{"case_id": "SPR00414", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "76ea644d601167a38dc388d2752023ff0a4135910ba1c5212176d09a2d00f0e8", "timestamp": "2026-08-25T20:50:18.367124+00:00"}
+{"case_id": "SPR00409", "decision": "none", "event": "completed", "selected_candidate_label": null, "timestamp": "2026-08-25T20:50:20.960047+00:00"}
+{"case_id": "SPR00413", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "0584b248bf94d86ce6a742b1cb65a58874d66e59f482a1ef6b7af67c5f2fb5ad", "timestamp": "2026-08-25T20:50:20.961854+00:00"}
+{"case_id": "SPR00423", "decision": "candidate", "event": "completed", "selected_candidate_label": "C08", "timestamp": "2026-08-25T20:50:24.766947+00:00"}
+{"case_id": "SPR00427", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "80f3ece2e4b951ea37081a3777a6934c1eae6f9d8e8d938a5d06ff950ca399d0", "timestamp": "2026-08-25T20:50:24.769144+00:00"}
+{"case_id": "SPR00412", "decision": "none", "event": "completed", "selected_candidate_label": null, "timestamp": "2026-08-25T20:50:28.504476+00:00"}
+{"case_id": "SPR00416", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "2da382723a9d234ce635a01316a0846493a7fa1b40bcdbb40684a684018bcc1b", "timestamp": "2026-08-25T20:50:28.505681+00:00"}
+{"case_id": "SPR00414", "decision": "candidate", "event": "completed", "selected_candidate_label": "C14", "timestamp": "2026-08-25T20:50:31.875673+00:00"}
+{"case_id": "SPR00418", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "a1afb10b6898b1d0b6e297214358e9c281d7ecc98bbb1e29dbec31bd27f5b053", "timestamp": "2026-08-25T20:50:31.877680+00:00"}
+{"case_id": "SPR00413", "decision": "candidate", "event": "completed", "selected_candidate_label": "C02", "timestamp": "2026-08-25T20:50:39.976205+00:00"}
+{"case_id": "SPR00417", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "23634e8be7cb8ce34adb9d0821ff895182425e32edccb5851f21a7cddc0c49a4", "timestamp": "2026-08-25T20:50:39.977685+00:00"}
+{"case_id": "SPR00427", "decision": "candidate", "event": "completed", "selected_candidate_label": "C13", "timestamp": "2026-08-25T20:50:39.983842+00:00"}
+{"case_id": "SPR00431", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "1f8134c921a5f2e0ab204a5bce53c1e1b94dc30d03181c7061de053d69d81a6e", "timestamp": "2026-08-25T20:50:39.986264+00:00"}
+{"case_id": "SPR00416", "decision": "candidate", "event": "completed", "selected_candidate_label": "C20", "timestamp": "2026-08-25T20:50:41.940700+00:00"}
+{"case_id": "SPR00420", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "755fb553c31f4bf934f3d90e78b5254ffa39a7213618c3ce17d660ac08a2fe10", "timestamp": "2026-08-25T20:50:41.942772+00:00"}
+{"case_id": "SPR00418", "decision": "candidate", "event": "completed", "selected_candidate_label": "C22", "timestamp": "2026-08-25T20:50:47.796124+00:00"}
+{"case_id": "SPR00422", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "89adae2e146509c3d66acb65a4adbc48f577a9e1fcdfc03ffc2fb2978d16109b", "timestamp": "2026-08-25T20:50:47.797768+00:00"}
+{"case_id": "SPR00417", "decision": "none", "event": "completed", "selected_candidate_label": null, "timestamp": "2026-08-25T20:50:50.434972+00:00"}
+{"case_id": "SPR00421", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "92cce45c2f862e257e6a0b87d855e04f86fc05b38ab23bfd50baac4adba725bd", "timestamp": "2026-08-25T20:50:50.437984+00:00"}
+{"case_id": "SPR00431", "decision": "candidate", "event": "completed", "selected_candidate_label": "C12", "timestamp": "2026-08-25T20:50:56.411342+00:00"}
+{"case_id": "SPR00435", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "fc547042073397997929643aed0f15660801c1439fbf19b8fc847a0803602b24", "timestamp": "2026-08-25T20:50:56.413151+00:00"}
+{"case_id": "SPR00420", "decision": "candidate", "event": "completed", "selected_candidate_label": "C06", "timestamp": "2026-08-25T20:50:58.871988+00:00"}
+{"case_id": "SPR00424", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "f36e796fa40de026d1a89d7057fe5d7e1aa6c168a43144e1e0c85e506d56accc", "timestamp": "2026-08-25T20:50:58.874314+00:00"}
+{"case_id": "SPR00421", "decision": "candidate", "event": "completed", "selected_candidate_label": "C09", "timestamp": "2026-08-25T20:51:05.284843+00:00"}
+{"case_id": "SPR00422", "decision": "candidate", "event": "completed", "selected_candidate_label": "C06", "timestamp": "2026-08-25T20:51:05.284907+00:00"}
+{"case_id": "SPR00425", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "89e6cec6350b5964e2ca4017e98a364db75ff01fd4e3a4c195d896c8a63aaaf9", "timestamp": "2026-08-25T20:51:05.286431+00:00"}
+{"case_id": "SPR00426", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "b73fa78143531383785922338f5854b5cadfb9bb6d6fd15a979e7ef501791ae9", "timestamp": "2026-08-25T20:51:05.287172+00:00"}
+{"case_id": "SPR00435", "decision": "candidate", "event": "completed", "selected_candidate_label": "C11", "timestamp": "2026-08-25T20:51:10.764625+00:00"}
+{"case_id": "SPR00439", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "782cb5bac71adaacb1de290bc7c98eb3c475b62d4e4d1b00f86faf8087ed542c", "timestamp": "2026-08-25T20:51:10.767180+00:00"}
+{"case_id": "SPR00424", "decision": "candidate", "event": "completed", "selected_candidate_label": "C03", "timestamp": "2026-08-25T20:51:12.454087+00:00"}
+{"case_id": "SPR00428", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "e311590e8523a004c3edbcb2cb34c70e6248f63b46977ad906dbf5f8961c7f59", "timestamp": "2026-08-25T20:51:12.455373+00:00"}
+{"case_id": "SPR00425", "decision": "candidate", "event": "completed", "selected_candidate_label": "C25", "timestamp": "2026-08-25T20:51:19.441671+00:00"}
+{"case_id": "SPR00429", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "a321313e6ae58883aecf5a248a047c6d5df0541e0a4462ed3a97348fb478f6ca", "timestamp": "2026-08-25T20:51:19.445337+00:00"}
+{"case_id": "SPR00426", "decision": "none", "event": "completed", "selected_candidate_label": null, "timestamp": "2026-08-25T20:51:19.598388+00:00"}
+{"case_id": "SPR00430", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "416b4321995372fcc351ba8c33b249e2f0debb27a64891f085f11128a618612c", "timestamp": "2026-08-25T20:51:19.599257+00:00"}
+{"case_id": "SPR00430", "decision": "candidate", "event": "completed", "selected_candidate_label": "C20", "timestamp": "2026-08-25T20:51:30.362571+00:00"}
+{"case_id": "SPR00434", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "b0bdb9fd36781b9b6226b115cad4111226d4daa50013cc54cab9ea137e3359d0", "timestamp": "2026-08-25T20:51:30.364898+00:00"}
+{"case_id": "SPR00428", "decision": "candidate", "event": "completed", "selected_candidate_label": "C15", "timestamp": "2026-08-25T20:51:30.603332+00:00"}
+{"case_id": "SPR00432", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "af274f22941042cac884260651e1c85e420deca869ce12789fc99528f546c580", "timestamp": "2026-08-25T20:51:30.605265+00:00"}
+{"case_id": "SPR00439", "decision": "candidate", "event": "completed", "selected_candidate_label": "C16", "timestamp": "2026-08-25T20:51:31.377281+00:00"}
+{"case_id": "SPR00443", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "65af57d9ee44304b5f936e8196b089e22916e801b04a2b9260cdf9111c160da6", "timestamp": "2026-08-25T20:51:31.378733+00:00"}
+{"case_id": "SPR00429", "decision": "candidate", "event": "completed", "selected_candidate_label": "C25", "timestamp": "2026-08-25T20:51:37.541917+00:00"}
+{"case_id": "SPR00433", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "5b0eabd573be272fb75ee62a61231d764742b3bf0a5f7b982b26b72e9d4336be", "timestamp": "2026-08-25T20:51:37.544193+00:00"}
+{"case_id": "SPR00443", "decision": "candidate", "event": "completed", "selected_candidate_label": "C16", "timestamp": "2026-08-25T20:51:44.166045+00:00"}
+{"case_id": "SPR00447", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "788e71866d8035101be9ee6abc2e9afe9daa4aba941a6a2b73511cd9e41a738c", "timestamp": "2026-08-25T20:51:44.168469+00:00"}
+{"case_id": "SPR00432", "decision": "candidate", "event": "completed", "selected_candidate_label": "C25", "timestamp": "2026-08-25T20:51:45.881883+00:00"}
+{"case_id": "SPR00436", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "0ddaa1988c32bfb761334717e773154e865eae8f1b75ccccf4877a90c19c5ff5", "timestamp": "2026-08-25T20:51:45.883229+00:00"}
+{"case_id": "SPR00434", "decision": "candidate", "event": "completed", "selected_candidate_label": "C05", "timestamp": "2026-08-25T20:51:47.925201+00:00"}
+{"case_id": "SPR00438", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "db766aaaf52f1b065f805e9a16787819bdb4659578d81da187f19f4dd8a450be", "timestamp": "2026-08-25T20:51:47.926405+00:00"}
+{"case_id": "SPR00433", "decision": "candidate", "event": "completed", "selected_candidate_label": "C19", "timestamp": "2026-08-25T20:51:50.830017+00:00"}
+{"case_id": "SPR00437", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "08f6aa00f7dd72387511dda78f7179e1c10cb73e5f690f667c5ccd9655b2677a", "timestamp": "2026-08-25T20:51:50.831433+00:00"}
+{"case_id": "SPR00436", "decision": "candidate", "event": "completed", "selected_candidate_label": "C22", "timestamp": "2026-08-25T20:51:56.144263+00:00"}
+{"case_id": "SPR00440", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "a389e6ac33aceb9d28ee839bceb903df7212fe83fce5da51d67cac1401530c08", "timestamp": "2026-08-25T20:51:56.146207+00:00"}
+{"case_id": "SPR00447", "decision": "candidate", "event": "completed", "selected_candidate_label": "C16", "timestamp": "2026-08-25T20:52:01.411638+00:00"}
+{"case_id": "SPR00451", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "52dee33a4898ade9116b601577aa6f7a42b4de478cda1fe530e0704aeff9a9f4", "timestamp": "2026-08-25T20:52:01.413408+00:00"}
+{"case_id": "SPR00438", "decision": "candidate", "event": "completed", "selected_candidate_label": "C14", "timestamp": "2026-08-25T20:52:02.020752+00:00"}
+{"case_id": "SPR00442", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "f6689929a6ba86fa16807458dae5188f28437ff79ed7e9a86499d9e232bfa5f4", "timestamp": "2026-08-25T20:52:02.021871+00:00"}
+{"case_id": "SPR00437", "decision": "candidate", "event": "completed", "selected_candidate_label": "C06", "timestamp": "2026-08-25T20:52:05.881489+00:00"}
+{"case_id": "SPR00441", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "ffdba325fd455c045f642c36e14ddef9f3af340333b2adffe0519f3e97457893", "timestamp": "2026-08-25T20:52:05.883660+00:00"}
+{"case_id": "SPR00440", "decision": "candidate", "event": "completed", "selected_candidate_label": "C10", "timestamp": "2026-08-25T20:52:11.451929+00:00"}
+{"case_id": "SPR00444", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "971a2916cc30f266cf8b4c3f900416d0e2200e2be9f1e5e6d0f7f84948ab57fc", "timestamp": "2026-08-25T20:52:11.453603+00:00"}
+{"case_id": "SPR00442", "decision": "none", "event": "completed", "selected_candidate_label": null, "timestamp": "2026-08-25T20:52:14.728376+00:00"}
+{"case_id": "SPR00446", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "ee8c3ad318f917889d25bb4975f7d4074b5e1c6ef3d2132fb24bdd13f5846916", "timestamp": "2026-08-25T20:52:14.729563+00:00"}
+{"case_id": "SPR00451", "decision": "candidate", "event": "completed", "selected_candidate_label": "C04", "timestamp": "2026-08-25T20:52:16.667713+00:00"}
+{"case_id": "SPR00455", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "03e2aeece15c4e3f822017d3bf82b0acc86fd09ac5ab8f365fc66a4f1430ec73", "timestamp": "2026-08-25T20:52:16.669349+00:00"}
+{"case_id": "SPR00441", "decision": "candidate", "event": "completed", "selected_candidate_label": "C04", "timestamp": "2026-08-25T20:52:18.501435+00:00"}
+{"case_id": "SPR00445", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "8aa41400b36dfb33c6018bd4496094f6213d554662e900443d3055da6e91e4b9", "timestamp": "2026-08-25T20:52:18.503049+00:00"}
+{"case_id": "SPR00444", "decision": "candidate", "event": "completed", "selected_candidate_label": "C11", "timestamp": "2026-08-25T20:52:27.344727+00:00"}
+{"case_id": "SPR00448", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "31942824f973f6e05ba037049e018081f84e53fb85d5333e6342bdf90d31eff0", "timestamp": "2026-08-25T20:52:27.346328+00:00"}
+{"case_id": "SPR00445", "decision": "candidate", "event": "completed", "selected_candidate_label": "C02", "timestamp": "2026-08-25T20:52:30.890934+00:00"}
+{"case_id": "SPR00449", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "f8563383d1078af60fa5fb7075759354907020dc0833ed4380faf5ab34831f71", "timestamp": "2026-08-25T20:52:30.893511+00:00"}
+{"case_id": "SPR00455", "decision": "candidate", "event": "completed", "selected_candidate_label": "C15", "timestamp": "2026-08-25T20:52:31.642745+00:00"}
+{"case_id": "SPR00459", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "60fe70ee5198c83be394e3b80f2f6b82fc2cc96616474b77a948f09cc8aed543", "timestamp": "2026-08-25T20:52:31.645248+00:00"}
+{"case_id": "SPR00446", "decision": "candidate", "event": "completed", "selected_candidate_label": "C07", "timestamp": "2026-08-25T20:52:31.776528+00:00"}
+{"case_id": "SPR00450", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "d308719b29036c46fa02207880e8808d720348618b6812b77cda4da0c5b77cc1", "timestamp": "2026-08-25T20:52:31.777953+00:00"}
+{"case_id": "SPR00448", "decision": "candidate", "event": "completed", "selected_candidate_label": "C20", "timestamp": "2026-08-25T20:52:45.288648+00:00"}
+{"case_id": "SPR00452", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "f283e7d4d9e4fa6460460361853b02d89429a49adcd5d23c3729e3b7fb18386b", "timestamp": "2026-08-25T20:52:45.291517+00:00"}
+{"case_id": "SPR00450", "decision": "candidate", "event": "completed", "selected_candidate_label": "C25", "timestamp": "2026-08-25T20:52:46.334214+00:00"}
+{"case_id": "SPR00454", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "71490f385603b8d8894bb2da6b362561c19be96e17e6647fe8402be9730ce4b1", "timestamp": "2026-08-25T20:52:46.337071+00:00"}
+{"case_id": "SPR00449", "decision": "candidate", "event": "completed", "selected_candidate_label": "C09", "timestamp": "2026-08-25T20:52:47.735140+00:00"}
+{"case_id": "SPR00453", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "49c21e05021b7847e74309647ee1c3b9a63ed823dacc2131cf2c8d9e551153eb", "timestamp": "2026-08-25T20:52:47.738084+00:00"}
+{"case_id": "SPR00459", "decision": "candidate", "event": "completed", "selected_candidate_label": "C12", "timestamp": "2026-08-25T20:52:49.045079+00:00"}
+{"case_id": "SPR00463", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "a347787bf971c56cf308dcfc138517e0a09601ba62ccc1df49f123af2029e15b", "timestamp": "2026-08-25T20:52:49.046888+00:00"}
+{"case_id": "SPR00454", "decision": "candidate", "event": "completed", "selected_candidate_label": "C18", "timestamp": "2026-08-25T20:52:59.966428+00:00"}
+{"case_id": "SPR00458", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "16f6d5adaa25ba73cd7385adca5225dcf0cf010a24e0036606b356daf3097a06", "timestamp": "2026-08-25T20:52:59.968568+00:00"}
+{"case_id": "SPR00452", "decision": "candidate", "event": "completed", "selected_candidate_label": "C24", "timestamp": "2026-08-25T20:53:01.852648+00:00"}
+{"case_id": "SPR00456", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "62ac3fb03a6e9c1852fd3fd6b3b438b991886a99db5b9dfad0c88fd11da70d83", "timestamp": "2026-08-25T20:53:01.854840+00:00"}
+{"case_id": "SPR00453", "decision": "candidate", "event": "completed", "selected_candidate_label": "C02", "timestamp": "2026-08-25T20:53:04.516336+00:00"}
+{"case_id": "SPR00457", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "0566308660b5ed67925f39f0b5760d8531b3a1e25be32fae8342355d71187c0a", "timestamp": "2026-08-25T20:53:04.520546+00:00"}
+{"case_id": "SPR00463", "decision": "candidate", "event": "completed", "selected_candidate_label": "C05", "timestamp": "2026-08-25T20:53:04.944837+00:00"}
+{"case_id": "SPR00467", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "1383faecd3797eda3382b61e300070b531b54c8795f95acd92f956e1fdd75426", "timestamp": "2026-08-25T20:53:04.947369+00:00"}
+{"case_id": "SPR00458", "decision": "candidate", "event": "completed", "selected_candidate_label": "C13", "timestamp": "2026-08-25T20:53:14.570015+00:00"}
+{"case_id": "SPR00462", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "63a0d76a37aface83a64d97e93cbe44fb34e0a26f70b591155306fd625b9d1d7", "timestamp": "2026-08-25T20:53:14.572527+00:00"}
+{"case_id": "SPR00456", "decision": "candidate", "event": "completed", "selected_candidate_label": "C11", "timestamp": "2026-08-25T20:53:18.815087+00:00"}
+{"case_id": "SPR00460", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "0f5aa1fba22803d9ecff0251fe53132e6ff125b7f81e21d84d50180d3bebaa88", "timestamp": "2026-08-25T20:53:18.816709+00:00"}
+{"case_id": "SPR00457", "decision": "candidate", "event": "completed", "selected_candidate_label": "C12", "timestamp": "2026-08-25T20:53:20.489248+00:00"}
+{"case_id": "SPR00461", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "f5ca607f2f3e71b114eb9ee37296088c191275798255d50f9140cf3ef8850f38", "timestamp": "2026-08-25T20:53:20.492062+00:00"}
+{"case_id": "SPR00467", "decision": "candidate", "event": "completed", "selected_candidate_label": "C11", "timestamp": "2026-08-25T20:53:21.039721+00:00"}
+{"case_id": "SPR00471", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "831ef8fa2674efaa1b643c5af9cf44cf8a52096725aadb4d61b6ddb9c9fd010a", "timestamp": "2026-08-25T20:53:21.041367+00:00"}
+{"case_id": "SPR00462", "decision": "candidate", "event": "completed", "selected_candidate_label": "C05", "timestamp": "2026-08-25T20:53:27.752574+00:00"}
+{"case_id": "SPR00466", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "a05a8b69b90608d86e7487b12915b255ec2e243859347b13caede2dbae24aff6", "timestamp": "2026-08-25T20:53:27.754535+00:00"}
+{"case_id": "SPR00461", "decision": "candidate", "event": "completed", "selected_candidate_label": "C25", "timestamp": "2026-08-25T20:53:36.293354+00:00"}
+{"case_id": "SPR00465", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "5064d7f77fef52513de50ca8f407ff9732b5c451af1dc714ca5a3e9ee1f1e45b", "timestamp": "2026-08-25T20:53:36.294759+00:00"}
+{"case_id": "SPR00471", "decision": "candidate", "event": "completed", "selected_candidate_label": "C01", "timestamp": "2026-08-25T20:53:36.689027+00:00"}
+{"case_id": "SPR00475", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "7d33cdcea96c8de65ebafe084f50db0bd1de914cc359f7bc246e329ee0540346", "timestamp": "2026-08-25T20:53:36.691010+00:00"}
+{"case_id": "SPR00460", "decision": "candidate", "event": "completed", "selected_candidate_label": "C08", "timestamp": "2026-08-25T20:53:39.204149+00:00"}
+{"case_id": "SPR00464", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "58d248445e172a656071ccb408106840d7c4fbcd0f78ed093ae1c3c56ca3e5ba", "timestamp": "2026-08-25T20:53:39.207805+00:00"}
+{"case_id": "SPR00466", "decision": "candidate", "event": "completed", "selected_candidate_label": "C25", "timestamp": "2026-08-25T20:53:45.878556+00:00"}
+{"case_id": "SPR00470", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "295780c0397e2f7d9e69fd1fbb5c2f26c453224bad493537042ea6a0c022a4b3", "timestamp": "2026-08-25T20:53:45.880688+00:00"}
+{"case_id": "SPR00475", "decision": "candidate", "event": "completed", "selected_candidate_label": "C23", "timestamp": "2026-08-25T20:53:51.628533+00:00"}
+{"case_id": "SPR00479", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "5bde70099bf98d6dc8469a594d5ec24d8dc0d7ec0b6756e353b4d64ae88678a3", "timestamp": "2026-08-25T20:53:51.630125+00:00"}
+{"case_id": "SPR00465", "decision": "candidate", "event": "completed", "selected_candidate_label": "C16", "timestamp": "2026-08-25T20:53:52.378960+00:00"}
+{"case_id": "SPR00469", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "c056cc2531c5fe795feb2c6f711e3cc970d79a3bd33484f645af7c67b2d2fdc4", "timestamp": "2026-08-25T20:53:52.380534+00:00"}
+{"case_id": "SPR00464", "decision": "candidate", "event": "completed", "selected_candidate_label": "C01", "timestamp": "2026-08-25T20:53:52.633032+00:00"}
+{"case_id": "SPR00468", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "c1e411c788800fd29907a8675161d4939624635be1286ecd36fb8b29369b2b36", "timestamp": "2026-08-25T20:53:52.634574+00:00"}
+{"case_id": "SPR00479", "decision": "candidate", "event": "completed", "selected_candidate_label": "C13", "timestamp": "2026-08-25T20:54:05.852694+00:00"}
+{"case_id": "SPR00483", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "c77fef0fcccfe3622efa71905e7429f389421bc2a60f1b57321c63a87512e8c9", "timestamp": "2026-08-25T20:54:05.855563+00:00"}
+{"case_id": "SPR00468", "decision": "candidate", "event": "completed", "selected_candidate_label": "C13", "timestamp": "2026-08-25T20:54:07.764779+00:00"}
+{"case_id": "SPR00472", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "436793a64c620ee622de960aa5168d5fba5c92658b24b3ea760af232bd7d44aa", "timestamp": "2026-08-25T20:54:07.766626+00:00"}
+{"case_id": "SPR00470", "decision": "candidate", "event": "completed", "selected_candidate_label": "C05", "timestamp": "2026-08-25T20:54:09.550229+00:00"}
+{"case_id": "SPR00474", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "e18677c2f99123eca0403970a6a71f3fc327c990c5ef321e8d13d92d7ab75758", "timestamp": "2026-08-25T20:54:09.552310+00:00"}
+{"case_id": "SPR00469", "decision": "candidate", "event": "completed", "selected_candidate_label": "C15", "timestamp": "2026-08-25T20:54:15.730376+00:00"}
+{"case_id": "SPR00473", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "3e5965996b6b95aaa23a56bf62ce8418cc92cf0af49236fd1574f42fc69e2332", "timestamp": "2026-08-25T20:54:15.732170+00:00"}
+{"case_id": "SPR00472", "decision": "candidate", "event": "completed", "selected_candidate_label": "C17", "timestamp": "2026-08-25T20:54:19.841326+00:00"}
+{"case_id": "SPR00476", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "86e8434518d60c7f451f40fe24f594ad013d3a8dae4a0c8ebc2fb80c5df0daf8", "timestamp": "2026-08-25T20:54:19.843919+00:00"}
+{"case_id": "SPR00483", "decision": "candidate", "event": "completed", "selected_candidate_label": "C18", "timestamp": "2026-08-25T20:54:22.468462+00:00"}
+{"case_id": "SPR00487", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "7314b0b317cf5e716181e56f0f89dadcc4559123dffac46fe13dcbfe128c8c39", "timestamp": "2026-08-25T20:54:22.470673+00:00"}
+{"case_id": "SPR00474", "decision": "candidate", "event": "completed", "selected_candidate_label": "C21", "timestamp": "2026-08-25T20:54:26.243376+00:00"}
+{"case_id": "SPR00478", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "c3ab6285ba3322a172eed58e8bcec798f0e4c022e1ca648654fc3183960d1b89", "timestamp": "2026-08-25T20:54:26.245522+00:00"}
+{"case_id": "SPR00473", "decision": "none", "event": "completed", "selected_candidate_label": null, "timestamp": "2026-08-25T20:54:31.516201+00:00"}
+{"case_id": "SPR00477", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "995b033884e0773f13561ce128095750b184689700bac2f7e6a8c4e86b3b77ae", "timestamp": "2026-08-25T20:54:31.518595+00:00"}
+{"case_id": "SPR00476", "decision": "candidate", "event": "completed", "selected_candidate_label": "C21", "timestamp": "2026-08-25T20:54:35.496431+00:00"}
+{"case_id": "SPR00480", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "1626c8396cea252534cdc17bd49c7b23ead3918e31400760172d36a593c6f56e", "timestamp": "2026-08-25T20:54:35.498527+00:00"}
+{"case_id": "SPR00487", "decision": "candidate", "event": "completed", "selected_candidate_label": "C07", "timestamp": "2026-08-25T20:54:39.022306+00:00"}
+{"case_id": "SPR00491", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "2783601e22d79db668b7127de21aa8822935a37b942e4e99e3d5eb6faf7161d3", "timestamp": "2026-08-25T20:54:39.024318+00:00"}
+{"case_id": "SPR00478", "decision": "candidate", "event": "completed", "selected_candidate_label": "C01", "timestamp": "2026-08-25T20:54:39.637664+00:00"}
+{"case_id": "SPR00482", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "226c798b7deb8c0638c772f4f8cdf6b5ff39a67ac92b6b4946ed1cc7c3f0c4de", "timestamp": "2026-08-25T20:54:39.639036+00:00"}
+{"case_id": "SPR00477", "decision": "candidate", "event": "completed", "selected_candidate_label": "C13", "timestamp": "2026-08-25T20:54:49.153509+00:00"}
+{"case_id": "SPR00481", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "21ac68c7ff8e8b0e1bfdbc412fe64df514ca7f8e9e4a093bcb624618b134cc5d", "timestamp": "2026-08-25T20:54:49.155111+00:00"}
+{"case_id": "SPR00480", "decision": "candidate", "event": "completed", "selected_candidate_label": "C10", "timestamp": "2026-08-25T20:54:51.715331+00:00"}
+{"case_id": "SPR00484", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "74468f633a4d5c3a603b4cbdac5b6a1d02e51f4f5869f11be6ebbf0c8d22dfd3", "timestamp": "2026-08-25T20:54:51.716649+00:00"}
+{"case_id": "SPR00482", "decision": "candidate", "event": "completed", "selected_candidate_label": "C19", "timestamp": "2026-08-25T20:54:53.823480+00:00"}
+{"case_id": "SPR00486", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "ed81b4cc715371fcf0c829d8b8dafd908ce42eebf3db1d96171c92bb9036b521", "timestamp": "2026-08-25T20:54:53.825785+00:00"}
+{"case_id": "SPR00491", "decision": "candidate", "event": "completed", "selected_candidate_label": "C02", "timestamp": "2026-08-25T20:54:54.797054+00:00"}
+{"case_id": "SPR00495", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "b0ba213743f47101d82ab50cf4118ffed48e3a6eba6071540bc35b32bea458af", "timestamp": "2026-08-25T20:54:54.798363+00:00"}
+{"case_id": "SPR00481", "decision": "candidate", "event": "completed", "selected_candidate_label": "C22", "timestamp": "2026-08-25T20:55:05.384490+00:00"}
+{"case_id": "SPR00485", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "57836f30eabdf6382ce1193b8c493d54171ee6cfd945c31b598fb697d67783a4", "timestamp": "2026-08-25T20:55:05.386297+00:00"}
+{"case_id": "SPR00484", "decision": "candidate", "event": "completed", "selected_candidate_label": "C05", "timestamp": "2026-08-25T20:55:06.534409+00:00"}
+{"case_id": "SPR00488", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "2cfc51d37838630ead1c0289a9003f1d9779dea4efeca4baac48cf862a0eeca8", "timestamp": "2026-08-25T20:55:06.537141+00:00"}
+{"case_id": "SPR00486", "decision": "candidate", "event": "completed", "selected_candidate_label": "C05", "timestamp": "2026-08-25T20:55:07.949341+00:00"}
+{"case_id": "SPR00490", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "a3a4c5b7582c2dd41b1534af61611b4be0bb1397fa27edc2fec7a40bc85699bd", "timestamp": "2026-08-25T20:55:07.951191+00:00"}
+{"case_id": "SPR00495", "decision": "candidate", "event": "completed", "selected_candidate_label": "C02", "timestamp": "2026-08-25T20:55:09.893003+00:00"}
+{"case_id": "SPR00499", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "b1c330b1cb3a0fb697c44ddee7bd9e929d565b7b08dc166cdd9667dd7a49ec6c", "timestamp": "2026-08-25T20:55:09.894480+00:00"}
+{"case_id": "SPR00485", "decision": "candidate", "event": "completed", "selected_candidate_label": "C07", "timestamp": "2026-08-25T20:55:18.658628+00:00"}
+{"case_id": "SPR00489", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "31d352c1030f3c92a422d7fd18ccbf6bc6d476dc051160542278e44421404fde", "timestamp": "2026-08-25T20:55:18.659954+00:00"}
+{"case_id": "SPR00488", "decision": "candidate", "event": "completed", "selected_candidate_label": "C22", "timestamp": "2026-08-25T20:55:20.041744+00:00"}
+{"case_id": "SPR00492", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "35ae92c8aa3be8e811af1c1e015ed4e3329ae256818dfc6ab2ed6776aa8186ce", "timestamp": "2026-08-25T20:55:20.044068+00:00"}
+{"case_id": "SPR00490", "decision": "none", "event": "completed", "selected_candidate_label": null, "timestamp": "2026-08-25T20:55:21.657120+00:00"}
+{"case_id": "SPR00494", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "a29e0ccf2905a5c7d56174988c97b62b708b0e8e3cfd5b6869da6b2794869d4f", "timestamp": "2026-08-25T20:55:21.658430+00:00"}
+{"case_id": "SPR00499", "decision": "candidate", "event": "completed", "selected_candidate_label": "C22", "timestamp": "2026-08-25T20:55:23.056054+00:00"}
+{"case_id": "SPR00503", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "63995985b1302cdd1850a78b089229e62a3846cd620e92adda77498ed9e629be", "timestamp": "2026-08-25T20:55:23.059621+00:00"}
+{"case_id": "SPR00489", "decision": "candidate", "event": "completed", "selected_candidate_label": "C02", "timestamp": "2026-08-25T20:55:31.721677+00:00"}
+{"case_id": "SPR00493", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "119930c00c7fb6c320a903d4b6ce23e97b881543aabad9912add8b4ea03bf87c", "timestamp": "2026-08-25T20:55:31.723117+00:00"}
+{"case_id": "SPR00494", "decision": "candidate", "event": "completed", "selected_candidate_label": "C08", "timestamp": "2026-08-25T20:55:34.140621+00:00"}
+{"case_id": "SPR00498", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "9dd63fec3c7cac3f3b32b9067f5ab4370fac141cf88c2f5fd34211d7f046b362", "timestamp": "2026-08-25T20:55:34.141937+00:00"}
+{"case_id": "SPR00492", "decision": "candidate", "event": "completed", "selected_candidate_label": "C13", "timestamp": "2026-08-25T20:55:34.169078+00:00"}
+{"case_id": "SPR00496", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "355516e675b4807d3debd1d02171abd0c4e4024ec97b8e53a99ff3069d635e37", "timestamp": "2026-08-25T20:55:34.170115+00:00"}
+{"case_id": "SPR00503", "decision": "candidate", "event": "completed", "selected_candidate_label": "C06", "timestamp": "2026-08-25T20:55:36.443952+00:00"}
+{"case_id": "SPR00496", "decision": "candidate", "event": "completed", "selected_candidate_label": "C25", "timestamp": "2026-08-25T20:55:44.585982+00:00"}
+{"case_id": "SPR00500", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "7ba5563100b64e82784cb50602a1910589a62be1d480c21f252eba9f0a76e7b5", "timestamp": "2026-08-25T20:55:44.587537+00:00"}
+{"case_id": "SPR00493", "decision": "candidate", "event": "completed", "selected_candidate_label": "C18", "timestamp": "2026-08-25T20:55:46.346025+00:00"}
+{"case_id": "SPR00497", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "1a5c54699c34cdae48c25a366cc6eec60c53056f74e18b1ae7f44ca3d1833519", "timestamp": "2026-08-25T20:55:46.347386+00:00"}
+{"case_id": "SPR00498", "decision": "candidate", "event": "completed", "selected_candidate_label": "C14", "timestamp": "2026-08-25T20:55:50.140446+00:00"}
+{"case_id": "SPR00502", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "51fb258995c04575aa51eb165eb4e06e9564aef316d4b0035221c520accdb04b", "timestamp": "2026-08-25T20:55:50.142367+00:00"}
+{"case_id": "SPR00500", "decision": "candidate", "event": "completed", "selected_candidate_label": "C22", "timestamp": "2026-08-25T20:56:01.301875+00:00"}
+{"case_id": "SPR00497", "decision": "candidate", "event": "completed", "selected_candidate_label": "C02", "timestamp": "2026-08-25T20:56:03.435669+00:00"}
+{"case_id": "SPR00501", "event": "started", "model": "gpt-5.6-sol", "reasoning_effort": "low", "request_sha256": "21f7377070636c30061c9c08dc6d8184a3053c8d19fc944370f6eddf5b5e2cbd", "timestamp": "2026-08-25T20:56:03.438361+00:00"}
+{"case_id": "SPR00502", "decision": "candidate", "event": "completed", "selected_candidate_label": "C14", "timestamp": "2026-08-25T20:56:05.936427+00:00"}
+{"case_id": "SPR00501", "decision": "candidate", "event": "completed", "selected_candidate_label": "C19", "timestamp": "2026-08-25T20:56:18.908231+00:00"}

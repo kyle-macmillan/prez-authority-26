@@ -1,0 +1,501 @@
+case_id,document_id,document_type,president,date,title,candidate_count
+SPR00004,8001,letter,Dwight D. Eisenhower,"July 07, 1958",governor michael stepovich certifying the enactment the alaska statehood bill,25
+SPR00005,14726,proclamation,Dwight D. Eisenhower,"July 07, 1958",modifying the import quota long staple cotton,25
+SPR00006,8000,letter,Dwight D. Eisenhower,"July 08, 1958",representative wainwright new york the national defense education bill,25
+SPR00007,7999,letter,Dwight D. Eisenhower,"July 12, 1958",exchange letters between the president and president frondizi argentina,25
+SPR00008,7998,letter,Dwight D. Eisenhower,"July 14, 1958",premier khrushchev concerning his proposal for increase trade with the soviet union,25
+SPR00009,7997,letter,Dwight D. Eisenhower,"July 22, 1958",nikita khrushchev chairman council ministers ussr 1,25
+SPR00010,3646,executive_order,Dwight D. Eisenhower,"July 25, 1958",providing for the protection the civil service rights federal,25
+SPR00011,7996,letter,Dwight D. Eisenhower,"July 25, 1958",nikita khrushchev chairman council ministers ussr 2,25
+SPR00012,7995,letter,Dwight D. Eisenhower,"July 27, 1958",exchange letters between the president and president chamoun lebanon,25
+SPR00013,3644,executive_order,Dwight D. Eisenhower,"July 28, 1958",delegating the secretary defense certain authority the president,25
+SPR00014,7994,letter,Dwight D. Eisenhower,"July 28, 1958",the president the senate and the speaker the house representatives requesting,25
+SPR00015,11842,memorandum,Dwight D. Eisenhower,"July 29, 1958",federal agencies the united fund and community chest campaigns 1,25
+SPR00016,7993,letter,Dwight D. Eisenhower,"August 01, 1958",nikita khrushchev chairman council ministers ussr 3,25
+SPR00017,7992,letter,Dwight D. Eisenhower,"August 02, 1958",the chairman house committee public works concerning the proposed national cultural,25
+SPR00018,7990,letter,Dwight D. Eisenhower,"August 05, 1958",the president the senate and the speaker the house representatives transmitting 3,25
+SPR00019,7991,letter,Dwight D. Eisenhower,"August 05, 1958",president kubitschek brazil the occasion secretary dulles visit,25
+SPR00020,14723,proclamation,Dwight D. Eisenhower,"August 14, 1958",enlarging the fort pulaski national monument georgia,25
+SPR00021,3641,executive_order,Dwight D. Eisenhower,"August 20, 1958",authorizing the appointment william k harris competitive position,25
+SPR00022,3642,executive_order,Dwight D. Eisenhower,"August 20, 1958",directing federal agencies cooperate with state and local,25
+SPR00023,14721,proclamation,Dwight D. Eisenhower,"August 20, 1958",national employ the physically handicapped week 1958,25
+SPR00024,7989,letter,Dwight D. Eisenhower,"August 24, 1958",edgar eisenhower concerning the dedication mt eisenhower banff national park,25
+SPR00025,7988,letter,Dwight D. Eisenhower,"August 25, 1958",senator knowland his return california campaign for the governorship,25
+SPR00026,11840,memorandum,Dwight D. Eisenhower,"August 27, 1958",disapproval bill acquire fort pemberton site facility the vicksburg national,25
+SPR00027,11841,memorandum,Dwight D. Eisenhower,"August 27, 1958",disapproval bill pay relocation costs the chamberlain water co,25
+SPR00028,11834,memorandum,Dwight D. Eisenhower,"August 28, 1958",disapproval bill for the relief marion s symms,25
+SPR00029,11835,memorandum,Dwight D. Eisenhower,"August 28, 1958",disapproval bill for the relief the malowney real estate co inc,25
+SPR00030,11836,memorandum,Dwight D. Eisenhower,"August 28, 1958",disapproval bill for the relief bonifacio santos,25
+SPR00031,11837,memorandum,Dwight D. Eisenhower,"August 28, 1958",disapproval bill for the relief mary m browne,25
+SPR00032,11838,memorandum,Dwight D. Eisenhower,"August 28, 1958",disapproval bill for the relief north counties hydro electric co,25
+SPR00033,11839,memorandum,Dwight D. Eisenhower,"August 28, 1958",disapproval bill for the relief mary k ryan and william boutwell,25
+SPR00034,11832,memorandum,Dwight D. Eisenhower,"August 29, 1958",disapproval bill for the relief mr and mrs john r hadnot,25
+SPR00035,11833,memorandum,Dwight D. Eisenhower,"August 29, 1958",disapproval bill for the relief the estate mrs frank c gregg,25
+SPR00036,7987,letter,Dwight D. Eisenhower,"August 30, 1958",the chairman atomic energy commission concerning establishment ernest orlando,25
+SPR00037,3639,executive_order,Dwight D. Eisenhower,"September 02, 1958",suspension certain provisions section 5764a title 10 united states,25
+SPR00038,3640,executive_order,Dwight D. Eisenhower,"September 02, 1958",suspension certain provisions section 5762a title 10 united states,25
+SPR00039,11820,memorandum,Dwight D. Eisenhower,"September 02, 1958",disapproval bill for the relief mr and mrs w g hollomon,25
+SPR00040,11821,memorandum,Dwight D. Eisenhower,"September 02, 1958",disapproval bill amend the federal airport act,25
+SPR00041,11822,memorandum,Dwight D. Eisenhower,"September 02, 1958",disapproval bill amend the declaration taking act,25
+SPR00042,11823,memorandum,Dwight D. Eisenhower,"September 02, 1958",disapproval bill for the relief george p e caesar jr,25
+SPR00043,11824,memorandum,Dwight D. Eisenhower,"September 02, 1958",disapproval bill for the relief toleys charter boats inc toley engebretsen and,25
+SPR00044,11825,memorandum,Dwight D. Eisenhower,"September 02, 1958",disapproval bill for the relief harry n duff,25
+SPR00045,11826,memorandum,Dwight D. Eisenhower,"September 02, 1958",disapproval bill for the relief mr and mrs robert b hall,25
+SPR00046,11827,memorandum,Dwight D. Eisenhower,"September 02, 1958",disapproval bill for the relief duncan and marjorie moore,25
+SPR00047,11828,memorandum,Dwight D. Eisenhower,"September 02, 1958",disapproval bill for the relief the cooper tire and rubber co,25
+SPR00048,11829,memorandum,Dwight D. Eisenhower,"September 02, 1958",disapproval bill for the relief the southwest research institute,25
+SPR00049,11830,memorandum,Dwight D. Eisenhower,"September 02, 1958",disapproval bill for the relief d whitaker and others,25
+SPR00050,11831,memorandum,Dwight D. Eisenhower,"September 02, 1958",disapproval bill for the relief peter james obrien,25
+SPR00051,11818,memorandum,Dwight D. Eisenhower,"September 06, 1958",disapproval bill authorizing the military departments settle certain claims for,25
+SPR00052,11819,memorandum,Dwight D. Eisenhower,"September 06, 1958",disapproval the area redevelopment bill,25
+SPR00053,7986,letter,Dwight D. Eisenhower,"September 12, 1958",nikita khrushchev chairman council ministers u s s r the formosa situation,25
+SPR00054,7985,letter,Dwight D. Eisenhower,"September 17, 1958",field marshal the viscount montgomery alamein the occasion his retirement,25
+SPR00055,7984,letter,Dwight D. Eisenhower,"September 22, 1958",accepting resignation sherman adams the assistant the president,25
+SPR00056,7983,letter,Dwight D. Eisenhower,"September 25, 1958",the chairman committee for public education charlottesville virginia,25
+SPR00057,14719,proclamation,Dwight D. Eisenhower,"September 26, 1958",visit the united states america year,25
+SPR00058,3636,executive_order,Dwight D. Eisenhower,"October 01, 1958",transferring certain functions from the department defense the,25
+SPR00059,7982,letter,Dwight D. Eisenhower,"October 05, 1958",senator theodore francis green concerning the situation the far east,25
+SPR00060,7981,letter,Dwight D. Eisenhower,"October 06, 1958",harold h burton regarding his retirement from active service associate justice the,25
+SPR00061,7980,letter,Dwight D. Eisenhower,"October 16, 1958",telegram the vice president answering political criticisms relating the operation foreign,25
+SPR00062,7979,letter,Dwight D. Eisenhower,"October 24, 1958",accepting resignation sinclair weeks secretary commerce,25
+SPR00063,3634,executive_order,Dwight D. Eisenhower,"November 01, 1958",transferring functions the airways modernization board the,25
+SPR00064,3633,executive_order,Dwight D. Eisenhower,"November 06, 1958",transferring jurisdiction over certain lands from the department,25
+SPR00065,3631,executive_order,Dwight D. Eisenhower,"November 14, 1958",authorizing agencies the government exercise certain contracting,25
+SPR00066,3632,executive_order,Dwight D. Eisenhower,"November 14, 1958",suspension compliance with certain statutory provisions relating,25
+SPR00067,7978,letter,Dwight D. Eisenhower,"November 14, 1958",secretary benson acknowledgment third annual report the rural development program,25
+SPR00068,7977,letter,Dwight D. Eisenhower,"November 18, 1958",the president the united states 1972 1976 occasioned the death capt iven c,25
+SPR00069,7976,letter,Dwight D. Eisenhower,"November 24, 1958",william h draper jr regarding study the united states military assistance program,25
+SPR00070,3628,executive_order,Dwight D. Eisenhower,"November 28, 1958",excusing federal employees from duty all day december 26 1958,25
+SPR00071,3629,executive_order,Dwight D. Eisenhower,"November 28, 1958",designating certain officers act secretary state,25
+SPR00072,7975,letter,Dwight D. Eisenhower,"December 01, 1958",president lopez mateos ofy mexico,25
+SPR00073,3627,executive_order,Dwight D. Eisenhower,"December 03, 1958",transferring certain functions from the department defense the,25
+SPR00074,3625,executive_order,Dwight D. Eisenhower,"December 13, 1958",designating the intergovernmental maritime consultative organization,25
+SPR00075,7974,letter,Dwight D. Eisenhower,"December 20, 1958",the president elect venezuela,25
+SPR00076,14711,proclamation,Dwight D. Eisenhower,"December 24, 1958",determining certain drugs be opiates,25
+SPR00077,7973,letter,Dwight D. Eisenhower,"December 31, 1958",dr howard l bevis acknowledgment the final report the presidents committee,25
+SPR00078,3622,executive_order,Dwight D. Eisenhower,"January 03, 1959",flag the united states,25
+SPR00079,14708,proclamation,Dwight D. Eisenhower,"January 03, 1959",admission the state alaska into the union,25
+SPR00080,3620,executive_order,Dwight D. Eisenhower,"January 15, 1959",implementing the government employees training act,25
+SPR00081,3618,executive_order,Dwight D. Eisenhower,"January 23, 1959",establishing the committee government activities affecting prices,25
+SPR00082,11817,memorandum,Dwight D. Eisenhower,"January 26, 1959",the 1959 red cross campaign,25
+SPR00083,14704,proclamation,Dwight D. Eisenhower,"February 02, 1959",enlarging the boundaries the cabrillo national monument california,25
+SPR00084,7972,letter,Dwight D. Eisenhower,"February 13, 1959",representative halleck concerning citizens views excessive government spending,25
+SPR00085,14701,proclamation,Dwight D. Eisenhower,"February 25, 1959",tenth anniversary the north atlantic treaty,25
+SPR00086,7970,letter,Dwight D. Eisenhower,"March 03, 1959",the president the senate and the speaker the house representatives proposing,25
+SPR00087,7971,letter,Dwight D. Eisenhower,"March 03, 1959",t keith glennan administrator national aeronautics and space administration,25
+SPR00088,7969,letter,Dwight D. Eisenhower,"March 07, 1959",secretary flemming reconstituting the federal council aging cabinet level,25
+SPR00089,3614,executive_order,Dwight D. Eisenhower,"March 10, 1959",inspection income excess profits estate and gift tax returns the,25
+SPR00090,14698,proclamation,Dwight D. Eisenhower,"March 10, 1959",adjusting imports petroleum and petroleum products into the united,25
+SPR00091,7966,letter,Dwight D. Eisenhower,"March 18, 1959",the director bureau the budget concerning the admission hawaii,25
+SPR00092,7967,letter,Dwight D. Eisenhower,"March 18, 1959",governor quinn certifying the enactment the hawaii statehood bill,25
+SPR00093,7968,letter,Dwight D. Eisenhower,"March 18, 1959",mr steve stahl chairman national taxpayers conference preserving our national,25
+SPR00094,3612,executive_order,Dwight D. Eisenhower,"March 19, 1959",inspection income excess profits declared value excess profits,25
+SPR00095,7965,letter,Dwight D. Eisenhower,"April 01, 1959",meade alcorn chairman the republican national committee concerning his resignation,25
+SPR00096,7964,letter,Dwight D. Eisenhower,"April 10, 1959",the director bureau the budget interagency cooperation aviation matters,25
+SPR00097,7963,letter,Dwight D. Eisenhower,"April 16, 1959",accepting the resignation secretary dulles,25
+SPR00098,7962,letter,Dwight D. Eisenhower,"April 20, 1959",nikita khrushchev chairman council ministers ussr the discontinuance nuclear,25
+SPR00099,3609,executive_order,Dwight D. Eisenhower,"April 22, 1959",creating emergency board investigate dispute between pan american,25
+SPR00100,3608,executive_order,Dwight D. Eisenhower,"April 24, 1959",establishing flag for the united states navy,25
+SPR00101,7961,letter,Dwight D. Eisenhower,"April 28, 1959",telegram the governor mississippi concerning assistance the federal bureau investigation,25
+SPR00102,3605,executive_order,Dwight D. Eisenhower,"April 29, 1959",inspection income excess profits estate and gift tax returns the,25
+SPR00103,3606,executive_order,Dwight D. Eisenhower,"April 29, 1959",inspection statistical transcript cards and corporation and,25
+SPR00104,7960,letter,Dwight D. Eisenhower,"April 29, 1959",the president the senate and the speaker the house representatives the,25
+SPR00105,7959,letter,Dwight D. Eisenhower,"April 30, 1959",dean sayre concerning united states participation the world refugee year,25
+SPR00106,3602,executive_order,Dwight D. Eisenhower,"May 08, 1959",inspection income excess profits estate and gift tax returns the,25
+SPR00107,14686,proclamation,Dwight D. Eisenhower,"May 08, 1959",mothers day 1959,25
+SPR00108,7958,letter,Dwight D. Eisenhower,"May 16, 1959",nikita khrushchev chairman council ministers ussr the discontinuance nuclear 0,25
+SPR00109,7957,letter,Dwight D. Eisenhower,"May 18, 1959",secretary gates designating him act secretary defense,25
+SPR00110,7955,letter,Dwight D. Eisenhower,"May 19, 1959",secretary strauss the establishment inter agency textile committee,25
+SPR00111,7956,letter,Dwight D. Eisenhower,"May 19, 1959",the governors new hampshire rhode island and massachusetts the establishment,25
+SPR00112,14685,proclamation,Dwight D. Eisenhower,"May 19, 1959",world refugee year,25
+SPR00113,14683,proclamation,Dwight D. Eisenhower,"May 20, 1959",redefining the boundaries the allegheny george washington and jefferson,25
+SPR00114,3597,executive_order,Dwight D. Eisenhower,"May 26, 1959",coat arms seal and flag the president the united states,25
+SPR00115,11816,memorandum,Dwight D. Eisenhower,"May 26, 1959",concerning proposed agreement with germany for cooperation uses atomic energy,25
+SPR00116,3596,executive_order,Dwight D. Eisenhower,"May 29, 1959",designating the national aeronautics and space administration agency,25
+SPR00117,14681,proclamation,Dwight D. Eisenhower,"June 01, 1959",determining certain drugs be opiates,25
+SPR00118,3595,executive_order,Dwight D. Eisenhower,"June 12, 1959",excusing federal employees from duty all day july 3 1959,25
+SPR00119,7952,letter,Dwight D. Eisenhower,"June 24, 1959",the president the senate and the speaker the house representatives transmitting,25
+SPR00120,7953,letter,Dwight D. Eisenhower,"June 24, 1959",william h draper jr regarding the second interim report the presidents committee,25
+SPR00121,7951,letter,Dwight D. Eisenhower,"June 27, 1959",david j mcdonald president the united steelworkers america,25
+SPR00122,7950,letter,Dwight D. Eisenhower,"June 30, 1959",accepting resignation secretary commerce strauss,25
+SPR00123,7948,letter,Dwight D. Eisenhower,"July 02, 1959",governor egan concerning the presentation alaska the first 49 star flag,25
+SPR00124,7949,letter,Dwight D. Eisenhower,"July 02, 1959",the secretary western association state highway officials the interstate highway,25
+SPR00125,11815,memorandum,Dwight D. Eisenhower,"July 09, 1959",federal agencies the united givers fund campaign the national capital area 0,25
+SPR00126,14675,proclamation,Dwight D. Eisenhower,"July 10, 1959",world science pan pacific exposition century 21 exposition,25
+SPR00127,7947,letter,Dwight D. Eisenhower,"July 11, 1959",the president the senate and the speaker the house representatives transmitting 0,25
+SPR00128,11814,memorandum,Dwight D. Eisenhower,"July 14, 1959",federal agencies the united fund and community chest campaigns 0,25
+SPR00129,3592,executive_order,Dwight D. Eisenhower,"July 15, 1959",designating the airport being constructed the counties fairfax and,25
+SPR00130,7946,letter,Dwight D. Eisenhower,"July 16, 1959",president meany acknowledging afl cio support the governments position west berlin,25
+SPR00131,7945,letter,Dwight D. Eisenhower,"July 23, 1959",the president the senate and the speaker the house representatives transmitting 1,25
+SPR00132,14671,proclamation,Dwight D. Eisenhower,"August 04, 1959",imposing quotas imports rye rye flour and rye meal,25
+SPR00133,14669,proclamation,Dwight D. Eisenhower,"August 11, 1959",establishing the horseshoe bend national military park,25
+SPR00134,3589,executive_order,Dwight D. Eisenhower,"August 14, 1959",establishing the federal radiation council,25
+SPR00135,3588,executive_order,Dwight D. Eisenhower,"August 18, 1959",revocation executive order no 9887 designating certain public,25
+SPR00136,3587,executive_order,Dwight D. Eisenhower,"August 20, 1959",transferring title certain lands sand island territory hawaii the,25
+SPR00137,7944,letter,Dwight D. Eisenhower,"August 20, 1959",the president the senate and the speaker the house representatives transmitting the,25
+SPR00138,3585,executive_order,Dwight D. Eisenhower,"August 21, 1959",delegating the chairman the civil service commission the authority,25
+SPR00139,14668,proclamation,Dwight D. Eisenhower,"August 21, 1959",admission the state hawaii into the union,25
+SPR00140,7943,letter,Dwight D. Eisenhower,"September 02, 1959",exchange letters between the president and the chief state general franco spain,25
+SPR00141,7942,letter,Dwight D. Eisenhower,"September 08, 1959",the president the united steelworkers and representatives the steel industry,25
+SPR00142,14666,proclamation,Dwight D. Eisenhower,"September 08, 1959",national employ the physically handicapped week 1959,25
+SPR00143,14667,proclamation,Dwight D. Eisenhower,"September 08, 1959",enlarging the muir woods national monument california,25
+SPR00144,3583,executive_order,Dwight D. Eisenhower,"September 14, 1959",amending the selective service regulations,25
+SPR00145,14663,proclamation,Dwight D. Eisenhower,"September 14, 1959",1959 pacific festival,25
+SPR00146,11813,memorandum,Dwight D. Eisenhower,"September 16, 1959",disapproval bill creating coal research and development commission,25
+SPR00147,11811,memorandum,Dwight D. Eisenhower,"September 21, 1959",disapproval bill amending the federal boating act 1958,25
+SPR00148,11812,memorandum,Dwight D. Eisenhower,"September 21, 1959",disapproval bill for the relief peony park inc and others,25
+SPR00149,7941,letter,Dwight D. Eisenhower,"September 22, 1959",secretary anderson approving the increase interest rates for savings bonds,25
+SPR00150,11809,memorandum,Dwight D. Eisenhower,"September 22, 1959",disapproval bill for the relief mrs lourene o estes,25
+SPR00151,11810,memorandum,Dwight D. Eisenhower,"September 22, 1959",disapproval bill for the relief the estate nathaniel h woods,25
+SPR00152,11806,memorandum,Dwight D. Eisenhower,"September 23, 1959",disapproval bill for the relief mrs mary dagostino,25
+SPR00153,11807,memorandum,Dwight D. Eisenhower,"September 23, 1959",disapproval bill for the relief harold william abbott and others,25
+SPR00154,11808,memorandum,Dwight D. Eisenhower,"September 23, 1959",disapproval bill for the relief mrs elba haverstick cash,25
+SPR00155,11805,memorandum,Dwight D. Eisenhower,"September 24, 1959",disapproval bill increasing retirement benefits certain policemen and firemen,25
+SPR00156,11804,memorandum,Dwight D. Eisenhower,"September 25, 1959",disapproval bill for the relief howard f knipp,25
+SPR00157,3579,executive_order,Dwight D. Eisenhower,"September 30, 1959",providing for the carrying out certain provisions the atomic energy,25
+SPR00158,3580,executive_order,Dwight D. Eisenhower,"September 30, 1959",designating the federal aviation agency agency have certain,25
+SPR00159,3578,executive_order,Dwight D. Eisenhower,"October 06, 1959",creating board inquiry report certain labor disputes affecting the,25
+SPR00160,7940,letter,Dwight D. Eisenhower,"October 07, 1959",the attorney general directing him petition for injunction the maritime strike 0,25
+SPR00161,3576,executive_order,Dwight D. Eisenhower,"October 09, 1959",creating board inquiry report labor dispute affecting the steel,25
+SPR00162,7939,letter,Dwight D. Eisenhower,"October 09, 1959",senator gore concerning the interstate highway program,25
+SPR00163,3573,executive_order,Dwight D. Eisenhower,"October 12, 1959",establishing the committee for rural development program,25
+SPR00164,3575,executive_order,Dwight D. Eisenhower,"October 12, 1959",inspection income excess profits estate and gift tax returns the,25
+SPR00165,14656,proclamation,Dwight D. Eisenhower,"October 12, 1959",determining 3 hydroxy n phenacylmorphinan be opiate,25
+SPR00166,7938,letter,Dwight D. Eisenhower,"October 19, 1959",the attorney general directing him petition for injunction the steel strike,25
+SPR00167,14654,proclamation,Dwight D. Eisenhower,"October 20, 1959",modification trade agreement concessions and adjustment duties certain,25
+SPR00168,7937,letter,Dwight D. Eisenhower,"November 12, 1959",the chairman senate foreign relations subcommittee concerning his request for,25
+SPR00169,7936,letter,Dwight D. Eisenhower,"November 16, 1959",secretary flemming receiving report the federal council aging,25
+SPR00170,3565,executive_order,Dwight D. Eisenhower,"November 27, 1959",modifying the exterior boundaries certain national forests alabama,25
+SPR00171,3569,executive_order,Dwight D. Eisenhower,"November 27, 1959",extension the application the federal aviation act 1958,25
+SPR00172,3570,executive_order,Dwight D. Eisenhower,"November 27, 1959",enlarging the chattahoochee kisatchie holly springs and ouachita,25
+SPR00173,3571,executive_order,Dwight D. Eisenhower,"November 27, 1959",inspection income tax returns the senate committee the judiciary,25
+SPR00174,14651,proclamation,Dwight D. Eisenhower,"November 27, 1959",establishing the tuskegee national forest alabama the oconee national,25
+SPR00175,7935,letter,Dwight D. Eisenhower,"December 01, 1959",accepting resignation neil h mcelroy secretary defense,25
+SPR00176,3564,executive_order,Dwight D. Eisenhower,"December 03, 1959",excusing federal employees from duty one half day december 24 1959,25
+SPR00177,7934,letter,Dwight D. Eisenhower,"December 08, 1959",dr erwin d canham president the us chamber commerce the federal budget,25
+SPR00178,7933,letter,Dwight D. Eisenhower,"December 21, 1959",chairman khrushchev proposing four power summit conference paris,25
+SPR00179,7932,letter,Dwight D. Eisenhower,"December 22, 1959",the comptroller general the united states concerning his request for reports,25
+SPR00180,3563,executive_order,Dwight D. Eisenhower,"December 29, 1959",determining the termination certain federal functions alaska and,25
+SPR00181,7930,letter,Dwight D. Eisenhower,"December 31, 1959",admiral jerauld wright his release from the position supreme allied commander,25
+SPR00182,7931,letter,Dwight D. Eisenhower,"December 31, 1959",admiral robert l dennison his designation supreme allied commander atlantic,25
+SPR00183,7929,letter,Dwight D. Eisenhower,"January 01, 1960",the attorney general receiving his report deceptive practices broadcasting media,25
+SPR00184,7928,letter,Dwight D. Eisenhower,"January 08, 1960",senator cooper federal programs and activities aid chronic labor surplus areas,25
+SPR00185,3562,executive_order,Dwight D. Eisenhower,"January 13, 1960",the presidents committee for traffic safety,25
+SPR00186,7926,letter,Dwight D. Eisenhower,"January 13, 1960",gordon gray designating him chairman the operations coordinating board,25
+SPR00187,7927,letter,Dwight D. Eisenhower,"January 13, 1960",karl g harr jr concerning his duties with the operations coordinating board,25
+SPR00188,7925,letter,Dwight D. Eisenhower,"January 14, 1960",t keith glennan administrator national aeronautics and space administration high,25
+SPR00189,11801,memorandum,Dwight D. Eisenhower,"February 05, 1960",the chairman civil service commission the career executive development program,25
+SPR00190,11802,memorandum,Dwight D. Eisenhower,"February 05, 1960",directing the special assistant for personnel management provide leadership the,25
+SPR00191,11803,memorandum,Dwight D. Eisenhower,"February 05, 1960",concerning career executive development program all departments and agencies,25
+SPR00192,7924,letter,Dwight D. Eisenhower,"February 07, 1960",dr henry wriston his acceptance the chairmanship the commission national goals,25
+SPR00193,11800,memorandum,Dwight D. Eisenhower,"February 07, 1960",concerning the commission national goals,25
+SPR00194,3559,executive_order,Dwight D. Eisenhower,"February 11, 1960",suspension certain provisions section 5762 title 10 the united,25
+SPR00195,3558,executive_order,Dwight D. Eisenhower,"February 12, 1960",creating emergency board investigate dispute between atchison topeka,25
+SPR00196,11799,memorandum,Dwight D. Eisenhower,"February 17, 1960",the 1960 red cross campaign,25
+SPR00197,3556,executive_order,Dwight D. Eisenhower,"February 18, 1960",designating the pan american health organization public,25
+SPR00198,3557,executive_order,Dwight D. Eisenhower,"February 18, 1960",authorizing the attorney general seize arms and munitions war and,25
+SPR00199,3553,executive_order,Dwight D. Eisenhower,"February 20, 1960",designating the southeast asia treaty organization public,25
+SPR00200,3554,executive_order,Dwight D. Eisenhower,"February 20, 1960",safeguarding classified information within industry,25
+SPR00201,3555,executive_order,Dwight D. Eisenhower,"February 20, 1960",readiness the united states district court for the district alaska,25
+SPR00202,3552,executive_order,Dwight D. Eisenhower,"February 29, 1960",creating emergency board investigate dispute between the new york,25
+SPR00203,7923,letter,Dwight D. Eisenhower,"March 12, 1960",frederick m eaton us representative the ten nation disarmament conference geneva,25
+SPR00204,3549,executive_order,Dwight D. Eisenhower,"March 15, 1960",designating the facilities the national aeronautics and space,25
+SPR00205,3550,executive_order,Dwight D. Eisenhower,"March 15, 1960",inspection income excess profits estate and gift tax returns the,25
+SPR00206,14638,proclamation,Dwight D. Eisenhower,"March 15, 1960",establishing the key largo coral reef preserve,25
+SPR00207,14640,proclamation,Dwight D. Eisenhower,"March 15, 1960",eighteenth decennial census,25
+SPR00208,3548,executive_order,Dwight D. Eisenhower,"March 18, 1960",creating emergency board investigate dispute between pan american,25
+SPR00209,7922,letter,Dwight D. Eisenhower,"April 04, 1960",exchange telegrams between the president and president garcia the philippine sugar quota,25
+SPR00210,3547,executive_order,Dwight D. Eisenhower,"April 08, 1960",designating the inter american development bank public international,25
+SPR00211,7920,letter,Dwight D. Eisenhower,"April 12, 1960",the governors concerning assumption the states regulatory functions relating atomic,25
+SPR00212,7921,letter,Dwight D. Eisenhower,"April 12, 1960",the co chairmen the joint federal state action committee receiving the committees,25
+SPR00213,3546,executive_order,Dwight D. Eisenhower,"April 18, 1960",creating emergency board investigate dispute between the long island,25
+SPR00214,7919,letter,Dwight D. Eisenhower,"April 19, 1960",the administrator general services offering the presidents papers and other,25
+SPR00215,3545,executive_order,Dwight D. Eisenhower,"April 22, 1960",creating emergency board investigate disputes between the akron,25
+SPR00216,7918,letter,Dwight D. Eisenhower,"May 09, 1960",syngman rhee upon his withdrawal from political life korea,25
+SPR00217,11798,memorandum,Dwight D. Eisenhower,"May 16, 1960",federal agencies the united givers fund campaign the national capital area,25
+SPR00218,3543,executive_order,Dwight D. Eisenhower,"May 20, 1960",creating emergency board investigate dispute between the,25
+SPR00219,3542,executive_order,Dwight D. Eisenhower,"May 23, 1960",creating emergency board investigate dispute between the chicago,25
+SPR00220,3541,executive_order,Dwight D. Eisenhower,"June 01, 1960",establishing the white house service certificate and the white house,25
+SPR00221,14626,proclamation,Dwight D. Eisenhower,"June 01, 1960",flag day 1960,25
+SPR00222,7917,letter,Dwight D. Eisenhower,"June 02, 1960",senator bennett the need for legislation authorizing the president make adjustments,25
+SPR00223,3540,executive_order,Dwight D. Eisenhower,"June 07, 1960",permitting certain employees be given career or career conditional,25
+SPR00224,7916,letter,Dwight D. Eisenhower,"June 12, 1960",governor underwood west virginia further federal activities aid chronic labor,25
+SPR00225,14624,proclamation,Dwight D. Eisenhower,"June 15, 1960",copyright extension austria,25
+SPR00226,11797,memorandum,Dwight D. Eisenhower,"June 28, 1960",federal agencies the united fund and community chest campaigns,25
+SPR00227,7915,letter,Dwight D. Eisenhower,"June 29, 1960",the president the american red cross the nations voluntary disaster relief chile,25
+SPR00228,14622,proclamation,Dwight D. Eisenhower,"July 06, 1960",determination cuban sugar quota,25
+SPR00229,11794,memorandum,Dwight D. Eisenhower,"July 07, 1960",disapproval bill for relief sam j buzzanca,25
+SPR00230,11795,memorandum,Dwight D. Eisenhower,"July 07, 1960",disapproval bill provide for the economic regulation the alaska railroad under,25
+SPR00231,11796,memorandum,Dwight D. Eisenhower,"July 07, 1960",disapproval bill for 224 relief juan d quintos and others,25
+SPR00232,11793,memorandum,Dwight D. Eisenhower,"July 12, 1960",disapproval bill concerning wage rates the portsmouth naval shipyard,25
+SPR00233,7914,letter,Dwight D. Eisenhower,"July 13, 1960",telegram senator mansfield welcoming security council discussion the rb 47 plane incident,25
+SPR00234,11791,memorandum,Dwight D. Eisenhower,"July 14, 1960",disapproval bill relating payments bernalillo county new mexico for care,25
+SPR00235,11792,memorandum,Dwight D. Eisenhower,"July 14, 1960",disapproval bill for the relief margaret p copin,25
+SPR00236,14621,proclamation,Dwight D. Eisenhower,"July 14, 1960",1960 pacific festival,25
+SPR00237,7913,letter,Dwight D. Eisenhower,"July 18, 1960",telegrams senators kennedy and johnson offering them briefings the central intelligence,25
+SPR00238,14620,proclamation,Dwight D. Eisenhower,"July 18, 1960",determining ethyl 1 3 cyano33 diphenylpropyl 4 phenyl 4,25
+SPR00239,7911,letter,Dwight D. Eisenhower,"July 22, 1960",dr henry m wriston the progress made the commission national goals,25
+SPR00240,7912,letter,Dwight D. Eisenhower,"July 22, 1960",frederick m eaton following the closing the ten nation committee disarmament,25
+SPR00241,7910,letter,Dwight D. Eisenhower,"July 25, 1960",the administrator general services concerning the design proposed buildings,25
+SPR00242,14615,proclamation,Dwight D. Eisenhower,"July 29, 1960",determining certain drugs be opiates,25
+SPR00243,7909,letter,Dwight D. Eisenhower,"August 19, 1960",accepting resignation henry cabot lodge us representative the united nations,25
+SPR00244,14613,proclamation,Dwight D. Eisenhower,"August 22, 1960",national employ the physically handicapped week 1960,25
+SPR00245,14611,proclamation,Dwight D. Eisenhower,"August 24, 1960",termination the iranian trade agreement proclamations,25
+SPR00246,7907,letter,Dwight D. Eisenhower,"August 26, 1960",the speaker and the minority leader the house representatives mutual security,25
+SPR00247,7908,letter,Dwight D. Eisenhower,"August 26, 1960",the majority and minority leaders the senate mutual security appropriations,25
+SPR00248,7906,letter,Dwight D. Eisenhower,"August 29, 1960",judge e barrett prettyman requesting him serve chairman the presidents conference,25
+SPR00249,7905,letter,Dwight D. Eisenhower,"September 02, 1960",the chairman civil aeronautics board concerning international local service regina,25
+SPR00250,11790,memorandum,Dwight D. Eisenhower,"September 02, 1960",disapproval bill authorizing the payment subsidies producers lead and zinc,25
+SPR00251,3534,executive_order,Dwight D. Eisenhower,"September 06, 1960",suspension certain provisions section 5231b title 10 the united,25
+SPR00252,11789,memorandum,Dwight D. Eisenhower,"September 07, 1960",disapproval bill concerning the marking imported articles and containers,25
+SPR00253,11787,memorandum,Dwight D. Eisenhower,"September 09, 1960",disapproval bill for the relief raymond baurkot,25
+SPR00254,11788,memorandum,Dwight D. Eisenhower,"September 09, 1960",disapproval bill amending the bankruptcy act,25
+SPR00255,11785,memorandum,Dwight D. Eisenhower,"September 14, 1960",disapproval bill for the relief eric and ida mac hjerpe,25
+SPR00256,11786,memorandum,Dwight D. Eisenhower,"September 14, 1960",disapproval bill for the relief h p lambert company incorporated and,25
+SPR00257,7904,letter,Dwight D. Eisenhower,"September 16, 1960",exchange letters between the president and prime minister ikeda japan,25
+SPR00258,3533,executive_order,Dwight D. Eisenhower,"September 23, 1960",designating the department commerce perform functions with respect,25
+SPR00259,14602,proclamation,Dwight D. Eisenhower,"September 23, 1960",enlarging the rocky mountain national park colorado,25
+SPR00260,3532,executive_order,Dwight D. Eisenhower,"September 28, 1960",creating emergency board investigate dispute between certain,25
+SPR00261,7903,letter,Dwight D. Eisenhower,"October 02, 1960",reply proposal for meeting the president and chairman khrushchev,25
+SPR00262,7902,letter,Dwight D. Eisenhower,"October 07, 1960",secretary mitchell receiving report the effectiveness the labor management act,25
+SPR00263,7901,letter,Dwight D. Eisenhower,"October 25, 1960",telegram accepting invitation address rally the nixon for president committee pennsylvania,25
+SPR00264,3530,executive_order,Dwight D. Eisenhower,"October 27, 1960",including certain lands the dixie national forest and transferring,25
+SPR00265,14600,proclamation,Dwight D. Eisenhower,"October 27, 1960",imposing import quotas tung oil and tung nuts,25
+SPR00266,14601,proclamation,Dwight D. Eisenhower,"October 27, 1960",determining certain drugs be opiates,25
+SPR00267,3529,executive_order,Dwight D. Eisenhower,"November 01, 1960",establishing commission inquire into controversy between certain,25
+SPR00268,7900,letter,Dwight D. Eisenhower,"November 03, 1960",dr milton s eisenhower the occasion his resignation from two advisory committees,25
+SPR00269,14598,proclamation,Dwight D. Eisenhower,"November 08, 1960",establishing the st francis national forest and enlarging the ozark and,25
+SPR00270,7898,letter,Dwight D. Eisenhower,"November 09, 1960",telegrams congratulations the president and vice president elect,25
+SPR00271,7899,letter,Dwight D. Eisenhower,"November 09, 1960",telegrams vice president nixon and henry cabot lodge,25
+SPR00272,7897,letter,Dwight D. Eisenhower,"November 12, 1960",secretary mueller concerning participation the new york worlds fair 1964 65,25
+SPR00273,3526,executive_order,Dwight D. Eisenhower,"November 15, 1960",establishing the presidents committee migratory labor,25
+SPR00274,7896,letter,Dwight D. Eisenhower,"November 16, 1960",dr nnamdi azikiwe the occasion his investiture governor general the federation,25
+SPR00275,3525,executive_order,Dwight D. Eisenhower,"November 25, 1960",extension the provisions for rotation civilian employees the defense,25
+SPR00276,3524,executive_order,Dwight D. Eisenhower,"November 29, 1960",amendment executive order no 6260 august 28 1933,25
+SPR00277,3523,executive_order,Dwight D. Eisenhower,"December 02, 1960",establishing the interdepartmental highway safety board,25
+SPR00278,14595,proclamation,Dwight D. Eisenhower,"December 07, 1960",civil war centennial,25
+SPR00279,3521,executive_order,Dwight D. Eisenhower,"December 09, 1960",authorization for the communication restricted data the central,25
+SPR00280,7895,letter,Dwight D. Eisenhower,"December 09, 1960",cardinal spellman concerning aid cuban refugees,25
+SPR00281,14594,proclamation,Dwight D. Eisenhower,"December 16, 1960",determination cuban sugar quota supplement proclamation no 3355,25
+SPR00282,7894,letter,Dwight D. Eisenhower,"December 20, 1960",secretary mueller concerning us participation the new york worlds fair 1964 65,25
+SPR00283,14592,proclamation,Dwight D. Eisenhower,"December 22, 1960",designation restricted waters under the great lakes pilotage act 1960,25
+SPR00284,11784,memorandum,Dwight D. Eisenhower,"December 24, 1960",the secretary the army the operation steamships the panama canal company,25
+SPR00285,7893,letter,Dwight D. Eisenhower,"December 30, 1960",accepting resignation leo hoegh director office civil and defense mobilization,25
+SPR00286,7892,letter,Dwight D. Eisenhower,"January 01, 1961",accepting resignation arthur e summerfield postmaster general,25
+SPR00287,7891,letter,Dwight D. Eisenhower,"January 02, 1961",accepting resignation frederick h mueller secretary commerce,25
+SPR00288,7890,letter,Dwight D. Eisenhower,"January 05, 1961",accepting resignation ezra taft benson secretary agriculture,25
+SPR00289,7888,letter,Dwight D. Eisenhower,"January 06, 1961",alan t waterman receiving report the national science foundation,25
+SPR00290,7889,letter,Dwight D. Eisenhower,"January 06, 1961",archibald j carey jr regarding report the presidents committee government,25
+SPR00291,7887,letter,Dwight D. Eisenhower,"January 08, 1961",accepting resignation thomas s gates secretary defense,25
+SPR00292,7884,letter,Dwight D. Eisenhower,"January 09, 1961",accepting resignation james p mitchell secretary labor,25
+SPR00293,7885,letter,Dwight D. Eisenhower,"January 09, 1961",accepting resignation george b kistiakowsky special assistant the president for,25
+SPR00294,7886,letter,Dwight D. Eisenhower,"January 09, 1961",accepting resignation fred seaton secretary the interior,25
+SPR00295,14589,proclamation,Dwight D. Eisenhower,"January 09, 1961",enlarging the bandelier national monument new mexico,25
+SPR00296,7883,letter,Dwight D. Eisenhower,"January 10, 1961",accepting resignation maurice h stans director bureau the budget january 11 1961,25
+SPR00297,3516,executive_order,Dwight D. Eisenhower,"January 12, 1961",creating emergency board investigate dispute between certain,25
+SPR00298,7882,letter,Dwight D. Eisenhower,"January 12, 1961",accepting resignation christian hefteras secretary state,25
+SPR00299,11783,memorandum,Dwight D. Eisenhower,"January 12, 1961",concerning the international phase the large irregular air carrier,25
+SPR00300,7880,letter,Dwight D. Eisenhower,"January 13, 1961",accepting resignation gordon gray special assistant the president for national,25
+SPR00301,7881,letter,Dwight D. Eisenhower,"January 13, 1961",accepting resignation william p rogers attorney general,25
+SPR00302,3515,executive_order,Dwight D. Eisenhower,"January 14, 1961",amendment executive order 6260 august 28 1933 amended,25
+SPR00303,7879,letter,Dwight D. Eisenhower,"January 15, 1961",accepting resignation arthur s flemming secretary health education and welfare,25
+SPR00304,7878,letter,Dwight D. Eisenhower,"January 16, 1961",accepting resignation robert b anderson secretary the treasury,25
+SPR00305,3511,executive_order,Dwight D. Eisenhower,"January 17, 1961",inspection department commerce income tax returns made under the,25
+SPR00306,3512,executive_order,Dwight D. Eisenhower,"January 17, 1961",inspection federal trade commission income tax returns corporations,25
+SPR00307,3514,executive_order,Dwight D. Eisenhower,"January 17, 1961",inspection renegotiation board income tax returns made under the,25
+SPR00308,7876,letter,Dwight D. Eisenhower,"January 18, 1961",arthur s flemming concerning the presidents advisory committee government,25
+SPR00309,7877,letter,Dwight D. Eisenhower,"January 18, 1961",secretary gates concerning the effect the presidents directive balance payments,25
+SPR00310,14586,proclamation,Dwight D. Eisenhower,"January 18, 1961",establishing the chesapeake and ohio canal national monument maryland,25
+SPR00311,14587,proclamation,Dwight D. Eisenhower,"January 18, 1961",terminating the honduran trade agreement part,25
+SPR00312,7875,letter,Dwight D. Eisenhower,"January 19, 1961",the director bureau the budget upon receiving reports government operations,25
+SPR00313,11782,memorandum,Dwight D. Eisenhower,"January 19, 1961",concerning the trans pacific route case,25
+SPR00314,3506,executive_order,John F. Kennedy,"January 21, 1961",providing for expanded program food distribution needy families,25
+SPR00315,3504,executive_order,John F. Kennedy,"January 24, 1961",inspection income estate and gift tax returns the senate committee,25
+SPR00316,11781,memorandum,John F. Kennedy,"January 24, 1961",federal agencies the duties the director the food for peace program,25
+SPR00317,7874,letter,John F. Kennedy,"January 25, 1961",the president the senate and the speaker the house urging enactment distressed area,25
+SPR00318,7873,letter,John F. Kennedy,"January 27, 1961",secretary ribicoff requesting him undertake direction cuban refugee activities,25
+SPR00319,7872,letter,John F. Kennedy,"February 02, 1961",the secretary the navy and statement the president the launching the uss sam,25
+SPR00320,7871,letter,John F. Kennedy,"February 03, 1961",telegram the mayors us cities urging increased urban renewal activity,25
+SPR00321,7870,letter,John F. Kennedy,"February 06, 1961",the president the senate and the speaker the house transmitting bills extending,25
+SPR00322,7869,letter,John F. Kennedy,"February 07, 1961",the president the senate and the speaker the house transmitting minimum wage bill,25
+SPR00323,7868,letter,John F. Kennedy,"February 10, 1961",the president the senate and the speaker the house proposing creation additional,25
+SPR00324,7867,letter,John F. Kennedy,"February 13, 1961",the president the senate and the speaker the house transmitting bill provide health,25
+SPR00325,3502,executive_order,John F. Kennedy,"February 16, 1961",establishing the presidents advisory committee labor management,25
+SPR00326,7865,letter,John F. Kennedy,"February 16, 1961",the president the senate and the speaker the house transmitting special program for,25
+SPR00327,7866,letter,John F. Kennedy,"February 16, 1961",telegram the governors the states urging action bolster the economy speeding public works,25
+SPR00328,3501,executive_order,John F. Kennedy,"February 17, 1961",creating emergency board investigate dispute between the pan,25
+SPR00329,7863,letter,John F. Kennedy,"February 20, 1961",the speaker the house representatives transmitting distressed area redevelopment,25
+SPR00330,7864,letter,John F. Kennedy,"February 20, 1961",the president the senate and the speaker the house transmitting bill amend the,25
+SPR00331,3499,executive_order,John F. Kennedy,"February 21, 1961",establishing commission inquire into controversy between certain air,25
+SPR00332,3498,executive_order,John F. Kennedy,"February 23, 1961",amending executive order 10922 february 21 1961 establishing,25
+SPR00333,3497,executive_order,John F. Kennedy,"February 24, 1961",creating emergency board investigate disputes between the northwest,25
+SPR00334,7860,letter,John F. Kennedy,"February 24, 1961",the speaker the house representatives proposing exemption foreign central banks,25
+SPR00335,7861,letter,John F. Kennedy,"February 24, 1961",the speaker the house representatives proposing reduction the duty free allowance,25
+SPR00336,7862,letter,John F. Kennedy,"February 24, 1961",the president the senate and the speaker the house transmitting bills implementing,25
+SPR00337,11780,memorandum,John F. Kennedy,"February 28, 1961",federal agencies the red cross campaign,25
+SPR00338,7858,letter,John F. Kennedy,"March 07, 1961",the president the senate and the speaker the house more flexible approach economic,25
+SPR00339,7859,letter,John F. Kennedy,"March 07, 1961",the president the senate and the speaker the house federal aid colleges and,25
+SPR00340,14579,proclamation,John F. Kennedy,"March 08, 1961",centennial the unification italy,25
+SPR00341,7857,letter,John F. Kennedy,"March 09, 1961",the president the senate and the speaker the house the proposed national cultural,25
+SPR00342,7856,letter,John F. Kennedy,"March 14, 1961",the president the senate and the speaker the house the interstate highway program,25
+SPR00343,7855,letter,John F. Kennedy,"March 15, 1961",the president the senate and the speaker the house interest rates time deposits,25
+SPR00344,7854,letter,John F. Kennedy,"March 17, 1961",secretary ribicoff concerning assistance exiled cuban scholars and professional,25
+SPR00345,7853,letter,John F. Kennedy,"March 22, 1961",president eisenhower upon signing bill restoring his military rank,25
+SPR00346,3490,executive_order,John F. Kennedy,"March 24, 1961",establishing commission inquire into controversy between certain,25
+SPR00347,7852,letter,John F. Kennedy,"March 26, 1961",telegram the kenosha wisconsin housing authority concerning action for the eviction needy,25
+SPR00348,7851,letter,John F. Kennedy,"March 27, 1961",the chairman tennessee valley authority the labor surplus problem the valley area,25
+SPR00349,7849,letter,John F. Kennedy,"March 29, 1961",the president the senate increasing the national effort oceanography,25
+SPR00350,7850,letter,John F. Kennedy,"March 29, 1961",the president the senate and the speaker the house transmitting housing and urban,25
+SPR00351,7848,letter,John F. Kennedy,"March 31, 1961",secretary stahr concerning discontinuance commercial operations the panama line,25
+SPR00352,14576,proclamation,John F. Kennedy,"March 31, 1961",determination cuban sugar quota supplement the quota established,25
+SPR00353,7847,letter,John F. Kennedy,"April 07, 1961",the president the senate and the speaker the house concerning preservation ancient,25
+SPR00354,7846,letter,John F. Kennedy,"April 10, 1961",the president the senate and the speaker the house the national aeronautics and,25
+SPR00355,3486,executive_order,John F. Kennedy,"April 13, 1961",establishing the administrative conference the united states,25
+SPR00356,7845,letter,John F. Kennedy,"April 17, 1961",the president the senate and the speaker the house transmitting farm bill,25
+SPR00357,7843,letter,John F. Kennedy,"April 18, 1961",the president the senate and the speaker the house transmitting bill for new,25
+SPR00358,7844,letter,John F. Kennedy,"April 18, 1961",the president the senate and the speaker the house recommending additional,25
+SPR00359,11779,memorandum,John F. Kennedy,"April 18, 1961",racial or other discrimination federal employee recreational associations,25
+SPR00360,3485,executive_order,John F. Kennedy,"April 22, 1961",inspection income excess profits estate and gift tax returns the,25
+SPR00361,3484,executive_order,John F. Kennedy,"April 24, 1961",reports identical bids,25
+SPR00362,7841,letter,John F. Kennedy,"April 24, 1961",the president the senate and the speaker the house concerning secret service,25
+SPR00363,7842,letter,John F. Kennedy,"April 24, 1961",the president the senate and the speaker the house proposing extension the federal,25
+SPR00364,7840,letter,John F. Kennedy,"April 25, 1961",the president the senate and the speaker the house the national defense education,25
+SPR00365,7839,letter,John F. Kennedy,"April 27, 1961",president frondizi argentina concerning the alliance for progress,25
+SPR00366,7838,letter,John F. Kennedy,"May 02, 1961",the president the senate and the speaker the house compensation rates for veterans,25
+SPR00367,7835,letter,John F. Kennedy,"May 04, 1961",the president the senate and the speaker the house transmitting bill provide for,25
+SPR00368,7836,letter,John F. Kennedy,"May 04, 1961",president dacko concerning us assistance the central african republic,25
+SPR00369,7837,letter,John F. Kennedy,"May 04, 1961",members the presidents foreign intelligence advisory board,25
+SPR00370,3481,executive_order,John F. Kennedy,"May 05, 1961",provide guide ethical standards government officials,25
+SPR00371,3480,executive_order,John F. Kennedy,"May 11, 1961",establishing the presidents committee juvenile delinquency and youth,25
+SPR00372,7834,letter,John F. Kennedy,"May 11, 1961",the speaker the house representatives concerning measures combat juvenile,25
+SPR00373,14564,proclamation,John F. Kennedy,"May 11, 1961",establishing russell cave national monument alabama,25
+SPR00374,7833,letter,John F. Kennedy,"May 15, 1961",president paz estenssoro concerning long range program for the development bolivia,25
+SPR00375,7831,letter,John F. Kennedy,"May 16, 1961",the president the senate and the speaker the house transmitting bill implementing 0,25
+SPR00376,7832,letter,John F. Kennedy,"May 16, 1961",mrs alicia patterson editor and publisher newsday concerning the nations response,25
+SPR00377,3477,executive_order,John F. Kennedy,"May 19, 1961",creating emergency board investigate dispute between the baltimore,25
+SPR00378,3478,executive_order,John F. Kennedy,"May 19, 1961",designating the coffee study group public international organization,25
+SPR00379,7830,letter,John F. Kennedy,"May 19, 1961",the president the senate and the speaker the house transmitting bill amending the,25
+SPR00380,7829,letter,John F. Kennedy,"May 20, 1961",letters the secretary state and the secretary the interior concerning the passamaquoddy,25
+SPR00381,3475,executive_order,John F. Kennedy,"May 24, 1961",administration the export control act 1949,25
+SPR00382,3474,executive_order,John F. Kennedy,"May 26, 1961",establishing program for resolving labor disputes missile and space,25
+SPR00383,7828,letter,John F. Kennedy,"May 26, 1961",the president the senate and the speaker the house transmitting bill implementing,25
+SPR00384,7827,letter,John F. Kennedy,"May 29, 1961",the president the senate and the speaker the house concerning the training workers,25
+SPR00385,7826,letter,John F. Kennedy,"May 30, 1961",the president the senate and the speaker the house proposing the establishment 0,25
+SPR00386,14561,proclamation,John F. Kennedy,"May 30, 1961",flag day 1961,25
+SPR00387,7825,letter,John F. Kennedy,"June 07, 1961",the president the senate and the speaker the house youth employment opportunities,25
+SPR00388,3472,executive_order,John F. Kennedy,"June 12, 1961",inspection income excess profits estate and gift tax returns the,25
+SPR00389,3473,executive_order,John F. Kennedy,"June 12, 1961",establishing commission inquire into controversy between certain,25
+SPR00390,14560,proclamation,John F. Kennedy,"June 12, 1961",display the flag the united states marine corps memorial arlington,25
+SPR00391,7824,letter,John F. Kennedy,"June 13, 1961",the president the senate and the speaker the house transmitting bill unemployment,25
+SPR00392,7823,letter,John F. Kennedy,"June 19, 1961",the speaker the house representatives federal assistance for urban transportation,25
+SPR00393,11777,memorandum,John F. Kennedy,"June 22, 1961",minimum wage rates for government employees,25
+SPR00394,11778,memorandum,John F. Kennedy,"June 22, 1961",employee management relations the federal service,25
+SPR00395,7822,letter,John F. Kennedy,"June 24, 1961",the vice president the need for developing operational communications satellites,25
+SPR00396,3471,executive_order,John F. Kennedy,"June 26, 1961",creating board inquiry report labor dispute affecting the maritime,25
+SPR00397,7821,letter,John F. Kennedy,"June 26, 1961",the president the senate and the speaker the house transmitting bill saline water,25
+SPR00398,3470,executive_order,John F. Kennedy,"June 27, 1961",designating the secretary the interior the representative the,25
+SPR00399,11776,memorandum,John F. Kennedy,"June 28, 1961",the united fund and community chest campaigns,25
+SPR00400,7820,letter,John F. Kennedy,"June 29, 1961",the president the senate and the speaker the house proposing the establishment 1,25
+SPR00401,3468,executive_order,John F. Kennedy,"July 01, 1961",creating emergency board investigate dispute between the southern,25
+SPR00402,7819,letter,John F. Kennedy,"July 03, 1961",the attorney general directing him petition for injunction the maritime strike,25
+SPR00403,7818,letter,John F. Kennedy,"July 06, 1961",president nkrumah ghana concerning the volta river authority,25
+SPR00404,7817,letter,John F. Kennedy,"July 08, 1961",adolf berle receiving final report the presidents task force latin america,25
+SPR00405,7815,letter,John F. Kennedy,"July 15, 1961",the president the senate and the speaker the house concerning local self government,25
+SPR00406,7813,letter,John F. Kennedy,"July 18, 1961",the president the senate and the speaker the house relating the research functions,25
+SPR00407,7814,letter,John F. Kennedy,"July 18, 1961",the president the senate and the speaker the house concerning the need for,25
+SPR00408,14556,proclamation,John F. Kennedy,"July 20, 1961",fire prevention week 1961,25
+SPR00409,7812,letter,John F. Kennedy,"July 21, 1961",the president the senate and the speaker the house proposing reorganization and,25
+SPR00410,7811,letter,John F. Kennedy,"July 25, 1961",the chairmen the senate and house committees agriculture urging approval wheat and,25
+SPR00411,14554,proclamation,John F. Kennedy,"July 26, 1961",winema national forest oregon,25
+SPR00412,7810,letter,John F. Kennedy,"July 27, 1961",telegram the leader the italian mount mckinley expedition,25
+SPR00413,3465,executive_order,John F. Kennedy,"July 31, 1961",administration assistance the development latin america and the,25
+SPR00414,14553,proclamation,John F. Kennedy,"August 01, 1961",national employ the physically handicapped week 1961,25
+SPR00415,7809,letter,John F. Kennedy,"August 02, 1961",secretary hodges requesting recommendations for dealing with the problems the,25
+SPR00416,7808,letter,John F. Kennedy,"August 04, 1961",telegrams commendation following the capture high jackers jet airliner el paso texas,25
+SPR00417,7807,letter,John F. Kennedy,"August 06, 1961",the director bureau the budget concerning contracts with private enterprises for,25
+SPR00418,3464,executive_order,John F. Kennedy,"August 10, 1961",assigning authority with respect ordering persons and units the,25
+SPR00419,7806,letter,John F. Kennedy,"August 11, 1961",the president the seneca nation indians concerning the kinzua dam the allegheny,25
+SPR00420,3461,executive_order,John F. Kennedy,"August 17, 1961",authorizing the appointment mr maurice l kowal competitive position,25
+SPR00421,7805,letter,John F. Kennedy,"August 17, 1961",secretary goldberg concerning the 25th anniversary the first unemployment insurance,25
+SPR00422,3458,executive_order,John F. Kennedy,"August 23, 1961",inspection tax returns the advisory commission intergovernmental,25
+SPR00423,14551,proclamation,John F. Kennedy,"August 25, 1961",centennial the establishment the national system land grant universities,25
+SPR00424,7804,letter,John F. Kennedy,"August 28, 1961",commendation following the settlement dispute between the metropolitan opera,25
+SPR00425,7803,letter,John F. Kennedy,"August 31, 1961",representative harris pending legislation relating the federal trade commission,25
+SPR00426,3457,executive_order,John F. Kennedy,"September 01, 1961",creating emergency board investigate disputes between the pullman,25
+SPR00427,7802,letter,John F. Kennedy,"September 01, 1961",the chairman senate special committee aging concerning health insurance legislation,25
+SPR00428,7801,letter,John F. Kennedy,"September 05, 1961",telegram labor and management leaders urging just settlement the general motors,25
+SPR00429,7799,letter,John F. Kennedy,"September 07, 1961",leaders the steel industry the need for price stability,25
+SPR00430,7800,letter,John F. Kennedy,"September 07, 1961",the secretary state and the heads other agencies concerning the publication us,25
+SPR00431,7798,letter,John F. Kennedy,"September 13, 1961",the chairman atomic energy commission concerning the dedication the brookhaven,25
+SPR00432,7796,letter,John F. Kennedy,"September 14, 1961",the president united steelworkers america the importance price stability,25
+SPR00433,7797,letter,John F. Kennedy,"September 14, 1961",the presidents indonesia and mali concerning the message and declaration the,25
+SPR00434,7795,letter,John F. Kennedy,"September 21, 1961",the president the senate and the speaker the house transmitting national forests,25
+SPR00435,7794,letter,John F. Kennedy,"September 22, 1961",the chairman railroad retirement board the financial condition the railroad,25
+SPR00436,7793,letter,John F. Kennedy,"September 27, 1961",letters the vice president relating his trip sweden attend the funeral dag hammarskjold,25
+SPR00437,14541,proclamation,John F. Kennedy,"October 02, 1961",veterans day 1961,25
+SPR00438,11775,memorandum,John F. Kennedy,"October 03, 1961",disapproval bill relating longevity step increases for postal employees,25
+SPR00439,3455,executive_order,John F. Kennedy,"October 05, 1961",creating emergency board investigate dispute between the trans world,25
+SPR00440,7792,letter,John F. Kennedy,"October 05, 1961",letters mayor wagner and robert moses concerning the new york worlds fair,25
+SPR00441,7790,letter,John F. Kennedy,"October 06, 1961",commendation john j mccloy adviser the president disarmament,25
+SPR00442,7791,letter,John F. Kennedy,"October 06, 1961",the members the committee civil defense the governors conference,25
+SPR00443,3453,executive_order,John F. Kennedy,"October 10, 1961",administration palmyra island,25
+SPR00444,3454,executive_order,John F. Kennedy,"October 10, 1961",inspection income excess profits estate and gift tax returns the,25
+SPR00445,3451,executive_order,John F. Kennedy,"October 11, 1961",creating emergency board investigate dispute between the reading,25
+SPR00446,7789,letter,John F. Kennedy,"October 11, 1961",telegram commending the afl cio campaign for the eleanor roosevelt cancer foundation,25
+SPR00447,11774,memorandum,John F. Kennedy,"October 18, 1961",implementing the international textile agreement,25
+SPR00448,7788,letter,John F. Kennedy,"October 24, 1961",pablo casals inviting him give concert the white house,25
+SPR00449,7786,letter,John F. Kennedy,"October 26, 1961",henry b gonzalez support his candidacy texas,25
+SPR00450,7787,letter,John F. Kennedy,"October 26, 1961",president ngo dinh diem the sixth anniversary the republic viet nam,25
+SPR00451,3449,executive_order,John F. Kennedy,"November 01, 1961",creating emergency board investigate dispute between trans world,25
+SPR00452,7785,letter,John F. Kennedy,"November 01, 1961",prime minister ikeda japan suggesting exchange information the problem mental,25
+SPR00453,3448,executive_order,John F. Kennedy,"November 03, 1961",administration foreign assistance and related functions,25
+SPR00454,7784,letter,John F. Kennedy,"November 07, 1961",telegram chairman brezhnev the anniversary the november revolution russia,25
+SPR00455,3446,executive_order,John F. Kennedy,"November 08, 1961",establishing the presidents commission campaign costs,25
+SPR00456,7783,letter,John F. Kennedy,"November 08, 1961",telegram constantine caramanlis following his reappointment prime minister greece,25
+SPR00457,3445,executive_order,John F. Kennedy,"November 10, 1961",creating emergency board investigate dispute between pan american,25
+SPR00458,11773,memorandum,John F. Kennedy,"November 14, 1961",the need for greater coordination regional and field activities the government,25
+SPR00459,3444,executive_order,John F. Kennedy,"November 15, 1961",suspension the eight hour law laborers and mechanics employed the,25
+SPR00460,7782,letter,John F. Kennedy,"November 15, 1961",president chiari panama concerning the canal,25
+SPR00461,14538,proclamation,John F. Kennedy,"November 15, 1961",enlarging the saguaro national monument arizona,25
+SPR00462,7781,letter,John F. Kennedy,"November 21, 1961",the chairman us tariff commission requesting investigation cotton imports,25
+SPR00463,7780,letter,John F. Kennedy,"November 28, 1961",the secretary the treasury concerning monetary silver,25
+SPR00464,7779,letter,John F. Kennedy,"December 01, 1961",secretary ribicoff concerning the role the federal government the field mental,25
+SPR00465,14537,proclamation,John F. Kennedy,"December 01, 1961",determination cuban sugar quota supplement the quota established,25
+SPR00466,3440,executive_order,John F. Kennedy,"December 14, 1961",establishing the presidents commission the status women,25
+SPR00467,7778,letter,John F. Kennedy,"December 14, 1961",governor rockefeller civil defense,25
+SPR00468,3439,executive_order,John F. Kennedy,"December 25, 1961",administration the act september 26 1961 relating evacuation,25
+SPR00469,3438,executive_order,John F. Kennedy,"December 28, 1961",inspection income excess profits estate and gift tax returns the,25
+SPR00470,14534,proclamation,John F. Kennedy,"December 28, 1961",establishing the buck island reef national monument the virgin islands,25
+SPR00471,7777,letter,John F. Kennedy,"January 16, 1962",the president the senate and the speaker the house reorganization the department,25
+SPR00472,14532,proclamation,John F. Kennedy,"January 16, 1962",law day usa 1962,25
+SPR00473,3432,executive_order,John F. Kennedy,"January 17, 1962",employee management cooperation the federal service,25
+SPR00474,3433,executive_order,John F. Kennedy,"January 17, 1962",agency systems for appeals from adverse actions,25
+SPR00475,7776,letter,John F. Kennedy,"January 22, 1962",exchange letters with ronald ngala following us disaster assistance kenya,25
+SPR00476,7775,letter,John F. Kennedy,"February 02, 1962",the president the senate and the speaker the house transmitting bill authorize us,25
+SPR00477,14530,proclamation,John F. Kennedy,"February 03, 1962",embargo all trade with cuba,25
+SPR00478,14529,proclamation,John F. Kennedy,"February 05, 1962",imports shmurah wheat flour for religious purposes,25
+SPR00479,7774,letter,John F. Kennedy,"February 07, 1962",the president the senate and the speaker the house transmitting communications,25
+SPR00480,3427,executive_order,John F. Kennedy,"February 09, 1962",redefining the boundaries the caribbean national forest puerto rico,25
+SPR00481,3428,executive_order,John F. Kennedy,"February 09, 1962",consolidating the hiawatha and marquette national forests michigan,25
+SPR00482,3415,executive_order,John F. Kennedy,"February 16, 1962",assigning emergency preparedness functions the secretary commerce,25
+SPR00483,3416,executive_order,John F. Kennedy,"February 16, 1962",assigning emergency preparedness functions the secretary labor,25
+SPR00484,3417,executive_order,John F. Kennedy,"February 16, 1962",assigning emergency preparedness functions the secretary agriculture,25
+SPR00485,3418,executive_order,John F. Kennedy,"February 16, 1962",assigning certain emergency preparedness functions the housing and,25
+SPR00486,3419,executive_order,John F. Kennedy,"February 16, 1962",assigning emergency preparedness functions the secretary the,25
+SPR00487,3420,executive_order,John F. Kennedy,"February 16, 1962",assigning emergency preparedness functions the administrator the,25
+SPR00488,3422,executive_order,John F. Kennedy,"February 16, 1962",assigning emergency preparedness functions the postmaster general,25
+SPR00489,3423,executive_order,John F. Kennedy,"February 16, 1962",assigning emergency preparedness functions the interstate commerce,25
+SPR00490,3425,executive_order,John F. Kennedy,"February 16, 1962",assigning emergency preparedness functions the secretary health,25
+SPR00491,7773,letter,John F. Kennedy,"February 19, 1962",the president the senate and the speaker the house transmitting proposed stand,25
+SPR00492,3414,executive_order,John F. Kennedy,"February 22, 1962",creating emergency board investigate dispute between eastern air,25
+SPR00493,3413,executive_order,John F. Kennedy,"February 26, 1962",prescribing regulations for the formation and use advisory,25
+SPR00494,7772,letter,John F. Kennedy,"February 26, 1962",the president the senate and the speaker the house transmitting bill continue and,25
+SPR00495,14526,proclamation,John F. Kennedy,"February 26, 1962",national farm safety week 1962,25
+SPR00496,3412,executive_order,John F. Kennedy,"March 03, 1962",creating emergency board investigate dispute between the akron,25
+SPR00497,7771,letter,John F. Kennedy,"March 05, 1962",the president the senate and the speaker the house proposing amend the small,25
+SPR00498,7770,letter,John F. Kennedy,"March 12, 1962",the president the senate and the speaker the house the unemployment compensation,25
+SPR00499,7769,letter,John F. Kennedy,"March 14, 1962",secretary rusk the opening the geneva disarmament conference,25
+SPR00500,7768,letter,John F. Kennedy,"March 19, 1962",the chairmen senate finance and house ways and means committees concerning tariff,25
+SPR00501,14522,proclamation,John F. Kennedy,"March 19, 1962",modification trade agreement concession and adjustment duty certain,25
+SPR00502,14523,proclamation,John F. Kennedy,"March 19, 1962",modification trade agreement concessions and adjustment duties cylinder,25
+SPR00503,3409,executive_order,John F. Kennedy,"March 20, 1962",creating emergency board investigate dispute between the trans world,25

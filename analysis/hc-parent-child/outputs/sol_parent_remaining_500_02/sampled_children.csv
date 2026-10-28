@@ -1,0 +1,501 @@
+case_id,document_id,document_type,president,date,title,candidate_count
+SPR00004,8414,letter,Harry S Truman,"April 20, 1951",the chairman science advisory committee,25
+SPR00005,4189,executive_order,Harry S Truman,"April 23, 1951",transferring certain lands from the department agriculture the,25
+SPR00006,15055,proclamation,Harry S Truman,"April 26, 1951",mothers day 1951,25
+SPR00007,4184,executive_order,Harry S Truman,"April 27, 1951",making certain changes the customs field organization,25
+SPR00008,4185,executive_order,Harry S Truman,"April 27, 1951",exemption howell cone from compulsory retirement for age,25
+SPR00009,4186,executive_order,Harry S Truman,"April 27, 1951",regulations governing the separation from the service certain women,25
+SPR00010,15053,proclamation,Harry S Truman,"April 27, 1951",enlarging the lava beds national monument california,25
+SPR00011,4182,executive_order,Harry S Truman,"April 28, 1951",amending executive order no 9835 entitled prescribing procedures for,25
+SPR00012,8413,letter,Harry S Truman,"April 30, 1951",the speaker transmitting the budget for the military functions the department,25
+SPR00013,4181,executive_order,Harry S Truman,"May 08, 1951",prescribing regulations governing the exercise the federal civil,25
+SPR00014,8412,letter,Harry S Truman,"May 10, 1951",the president the senate and the speaker the house recommending legislation,25
+SPR00015,8411,letter,Harry S Truman,"May 11, 1951",the chairman board foreign scholarships the fulbright program,25
+SPR00016,8410,letter,Harry S Truman,"May 12, 1951",the chairman committee the judiciary the commission internal security and,25
+SPR00017,4178,executive_order,Harry S Truman,"May 17, 1951",designating the secretary state and the attorney general the,25
+SPR00018,4179,executive_order,Harry S Truman,"May 17, 1951",establishing commission for the commemoration the one hundred and,25
+SPR00019,4177,executive_order,Harry S Truman,"May 18, 1951",transferring the use possession and control certain land from the,25
+SPR00020,8409,letter,Harry S Truman,"May 21, 1951",the chairman democratic national committee the midwest conference and the western,25
+SPR00021,8408,letter,Harry S Truman,"May 22, 1951",senator maybank the limitation public housing the appropriations bill,25
+SPR00022,8407,letter,Harry S Truman,"May 23, 1951",judge learned hand his retirement from active service,25
+SPR00023,4176,executive_order,Harry S Truman,"May 29, 1951",suspending the limitations upon punishments for violations articles,25
+SPR00024,4175,executive_order,Harry S Truman,"June 02, 1951",transfer certain lands from the sacramento california land district,25
+SPR00025,15049,proclamation,Harry S Truman,"June 02, 1951",carrying out the torquay protocol the general agreement tariffs and,25
+SPR00026,4174,executive_order,Harry S Truman,"June 04, 1951",prescribing regulations with respect foreign service reporting,25
+SPR00027,4173,executive_order,Harry S Truman,"June 05, 1951",providing for the performance certain functions the president the,25
+SPR00028,15048,proclamation,Harry S Truman,"June 07, 1951",flag day 1951,25
+SPR00029,4171,executive_order,Harry S Truman,"June 09, 1951",attaching the canal zone the internal revenue collection district,25
+SPR00030,8406,letter,Harry S Truman,"June 09, 1951",the director bureau the budget the utilization manpower the federal government,25
+SPR00031,4170,executive_order,Harry S Truman,"June 11, 1951",providing for the improvement the work federal executive agencies,25
+SPR00032,8405,letter,Harry S Truman,"June 11, 1951",senator hayden the effect certain house amendments hydroelectric power policy,25
+SPR00033,4169,executive_order,Harry S Truman,"June 15, 1951",terminating the philippine alien property administration and,25
+SPR00034,8404,letter,Harry S Truman,"June 16, 1951",response report the national historical publications commission,25
+SPR00035,15047,proclamation,Harry S Truman,"June 19, 1951",activation and operation vessels for transportation supplies under,25
+SPR00036,28,memorandum,Harry S Truman,"June 20, 1951",establishing the psychological strategy board,25
+SPR00037,8403,letter,Harry S Truman,"June 21, 1951",the speaker proposing accelerated civil defense program,25
+SPR00038,4168,executive_order,Harry S Truman,"June 22, 1951",further exemption claude l draper from compulsory retirement for age,25
+SPR00039,4166,executive_order,Harry S Truman,"June 23, 1951",amendment executive order 7397 june 20 1936 amended establishing the,25
+SPR00040,8402,letter,Harry S Truman,"June 23, 1951",the president the senate and the speaker the house transmitting report the national,25
+SPR00041,15046,proclamation,Harry S Truman,"June 26, 1951",enlarging the muir woods national monument california,25
+SPR00042,4162,executive_order,Harry S Truman,"June 27, 1951",designating certain agencies pursuant section 103 the renenogiation,25
+SPR00043,4163,executive_order,Harry S Truman,"June 27, 1951",delegating the secretary state the authority vested the president,25
+SPR00044,4161,executive_order,Harry S Truman,"June 28, 1951",suspension professional examinations for promotion medical dental,25
+SPR00045,15045,proclamation,Harry S Truman,"June 28, 1951",termination costa rican trade agreement proclamation,25
+SPR00046,4158,executive_order,Harry S Truman,"June 29, 1951",transfer the panama canal the waterway together with facilities and,25
+SPR00047,4159,executive_order,Harry S Truman,"June 29, 1951",transfer the administration american samoa from the secretary the,25
+SPR00048,4160,executive_order,Harry S Truman,"June 29, 1951",transfer the administration the trust territory the pacific islands,25
+SPR00049,15044,proclamation,Harry S Truman,"June 29, 1951",supplemental quota imports long staple cotton,25
+SPR00050,4157,executive_order,Harry S Truman,"June 30, 1951",suspension certain provisions the officer personnel act 1947 amended,25
+SPR00051,8401,letter,Harry S Truman,"July 02, 1951",the chairman council economic advisers response report the new england economy,25
+SPR00052,4156,executive_order,Harry S Truman,"July 03, 1951",declaring certain lands the nantahala national forest,25
+SPR00053,8400,letter,Harry S Truman,"July 04, 1951",the president the senate the continued need for effective price wage and production,25
+SPR00054,4155,executive_order,Harry S Truman,"July 05, 1951",restoring certain lands comprisings portions the fort ruger miltary,25
+SPR00055,4154,executive_order,Harry S Truman,"July 06, 1951",delegating the director defense mobilization the authority the,25
+SPR00056,4152,executive_order,Harry S Truman,"July 07, 1951",delegating the authority the president order members and units,25
+SPR00057,8399,letter,Harry S Truman,"July 09, 1951",the president the senate recommending legislation terminate the state war with,25
+SPR00058,4151,executive_order,Harry S Truman,"July 10, 1951",delegating the secretary the army the authority the president,25
+SPR00059,8398,letter,Harry S Truman,"July 12, 1951",committee chairmen the need for pay increase for federal employees,25
+SPR00060,8397,letter,Harry S Truman,"July 14, 1951",the executive secretary national security council requesting study the employee,25
+SPR00061,4150,executive_order,Harry S Truman,"July 18, 1951",exemption herbert e gaston from compulsory retirement for age,25
+SPR00062,8396,letter,Harry S Truman,"July 18, 1951",the president the senate pending bill increase public assistance payments,25
+SPR00063,8393,letter,Harry S Truman,"July 19, 1951",the president american national red cross the flood disaster areas the middle west,25
+SPR00064,8394,letter,Harry S Truman,"July 19, 1951",mrs c irving guyer the need for controlling inflation,25
+SPR00065,8395,letter,Harry S Truman,"July 19, 1951",the director office defense mobilization federal activities the flood disaster,25
+SPR00066,8392,letter,Harry S Truman,"July 23, 1951",congressional leaders transmitting the midyear economic report 3,25
+SPR00067,4148,executive_order,Harry S Truman,"July 25, 1951",inspection income excess profits declared value excess profits,25
+SPR00068,8391,letter,Harry S Truman,"July 26, 1951",the chairman wage stabilization board requesting investigation labor dispute,25
+SPR00069,8390,letter,Harry S Truman,"July 27, 1951",committee chairmen financing the united nations palestine refugee program,25
+SPR00070,8389,letter,Harry S Truman,"July 31, 1951",the chairman senate committee expenditures the executive branch pending,25
+SPR00071,15043,proclamation,Harry S Truman,"August 01, 1951",giving effect sections 5 and 11 the trade agreements extension act 1951,25
+SPR00072,8388,letter,Harry S Truman,"August 06, 1951",the president cio the flood control problem the missouri river basin,25
+SPR00073,8387,letter,Harry S Truman,"August 07, 1951",the chairman senate committee appropriations us contributions the un and other,25
+SPR00074,8386,letter,Harry S Truman,"August 08, 1951",the chairman senate committee appropriations the budget requests for flood control,25
+SPR00075,4145,executive_order,Harry S Truman,"August 09, 1951",withdrawing from appropriation the phosphate reserved the united,25
+SPR00076,8385,letter,Harry S Truman,"August 09, 1951",the president the senate and the speaker the house the international childrens,25
+SPR00077,11963,memorandum,Harry S Truman,"August 10, 1951",and statement policy the need for industrial dispersion,25
+SPR00078,15040,proclamation,Harry S Truman,"August 16, 1951",registration canal zone,25
+SPR00079,15041,proclamation,Harry S Truman,"August 16, 1951",registration guam,25
+SPR00080,15038,proclamation,Harry S Truman,"August 23, 1951",columbus day 1951,25
+SPR00081,8384,letter,Harry S Truman,"August 24, 1951",the chairman senate committee finance support narcotics control bill,25
+SPR00082,8383,letter,Harry S Truman,"August 27, 1951",the chairman wage stabilization board requesting investigation strike the copper,25
+SPR00083,8382,letter,Harry S Truman,"August 28, 1951",the president national farmers union the taxation cooperatives,25
+SPR00084,4141,executive_order,Harry S Truman,"August 29, 1951",suspension the eight hour law laborers and mechanics employed the,25
+SPR00085,4140,executive_order,Harry S Truman,"August 30, 1951",creating board inquiry report certain labor disputes affecting the,25
+SPR00086,8381,letter,Harry S Truman,"August 30, 1951",greeting the president the philippines upon his arrival washington national airport,25
+SPR00087,15035,proclamation,Harry S Truman,"August 31, 1951",clothes for korea,25
+SPR00088,4139,executive_order,Harry S Truman,"September 01, 1951",extension time relating the disposition certain housing,25
+SPR00089,8380,letter,Harry S Truman,"September 04, 1951",telegram the attorney general authorizing him issue injunction the copper industry strike,25
+SPR00090,4137,executive_order,Harry S Truman,"September 06, 1951",creating emergency board investigate dispute between the pullman,25
+SPR00091,4138,executive_order,Harry S Truman,"September 06, 1951",revoking executive order no 8304 january 14 1939 and abolishing the,25
+SPR00092,8379,letter,Harry S Truman,"September 12, 1951",accepting resignation general george c marshall secretary defense,25
+SPR00093,4134,executive_order,Harry S Truman,"September 17, 1951",providing for the performance certain functions the president the,25
+SPR00094,15033,proclamation,Harry S Truman,"September 18, 1951",audubon centennial year,25
+SPR00095,8378,letter,Harry S Truman,"September 20, 1951",the president the senate the need for additional tax revenue,25
+SPR00096,8377,letter,Harry S Truman,"September 23, 1951",the vice president transmitting correspondence from henry wallace relating his trip,25
+SPR00097,4133,executive_order,Harry S Truman,"September 24, 1951",prescribing regulations establishing minimum standards for the,25
+SPR00098,4131,executive_order,Harry S Truman,"September 25, 1951",establishing airspace reservation over the savannah river plant the,25
+SPR00099,11962,memorandum,Harry S Truman,"September 25, 1951",the executive order prescribing regulations for classifying and protecting,25
+SPR00100,4129,executive_order,Harry S Truman,"September 28, 1951",designating additional agencies pursuant section 103a the,25
+SPR00101,4127,executive_order,Harry S Truman,"October 02, 1951",providing for the performance certain defense housing and community,25
+SPR00102,15032,proclamation,Harry S Truman,"October 04, 1951",terminating the peruvian trade agreement proclamation and supplementing,25
+SPR00103,4126,executive_order,Harry S Truman,"October 09, 1951",providing for telecommunications advisor the president,25
+SPR00104,15031,proclamation,Harry S Truman,"October 11, 1951",world metallurgical congress,25
+SPR00105,8376,letter,Harry S Truman,"October 12, 1951",letters the chairman the wage stabilization board authorizing investigations labor,25
+SPR00106,15030,proclamation,Harry S Truman,"October 12, 1951",merchandise general order and bonded warehouses,25
+SPR00107,8375,letter,Harry S Truman,"October 13, 1951",the president the senate requesting appropriations for the enforcement antimonopoly,25
+SPR00108,15028,proclamation,Harry S Truman,"October 24, 1951",termination the state war with germany,25
+SPR00109,8374,letter,Harry S Truman,"October 26, 1951",the chairman wage stabilization board the settlement labor dispute affecting the,25
+SPR00110,8373,letter,Harry S Truman,"October 27, 1951",the chairman commission internal security and individual rights,25
+SPR00111,4125,executive_order,Harry S Truman,"October 31, 1951",designating additional agency pursuant section 103a the,25
+SPR00112,8372,letter,Harry S Truman,"November 01, 1951",frieda b hennock her decision decline recess appointment federal judge,25
+SPR00113,4122,executive_order,Harry S Truman,"November 02, 1951",interdepartmental committee narcotics,25
+SPR00114,11960,memorandum,Harry S Truman,"November 02, 1951",disapproval bill relating the bank america national trust and savings,25
+SPR00115,11961,memorandum,Harry S Truman,"November 02, 1951",disapproval bill requiring segregation certain schools federal property,25
+SPR00116,8371,letter,Harry S Truman,"November 07, 1951",committee chairmen the decision furnish military and economic assistance yugoslavia,25
+SPR00117,4119,executive_order,Harry S Truman,"November 12, 1951",inspection income excess profits declared value excess profits,25
+SPR00118,15025,proclamation,Harry S Truman,"November 16, 1951",copyright extension finland,25
+SPR00119,4116,executive_order,Harry S Truman,"November 23, 1951",delegating the secretary state the authority the president prescribe,25
+SPR00120,4114,executive_order,Harry S Truman,"December 03, 1951",improving the means for obtaining compliance with the,25
+SPR00121,4115,executive_order,Harry S Truman,"December 03, 1951",restoring possession use and control certain lands reserved for,25
+SPR00122,4111,executive_order,Harry S Truman,"December 10, 1951",designating the honorable cecil snyder act under certain,25
+SPR00123,4112,executive_order,Harry S Truman,"December 10, 1951",suspending certain statutory provisions relating employment the,25
+SPR00124,4113,executive_order,Harry S Truman,"December 10, 1951",providing for emergency control over certain government and non,25
+SPR00125,15022,proclamation,Harry S Truman,"December 10, 1951",imposing import fee shelled and prepared almonds,25
+SPR00126,15021,proclamation,Harry S Truman,"December 12, 1951",copyright extension italy,25
+SPR00127,4109,executive_order,Harry S Truman,"December 17, 1951",creating emergency board investigate dispute between the pan,25
+SPR00128,8369,letter,Harry S Truman,"December 18, 1951",the president the associated press managing editors association the executive order,25
+SPR00129,8370,letter,Harry S Truman,"December 18, 1951",the administrator housing and home finance agency the problem employee integrity,25
+SPR00130,4108,executive_order,Harry S Truman,"December 19, 1951",exemption william e lee from compulsory retirement for age,25
+SPR00131,8368,letter,Harry S Truman,"December 22, 1951",the chairman wage stabilization board requesting investigation the labor dispute,25
+SPR00132,4106,executive_order,Harry S Truman,"December 29, 1951",inspection income excess profits declared value excess profits,25
+SPR00133,4107,executive_order,Harry S Truman,"December 29, 1951",establishing the presidents commission the health needs the nation,25
+SPR00134,4105,executive_order,Harry S Truman,"January 03, 1952",establishing the missouri basin survey commission,25
+SPR00135,4104,executive_order,Harry S Truman,"January 04, 1952",creating emergency board investigate dispute between the northwest,25
+SPR00136,15018,proclamation,Harry S Truman,"January 05, 1952",allocating tariff quota certain petroleum products under the venezuealan,25
+SPR00137,15019,proclamation,Harry S Truman,"January 05, 1952",modification trade agreement concession and adjustment the rate duty,25
+SPR00138,15017,proclamation,Harry S Truman,"January 17, 1952",addition devils hole nevada death valley national monument california,25
+SPR00139,4103,executive_order,Harry S Truman,"January 21, 1952",further exemption lawrence m lawson from compulsory retirement for,25
+SPR00140,8367,letter,Harry S Truman,"January 22, 1952",the president the senate and the speaker the house representatives urging action,25
+SPR00141,8366,letter,Harry S Truman,"January 23, 1952",eric johnston requesting him serve chairman the international development advisory,25
+SPR00142,4102,executive_order,Harry S Truman,"January 24, 1952",inspection income excess profits declared value excess profits,25
+SPR00143,8365,letter,Harry S Truman,"January 26, 1952",the chairman wage stabilization board the labor disputes the aluminum industry,25
+SPR00144,8364,letter,Harry S Truman,"January 30, 1952",admiral mccormick designating him supreme allied commander atlantic,25
+SPR00145,15016,proclamation,Harry S Truman,"January 30, 1952",inter american cultural and trade center,25
+SPR00146,15015,proclamation,Harry S Truman,"February 04, 1952",copyright extension denmark,25
+SPR00147,8362,letter,Harry S Truman,"February 05, 1952",committee chairmen determining increase defense assistance france greece turkey the,25
+SPR00148,8363,letter,Harry S Truman,"February 05, 1952",the secretary state new hampshire concerning the presidential preference primary,25
+SPR00149,4097,executive_order,Harry S Truman,"February 11, 1952",inspection income excess profits declared value excess profits,25
+SPR00150,8361,letter,Harry S Truman,"February 19, 1952",the president the senate and the speaker the house transmitting draft emergency,25
+SPR00151,4095,executive_order,Harry S Truman,"February 20, 1952",investigations relating the conduct government business,25
+SPR00152,4096,executive_order,Harry S Truman,"February 20, 1952",prescribing portion the selective service regulations,25
+SPR00153,8360,letter,Harry S Truman,"February 20, 1952",james h doolittle upon establishing the presidents airport commission,25
+SPR00154,11959,memorandum,Harry S Truman,"February 20, 1952",concerning the presidents airport commission,25
+SPR00155,15013,proclamation,Harry S Truman,"February 25, 1952",redefining the boundaries the sitka national monument alaska,25
+SPR00156,4093,executive_order,Harry S Truman,"February 29, 1952",exemption frances perkins from compulsory retirement for age,25
+SPR00157,8359,letter,Harry S Truman,"February 29, 1952",the president the senate and the speaker the house the united states contribution,25
+SPR00158,4092,executive_order,Harry S Truman,"March 04, 1952",inspection income tax returns the senate committee interior and,25
+SPR00159,8358,letter,Harry S Truman,"March 04, 1952",the chairman senate committee expenditures the executive departments urging action,25
+SPR00160,8357,letter,Harry S Truman,"March 06, 1952",the chairman wage stabilization board the labor dispute the petroleum industry,25
+SPR00161,4091,executive_order,Harry S Truman,"March 07, 1952",prescribing the order succession officers act secreetary defense,25
+SPR00162,8356,letter,Harry S Truman,"March 07, 1952",the president the senate urging action reorganization the bureau internal revenue,25
+SPR00163,11958,memorandum,Harry S Truman,"March 07, 1952",directing agency heads decline comply with request for information the chairman,25
+SPR00164,8355,letter,Harry S Truman,"March 24, 1952",committee chairmen concerning program aid fugitives from communism,25
+SPR00165,4089,executive_order,Harry S Truman,"March 26, 1952",exemption frederick c mayer from compulsroy retirement age,25
+SPR00166,8354,letter,Harry S Truman,"March 27, 1952",committee chairmen enumerating continuing powers functions and responsibilities the,25
+SPR00167,4088,executive_order,Harry S Truman,"March 28, 1952",designating the provisional intergovernmental committee for the,25
+SPR00168,8353,letter,Harry S Truman,"March 30, 1952",accepting resignation charles e wilson director defense mobilization,25
+SPR00169,8352,letter,Harry S Truman,"April 03, 1952",secretary acheson requests for information the administration the loyalty security,25
+SPR00170,4085,executive_order,Harry S Truman,"April 04, 1952",coordination procedures under section 507 the mutual security act,25
+SPR00171,8351,letter,Harry S Truman,"April 07, 1952",the president the senate and the speaker the house urging prompt action the,25
+SPR00172,4082,executive_order,Harry S Truman,"April 08, 1952",directing the secretary commerce take possession and operate the,25
+SPR00173,4083,executive_order,Harry S Truman,"April 08, 1952",discontinuing the rose island and the tutuila island naval defensive,25
+SPR00174,4080,executive_order,Harry S Truman,"April 12, 1952",restoring lands the sugar loaf military reservation and right way,25
+SPR00175,4081,executive_order,Harry S Truman,"April 12, 1952",inspection tax returns committee the judiciary house representatives,25
+SPR00176,11957,memorandum,Harry S Truman,"April 12, 1952",requesting agency heads cooperate inquiry subcommittee the house committee the,25
+SPR00177,8350,letter,Harry S Truman,"April 14, 1952",the secretary commerce highway safety,25
+SPR00178,8349,letter,Harry S Truman,"April 16, 1952",the secretary defense voting servicemen,25
+SPR00179,4077,executive_order,Harry S Truman,"April 17, 1952",prescribing or amending portions the selective service regulations,25
+SPR00180,4079,executive_order,Harry S Truman,"April 17, 1952",preparation federal agencies civil defense emergency plans,25
+SPR00181,4076,executive_order,Harry S Truman,"April 18, 1952",providing for the affixing the seal the united states certain,25
+SPR00182,8348,letter,Harry S Truman,"April 19, 1952",committee chairmen the st lawrence seaway and power project,25
+SPR00183,8347,letter,Harry S Truman,"April 21, 1952",the president the senate concerning government operation the nations steel mills,25
+SPR00184,8346,letter,Harry S Truman,"April 23, 1952",committee chairmen the continuation aid the netherlands,25
+SPR00185,8344,letter,Harry S Truman,"April 25, 1952",senator maybank vacation leave privileges federal employees,25
+SPR00186,8345,letter,Harry S Truman,"April 25, 1952",senator mckdlar the need for restoring funds for flood control,25
+SPR00187,4075,executive_order,Harry S Truman,"April 26, 1952",declaring the commissioned corps the public health service be,25
+SPR00188,8343,letter,Harry S Truman,"April 27, 1952",c s jones response questions the steel situation,25
+SPR00189,8342,letter,Harry S Truman,"May 02, 1952",telegrams industry leaders and the union president calling meeting the steel strike,25
+SPR00190,8341,letter,Harry S Truman,"May 07, 1952",henry h fowler his assumption the post administrator the defense production,25
+SPR00191,8340,letter,Harry S Truman,"May 12, 1952",committee chairmen urging action bills encourage voting servicemen,25
+SPR00192,4072,executive_order,Harry S Truman,"May 15, 1952",designation certain persons for the purpose issuing provisional,25
+SPR00193,4070,executive_order,Harry S Truman,"May 21, 1952",authorizing the appointment mrs cressie e coffelt competitive,25
+SPR00194,8339,letter,Harry S Truman,"May 23, 1952",the secretary the army directing him terminate control the railroads,25
+SPR00195,11956,memorandum,Harry S Truman,"May 23, 1952",proposed bills dealing with treaties and executive agreements,25
+SPR00196,4069,executive_order,Harry S Truman,"May 26, 1952",delegating the secretary the interior the authority the president,25
+SPR00197,15001,proclamation,Harry S Truman,"May 28, 1952",flag day 1952,25
+SPR00198,8337,letter,Harry S Truman,"May 29, 1952",the president the senate proposed amendments the defense production act,25
+SPR00199,8338,letter,Harry S Truman,"May 29, 1952",senator maybank the atomic energy program,25
+SPR00200,4066,executive_order,Harry S Truman,"June 04, 1952",including certain lands the nantahala national forest,25
+SPR00201,8336,letter,Harry S Truman,"June 05, 1952",the chairman air coordinating committee transmitting report the airport commission,25
+SPR00202,4064,executive_order,Harry S Truman,"June 09, 1952",observance holidays government agencies,25
+SPR00203,8335,letter,Harry S Truman,"June 09, 1952",the chairman the senate committee banking and currency the steel strike,25
+SPR00204,4063,executive_order,Harry S Truman,"June 11, 1952",establishing the whittier defensive sea area alaska,25
+SPR00205,8334,letter,Harry S Truman,"June 11, 1952",senator russell the prison camps koje island,25
+SPR00206,11955,memorandum,Harry S Truman,"June 11, 1952",transmitting exchange correspondence between the president and senator russell,25
+SPR00207,8333,letter,Harry S Truman,"June 13, 1952",mrs elizabeth cochrane the need for increasing social security benefits,25
+SPR00208,4060,executive_order,Harry S Truman,"June 17, 1952",exemption john j deviny from compulsory retirement for age,25
+SPR00209,8332,letter,Harry S Truman,"June 20, 1952",the attorney general the sale the ss united states,25
+SPR00210,8330,letter,Harry S Truman,"June 23, 1952",response report the presidents materials policy commission,25
+SPR00211,8331,letter,Harry S Truman,"June 23, 1952",senator russell the military construction bill,25
+SPR00212,8329,letter,Harry S Truman,"June 24, 1952",committee chairmen the need for continuing aid italy,25
+SPR00213,14999,proclamation,Harry S Truman,"June 25, 1952",revocation the duty suspension lead,25
+SPR00214,4057,executive_order,Harry S Truman,"June 26, 1952",amending the selctive service regulations,25
+SPR00215,8327,letter,Harry S Truman,"June 26, 1952",the director office defense mobilization approving manpower policy for agricultural,25
+SPR00216,8328,letter,Harry S Truman,"June 26, 1952",the director selective service system deferment farm workers,25
+SPR00217,4054,executive_order,Harry S Truman,"June 30, 1952",further designation pursuant section 103 the renegotiation act 1951,25
+SPR00218,8325,letter,Harry S Truman,"July 01, 1952",the president the senate and the speaker the house transmitting report the,25
+SPR00219,8326,letter,Harry S Truman,"July 01, 1952",the president the senate and the speaker the house regarding the st lawrence seaway,25
+SPR00220,8324,letter,Harry S Truman,"July 05, 1952",the president the senate and the speaker the house appropriations for atomic energy,25
+SPR00221,4053,executive_order,Harry S Truman,"July 07, 1952",delegating certain authority the president the small defense plants,25
+SPR00222,4052,executive_order,Harry S Truman,"July 09, 1952",creating emergency board investigate dispute between the trans world,25
+SPR00223,4051,executive_order,Harry S Truman,"July 10, 1952",creating emergency board investigate dispute between the northwest,25
+SPR00224,8323,letter,Harry S Truman,"July 13, 1952",members the public advisory board for mutual security requesting study foreign,25
+SPR00225,4048,executive_order,Harry S Truman,"July 15, 1952",enlarging the nicolet and chequamegon national forests wisconsin,25
+SPR00226,4049,executive_order,Harry S Truman,"July 15, 1952",restoring lands comprising the round top military reservation and,25
+SPR00227,11954,memorandum,Harry S Truman,"July 17, 1952",disapproval bill relating employees the canal zone government and the panama,25
+SPR00228,11953,memorandum,Harry S Truman,"July 18, 1952",disapproval bill for the establishment veterans administration facility fort,25
+SPR00229,14996,proclamation,Harry S Truman,"July 18, 1952",terminating the turkish trade agreement proclamations,25
+SPR00230,8322,letter,Harry S Truman,"July 19, 1952",congressional leaders transmitting the midyear economic report 4,25
+SPR00231,11952,memorandum,Harry S Truman,"July 19, 1952",disapproval bill authorizing the postmaster general lease quarters for post,25
+SPR00232,14995,proclamation,Harry S Truman,"July 23, 1952",revocation the suspension duties zinc,25
+SPR00233,8321,letter,Harry S Truman,"July 25, 1952",committee chairmen the need for continuing aid denmark,25
+SPR00234,14994,proclamation,Harry S Truman,"July 25, 1952",citizenship day 1952,25
+SPR00235,4045,executive_order,Harry S Truman,"July 31, 1952",restoring certain land hilo hawaii the jurisdiction the territory,25
+SPR00236,4043,executive_order,Harry S Truman,"August 02, 1952",suspension the operation certain provisions the officer personnel,25
+SPR00237,4042,executive_order,Harry S Truman,"August 06, 1952",amendment executive order no 9805 prescribing regulations governing,25
+SPR00238,8320,letter,Harry S Truman,"August 08, 1952",the chairman civil service commission the administration the federal employee,25
+SPR00239,11951,memorandum,Harry S Truman,"August 08, 1952",the federal employee security programs,25
+SPR00240,4041,executive_order,Harry S Truman,"August 09, 1952",providing for the liquidation the affairs the displaced persons,25
+SPR00241,4039,executive_order,Harry S Truman,"August 11, 1952",resorting certain lands palaau molokai the jurisdiction territory,25
+SPR00242,4040,executive_order,Harry S Truman,"August 11, 1952",restoring certain land reserved connection with the hilo airport,25
+SPR00243,8318,letter,Harry S Truman,"August 13, 1952",the secretary commerce the tax benefits the shipping industry,25
+SPR00244,8319,letter,Harry S Truman,"August 13, 1952",the secretary the treasury the tax benefits the shipping industry,25
+SPR00245,8317,letter,Harry S Truman,"August 14, 1952",junius b wood the minerva clock and other antique white house furnishings,25
+SPR00246,4038,executive_order,Harry S Truman,"August 16, 1952",extension time relating the removal certain temporary housing,25
+SPR00247,4037,executive_order,Harry S Truman,"August 20, 1952",inspection files covering compromise settlements tax liability,25
+SPR00248,8316,letter,Harry S Truman,"August 20, 1952",capt charles g ewing the repatriation prisoners war korea,25
+SPR00249,4035,executive_order,Harry S Truman,"August 27, 1952",revocation executive order no 8616 december 19 1940 placing palmyra,25
+SPR00250,4033,executive_order,Harry S Truman,"August 30, 1952",restoring certain land reserved for military purposes the united,25
+SPR00251,4030,executive_order,Harry S Truman,"September 04, 1952",establishment the clemency and parole board for war criminals,25
+SPR00252,4031,executive_order,Harry S Truman,"September 04, 1952",establishing the presidents commission immigration and,25
+SPR00253,8315,letter,Harry S Truman,"September 05, 1952",henry h fowler asking him serve director office defense mobilization,25
+SPR00254,4029,executive_order,Harry S Truman,"September 08, 1952",suspending certain statutory provisions relating employment the,25
+SPR00255,8314,letter,Harry S Truman,"September 08, 1952",the chairman civil aeronautics board concerning air service between the united,25
+SPR00256,4027,executive_order,Harry S Truman,"September 18, 1952",extension time relating the disposition certain temporary housing,25
+SPR00257,14989,proclamation,Harry S Truman,"September 19, 1952",supplementary trade agreement venezuela,25
+SPR00258,8313,letter,Harry S Truman,"September 24, 1952",the secretary commerce directing him head mission survey european industrial,25
+SPR00259,4026,executive_order,Harry S Truman,"September 25, 1952",continuing effect certain appointments officers and warrant officers,25
+SPR00260,4025,executive_order,Harry S Truman,"September 26, 1952",military protection the canal zone,25
+SPR00261,4024,executive_order,Harry S Truman,"September 27, 1952",designating the surgeon general the public health service perform,25
+SPR00262,8312,letter,Harry S Truman,"September 27, 1952",the chairman federal trade commission requesting him make economic study,25
+SPR00263,14987,proclamation,Harry S Truman,"September 27, 1952",imposing import fees shelled and prepared almonds,25
+SPR00264,14986,proclamation,Harry S Truman,"October 13, 1952",korea suspension tonnage duties,25
+SPR00265,4022,executive_order,Harry S Truman,"October 14, 1952",prescribing the procedures for periocic review escape clause,25
+SPR00266,14985,proclamation,Harry S Truman,"October 15, 1952",copyright principality monaco,25
+SPR00267,14984,proclamation,Harry S Truman,"October 24, 1952",armistice day 1952,25
+SPR00268,8311,letter,Harry S Truman,"October 25, 1952",observance the 34th anniversary the independence czechoslovakia,25
+SPR00269,4021,executive_order,Harry S Truman,"October 30, 1952",enforcement the convention for safety life sea 1948,25
+SPR00270,4019,executive_order,Harry S Truman,"November 05, 1952",resorting certain land reserved for military purposes the territory,25
+SPR00271,4020,executive_order,Harry S Truman,"November 05, 1952",reserving certain lands comprising part the fort missoula military,25
+SPR00272,8310,letter,Harry S Truman,"November 05, 1952",telegram the president elect,25
+SPR00273,14983,proclamation,Harry S Truman,"November 05, 1952",establishment the coronado national memorial arizona,25
+SPR00274,4016,executive_order,Harry S Truman,"November 06, 1952",exemption theodore marks from cumpulsory retirement for age,25
+SPR00275,4017,executive_order,Harry S Truman,"November 06, 1952",withholding state or territorial income taxes federal agencies,25
+SPR00276,4018,executive_order,Harry S Truman,"November 06, 1952",creating emergency board investigate dispute between the united air,25
+SPR00277,4014,executive_order,Harry S Truman,"November 12, 1952",award the purle heart persons serving with the navy marine corps or,25
+SPR00278,8309,letter,Harry S Truman,"November 12, 1952",directing the air coordinating committee make plans for observing the 50th,25
+SPR00279,4012,executive_order,Harry S Truman,"November 14, 1952",restoring certain lands comprising parts the aiea military,25
+SPR00280,4013,executive_order,Harry S Truman,"November 14, 1952",specification laws from which the escapee program administered the,25
+SPR00281,4011,executive_order,Harry S Truman,"November 15, 1952",inspection returns senate committee the judiciary,25
+SPR00282,14981,proclamation,Harry S Truman,"November 15, 1952",granting certain land the city eastport maine for public use,25
+SPR00283,4010,executive_order,Harry S Truman,"November 17, 1952",restoring kure ocean island the jurisdiction the territory hawaii,25
+SPR00284,4009,executive_order,Harry S Truman,"November 25, 1952",restoring land the upolu point military reservation the jurisdiciton,25
+SPR00285,8308,letter,Harry S Truman,"November 25, 1952",the chairman civil service commission the need for maintaining rosters former,25
+SPR00286,14979,proclamation,Harry S Truman,"December 01, 1952",united nations human rights day 1952,25
+SPR00287,4006,executive_order,Harry S Truman,"December 03, 1952",creating board inquiry report labor dispute affecting the,25
+SPR00288,8307,letter,Harry S Truman,"December 04, 1952",the administrator economic stabilization agency the new wage agreement the coal,25
+SPR00289,4004,executive_order,Harry S Truman,"December 06, 1952",executive order 10417 excusing federal employees from duty friday december 26 1952,25
+SPR00290,4003,executive_order,Harry S Truman,"December 11, 1952",restoring the posssession use and control certain land the territory,25
+SPR00291,8306,letter,Harry S Truman,"December 13, 1952",the administrator economic stabilization agency the wage stabilization board,25
+SPR00292,8305,letter,Harry S Truman,"December 16, 1952",michael v disalle his appointment administrator economic stabilization agency,25
+SPR00293,8304,letter,Harry S Truman,"December 22, 1952",the chairman national security resources board concerning the report the presidents,25
+SPR00294,14977,proclamation,Harry S Truman,"December 24, 1952",granting pardon certain persons who have served the armed forces the,25
+SPR00295,14978,proclamation,Harry S Truman,"December 24, 1952",granting amnesty and pardon certain persons convicted court martial,25
+SPR00296,8303,letter,Harry S Truman,"December 29, 1952",stephen j spingarn ethics government,25
+SPR00297,8302,letter,Harry S Truman,"December 30, 1952",committee chairmen the need for continuing aid the united kingdom france and italy,25
+SPR00298,4001,executive_order,Harry S Truman,"December 31, 1952",providing for the physical security facilities important the,25
+SPR00299,14976,proclamation,Harry S Truman,"December 31, 1952",extending the period for the establishment adequate shipping service for,25
+SPR00300,8301,letter,Harry S Truman,"January 02, 1953",recommending living expense deductions for the president vice president and speaker,25
+SPR00301,11950,memorandum,Harry S Truman,"January 03, 1953",the secretary states recommendation the case john carter vincent,25
+SPR00302,8300,letter,Harry S Truman,"January 05, 1953",response the latest reports from the bureau the census,25
+SPR00303,14975,proclamation,Harry S Truman,"January 06, 1953",enlarging the olympic national park washington,25
+SPR00304,4000,executive_order,Harry S Truman,"January 09, 1953",prescribing procedures for making available the secretary general,25
+SPR00305,8298,letter,Harry S Truman,"January 09, 1953",accepting resignation robert lovett secretary defense,25
+SPR00306,8299,letter,Harry S Truman,"January 09, 1953",the president elect forwarding draft order establishing special personnel,25
+SPR00307,8297,letter,Harry S Truman,"January 12, 1953",the attorney general the grand jury investigation the international oil cartels,25
+SPR00308,8295,letter,Harry S Truman,"January 13, 1953",accepting resignation charles sawyer secretary commerce,25
+SPR00309,8296,letter,Harry S Truman,"January 13, 1953",response report the chairman national security resources board,25
+SPR00310,3999,executive_order,Harry S Truman,"January 14, 1953",conferring competitive civil service status upon william p francisco,25
+SPR00311,3998,executive_order,Harry S Truman,"January 15, 1953",authorizing competitive status for norman e prince wthout compliance,25
+SPR00312,3997,executive_order,Harry S Truman,"January 16, 1953",setting aside submerged lands the continental shelf naval petroleum,25
+SPR00313,8288,letter,Harry S Truman,"January 16, 1953",accepting resignation james p mcgranery the attorney general,25
+SPR00314,8289,letter,Harry S Truman,"January 16, 1953",accepting resignation oscar chapman secretary the interior,25
+SPR00315,8290,letter,Harry S Truman,"January 16, 1953",accepting resignation john w snyder secretary the treasury,25
+SPR00316,8291,letter,Harry S Truman,"January 16, 1953",accepting resignation jesse m donaldson postmaster general,25
+SPR00317,8292,letter,Harry S Truman,"January 16, 1953",accepting resignation dean acheson secretary state,25
+SPR00318,8293,letter,Harry S Truman,"January 16, 1953",accepting resignation maurice j tobin secretary labor,25
+SPR00319,8294,letter,Harry S Truman,"January 16, 1953",accepting resignation charles f brannan secretary agriculture,25
+SPR00320,3992,executive_order,Harry S Truman,"January 17, 1953",authorizing the appointment mrs beth campbell short the competitive,25
+SPR00321,3993,executive_order,Harry S Truman,"January 17, 1953",amendment executive order no 10179 november 8 1950 establishing the,25
+SPR00322,3994,executive_order,Harry S Truman,"January 17, 1953",delegating the secretary defense the authority the president empower,25
+SPR00323,11949,memorandum,Harry S Truman,"January 17, 1953",concerning the organization the george c marshall research foundation inc,25
+SPR00324,8287,letter,Harry S Truman,"January 19, 1953",the president elect transmitting report the presidents committee government,25
+SPR00325,8286,letter,Harry S Truman,"January 20, 1953",the president american federation government employees the 70th anniversary the,25
+SPR00326,3990,executive_order,Dwight D. Eisenhower,"January 24, 1953",establishing the presidents advisory committee government,25
+SPR00327,8285,letter,Dwight D. Eisenhower,"January 29, 1953",the president the american national red cross accepting the position honorary,25
+SPR00328,11948,memorandum,Dwight D. Eisenhower,"January 29, 1953",the red cross campaign 1,25
+SPR00329,3987,executive_order,Dwight D. Eisenhower,"February 06, 1953",inspection income excess profits declared value excess profits,25
+SPR00330,3988,executive_order,Dwight D. Eisenhower,"February 06, 1953",suspension wage and salary controls under the defense production act,25
+SPR00331,8284,letter,Dwight D. Eisenhower,"February 16, 1953",colonel c m boyer executive director reserve officers association concerning,25
+SPR00332,8283,letter,Dwight D. Eisenhower,"February 17, 1953",james w cothran commander chief veterans foreign wars,25
+SPR00333,3985,executive_order,Dwight D. Eisenhower,"February 20, 1953",reserving kahoolawe island territory hawaii for the use the united,25
+SPR00334,3986,executive_order,Dwight D. Eisenhower,"February 20, 1953",designating the honorable benjamin ortiz act under certain,25
+SPR00335,8282,letter,Dwight D. Eisenhower,"February 20, 1953",the president the senate and the speaker the house representatives transmitting 7,25
+SPR00336,14971,proclamation,Dwight D. Eisenhower,"March 02, 1953",supplementing proclamation no 2761a december 16 1947 with respect,25
+SPR00337,8281,letter,Dwight D. Eisenhower,"March 06, 1953",horace m albright concerning mid century conference resources,25
+SPR00338,3983,executive_order,Dwight D. Eisenhower,"March 19, 1953",amendment executive order no 10163 september 25 1950 establishing,25
+SPR00339,11947,memorandum,Dwight D. Eisenhower,"March 25, 1953",concerning segregation schools army posts,25
+SPR00340,3980,executive_order,Dwight D. Eisenhower,"March 31, 1953",inspection income excess profits declared value excess profits,25
+SPR00341,3981,executive_order,Dwight D. Eisenhower,"March 31, 1953",continuing effect certain appointments officers and warrant officers,25
+SPR00342,3979,executive_order,Dwight D. Eisenhower,"April 07, 1953",suspension the eight hour law laborers and mechanics employed the,25
+SPR00343,3977,executive_order,Dwight D. Eisenhower,"April 10, 1953",reserving certain lands acquired under title iii the bankhead jones,25
+SPR00344,3978,executive_order,Dwight D. Eisenhower,"April 10, 1953",amendment executive order no 8809 june 28 1941 establishing the good,25
+SPR00345,8280,letter,Dwight D. Eisenhower,"April 11, 1953",the governors the states inviting them conference the white house,25
+SPR00346,3975,executive_order,Dwight D. Eisenhower,"April 22, 1953",inspection returns senate committee the judiciary,25
+SPR00347,8279,letter,Dwight D. Eisenhower,"April 22, 1953",the president the senate and the speaker the house representatives recommending 0,25
+SPR00348,8278,letter,Dwight D. Eisenhower,"April 23, 1953",exchange letters between the president and queen juliana the netherlands concerning,25
+SPR00349,11946,memorandum,Dwight D. Eisenhower,"April 23, 1953",payment for unused leave persons appointed the president,25
+SPR00350,3973,executive_order,Dwight D. Eisenhower,"April 24, 1953",creating emergency board investigate dispute between the new york,25
+SPR00351,8276,letter,Dwight D. Eisenhower,"April 24, 1953",senator anderson concerning the submerged lands bill,25
+SPR00352,8277,letter,Dwight D. Eisenhower,"April 24, 1953",the chairman senate committee foreign relations concerning the st lawrence seaway,25
+SPR00353,3972,executive_order,Dwight D. Eisenhower,"April 27, 1953",security requirements for government employment,25
+SPR00354,3971,executive_order,Dwight D. Eisenhower,"April 28, 1953",inspection certain returns the committee the judiciary house,25
+SPR00355,11945,memorandum,Dwight D. Eisenhower,"April 28, 1953",convening the presidents conference administrative procedure,25
+SPR00356,3970,executive_order,Dwight D. Eisenhower,"May 01, 1953",providing for the performance the chairman the civil service,25
+SPR00357,8275,letter,Dwight D. Eisenhower,"May 02, 1953",the president the senate and the speaker the house representatives recommending,25
+SPR00358,8270,letter,Dwight D. Eisenhower,"May 12, 1953",the chairman north atlantic council requesting the release general ridgway supreme,25
+SPR00359,8271,letter,Dwight D. Eisenhower,"May 12, 1953",general ridgway supreme allied commander europe regarding his nomination chief,25
+SPR00360,8272,letter,Dwight D. Eisenhower,"May 12, 1953",general gruenther regarding his nomination supreme allied commander europe,25
+SPR00361,8273,letter,Dwight D. Eisenhower,"May 12, 1953",admiral carney regarding his nomination chief naval operations,25
+SPR00362,8274,letter,Dwight D. Eisenhower,"May 12, 1953",general ridgway his service supreme allied commander europe,25
+SPR00363,3969,executive_order,Dwight D. Eisenhower,"May 18, 1953",restoring certain lands the schofield barracks military reservation,25
+SPR00364,3967,executive_order,Dwight D. Eisenhower,"May 22, 1953",inspection income excess profits declared value excess profits,25
+SPR00365,3965,executive_order,Dwight D. Eisenhower,"May 27, 1953",delegating secretary defense and the director defense mobilization,25
+SPR00366,3966,executive_order,Dwight D. Eisenhower,"May 27, 1953",designating the department justice defense agency for certain,25
+SPR00367,11944,memorandum,Dwight D. Eisenhower,"June 01, 1953",the organization the executive branch for the conduct foreign affairs,25
+SPR00368,14961,proclamation,Dwight D. Eisenhower,"June 01, 1953",flag day 1953,25
+SPR00369,14960,proclamation,Dwight D. Eisenhower,"June 06, 1953",aid korea week 1953,25
+SPR00370,8269,letter,Dwight D. Eisenhower,"June 07, 1953",president syngman rhee korea concerning acceptance the panmunjom armistice,25
+SPR00371,14959,proclamation,Dwight D. Eisenhower,"June 08, 1953",imposing quotas or fees imports certain dairy and other products,25
+SPR00372,14958,proclamation,Dwight D. Eisenhower,"June 10, 1953",imposing import quota shelled filberts,25
+SPR00373,14956,proclamation,Dwight D. Eisenhower,"June 16, 1953",determining alpha acetylmethadol and four other drugs be opiates,25
+SPR00374,8268,letter,Dwight D. Eisenhower,"June 17, 1953",chairmen senate foreign relations and house foreign affairs committees concerning,25
+SPR00375,3960,executive_order,Dwight D. Eisenhower,"June 19, 1953",delegation certain functions the president the housing and home,25
+SPR00376,11943,memorandum,Dwight D. Eisenhower,"June 22, 1953",the community chest and united fund campaigns 1,25
+SPR00377,14954,proclamation,Dwight D. Eisenhower,"June 24, 1953",adding lands the white sands national monument new mexico,25
+SPR00378,3959,executive_order,Dwight D. Eisenhower,"June 25, 1953",delegation functions the president respecting the transfer wheat,25
+SPR00379,8267,letter,Dwight D. Eisenhower,"June 26, 1953",intellectual freedom the president the american library association,25
+SPR00380,3956,executive_order,Dwight D. Eisenhower,"June 30, 1953",continuing effect certain appointments commissioned officers and,25
+SPR00381,3957,executive_order,Dwight D. Eisenhower,"June 30, 1953",further providing for the administration the defense production act,25
+SPR00382,14953,proclamation,Dwight D. Eisenhower,"June 30, 1953",quota limitations imports certain dairy and other products,25
+SPR00383,11942,memorandum,Dwight D. Eisenhower,"July 01, 1953",community chest and united defense fund uso campaign the national capital area,25
+SPR00384,3954,executive_order,Dwight D. Eisenhower,"July 07, 1953",appointment william c strand director office territories department,25
+SPR00385,8266,letter,Dwight D. Eisenhower,"July 09, 1953",the secretary agriculture requesting study the problems the domestic wool industry,25
+SPR00386,8265,letter,Dwight D. Eisenhower,"July 10, 1953",exchange letters between the president and chancellor adenauer germany concerning aid for,25
+SPR00387,8264,letter,Dwight D. Eisenhower,"July 15, 1953",the speaker the house representatives transmitting proposed supplemental,25
+SPR00388,3951,executive_order,Dwight D. Eisenhower,"July 17, 1953",authorizing the heads departments and agencies grant leaves absence,25
+SPR00389,3950,executive_order,Dwight D. Eisenhower,"July 20, 1953",establishing the national agricultural advisory commission,25
+SPR00390,8263,letter,Dwight D. Eisenhower,"July 20, 1953",exchange letters between the president and chancellor adenauer concerning the soviet,25
+SPR00391,8262,letter,Dwight D. Eisenhower,"July 21, 1953",telegram congratulating ben hogan,25
+SPR00392,3949,executive_order,Dwight D. Eisenhower,"July 22, 1953",amendment the foreign service regulations relating united states,25
+SPR00393,8261,letter,Dwight D. Eisenhower,"July 23, 1953",the chairman senate appropriations committee the mutual security program,25
+SPR00394,8260,letter,Dwight D. Eisenhower,"July 25, 1953",chancellor adenauer germany concerning the uprisings east berlin and east germany,25
+SPR00395,3944,executive_order,Dwight D. Eisenhower,"August 05, 1953",delegating the secretary defense the authority the president order,25
+SPR00396,11941,memorandum,Dwight D. Eisenhower,"August 06, 1953",disapproval bill repealing the admissions tax motion picture performances,25
+SPR00397,11939,memorandum,Dwight D. Eisenhower,"August 07, 1953",disapproval bill for the relief mary thaila womack webb,25
+SPR00398,11940,memorandum,Dwight D. Eisenhower,"August 07, 1953",disapproval bill for the relief ethel hudson morrison,25
+SPR00399,14950,proclamation,Dwight D. Eisenhower,"August 07, 1953",citizenship day 1953,25
+SPR00400,8259,letter,Dwight D. Eisenhower,"August 11, 1953",heads departments and agencies concerning further economies government,25
+SPR00401,11936,memorandum,Dwight D. Eisenhower,"August 15, 1953",disapproval bill for the relief the city and county denver colorado,25
+SPR00402,11937,memorandum,Dwight D. Eisenhower,"August 15, 1953",disapproval bill for the relief colonel harry f cunningham,25
+SPR00403,11938,memorandum,Dwight D. Eisenhower,"August 15, 1953",disapproval bill for the relief harold joe davis,25
+SPR00404,14948,proclamation,Dwight D. Eisenhower,"August 15, 1953",regulations for preventing collisions sea,25
+SPR00405,8257,letter,Dwight D. Eisenhower,"August 24, 1953",lewis w douglas concerning report his financial and economic mission the united,25
+SPR00406,8258,letter,Dwight D. Eisenhower,"August 24, 1953",clarence randall chairman commission foreign economic policy transmitting the,25
+SPR00407,8256,letter,Dwight D. Eisenhower,"September 01, 1953",exchange letters between the president and prime minister zahedi concerning the need for,25
+SPR00408,3939,executive_order,Dwight D. Eisenhower,"September 02, 1953",establishing the operations coordinating board,25
+SPR00409,3937,executive_order,Dwight D. Eisenhower,"September 03, 1953",providing for the administration the presidents management,25
+SPR00410,3938,executive_order,Dwight D. Eisenhower,"September 03, 1953",providing for the performance certain functions heretofore performed,25
+SPR00411,11935,memorandum,Dwight D. Eisenhower,"September 04, 1953",the community chest and united fund campaigns 0,25
+SPR00412,8255,letter,Dwight D. Eisenhower,"September 05, 1953",the commissioner indian affairs concerning his meetings with the major tribal,25
+SPR00413,8254,letter,Dwight D. Eisenhower,"September 10, 1953",accepting resignation martin p durkin secretary labor,25
+SPR00414,3936,executive_order,Dwight D. Eisenhower,"September 12, 1953",providing for the establishment the advisory committee government,25
+SPR00415,3935,executive_order,Dwight D. Eisenhower,"September 16, 1953",providing for the administration the refugee relief act 1953,25
+SPR00416,8253,letter,Dwight D. Eisenhower,"September 18, 1953",exchange letters between the president and mayor ernst reuter concerning conditions berlin,25
+SPR00417,3934,executive_order,Dwight D. Eisenhower,"September 23, 1953",providing for the issuance regulations governing the purchase,25
+SPR00418,8252,letter,Dwight D. Eisenhower,"September 23, 1953",the chairman air coordinating committee requesting review aviation policy,25
+SPR00419,11934,memorandum,Dwight D. Eisenhower,"September 25, 1953",directing federal agencies participate civil defense exercise,25
+SPR00420,14944,proclamation,Dwight D. Eisenhower,"September 29, 1953",imposing import fees shelled and prepared almonds,25
+SPR00421,3932,executive_order,Dwight D. Eisenhower,"October 01, 1953",creating board inquiry report certain labor disputes affecting the,25
+SPR00422,8251,letter,Dwight D. Eisenhower,"October 05, 1953",the attorney general directing him petition for injunction the maritime strike 1,25
+SPR00423,11933,memorandum,Dwight D. Eisenhower,"October 06, 1953",directing that agricultural commodities be made available meet relief,25
+SPR00424,3926,executive_order,Dwight D. Eisenhower,"October 14, 1953",restoring certain lands reserved for military purposes the,25
+SPR00425,3927,executive_order,Dwight D. Eisenhower,"October 14, 1953",disposition functions remaining under title iv the defense,25
+SPR00426,3928,executive_order,Dwight D. Eisenhower,"October 14, 1953",establishing seal for the national advisory committee for,25
+SPR00427,8250,letter,Dwight D. Eisenhower,"October 14, 1953",exchange letters between the president and president paz estenssoro bolivia concerning the,25
+SPR00428,8249,letter,Dwight D. Eisenhower,"October 26, 1953",secretary the interior mckay establishing cabinet committee minerals policy,25
+SPR00429,27,memorandum,Dwight D. Eisenhower,"October 28, 1953",approved the president for the guidance the united states information agency,25
+SPR00430,8248,letter,Dwight D. Eisenhower,"October 30, 1953",representative clement j zablocki the arrest cardinal wyszynski poland,25
+SPR00431,3922,executive_order,Dwight D. Eisenhower,"November 04, 1953",designation the power authority the state new york and establishment,25
+SPR00432,3923,executive_order,Dwight D. Eisenhower,"November 04, 1953",delegating functions conferred upon the president section 8 the,25
+SPR00433,3924,executive_order,Dwight D. Eisenhower,"November 04, 1953",delegating the secretaries the military departments and the,25
+SPR00434,11932,memorandum,Dwight D. Eisenhower,"November 05, 1953",for the heads all departments and agencies the government,25
+SPR00435,14943,proclamation,Dwight D. Eisenhower,"November 05, 1953",armistice day 1953,25
+SPR00436,8247,letter,Dwight D. Eisenhower,"November 06, 1953",myron m cowen concerning the philippine elections,25
+SPR00437,14941,proclamation,Dwight D. Eisenhower,"November 10, 1953",copyright japan,25
+SPR00438,8246,letter,Dwight D. Eisenhower,"November 16, 1953",walter p reuther extending greetings the 15th constitutional convention the,25
+SPR00439,3918,executive_order,Dwight D. Eisenhower,"December 01, 1953",suspending certain statutory provisions relating employment the,25
+SPR00440,3919,executive_order,Dwight D. Eisenhower,"December 01, 1953",transferring certain functions powers and duties the small business,25
+SPR00441,8245,letter,Dwight D. Eisenhower,"December 12, 1953",dr joseph j eller executive director pan american medical association,25
+SPR00442,3914,executive_order,Dwight D. Eisenhower,"December 14, 1953",excusing federal employees from duty one half day december 24 1953,25
+SPR00443,8244,letter,Dwight D. Eisenhower,"December 14, 1953",the governors the states calling for conference highway safety,25
+SPR00444,3913,executive_order,Dwight D. Eisenhower,"December 16, 1953",creating emergency board investigate dispute between the railway,25
+SPR00445,14938,proclamation,Dwight D. Eisenhower,"December 24, 1953",supplementing proclamations no 2867 december 22 1949 and no 2764 january,25
+SPR00446,14937,proclamation,Dwight D. Eisenhower,"December 26, 1953",imposing quota imports oats,25
+SPR00447,3911,executive_order,Dwight D. Eisenhower,"December 28, 1953",creating emergency board investigate disputes between the akron,25
+SPR00448,11931,memorandum,Dwight D. Eisenhower,"December 29, 1953",approving defense procurement policies aid areas economic distress,25
+SPR00449,11930,memorandum,Dwight D. Eisenhower,"January 04, 1954",the red cross campaign 2,25
+SPR00450,8243,letter,Dwight D. Eisenhower,"January 12, 1954",julius ochs adler chairman national security training commission concerning the,25
+SPR00451,8242,letter,Dwight D. Eisenhower,"January 18, 1954",president hoover regarding the commission organization the executive branch,25
+SPR00452,3909,executive_order,Dwight D. Eisenhower,"January 19, 1954",revocation executive order no 2414 june 30 1916,25
+SPR00453,3910,executive_order,Dwight D. Eisenhower,"January 19, 1954",revocation executive order no 9047 exempting certain officers and,25
+SPR00454,11929,memorandum,Dwight D. Eisenhower,"January 22, 1954",concerning purchase savings bonds government employees,25
+SPR00455,11928,memorandum,Dwight D. Eisenhower,"January 23, 1954",transmitting report the commission foreign economic policy,25
+SPR00456,3906,executive_order,Dwight D. Eisenhower,"January 26, 1954",transferring certain lands the secretary agriculture for use,25
+SPR00457,8241,letter,Dwight D. Eisenhower,"February 03, 1954",walter reuther president united automobile workers cio concerning economic growth,25
+SPR00458,8240,letter,Dwight D. Eisenhower,"February 04, 1954",frederic l vorbeck executive chairman united catholic organizations for the freeing,25
+SPR00459,3905,executive_order,Dwight D. Eisenhower,"February 10, 1954",designating the honorable cecil snyder act under certain,25
+SPR00460,3904,executive_order,Dwight D. Eisenhower,"February 11, 1954",inspection returns the special committee the house representatives,25
+SPR00461,8239,letter,Dwight D. Eisenhower,"February 11, 1954",governor thornton chairman the governors conference 1954 proposing visit korea,25
+SPR00462,8238,letter,Dwight D. Eisenhower,"February 25, 1954",prime minister nehru india concerning us military aid pakistan,25
+SPR00463,3902,executive_order,Dwight D. Eisenhower,"March 10, 1954",transferring certain lands from the department agriculture the,25
+SPR00464,8237,letter,Dwight D. Eisenhower,"March 16, 1954",the governors the states and territories requesting them serve honorary chairmen,25
+SPR00465,3901,executive_order,Dwight D. Eisenhower,"March 17, 1954",administration scientific research agencies the federal government,25
+SPR00466,3899,executive_order,Dwight D. Eisenhower,"March 26, 1954",designating march 31 1954 the day for dedication the memorial major,25
+SPR00467,3900,executive_order,Dwight D. Eisenhower,"March 26, 1954",authorizing the director the united states information agency carry,25
+SPR00468,8236,letter,Dwight D. Eisenhower,"March 27, 1954",accepting resignation joseph m dodge director the bureau the budget,25
+SPR00469,3898,executive_order,Dwight D. Eisenhower,"March 31, 1954",delegating certain functions the president respecting school,25
+SPR00470,8235,letter,Dwight D. Eisenhower,"March 31, 1954",lindsay warren regarding his retirement comptroller general the united states,25
+SPR00471,14930,proclamation,Dwight D. Eisenhower,"March 31, 1954",imposing quota imports rye rye flour and rye meal,25
+SPR00472,11927,memorandum,Dwight D. Eisenhower,"April 12, 1954",the administrator housing and home finance agency directing him take custody,25
+SPR00473,8234,letter,Dwight D. Eisenhower,"April 16, 1954",telegram inviting the governors states afflicted dust storms attend conference the white,25
+SPR00474,3896,executive_order,Dwight D. Eisenhower,"April 17, 1954",transferring certain lands mississippi from the department,25
+SPR00475,3895,executive_order,Dwight D. Eisenhower,"April 19, 1954",inspection income excess profits declared value excess profits,25
+SPR00476,3893,executive_order,Dwight D. Eisenhower,"April 22, 1954",participation federal employees state and local civil defense pre,25
+SPR00477,3894,executive_order,Dwight D. Eisenhower,"April 22, 1954",addition the marginal wharf area sand island military reservation,25
+SPR00478,14928,proclamation,Dwight D. Eisenhower,"April 23, 1954",citizenship day 1954,25
+SPR00479,11926,memorandum,Dwight D. Eisenhower,"April 30, 1954",directing the departments and agencies take part civil defense test exercise,25
+SPR00480,14925,proclamation,Dwight D. Eisenhower,"April 30, 1954",termination uruguayan trade agreement proclamations,25
+SPR00481,3892,executive_order,Dwight D. Eisenhower,"May 10, 1954",providing for the performance certain functions vested or subject,25
+SPR00482,8232,letter,Dwight D. Eisenhower,"May 17, 1954",the secretary defense directing him withhold certain information from the senate,25
+SPR00483,8233,letter,Dwight D. Eisenhower,"May 17, 1954",general wladyslaw anders the polish armed forces exile commemoration the battle,25
+SPR00484,8231,letter,Dwight D. Eisenhower,"May 20, 1954",charles h percy chicago concerning the presidents foreign economic policy proposals,25
+SPR00485,8230,letter,Dwight D. Eisenhower,"May 26, 1954",secretary mckay establishing cabinet committee water resources policy,25
+SPR00486,3890,executive_order,Dwight D. Eisenhower,"May 28, 1954",amendment the list communicable diseases contained executive order,25
+SPR00487,3889,executive_order,Dwight D. Eisenhower,"June 03, 1954",designating the organization american states public international,25
+SPR00488,14921,proclamation,Dwight D. Eisenhower,"June 03, 1954",flag day 1954,25
+SPR00489,11925,memorandum,Dwight D. Eisenhower,"June 05, 1954",the community chest campaign the national capital area,25
+SPR00490,3886,executive_order,Dwight D. Eisenhower,"June 09, 1954",authorizing certain functions heads departments and agencies under,25
+SPR00491,3888,executive_order,Dwight D. Eisenhower,"June 09, 1954",providing for the supervision and direction the saint lawrence,25
+SPR00492,8229,letter,Dwight D. Eisenhower,"June 18, 1954",exchange letters between the president and president coty france after the fall the laniel,25
+SPR00493,8228,letter,Dwight D. Eisenhower,"June 25, 1954",dr chester i barnard chairman national science board concerning united states,25
+SPR00494,3882,executive_order,Dwight D. Eisenhower,"June 29, 1954",designating certain officers the government which the annual and,25
+SPR00495,3879,executive_order,Dwight D. Eisenhower,"July 06, 1954",creating board inquiry report labor dispute affecting the operations,25
+SPR00496,3880,executive_order,Dwight D. Eisenhower,"July 06, 1954",creating board inquiry report labor dispute affecting the operations,25
+SPR00497,14918,proclamation,Dwight D. Eisenhower,"July 10, 1954",extension the period the duty free treatment philippine articles the,25
+SPR00498,3878,executive_order,Dwight D. Eisenhower,"July 12, 1954",inspection income tax returns federal trade commission,25
+SPR00499,8227,letter,Dwight D. Eisenhower,"July 12, 1954",secretary weeks establishing cabinet committee transport policy and organization,25
+SPR00500,14917,proclamation,Dwight D. Eisenhower,"July 12, 1954",termination proclamation no 2545 entitled free importation jerked beef,25
+SPR00501,3877,executive_order,Dwight D. Eisenhower,"July 15, 1954",amendment executive order no 5952 november 23 1932 prescribing the,25
+SPR00502,3875,executive_order,Dwight D. Eisenhower,"July 27, 1954",inspection statistical transcript cards the board governors the,25
+SPR00503,14916,proclamation,Dwight D. Eisenhower,"July 27, 1954",modification trade agreement concessions and adjustment rates duty with,25

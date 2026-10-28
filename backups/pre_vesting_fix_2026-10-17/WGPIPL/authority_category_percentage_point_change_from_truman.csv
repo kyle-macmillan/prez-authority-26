@@ -1,0 +1,23 @@
+administration_order,administration,president,term,generic_constitution_only,specific_constitution_only,generic_statute_only,specific_statute_only,generic_constitution_and_generic_statute,generic_constitution_and_specific_statute,specific_constitution_and_generic_statute,specific_constitution_and_specific_statute
+1,Truman,Harry S Truman,First,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000
+2,Eisenhower,Dwight D. Eisenhower,First,0.0000,0.1245,0.0000,-10.8315,0.7240,-0.7041,-0.5175,-2.2601
+3,Eisenhower,Dwight D. Eisenhower,Second,0.0000,-0.3284,0.0000,-12.8952,0.1679,-1.3156,-0.4984,-3.4869
+4,Kennedy,John F. Kennedy,First,0.0000,-0.4472,0.0000,-17.0607,0.9857,-0.0203,-0.8386,-3.9203
+5,Johnson,Lyndon B. Johnson,First,0.0000,-0.8386,0.0000,-18.6417,0.6110,-2.7433,-0.8386,-1.8758
+6,Johnson,Lyndon B. Johnson,Second,0.0000,-0.0462,0.0000,-18.4290,-0.0949,0.9882,-0.8386,-2.9226
+7,Nixon,Richard Nixon,First,0.2110,-0.2057,0.0000,-17.6313,1.3799,4.9877,-0.6276,-2.8196
+8,Nixon,Richard Nixon,Second,0.0000,-0.8386,0.0000,-7.2576,-0.2577,6.3327,-0.8386,-1.7449
+9,Ford,Gerald R. Ford,First,0.2387,0.5934,0.0000,-25.1547,3.1719,9.1255,-0.5999,-2.1207
+10,Carter,Jimmy Carter,First,5.0060,-0.6002,0.0000,-25.6582,5.4311,13.1614,-0.8386,-4.0306
+11,Reagan,Ronald Reagan,First,4.6729,-0.2778,0.0000,-33.9442,6.4878,17.1522,-0.6517,-4.1335
+12,Reagan,Ronald Reagan,Second,0.1727,-0.8386,0.0000,-27.2091,5.8912,24.6440,-0.6659,-4.3346
+13,G.H.W. Bush,George Bush,First,0.0000,-0.7065,0.0000,-19.0554,4.9781,21.8352,-0.8386,-3.9789
+14,Clinton,William J. Clinton,First,0.0000,-0.5167,0.0000,-22.8037,9.4742,19.8538,-0.8386,-4.4000
+15,Clinton,William J. Clinton,Second,0.4233,-0.6269,0.0000,-25.8960,7.8437,12.7433,-0.8386,-4.5073
+16,G.W. Bush,George W. Bush,First,0.2472,-0.5914,0.0000,-25.3394,8.2788,22.4771,-0.7150,-4.2601
+17,G.W. Bush,George W. Bush,Second,0.5455,-0.6568,0.0000,-31.5891,9.9100,38.3739,-0.8386,-4.3255
+18,Obama,Barack Obama,First,0.5464,-0.1100,0.0000,-35.0208,17.5809,27.3413,-0.8386,-4.1430
+19,Obama,Barack Obama,Second,0.8446,0.0060,0.0000,-30.5283,16.0360,29.5736,-0.6697,-4.5073
+20,Trump,Donald J. Trump,First,0.5222,-0.5775,0.0000,-38.9729,27.3579,32.0976,-0.1858,-4.2462
+21,Biden,"Joseph R. Biden, Jr.",First,1.1611,3.2253,0.0000,-38.5905,17.3601,35.1959,-0.5483,-4.0719
+22,Trump,Donald J. Trump,Second,0.0000,0.4601,0.2597,-46.8099,51.6243,27.2311,-0.3191,-4.5073
